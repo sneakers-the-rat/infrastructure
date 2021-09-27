@@ -18,10 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Decentralized Infrastructure
+title: Decentralized Infrastructure for (Neuro)science
 email: jsaunder@uoregon.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Decentralized Infrastructure for (Neuro)science
+  Not sure where this shows up yet so if you see it then go ahead
+  and tell me hey jonny ur website is bad
 baseurl: "/infrastructure" # the subpath of your site, e.g. /blog
 url: "https://jon-e.net" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: json_dirs
@@ -34,9 +35,9 @@ plugins:
   - jekyll/scholar
 
 scholar:
-source: ./assets
-bibliography: infrastructure.bib
-style: national-science-foundation-grant-proposals
+  source: assets
+  bibliography: infrastructure.bib
+  style: national-science-foundation-grant-proposals
 
 # Exclude from processing.
 # The following items will not be processed, by default.
