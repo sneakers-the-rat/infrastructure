@@ -31,7 +31,6 @@ github_username:  sneakers-the-rat
 # Build settings
 theme: tale
 plugins:
-  - jekyll-feed
   - jekyll/scholar
 
 scholar:
