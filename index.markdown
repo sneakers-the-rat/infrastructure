@@ -414,14 +414,23 @@ Centralized servers are fundamentally constrained by their storage capacity and 
 
 [^osfspeed]: As I am writing this, I am getting a (very unscientific) maximum speed of 5MB/s on the [Open Science Framework](https://osf.io)
 
-Peer-to-peer (p2p) systems solve many of these problems, and I argue are the only type of technology capable of making a database system that can handle the scale of all scientific data. There is an enormous degree of variation between p2p systems[^p2pdiscipline], but they share a set of architectural advantages. 
-
-
-Peer to peer systems have none of these problems, are inexpensive to maintain, and increase, rather than decrease, in performance the more people use them. 
-
-!! Basic description of p2p system
+Peer-to-peer (p2p) systems solve many of these problems, and I argue are the only type of technology capable of making a database system that can handle the scale of all scientific data. There is an enormous degree of variation between p2p systems[^p2pdiscipline], but they share a set of architectural advantages. The essential quality of any p2p system is that rather than each participant in a network interacting only with a single server that hosts all the data, everyone hosts data and interacts directly with each other.
 
 [^p2pdiscipline]: peer to peer systems are, maybe predictably, a whole academic subdiscipline. See {% cite shenHandbookPeertoPeerNetworking2010 %} for reference.
+
+For the sake of concreteness, we can consider a (simplified) description of Bittorrent {% cite cohenBitTorrentProtocolSpecification2017 %}, arguably the most successful p2p protocol. To share a collection of files, a user creates a `.torrent` file which consists of a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function), or a string that is unique to the collection of files being shared; and a list of "trackers." A tracker, appropriately, keeps track of the `.torrent` files that have been uploaded to it, and connects users that have or want the content referred to by the `.torrent` file. The uploader (or seeder) then leaves a [torrent client](https://en.wikipedia.org/wiki/Glossary_of_BitTorrent_terms#Client) open waiting for incoming connections. Someone who wants to download the files (a leecher) will then open the `.torrent` file in their client, which will then ask the tracker for the IP addresses of the other peers who are seeding the file, directly connect to them, and begin downloading. So far so similar to standard client-server systems, but the magic is just getting started. Say another person wants to download the same files before the first person has finished downloading it: rather than *only* downloading from the original seeder, the new leecher downloads from *both* the original seeder and the first leecher. Leechers are incentivized to share among each other to prevent the seeders from spending time reuploading the pieces that they already have, and once they have finished downloading they become seeders themselves.
+
+From this very simple example, a number of qualities of p2p systems become clear. 
+
+- First, the system is extremely inexpensive to maintain since it takes advantage of the existing bandwidth and storage space of the computers in the swarm, rather than dedicated servers. Near the height of its popularity in 2009, The Pirate Bay, a notorious bittorrent tracker, was estimated to cost $3,000 per month to maintain while serving approximately 20 million peers {% cite roettgersPirateBayDistributing2009 %}. According to a database dump from 2013 {% cite PirateBayArchiveteam2020 %}, multiplying the size of each torrent by the number of seeders (ignoring any partial downloads from leechers), the approximate instantaneous storage size of The Pirate Bay was ~26 Petabytes. Hosting 26PB would cost $546,000/month with standard AWS S3 hosting ($0.021/GB/month). 
+- The speed of a bittorrent swarm *increases,* rather than decreases, the most people are using it since it is capable of using all of the available bandwidth in the system.
+- The network is extremely *resilient* since the data is shared across many independent peers in the system. Despite more than 15 years of concerted effort by governments and intellectual property holders, the pirate bay is still alive and kicking {% cite kim15YearsPirate2019 %}[^knockin]. This is because even if the entire infrastructure of the tracker is destroyed, as it was in 2006, the files are distributed across all of its users, the actual database of `.torrent` metadata is quite small, and the tracker software is extraordinarily simple to rehost {% cite vandersarOpenBayNow2014 %} -- The Pirate Bay was back online in 2 days.
+- The network is extremely *scalable* since there is no cost to connecting new peers and the users of a system expand the storage capacity of the system depending on their needs. Rather than having one extremely fast data center (or a privatized network designed to own the internet), the model of p2p systems is to leverage many approachable peer/servers.
+
+[^knockin]: knock on wood
+
+
+
 
 The above illustration of an oversimplified peer-to-peer network by itself has the capability of providing a more robust, resilient infrastructure for the massive datasets in neuroscience. Entry costs are low, any existing server infrastructure present in labs, institutes, etc. can use a peer to peer system. Peer-to-peer networks also theoretically allow the maximum bandwidth of an entire networking system to be used, rather than the maximum bandwidth of a single connection. 
 
