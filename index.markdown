@@ -448,6 +448,8 @@ We can learn from two knowledge communities with decades of domain-specific know
 
 ### Archives Need Communities
 
+!! this is also an ethical disposition: contrast data standardization and archiving being cumbersome, difficult, and with no personal return forcing people to do it by caveats in grant proposals or requirements in publication. vs. wanting to curate data because it gives you access to tools, makes you part of a community, and you can see the positive impacts of a growing cumulative datastore that doesn't feel like a vacant warehouse. We don't need to resort to authoritarianism to get to 'open science' as has plagued the open science community as of late, devolving into a purity contest and widescale bullying and shit!!
+
 An underappreciated element of the torrent system is the effect of the separation between the data transfer protocol and the 'discovery' part of the system --- or "overlay" --- on the community structure of torrent trackers. Many peer to peer networks like KaZaA or the gnutella-based Limewire had searching for files integrated into the transfer interface. The need for torrent trackers to share .torrent files spawned a massive community of private torrent trackers that for decades have been iterating on cultures of archival, experimenting with different community structures and incentives that encourage people to share and annotate some of the world's largest, most organized libraries. One of these private trackers was the site of one of the largest informational tragedies of the past decade: what.cd[^whatdiss]
 
 [^whatdiss]: for a detailed description of the site and community, see Ian Dunham's dissertation {% cite dunhamWhatCDLegacy2018 %}
