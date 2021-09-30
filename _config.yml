@@ -28,10 +28,22 @@ url: "https://jon-e.net" # the base hostname & protocol for your site, e.g. http
 twitter_username: json_dirs
 github_username:  sneakers-the-rat
 
+author:
+  name: Jonny Saunders
+  url: https://jon-e.net
+  twitter: json_dirs
+
+social:
+  name: Jonny Saunders
+  links:
+    - https://twitter.com/json_dirs
+    - https://jon-e.net
+
 # Build settings
-theme: tale
+
 plugins:
   - jekyll/scholar
+  - jekyll-seo-tag
 
 scholar:
   source: assets
@@ -49,8 +61,6 @@ scholar:
 exclude:
   - .DS_Store
   - README.md
-  - .sass-cache/
-  - .jekyll-cache/
   - gemfiles/
   - Gemfile
   - Gemfile.lock

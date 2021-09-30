@@ -3,7 +3,10 @@ layout: post
 title:  "Decentralized Infrastructure for (Neuro)science"
 author: "Jonny Saunders"
 navigation: false
+canonical_url: "https://jon-e.net/infrastructure"
 ---
+
+{% include annotation.html %}
 
 1. table of contents
 {:toc}
@@ -47,8 +50,6 @@ Acknowledgements (make sure to double check spelling!!!):
 
 
 # Introduction
-
-(initial sentence re: we use computers all day and it's really hard and takes up all of our time. make sure to specify for systems neuro.)
 
 We work in technical islands that range from individual researchers, to labs, consortia, and at their largest a few well-funded organizations. Our knowledge dissemination systems are as nimble as the static pdfs and ephemeral conference talks that they have been for decades (save for the godforsaken Science Twitter that we all correctly love to hate). Experimental instrumentation except for that at the polar extremes of technological complexity or simplicity is designed and built custom, locally, and on-demand. Software for performing experiments is a patchwork of libraries that satisfy some of the requirements of the experiment, sewn together by some uncommented script written years ago by a grad student who left the lab long-since. The technical knowledge to build both instrumentation and software is fragmented and unavailable as it sifts through the funnels of word-limited methods sections and never-finished documentation. And O Lord Let Us Pray For The Data, born into this world without coherent form to speak of, indexable only by passively-encrypted notes in a paper lab notebook, dressed up for the analytical ball once before being mothballed in ignominy on some unlabeled external drive. 
 
