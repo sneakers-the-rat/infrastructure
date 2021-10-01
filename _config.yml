@@ -61,6 +61,8 @@ scholar:
 exclude:
   - .DS_Store
   - README.md
+  - .jekyll-cache
+  - _site
   - gemfiles/
   - Gemfile
   - Gemfile.lock

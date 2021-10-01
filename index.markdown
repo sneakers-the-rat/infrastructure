@@ -1,12 +1,14 @@
 ---
 layout: post
 title:  "Decentralized Infrastructure for (Neuro)science"
+subtitle: "Or, Kill the Cloud in Your Mind"
 author: "Jonny Saunders"
 navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
 ---
 
 {% include annotation.html %}
+{% include status.html %}
 
 1. table of contents
 {:toc}
@@ -246,7 +248,9 @@ Publicly funded science is an always-irresistable golden goose for private indus
 
 While in isolation SaaS can make individual components of the infrastructural landscape easier to access --- and even free!!* --- the business model is fundamentally incompatible with integrated and accessible infrastructure. The SaaS model derives revenue from subscription or use costs, often operating as freemium models that make some subset of its services available for free. Even in freemium models, though, the business model requires that some functionality of the platform is paywalled (See a more thorough treatment of platform capitalism in science in {% cite mirowskiFutureOpenScience2018 %}) 
 
-As isolated services, one can imagine the practice of science devolving along a similar path as the increasingly-fragmented streaming video market: to do my work I need to subscribe to a data storage service, a cloud computing service, a platform to host my experiments, etc. For larger software platforms, however, vertical integration of multiple complementary services makes their impact on infrastructure more insidious. Locking users into more and more services makes for more and more revenue, which encourages platforms to be as mutually incompatible as they can get away with. To encourage adoption, platforms that can offer multiple services may offer one of the services -- say, data storage -- for free, forcing the user to use the adjoining services -- say, a cloud computing platform. Since these platforms are often subsidiaries of larger companies, scientists become complicit in their ethically nightmarish behavior by funneling millions of dollars into, for example, the parent company of Elsevier and their surveillance technology agreement with ICE {% cite biddleLexisNexisProvideGiant2021 %}, or AWS and the laundry list of human rights abuses by Amazon {% cite CriticismAmazon2021 %}.
+As isolated services, one can imagine the practice of science devolving along a similar path as the increasingly-fragmented streaming video market: to do my work I need to subscribe to a data storage service, a cloud computing service, a platform to host my experiments, etc. For larger software platforms, however, vertical integration of multiple complementary services makes their impact on infrastructure more insidious. Locking users into more and more services makes for more and more revenue, which encourages platforms to be as mutually incompatible as they can get away with {% cite macinnesCompatibilityStandardsMonopoly2005 %}. To encourage adoption, platforms that can offer multiple services may offer one of the services -- say, data storage -- for free, forcing the user to use the adjoining services -- say, a cloud computing platform. 
+
+Since these platforms are often subsidiaries of information industry monopolists, scientists become complicit in their ethically nightmarish behavior by funneling millions of dollars into, for example, the parent company of Elsevier and their surveillance technology agreement with ICE {% cite biddleLexisNexisProvideGiant2021 %}, or AWS and the laundry list of human rights abuses by Amazon {% cite CriticismAmazon2021 %}.
 
 Structurally, the adoption of SaaS on a wide scale necessarily sacrifices the goals of an integrated mass infrastructure as the practice of research is carved into small, marketable chunks within vertically integrated technology platforms. Worse, it stands to amplify, rather than reduce, inequities in science, as the labs and institutes that are able to afford the tolls between each of the weigh stations of infrastructure are able to operate more efficiently, in turn begetting more funding, and the cycle spins ever faster. 
 
@@ -256,7 +260,7 @@ Funding models and incentive structures in science are uniformly aligned towards
 >
 > These negotiations may result in partnership agreements with top infrastructure providers from U.S.-based companies whose focus includes support for research. Suitable cloud environments will house diverse data types and high-value datasets created with public funds. NIH will ensure that they are stable and adhere to stringent security requirements and applicable law, to protect against data compromise or loss. [...] NIH’s cloud-marketplace initiative will be the first step in a phased operational framework that establishes a SaaS paradigm for NIH and its stakeholders. (-NIH Strategic Plan for Data Science, 2018 {% cite NIHStrategicPlan2018 %})
 
-The articulated plan being to pay platform holders to house data while also paying for the labor to maintain those databases veers into parody, haplessly building another triple-pay industry {% cite buranyiStaggeringlyProfitableBusiness2017 %} into the economic system of science --- one can hardly wait until they have the opportunity to rent their own data back with a monthly subscription. It is unclear to me whether this is the result of the cultural hegemony of platform capitalism narrowing the space of imaginable infrastructures, industry capture of the decision-making process, or both, but the effect is the same in any case.
+The articulated plan being to pay platform holders to house data while also paying for the labor to maintain those databases veers into parody, haplessly building another triple-pay industry {% cite buranyiStaggeringlyProfitableBusiness2017 %} into the economic system of science --- one can hardly wait until they have the opportunity to rent their own data back with a monthly subscription. It is unclear to me whether this is the result of the cultural hegemony of platform capitalism narrowing the space of imaginable infrastructures, industry capture of the decision-making process, or both, but the effect is the same in any case. 
 
 ### Protection of Institutional and Economic Power
 
@@ -356,6 +360,8 @@ This principle also has tactical elements. An uncoercive system allows users to 
 
 A noncoercive architecture also prioritizes the ease of leaving. Though this is somewhat tautological to protocol-driven design, specific care must be taken to enable export and migration to new systems. Making leaving easy also ensures that early missteps in development of the system are not fatal to its development, preventing lock-in to a component that needs to be restructured.
 
+!! the coercion of centralization has a few forms. this is related to the authoritarian impulse in the open science movement that for awhile bullied people into openness. that instinct in part comes from a belief that everyone should be doing the same thing, should be posting their work on the one system. decentralization is about autonomy, and so a reciprocal approach is to make it easy and automatic.
+
 ### Empower People, not Systems
 
 Because IP was initially developed as a military technology by DARPA, a primary design constraint was survivability in the face of failure. The model adopted by internet architects was to move as much functionality from the network itself to the end-users of the network --- rather than the network itself guaranteeing a packet is transmitted, the sending computer will do so by requiring a response from the recipient {% cite clarkDesignPhilosophyDARPA1988 %}.
@@ -393,7 +399,7 @@ With these principles in mind, and drawing from other knowledge communities solv
 
 The shallowest onramp towards a generalized data infrastructure is to make use of existing discipline-specific standardized data formats. As will be discussed later, a truly universal pandisciplinary format is effectively impossible, but to arrive at the alternative we should first congeal the wild west of unstandardized data into a smaller number of established formats. 
 
-Data formats consist of some combination of an abstract specification, an implementation in a particular storage medium, and an API for interacting with the format. For now we assume that the particular constellation of these properties that make up a particular format will remain mostly intact with an eye towards semantically linking specifications and unifying their implementation.
+Data formats consist of some combination of an abstract specification, an implementation in a particular storage medium, and an API for interacting with the format. I won't dwell on the particular qualities that a particular format needs, assuming that most that would be adopted would abide by FAIR principles. For now we assume that the particular constellation of these properties that make up a particular format will remain mostly intact with an eye towards semantically linking specifications and unifying their implementation.
 
 There are a dizzying number of scientific data formats {% cite teamScientificDataFormats %}, so a comprehensive treatment is impractical here and I will use the Neurodata Without Borders:N (NWB){% cite rubelNWBAccessibleData2019a %} as an example. NWB is the de facto standard for systems neuroscience, adopted by many institutes and labs, though far from uniformly. NWB [consists of](https://www.nwb.org/nwb-software/) a [specification language](https://schema-language.readthedocs.io/en/stable/), a [schema written in that language](https://nwb-schema.readthedocs.io/en/stable/), a [storage implementation in hdf5](https://nwb-storage.readthedocs.io/en/stable/), and an [API for interacting with the data](https://pynwb.readthedocs.io/en/stable/). They have done an admirable job of engaging with community needs {% cite rubelNeurodataBordersEcosystem2021 %} and making a modular, extensible format ecosystem. 
 
@@ -407,7 +413,7 @@ For the sake of the rest of the argument, let us assume that some relatively tri
 
 ### Peer-to-peer data sharing platform
 
-We should adopt a *peer-to-peer* system for storing and sharing scientific data. There are, of course [many](https://www.dandiarchive.org/) [existing](https://openneuro.org/) [databases](https://www.brainminds.riken.jp/) [for](https://biccn.org/) scientific data, ranging from domain-general like [figshare](https://figshare.com/) and [zenodo](https://zenodo.org/) to the most laser-focused subdiscipline-specific. The notion of a database, like a data standard, is not monolithic. As a simplification, they consist of at least the hardware used for storage, the software implementation of read and write operations, a formatting schema, some means of writing and reading, the rules and regulations that govern its use, and especially in scientific databases some frontend for visual interaction. For now we will focus on the storage software and read-write system, returning to the format, regulations, and interface later. 
+We should adopt a *peer-to-peer* system for storing and sharing scientific data. There are, of course [many](https://www.dandiarchive.org/) [existing](https://openneuro.org/) [databases](https://www.brainminds.riken.jp/) [for](https://biccn.org/) scientific data, ranging from domain-general like [figshare](https://figshare.com/) and [zenodo](https://zenodo.org/) to the most laser-focused subdiscipline-specific. The notion of a database, like a data standard, is not monolithic. As a simplification, they consist of at least the hardware used for storage, the software implementation of read, write, and query operations, a formatting schema, some API for interacting with it, the rules and regulations that govern its use, and especially in scientific databases some frontend for visual interaction. For now we will focus on the storage software and read-write system, returning to the format, regulations, and interface later. 
 
 Centralized servers are fundamentally constrained by their storage capacity and bandwidth, both of which cost money. In order to be free, database maintainers need to constantly raise money from donations or grants[^grantdb] in order to pay for both. Funding can never be infinite, and so inevitably there must be some limit on the amount of data that someone can upload and the speed at which it can serve files[^osfspeed]. In the case that a researcher never sees any of those costs, they are still being borne by some funding agency, incurring the social costs of funneling money to database maintainers. Centralized servers are also intrinsically out of the control of their users, requiring them to abide whatever terms of use the server administrators set. Even if the database is carefully backed up, it serves as a single point of infrastructural failure, where if the project lapses then at worst data will be irreversibly lost, and at best a lot of labor needs to be expended to exfiltrate, reformat, and rehost the data. The same is true of isolated, local, institutional-level servers and related database platforms, with the additional problem of skewed funding allocation making them unaffordable for many researchers. 
 
@@ -423,29 +429,36 @@ For the sake of concreteness, we can consider a (simplified) description of Bitt
 
 From this very simple example, a number of qualities of p2p systems become clear. 
 
-- First, the system is extremely inexpensive to maintain since it takes advantage of the existing bandwidth and storage space of the computers in the swarm, rather than dedicated servers. Near the height of its popularity in 2009, The Pirate Bay, a notorious bittorrent tracker, was estimated to cost $3,000 per month to maintain while serving approximately 20 million peers {% cite roettgersPirateBayDistributing2009 %}. According to a database dump from 2013 {% cite PirateBayArchiveteam2020 %}, multiplying the size of each torrent by the number of seeders (ignoring any partial downloads from leechers), the approximate instantaneous storage size of The Pirate Bay was ~26 Petabytes. Hosting 26PB would cost $546,000/month with standard AWS S3 hosting ($0.021/GB/month). 
-- The speed of a bittorrent swarm *increases,* rather than decreases, the most people are using it since it is capable of using all of the available bandwidth in the system.
-- The network is extremely *resilient* since the data is shared across many independent peers in the system. Despite more than 15 years of concerted effort by governments and intellectual property holders, the pirate bay is still alive and kicking {% cite kim15YearsPirate2019 %}[^knockin]. This is because even if the entire infrastructure of the tracker is destroyed, as it was in 2006, the files are distributed across all of its users, the actual database of `.torrent` metadata is quite small, and the tracker software is extraordinarily simple to rehost {% cite vandersarOpenBayNow2014 %} -- The Pirate Bay was back online in 2 days.
+- First, the system is extremely inexpensive to maintain since it takes advantage of the existing bandwidth and storage space of the computers in the swarm, rather than dedicated servers. Near the height of its popularity in 2009, The Pirate Bay, a notorious bittorrent tracker, was estimated to cost $3,000 per month to maintain while serving approximately 20 million peers {% cite roettgersPirateBayDistributing2009 %}. According to a database dump from 2013 {% cite PirateBayArchiveteam2020 %}, multiplying the size of each torrent by the number of seeders (ignoring any partial downloads from leechers), the approximate instantaneous storage size of The Pirate Bay was ~26 Petabytes. The comparison to centralized services is not straightforward, since it is hard to evaluate the distributed costs of additional storage media (as well as the costs avoided by being able to take advantage of existing storage infrastructure within labs and institutes), but for the sake of illustration: hosting 26PB would cost $546,000/month with standard AWS S3 hosting ($0.021/GB/month).
+- The speed of a bittorrent swarm *increases,* rather than decreases, the more people are using it since it is capable of using all of the available bandwidth in the system.
+- The network is extremely *resilient* since the data is shared across many independent peers in the system. If our goal is to make a resilient and robust data architecture, we would benefit by paying attention to the tools used in the broader archival community, especially the archival communities that especially need resilience because their archives are frequent targets of governments and IP-holders{% cite spiesDataIntegrityLibrarians2017 %}.  Despite more than 15 years of concerted effort by governments and intellectual property holders, the pirate bay is still alive and kicking {% cite kim15YearsPirate2019 %}[^knockin]. This is because even if the entire infrastructure of the tracker is destroyed, as it was in 2006, the files are distributed across all of its users, the actual database of `.torrent` metadata is quite small, and the tracker software is extraordinarily simple to rehost {% cite vandersarOpenBayNow2014 %} -- The Pirate Bay was back online in 2 days. Bittorrent is also used by archival groups with little funding like [Archive Team](https://wiki.archiveteam.org/index.php/Main_Page), who struggled -- but eventually succeeded -- to disseminate their [historic preservation](https://wiki.archiveteam.org/index.php/GeoCities_Project) over a single "crappy cable modem" {% cite scottGeocitiesTorrentUpdate2010 %}. And by groups who disseminate !! return here talking about ddosevrets.
 - The network is extremely *scalable* since there is no cost to connecting new peers and the users of a system expand the storage capacity of the system depending on their needs. Rather than having one extremely fast data center (or a privatized network designed to own the internet), the model of p2p systems is to leverage many approachable peer/servers.
 
 [^knockin]: knock on wood
 
+Peer-to-peer systems are not mutually exclusive with centralized servers: servers are peers too, after all. A properly implemented will always be *at least* as fast and have *at least* as much storage as any alternative centralized centralized server because peers can use *both* the bandwidth of the server *and* that of any peers that have the file. In the bittorrent ecosystem large-bandwidth/storage peers are known as "seedboxes"{% cite rossiPeekingBitTorrentSeedbox2014 %} when they use the bittorrent protocol, and "web seeds"{% cite hoffmanHTTPBasedSeedingSpecification %} when they use a protocol built on top of traditional HTTP. [Archive.org](https://archive.org) has been distributing all of its materials [with bittorrent](https://archive.org/details/bittorrent) by using its servers as web seeds since 2012 and makes this point explicitly: "BitTorrent is now the fastest way to download items from the Archive, because the Bittorrent client downloads simultaneously from two different Archive servers located in two different datacenters, and from other Archive users who have downloaded these Torrents already." {% cite kahle000000Torrents2012 %}
+
+p2p systems complement centralized servers in a number of ways beyond raw download speed, increasing the efficiency and performance of the network as a whole. Spotify began as a joint client/server and p2p system {% cite kreitzSpotifyLargeScale2010b %}, where when a listener presses play the central server provides the data until peers that have the song cached are found by the p2p system to download the rest of the song from. The central server is able to respond quickly and reliably to so the song is played as quickly as possible, and is the server of last resort in the case of rare files that aren't being shared by anyone else in the network. A p2p system complements the server and makes that possible by alleviating pressure on the server for more predictable traffic.
+
+A peer to peer system is a particularly natural fit for many of the common circumstances and practices in science, where centralized server architectures seem (and prove) awkward and inefficient. Most labs, institutes, or other organized bodies of science have some form of local or institutional storage systems. In the most frequent cases of sharing data within a lab or institute, sending it back and forth to some nationally-centralized server is like walking across the lab by going the long way around the Earth. That's the method invoked by a Dropbox or AWS link, but in the absence of a formal one you can always revert to a low-fi p2p transfer: walking a flash drive across the lab. The system makes less sense when several people in the same place need to access the same data at the same time, as is frequently the case with multi-lab collaborations, or scientific conferences and workshops. Instead of needing to wait on the 300kb/s conference wifi bandwidth as it's cheese-gratered across every machine, we instead could directly beam it between all computers in range simultaneously, full blast through the decrepit network switch that won't have seen that much excitement in years. 
+
+!! if we take the suggestion of Andrey Andreev et al. and invest in server clusters within institutes {% cite andreevBiologistsNeedModern2021 %}, their impact could be multiplied manyfold by being able to use them all fluidly and simultaneously for file transfer and storage. !! compatible and extends calls for more institutional support for storage liek andreev's paper, but satisfies the need for generalized storage systems that the NIH doesn't have to develop a whole new institute to handle. extra bonus! in that system each server would have to serve the entire file each time. WIth p2p then the load can be spread between all of them, decreasing costs for all institutions!!!! 
+
+So far I have relied on the Extraordinarily Simplified Bittorrent™️ depiction of a peer to peer system, but there are many improvements and variants that can address different needs for scientific data infrastructure. 
+
+One obvious need that bittorrent can't currently support is version control, but more recent p2p systems do. 
+[IPFS](https://ipfs.io/) functions like "a single BitTorrent swarm, exchanging objects within one Git repository." {% cite benetIPFSContentAddressed2014 %}[^whatsgit] Dat {% cite ogdenDatDistributedDataset2017 %}, specifically designed for data synchronization and versioning, handles versioning and more. A full description of IPFS is out of scope, and it has plenty of problems {% cite patsakisHydrasIPFSDecentralised2019 %}, but for now sufficent to say p2p systems can handle version control.
+
+[^whatsgit]:  Git, briefly, is a version control system that keeps a history of changes of files (blobs) as a Merkle DAG: files can be updated, and different versions can be branched and reconciled.
+
+Bittorrent swarms are vulnerable to data loss if all the peers seeding a file disconnect, but this too can be addressed with updated p2p system design. A first-order solution to this problem is a variant of IPFS' notion of 'pinning.' Since backup to lab-level or institutional servers is already commonplace, one peer could be able to 'pin' another and automatically download all the data that they share. This concept could scale to institutes and national infrastructure as scientists can request the datasets they'd like to be saved permanently be pinned. 
+
+Another could be something akin to Freenet {% cite clarkeFreenetDistributedAnonymous2001 %}. Peers could allocate a certain amount of their unused storage space to be used to automatically download, cache, and rehost shards of other datasets -- and encrypted at rest so the rehoster can't inspect their contents. IPFS has an analogous concept -- BitSwap -- that is makes it into a barter system. Peers who seek to download will have to 'earn' it by finding some chunk of data that the other peers want, though it seems like an empirical question whether or not a barter system works or is necessary.
 
 
+!!End with something like this: Scientists always unavoidably make their data available to at least one person: themselves; on at least one computer: theirs. A peer-to-peer backbone for scientific infrastructure is the unnecessarily radical notion that since your computer is not somehow practically or morally inferior to others, that might be all we need. Rather than placing the onus on researchers to deposit their data in a centralized system out of their control, we cen design system that support and reinforce the existing social and technical systems within science
 
-The above illustration of an oversimplified peer-to-peer network by itself has the capability of providing a more robust, resilient infrastructure for the massive datasets in neuroscience. Entry costs are low, any existing server infrastructure present in labs, institutes, etc. can use a peer to peer system. Peer-to-peer networks also theoretically allow the maximum bandwidth of an entire networking system to be used, rather than the maximum bandwidth of a single connection. 
-
-Peer to peer systems and server/client are not, in fact, mutually exclusive: peer to peer systems should *always* be *at least* as fast and have *at least* as much storage as the alternative server/client model that would have otherwise been implemented. It is possible for a server to play the role of an "obligate peer[^webseed]" in a network where it always automatically downloads everything that is uploaded, so in that case the benefit of the peer-to-peer system is strictly additive. Since there is nothing special about the obligate peer (let's just call it the the server, it still is) in the swarm, it is possible for arbitrarily many server farms to be combined to expand the redundancy and speed of the system. The obligate peer arrangement prevents the biggest problem of peer-to-peer networks where a file can become unavailable if everyone who has it stops uploading it. In doing so it can also serve as a load balancer in the network, where less-common datasets receive more of the server's bandwidth than common ones. 
-
-[^webseed]: or, in the parlance of bittorrent, a [web seed](https://en.wikipedia.org/wiki/BitTorrent#Web_seeding)
-
-There are many improvements and variations on peer to peer technology that would make it more suitable for scientists. A scientific peer-to-peer system needs to be capable of version control across iterations of a dataset, to be able to control permissions for datasets, to be able to serve partial datasets (eg. a NWB dataset is a single file, but it should be possible to download the behavior data without downloading the raw 2-photon data), etc. The network can be made more robust by incorporating automatic replication, where users of the network volunteer to share part of their storage space which is then automatically filled with (encrypted) shards of data from the rest of the network (see, for one example among many, Freenet {% cite clarkeFreenetDistributedAnonymous2001 %}). This scheme ensures that even if the last peer that is explicitly hosting a particular dataset drops out, the dataset will always persist distributed through the network, provided enough shared storage is present. 
-
-These scattered suggestions are meant to illustrate the flexibility and variability from the simplest peer-to-peer architecture, and fine-grained details of their implementation and an enumeration of the possible systems are far outside the scope of this paper. I will return to consider the design requirements of a scientific peer-to-peer network after discussing community overlays, the second half of the peer-to-peer story.
-
-!! {% cite langilleBioTorrentsFileSharing2010 %} DANDI is in on the p2p system, as is kachery-p2p
-
-We can learn from two knowledge communities with decades of domain-specific knowledge in resiliently storing and sharing massive quantities of extremely heterogeneous and metadata-rich information: internet pirates and information scientists. We should develop a peer-to-peer, semantically annotated data sharing platform. 
+!! theres a bunch more things but they start to become problems of trust and veer into the realm of social systems with stuff like permissions, access, metadata, search, and interfaces.... to get there we need to talk about community structure first i think 
 
 ### Archives Need Communities
 
@@ -551,9 +564,25 @@ The fundamental tradeoff between centralized and decentralized database systems 
 
 !! lots of times this has been proposed before {% cite simaEnablingSemanticQueries2019 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017 %}
 
+!! {% cite langilleBioTorrentsFileSharing2010 %} DANDI is in on the p2p system, as is kachery-p2p!! p2p systems already plenty in use, academic torrents, biotorrents, libgen on IPFS !! the proof of their utility is in the pudding, arguably when i've been talkiung about 'centralized servers' what i'm actually talking about content delivery networks, which are effectively p2p systems -- they just own all the peers.
+
 ## Shared Tools
 
 !! talk about Plugin Oriented Programming (pypi POP page) as a design philosophy
+
+!! has been spoken about in the context of reproducibility and openness {% cite spiesWorkflowCentricApproachIncreasing2017 %}, embedding openness in workflow, which reaches a number of similar conclusions as I do here:
+
+> Open Workflow:
+> 1. Meet users where they are
+> 2. Respect current incentives
+> 3. Respect current workflow
+>
+> We could... demonstrate that it makes research more efficient, of higher quality, and more accessible.
+> Better, we could... demonstrate that researchers will get published more often.
+> Even better, we could... make it easy
+> Best, we could... make it automatic
+> - Jeffrey Spies, A workflow-centric approach to increasing reproducibility and data integrity (2017) {% cite spiesWorkflowCentricApproachIncreasing2017 %}
+
 
 If we're building infrastructure to allow us to build on each other's labor by sharing data, why not do the same for the tools that analyze and collect the data while we're at it? The benefits of distributed infrastructure that allow us to preserve our collected labor and knowledge compound when applied in multiple domains. The benefits of shared data, analytical, and experimental infrastructure are far more than the sum of their parts. Each is useful on its own, but as additional components of the system are developed they make the incentive to develop the rest even stronger <- this para is dogshit. rewrite with a clear head. 
 
@@ -693,6 +722,8 @@ At this point we have largely closed the loop of science: starting with standard
 
 
 ## Shared Knowledge
+
+!! jimmy wales on wikipedia: 
 
 !! https://www.dbpedia.org/
 
@@ -838,6 +869,8 @@ The notion of the filedrawer problem dissappearing, we don't need to publish nul
 The fractal nature of provenance --- where if one can trace an intellectual lineage through its data, one solves credit assignment as centrality within a network. 
 
 High school biology classrooms are able to directly interface with the fundament of science, open questions are directly open to students, 
+
+!! ethical magnitude can't be lost, the information monopolists are 7 or the 10 largest companies in the world, and they got that way by buying industries like ours. https://2020.internethealthreport.org/slideshow-internet-health/#3
 
 # References
 

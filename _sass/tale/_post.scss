@@ -65,4 +65,13 @@
     padding: 0;
     margin: 0;
   }
+
+  // make superscripts not expand paras
+  sup {
+    line-height: 0;
+
+    a {
+      line-height: 0;
+    }
+  }
 }
