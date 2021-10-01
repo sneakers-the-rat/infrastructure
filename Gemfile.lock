@@ -78,6 +78,7 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.5)
     rouge (3.26.1)
+    ruby-prof (1.4.3)
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -98,6 +99,7 @@ DEPENDENCIES
   jekyll-scholar (~> 7.0)
   jekyll-seo-tag
   minima (~> 2.5)
+  ruby-prof
   tale
   tzinfo (~> 1.2)
   tzinfo-data

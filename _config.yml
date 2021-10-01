@@ -62,7 +62,7 @@ exclude:
   - .DS_Store
   - README.md
   - .jekyll-cache
-  - _site
+  - _site/
   - gemfiles/
   - Gemfile
   - Gemfile.lock
@@ -71,3 +71,5 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - .github/
+  - assets/.jekyll-cache
