@@ -58,6 +58,10 @@ scholar:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+
+# why does it take longer and longer to build every time
+disable_disk_cache: true
+
 exclude:
   - .DS_Store
   - README.md

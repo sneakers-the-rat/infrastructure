@@ -72,6 +72,8 @@ Acknowledgements (make sure to double check spelling!!!):
 
 {% include_relative _sections/2_1_p2p.md %}
 
+### Federated Systems
+
 {% include_relative _sections/2_2_federation.md %}
 
 ## Shared Tools
