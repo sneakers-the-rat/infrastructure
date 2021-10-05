@@ -61,11 +61,17 @@ Amit Sheth and James Larson, in their reference description of federated databas
 > Design autonomy refers to the ability of a component DBS to choose its own design with respect to any matter, including 
 > 
 > (a) The **data** being managed (i.e., the Universe of Discourse), 
+>
 > (b) The **representation** (data model, query language) and the **naming** of the data elements, 
+>
 > (c) The conceptualization or **semantic interpretation** of the data (which greatly contributes to the problem of semantic heterogeneity), 
+>
 > (d) **Constraints** (e.g., semantic integrity constraints and the serializability criteria) used to manage the data,
+>
 > (e) The **functionality** of the system (i.e., the operations supported by system),
+>
 > (f) The **association and sharing with other systems**, and
+>
 > (g) The **implementation** (e.g., record and file structures, concurrency control algorithms). 
 
 Susanne Busse and colleagues add an additional dimension of **evolvability**: "Following "natural" tendencies, autonomous components will inevitably develop heterogeneous structures. It is the task of the federation layer to cope with the different types of heterogeneity." {% cite busseFederatedInformationSystems1999 %}. In the case of federated database systems, the federation layer provides a uniform  way to mediate differences in schemas and formats between individual databases in the system. To share data between subdisciplines and fields we need to be able to perform some *mapping* between the different data formats and standards that they use: we need some way of translating the neuroscientist's `GENOTYPE` to the geneticists `GENETIC_SEQUENCE`. I will be purposefully vague about the means of implementing these mappings until we reach the [shared knowledge](#shared-knowledge) section, but first we need a brief practical example of how a system like this might work.
