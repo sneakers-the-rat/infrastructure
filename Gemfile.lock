@@ -72,13 +72,16 @@ GEM
     namae (1.1.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    profile (0.4.0)
     public_suffix (4.0.6)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.5)
     rouge (3.26.1)
-    ruby-prof (1.4.3)
+    ruby-prof (0.18.0)
+    ruby-prof-flamegraph (0.3.0)
+      ruby-prof (~> 0.13)
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -99,7 +102,8 @@ DEPENDENCIES
   jekyll-scholar (~> 7.0)
   jekyll-seo-tag
   minima (~> 2.5)
-  ruby-prof
+  profile
+  ruby-prof-flamegraph
   tale
   tzinfo (~> 1.2)
   tzinfo-data
