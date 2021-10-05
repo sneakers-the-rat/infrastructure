@@ -1,0 +1,1256 @@
+----------------------------------------------------------------------------------------------------------------,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Search Criteria:,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+     Quick Search Text: biomedical data translator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+----------------------------------------------------------------------------------------------------------------,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+NIH Spending Categorization,Project Terms,Project Title,Public Health Relevance,Administering IC,Application ID,Award Notice Date,FOA,Project Number,Type,Activity,IC,Serial Number,Support Year,Suffix,Program Official Information,Project Start Date,Project End Date,Study Section,Subproject Number,Contact PI Person ID,Contact PI / Project Leader,Other PI or Project Leader(s),Congressional District,Department,DUNS Number,FIPS,Latitude,Longitude,Organization ID (IPF),Organization Name,Organization City,Organization State,Organization Type,Organization Zip,Organization Country,ARRA Indicator,Budget Start Date,Budget End Date,CFDA Code,Funding Mechanism,Fiscal Year,Total Cost,Total Cost (Sub Projects),Funding IC(s),Direct Cost IC,InDirect Cost IC,NIH COVID-19 Response,Project Abstract,Total Cost IC
+No NIH Category available,Address;Algorithms;Bayesian Network;Biochemistry;Bioinformatics;Clinical Sciences;Computer software;Coupling;Data;Data Science;Databases;Derivation procedure;Development;Engineering;Graph;Human;Information Retrieval;Institutes;Intelligence;Joints;Knowledge;Lead;Link;Mathematics;Measures;Modeling;Molecular;Molecular Biology;Pathway interactions;Periodicity;Research Personnel;Software Engineering;Source;Structure;Systems Development;The Cancer Genome Atlas;Translational Research;Uncertainty;United States National Institutes of Health;Universities;Vision;advanced system;base;biomarker discovery;cheminformatics;college;computer science;data translator;drug development;information organization;knowledge base;markov model;novel;professor;prototype,Pathway Hypotheses Knowledge-base: A Knowledge Source for the Biomedical Data Translator,n/a,NCATS,10333496,2/6/21 0:00,RFA-OT-A1-009,3OT2TR003436-01S1,3,OT2,TR,3436,1,S,"BECK, TYLER",1/24/20 0:00,1/23/22 0:00,ZTR1-SRC(99), ,9983770,"SANTOS, EUGENE ",Not Applicable,2,Unavailable,41027822,US,43.709674,-72.286767,2021601,DARTMOUTH COLLEGE,HANOVER,NH,Domestic Higher Education,37551421,UNITED STATES,N,1/24/21 0:00,1/23/22 0:00,350,Other,2021,666063, ,NCATS,542841,123222, ,"We propose to develop a Pathway Hypotheses Knowledgebase (PHK), a new knowledge
+source that will analyze and hypothesize novel relationships and interactions driven by researcher
+data together with the wealth of knowledge as captured by the Biomedical Data Translator project.
+The capability to bring together different biomedical data knowledge sources, including
+experimental data, in order to discover yet unknown relationships has been difficult to realize. The
+fundamental gap lies in a lack of rigorous and robust framework for linking or creating
+sophisticated lattices of relationships needed for different lines of evidence from heterogeneous
+knowledge sources. Such a framework must address systematic and mathematically driven
+algorithms for hypotheses exploration, construction, and assessment in order to bridge gaps,
+derive, and ultimately discover new knowledge beyond existing sources by assessing existing
+molecular relationships and generating additional actionable pathway information that can be
+queried directly or via API. A critical feature of a successful framework must include formal, welldefined
+mechanisms for sensitivity analyses (measures of fragility and reliability of constructed
+hypothesis), impact analyses (measures of importance and knowledge novelty), and parsimony
+analyses (wholistic measures of congruence of hypotheses). Lastly, the functional mechanism
+behind newly derived knowledge must be invertible and provide an unambiguous, precise,
+auditable provenance from the original knowledge sources serving as the basis for explainability.
+To realize this vision, PHK will employ a mature AI knowledge representation called Bayesian
+Knowledge Bases (BKBs). BKBs model knowledge, relationships, and uncertainty within a
+rigorous graph-based probabilistic framework capable of managing inconsistent, incomplete, and
+cyclic knowledge. It fully subsumes a variety of well-known models including (dynamic) Bayesian
+networks and temporal representations such as hidden Markov models. BKBs can be learned
+from data but its most critical contribution is the ability to fuse multiple BKBs and their underlying
+distributions without any loss of information. This inherently provides end-to-end forward to
+backward auditability of computational derivations which admits ready sensitivity, contribution,
+and impact analysis. This further leads to a formal mechanism to explore, discover, and create
+new hypotheses that links multiple heterogenous knowledge sources. PHK will provide a rich AI
+ready encoding of data, information, and knowledge from any number of new and existing sources
+including curated databases (e.g., NIH Cancer Genome Atlas (TCGA)) and raw experimental
+data. PHK’s encoding enables additional knowledge augmentation through probabilistic and
+statistical inferencing capabilities. This augmentation is further enhanced through knowledge
+unification and fusion algorithms closely coupling disparate knowledge in a well-defined, rigorous
+manner. Altogether, PHK can systematically discover and develop novel hypotheses. BKBs have
+been applied and deployed across a number of projects for over two decades with a mature
+software base for ready integration into the Translator framework’s target prototypes.
+Our multi-institutional team (Dartmouth College, Tufts University Clinical and Translational
+Sciences Institute (CTSI)) is comprised of senior researchers and software engineers in the
+computer and data sciences, cheminformatics, bioinformatics, molecular biology, and
+biochemistry. Dr. Eugene Santos Jr. is Professor of Engineering at Dartmouth. He will serve as
+the PI and will also lead in the technical development of the core BKB component for PHK.
+Joseph Gormley is the Director for Advanced Systems Development for Tufts/CTSI. He will serve
+as Project Manager for all software deliverables under this proposal.
+The PHK capabilities proposed herein will also be based on strategies developed by our team
+for scalable intelligent information retrieval where the desire for greater transparency when
+reasoning over experimental data is a primary aim. PHK will provide a powerful new
+computational representation of pathway structures and molecular components in support of both
+human and machine-driven interpretation and pathway-based biomarker discovery and drug
+development. PHK will enable more efficient joint human-machine exploration with explanation.",666063
+No NIH Category available,Accounting;Address;Algorithms;Architecture;Area;Code;Collaborations;Communication;Computer software;Computers;Development;Disease;Institutes;Institution;Knowledge;Machine Learning;Maps;Measures;Oregon;Output;Pathogenesis;Pathway interactions;Pennsylvania;Pharmaceutical Preparations;Phase;Phenotype;Proteins;Rare Diseases;Recommendation;Registries;Resources;Roentgen Rays;Semantics;Site;Software Framework;Source;Symptoms;System;Systems Biology;Therapeutic;TimeLine;United States National Institutes of Health;Universities;Variant;Work;application programming interface;base;data translator;experience;genetic variant;improved;knowledge graph;middleware;prototype;tool,Biomedical Data Translator Development of Autonomous Relay Agent: ARAX,n/a,NCATS,10333468,2/9/21 0:00,RFA-OT-A1-009,3OT2TR003428-01S1,3,OT2,TR,3428,1,S,"BECK, TYLER",1/23/20 0:00,1/22/22 0:00,ZTR1-SRC(99), ,8434665,"RAMSEY, STEPHEN A.","DEUTSCH, ERIC ; KOSLICKI, DAVID ",4,Unavailable,53599908,US,44.569006,-123.277867,6297004,OREGON STATE UNIVERSITY,CORVALLIS,OR,Domestic Higher Education,973318555,UNITED STATES,N,1/23/21 0:00,1/22/22 0:00,350,Other,2021,897051, ,NCATS,833965,63086, ,"This project would continue collaborative work within the Translator consortium by a multi-site
+team (“Team X-ray”) at Oregon State University (PI Stephen Ramsey) and at two partner
+institutions, Pennsylvania State University (PI Koslicki) and the Institute for Systems Biology
+(PI Eric Deutsch; Co-I Jared Roach). Team X-ray was highly productive in Translator's feasibility
+assessment phase and the team brings critical expertise to Translator (see Resources).
+Component type: We propose to create, validate, and integrate an autonomous relay agent
+(ARA) called ARAX . ARAX will be a middleware component in the new Translator architecture
+that will extend significantly beyond the capabilities of the prototype reasoning tool (RTX) that
+we created in the feasibility assessment phase. Depending on the input request, ARAX's main
+output will be ranked subgraphs with clearly explained ranking basis. ARAX will leverage code
+and algorithms from RTX and will have an explicit application focus area, as described below.
+Main problems that ARAX is trying to address: Connections within a biomedical knowledge
+graph have highly variable degrees of (i) confidence (due to ambiguous predicates and/or due
+to highly variable degrees of reliability of knowledge types) and (ii) potential relevance to the
+user's query. Such edge-significance variability leads to both incorrect and difficult-to-interpret
+results which together pose a significant problem for creating broadly useful tools for
+computer-based biomedical reasoning. We propose to address this problem by explicitly
+accounting for these two types of edge variability in the reasoning algorithms–spanning a broad
+range of biomedical query types–that ARAX will provide to Translator. In addition to these broad
+capabilities, as described in the Project Plan, we will incorporate advanced algorithms in ARAX
+for responding to queries relating to disease therapy, including (1) drug repositioning for known
+disease, leveraging knowledge about the disease’s pathogenesis [1] ; and (2) therapeutic
+recommendations for rare diseases based on symptoms and the putative causal genetic variant.
+Plan for implementation of the project: In our Project Plan we describe a five-year timeline for
+creating, validating, and integrating ARAX within Translator, beginning with a three-month sprint
+leading to a prototype of ARAX by mid-March 2020. Key components of the plan include: (1)
+leveraging the BioThings Explorer software framework to enable ARAX to dynamically map
+between compounds, proteins, pathways, variants, phenotypes, and diseases based on
+knowledge source application programming interfaces in the Translator registry; (2) leveraging
+COHD and related Translator resources to obtain biomedical semantic distance information;
+(3) leveraging an application programming interface endpoint for the RTX biomedical knowledge
+graph, KG2; and (4) implementing probabilistic reasoning algorithms leveraging provenance
+information and dynamically determined edge relevance scores to improve reasoning. We will
+systematically use machine-learning to align ranking scores with measures of output quality.
+Collaboration strengths of our team include (i) developing technical standards for
+communications between Translator software agents (leveraging PI Deutsch’s extensive past
+experience); (ii) developing knowledge graph standards (leveraging PI Ramsey’s and PI
+Koslicki’s expertise); and (iii) deriving use-case vignettes that speak to the transformative
+potential of Translator (leveraging Co-I Roach’s and PI Ramsey’s expertise). In the development
+phase, our team would continue to collaborate with other teams and with NIH stakeholders in an
+adaptive, high-bandwidth, and team-boundary-agnostic fashion, as detailed in the Project Plan.
+Key challenges to building the proposed system are (1) the need to be able to ""chain"" together
+analytical steps between tools and (2) the need for cooperative development of standards that
+enable Translator components to interact; we address them in detail in the Project Plan.",897051
+No NIH Category available,Address;Aloral;Architecture;Bioinformatics;Biological;Catalogs;Cell physiology;Chromatin;ClinVar;Collection;Complex;Computational Biology;Computational algorithm;Data;Data Set;Data Sources;Databases;Disease;Disease susceptibility;Feasibility Studies;Foundations;Genes;Genetic;Genetic Diseases;Genomic Segment;Goals;Gold;Graph;Human;Human Genetics;Interview;Knowledge;Knowledge Portal;Link;Mediating;Methodology;Methods;Modeling;Molecular;Online Mendelian Inheritance In Man;Pathogenesis;Pathway interactions;Positioning Attribute;Protocols documentation;Provider;Rare Diseases;Resources;Risk;Running;Science;Services;Source;Specific qualifier value;Susceptibility Gene;System;Techniques;Testing;Tissues;Translating;Translations;United States National Institutes of Health;Untranslated RNA;Vision;base;causal variant;complex data;computational pipelines;computer science;data analysis pipeline;data harmonization;data integration;data translator;disease classification;disorder risk;epigenomics;functional genomics;genetic association;genetic variant;genomic data;human disease;improved;insight;open source;programs;tool;web portal,A Complex Disease Genetics Knowledge Provider for Biomedical Data Translator,n/a,NCATS,10333494,2/9/21 0:00,RFA-OT-A1-009,3OT2TR003433-01S1,3,OT2,TR,3433,1,S,"BECK, TYLER",1/23/20 0:00,1/22/22 0:00,ZTR1-SRC(99), ,11009964,"FLANNICK, JASON ",Not Applicable,7,Unavailable,623544785,US,42.363318,-71.087781,10021177,"BROAD INSTITUTE, INC.",CAMBRIDGE,MA,Research Institutes,21421027,UNITED STATES,N,1/23/21 0:00,1/22/22 0:00,350,Other,2021,493324, ,NCATS,323800,169524, ,"A major goal of the Biomedical Data Translator Program is to facilitate disease classification
+based on molecular and cellular abnormalities. While many experimental approaches exist to
+interrogate molecular or cellular processes, few can discern which among a host of potential
+abnormalities are relevant to disease in the human system. Genetic variants associated with
+disease are unique in providing molecular alterations causally related to human disease risk.
+There are two types of genetic associations. Rare disease associations can (usually) be
+clearly linked to a gene and are well represented by catalogs such as ClinVar, OMIM, and
+Monarch. Complex disease associations are harder to interpret because they (a) are statistical
+rather than qualitative and (b) usually lie in noncoding genomic regions that cannot be
+immediately translated to molecular or cellular abnormalities. Many complementary resources to
+help in the biological translation of complex disease associations have recently emerged,
+broadly classifiable as either “functional genomic” datasets (e.g. from epigenomic profiling or
+chromatin capture) or predictive bioinformatic methods (e.g. that integrate various genetic and
+functional genomic datasets to predict disease-susceptibility genes or pathways). These
+resources require expertise to curate and interpret, and there is as yet no knowledge source
+that integrates them to interpret complex disease associations. Furthermore, techniques for
+harmonizing heterogeneous functional genomic datasets with respect to one another are not yet
+established, most predictive bioinformatic methods specify complex data-processing pipelines
+that have not yet been scaled to run across many diseases, and there are few if any “gold
+standards” to evaluate the molecular or cellular abnormalities identified by these resources.
+The goal of our proposed project is to address these gaps within a complex
+disease genetics Knowledge Provider for Translator. We are experts in complex disease
+genetics and maintain the Knowledge Portal Network (KPN), a collection of open source web
+portals and Smart APIs that make integrated genetic and genomic datasets publicly accessible
+for >180 complex diseases. We have built the KPN by developing a protocol for working with
+disease experts to aggregate and curate high-confidence genetic datasets, building
+computational pipelines to harmonize these data and apply predictive bioinformatic methods
+upon them, and extracting relationships mined from these data into a Neo4J graph database.
+We propose to use the KPN as a foundation to implement a Translator Knowledge Provider of
+high-confidence complex disease associations and predicted disease-relevant molecular and
+cellular abnormalities. We will implement this Knowledge Provider by (a) expanding the data
+sources, data types, and bioinformatic methods integrated within the KPN; (b) developing new
+computational algorithms to improve the ability of genetic data to identify molecular and cellular
+abnormalities underlying complex disease; (c) maintaining REST services provisioning
+Translator with these resources; and (d) developing methodologies for evaluating the accuracy
+and internal consistency of these data, further curating them, and defining use cases of them
+within Translator. In so doing, we will enable Translator users to address questions such as:
+• What genes are causally linked to complex disease [X], and with what confidence?
+• What is the increase in risk for complex disease [X] when gene [Y] is perturbed?
+• What pathways are enriched for associations with complex disease [X]?
+• What tissues mediate the pathogenesis of complex disease [X]?
+• What other diseases are genetically correlated with complex disease [X]?
+We participated in the Translator feasibility study and contributed important insights to the
+project vision including (a) a unifying architectural model of Translator (based on interviews with
+each Translator team) closely followed by OTA-19-009; (b) the concept of Translator as a tool to
+augment (rather than replace) human reasoning; and (c) the idea of a “Turing test” to evaluate
+Translator capabilities. Our expertise in human genetics and hypothesis-driven science, but also
+computer science and computational biology, ideally positions us to collaborate with NIH staff
+and other awardees to help guide Translator data integration in a scientifically rigorous manner.",493324
+No NIH Category available,Address;Agreement;Algorithms;Aloral;Architecture;Biological;Collaborations;Communication;Communities;Computer software;Consensus;Data;Development;Documentation;Ensure;Fruit;Infrastructure;Investments;Knowledge;Libraries;Modeling;Nature;Ontology;Pharmaceutical Preparations;Process;Protocols documentation;Provider;Registries;Resources;Services;Source;Standardization;System;Testing;Update;Validation;Voting;Work;biomedical ontology;collaborative environment;data infrastructure;data lake;data modeling;data standards;design;disease phenotype;innovation;knowledge graph;next generation;novel strategies,A Common Dialect for Infrastructure and Services in Translator,n/a,NCATS,10330632,2/9/21 0:00,RFA-OT-A1-009,3OT2TR003449-01S1,3,OT2,TR,3449,1,S,"BECK, TYLER",1/23/20 0:00,1/22/22 0:00,ZTR1-SRC(99), ,1869835,"HAENDEL, MELISSA A","BIZON, CHRISTOPHER ; MUNGALL, CHRISTOPHER J",4,Unavailable,53599908,US,44.569006,-123.277867,6297004,OREGON STATE UNIVERSITY,CORVALLIS,OR,Domestic Higher Education,973318555,UNITED STATES,N,1/23/21 0:00,1/22/22 0:00,350,Other,2021,1238040, ,NCATS,1097766,140274, ,"1) We will build a robust, dynamic Translator Standards and Reference Implementations
+Component (SRI) that integrates the collaborations and investments that the NCATS Translator
+has made to date. This component will consist of a suite of standards and products, a model for
+their governance, and processes to coordinate integration and shared implementation:
+● Community governance coordination will be developed with community buy-in to ensure
+an effective collaborative environment, and drive consortium-wide consensus on the other
+components.
+● Architecture and API specifications will drive community efforts to define details of project
+architecture and communication protocols across Translator Knowledge Providers (KPs),
+Autonomous Relay Agents (ARAs), and the Autonomous Relay System (ARS).
+● The BioLink model will define the standard entity types, relationship types, and a schema
+shared by all Translator components. This includes related utility libraries and a novel
+approach to accommodate multiple alternate data modeling perspectives.
+● Integrated reference ontologies will provide BioLink-compliant terms and relationships. We
+will draw on the ROBOKOP Ubergraph framework [1] , the Monarch integrated ontologies,
+and other ontologies from Open Biological and Biomedical Ontologies (OBO) [2] .
+● A continually-updated knowledge graph and data lake will provide Translator with a
+standardized and integrated global view of the whole information landscape.
+● Next-generation Shared Translator Services will integrate features of ROBOKOP [3] ,
+Monarch [4] , BioLink [5] , and the reasoner APIs to remove integration barriers. These
+services will provide validation, lookup, and mapping functionality for use across Translator.
+● A registry of Translator KPs, ARAs, and shared services will increase efficiency,
+eliminate duplication of effort, and promote collaboration.
+2) Our proposed SRI will address the problem of connecting together different components and
+data/information sources at scale, with community buy-in, and with a plan for sustainability.
+3) For the development of the standards component of the SRI, our plan will begin with
+accepted Translator standards, and we will work with the ARS, ARAs, and KPs to identify gaps.
+We will have a community process for contributing to the standards, making use of GitHub pull
+requests and voting, to help everyone contribute effectively and fairly with clear attribution. We
+will ensure rigorous documentation and testing. For the reference implementation component,
+we will stand up core Translator services, and will include additional services if they are useful to
+more than one Translator component rather than used by only one.
+4) Consensus-building is hard. Our team has proven expertise and resources to identify needs,
+refine solutions, and find agreement , thereby successfully bringing infrastructure to fruition. Our
+team also has the technical and biological expertise to design and test the necessary standards,
+having been at the forefront of multiple ontology, data standards, and large enterprise software
+initiatives.
+5) The Translator infrastructure is by nature heterogeneous, distributed, and growing;
+consequently, the most significant data and infrastructure challenge is managing the validity,
+currency, equivalency, and typing of entities (diseases, phenotypes, drugs, etc.). Our group has
+developed several innovative algorithms for managing this and related problems; these
+algorithms are in use for other integration projects and will be modified to suit Translator needs.",1238040
+No NIH Category available,Algorithms;Architecture;Area;Benchmarking;Clinical;Clinical Data;Clinical Informatics;Clinical Research;Collaborations;Common Data Element;Communities;Community of Practice;Computer software;Cultural Evolution;Data;Data Analyses;Data Set;Development;Discipline;Ecosystem;Evaluation;Evolution;FAIR principles;Fast Healthcare Interoperability Resources;Foundations;Goals;Gold;Health;Health Science Library;Health Sciences;Healthcare;Human;Individual;Informatics;Information Resources;Information Sciences;Information Technology;Infrastructure;Institution;Knowledge;Leadership;Learning;Licensing;Longevity;Metadata;Methodology;Methods;Modeling;Morphologic artifacts;Oregon;Outcome;Patients;Process;Public Health Informatics;Quality Control;Rare Diseases;Reporting;Research;Research Institute;Resources;Scanning;Science;Services;Software Engineering;Software Tools;Synapses;System;Technology;The Jackson Laboratory;Training;Translational Research;United States National Institutes of Health;Universities;Update;Vendor;Vision;Washington;Work;base;biomedical informatics;cloud based;collaborative approach;collaborative environment;data ecosystem;data harmonization;data modeling;data quality;data sharing;data standards;data translator;design;digital health;experience;health care quality;health record;improved;informatics infrastructure;informatics tool;innovation;interoperability;invention;open data;open source;quality assurance;software development;success;tool,A National Center for Digital Health Informatics Innovation,"NARRATIVE
+We propose to create a national network for enabling digital health research, innovation, and continuous
+improvement. The goal is to use information science to impact the way that health care functions and the lives
+of those it serves
+!",NCATS,10437464,8/3/21 0:00,PA-18-590,7U24TR002306-05,7,U24,TR,2306,5, ,"MISQUITTA, LEONIE",8/15/21 0:00,6/30/22 0:00,ZTR1-CI-9(01), ,1869835,"HAENDEL, MELISSA A","CHUTE, CHRISTOPHER G; EDDY, JAMES A; EICHMANN, DAVID A.; WILCOX, ADAM BENJAMIN",6,BIOSTATISTICS & OTHER MATH SCI,41096314,US,39.708143,-104.724958,1199905,UNIVERSITY OF COLORADO DENVER,Aurora,CO,SCHOOLS OF PUBLIC HEALTH,800452571,UNITED STATES,N,8/15/21 0:00,6/30/22 0:00,350,Other Research-Related,2021,5295831, ,NCATS,4699183,596648, ,"PROJECT SUMMARY
+Over the past decade, the CTSAs have made incredible progress in developing informatics tools and services
+to support institutional or hub-centric translational research. However, robust collaboration between the hubs is
+required to realize the full potential of the CTSA network, a living ecosystem of collaboration and sharing. We
+have brought together pioneers of open science, clinical and biomedical informatics, health science libraries,
+and the NCATS Translator initiative to propose the creation of a National Center for Digital Health Innovation to
+coalesce the CTSA informatics community together with the open science community to catalyze the next
+steps in the evolution of biomedical informatics. We will create an open governance model that includes all
+who would like to participate and collaboratively forge the next steps. We will embrace an ‘idea to
+implementation’ model (I2I), supporting the creation of collaboratively developed sustainable infrastructure. We
+will do this via the axes of open data, open software, open resources, and through two integrated thematic
+areas of urgent need: rare disease and human health across the lifespan. Underpinning these efforts are
+innovative models for evaluation, training, and the creation of community challenges as mechanisms to
+stimulate new and impactful tools and methods. We will leverage the power of an open and team science
+approach to demonstrate new research opportunities. Our leadership include Oregon Health Sciences
+University, Johns Hopkins University, the University of Washington, Washington University in St. Louis,
+Northwestern University, Sage BioNetworks, the Jackson Laboratory and the Scripps Research Institute. We
+have collaborators from all areas of translational informatics including health record vendors, clinical research
+networks and leaders in open software and open data. Together our efforts will catalyze the next stage in the
+evolution of the national informatics infrastructure for clinical and translational research.",5295831
+No NIH Category available,Algorithms;Architecture;Area;Benchmarking;Clinical;Clinical Data;Clinical Informatics;Clinical Research;Collaborations;Common Data Element;Communities;Community of Practice;Computer software;Cultural Evolution;Data;Data Analyses;Data Set;Development;Discipline;Ecosystem;Evaluation;Evolution;FAIR principles;Fast Healthcare Interoperability Resources;Foundations;Goals;Gold;Health;Health Science Library;Health Sciences;Healthcare;Human;Individual;Informatics;Information Resources;Information Sciences;Information Technology;Infrastructure;Institution;Knowledge;Leadership;Learning;Licensing;Longevity;Metadata;Methodology;Methods;Modeling;Morphologic artifacts;Oregon;Outcome;Patients;Process;Public Health Informatics;Quality Control;Rare Diseases;Reporting;Research;Research Institute;Resources;Scanning;Science;Services;Software Engineering;Software Tools;Synapses;System;Technology;The Jackson Laboratory;Training;Translational Research;United States National Institutes of Health;Universities;Update;Vendor;Vision;Washington;Work;base;biomedical informatics;cloud based;cohort;collaborative approach;collaborative environment;coronavirus disease;data ecosystem;data harmonization;data modeling;data quality;data sharing;data standards;data translator;design;digital health;experience;health care quality;health record;improved;informatics infrastructure;informatics tool;innovation;interoperability;invention;open data;open source;quality assurance;software development;success;tool,CD2H - National COVID Cohort Collaborative (N3C),"NARRATIVE
+We propose to create a national network for enabling digital health research, innovation, and continuous
+improvement. The goal is to use information science to impact the way that health care functions and the lives
+of those it serves
+!",NCATS,10320152,3/8/21 0:00,PA-20-272,3U24TR002306-04S3,3,U24,TR,2306,4,S,"MISQUITTA, LEONIE",3/15/21 0:00,6/30/21 0:00, , ,1869835,"HAENDEL, MELISSA A","CHUTE, CHRISTOPHER G; EICHMANN, DAVID A.; GUINNEY, JUSTIN ; WILCOX, ADAM BENJAMIN",3,NONE,96997515,US,45.499316,-122.688464,6297007,OREGON HEALTH & SCIENCE UNIVERSITY,PORTLAND,OR,LIBRARIES,972393098,UNITED STATES,N,3/15/21 0:00,6/30/21 0:00,350,Other Research-Related,2021,2148955, ,NCATS,2076955,72000,Reg-CV,"PROJECT SUMMARY
+Over the past decade, the CTSAs have made incredible progress in developing informatics tools and services
+to support institutional or hub-centric translational research. However, robust collaboration between the hubs is
+required to realize the full potential of the CTSA network, a living ecosystem of collaboration and sharing. We
+have brought together pioneers of open science, clinical and biomedical informatics, health science libraries,
+and the NCATS Translator initiative to propose the creation of a National Center for Digital Health Innovation to
+coalesce the CTSA informatics community together with the open science community to catalyze the next
+steps in the evolution of biomedical informatics. We will create an open governance model that includes all
+who would like to participate and collaboratively forge the next steps. We will embrace an ‘idea to
+implementation’ model (I2I), supporting the creation of collaboratively developed sustainable infrastructure. We
+will do this via the axes of open data, open software, open resources, and through two integrated thematic
+areas of urgent need: rare disease and human health across the lifespan. Underpinning these efforts are
+innovative models for evaluation, training, and the creation of community challenges as mechanisms to
+stimulate new and impactful tools and methods. We will leverage the power of an open and team science
+approach to demonstrate new research opportunities. Our leadership include Oregon Health Sciences
+University, Johns Hopkins University, the University of Washington, Washington University in St. Louis,
+Northwestern University, Sage BioNetworks, the Jackson Laboratory and the Scripps Research Institute. We
+have collaborators from all areas of translational informatics including health record vendors, clinical research
+networks and leaders in open software and open data. Together our efforts will catalyze the next stage in the
+evolution of the national informatics infrastructure for clinical and translational research.",2148955
+No NIH Category available,Address;Adopted;Agonist;Benchmarking;Cloud Computing;Collaborations;Collection;Colorado;Communities;Computer software;Data Commons;Environment;Evaluation;Feedback;Funding;Gene Mutation;Gold;Information Retrieval;Knowledge;Legal patent;Licensing;Link;Literature;Machine Learning;Metadata;Mining;Modeling;Movement;Ontology;Output;Participant;Performance;Pharmaceutical Preparations;Process;Proteins;Provider;PubMed;Publications;Recording of previous events;Research;Resources;Scientist;Semantics;Source;Specific qualifier value;Structure;System;Technology;Terminology;Text;Time;United States National Institutes of Health;Update;Work;base;biomedical ontology;cloud based;community engagement;improved;information organization;journal article;knowledge graph;knowledge of results;open data;open source;text searching;tool,High Performance Text Mining for Translator,n/a,NCATS,10334356,2/9/21 0:00,RFA-OT-A1-009,3OT2TR003422-01S1,3,OT2,TR,3422,1,S,"BECK, TYLER",1/23/20 0:00,1/22/22 0:00,ZTR1-SRC(99), ,2415974,"HUNTER, LAWRENCE E",Not Applicable,6,Unavailable,41096314,US,39.708143,-104.724958,1199905,UNIVERSITY OF COLORADO DENVER,Aurora,CO,Domestic Higher Education,800452571,UNITED STATES,N,1/23/21 0:00,1/22/22 0:00,350,Other,2021,471239, ,NCATS,303047,168192, ,"We propose to build a knowledge provider that will seek out, integrate and provide AI-ready,
+BioLink-compatible models via high-performance text-mining of the biomedical literature.
+Problems with Translator’s current mining of the biomedical literature that we intend to
+solve include: (1) weaknesses in framework extensibility and benchmarking that make
+integrating and validating new text-mining approaches difficult; (2) problematic licensing of
+software, terminologies and other resources that do not adequately support FAIR (and TLC)
+best practices; (3) processing only PubMed titles and abstracts, not full text publications; (4)
+Translator’s use of older NLP technology with relatively poor performance; (5) lack of a
+mechanism for community feedback regarding errors and other problems; (6) lack of continuous
+updates to add knowledge from new publications; (7) output knowledge representation that is
+simplistic and vague, failing to reflect the richness of what is expressed in scientific documents.
+Plan for implementation: Our team has a long history of productive NLP research,
+successful open source software projects, effective benchmarking and broad community
+engagement. We will build on the results of NLM-funded work in information extraction, our
+gold-standard Colorado Richly Annotated Full Text (CRAFT) corpus, a recent BioNLP Open
+Shared Task (BioNLP-OST) that we organized, and recent advances in state-of-the-art NLP.
+For Segment 1, we will: (1) Demonstrate BioStacks, an extensible, cloud-based text-mining
+framework that produces knowledge graphs grounded in the Open Biomedical Ontologies
+(OBOs). This BioStacks demo will include a state-of-the-art OBO concept recognizer for multiple
+ontologies, a state-of-the-art semantic relationship prediction tool, and a state-of-the-art
+structural analysis tool. All generated assertions will have provenance metadata linking the
+assertion to a particular text span in a document specified by PMCID. (2) Demonstrate CRAFTST,
+a cloud-based text-mining evaluation system that evaluates the performance of text-mining
+systems against the CRAFT gold standard. (3) Demonstrate an adaptive machine learning
+process illustrating how to efficiently create tools to extract BioLink association types.
+For Segment 2, we propose to extend the text-mining and evaluation frameworks to align
+with BioLink and the Translator community, improve text-mining quality and expand the
+collection of source documents mined. Specifically, we propose to target 10 long term
+milestones: (1) Align CRAFT to BioLink. (2) Develop new tools for extracting associations from
+text. (3) Develop and manage a community engagement process on text-mining for Translator.
+(4) Extend benchmarking. (5) Improve recall. (6) Improve precision. (7) Improve computational
+efficiency. (8) Expand BioStacks to include all available full text biomedical journal articles. (9)
+Expand document collections to include Patents & Regulatory filings. (10) Develop a scientist-based
+movement to improve document access for text-mining from non-open publishers.
+The types of questions the resulting knowledge graph can be used to address are
+extremely broad, as it is generated by mining a large part of the biomedical literature.
+Questions that can be answered include those about specific assertions (e.g. is this drug an
+agonist-activator of this protein?), general relations (are these two proteins often mentioned
+together?), and documents (which publications mention this gene, mutation and drug?).
+Integration: We are long-time contributors to the open-science community and have
+longstanding collaborations with existing awardees; we were participants in the NIH Data
+Commons Pilot. We propose to align the output of text-mining tools to the BioLink model via
+OBO terms. We propose to implement our frameworks in NIH Cloud Computing environments.
+We propose to adopt the CD2H Contributor Attribution Model to foreground community
+contributions. We plan to coordinate with the NLM’s nascent benchmarking activities and the
+SmartAPI effort to build Translator standard interfaces.
+Challenges and gaps: High-performance mining of rich, contextualized knowledge from the
+literature remains a difficult task, and is unlikely to be solved in the next five years. Many
+important publications remain inaccessible to text-mining due to restrictive licensing.",471239
+No NIH Category available,Data;Development,Biomedical Data Translator Development of Autonomous Relay Agent: ARAX,n/a,NCATS,10056621,1/23/20 0:00,RFA-OT-A1-009,1OT2TR003428-01,1,OT2,TR,3428,1, ,"BECK, TYLER",1/23/20 0:00,1/22/22 0:00,ZTR1-SRC(99), ,8434665,"RAMSEY, STEPHEN A.","DEUTSCH, ERIC ; KOSLICKI, DAVID ",4,Unavailable,53599908,US,44.569006,-123.277867,6297004,OREGON STATE UNIVERSITY,CORVALLIS,OR,Domestic Higher Education,973318555,UNITED STATES,N,1/23/20 0:00,1/22/21 0:00,350,Other,2020,847828, ,NCATS,728164,119664, ,No abstract provided,847828
+No NIH Category available,Data;Knowledge;Pathway interactions;Source;knowledge base,Pathway Hypotheses Knowledge-base: A Knowledge Source for the Biomedical Data Translator,n/a,NCATS,10056917,1/24/20 0:00,RFA-OT-A1-009,1OT2TR003436-01,1,OT2,TR,3436,1, ,"BECK, TYLER",1/24/20 0:00,1/23/22 0:00,ZTR1-SRC(99), ,9983770,"SANTOS, EUGENE ",Not Applicable,2,Unavailable,41027822,US,43.709674,-72.286767,2021601,DARTMOUTH COLLEGE,HANOVER,NH,Domestic Higher Education,37551421,UNITED STATES,N,1/24/20 0:00,1/23/21 0:00,350,Other,2020,682929, ,NCATS,540770,142159, ,No abstract provided,682929
+No NIH Category available,Address;Biological;Biomedical Research;Cell physiology;Clinic;Clinical;Clinical Data;Communities;Complex;Computer Assisted;Data;Data Sources;Disease;Environmental Exposure;Etiology;Event;Functional disorder;Generations;Goals;Human;Knowledge;Left;Manuals;Medical;Molecular;Pharmaceutical Preparations;Publishing;Research;Research Personnel;Resources;Scientist;Services;Signs and Symptoms;Source;System;Translational Research;base;cohesion;computerized tools;computing resources;data mining;data reuse;data standards;design;disease classification;falls;heterogenous data;human disease;insight;multimodality;open source;programs;response;therapeutic development;tool,NCATS Biomedical Data Translator,n/a,NCATS,10269699, , ,1ZIATR000276-04,1,ZIA,TR,276,4, , , , , , ,14380147,"SOUTHALL, NOEL ",Not Applicable,n/a,Unavailable, , , , , ,NATIONAL CENTER FOR ADVANCING TRANSLATIONAL SCIENCES, , ,Other Domestic Non-Profits, ,UNITED STATES,N, , , ,Intramural Research,2020,600009, ,NCATS, , , ,"In the pursuit of biomedical research, scientists often make observations that are difficult to explain. To attempt to explain such an observation, currently it falls to the researcher to manually identify potential connections or ideas by mining data and knowledge across different resources, a task that demands expertise with many different sources of data and relies upon significant recall of insights from previously published research. And what they find or dont find in those endeavors influences their next experimental steps and might in fact influence their working hypothesis.
+
+Ideally, one would mine these heterogeneous data systematically to gain insights into the relationship between molecular and cellular processes and the signs and symptoms manifested in diseases. However, there is currently no broadly-used system that gathers information from different sources and uses the aggregated knowledge as building blocks to aid in the construction of a cohesive hypothesis. Overall goal of the Biomedical Data Translator Program:
+
+The purpose of the program is to accelerate translational research by developing a system to augment human reasoning in response to biomedical research questions. Translator will serve as a resource for computer-assisted exploration and construction of new research hypotheses by connecting and distilling existing empirical knowledge spanning all types of biomedical data, including environmental, molecular and clinical data. NCATS anticipates that this will be a multi-modal computational tool that leverages multiple types of existing data sources, including objective signs and symptoms of disease, drug effects and intervening types of biological data relevant to understanding pathophysiology.
+
+The Biomedical Data Translator, Translator, will be designed to make networks by connecting a variety of data types using both derived knowledge and well-curated data sources and present a user with the most relevant data to help augment their own analysis of translational research problems. In doing so, we will facilitate classification of diseases based on a set of molecular and cellular abnormalities. This would enable recognition of and therapeutic development for conditions with a shared molecular etiology that might manifest differently in the clinic. The Translator must be dynamic and transparent, i.e., able to incorporate new data and information as it becomes available, and able to accommodate a variety of analytical approaches to assist the generation of hypotheses. Translator will be open source and completely publicly available for any user.
+
+When fully operational, Translator will be capable of revealing potential relationships across a multitude of disparate data types, from clinical signs and symptoms to cellular and molecular events to environmental exposures. The scope of Translator has been left intentionally vast to leverage biomedical data of all types to help assemble information to address complex questions.",600009
+Bioengineering; Networking and Information Technology R&D (NITRD),Address;Agreement;Algorithms;Aloral;Architecture;Biological;Collaborations;Communication;Communities;Computer software;Consensus;Data;Development;Documentation;Ensure;Fruit;Infrastructure;Investments;Knowledge;Libraries;Modeling;Nature;Ontology;Pharmaceutical Preparations;Process;Protocols documentation;Provider;Registries;Resources;Services;Source;Standardization;System;Testing;Update;Validation;Voting;Work;biomedical ontology;collaborative environment;data infrastructure;data lake;data modeling;data standards;design;disease phenotype;innovation;knowledge graph;next generation;novel strategies,A Common Dialect for Infrastructure and Services in Translator,n/a,NCATS,10057176,1/23/20 0:00,RFA-OT-A1-009,1OT2TR003449-01,1,OT2,TR,3449,1, ,"BECK, TYLER",1/23/20 0:00,1/22/22 0:00,ZTR1-SRC(99), ,1869835,"HAENDEL, MELISSA A","BIZON, CHRISTOPHER ; MUNGALL, CHRISTOPHER J",4,Unavailable,53599908,US,44.569006,-123.277867,6297004,OREGON STATE UNIVERSITY,CORVALLIS,OR,Domestic Higher Education,973318555,UNITED STATES,N,1/23/20 0:00,1/22/21 0:00,350,Other,2020,958322, ,NCATS,817043,141279, ,"1) We will build a robust, dynamic Translator Standards and Reference Implementations
+Component (SRI) that integrates the collaborations and investments that the NCATS Translator
+has made to date. This component will consist of a suite of standards and products, a model for
+their governance, and processes to coordinate integration and shared implementation:
+● Community governance coordination will be developed with community buy-in to ensure
+an effective collaborative environment, and drive consortium-wide consensus on the other
+components.
+● Architecture and API specifications will drive community efforts to define details of project
+architecture and communication protocols across Translator Knowledge Providers (KPs),
+Autonomous Relay Agents (ARAs), and the Autonomous Relay System (ARS).
+● The BioLink model will define the standard entity types, relationship types, and a schema
+shared by all Translator components. This includes related utility libraries and a novel
+approach to accommodate multiple alternate data modeling perspectives.
+● Integrated reference ontologies will provide BioLink-compliant terms and relationships. We
+will draw on the ROBOKOP Ubergraph framework [1] , the Monarch integrated ontologies,
+and other ontologies from Open Biological and Biomedical Ontologies (OBO) [2] .
+● A continually-updated knowledge graph and data lake will provide Translator with a
+standardized and integrated global view of the whole information landscape.
+● Next-generation Shared Translator Services will integrate features of ROBOKOP [3] ,
+Monarch [4] , BioLink [5] , and the reasoner APIs to remove integration barriers. These
+services will provide validation, lookup, and mapping functionality for use across Translator.
+● A registry of Translator KPs, ARAs, and shared services will increase efficiency,
+eliminate duplication of effort, and promote collaboration.
+2) Our proposed SRI will address the problem of connecting together different components and
+data/information sources at scale, with community buy-in, and with a plan for sustainability.
+3) For the development of the standards component of the SRI, our plan will begin with
+accepted Translator standards, and we will work with the ARS, ARAs, and KPs to identify gaps.
+We will have a community process for contributing to the standards, making use of GitHub pull
+requests and voting, to help everyone contribute effectively and fairly with clear attribution. We
+will ensure rigorous documentation and testing. For the reference implementation component,
+we will stand up core Translator services, and will include additional services if they are useful to
+more than one Translator component rather than used by only one.
+4) Consensus-building is hard. Our team has proven expertise and resources to identify needs,
+refine solutions, and find agreement , thereby successfully bringing infrastructure to fruition. Our
+team also has the technical and biological expertise to design and test the necessary standards,
+having been at the forefront of multiple ontology, data standards, and large enterprise software
+initiatives.
+5) The Translator infrastructure is by nature heterogeneous, distributed, and growing;
+consequently, the most significant data and infrastructure challenge is managing the validity,
+currency, equivalency, and typing of entities (diseases, phenotypes, drugs, etc.). Our group has
+developed several innovative algorithms for managing this and related problems; these
+algorithms are in use for other integration projects and will be modified to suit Translator needs.",958322
+Genetics; Human Genome; Networking and Information Technology R&D (NITRD),Address;Aloral;Architecture;Bioinformatics;Biological;Catalogs;Cell physiology;Chromatin;ClinVar;Collection;Complex;Computational Biology;Computational algorithm;Data;Data Set;Data Sources;Databases;Disease;Disease susceptibility;Feasibility Studies;Foundations;Genes;Genetic;Genetic Diseases;Genomic Segment;Goals;Gold;Graph;Human;Human Genetics;Interview;Knowledge;Knowledge Portal;Link;Mediating;Methodology;Methods;Modeling;Molecular;Online Mendelian Inheritance In Man;Pathogenesis;Pathway interactions;Positioning Attribute;Protocols documentation;Provider;Rare Diseases;Resources;Risk;Running;Science;Services;Source;Specific qualifier value;Susceptibility Gene;System;Techniques;Testing;Tissues;Translating;Translations;United States National Institutes of Health;Untranslated RNA;Vision;base;causal variant;complex data ;computational pipelines;computer science;data analysis pipeline;data harmonization;data integration;disease classification;disorder risk;epigenomics;functional genomics;genetic association;genetic variant;genomic data;human disease;improved;insight;open source;programs;tool;web portal,A Complex Disease Genetics Knowledge Provider for Biomedical Data Translator,n/a,NCATS,10056863,1/23/20 0:00,RFA-OT-A1-009,1OT2TR003433-01,1,OT2,TR,3433,1, ,"BECK, TYLER",1/23/20 0:00,1/22/22 0:00,ZTR1-SRC(99), ,11009964,"FLANNICK, JASON ",Not Applicable,7,Unavailable,623544785,US,42.363318,-71.087781,10021177,"BROAD INSTITUTE, INC.",CAMBRIDGE,MA,Research Institutes,21421027,UNITED STATES,N,1/23/20 0:00,1/22/21 0:00,350,Other,2020,530030, ,NCATS,338736,191294, ,"A major goal of the Biomedical Data Translator Program is to facilitate disease classification
+based on molecular and cellular abnormalities. While many experimental approaches exist to
+interrogate molecular or cellular processes, few can discern which among a host of potential
+abnormalities are relevant to disease in the human system. Genetic variants associated with
+disease are unique in providing molecular alterations causally related to human disease risk.
+There are two types of genetic associations. Rare disease associations can (usually) be
+clearly linked to a gene and are well represented by catalogs such as ClinVar, OMIM, and
+Monarch. Complex disease associations are harder to interpret because they (a) are statistical
+rather than qualitative and (b) usually lie in noncoding genomic regions that cannot be
+immediately translated to molecular or cellular abnormalities. Many complementary resources to
+help in the biological translation of complex disease associations have recently emerged,
+broadly classifiable as either “functional genomic” datasets (e.g. from epigenomic profiling or
+chromatin capture) or predictive bioinformatic methods (e.g. that integrate various genetic and
+functional genomic datasets to predict disease-susceptibility genes or pathways). These
+resources require expertise to curate and interpret, and there is as yet no knowledge source
+that integrates them to interpret complex disease associations. Furthermore, techniques for
+harmonizing heterogeneous functional genomic datasets with respect to one another are not yet
+established, most predictive bioinformatic methods specify complex data-processing pipelines
+that have not yet been scaled to run across many diseases, and there are few if any “gold
+standards” to evaluate the molecular or cellular abnormalities identified by these resources.
+The goal of our proposed project is to address these gaps within a complex
+disease genetics Knowledge Provider for Translator. We are experts in complex disease
+genetics and maintain the Knowledge Portal Network (KPN), a collection of open source web
+portals and Smart APIs that make integrated genetic and genomic datasets publicly accessible
+for >180 complex diseases. We have built the KPN by developing a protocol for working with
+disease experts to aggregate and curate high-confidence genetic datasets, building
+computational pipelines to harmonize these data and apply predictive bioinformatic methods
+upon them, and extracting relationships mined from these data into a Neo4J graph database.
+We propose to use the KPN as a foundation to implement a Translator Knowledge Provider of
+high-confidence complex disease associations and predicted disease-relevant molecular and
+cellular abnormalities. We will implement this Knowledge Provider by (a) expanding the data
+sources, data types, and bioinformatic methods integrated within the KPN; (b) developing new
+computational algorithms to improve the ability of genetic data to identify molecular and cellular
+abnormalities underlying complex disease; (c) maintaining REST services provisioning
+Translator with these resources; and (d) developing methodologies for evaluating the accuracy
+and internal consistency of these data, further curating them, and defining use cases of them
+within Translator. In so doing, we will enable Translator users to address questions such as:
+• What genes are causally linked to complex disease [X], and with what confidence?
+• What is the increase in risk for complex disease [X] when gene [Y] is perturbed?
+• What pathways are enriched for associations with complex disease [X]?
+• What tissues mediate the pathogenesis of complex disease [X]?
+• What other diseases are genetically correlated with complex disease [X]?
+We participated in the Translator feasibility study and contributed important insights to the
+project vision including (a) a unifying architectural model of Translator (based on interviews with
+each Translator team) closely followed by OTA-19-009; (b) the concept of Translator as a tool to
+augment (rather than replace) human reasoning; and (c) the idea of a “Turing test” to evaluate
+Translator capabilities. Our expertise in human genetics and hypothesis-driven science, but also
+computer science and computational biology, ideally positions us to collaborate with NIH staff
+and other awardees to help guide Translator data integration in a scientifically rigorous manner.",530030
+Data Science; Networking and Information Technology R&D (NITRD),Collaborations;Data;Data Science;Disease;Genes;Human;Information Retrieval;Institutes;Logistic Regressions;Maps;Participant;Pharmaceutical Preparations;Pythons;System;Text;Training;Universities;base;computer science;open source;prototype;tool,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: Stanford University,n/a,NCATS,9855281,2/13/19 0:00, ,3OT2TR002515-01S1,3,OT2,TR,2515,1,S,"COLVIS, CHRISTINE",12/29/18 0:00,6/30/20 0:00,ZTR1-SRC(99), ,6620309,"ALTMAN, RUSS BIAGIO",Not Applicable,18,BIOMEDICAL ENGINEERING,9214214,US,37.429038,-122.178178,8046501,STANFORD UNIVERSITY,STANFORD,CA,SCHOOLS OF MEDICINE,943052004,UNITED STATES,N,12/29/18 0:00,6/30/20 0:00,350,Other,2019,408847, ,NCATS,264254,144593, ,"The IRIS system is used as the front end for the current
+demo. IRIS is an open source conversational agent that was built originally to facilitate tasks in
+data science for non-programmers. We have modified it to recognize key entities (drugs,
+genes, diseases) and serve as a prototype conversational interface for allowing users to type in
+free-text and then be prompted for information needed to complete a query. The results of the
+query are displayed and stored to aid further analysis and ease of information retrieval. IRIS is a
+collaboration between the Brown Institute at Stanford with support from the NSF in the
+Bernstein lab at Stanford Computer Science. The backend is written in Python and the front
+end is written in Javascript/CSS/HTML. IRIS can be compiled into a single executable that can
+be downloaded and used by a user; it can make API calls to do computationally intensive tasks.
+Human queries are recognized using logistic regression (trained on a provided set of
+“synonymous queries” in English) to find keywords and map to most likely templated queries.
+IRIS can gather parameters by conversationally asking for additional information. IRIS can be
+integrated with any other Python-based tools, and is available for use by all participants in the
+Biomedical Data Translator project freely.",408847
+No NIH Category available,Algorithms;Binding;Biological;Data;Databases;Drug Targeting;Graph;Imatinib;Institutes;Knowledge;Lifting;Modeling;Pharmaceutical Preparations;Process;Retrieval;Standardization;Uncertainty;improved;prototype;tool, Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: Broad Institute,n/a,NCATS,9860370,2/7/19 0:00, ,3OT2TR002584-01S2,3,OT2,TR,2584,1,S,"COLVIS, CHRISTINE",4/1/18 0:00,5/15/20 0:00,ZTR1-SRC(99), ,1879023,"CLEMONS, PAUL ANDREW",Not Applicable,7,Unavailable,623544785,US,42.363318,-71.087781,10021177,"BROAD INSTITUTE, INC.",CAMBRIDGE,MA,Research Institutes,21421027,UNITED STATES,N,12/29/18 0:00,5/15/20 0:00,350,Other,2019,759456, ,NCATS,444126,315330, ,"In the framework of the Translator, user questions can be considered requests to identify
+connections between biological entities. The central idea of our proposed prototype is to lift
+this task from specific instances (“imatinib”) to high-level entities (“drug”). This allows us to
+efficiently plan knowledge retrieval and reason about specific instances by using knowledge
+about abstract entities. The agent uses probabilistic inference and online replanning to handle
+uncertainties that arise when moving from abstract concepts to instances (e.g., a drug–target
+database may not contain a specific drug; binding strengths vary for specific drug–target pairs).
+Consistent with the “identify-query-analyze” framework of the Translator, the agent breaks the
+task of answering a given user query into four steps: (1) parsing the query into a standardized
+format for internal representation, (2) high-level planning to identify relevant KSs and develop a
+query strategy, (3) knowledge retrieval by executing the query, and (4) analysis and inference
+on the obtained knowledge to produce an answer to the query (Figure 1). We implemented the
+planning module (2) as a Markov decision process (MDP). Analysis and inference (4) is
+performed using a combination of probabilistic graphical models (PGMs) and conventional
+graph algorithms. To allow replanning, the agent can iterate over steps (2) – (4) to respond to
+failed actions or improve on a preliminary answer.",759456
+No NIH Category available,Alabama;Back;Complex;Data;Logic;Performance;Programming Languages;Universities;tool,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: University of Alabama at Birmingham,n/a,NCATS,9855372,2/13/19 0:00, ,3OT2TR002517-01S1,3,OT2,TR,2517,1,S,"COLVIS, CHRISTINE",12/29/18 0:00,12/28/19 0:00,ZTR1-SRC(99), ,14299082,"MIGHT, MATTHEW BRENDON",Not Applicable,7,INTERNAL MEDICINE/MEDICINE,63690705,US,33.506935,-86.809252,1288803,UNIVERSITY OF ALABAMA AT BIRMINGHAM,BIRMINGHAM,AL,SCHOOLS OF MEDICINE,352940001,UNITED STATES,N,12/29/18 0:00,12/28/19 0:00,350,Other,2019,517330, ,NCATS,348379,168951, ,"Our plan remains largely the same, except that we reserve the right to go beyond standard
+miniKanren to any logical / probabilistic logical programming language for deep causal
+reasoning. For example, for less complex queries that need greater performance, we may utilize
+SPARQL as a back-end. We have also found classical logical reasoning to be more effective
+than anticipated, so we plan to go as far as possible with classical logic programming before
+exploiting probabilistic logic programming.",517330
+No NIH Category available,Algorithms;Binding;Biological;Data;Databases;Drug Targeting;Graph;Imatinib;Institutes;Knowledge;Lifting;Modeling;Pharmaceutical Preparations;Process;Retrieval;Standardization;Uncertainty;improved;prototype;tool, Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: Broad Institute,n/a,NCATS,9852082,1/23/19 0:00, ,3OT2TR002584-01S1,3,OT2,TR,2584,1,S,"COLVIS, CHRISTINE",8/1/18 0:00,12/28/18 0:00,ZTR1-SRC(99), ,1879023,"CLEMONS, PAUL ANDREW",Not Applicable,7,Unavailable,623544785,US,42.363318,-71.087781,10021177,"BROAD INSTITUTE, INC.",CAMBRIDGE,MA,Research Institutes,21421027,UNITED STATES,N,8/1/18 0:00,12/28/18 0:00,350,Other,2019,422447, ,NCATS,247045,175402, ,"In the framework of the Translator, user questions can be considered requests to identify
+connections between biological entities. The central idea of our proposed prototype is to lift
+this task from specific instances (“imatinib”) to high-level entities (“drug”). This allows us to
+efficiently plan knowledge retrieval and reason about specific instances by using knowledge
+about abstract entities. The agent uses probabilistic inference and online replanning to handle
+uncertainties that arise when moving from abstract concepts to instances (e.g., a drug–target
+database may not contain a specific drug; binding strengths vary for specific drug–target pairs).
+Consistent with the “identify-query-analyze” framework of the Translator, the agent breaks the
+task of answering a given user query into four steps: (1) parsing the query into a standardized
+format for internal representation, (2) high-level planning to identify relevant KSs and develop a
+query strategy, (3) knowledge retrieval by executing the query, and (4) analysis and inference
+on the obtained knowledge to produce an answer to the query (Figure 1). We implemented the
+planning module (2) as a Markov decision process (MDP). Analysis and inference (4) is
+performed using a combination of probabilistic graphical models (PGMs) and conventional
+graph algorithms. To allow replanning, the agent can iterate over steps (2) – (4) to respond to
+failed actions or improve on a preliminary answer.",422447
+No NIH Category available,Address;Biological;Biomedical Research;Cell physiology;Clinic;Clinical;Clinical Data;Communities;Complex;Computer Assisted;Data;Data Sources;Disease;Environmental Exposure;Etiology;Event;Functional disorder;Generations;Goals;Human;Knowledge;Left;Manuals;Medical;Molecular;Pharmaceutical Preparations;Publishing;Research;Research Personnel;Resources;Scientist;Services;Signs and Symptoms;Source;System;Translational Research;base;cohesion;computerized tools;computing resources;data mining;design;disease classification;falls;human disease;insight;multimodality;open source;programs;response;therapeutic development;tool,NCATS Biomedical Data Translator Program,n/a,NCATS,10041621, , ,1ZIATR000276-03,1,ZIA,TR,276,3, , , , , , ,14380147,"SOUTHALL, NOEL ",Not Applicable,n/a,Unavailable, , , , , ,NATIONAL CENTER FOR ADVANCING TRANSLATIONAL SCIENCES, , ,Other Domestic Non-Profits, ,UNITED STATES,N, , , ,Intramural Research,2019,600000, ,NCATS, , , ,"In the pursuit of biomedical research, scientists often make observations that are difficult to explain. To attempt to explain such an observation, currently it falls to the researcher to manually identify potential connections or ideas by mining data and knowledge across different resources, a task that demands expertise with many different sources of data and relies upon significant recall of insights from previously published research. And what they find or dont find in those endeavors influences their next experimental steps and might in fact influence their working hypothesis.
+
+Ideally, one would mine these heterogeneous data systematically to gain insights into the relationship between molecular and cellular processes and the signs and symptoms manifested in diseases. However, there is currently no broadly-used system that gathers information from different sources and uses the aggregated knowledge as building blocks to aid in the construction of a cohesive hypothesis. Overall goal of the Biomedical Data Translator Program: 
+
+The purpose of the program is to accelerate translational research by developing a system to augment human reasoning in response to biomedical research questions. Translator will serve as a resource for computer-assisted exploration and construction of new research hypotheses by connecting and distilling existing empirical knowledge spanning all types of biomedical data, including environmental, molecular and clinical data. NCATS anticipates that this will be a multi-modal computational tool that leverages multiple types of existing data sources, including objective signs and symptoms of disease, drug effects and intervening types of biological data relevant to understanding pathophysiology.
+
+The Biomedical Data Translator, Translator, will be designed to make networks by connecting a variety of data types using both derived knowledge and well-curated data sources and present a user with the most relevant data to help augment their own analysis of translational research problems. In doing so, we will facilitate classification of diseases based on a set of molecular and cellular abnormalities. This would enable recognition of and therapeutic development for conditions with a shared molecular etiology that might manifest differently in the clinic. The Translator must be dynamic and transparent, i.e., able to incorporate new data and information as it becomes available, and able to accommodate a variety of analytical approaches to assist the generation of hypotheses. Translator will be open source and completely publicly available for any user. 
+
+When fully operational, Translator will be capable of revealing potential relationships across a multitude of disparate data types, from clinical signs and symptoms to cellular and molecular events to environmental exposures. The scope of Translator has been left intentionally vast to leverage biomedical data of all types to help assemble information to address complex questions.",600000
+Bioengineering; Clinical Research,Address;Architecture;Clinical;Clinical Research;Collaborations;Collection;Complex;Data;Data Analyses;Data Sources;Development;Disease;Health;Human;Informatics;Ingestion;Institution;Measures;Medical;Metadata;Modeling;Molecular;Nurses;Pathway interactions;Pharmaceutical Preparations;Policies;Protocols documentation;Research Personnel;Scientist;Socialization;Support System;System;Systems Biology;Time;Training;Translational Research;Update;Vision;design;disease transmission;dynamic system;improved;interdisciplinary collaboration;open source;prototype;tool,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9860302,2/7/19 0:00, ,3OT3TR002020-01S3,3,OT3,TR,2020,1,S,"COLVIS, CHRISTINE",9/24/16 0:00,12/31/20 0:00,ZTR1-SRC(99), ,8850713,"AHALT, STANLEY CARLTON","TROPSHA, ALEXANDER ",4,BIOSTATISTICS & OTHER MATH SCI,608195277,US,35.926939,-79.038605,578206,UNIV OF NORTH CAROLINA CHAPEL HILL,CHAPEL HILL,NC,SCHOOLS OF ARTS AND SCIENCES,275990001,UNITED STATES,N,1/1/19 0:00,12/31/20 0:00,350,Other,2019,822173, ,NCATS,532278,289895, ,"The Carolina Biomedical Data Translator (CBDT) will address the significant challenges in
+clinical and translational research by permitting clinicians, nurses, biomedical researchers, and
+clinical scientists to query, exploit, and contribute to a federated collection of complex and highly
+disparate data with medical importance. This data federation—a “quasi-comprehensive” medical
+federation—will enable interrogators to pose questions about human health and disease that
+could not heretofore have been imagined. We anticipate that these analyses will increase, in
+ways that are paradigm shifting, our understanding of new treatments and treatment targets,
+mechanisms of disease and disease transmission, environmental triggers, opportunities for drug
+repurposing, molecular candidates, and systems biology pathways.
+To realize this vision, we propose a trajectory that permits the realization of such a
+federation. We intend to start modestly and prototype the CBDT using the unique tools we have
+been building for other informatics projects, and then iteratively improve the CBDT in
+collaboration with NCATS. Ultimately, the CBDT federation will need to be socialized,
+permitted, and nurtured in order to realize its full potential. Indeed, we believe that the biggest
+single challenge will be establishing a governance model that permits the assembly of
+information pulled from across institutions and organizations. We discuss this issue in Section
+2.2.1.
+The CBDT must be:
+• Dynamic: regularly updated to accommodate the addition of new data and data sources;
+• Agile: modifiable for uses beyond the original design and adaptable for other data analysis;
+• Usable: permitting differential access and levels of access (view, edit, etc.) to the data, and
+permitting use by both experts and new users with modest training;
+• Rational: the data will be clinically and scientifically relevant, as well as informed by policy
+and protocols, and the system will provide answers with contextual meta-data; and
+• Curated: the data will have associated provenance and quality measures, including
+statistical relevance where appropriate.
+We envision a dynamic system that supports data ingestion and subsequent
+curation, federation, and exploitation (see figure). We have assembled a
+team that has a track record of interdisciplinary collaboration and development of open
+source tools. We propose a demonstration project that is feasible in the 2-year
+time frame, but demonstrates all of the key functionality that the final
+system must possess.",822173
+No NIH Category available,Address;Biological;Clinical;Clinical Data;Clinical Research;Comorbidity;Data;Detection;Development;Disease;Drug effect disorder;Generations;Genetic Diseases;Graph;Knowledge;Link;Literature;Medical;North Carolina;Outcome;Pathway interactions;Pharmaceutical Preparations;PubMed;Publishing;Source;Subject Headings;Time;Translating;Translational Research;Universities;disease phenotype;multidisciplinary;new therapeutic target;novel;programs;tool;user friendly software,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: University of North Carolina at Chapel Hill,n/a,NCATS,9860194,2/6/19 0:00, ,3OT2TR002514-01S1,3,OT2,TR,2514,1,S,"COLVIS, CHRISTINE",1/5/18 0:00,12/31/20 0:00,ZTR1-SRC(99), ,2797832,"TROPSHA, ALEXANDER ",Not Applicable,4,PHARMACOLOGY,608195277,US,35.926939,-79.038605,578206,UNIV OF NORTH CAROLINA CHAPEL HILL,CHAPEL HILL,NC,SCHOOLS OF PHARMACY,275990001,UNITED STATES,N,1/5/19 0:00,12/31/20 0:00,350,Other,2019,882674, ,NCATS,715875,166799, ,"Our multidisciplinary team has initiated the development of a novel Translator Reasoning Tool—
+Reasoning Over Biomedical Objects linked in Knowledge-Oriented Pathways
+(ROBOKOP)—to address, in a fully automated way, user queries that can be answered by
+concurrent reasoning across Knowledge Sources (KSs) by means of a Knowledge Graph (KG).
+Our proof-of-concept (POC) product, PROTOCOP, represents a generalizable solution for
+reasoning across KSs to identify answers to clinical and translational research questions such as
+establishing data-supported Clinical Outcomes Pathways (COPs) of drugs or pathways explaining
+disease-disease interactions. PROTOCOP incorporates several KSs identified by the Translator
+project (e.g., chem2bio2rdf, Biolink, Pharos), as well as additional KSs that may be of value to
+the broader Translator program such as Chemotext (chemotext.mml.unc.edu), which is a publiclyavailable
+webserver that mines the published literature in PubMed in the form of Medical Subject
+Headings (MeSH) terms. PROTOCOP has successfully identified solutions to the initial two
+translational query types: (1) genetic conditions that protect against disease; and (2) COPs for
+drug-condition pairs. Over the 10-month project period, we will refine and evaluate our approach
+as we move from PROTOCOP to ROBOKOP and embed it in fully operational and user-friendly
+software. We will develop automated approaches to identify high-scoring connected subgraphs
+that translate into well-reasoned, data-supported, biological pathways that explain drug action
+and disease mechanisms and that may help elucidate new drug targets. In addition, we will
+expand the set of allowable queries to include those that rely on longitudinal clinical data and
+time- and geospatial-dependent socio-environmental exposures data. We expect that once
+developed, ROBOKOP will enable novel, testable hypothesis generation for a number of
+biomedical challenges such as drug repurposing, detection of disease comorbidities, mechanistic
+interpretation of disease phenotypes in terms of underlying endotypes, and others.",882674
+Networking and Information Technology R&D (NITRD),Aloral;Benchmarking;Characteristics;Client;Cloud Computing;Code;Computer software;Data;Databases;Disease;Docking;Future;Genetic Diseases;Graph;Hand;Hour;Human;Knowledge;Metadata;Methods;Modeling;Online Mendelian Inheritance In Man;Ontology;Oregon;Pathway interactions;Performance;Pharmaceutical Preparations;Phenotype;Preparation;Process;Protocols documentation;PubMed;Pythons;Response Latencies;Running;Seeds;Side;Source;Source Code;System;Universities;base;cloud based;flexibility;indexing;prototype;response;tool,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: Oregon State University,n/a,NCATS,9853090,2/20/19 0:00, ,3OT2TR002520-01S1,3,OT2,TR,2520,1,S,"COLVIS, CHRISTINE",12/29/17 0:00,12/28/20 0:00,ZTR1-SRC(99), ,8434665,"RAMSEY, STEPHEN A.","DEUTSCH, ERIC ",4,NONE,53599908,US,44.569006,-123.277867,6297004,OREGON STATE UNIVERSITY,CORVALLIS,OR,SCHOOLS OF PUBLIC HEALTH,973318555,UNITED STATES,N,12/29/18 0:00,12/28/20 0:00,350,Other,2019,612114, ,NCATS,515718,96396, ,"For developing the POC software, we used a rapid prototyping, cloud-­based approach based on Python code running in a Docker container in Amazon’s Elastic Compute Cloud (EC2). We used Git for distributed source code control, distributed project management, and code deployment. We implemented a blackboard-­like software module (Orangeboard) that provides a knowledge-­graph object model (including information about source database and edge types for seven different types of relationships) and the ability to load the graph into Neo4j using a high-­performance bulk­-transfer (parameterized Cypher) and protocol (Bolt). We implemented Python classes to provide RESTful querying functionality for 14 different knowledge sources (Monarch/BioLink, DisGeNET, Disease Ontology, GeneProf, miRBase, miRGate, MyGene.info, OMIM, Pathway Commons 2, Pharos, human phenotype ontology, Reactome, Monarch/SciGraph, and UniProt). We implemented client­-side HTTP request/response caching as well as non-­persistent method-­level caching in Python, to accelerate knowledge graph expansion. We implemented a BioNetExpander class that can iteratively expand a knowledge graph (in Orangeboard) from one or more seed nodes. This approach is flexible with respect to future types of queries and can accommodate future selective rules for node extension. Using BioNetExpander we are able to expand a knowledge graph from 21 seed diseases to 20,000 nodes and 800,000 relationships, in an hour. To enable path scoring, we implemented a Python class for obtaining path topological characteristics and metadata, for a given path in the Neo4j graph. We then implemented Python-­based scripts for querying for paths between genetic conditions and the 21 diseases (Q1), and for the 1,000 drug/disease pairs (Q2) in the Neo4j knowledge graph (using Cypher). We benchmarked path-­finding performance of this system and found that a typical shortest-­paths query with two fixed endpoints takes 50 ms, and thus, this approach should have low query-­response latency. In order to leverage PubMed abstract co-­occurrence information in scoring a path in the knowledge graph, we used high­-performance software (from Dr. Liang Huang’s lab) for indexing PubMed and are in the process of obtaining Normalized Google Distance (NGD) scores for pairs of genetic conditions and diseases (for Q1) and for pairs of drugs and diseases (for Q2). With the knowledge graph in hand, are in the process of refining our path­-scoring approaches for Q1 & Q2 in preparation for the POC demo.",612114
+Bioengineering; Machine Learning and Artificial Intelligence; Networking and Information Technology R&D (NITRD),Address;Affect;Animal Model;Architecture;Awareness;Basic Science;Biological;Biomedical Research;Clinical;Clinical Data;Clinical Sciences;Data;Data Set;Disease;Genetic;Goals;Graph;Knowledge;Knowledge Discovery;Language;Link;Machine Learning;Metabolic;Methods;Modeling;Molecular;Ontology;Pathogenicity;Pathway Analysis;Pathway interactions;Patients;Pharmacology;Physiological;Proteins;Proteomics;Quality Control;Reproducibility;Research Personnel;Science;Scientist;Semantics;Series;Signs and Symptoms;Source;System;Techniques;Technology;Time;Translational Research;Translations;Treatment outcome;Update;Variant;Vision;base;cell type;clinical phenotype;comparative effectiveness;design;disorder subtype;genetic variant;innovation;insight;interoperability;molecular domain;multi-scale modeling;novel;prototype;text searching;user-friendly,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9855180,2/13/19 0:00, ,3OT3TR002027-01S2,3,OT3,TR,2027,1,S,"COLVIS, CHRISTINE",9/25/16 0:00,12/31/19 0:00,ZTR1-SRC(99), ,9643350,"TATONETTI, NICHOLAS P","DUMONTIER, MICHEL ; WENG, CHUNHUA ",13,INTERNAL MEDICINE/MEDICINE,621889815,US,40.841253,-73.940404,1833205,COLUMBIA UNIVERSITY HEALTH SCIENCES,NEW YORK,NY,SCHOOLS OF MEDICINE,100323725,UNITED STATES,N,1/1/19 0:00,12/31/19 0:00,350,Other,2019,702655, ,NCATS,512847,189808, ,"Our Vision: We propose DeepLink, a versatile data translator that integrate multi-scale,
+heterogeneous, and multi-source biomedical and clinical data. The primary goal of DeepLink is
+to enable meaningful bidirectional translation between clinical and molecular science by closing
+the interoperability gap between models and knowledge at different scales. The translator will
+enhance clinical science with molecular insights from basic and translational research (e.g.
+genetic variants, protein interactions, pathway functions, and cellular organization), and enable
+the molecular sciences by connecting biological discoveries with their pathophysiological
+consequences (e.g. diseases, signs and symptoms, pharmacological effects, physiological
+systems). Fundamental differences in the language and semantics used to describe the models
+and knowledge between the clinical and molecular domains results in an interoperability gap.
+DeepLink will systematically and comprehensively close this gap. We will begin with the latest
+technology in semantic knowledge graphs to support an extensible architecture for dynamic
+data federation and knowledge harmonization. We will design a system for multi-scale model
+integration that is ontology-based and will combine model execution with prior, curated
+biomedical knowledge. Our design strategy will be iterative and participatory and anchored by
+10 major milestones. In a series of demonstrations of DeepLink’s functions, we will address one
+of the major challenges facing translational science: reproducibility of biomedical research
+findings that are based on evolving molecular datasets. Reproducibility of analyses and
+replication of results are central to scientific advancement. Many landmark studies have used
+data that are constantly being updated, curated, and pared down over time. Our series of
+demonstrations projects are designed to prototype the technology required for a scalable and
+robust translator as well as the techniques we will use to close the interoperability gap for a
+specific use case. The demonstration project will, itself, will be a significant and novel
+contribution to science.
+DeepLink will be able to answer questions that are currently enigmatic. Examples include:
+- From clinicians: What is the comparative effectiveness of all the treatments for disease Y
+given a patient's genetic/metabolic/proteomic profile? What are the functional variants in
+cell type X that are associated with differential treatment outcomes? What metabolite
+perturbations in cell type Y are associated with different subtypes of disease X?
+- From basic science researchers: What is known about disease Y across all model
+organisms (even those not designed to model Y)? What are all the clinical phenotypes that
+result from a change in function in protein X? Which biological pathways are affected by a
+pathogenic variant of disease Y? What patient data are available to evaluate a molecularlyderived
+clinical hypothesis?
+Challenges and Our Approaches: DeepLink will close the interoperability gap that currently
+prohibits molecular discoveries from leading to clinical innovations. DeepLink will be
+technologically driven, addressing the challenges associated with large, heterogeneous,
+semantically ambiguous, continuously changing, partially overlapping, and contextually
+dependent data by using (1) scalable, distributed, and versioned graph stores; (2) semantic
+technologies such as ontologies and Linked Data; (3) network analysis quality control methods;
+(4) machine-learning focused data fusion methods; (5) context-aware text mining, entity
+recognition and relation extraction; (6) multi-scale knowledge discovery using patient and
+molecular data; and (7) presentation of actionable knowledge to clinicians and basic scientists
+via user-friendly interfaces.",702655
+Bioengineering; Networking and Information Technology R&D (NITRD); Rare Diseases,Algorithms;Apoptosis;Architecture;Basic Science;Biological;Clinical;Clinical Data;Computer software;Data;Data Sources;Diagnosis;Disease;Distant;Elements;Event;Familiarity;Functional disorder;Genes;Graph;Infrastructure;Intelligence;Knowledge;Lead;Leadership;Link;Literature;Metadata;Methodology;Methods;Modeling;Molecular;Pathway interactions;Patients;Phenotype;Positioning Attribute;Probability;Rare Diseases;Reproducibility;Selection for Treatments;Semantics;Source;System;TP53 gene;Taxonomy;Techniques;Testing;Tissues;Variant;Vision;Zebrafish;base;cell type;crowdsourcing;data integration;data resource;design;disease classification;disease diagnosis;disease phenotype;experience;innovation;interoperability;knock-down;member;multimodal data;open data;outcome forecast;scaffold;translational pipeline,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9855095,2/13/19 0:00, ,3OT3TR002019-01S4,3,OT3,TR,2019,1,S,"COLVIS, CHRISTINE",9/23/16 0:00,3/31/20 0:00,ZTR1-SRC(99), ,7569861,"CHUTE, CHRISTOPHER G","HAENDEL, MELISSA A; MUNGALL, CHRISTOPHER J",7,INTERNAL MEDICINE/MEDICINE,1910777,US,39.329164,-76.617855,4134401,JOHNS HOPKINS UNIVERSITY,BALTIMORE,MD,SCHOOLS OF MEDICINE,212182680,UNITED STATES,N,1/1/19 0:00,3/31/20 0:00,350,Other,2019,1562568, ,NCATS,1410957,151611, ,"Our leadership spans the translational spectrum - clinical (Chute, Robinson, Koeller, Hamosh),
+biological (Haendel, Hoatlin, Doheny), and computational (Mungall, Su, Liu, McWeeney, Overby),
+with expertise in a wide variety of data sources, types, and models as well as data integration
+strategies, standards, and algorithms. We are invested in open science, reproducibility, and
+lead efforts in developing open software, data standards, and crowdsourcing curation platforms.
+Our vision is to demonstrate connectivity between rare disease and common diseases via
+genes, pathways, and pathophysiology. We will include disease-phenotype associations,
+enriched with temporal information and decomposed into biological units. Innovative integration
+of mechanism and function will allow creation of candidate mechanistic graphs for each rare
+disease. We will use graph matching and probabilistic techniques to support basic research
+hypothesis testing as well as clinical inquiry (diagnosis, prognosis, and treatment selection).
+Finally, our team is deeply committed to enabling the collective use of all public biomedical data
+by making it interoperable and openly accessible for all users, in all contexts.
+Semantics matter to integration. The figure highlights the landscape of existing data resources,
+each contain a portion of data with specific, relevant meaning (A). Aggregation alone
+often results in loss of meaning (B). Semantic and probabilistic integration approaches provision
+for more advanced query answering capabilities (C). We have first hand experience overcoming
+challenges found within large-scale integration projects in general, but more important, we are
+very familiar with data sources and types this proposal aims to integrate. For example, knockdown
+of TP53 in zebrafish is used to reduce apoptosis; naive use of the data might attribute
+phenotypic effects to targeted genes. Other issues are in knowing when and how to integrate
+data where the associations between entities are not equivalent, such as when one source annotates
+a disease to a gene and another to a variant.
+Our existing infrastructure has successfully integrated and leveraged multimodal data for
+rare disease diagnosis. Here we extend these systems with new data types and new methodologies
+that generalize across diseases and contexts. The TransMed Knowledge Graph will have
+an intelligent, adaptive scaffolding for managing and linking the phenomenological worldview of
+clinical elements with the mechanistic emphases of basic science. Connections between biological
+entities and events will be represented either directly, or through chaining, enabling the use
+of powerful algorithms for query and inference. Elements in the graph will be stratified by either
+classical, rigid taxonomies (disease nosologies, tissue and cell type) or through dynamic groups
+based on shared mechanisms of molecular pathophysiology. External data can be compared
+using different criteria. For instance, two patients (one rare disease, one common disease) may
+be distant in classical nosology, but neighbors in pathway space - suggesting a treatment. The
+graph will be seeded from open data sources containing diverse data types, supplemented by
+knowledge from the literature and clinical data. TransMed will also be readily connected to other
+data stores using a quality identifier strategy, methods that predict probability of equivalency
+from associated metadata, and algorithms that match graphs based on similar members.
+Summary. Familiarity with the data, combined with our technical experience, and connection to
+real-world use cases positions us well to be both relevant and successful in our vision.",1562568
+Cancer; Clinical Research; Data Science; Networking and Information Technology R&D (NITRD),Address;Affect;Architecture;Big Data;Biological;CRH gene;Cancer Patient;Cancer Survivor;Caring;Clinic;Clinical;Clinical Data;Collaborations;Communities;Data;Data Analyses;Data Analytics;Data Set;Data Sources;Databases;Diabetes Mellitus;Dimensions;Disease;Drug Interactions;Functional disorder;Future;Gene Proteins;Genes;Genome;Graph;Heterogeneity;Housing;Human;Hybrids;Individual;Infrastructure;Joints;Knowledge;Learning;Literature;Machine Learning;Malignant Neoplasms;Manuals;Measures;Medicine;Molecular;Monitor;Nature;Output;Pathogenesis;Pathway interactions;Patients;Phenotype;Population;Provider;Research;Research Personnel;Resources;SNOMED Clinical Terms;Saint Jude Children&apos;s Research Hospital;Source;Structure;Testing;Translating;Translations;base;cohort;data integration;data mining;design;high dimensionality;improved;innovation;inter-individual variation;interoperability;knowledge base;lexical;molecular assembly/self assembly;multidimensional data;new technology;transcriptome,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9853317,1/31/19 0:00, ,3OT3TR002026-01S2,3,OT3,TR,2026,1,S,"COLVIS, CHRISTINE",9/22/16 0:00,1/31/20 0:00,ZTR1-SRC(99), ,9454292,"HUANG, SUI ","GLUSMAN, GUSTAVO ",7,Unavailable,135646524,US,47.622042,-122.337243,4106301,INSTITUTE FOR SYSTEMS BIOLOGY,SEATTLE,WA,Research Institutes,981095263,UNITED STATES,N,2/1/19 0:00,1/31/20 0:00,350,Other,2019,855741, ,NCATS,597609,258132, ,"New technologies afford the acquisition of dense “data clouds” of individual humans. However,
+heterogeneity, dimensionality and multi-scale nature of such data (genomes, transcriptomes,
+clinical variables, etc.) pose a new challenge: How can one query such dense data clouds of
+mixed data as an integrated set (as opposed to variable by variable) against multiple knowledge
+bases, and translate the joint molecular information into the clinical realm? Current lexical mapping
+and brute-force data mining seek to make heterogeneous data interoperable and accessible
+but their output is fragmented and requires expertise to assemble into coherent actionable
+information. We propose DeepTranslate, an innovative approach that incorporates the known
+actual physical organization of biological entities that are the substrate of pathogenesis into (i)
+networks (data graphs) and (ii) hierarchies of concepts that span the multiscale space from
+molecule to clinic. Organizing data sources along such natural structures will allow translation of
+burgeoning high-dimensional data sets into concepts familiar to clinicians, while capturing
+mechanistic relationships. DeepTranslate will take a hybrid approach to learn and organize its
+content from both (i) existing generic comprehensive knowledge sources (GO, KEGG, IDC, etc.)
+and (ii) newly measured instances of individual data clouds from two demonstration projects: (1)
+ISB’s Pioneer 100 and (2) St. Jude Lifetime cancer survivors. We will focus on diabetes as
+test case. These two studies cover a deep biological scale-space and thus can test the full extent
+of the multiscale capacity of DeepTranslate in a focused application.
+1. TYPES OF RESEARCH QUESTION ENABLED. How can a clinician find out that the dozens
+of “out of range” variables observed in a patient’s data cloud, form a connected set with respect
+to pathophysiology pathways, from gene to clinical variable? How can the high-dimensional
+data of studies that measure for each individual 100+ data points of various types
+(“personal data clouds”) be analyzed as one set in an integrated fashion (as opposed to variable
+by variable) against existing knowledge bases and also be used to improve the databases?
+DeepTranslate addresses these two types of questions and thereby will accelerate translation of
+future personal data clouds into (A) care decisions and (B) hypotheses on new disease mechanisms
+/ treatments, thereby benefiting providers as well as researchers.
+2. USE OF EXPERTISE AND RESOURCES. • ISB: pioneer in personalized, big-data driven
+medicine (Demo Project 1); biomedical content expertise; multiscale omics and molecular pathogenesis,
+big data analysis, housing of databases for public access; query engine designs, GUI.
+• UCSD: leader in biomedical data integration; automated assembly of molecular and clinical
+data into hierarchical structures; translation between data types • U Montreal: biomedical database
+curation from literature and construction of gene/protein/drug interaction networks; machine
+learning, open resource database • St Jude CRH: Cancer monitoring Demo Project 2,
+cancer patient data analytics.
+3. POTENTIAL DATA AND INFRASTRUCTURE CHALLENGES. (a) Existing comprehensive
+clinical data sources are not uniform and not explicitly based on biological networks; cross-mapping
+is being performed at NLM based on lexical relationships: HPO (phenotypes) vs.
+SNOMED CT (for EMR) vs. IDC or Merck Manual (for diseases). Careful selection of these
+sources in close collaboration with NLM is needed. (b) Existing molecular pathway databases
+are static, based on averages of heterogeneous non-stratified populations, while the newly
+measured high-dimensional data clouds are varied due to intra-individual temporal fluctuation
+and inter-individual variation. How this will affect building of ontotypes in our hybrid approach,
+and how large cohorts of data clouds must be to offer statistical power is yet to be determined.
+Our two Demonstration Projects with their uniquely deep (high-dimensional and multiscale) data
+in cohorts of limited but growing size are thus crucial first steps in a long journey of collective
+learning in the TRANSLATOR community.",855741
+No NIH Category available,Alabama;Back;Complex;Data;Logic;Performance;Programming Languages;Universities;tool,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: University of Alabama at Birmingham,n/a,NCATS,9610232,12/29/17 0:00, ,1OT2TR002517-01,1,OT2,TR,2517,1, ,"COLVIS, CHRISTINE",12/29/17 0:00,12/28/19 0:00,ZTR1-SRC(99), ,14299082,"MIGHT, MATTHEW BRENDON",Not Applicable,7,INTERNAL MEDICINE/MEDICINE,63690705,US,33.506935,-86.809252,1288803,UNIVERSITY OF ALABAMA AT BIRMINGHAM,BIRMINGHAM,AL,SCHOOLS OF MEDICINE,352940001,UNITED STATES,N,12/29/17 0:00,12/28/19 0:00,350,Other,2018,600000, ,NCATS,455456,144544, ,"Our plan remains largely the same, except that we reserve the right to go beyond standard
+miniKanren to any logical / probabilistic logical programming language for deep causal
+reasoning. For example, for less complex queries that need greater performance, we may utilize
+SPARQL as a back-end. We have also found classical logical reasoning to be more effective
+than anticipated, so we plan to go as far as possible with classical logic programming before
+exploiting probabilistic logic programming.",600000
+Networking and Information Technology R&D,Collaborations;Data;Data Science;Disease;Genes;Human;Information Retrieval;Institutes;Logistic Regressions;Maps;Participant;Pharmaceutical Preparations;Pythons;System;Text;Training;Universities;base;computer science;open source;prototype;tool,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: Stanford University,n/a,NCATS,9609037,12/29/17 0:00, ,1OT2TR002515-01,1,OT2,TR,2515,1, ,"COLVIS, CHRISTINE",12/29/17 0:00,6/30/20 0:00,ZTR1-SRC(99), ,6620309,"ALTMAN, RUSS BIAGIO",Not Applicable,18,BIOMEDICAL ENGINEERING,9214214,US,37.429038,-122.178178,8046501,STANFORD UNIVERSITY,STANFORD,CA,SCHOOLS OF MEDICINE,943052004,UNITED STATES,N,12/29/17 0:00,6/30/20 0:00,350,Other,2018,436578, ,NCATS,287434,149144, ,"The IRIS system is used as the front end for the current
+demo. IRIS is an open source conversational agent that was built originally to facilitate tasks in
+data science for non-programmers. We have modified it to recognize key entities (drugs,
+genes, diseases) and serve as a prototype conversational interface for allowing users to type in
+free-text and then be prompted for information needed to complete a query. The results of the
+query are displayed and stored to aid further analysis and ease of information retrieval. IRIS is a
+collaboration between the Brown Institute at Stanford with support from the NSF in the
+Bernstein lab at Stanford Computer Science. The backend is written in Python and the front
+end is written in Javascript/CSS/HTML. IRIS can be compiled into a single executable that can
+be downloaded and used by a user; it can make API calls to do computationally intensive tasks.
+Human queries are recognized using logistic regression (trained on a provided set of
+“synonymous queries” in English) to find keywords and map to most likely templated queries.
+IRIS can gather parameters by conversationally asking for additional information. IRIS can be
+integrated with any other Python-based tools, and is available for use by all participants in the
+Biomedical Data Translator project freely.",436578
+No NIH Category available,Algorithms;Binding;Biological;Data;Databases;Drug Targeting;Graph;Imatinib;Institutes;Knowledge;Lifting;Modeling;Pharmaceutical Preparations;Process;Retrieval;Standardization;Uncertainty;improved;prototype;tool, Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: Broad Institute,n/a,NCATS,9635208,3/27/18 0:00, ,1OT2TR002584-01,1,OT2,TR,2584,1, ,"COLVIS, CHRISTINE",4/1/18 0:00,5/15/20 0:00,ZTR1-SRC(99), ,1879023,"CLEMONS, PAUL ANDREW",Not Applicable,7,Unavailable,623544785,US,42.363318,-71.087781,10021177,"BROAD INSTITUTE, INC.",CAMBRIDGE,MA,Research Institutes,21421027,UNITED STATES,N,4/1/18 0:00,5/15/20 0:00,350,Other,2018,422447, ,NCATS,237330,185117, ,"In the framework of the Translator, user questions can be considered requests to identify
+connections between biological entities. The central idea of our proposed prototype is to lift
+this task from specific instances (“imatinib”) to high-level entities (“drug”). This allows us to
+efficiently plan knowledge retrieval and reason about specific instances by using knowledge
+about abstract entities. The agent uses probabilistic inference and online replanning to handle
+uncertainties that arise when moving from abstract concepts to instances (e.g., a drug–target
+database may not contain a specific drug; binding strengths vary for specific drug–target pairs).
+Consistent with the “identify-query-analyze” framework of the Translator, the agent breaks the
+task of answering a given user query into four steps: (1) parsing the query into a standardized
+format for internal representation, (2) high-level planning to identify relevant KSs and develop a
+query strategy, (3) knowledge retrieval by executing the query, and (4) analysis and inference
+on the obtained knowledge to produce an answer to the query (Figure 1). We implemented the
+planning module (2) as a Markov decision process (MDP). Analysis and inference (4) is
+performed using a combination of probabilistic graphical models (PGMs) and conventional
+graph algorithms. To allow replanning, the agent can iterate over steps (2) – (4) to respond to
+failed actions or improve on a preliminary answer.",422447
+Bioengineering; Clinical Research,Address;Architecture;Clinical;Clinical Research;Collaborations;Collection;Complex;Data;Data Analyses;Data Sources;Development;Disease;Health;Human;Informatics;Ingestion;Institution;Measures;Medical;Metadata;Modeling;Molecular;Nurses;Pathway interactions;Pharmaceutical Preparations;Policies;Protocols documentation;Research Personnel;Scientist;Socialization;Support System;System;Systems Biology;Time;Training;Translational Research;Update;Vision;design;disease transmission;dynamic system;improved;interdisciplinary collaboration;open source;prototype;tool,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9691550,5/15/18 0:00, ,3OT3TR002020-01S2,3,OT3,TR,2020,1,S,"COLVIS, CHRISTINE",9/24/16 0:00,12/31/18 0:00,ZTR1-SRC(99), ,8850713,"AHALT, STANLEY CARLTON","TROPSHA, ALEXANDER ",4,BIOSTATISTICS & OTHER MATH SCI,608195277,US,35.926939,-79.038605,578206,UNIV OF NORTH CAROLINA CHAPEL HILL,CHAPEL HILL,NC,SCHOOLS OF ARTS AND SCIENCES,275990001,UNITED STATES,N,5/1/18 0:00,12/31/18 0:00,350,Other,2018,710193, ,NCATS,459875,250318, ,"The Carolina Biomedical Data Translator (CBDT) will address the significant challenges in
+clinical and translational research by permitting clinicians, nurses, biomedical researchers, and
+clinical scientists to query, exploit, and contribute to a federated collection of complex and highly
+disparate data with medical importance. This data federation—a “quasi-comprehensive” medical
+federation—will enable interrogators to pose questions about human health and disease that
+could not heretofore have been imagined. We anticipate that these analyses will increase, in
+ways that are paradigm shifting, our understanding of new treatments and treatment targets,
+mechanisms of disease and disease transmission, environmental triggers, opportunities for drug
+repurposing, molecular candidates, and systems biology pathways.
+To realize this vision, we propose a trajectory that permits the realization of such a
+federation. We intend to start modestly and prototype the CBDT using the unique tools we have
+been building for other informatics projects, and then iteratively improve the CBDT in
+collaboration with NCATS. Ultimately, the CBDT federation will need to be socialized,
+permitted, and nurtured in order to realize its full potential. Indeed, we believe that the biggest
+single challenge will be establishing a governance model that permits the assembly of
+information pulled from across institutions and organizations. We discuss this issue in Section
+2.2.1.
+The CBDT must be:
+• Dynamic: regularly updated to accommodate the addition of new data and data sources;
+• Agile: modifiable for uses beyond the original design and adaptable for other data analysis;
+• Usable: permitting differential access and levels of access (view, edit, etc.) to the data, and
+permitting use by both experts and new users with modest training;
+• Rational: the data will be clinically and scientifically relevant, as well as informed by policy
+and protocols, and the system will provide answers with contextual meta-data; and
+• Curated: the data will have associated provenance and quality measures, including
+statistical relevance where appropriate.
+We envision a dynamic system that supports data ingestion and subsequent
+curation, federation, and exploitation (see figure). We have assembled a
+team that has a track record of interdisciplinary collaboration and development of open
+source tools. We propose a demonstration project that is feasible in the 2-year
+time frame, but demonstrates all of the key functionality that the final
+system must possess.",710193
+Bioengineering; Networking and Information Technology R&D,Address;Affect;Animal Model;Architecture;Awareness;Basic Science;Biological;Biomedical Research;Clinical;Clinical Data;Clinical Sciences;Data;Data Set;Disease;Genetic;Goals;Graph;Knowledge;Knowledge Discovery;Language;Link;Machine Learning;Metabolic;Methods;Modeling;Molecular;Ontology;Pathogenicity;Pathway Analysis;Pathway interactions;Patients;Pharmacology;Physiological;Proteins;Proteomics;Quality Control;Reproducibility;Research Personnel;Science;Scientist;Semantics;Series;Signs and Symptoms;Source;System;Techniques;Technology;Time;Translational Research;Translations;Treatment outcome;Update;Variant;Vision;base;cell type;clinical phenotype;comparative effectiveness;design;disorder subtype;genetic variant;innovation;insight;interoperability;molecular domain;multi-scale modeling;novel;prototype;text searching;user-friendly,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9635840,3/3/18 0:00, ,3OT3TR002027-01S1,3,OT3,TR,2027,1,S,"COLVIS, CHRISTINE",3/1/18 0:00,12/31/18 0:00,ZTR1-SRC(99), ,9643350,"TATONETTI, NICHOLAS P","DUMONTIER, MICHEL ; WENG, CHUNHUA ",13,INTERNAL MEDICINE/MEDICINE,621889815,US,40.841253,-73.940404,1833205,COLUMBIA UNIVERSITY HEALTH SCIENCES,NEW YORK,NY,SCHOOLS OF MEDICINE,100323725,UNITED STATES,N,3/1/18 0:00,12/31/18 0:00,350,Other,2018,854309, ,NCATS,612046,242263, ,"Our Vision: We propose DeepLink, a versatile data translator that integrate multi-scale,
+heterogeneous, and multi-source biomedical and clinical data. The primary goal of DeepLink is
+to enable meaningful bidirectional translation between clinical and molecular science by closing
+the interoperability gap between models and knowledge at different scales. The translator will
+enhance clinical science with molecular insights from basic and translational research (e.g.
+genetic variants, protein interactions, pathway functions, and cellular organization), and enable
+the molecular sciences by connecting biological discoveries with their pathophysiological
+consequences (e.g. diseases, signs and symptoms, pharmacological effects, physiological
+systems). Fundamental differences in the language and semantics used to describe the models
+and knowledge between the clinical and molecular domains results in an interoperability gap.
+DeepLink will systematically and comprehensively close this gap. We will begin with the latest
+technology in semantic knowledge graphs to support an extensible architecture for dynamic
+data federation and knowledge harmonization. We will design a system for multi-scale model
+integration that is ontology-based and will combine model execution with prior, curated
+biomedical knowledge. Our design strategy will be iterative and participatory and anchored by
+10 major milestones. In a series of demonstrations of DeepLink’s functions, we will address one
+of the major challenges facing translational science: reproducibility of biomedical research
+findings that are based on evolving molecular datasets. Reproducibility of analyses and
+replication of results are central to scientific advancement. Many landmark studies have used
+data that are constantly being updated, curated, and pared down over time. Our series of
+demonstrations projects are designed to prototype the technology required for a scalable and
+robust translator as well as the techniques we will use to close the interoperability gap for a
+specific use case. The demonstration project will, itself, will be a significant and novel
+contribution to science.
+DeepLink will be able to answer questions that are currently enigmatic. Examples include:
+- From clinicians: What is the comparative effectiveness of all the treatments for disease Y
+given a patient's genetic/metabolic/proteomic profile? What are the functional variants in
+cell type X that are associated with differential treatment outcomes? What metabolite
+perturbations in cell type Y are associated with different subtypes of disease X?
+- From basic science researchers: What is known about disease Y across all model
+organisms (even those not designed to model Y)? What are all the clinical phenotypes that
+result from a change in function in protein X? Which biological pathways are affected by a
+pathogenic variant of disease Y? What patient data are available to evaluate a molecularlyderived
+clinical hypothesis?
+Challenges and Our Approaches: DeepLink will close the interoperability gap that currently
+prohibits molecular discoveries from leading to clinical innovations. DeepLink will be
+technologically driven, addressing the challenges associated with large, heterogeneous,
+semantically ambiguous, continuously changing, partially overlapping, and contextually
+dependent data by using (1) scalable, distributed, and versioned graph stores; (2) semantic
+technologies such as ontologies and Linked Data; (3) network analysis quality control methods;
+(4) machine-learning focused data fusion methods; (5) context-aware text mining, entity
+recognition and relation extraction; (6) multi-scale knowledge discovery using patient and
+molecular data; and (7) presentation of actionable knowledge to clinicians and basic scientists
+via user-friendly interfaces.",854309
+No NIH Category available,Address;Biological;Clinical;Clinical Data;Clinical Research;Comorbidity;Data;Detection;Development;Disease;Drug effect disorder;Generations;Genetic Diseases;Graph;Knowledge;Link;Literature;Medical;North Carolina;Outcome;Pathway interactions;Pharmaceutical Preparations;PubMed;Publishing;Source;Subject Headings;Time;Translating;Translational Research;Universities;disease phenotype;multidisciplinary;new therapeutic target;novel;programs;tool;user friendly software,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: University of North Carolina at Chapel Hill,n/a,NCATS,9609015,1/5/18 0:00, ,1OT2TR002514-01,1,OT2,TR,2514,1, ,"COLVIS, CHRISTINE",1/5/18 0:00,12/31/20 0:00,ZTR1-SRC(99), ,2797832,"TROPSHA, ALEXANDER ",Not Applicable,4,PHARMACOLOGY,608195277,US,35.926939,-79.038605,578206,UNIV OF NORTH CAROLINA CHAPEL HILL,CHAPEL HILL,NC,SCHOOLS OF PHARMACY,275990001,UNITED STATES,N,1/5/18 0:00,12/31/20 0:00,350,Other,2018,1160000, ,NCATS,867843,292157, ,"Our multidisciplinary team has initiated the development of a novel Translator Reasoning Tool—
+Reasoning Over Biomedical Objects linked in Knowledge-Oriented Pathways
+(ROBOKOP)—to address, in a fully automated way, user queries that can be answered by
+concurrent reasoning across Knowledge Sources (KSs) by means of a Knowledge Graph (KG).
+Our proof-of-concept (POC) product, PROTOCOP, represents a generalizable solution for
+reasoning across KSs to identify answers to clinical and translational research questions such as
+establishing data-supported Clinical Outcomes Pathways (COPs) of drugs or pathways explaining
+disease-disease interactions. PROTOCOP incorporates several KSs identified by the Translator
+project (e.g., chem2bio2rdf, Biolink, Pharos), as well as additional KSs that may be of value to
+the broader Translator program such as Chemotext (chemotext.mml.unc.edu), which is a publiclyavailable
+webserver that mines the published literature in PubMed in the form of Medical Subject
+Headings (MeSH) terms. PROTOCOP has successfully identified solutions to the initial two
+translational query types: (1) genetic conditions that protect against disease; and (2) COPs for
+drug-condition pairs. Over the 10-month project period, we will refine and evaluate our approach
+as we move from PROTOCOP to ROBOKOP and embed it in fully operational and user-friendly
+software. We will develop automated approaches to identify high-scoring connected subgraphs
+that translate into well-reasoned, data-supported, biological pathways that explain drug action
+and disease mechanisms and that may help elucidate new drug targets. In addition, we will
+expand the set of allowable queries to include those that rely on longitudinal clinical data and
+time- and geospatial-dependent socio-environmental exposures data. We expect that once
+developed, ROBOKOP will enable novel, testable hypothesis generation for a number of
+biomedical challenges such as drug repurposing, detection of disease comorbidities, mechanistic
+interpretation of disease phenotypes in terms of underlying endotypes, and others.",1160000
+No NIH Category available,Affect;Alabama;Architecture;California;Clinic;Collaborations;Communities;Data;Data Sources;Development;Diagnosis;Disease;Functional disorder;Health Sciences;Hospitals;Informatics;Institutes;Institution;Laboratories;Language;Link;Location;Melissa;Modeling;Molecular;North Carolina;Ohio;Oregon;Organ;Pathway interactions;Patients;Physicians;Private Sector;Proteins;Research;Research Institute;Research Personnel;Resources;Saint Jude Children&apos;s Research Hospital;Signs and Symptoms;Systems Biology;Translations;Universities;base;cell type;computing resources;data mining;design;disorder prevention;innovation;interoperability;novel;open source;programs;tool,NCATS Biomedical Data Translator Program,n/a,NCATS,9770469, , ,1ZIATR000276-02,1,ZIA,TR,276,2, , , , , , ,14380147,"SOUTHALL, NOEL ",Not Applicable,n/a,Unavailable, , , , , ,NATIONAL CENTER FOR ADVANCING TRANSLATIONAL SCIENCES, , ,Other Domestic Non-Profits, ,UNITED STATES,N, , , ,Intramural Research,2018,599999, ,NCATS, , , ,"Through the Biomedical Data Translator program, NCATS is leading a unique collaboration between academic and private-sector partners to create a data-mining computational resource that will use many types of biomedical information. When completed, broad access to this resource will help facilitate translational innovation in disease prevention, diagnosis and treatment.
+
+During this period, the large collaborative multisite team (including investigators from the 19 different universities/institutions listed below) continued development of this one-of-kind computational resource, examining novel ways to collect, link, model and visualize disparate types of biomedical information to allow new connections to be forged and new scientific hypotheses to be suggested.
+
+Current Translator Investigators and Institutions
+JoshuaBittker, Paul Clemons and Jason Flannick (Broad Institute of MIT and Harvard)
+ArisFloratos, GeorgeHripsack, Nicholas Tatonetti and Chunhua Weng (Columbia University)
+Eric Deutsch, GustavoGlusman and Sui Huang (Institute for Systems Biology)
+Peter Robinson (Jackson Laboratory)
+Christopher Chute, KimDoheny, Ada Hamosh and Casey Overby (Johns Hopkins University)
+Christopher Mungall (Lawrence Berkeley National Laboratory)
+Michel Dumontier (Maastricht University)
+GuoquianJian and Hongfang Liu (Mayo Clinic)
+Arnab Nandi (The Ohio State University)
+Melissa Haendel, MaureenHoatlin, DavidKoeller and Shannon McWeeney (Oregon Health & Science University)
+David Koslicki and Stephen Ramsey (Oregon State University)
+Russ Altman (Stanford University)
+Richard Bruskiewich (STAR Informatics/Delphinai Corporation)
+Benjamin Good, Andrew Su and Chunlei Wu (Scripps Research Institute)
+Jinghui Zhang (St. Jude Childerns Research Hospital)
+Jake Chen, James Ciminio and Matthew Might (University of Alabama)
+Trey Ideker (University of California, San Diego)
+Michael Tyers (University of Montreal)
+Stanley Ahalt, ChrisBizon and Alexander Tropsha (University of North Carolina at Chapel Hill)",599999
+Networking and Information Technology R&D,Aloral;Benchmarking;Characteristics;Client;Cloud Computing;Code;Computer software;Data;Databases;Disease;Docking;Future;Genetic Diseases;Graph;Hand;Hour;Human;Knowledge;Metadata;Methods;Modeling;Online Mendelian Inheritance In Man;Ontology;Oregon;Pathway interactions;Performance;Pharmaceutical Preparations;Phenotype;Preparation;Process;Protocols documentation;PubMed;Pythons;Response Latencies;Running;Seeds;Side;Source;Source Code;System;Universities;base;cloud based;flexibility;indexing;prototype;response;tool,Biomedical Data Translator Technical Feasibility Assessment of Reasoning Tool: Oregon State University,n/a,NCATS,9613383,12/29/17 0:00, ,1OT2TR002520-01,1,OT2,TR,2520,1, ,"COLVIS, CHRISTINE",12/29/17 0:00,12/28/20 0:00,ZTR1-SRC(99), ,8434665,"RAMSEY, STEPHEN A.","DEUTSCH, ERIC ; NANDI, ARNAB ",4,NONE,53599908,US,44.569006,-123.277867,6297004,OREGON STATE UNIVERSITY,CORVALLIS,OR,SCHOOLS OF PUBLIC HEALTH,973318555,UNITED STATES,N,12/29/17 0:00,12/28/20 0:00,350,Other,2018,788863, ,NCATS,767977,166626, ,"For developing the POC software, we used a rapid prototyping, cloud-­based approach based on Python code running in a Docker container in Amazon’s Elastic Compute Cloud (EC2). We used Git for distributed source code control, distributed project management, and code deployment. We implemented a blackboard-­like software module (Orangeboard) that provides a knowledge-­graph object model (including information about source database and edge types for seven different types of relationships) and the ability to load the graph into Neo4j using a high-­performance bulk­-transfer (parameterized Cypher) and protocol (Bolt). We implemented Python classes to provide RESTful querying functionality for 14 different knowledge sources (Monarch/BioLink, DisGeNET, Disease Ontology, GeneProf, miRBase, miRGate, MyGene.info, OMIM, Pathway Commons 2, Pharos, human phenotype ontology, Reactome, Monarch/SciGraph, and UniProt). We implemented client­-side HTTP request/response caching as well as non-­persistent method-­level caching in Python, to accelerate knowledge graph expansion. We implemented a BioNetExpander class that can iteratively expand a knowledge graph (in Orangeboard) from one or more seed nodes. This approach is flexible with respect to future types of queries and can accommodate future selective rules for node extension. Using BioNetExpander we are able to expand a knowledge graph from 21 seed diseases to 20,000 nodes and 800,000 relationships, in an hour. To enable path scoring, we implemented a Python class for obtaining path topological characteristics and metadata, for a given path in the Neo4j graph. We then implemented Python-­based scripts for querying for paths between genetic conditions and the 21 diseases (Q1), and for the 1,000 drug/disease pairs (Q2) in the Neo4j knowledge graph (using Cypher). We benchmarked path-­finding performance of this system and found that a typical shortest-­paths query with two fixed endpoints takes 50 ms, and thus, this approach should have low query-­response latency. In order to leverage PubMed abstract co-­occurrence information in scoring a path in the knowledge graph, we used high­-performance software (from Dr. Liang Huang’s lab) for indexing PubMed and are in the process of obtaining Normalized Google Distance (NGD) scores for pairs of genetic conditions and diseases (for Q1) and for pairs of drugs and diseases (for Q2). With the knowledge graph in hand, are in the process of refining our path­-scoring approaches for Q1 & Q2 in preparation for the POC demo.",788863
+Bioengineering; Networking and Information Technology R&D; Rare Diseases,Algorithms;Apoptosis;Architecture;Basic Science;Biological;Clinical;Clinical Data;Computer software;Data;Data Sources;Diagnosis;Disease;Distant;Elements;Event;Familiarity;Functional disorder;Gene Targeting;Genes;Graph;Knowledge;Lead;Leadership;Link;Literature;Metadata;Methodology;Methods;Modeling;Molecular;Pathway interactions;Patients;Phenotype;Positioning Attribute;Probability;Rare Diseases;Reproducibility;Research Infrastructure;Selection for Treatments;Semantics;Source;System;TP53 gene;Taxonomy;Techniques;Testing;Tissues;Variant;Vision;Zebrafish;base;cell type;crowdsourcing;data integration;data resource;design;disease classification;disease diagnosis;disease phenotype;experience;innovation;interoperability;knock-down;member;multimodality;open data;outcome forecast;scaffold;translational pipeline,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9768767,9/15/18 0:00, ,3OT3TR002019-01S3,3,OT3,TR,2019,1,S,"COLVIS, CHRISTINE",9/23/16 0:00,8/31/19 0:00,ZTR1-SRC(99), ,7569861,"CHUTE, CHRISTOPHER G","HAENDEL, MELISSA A; MUNGALL, CHRISTOPHER J",7,INTERNAL MEDICINE/MEDICINE,1910777,US,39.329164,-76.617855,4134401,JOHNS HOPKINS UNIVERSITY,BALTIMORE,MD,SCHOOLS OF MEDICINE,212182680,UNITED STATES,N,9/15/18 0:00,8/31/19 0:00,350,Other,2018,182410, ,NCATS,166015,16395, ,"Our leadership spans the translational spectrum - clinical (Chute, Robinson, Koeller, Hamosh),
+biological (Haendel, Hoatlin, Doheny), and computational (Mungall, Su, Liu, McWeeney, Overby),
+with expertise in a wide variety of data sources, types, and models as well as data integration
+strategies, standards, and algorithms. We are invested in open science, reproducibility, and
+lead efforts in developing open software, data standards, and crowdsourcing curation platforms.
+Our vision is to demonstrate connectivity between rare disease and common diseases via
+genes, pathways, and pathophysiology. We will include disease-phenotype associations,
+enriched with temporal information and decomposed into biological units. Innovative integration
+of mechanism and function will allow creation of candidate mechanistic graphs for each rare
+disease. We will use graph matching and probabilistic techniques to support basic research
+hypothesis testing as well as clinical inquiry (diagnosis, prognosis, and treatment selection).
+Finally, our team is deeply committed to enabling the collective use of all public biomedical data
+by making it interoperable and openly accessible for all users, in all contexts.
+Semantics matter to integration. The figure highlights the landscape of existing data resources,
+each contain a portion of data with specific, relevant meaning (A). Aggregation alone
+often results in loss of meaning (B). Semantic and probabilistic integration approaches provision
+for more advanced query answering capabilities (C). We have first hand experience overcoming
+challenges found within large-scale integration projects in general, but more important, we are
+very familiar with data sources and types this proposal aims to integrate. For example, knockdown
+of TP53 in zebrafish is used to reduce apoptosis; naive use of the data might attribute
+phenotypic effects to targeted genes. Other issues are in knowing when and how to integrate
+data where the associations between entities are not equivalent, such as when one source annotates
+a disease to a gene and another to a variant.
+Our existing infrastructure has successfully integrated and leveraged multimodal data for
+rare disease diagnosis. Here we extend these systems with new data types and new methodologies
+that generalize across diseases and contexts. The TransMed Knowledge Graph will have
+an intelligent, adaptive scaffolding for managing and linking the phenomenological worldview of
+clinical elements with the mechanistic emphases of basic science. Connections between biological
+entities and events will be represented either directly, or through chaining, enabling the use
+of powerful algorithms for query and inference. Elements in the graph will be stratified by either
+classical, rigid taxonomies (disease nosologies, tissue and cell type) or through dynamic groups
+based on shared mechanisms of molecular pathophysiology. External data can be compared
+using different criteria. For instance, two patients (one rare disease, one common disease) may
+be distant in classical nosology, but neighbors in pathway space - suggesting a treatment. The
+graph will be seeded from open data sources containing diverse data types, supplemented by
+knowledge from the literature and clinical data. TransMed will also be readily connected to other
+data stores using a quality identifier strategy, methods that predict probability of equivalency
+from associated metadata, and algorithms that match graphs based on similar members.
+Summary. Familiarity with the data, combined with our technical experience, and connection to
+real-world use cases positions us well to be both relevant and successful in our vision.",182410
+Bioengineering; Clinical Research,Address;Architecture;Clinical;Clinical Research;Collaborations;Collection;Complex;Data;Data Analyses;Data Sources;Development;Disease;Health;Human;Informatics;Ingestion;Institution;Measures;Medical;Metadata;Modeling;Molecular;Nurses;Pathway interactions;Pharmaceutical Preparations;Policies;Protocols documentation;Research Personnel;Scientist;Socialization;Support System;System;Systems Biology;Time;Training;Translational Research;Update;Vision;design;disease transmission;dynamic system;improved;interdisciplinary collaboration;open source;prototype;tool,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9482473,5/25/17 0:00, ,3OT3TR002020-01S1,3,OT3,TR,2020,1,S,"COLVIS, CHRISTINE",9/24/16 0:00,4/30/18 0:00,ZTR1-SRC(99), ,8850713,"AHALT, STANLEY CARLTON","TROPSHA, ALEXANDER ",4,BIOSTATISTICS & OTHER MATH SCI,608195277,US,35.926939,-79.038605,578206,UNIV OF NORTH CAROLINA CHAPEL HILL,CHAPEL HILL,NC,SCHOOLS OF ARTS AND SCIENCES,275990001,UNITED STATES,N,5/1/17 0:00,4/30/18 0:00,350,Other,2017,1113216, ,NCATS,740569,372647, ,"The Carolina Biomedical Data Translator (CBDT) will address the significant challenges in
+clinical and translational research by permitting clinicians, nurses, biomedical researchers, and
+clinical scientists to query, exploit, and contribute to a federated collection of complex and highly
+disparate data with medical importance. This data federation—a “quasi-comprehensive” medical
+federation—will enable interrogators to pose questions about human health and disease that
+could not heretofore have been imagined. We anticipate that these analyses will increase, in
+ways that are paradigm shifting, our understanding of new treatments and treatment targets,
+mechanisms of disease and disease transmission, environmental triggers, opportunities for drug
+repurposing, molecular candidates, and systems biology pathways.
+To realize this vision, we propose a trajectory that permits the realization of such a
+federation. We intend to start modestly and prototype the CBDT using the unique tools we have
+been building for other informatics projects, and then iteratively improve the CBDT in
+collaboration with NCATS. Ultimately, the CBDT federation will need to be socialized,
+permitted, and nurtured in order to realize its full potential. Indeed, we believe that the biggest
+single challenge will be establishing a governance model that permits the assembly of
+information pulled from across institutions and organizations. We discuss this issue in Section
+2.2.1.
+The CBDT must be:
+• Dynamic: regularly updated to accommodate the addition of new data and data sources;
+• Agile: modifiable for uses beyond the original design and adaptable for other data analysis;
+• Usable: permitting differential access and levels of access (view, edit, etc.) to the data, and
+permitting use by both experts and new users with modest training;
+• Rational: the data will be clinically and scientifically relevant, as well as informed by policy
+and protocols, and the system will provide answers with contextual meta-data; and
+• Curated: the data will have associated provenance and quality measures, including
+statistical relevance where appropriate.
+We envision a dynamic system that supports data ingestion and subsequent
+curation, federation, and exploitation (see figure). We have assembled a
+team that has a track record of interdisciplinary collaboration and development of open
+source tools. We propose a demonstration project that is feasible in the 2-year
+time frame, but demonstrates all of the key functionality that the final
+system must possess.",1113216
+Biotechnology,Affect;Architecture;Biology;Chemicals;Collaborations;Communities;Data;Data Sources;Development;Diagnosis;Disease;Extramural Activities;Fostering;Functional disorder;General Population;Genomics;Goals;Informatics;Language;Lead;Location;Modeling;Molecular;Organ;Pathway interactions;Patients;Pharmaceutical Chemistry;Pharmaceutical Preparations;Phenotype;Physicians;Process;Proteins;Publications;Research;Research Personnel;Resources;Signs and Symptoms;Synthesis Chemistry;Translations;United States National Institutes of Health;Validation;Work;assay development;base;cell type;design;drug development;drug discovery;high throughput screening;human disease;improved;interoperability;new technology;novel therapeutics;open source;programs;screening;small molecule;small molecule therapeutics;therapeutic development;tool,NCATS Biomedical Data Translator Program,n/a,NCATS,9551934, , ,1ZIATR000276-01,1,ZIA,TR,276,1, , , , , , ,14380147,"SOUTHALL, NOEL ",Not Applicable,n/a,Unavailable, , , , , ,NATIONAL CENTER FOR ADVANCING TRANSLATIONAL SCIENCES, , ,Other Domestic Non-Profits, ,UNITED STATES,N, , , ,Intramural Research,2017,900000, ,NCATS, , , ,"As a center, the NCGC has fostered and maintained over 130 active collaborations with both NIH and extramural investigators, facilitating drug discovery efforts across the entire spectrum of human disease. These efforts have led to dozens of high-throughput screens and a number of medicinal chemistry campaigns to further improve on screening hits, providing our collaborators and the general research community with publications and a variety of promising small molecule probes and leads. In addition, the NCGC has worked to advance a number of informatic initiatives to make better use of existing drug and disease target information and provide the general public with easily accessible resources, further catalyzing the development of new therapies for human disease.",900000
+Bioengineering; Networking and Information Technology R&D; Rare Diseases,Algorithms;Apoptosis;Architecture;Basic Science;Biological;Clinical;Clinical Data;Computer software;Data;Data Sources;Diagnosis;Disease;Distant;Elements;Event;Familiarity;Functional disorder;Gene Targeting;Genes;Graph;Knowledge;Lead;Leadership;Link;Literature;Metadata;Methodology;Methods;Modeling;Molecular;Pathway interactions;Patients;Phenotype;Positioning Attribute;Probability;Rare Diseases;Reproducibility;Research Infrastructure;Selection for Treatments;Semantics;Source;System;TP53 gene;Taxonomy;Techniques;Testing;Tissues;Variant;Vision;Zebrafish;base;cell type;crowdsourcing;data integration;data resource;design;disease classification;disease diagnosis;disease phenotype;experience;innovation;interoperability;knock-down;member;multimodality;open data;outcome forecast;scaffold;translational pipeline,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9481881,5/16/17 0:00, ,3OT3TR002019-01S1,3,OT3,TR,2019,1,S,"COLVIS, CHRISTINE",9/23/16 0:00,8/31/18 0:00,ZTR1-SRC(99), ,7569861,"CHUTE, CHRISTOPHER G","HAENDEL, MELISSA A; MUNGALL, CHRISTOPHER J",7,INTERNAL MEDICINE/MEDICINE,1910777,US,39.329164,-76.617855,4134401,JOHNS HOPKINS UNIVERSITY,BALTIMORE,MD,SCHOOLS OF MEDICINE,212182680,UNITED STATES,N,5/10/17 0:00,8/31/18 0:00,350,Other,2017,78175, ,NCATS,47960,30215, ,"Our leadership spans the translational spectrum - clinical (Chute, Robinson, Koeller, Hamosh),
+biological (Haendel, Hoatlin, Doheny), and computational (Mungall, Su, Liu, McWeeney, Overby),
+with expertise in a wide variety of data sources, types, and models as well as data integration
+strategies, standards, and algorithms. We are invested in open science, reproducibility, and
+lead efforts in developing open software, data standards, and crowdsourcing curation platforms.
+Our vision is to demonstrate connectivity between rare disease and common diseases via
+genes, pathways, and pathophysiology. We will include disease-phenotype associations,
+enriched with temporal information and decomposed into biological units. Innovative integration
+of mechanism and function will allow creation of candidate mechanistic graphs for each rare
+disease. We will use graph matching and probabilistic techniques to support basic research
+hypothesis testing as well as clinical inquiry (diagnosis, prognosis, and treatment selection).
+Finally, our team is deeply committed to enabling the collective use of all public biomedical data
+by making it interoperable and openly accessible for all users, in all contexts.
+Semantics matter to integration. The figure highlights the landscape of existing data resources,
+each contain a portion of data with specific, relevant meaning (A). Aggregation alone
+often results in loss of meaning (B). Semantic and probabilistic integration approaches provision
+for more advanced query answering capabilities (C). We have first hand experience overcoming
+challenges found within large-scale integration projects in general, but more important, we are
+very familiar with data sources and types this proposal aims to integrate. For example, knockdown
+of TP53 in zebrafish is used to reduce apoptosis; naive use of the data might attribute
+phenotypic effects to targeted genes. Other issues are in knowing when and how to integrate
+data where the associations between entities are not equivalent, such as when one source annotates
+a disease to a gene and another to a variant.
+Our existing infrastructure has successfully integrated and leveraged multimodal data for
+rare disease diagnosis. Here we extend these systems with new data types and new methodologies
+that generalize across diseases and contexts. The TransMed Knowledge Graph will have
+an intelligent, adaptive scaffolding for managing and linking the phenomenological worldview of
+clinical elements with the mechanistic emphases of basic science. Connections between biological
+entities and events will be represented either directly, or through chaining, enabling the use
+of powerful algorithms for query and inference. Elements in the graph will be stratified by either
+classical, rigid taxonomies (disease nosologies, tissue and cell type) or through dynamic groups
+based on shared mechanisms of molecular pathophysiology. External data can be compared
+using different criteria. For instance, two patients (one rare disease, one common disease) may
+be distant in classical nosology, but neighbors in pathway space - suggesting a treatment. The
+graph will be seeded from open data sources containing diverse data types, supplemented by
+knowledge from the literature and clinical data. TransMed will also be readily connected to other
+data stores using a quality identifier strategy, methods that predict probability of equivalency
+from associated metadata, and algorithms that match graphs based on similar members.
+Summary. Familiarity with the data, combined with our technical experience, and connection to
+real-world use cases positions us well to be both relevant and successful in our vision.",78175
+Bioengineering; Networking and Information Technology R&D; Rare Diseases,Algorithms;Apoptosis;Architecture;Basic Science;Biological;Clinical;Clinical Data;Computer software;Data;Data Sources;Diagnosis;Disease;Distant;Elements;Event;Familiarity;Functional disorder;Gene Targeting;Genes;Graph;Knowledge;Lead;Leadership;Link;Literature;Metadata;Methodology;Methods;Modeling;Molecular;Pathway interactions;Patients;Phenotype;Positioning Attribute;Probability;Rare Diseases;Reproducibility;Research Infrastructure;Selection for Treatments;Semantics;Source;System;TP53 gene;Taxonomy;Techniques;Testing;Tissues;Variant;Vision;Zebrafish;base;cell type;crowdsourcing;data integration;data resource;design;disease classification;disease diagnosis;disease phenotype;experience;innovation;interoperability;knock-down;member;multimodality;open data;outcome forecast;scaffold;translational pipeline,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9540416,9/15/17 0:00, ,3OT3TR002019-01S2,3,OT3,TR,2019,1,S,"COLVIS, CHRISTINE",9/23/16 0:00,8/31/18 0:00,ZTR1-SRC(99), ,7569861,"CHUTE, CHRISTOPHER G","HAENDEL, MELISSA A; MUNGALL, CHRISTOPHER J",7,INTERNAL MEDICINE/MEDICINE,1910777,US,39.329164,-76.617855,4134401,JOHNS HOPKINS UNIVERSITY,BALTIMORE,MD,SCHOOLS OF MEDICINE,212182680,UNITED STATES,N,9/1/17 0:00,8/31/18 0:00,350,Other,2017,1904427, ,NCATS,1719796,184631, ,"Our leadership spans the translational spectrum - clinical (Chute, Robinson, Koeller, Hamosh),
+biological (Haendel, Hoatlin, Doheny), and computational (Mungall, Su, Liu, McWeeney, Overby),
+with expertise in a wide variety of data sources, types, and models as well as data integration
+strategies, standards, and algorithms. We are invested in open science, reproducibility, and
+lead efforts in developing open software, data standards, and crowdsourcing curation platforms.
+Our vision is to demonstrate connectivity between rare disease and common diseases via
+genes, pathways, and pathophysiology. We will include disease-phenotype associations,
+enriched with temporal information and decomposed into biological units. Innovative integration
+of mechanism and function will allow creation of candidate mechanistic graphs for each rare
+disease. We will use graph matching and probabilistic techniques to support basic research
+hypothesis testing as well as clinical inquiry (diagnosis, prognosis, and treatment selection).
+Finally, our team is deeply committed to enabling the collective use of all public biomedical data
+by making it interoperable and openly accessible for all users, in all contexts.
+Semantics matter to integration. The figure highlights the landscape of existing data resources,
+each contain a portion of data with specific, relevant meaning (A). Aggregation alone
+often results in loss of meaning (B). Semantic and probabilistic integration approaches provision
+for more advanced query answering capabilities (C). We have first hand experience overcoming
+challenges found within large-scale integration projects in general, but more important, we are
+very familiar with data sources and types this proposal aims to integrate. For example, knockdown
+of TP53 in zebrafish is used to reduce apoptosis; naive use of the data might attribute
+phenotypic effects to targeted genes. Other issues are in knowing when and how to integrate
+data where the associations between entities are not equivalent, such as when one source annotates
+a disease to a gene and another to a variant.
+Our existing infrastructure has successfully integrated and leveraged multimodal data for
+rare disease diagnosis. Here we extend these systems with new data types and new methodologies
+that generalize across diseases and contexts. The TransMed Knowledge Graph will have
+an intelligent, adaptive scaffolding for managing and linking the phenomenological worldview of
+clinical elements with the mechanistic emphases of basic science. Connections between biological
+entities and events will be represented either directly, or through chaining, enabling the use
+of powerful algorithms for query and inference. Elements in the graph will be stratified by either
+classical, rigid taxonomies (disease nosologies, tissue and cell type) or through dynamic groups
+based on shared mechanisms of molecular pathophysiology. External data can be compared
+using different criteria. For instance, two patients (one rare disease, one common disease) may
+be distant in classical nosology, but neighbors in pathway space - suggesting a treatment. The
+graph will be seeded from open data sources containing diverse data types, supplemented by
+knowledge from the literature and clinical data. TransMed will also be readily connected to other
+data stores using a quality identifier strategy, methods that predict probability of equivalency
+from associated metadata, and algorithms that match graphs based on similar members.
+Summary. Familiarity with the data, combined with our technical experience, and connection to
+real-world use cases positions us well to be both relevant and successful in our vision.",1904427
+Bioengineering; Clinical Research; Genetics,Architecture;Artificial Intelligence;Biological;Biological Models;Biological Process;Cell Survival;Cell physiology;Cells;Clinical Trials;Communities;Complex;Computerized Medical Record;Coupled;Current Procedural Terminology Codes;DNA Sequence Alteration;Data;Data Set;Diagnosis;Diagnostic;Disease;Functional disorder;Gene Expression Profile;Generations;Genetic;Goals;Human;Human Genetics;Individual;Knowledge;Link;Methodology;Modeling;Molecular;Mutation;Nature;Organ;Patients;Pattern;Pharmaceutical Preparations;Phenotype;Phosphorylation;Probability;Processed Genes;Property;Publishing;Quality Control;Research;Research Personnel;Resolution;Resources;Semantics;Source;Symptoms;Terminology;Tissues;Translating;Translation Process;base;biological systems;chemical genetics;data integration;design;drug candidate;experimental study;genetic association;human disease;insight;interoperability;novel;phenotypic biomarker;pre-clinical;protein function;response;small molecule;treatment effect,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9540181,9/2/17 0:00, ,3OT3TR002025-01S1,3,OT3,TR,2025,1,S,"COLVIS, CHRISTINE",9/23/16 0:00,6/30/18 0:00,ZTR1-SRC(99), ,1879023,"CLEMONS, PAUL ANDREW",Not Applicable,7,Unavailable,623544785,US,42.363318,-71.087781,10021177,"BROAD INSTITUTE, INC.",CAMBRIDGE,MA,Research Institutes,21421027,UNITED STATES,N,7/1/17 0:00,6/30/18 0:00,350,Other,2017,651119, ,NCATS,365797,285322, ,"A fundamental challenge to translate insights between biomedical researchers, who study
+biological mechanisms, and clinicians, who diagnose patient symptoms, is that many links
+between biological processes and disease pathophysiology are poorly understood. A
+comprehensive Biomedical Translator must enable chains of inference across objects as
+diverse as genetic mutations, molecular effects, tissue-specific expression patterns,
+cellular processes, organ phenotypes, disease states, patient symptoms, and drug
+responses, a challenge beyond the scope of any one organization.
+Fortunately, many individual links in this chain have been made by experiments yielding
+statistical connections between individual data types. High-throughput perturbation screens
+link chemical and genetic perturbations to cellular phenotypes such as gene-expression
+patterns, cell survival, or changes in phosphorylation. Genetic association studies link
+mutations to human disease or intermediate phenotypes and biomarkers. Electronic medical
+records (EMR) link diseases or human phenotypes to diagnostic or current procedural
+terminology (CPT) codes, and clinical trials link the impact of drugs and drug candidates on
+disease states.
+In principle, incorporating these links into chains of inference could translate results between
+the full set of data types within them. In practice, each link is maintained by experts with
+domain-specific experiments, semantic terminology, and methodological standards. While a key
+challenge faced by a global Biomedical Translator is to establish consistent standards across
+these existing data types, a more important goal is to develop a principled and robust
+framework to (a) model biological systems and experimental approaches to investigate them;
+(b) organize knowledge about biological mechanism and disease; and (c) incorporate
+diverse datasets that serve as windows into the underlying and unknown state of nature.
+We propose to implement a Biomedical Translator as a probabilistic graphical model, a
+paradigm from artificial intelligence (AI) research. Just as separate research communities form
+weakly coupled parts of the translation process, graphical models allow global inferences from
+weakly coupled “nodes”. These inferences require each node to publish only probability
+distributions, enabling interoperability without necessarily having global entity-resolution
+standards, and benefit from paradigms for quality control, fault tolerance, and relevance
+assessment common in AI research. We hypothesize that a limited number of APIs,
+implemented as probability computations by communities around the world, would yield a
+Biomedical Translator as an emergent property of weakly coupled knowledge sources.
+From basic properties of graphical models, such a Translator could probabilistically translate
+among any data types connected within it, allowing for relatively complex query concepts. For
+example: What cellular processes in which tissues are impacted in a patient-based EMR? What
+genetic mutations sensitize cells to small-molecule treatment effects? Which small molecules
+mimic genetic “experiments of nature” that protect against disease?
+To illustrate the value of these resources and our architectural paradigm, we propose a
+demonstration project to implement a Biomedical Translator supporting queries between
+small molecules, biological processes, genes, and disease. The demonstration project will
+provide a valuable first step to confront key data-integration and organizational challenges and
+will enable previously impossible queries, such as identifying small molecules that perturb the
+same biological processes implicated by human genetics in a disease context. In this capacity,
+such Translator could realistically identify existing drugs for known symptoms (i.e., repurposing),
+but could more broadly serve as an engine for hypothesis generation and
+biological discovery, suggesting pre-clinical small molecules to develop based on their
+observed biological activity, or providing heretofore novel links between cellular protein function
+and disease pathophysiology.",651119
+Cancer; Clinical Research; Networking and Information Technology R&D,Address;Affect;Architecture;Big Data;Biological;CRH gene;Cancer Patient;Cancer Survivor;Caring;Clinic;Clinical;Clinical Data;Collaborations;Communities;Data;Data Analyses;Data Analytics;Data Set;Data Sources;Databases;Diabetes Mellitus;Dimensions;Disease;Drug Interactions;Functional disorder;Future;Gene Proteins;Generic Drugs;Genes;Genome;Graph;Heterogeneity;Housing;Human;Hybrids;Individual;Joints;Knowledge;Learning;Literature;Machine Learning;Malignant Neoplasms;Manuals;Measures;Medicine;Molecular;Monitor;Nature;Output;Pathogenesis;Pathway interactions;Patients;Phenotype;Population;Provider;Research;Research Infrastructure;Research Personnel;Resources;SNOMED Clinical Terms;Saint Jude Children&apos;s Research Hospital;Source;Structure;Testing;Translating;Translations;base;cohort;data integration;data mining;design;high dimensionality;improved;innovation;inter-individual variation;interoperability;knowledge base;lexical;molecular assembly/self assembly;new technology;transcriptome,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9486059,9/9/17 0:00, ,3OT3TR002026-01S1,3,OT3,TR,2026,1,S,"COLVIS, CHRISTINE",9/22/16 0:00,1/31/19 0:00,ZTR1-SRC(99), ,9454292,"HUANG, SUI ","GLUSMAN, GUSTAVO ",7,Unavailable,135646524,US,47.622042,-122.337243,4106301,INSTITUTE FOR SYSTEMS BIOLOGY,SEATTLE,WA,Research Institutes,981095263,UNITED STATES,N,9/1/17 0:00,1/31/19 0:00,350,Other,2017,1408263, ,NCATS,1054467,353796, ,"New technologies afford the acquisition of dense “data clouds” of individual humans. However,
+heterogeneity, dimensionality and multi-scale nature of such data (genomes, transcriptomes,
+clinical variables, etc.) pose a new challenge: How can one query such dense data clouds of
+mixed data as an integrated set (as opposed to variable by variable) against multiple knowledge
+bases, and translate the joint molecular information into the clinical realm? Current lexical mapping
+and brute-force data mining seek to make heterogeneous data interoperable and accessible
+but their output is fragmented and requires expertise to assemble into coherent actionable
+information. We propose DeepTranslate, an innovative approach that incorporates the known
+actual physical organization of biological entities that are the substrate of pathogenesis into (i)
+networks (data graphs) and (ii) hierarchies of concepts that span the multiscale space from
+molecule to clinic. Organizing data sources along such natural structures will allow translation of
+burgeoning high-dimensional data sets into concepts familiar to clinicians, while capturing
+mechanistic relationships. DeepTranslate will take a hybrid approach to learn and organize its
+content from both (i) existing generic comprehensive knowledge sources (GO, KEGG, IDC, etc.)
+and (ii) newly measured instances of individual data clouds from two demonstration projects: (1)
+ISB’s Pioneer 100 and (2) St. Jude Lifetime cancer survivors. We will focus on diabetes as
+test case. These two studies cover a deep biological scale-space and thus can test the full extent
+of the multiscale capacity of DeepTranslate in a focused application.
+1. TYPES OF RESEARCH QUESTION ENABLED. How can a clinician find out that the dozens
+of “out of range” variables observed in a patient’s data cloud, form a connected set with respect
+to pathophysiology pathways, from gene to clinical variable? How can the high-dimensional
+data of studies that measure for each individual 100+ data points of various types
+(“personal data clouds”) be analyzed as one set in an integrated fashion (as opposed to variable
+by variable) against existing knowledge bases and also be used to improve the databases?
+DeepTranslate addresses these two types of questions and thereby will accelerate translation of
+future personal data clouds into (A) care decisions and (B) hypotheses on new disease mechanisms
+/ treatments, thereby benefiting providers as well as researchers.
+2. USE OF EXPERTISE AND RESOURCES. ■ ISB: pioneer in personalized, big-data driven
+medicine (Demo Project 1); biomedical content expertise; multiscale omics and molecular pathogenesis,
+big data analysis, housing of databases for public access; query engine designs, GUI.
+■ UCSD: leader in biomedical data integration; automated assembly of molecular and clinical
+data into hierarchical structures; translation between data types ■ U Montreal: biomedical database
+curation from literature and construction of gene/protein/drug interaction networks; machine
+learning, open resource database ■ St Jude CRH: Cancer monitoring Demo Project 2,
+cancer patient data analytics.
+3. POTENTIAL DATA AND INFRASTRUCTURE CHALLENGES. (a) Existing comprehensive
+clinical data sources are not uniform and not explicitly based on biological networks; cross-mapping
+is being performed at NLM based on lexical relationships: HPO (phenotypes) vs.
+SNOMED CT (for EMR) vs. IDC or Merck Manual (for diseases). Careful selection of these
+sources in close collaboration with NLM is needed. (b) Existing molecular pathway databases
+are static, based on averages of heterogeneous non-stratified populations, while the newly
+measured high-dimensional data clouds are varied due to intra-individual temporal fluctuation
+and inter-individual variation. How this will affect building of ontotypes in our hybrid approach,
+and how large cohorts of data clouds must be to offer statistical power is yet to be determined.
+Our two Demonstration Projects with their uniquely deep (high-dimensional and multiscale) data
+in cohorts of limited but growing size are thus crucial first steps in a long journey of collective
+learning in the TRANSLATOR community.",1408263
+Bioengineering,Address;Architecture;Clinical;Clinical Nurse Specialists;Clinical Research;Collaborations;Collection;Complex;Data;Data Analyses;Data Sources;Development;Disease;Health;Human;Informatics;Ingestion;Institution;Measures;Medical;Metadata;Modeling;Molecular;Pathway interactions;Pharmaceutical Preparations;Policies;Protocols documentation;Research Personnel;Scientist;System;Systems Biology;Time;Training;Translational Research;Update;Vision;design;disease transmission;dynamic system;improved;interdisciplinary collaboration;open source;prototype;tool,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9335063,9/24/16 0:00,RFA-TR-16-001,1OT3TR002020-01,1,OT3,TR,2020,1, ,"COLVIS, CHRISTINE",9/24/16 0:00,12/31/20 0:00,ZTR1-SRC(99), ,8850713,"AHALT, STANLEY CARLTON","TROPSHA, ALEXANDER ",4,BIOSTATISTICS & OTHER MATH SCI,608195277,US,35.926939,-79.038605,578206,UNIV OF NORTH CAROLINA CHAPEL HILL,CHAPEL HILL,NC,SCHOOLS OF ARTS AND SCIENCES,275990001,UNITED STATES,N,9/24/16 0:00,12/31/20 0:00,350,Other,2016,454336, ,NCATS,298905,155431, ,"The Carolina Biomedical Data Translator (CBDT) will address the significant challenges in
+clinical and translational research by permitting clinicians, nurses, biomedical researchers, and
+clinical scientists to query, exploit, and contribute to a federated collection of complex and highly
+disparate data with medical importance. This data federation—a “quasi-comprehensive” medical
+federation—will enable interrogators to pose questions about human health and disease that
+could not heretofore have been imagined. We anticipate that these analyses will increase, in
+ways that are paradigm shifting, our understanding of new treatments and treatment targets,
+mechanisms of disease and disease transmission, environmental triggers, opportunities for drug
+repurposing, molecular candidates, and systems biology pathways.
+To realize this vision, we propose a trajectory that permits the realization of such a
+federation. We intend to start modestly and prototype the CBDT using the unique tools we have
+been building for other informatics projects, and then iteratively improve the CBDT in
+collaboration with NCATS. Ultimately, the CBDT federation will need to be socialized,
+permitted, and nurtured in order to realize its full potential. Indeed, we believe that the biggest
+single challenge will be establishing a governance model that permits the assembly of
+information pulled from across institutions and organizations. We discuss this issue in Section
+2.2.1.
+The CBDT must be:
+• Dynamic: regularly updated to accommodate the addition of new data and data sources;
+• Agile: modifiable for uses beyond the original design and adaptable for other data analysis;
+• Usable: permitting differential access and levels of access (view, edit, etc.) to the data, and
+permitting use by both experts and new users with modest training;
+• Rational: the data will be clinically and scientifically relevant, as well as informed by policy
+and protocols, and the system will provide answers with contextual meta-data; and
+• Curated: the data will have associated provenance and quality measures, including
+statistical relevance where appropriate.
+We envision a dynamic system that supports data ingestion and subsequent
+curation, federation, and exploitation (see figure). We have assembled a
+team that has a track record of interdisciplinary collaboration and development of open
+source tools. We propose a demonstration project that is feasible in the 2-year
+time frame, but demonstrates all of the key functionality that the final
+system must possess.",454336
+Bioengineering; Networking and Information Technology R&D,Address;Affect;Animal Model;Architecture;Basic Science;Biological;Biomedical Research;Cell physiology;Clinical;Clinical Data;Clinical Sciences;Data;Data Set;Disease;Genetic;Goals;Graph;Knowledge;Knowledge Discovery;Language;Link;Machine Learning;Metabolic;Methods;Modeling;Molecular;Ontology;Pathway Analysis;Pathway interactions;Patients;Physiological;Proteins;Proteomics;Quality Control;Reproducibility;Research Personnel;Science;Scientist;Semantics;Series;Signs and Symptoms;Source;System;Techniques;Technology;Time;Translational Research;Translations;Treatment outcome;Update;Variant;Vision;base;cell type;clinical phenotype;comparative effectiveness;design;disorder subtype;genetic variant;innovation;insight;interoperability;molecular domain;multi-scale modeling;novel;prototype;text searching;user-friendly,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9338982,9/25/16 0:00, ,1OT3TR002027-01,1,OT3,TR,2027,1, ,"COLVIS, CHRISTINE",9/25/16 0:00,12/31/19 0:00,ZTR1-SRC(99), ,9643350,"TATONETTI, NICHOLAS P","DUMONTIER, MICHEL ; WENG, CHUNHUA ",13,INTERNAL MEDICINE/MEDICINE,621889815,US,40.841253,-73.940404,1833205,COLUMBIA UNIVERSITY HEALTH SCIENCES,NEW YORK,NY,SCHOOLS OF MEDICINE,100323725,UNITED STATES,N,9/25/16 0:00,12/31/19 0:00,350,Other,2016,1183132, ,NCATS,877574,305558, ,"Our Vision: We propose DeepLink, a versatile data translator that integrate multi-scale,
+heterogeneous, and multi-source biomedical and clinical data. The primary goal of DeepLink is
+to enable meaningful bidirectional translation between clinical and molecular science by closing
+the interoperability gap between models and knowledge at different scales. The translator will
+enhance clinical science with molecular insights from basic and translational research (e.g.
+genetic variants, protein interactions, pathway functions, and cellular organization), and enable
+the molecular sciences by connecting biological discoveries with their pathophysiological
+consequences (e.g. diseases, signs and symptoms, pharmacological effects, physiological
+systems). Fundamental differences in the language and semantics used to describe the models
+and knowledge between the clinical and molecular domains results in an interoperability gap.
+DeepLink will systematically and comprehensively close this gap. We will begin with the latest
+technology in semantic knowledge graphs to support an extensible architecture for dynamic
+data federation and knowledge harmonization. We will design a system for multi-scale model
+integration that is ontology-based and will combine model execution with prior, curated
+biomedical knowledge. Our design strategy will be iterative and participatory and anchored by
+10 major milestones. In a series of demonstrations of DeepLink’s functions, we will address one
+of the major challenges facing translational science: reproducibility of biomedical research
+findings that are based on evolving molecular datasets. Reproducibility of analyses and
+replication of results are central to scientific advancement. Many landmark studies have used
+data that are constantly being updated, curated, and pared down over time. Our series of
+demonstrations projects are designed to prototype the technology required for a scalable and
+robust translator as well as the techniques we will use to close the interoperability gap for a
+specific use case. The demonstration project will, itself, will be a significant and novel
+contribution to science.
+DeepLink will be able to answer questions that are currently enigmatic. Examples include:
+- From clinicians: What is the comparative effectiveness of all the treatments for disease Y
+given a patient's genetic/metabolic/proteomic profile? What are the functional variants in
+cell type X that are associated with differential treatment outcomes? What metabolite
+perturbations in cell type Y are associated with different subtypes of disease X?
+- From basic science researchers: What is known about disease Y across all model
+organisms (even those not designed to model Y)? What are all the clinical phenotypes that
+result from a change in function in protein X? Which biological pathways are affected by a
+pathogenic variant of disease Y? What patient data are available to evaluate a molecularlyderived
+clinical hypothesis?
+Challenges and Our Approaches: DeepLink will close the interoperability gap that currently
+prohibits molecular discoveries from leading to clinical innovations. DeepLink will be
+technologically driven, addressing the challenges associated with large, heterogeneous,
+semantically ambiguous, continuously changing, partially overlapping, and contextually
+dependent data by using (1) scalable, distributed, and versioned graph stores; (2) semantic
+technologies such as ontologies and Linked Data; (3) network analysis quality control methods;
+(4) machine-learning focused data fusion methods; (5) context-aware text mining, entity
+recognition and relation extraction; (6) multi-scale knowledge discovery using patient and
+molecular data; and (7) presentation of actionable knowledge to clinicians and basic scientists
+via user-friendly interfaces.",1183132
+Bioengineering; Networking and Information Technology R&D; Rare Diseases,Algorithms;Apoptosis;Architecture;Basic Science;Biological;Clinical;Clinical Data;Computer software;Data;Data Sources;Diagnosis;Disease;Distant;Elements;Event;Familiarity;Functional disorder;Gene Targeting;Genes;Graph;Histocompatibility Testing;Indium;Knowledge;Lead;Leadership;Link;Literature;Metadata;Methodology;Methods;Modeling;Molecular;Pathway interactions;Patients;Positioning Attribute;Probability;Rare Diseases;Reproducibility;Research Infrastructure;Resources;Selection for Treatments;Semantics;Source;System;TP53 gene;Taxonomy;Techniques;Testing;Variant;Vision;Zebrafish;base;cell type;crowdsourcing;data integration;design;disease classification;disease diagnosis;disease phenotype;experience;innovation;knock-down;member;open data;outcome forecast;scaffold,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9327189,9/23/16 0:00, ,1OT3TR002019-01,1,OT3,TR,2019,1, ,"COLVIS, CHRISTINE",9/23/16 0:00,3/31/20 0:00,ZTR1-SRC(99), ,7569861,"CHUTE, CHRISTOPHER G","HAENDEL, MELISSA A; MUNGALL, CHRISTOPHER J",7,INTERNAL MEDICINE/MEDICINE,1910777,US,39.329164,-76.617855,4134401,JOHNS HOPKINS UNIVERSITY,BALTIMORE,MD,SCHOOLS OF MEDICINE,212182680,UNITED STATES,N,9/23/16 0:00,3/31/20 0:00,350,Other,2016,1999484, ,NCATS,1760604,238880, ,"Our leadership spans the translational spectrum - clinical (Chute, Robinson, Koeller, Hamosh),
+biological (Haendel, Hoatlin, Doheny), and computational (Mungall, Su, Liu, McWeeney, Overby),
+with expertise in a wide variety of data sources, types, and models as well as data integration
+strategies, standards, and algorithms. We are invested in open science, reproducibility, and
+lead efforts in developing open software, data standards, and crowdsourcing curation platforms.
+Our vision is to demonstrate connectivity between rare disease and common diseases via
+genes, pathways, and pathophysiology. We will include disease-phenotype associations,
+enriched with temporal information and decomposed into biological units. Innovative integration
+of mechanism and function will allow creation of candidate mechanistic graphs for each rare
+disease. We will use graph matching and probabilistic techniques to support basic research
+hypothesis testing as well as clinical inquiry (diagnosis, prognosis, and treatment selection).
+Finally, our team is deeply committed to enabling the collective use of all public biomedical data
+by making it interoperable and openly accessible for all users, in all contexts.
+Semantics matter to integration. The figure highlights the landscape of existing data resources,
+each contain a portion of data with specific, relevant meaning (A). Aggregation alone
+often results in loss of meaning (B). Semantic and probabilistic integration approaches provision
+for more advanced query answering capabilities (C). We have first hand experience overcoming
+challenges found within large-scale integration projects in general, but more important, we are
+very familiar with data sources and types this proposal aims to integrate. For example, knockdown
+of TP53 in zebrafish is used to reduce apoptosis; naive use of the data might attribute
+phenotypic effects to targeted genes. Other issues are in knowing when and how to integrate
+data where the associations between entities are not equivalent, such as when one source annotates
+a disease to a gene and another to a variant.
+Our existing infrastructure has successfully integrated and leveraged multimodal data for
+rare disease diagnosis. Here we extend these systems with new data types and new methodologies
+that generalize across diseases and contexts. The TransMed Knowledge Graph will have
+an intelligent, adaptive scaffolding for managing and linking the phenomenological worldview of
+clinical elements with the mechanistic emphases of basic science. Connections between biological
+entities and events will be represented either directly, or through chaining, enabling the use
+of powerful algorithms for query and inference. Elements in the graph will be stratified by either
+classical, rigid taxonomies (disease nosologies, tissue and cell type) or through dynamic groups
+based on shared mechanisms of molecular pathophysiology. External data can be compared
+using different criteria. For instance, two patients (one rare disease, one common disease) may
+be distant in classical nosology, but neighbors in pathway space - suggesting a treatment. The
+graph will be seeded from open data sources containing diverse data types, supplemented by
+knowledge from the literature and clinical data. TransMed will also be readily connected to other
+data stores using a quality identifier strategy, methods that predict probability of equivalency
+from associated metadata, and algorithms that match graphs based on similar members.
+Summary. Familiarity with the data, combined with our technical experience, and connection to
+real-world use cases positions us well to be both relevant and successful in our vision.",1999484
+Bioengineering; Genetics,Architecture;Artificial Intelligence;Biological;Biological Markers;Biological Process;Cell Survival;Cell physiology;Cells;Clinical Trials;Communities;Complex;Computerized Medical Record;Coupled;Current Procedural Terminology Codes;DNA Sequence Alteration;Data;Data Set;Diagnosis;Diagnostic;Disease;Functional disorder;Gene Expression Profile;Generations;Genetic;Goals;Human;Human Genetics;Individual;Knowledge;Link;Modeling;Molecular;Mutation;Nature;Organ;Patients;Pattern;Pharmaceutical Preparations;Phenotype;Phosphorylation;Probability;Processed Genes;Property;Publishing;Quality Control;Research;Research Personnel;Resolution;Resources;Semantics;Source;Symptoms;Terminology;Tissues;Translating;Translation Process;base;biological systems;chemical genetics;data integration;design;disease phenotype;drug candidate;genetic association;human disease;insight;interoperability;novel;pre-clinical;protein function;research study;response;small molecule;treatment effect,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9337924,9/23/16 0:00, ,1OT3TR002025-01,1,OT3,TR,2025,1, ,"COLVIS, CHRISTINE",9/23/16 0:00,3/31/18 0:00,ZTR1-SRC(99), ,1879023,"CLEMONS, PAUL ANDREW",Not Applicable,7,Unavailable,623544785,US,42.363318,-71.087781,10021177,"BROAD INSTITUTE, INC.",CAMBRIDGE,MA,Research Institutes,21421027,UNITED STATES,N,9/23/16 0:00,3/31/18 0:00,350,Other,2016,399608, ,NCATS,218365,181243, ,"A fundamental challenge to translate insights between biomedical researchers, who study
+biological mechanisms, and clinicians, who diagnose patient symptoms, is that many links
+between biological processes and disease pathophysiology are poorly understood. A
+comprehensive Biomedical Translator must enable chains of inference across objects as
+diverse as genetic mutations, molecular effects, tissue-specific expression patterns,
+cellular processes, organ phenotypes, disease states, patient symptoms, and drug
+responses, a challenge beyond the scope of any one organization.
+Fortunately, many individual links in this chain have been made by experiments yielding
+statistical connections between individual data types. High-throughput perturbation screens
+link chemical and genetic perturbations to cellular phenotypes such as gene-expression
+patterns, cell survival, or changes in phosphorylation. Genetic association studies link
+mutations to human disease or intermediate phenotypes and biomarkers. Electronic medical
+records (EMR) link diseases or human phenotypes to diagnostic or current procedural
+terminology (CPT) codes, and clinical trials link the impact of drugs and drug candidates on
+disease states.
+In principle, incorporating these links into chains of inference could translate results between
+the full set of data types within them. In practice, each link is maintained by experts with
+domain-specific experiments, semantic terminology, and methodological standards. While a key
+challenge faced by a global Biomedical Translator is to establish consistent standards across
+these existing data types, a more important goal is to develop a principled and robust
+framework to (a) model biological systems and experimental approaches to investigate them;
+(b) organize knowledge about biological mechanism and disease; and (c) incorporate
+diverse datasets that serve as windows into the underlying and unknown state of nature.
+We propose to implement a Biomedical Translator as a probabilistic graphical model, a
+paradigm from artificial intelligence (AI) research. Just as separate research communities form
+weakly coupled parts of the translation process, graphical models allow global inferences from
+weakly coupled “nodes”. These inferences require each node to publish only probability
+distributions, enabling interoperability without necessarily having global entity-resolution
+standards, and benefit from paradigms for quality control, fault tolerance, and relevance
+assessment common in AI research. We hypothesize that a limited number of APIs,
+implemented as probability computations by communities around the world, would yield a
+Biomedical Translator as an emergent property of weakly coupled knowledge sources.
+From basic properties of graphical models, such a Translator could probabilistically translate
+among any data types connected within it, allowing for relatively complex query concepts. For
+example: What cellular processes in which tissues are impacted in a patient-based EMR? What
+genetic mutations sensitize cells to small-molecule treatment effects? Which small molecules
+mimic genetic “experiments of nature” that protect against disease?
+To illustrate the value of these resources and our architectural paradigm, we propose a
+demonstration project to implement a Biomedical Translator supporting queries between
+small molecules, biological processes, genes, and disease. The demonstration project will
+provide a valuable first step to confront key data-integration and organizational challenges and
+will enable previously impossible queries, such as identifying small molecules that perturb the
+same biological processes implicated by human genetics in a disease context. In this capacity,
+such Translator could realistically identify existing drugs for known symptoms (i.e., repurposing),
+but could more broadly serve as an engine for hypothesis generation and
+biological discovery, suggesting pre-clinical small molecules to develop based on their
+observed biological activity, or providing heretofore novel links between cellular protein function
+and disease pathophysiology.",399608
+Cancer; Networking and Information Technology R&D,Address;Affect;Architecture;Big Data;Biological;CRH gene;Cancer Patient;Cancer Survivor;Caring;Clinic;Clinical;Clinical Data;Collaborations;Communities;Data;Data Analyses;Data Analytics;Data Set;Data Sources;Databases;Diabetes Mellitus;Disease;Drug Interactions;Functional disorder;Future;Gene Proteins;Generic Drugs;Genes;Genome;Graph;Heterogeneity;Housing;Human;Hybrids;Individual;Joints;Knowledge;Learning;Literature;Machine Learning;Malignant Neoplasms;Manuals;Maps;Measures;Medicine;Molecular;Monitor;Nature;Output;Pathogenesis;Pathway interactions;Patients;Phenotype;Population;Provider;Research;Research Infrastructure;Research Personnel;Resources;SNOMED Clinical Terms;Saint Jude Children&apos;s Research Hospital;Source;Structure;Testing;Translating;Translations;base;cohort;data integration;data mining;design;improved;innovation;inter-individual variation;knowledge base;lexical;molecular assembly/self assembly;new technology;transcriptome,Biomedical Data Translator Technical Feasibility Assessment and Architecture Design,n/a,NCATS,9338977,9/24/16 0:00, ,1OT3TR002026-01,1,OT3,TR,2026,1, ,"COLVIS, CHRISTINE",9/22/16 0:00,1/31/20 0:00,ZTR1-SRC(99), ,9454292,"HUANG, SUI ","GLUSMAN, GUSTAVO ",7,Unavailable,135646524,US,47.622042,-122.337243,4106301,INSTITUTE FOR SYSTEMS BIOLOGY,SEATTLE,WA,Research Institutes,981095263,UNITED STATES,N,9/22/16 0:00,1/31/20 0:00,350,Other,2016,1071976, ,NCATS,840760,231216, ,"New technologies afford the acquisition of dense “data clouds” of individual humans. However,
+heterogeneity, dimensionality and multi-scale nature of such data (genomes, transcriptomes,
+clinical variables, etc.) pose a new challenge: How can one query such dense data clouds of
+mixed data as an integrated set (as opposed to variable by variable) against multiple knowledge
+bases, and translate the joint molecular information into the clinical realm? Current lexical mapping
+and brute-force data mining seek to make heterogeneous data interoperable and accessible
+but their output is fragmented and requires expertise to assemble into coherent actionable
+information. We propose DeepTranslate, an innovative approach that incorporates the known
+actual physical organization of biological entities that are the substrate of pathogenesis into (i)
+networks (data graphs) and (ii) hierarchies of concepts that span the multiscale space from
+molecule to clinic. Organizing data sources along such natural structures will allow translation of
+burgeoning high-dimensional data sets into concepts familiar to clinicians, while capturing
+mechanistic relationships. DeepTranslate will take a hybrid approach to learn and organize its
+content from both (i) existing generic comprehensive knowledge sources (GO, KEGG, IDC, etc.)
+and (ii) newly measured instances of individual data clouds from two demonstration projects: (1)
+ISB’s Pioneer 100 and (2) St. Jude Lifetime cancer survivors. We will focus on diabetes as
+test case. These two studies cover a deep biological scale-space and thus can test the full extent
+of the multiscale capacity of DeepTranslate in a focused application.
+1. TYPES OF RESEARCH QUESTION ENABLED. How can a clinician find out that the dozens
+of “out of range” variables observed in a patient’s data cloud, form a connected set with respect
+to pathophysiology pathways, from gene to clinical variable? How can the high-dimensional
+data of studies that measure for each individual 100+ data points of various types
+(“personal data clouds”) be analyzed as one set in an integrated fashion (as opposed to variable
+by variable) against existing knowledge bases and also be used to improve the databases?
+DeepTranslate addresses these two types of questions and thereby will accelerate translation of
+future personal data clouds into (A) care decisions and (B) hypotheses on new disease mechanisms
+/ treatments, thereby benefiting providers as well as researchers.
+2. USE OF EXPERTISE AND RESOURCES. ■ ISB: pioneer in personalized, big-data driven
+medicine (Demo Project 1); biomedical content expertise; multiscale omics and molecular pathogenesis,
+big data analysis, housing of databases for public access; query engine designs, GUI.
+■ UCSD: leader in biomedical data integration; automated assembly of molecular and clinical
+data into hierarchical structures; translation between data types ■ U Montreal: biomedical database
+curation from literature and construction of gene/protein/drug interaction networks; machine
+learning, open resource database ■ St Jude CRH: Cancer monitoring Demo Project 2,
+cancer patient data analytics.
+3. POTENTIAL DATA AND INFRASTRUCTURE CHALLENGES. (a) Existing comprehensive
+clinical data sources are not uniform and not explicitly based on biological networks; cross-mapping
+is being performed at NLM based on lexical relationships: HPO (phenotypes) vs.
+SNOMED CT (for EMR) vs. IDC or Merck Manual (for diseases). Careful selection of these
+sources in close collaboration with NLM is needed. (b) Existing molecular pathway databases
+are static, based on averages of heterogeneous non-stratified populations, while the newly
+measured high-dimensional data clouds are varied due to intra-individual temporal fluctuation
+and inter-individual variation. How this will affect building of ontotypes in our hybrid approach,
+and how large cohorts of data clouds must be to offer statistical power is yet to be determined.
+Our two Demonstration Projects with their uniquely deep (high-dimensional and multiscale) data
+in cohorts of limited but growing size are thus crucial first steps in a long journey of collective
+learning in the TRANSLATOR community.",1071976
