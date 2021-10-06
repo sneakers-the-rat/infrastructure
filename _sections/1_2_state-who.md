@@ -29,6 +29,8 @@ Christof Koch, its director, describes the challenge of centrally organizing a l
 
 > These challenges grow as the size of the team grows. Our anecdotal evidence suggests that above a hundred members, group cohesion appears to become weaker with the appearance of semi-autonomous cliques and sub-groups. This may relate to the postulated limit on the number of meaningful social interactions humans can sustain given the size of their brain {% cite kochBigScienceTeam2016 %}
 
+!! These institutes are certainly helpful in building core technologies for the field, but they aren't necessarily organized for developing mass-scale infrastructure.
+
 ### Meso-scale collaborations
 
 Given the diminishing returns to scale for centralized organizations, many have called for smaller, "meso-scale" collaborations and consortia that combine the efforts of multiple labs {% cite mainenBetterWayCrack2016 %}. The most successful consortium of this kind has been the International Brain Laboratory {% cite abbottInternationalLaboratorySystems2017 woolKnowledgeNetworksHow2020 %}, a group of 22 labs spread across six countries. They have been able to realize the promise of big team neuroscience, setting a new standard for performing reproducible experiments performed by many labs {% cite laboratoryStandardizedReproducibleMeasurement2020 %} and developing data management infrastructure to match {% cite laboratoryDataArchitectureLargescale2020 %} (seriously, don't miss their extremely impressive [data portal](https://data.internationalbrainlab.org/)). Their project thus serves as the benchmark for large-scale collaboration and a model from which all similar efforts should learn from.

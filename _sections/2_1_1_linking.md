@@ -1,0 +1,113 @@
+There is no shortage of databases for scientific data, but their traditional structure chokes on the complexity of representing multi-domain data. Typical relational databases require some formal schema to structure the data they contain, which have varying reflections in the APIs used to access them and interfaces built atop them. This broadly polarizes database design into domain-specific and domain-general[^trackeranalogy]. This design pattern results in a fragmented landscape of databases with limited interoperability. In a moment we'll consider *federated systems* as a way to resolve this dichotomy and continue developing the design of our p2p data infrastructure, but for now we need a better sense of the problem.
+
+[^trackeranalogy]: To continue the analogy to bittorrent trackers, an example domain-specific vs. domain-general dichotomy might be What.cd (with its specific formatting and aggregation tools for representing artists, albums, collections, genres, and so on) vs. ThePirateBay (with its general categories of content and otherwise search-based aggregation interface)
+
+Domain-specific databases require data to be in one or a few specific formats, and usually provide richer tools for manipulating and querying by metadata, visualization, summarization, aggregation that are purpose-built for that type of data. For example, NIH's [Gene](https://www.ncbi.nlm.nih.gov/gene/12550) tool has several visualization tools and cross-referencing tools for finding expression pathways, genetic interactions, and related sequences (Figure xx). This pattern of database design is reflected at several different scales, through institutional databases and tools like the Allen [brain atlases](https://connectivity.brain-map.org/) or [observatory](http://observatory.brain-map.org/visualcoding/), to lab- and project-specific dashboards. This type of database is natural, expressive, and powerful --- for the researchers to whom the database as designed is useful. While some of these databases allow open data submission, they often require explicit moderation and approval to maintain the guaranteed consistency of the database, which can hamper mass use.
+
+![An example specialized plot of genomic regions, transcripts and products for the CDH1 gene (linked above), showing how specific tools have been built for this specific dataset](/infrastructure/assets/images/nih_gene_cdh1.png)
+*NIH's Gene tool included many specific tools for visualizing, cross-referencing, and aggregating genetic data. Shown is the "genomic regions, transcripts, and product" plot for Mouse Cdh1, which gives useful, common summary descriptions of the gene, but is not useful for, say, visualizing reading proficiency data.*
+
+General-purpose databases like [figshare](https://figshare.com/) and [zenodo](https://zenodo.org/)[^yrcool] are useful for the mass aggregation of data, typically allowing uploads from most people with minimal barriers. Their general function limits the metadata, visualization, and other tools that are offered by domain-specific databases, however, and are essentially public, versioned, folders with a DOI. Most have fields for authorship, research groups, related publications, and a single-dimension keyword or tags system, and so don't programmatically reflect the metadata present in a given dataset.
+
+[^yrcool]: No shade to Figshare, which, among others, paved the way for open data and are a massively useful thing to have in society. 
+
+The dichotomy of fragmented, subdomain-specific databases and general-purpose databases makes combining information from across even extremely similar subdisciplines combinatorically complex and laborious. In the absence of a formal interoperability and indexing protocol between databases, even *finding* the correct subdomain-specific database can be an act of raw experience or the raw luck of stumbling across just the right blog post list of databases. It also puts researchers who want to be good data stewards in a difficult position: they can hunt down the appropriate subdomain specific database and risk general obscurity; use a domain-general database and make their work more difficult for themselves and their peers to use; or spend all the time it takes to upload to multiple databases with potentially conflicting demands on format. 
+
+What can be done? There are a few parsimonious answers from standardizing different parts of the process: If we had a universal data format, then interoperability becomes trivial. Conversely, we could make a single ur-database that supports all possible formats and tools. 
+
+Universalizing a single part of a database system is unlikely to work because organizing knowledge is intrinsically political. Every system of representation is necessarily rooted in its context: one person's metadata is another person's data. Every subdiscipline has conflicting *representational* needs, will develop different local terminology, allocate differing granularity and develop different groupings and hierarchies for the same phenomena. At mildest, differences in representational systems can be incompatible, but at their worst they can reflect and reinforce prejudices and become tools of intellectual and social power struggles. Every subdiscipline has conflicting *practical* needs, with infinite variation in privacy demands, different priorities between storage space, bandwidth, and computational power, and so on. In all cases the boundaries of our myopia are impossible to gauge: we might think we have arrived at a suitable schema for biology, chemistry, and physics... but what about the historians?
+
+Matthew J Bietz and Charlotte P Lee articulate this tension better than I can in their ethnography of metagenomics databases:
+
+> "Participants describe the individual sequence database systems as if they were shadows, poor representations of a widely-agreed-upon ideal. We find, however, that by looking across the landscape of databases, a different picture emerges. Instead, **each decision about the implementation of a particular database system plants a stake for a community boundary. The databases are not so much imperfect copies of an ideal as they are arguments about what the ideal Database should be.** [...]
+>
+> When the microbial ecology project adopted the database system from the traditional genomic “gene finders,” they expected the database to be a boundary object. They knew they would have to customize it to some extent, but thought it would be able to “travel across borders and maintain some sort of constant identity”. In the end, however, **the system was so tailored to a specific set of research questions that the collection of data, the set of tools, and even the social organization of the project had to be significantly changed.** New analysis tools were developed and old tools were discarded. Not only was the database ported to a different technology, the data itself was significantly restructured to fit the new tools and approaches. While the database development projects had begun by working together, in the end they were unable to collaborate. **The system that was supposed to tie these groups together could not be shielded from the controversies that formed the boundaries between the communities of practice.**" {% cite bietzCollaborationMetagenomicsSequence2009 %}
+
+Another formulation that allows us to keep most of our existing server infrastructure unchanged and charge headlong down the gingerbread lane into the loving arms of AWS is linking existing databases. The problem of linking databases is an old one with much well-trodden ground, and in the current regime of large server farms tend to find themselves somewhere close to metadata-indexing overlays. These overlays provide some additional tool that can translate and combine data between databases without needing to change the databases themselves. The NIH articulates this as a "Biomedical Data Translator" in its Strategic plan for Data Science:
+
+> Through its Biomedical Data Translator program, the National Center for Advancing Translational Sciences (NCATS) is supporting research to develop ways to connect conventionally separated data types to one another to make them more useful for researchers and the public. The Translator aims to bring data types together in ways that will integrate multiple types of existing data sourcess, including objective signs and symptoms of disease, drug effects, and other types of biological data relevant to understanding the development of disease and how it progresses in patients. {% cite NIHStrategicPlan2018 %} 
+
+And NCATS elaborates it a bit more on the project ["about"](https://ncats.nih.gov/translator/about) page (emphasis mine):
+
+> As a result of recent scientific advances, a tremendous amount of data is available from biomedical research and clinical interactions with patients, health records, clinical trials and adverse event reports that could be useful for understanding health and disease and for developing and identifying treatments for diseases. Ideally, these data would be **mined** collectively to provide insights into the relationship between molecular and cellular processes (the targets of rational drug design) and the signs and symptoms of diseases. Currently, these very rich yet different data sources are housed in various locations, often in forms that are not compatible or interoperable with each other.  - https://ncats.nih.gov/translator/about
+
+The Translator is being developed by 28 institutions and nearly 200 team members as of 2019, and they credit their group structure and flexible Other Transaction Award (OTA) funding mechanism for their successes {% cite consortiumBiomedicalDataTranslator2019 %}. It's relatively difficult to figure out exactly what it is that has been built, as the [projects page](https://web.archive.org/web/20210710012427/https://ncats.nih.gov/translator/projects) doesn't link to anything, but some parts of the project are visible through a bit of searching. They describe a registry of APIs for existing databases collected on the platform [SmartAPI](https://smart-api.info/portal/translator) that are to be combined into a semantic knowledge graph {% cite consortiumUniversalBiomedicalData2019 %}. There are many kinds of knowledge graphs, and we will return to them and other semantic web technologies in [shared knowledge](#shared-knowledge), but the Translator's knowledge graph explicitly sits "on top" of the existing databases as the only source of knowledge. Specifically, the graph structure consists of the nodes and edges of the [biolink model](https://github.com/biolink/biolink-model) {% cite bruskiewichBiolinkBiolinkmodel2021 %}, and an edge is matched to a corresponding API that provides data for both elements. 
+
+They articulate a very similar set of beliefs about the impossibility of a unified dataset or ontology[^impossibledata]{% cite consortiumUniversalBiomedicalData2019 %}, although arguably create one in [biolink](https://biolink.github.io/biolink-model/docs/), and then arrive at the conclusion that the answer is Machine Learning. This form of a database linking system effectively kicks the can of the impossibility of a single ontology of everything up a level to an ontology of ontologies of everything, and then proposes to use black-box machine learning models to bring them back down to usability. The final form of the translator is still unclear, but between the [SmartAPI](https://smart-api.info/portal/translator), a seemingly-preliminary description of the reasoning engine {% cite goelExplanationContainerCaseBased2021 %}, and descriptions from contractors {% cite ROBOKOPCoVar2021 %}, the model of the Translator could actually be quite dangerous.
+
+The Translator builds on top of a large number of databases and database aggregators, and so for any given query of "genes implicated in x disease," since the translator is designed to be a knowledge generation system, it needs to rank the and aggregate the results. As with any machine-learning based system, if the input data is biased or otherwise (inevitably) problematic then the algorithm can only reflect that. Taking a very narrow sample of APIs that return data about diseases, I queried [mydisease.info](https://mydisease.info) to see if it still had the outdated definition of "transsexualism" as a disease. Perhaps unsurprisingly, it did, and was more than happy to give me a list of genes and variants that supposedly "cause" it - [see for yourself](http://mydisease.info/v1/query?q=%22DOID%3A10919%22).
+
+An abbreviated sample for the sake of illustration: 
+
+{% highlight json %}
+{
+    "disease_ontology":
+    {
+        "ancestors":
+        [
+            "DOID:1234",
+            "DOID:150",
+            "DOID:4"
+        ],
+        "def": "\"A gender identity disorder that is characterized by an individual's identification with a gender inconsistent or not culturally associated with their biological sex.\" [url:http\\://en.wikipedia.org/wiki/Transsexualism]",
+        "doid": "DOID:10919",
+        "name": "transsexualism",
+        "parents":["DOID:1234"],
+        "xrefs":
+        {
+            "icd9": "302.50",
+            "snomedct_us_2020_09_01": "191782007",
+            "umls_cui": "C0040630"
+        }
+    },
+    "disgenet":
+    {
+        "genes_related_to_disease":
+        [
+            {
+                "DPI": 0.846,
+                "DSI": 0.35100000000000003,
+                "EI": 1,
+                "YearFinal": 2017,
+                "YearInitial": 2017,
+                "gene_id": 367,
+                "gene_name": "AR",
+                "pubmed":
+                [
+                    28539237
+                ],
+                "score": 0.01,
+                "source": "BEFREE"
+            }
+        ]
+    }
+}
+{% endhighlight %}
+
+To rank particular answers, the algorithm measures the structural similarity between candidates by looking several nodes outward in the knowledge graph from it to compare them to the question at hand {% cite goelExplanationContainerCaseBased2021 %} -- eg. to compare two candidate drugs, if one of them shares targeted proteins and used with similar diseases, it is a more likely match than one that doesn't. Since, in the available materials, it is unclear how this ranking algorithm works, but is likely to remain proprietary due to its development by a for-profit company (CoVar, who no-joke call the ranking algorithm ROBOKOP), harmful input data could have unpredictable long-range consequences on the practice of medicine as well as the course of medical research: if at its core the algorithm believes that being transgender is a disease, won't it orient its care of related phenomena around trying to cure it? Combined with the online training that is then shared by other users of the translator {% cite consortiumUniversalBiomedicalData2019 %}, and socially problematic treatment and research practices could be built into our data infrastructure without any way of knowing their effect. In the long-run, an effort towards transparency could have precisely the opposite effect.
+
+A larger problem is reflected in the scope and evolving direction of the Translator when combined with the preceding discussion of putting all data in the hands of cloud platform holders. There is mission creep from the original NIH initiative language that essentially amounts to a way to connect different data sources --- what could have been as simple as a translation table between different data standards and formats. The original [funding statement from 2016](https://web.archive.org/web/20210709100523/https://ncats.nih.gov/news/releases/2016/feasibility-assessment-translator) is similarly humble, and press releases [through 2017](https://web.archive.org/web/20210709171335/https://ncats.nih.gov/pubs/features/translator) also speak mostly in terms of querying the data -- though some ambition begins to creep in. That is remarkably different than what is articulated in 2019 {% cite consortiumUniversalBiomedicalData2019 %} to be much more focused on *inference* and *reasoning* from the graph structure of the linked data for the purpose of *automating drug discovery.* It seems like the original goal of making a translator in the sense of "translating data between formats" has morphed into "translating data to language," with ambitions of providing a means of making algorithmic predictions rather than linking data. Oddly, the linking part seems still to be awkward in the only technical description I can find of the algorithm in September 2021 (emphases mine):
+
+> The strategy used by the Translator consortium in this case is to 1) identify phenotypes that are associated with [Drug-Induced Liver Injury] DILI, then 2) find genes which are correlated with these presumably pathological phenotypes, and then 3) identify drugs which target those genes’ products. The rationale is that drugs which target gene products associated with phenotypes of DILI may possibly serve as candidates for treatment options.
+>
+> **We constructed a series of three queries,** written in the Translator API standard language and submitted to xARA to select appropriate KPs to collect responses (Figure 4). **From each response, an exemplary result is selected and used in the query for the next step.** 
+>
+> The results of the first query produced several phenotypes, one of them was ”Red blood cell count” (EFO0004305). When using this phenotype in the second step to query for genes, we identified one of the results as the telomerase reverse transcriptase (TERT) gene. This was then used in the third query (Figure 4) to identify targeting drugs, which included the drug Zidovudine.
+>
+> xARA use this result to call for an explanation. The xcase retrieved uses a relationship extraction algorithm [6] fine-tuned using BioBert [7]. The explanation solution seeks previously pre-processed publications where both biomedical entities (or one of its synonyms) is found in the same article within a distance shorter than 10 sentences. The excerpt of entailing both terms is then used as input to the relationship extraction method. When implementing this solution for the gene TERT (NCBIGene:7015) and the chemical substance Zidovudine (CHEBI:10110), the solution was able to identify corroborating evidence of this drug-target interaction with the relationship types being one of: ”DOWNREGULATOR,” ”INHIBITOR,” or ”INDIRECT DOWNREGULATOR” with respect to TERT. {% cite goelExplanationContainerCaseBased2021 %}
+
+As a recap, since I'm not including the screenshots of the queries, the researchers searched first for a phenotypic feature of DILI, then selected "one of them" without mention to ranking, red blood cell count to search for genes that affect red blood cell count, and eventually find a drug that effects that gene --- all seemingly manually. Zidovudine, as a nucleoside reverse transcriptase inhibitor, does inhibit telomerase reverse transcriptase {% cite hukezalieVitroExVivo2012 %}, but can also cause anemia and lower red blood cell counts {% cite ZidovudinePatientNIH %} -- so through the extended reasoning chain the system has made a sign flip and recommended a drug that will likely make the identified phenotype (low red blood cell count) worse? 
+
+Contrast this with the description from CoVar: 
+
+> ROBOKOP technology scours vast, diverse databases to find answers that standard search technologies could never provide. It does much more than simple web-scraping. It considers inter-relationships between entities, such as colds cause coughs. Then it searches for new connections between bits of knowledge it finds in a wide range of data sources and generates answers in terms of these causal relationships, on-the-fly.
+>
+> Instead of providing a simple list of responses, ROBOKOP ranks answers based on various criteria, including the amount of supporting evidence for a claim, how many published papers reference a given fact, and the specificity of any particular relationship to the question.
+
+For-profit platform holder are uninterested in doing responsible science, or even really with making something that works, provided they can get access to some of the government funding that pours out for projects that are eventually canned - $39.9 million dollars so far since 2016 for the Translator {% cite RePORTRePORTERBiomedical2021 %}. The risk with this project is very real because of the context of its development. After 5 years, it still seems like the the Translator is relatively far from realizing the vision of biopolitical control through algorithmic predictions, but combined with Amazon's aggressive expansion into health technology {% cite AWSAnnouncesAWS2021 %} and even providing health care {% cite lermanAmazonBuiltIts2021 %}, and the uploading of all scientific and medical data onto AWS with entirely unenforceable promises of data privacy --- the notion of spending public money to develop a system for aggregating patient data with scientific and clinical data becomes dangerous. It doesn't require takeover by Amazon to become dangerous --- once you introduce the need for data to train an algorithm, you need to feed it data, and so the translator gains the incentive to suck up as much personal and other data as it can.
+
+Even assuming the Translator works perfectly and has zero unanticipated consequences, the development strategy still reflects the inequities that pervade science rather than challenge them. Biopharmaceutical research, followed by broader biomedical research, being immediately and extremely profitable, attracts an enormous quantity of resources and develops state of the art infrastructure, while no similar infrastructure is built for the rest of science, academia, and society. 
+
+Overlay-like systems like this can replicate the design problems they aim to solve: because the format of the different existing databases are mutually incompatible and changing them would be cumbersome becauase they are so rigid, we need to link them. If the linking is then cumbersome, rigid, and centralized, then one might expect the cycle to repeat indefinitely. Even though this particular consortium should be applauded like IBL for making a consortium that is large compared to the usual scale in science, we can't hope to rely on small dedicated groups of people to be able to provide linkings between all forms of all data, nor can we turn to the dark magic of machine learning and hope it fixes everything. 
+
+Let's return to the scheduled programming.

@@ -96,7 +96,17 @@ Funding models and incentive structures in science are uniformly aligned towards
 >
 > These negotiations may result in partnership agreements with top infrastructure providers from U.S.-based companies whose focus includes support for research. Suitable cloud environments will house diverse data types and high-value datasets created with public funds. NIH will ensure that they are stable and adhere to stringent security requirements and applicable law, to protect against data compromise or loss. [...] NIH’s cloud-marketplace initiative will be the first step in a phased operational framework that establishes a SaaS paradigm for NIH and its stakeholders. (-NIH Strategic Plan for Data Science, 2018 {% cite NIHStrategicPlan2018 %})
 
-The articulated plan being to pay platform holders to house data while also paying for the labor to maintain those databases veers into parody, haplessly building another triple-pay industry {% cite buranyiStaggeringlyProfitableBusiness2017 %} into the economic system of science --- one can hardly wait until they have the opportunity to rent their own data back with a monthly subscription. It is unclear to me whether this is the result of the cultural hegemony of platform capitalism narrowing the space of imaginable infrastructures, industry capture of the decision-making process, or both, but the effect is the same in any case. 
+The articulated plan being to pay platform holders to house data while also paying for the labor to maintain those databases veers into parody, haplessly building another triple-pay industry {% cite buranyiStaggeringlyProfitableBusiness2017 %} into the economic system of science --- one can hardly wait until they have the opportunity to rent their own data back with a monthly subscription. 
+
+!! this isn't a metaphor -- elsevier got the deal to build the analysis pipelining system using mendeley data {% cite ElsevierSevenBridges2017 %}
+
+!! and [cloud.nih.gov](https://web.archive.org/web/20210729131920/https://cloud.nih.gov/) goes to the STRIDES program, which has cost $85 million since 2018 to establish, has a special account classification for ["extramural"](https://web.archive.org/web/20211006003547/https://cloud.nih.gov/enrollment/account-type/) accounts that are researcher invoiced and managed:  
+{% cite reillyNIHSTRIDESInitiative2021 %}
+
+!! Even on their success stories "We have been storing data in both cloud environments because we wanted the ecosystem we are creating to work on both clouds," and they are developing their own overlay on top of it to bridge them! {% cite STRIDESInitiativeSuccess2020 %}
+
+
+It is unclear to me whether this is the result of the cultural hegemony of platform capitalism narrowing the space of imaginable infrastructures, industry capture of the decision-making process, or both, but the effect is the same in any case. 
 
 ### Protection of Institutional and Economic Power
 

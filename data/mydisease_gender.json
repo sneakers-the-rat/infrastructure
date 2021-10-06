@@ -1,0 +1,613 @@
+{
+  "took": 7,
+  "total": 3,
+  "max_score": 11.884263,
+  "hits": [
+    {
+      "_id": "MONDO:0001500",
+      "_score": 11.884263,
+      "disease_ontology": {
+        "_license": "https://github.com/DiseaseOntology/HumanDiseaseOntology/blob/master/DO_LICENSE.txt",
+        "ancestors": [
+          "DOID:150",
+          "DOID:4"
+        ],
+        "children": [
+          "DOID:10919",
+          "DOID:13352"
+        ],
+        "def": "\"A disease of mental health that involves a conflict between a person's actual physical gender and the gender that person identifies himself or herself as.\" [url:http\\://www.nlm.nih.gov/medlineplus/ency/article/001527.htm]",
+        "descendants": [
+          "DOID:13352",
+          "DOID:10919"
+        ],
+        "doid": "DOID:1234",
+        "name": "gender identity disorder",
+        "parents": [
+          "DOID:150"
+        ],
+        "synonyms": {},
+        "xrefs": {
+          "icd10": "F64.2",
+          "icd9": "302.6",
+          "snomedct_us_2020_09_01": "5095008",
+          "umls_cui": "C0236802"
+        }
+      },
+      "disgenet": {
+        "_license": "https://creativecommons.org/licenses/by/4.0/",
+        "genes_related_to_disease": [
+          {
+            "DPI": 0.846,
+            "DSI": 0.35100000000000003,
+            "EI": 1,
+            "YearFinal": 2009,
+            "YearInitial": 2009,
+            "gene_id": 367,
+            "gene_name": "AR",
+            "pubmed": [
+              19604497
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.885,
+            "DSI": 0.41,
+            "EI": 1,
+            "YearFinal": 2009,
+            "YearInitial": 2009,
+            "gene_id": 1588,
+            "gene_name": "CYP19A1",
+            "pubmed": [
+              19604497
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.885,
+            "DSI": 0.426,
+            "EI": 1,
+            "YearFinal": 2009,
+            "YearInitial": 2009,
+            "gene_id": 5241,
+            "gene_name": "PGR",
+            "pubmed": [
+              19604497
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.26899999999999996,
+            "DSI": 0.78,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "gene_id": 6433,
+            "gene_name": "SFSWAP",
+            "pubmed": [
+              28210932
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.423,
+            "DSI": 0.711,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "gene_id": 50618,
+            "gene_name": "ITSN2",
+            "pubmed": [
+              28210932
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          }
+        ],
+        "xrefs": {
+          "disease_name": "Psychosexual identity disorder",
+          "efo": "EFO:0008587",
+          "icd10": "F64.9",
+          "icd10cm": "F64.9",
+          "mondo": "MONDO:0001500",
+          "nci": "C94362",
+          "umls": "C0017250"
+        }
+      },
+      "mondo": {
+        "ancestors": [
+          "MONDO:0002025",
+          "MONDO:0000001"
+        ],
+        "children": [
+          "MONDO:0001153",
+          "MONDO:0001693"
+        ],
+        "definition": "\"A disorder characterized by a strong and persistent cross-gender identification (such as stating a desire to be the other sex or frequently passing as the other sex) coupled with persistent discomfort with his or her sex (manifested in adults, for example, as a preoccupation with altering primary and secondary sex characteristics through hormonal manipulation or surgery).\" [NCIT:C94362]",
+        "descendants": [
+          "MONDO:0001153",
+          "MONDO:0001693"
+        ],
+        "label": "gender identity disorder",
+        "mondo": "MONDO:0001500",
+        "parents": [
+          "MONDO:0002025"
+        ],
+        "synonym": {},
+        "xrefs": {
+          "doid": [
+            "DOID:1234"
+          ],
+          "efo": [
+            "EFO:0008587"
+          ],
+          "icd10": [
+            "F64.2"
+          ],
+          "icd9": [
+            "302.8",
+            "302.6",
+            "302.89",
+            "302.85"
+          ],
+          "ncit": [
+            "C94362"
+          ],
+          "sctid": [
+            "87991007"
+          ]
+        }
+      }
+    },
+    {
+      "_id": "MONDO:0001153",
+      "_score": 8.36315,
+      "disease_ontology": {
+        "_license": "https://github.com/DiseaseOntology/HumanDiseaseOntology/blob/master/DO_LICENSE.txt",
+        "ancestors": [
+          "DOID:1234",
+          "DOID:150",
+          "DOID:4"
+        ],
+        "children": [],
+        "def": "\"A gender identity disorder that is characterized by an individual's identification with a gender inconsistent or not culturally associated with their biological sex.\" [url:http\\://en.wikipedia.org/wiki/Transsexualism]",
+        "descendants": [],
+        "doid": "DOID:10919",
+        "name": "transsexualism",
+        "parents": [
+          "DOID:1234"
+        ],
+        "synonyms": {},
+        "xrefs": {
+          "icd9": "302.50",
+          "snomedct_us_2020_09_01": "191782007",
+          "umls_cui": "C0040630"
+        }
+      },
+      "disgenet": {
+        "_license": "https://creativecommons.org/licenses/by/4.0/",
+        "genes_related_to_disease": [
+          {
+            "DPI": 0.846,
+            "DSI": 0.35100000000000003,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "gene_id": 367,
+            "gene_name": "AR",
+            "pubmed": [
+              28539237
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.8079999999999999,
+            "DSI": 0.535,
+            "EI": 1,
+            "YearFinal": 2019,
+            "YearInitial": 2019,
+            "gene_id": 414,
+            "gene_name": "ARSD",
+            "pubmed": [
+              30552539
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.769,
+            "DSI": 0.519,
+            "EI": 1,
+            "YearFinal": 2019,
+            "YearInitial": 2019,
+            "gene_id": 611,
+            "gene_name": "OPN1SW",
+            "pubmed": [
+              30843609
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.9620000000000001,
+            "DSI": 0.324,
+            "EI": 1,
+            "YearFinal": 2019,
+            "YearInitial": 2017,
+            "gene_id": 2099,
+            "gene_name": "ESR1",
+            "pubmed": [
+              30247609,
+              28117266,
+              30165284,
+              28539237
+            ],
+            "score": 0.04,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.9229999999999999,
+            "DSI": 0.4,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "gene_id": 2100,
+            "gene_name": "ESR2",
+            "pubmed": [
+              28117266,
+              28539237
+            ],
+            "score": 0.02,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.34600000000000003,
+            "DSI": 0.6409999999999999,
+            "EI": 1,
+            "YearFinal": 2012,
+            "YearInitial": 2012,
+            "gene_id": 3293,
+            "gene_name": "HSD17B3",
+            "pubmed": [
+              23045263
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.846,
+            "DSI": 0.35600000000000004,
+            "EI": 1,
+            "YearFinal": 2019,
+            "YearInitial": 2019,
+            "gene_id": 5443,
+            "gene_name": "POMC",
+            "pubmed": [
+              31827460
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.26899999999999996,
+            "DSI": 0.78,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "gene_id": 6433,
+            "gene_name": "SFSWAP",
+            "pubmed": [
+              28210932,
+              28238165
+            ],
+            "score": 0.02,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.5379999999999999,
+            "DSI": 0.6559999999999999,
+            "EI": 1,
+            "YearFinal": 2018,
+            "YearInitial": 2018,
+            "gene_id": 23481,
+            "gene_name": "PES1",
+            "pubmed": [
+              30695784
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.423,
+            "DSI": 0.711,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "gene_id": 50618,
+            "gene_name": "ITSN2",
+            "pubmed": [
+              28210932,
+              28238165
+            ],
+            "score": 0.02,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.5,
+            "DSI": 0.5820000000000001,
+            "EI": 1,
+            "YearFinal": 2012,
+            "YearInitial": 2012,
+            "gene_id": 51478,
+            "gene_name": "HSD17B7",
+            "pubmed": [
+              23045263
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.423,
+            "DSI": 0.653,
+            "EI": 1,
+            "YearFinal": 2012,
+            "YearInitial": 2012,
+            "gene_id": 79154,
+            "gene_name": "DHRS11",
+            "pubmed": [
+              23045263
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.5379999999999999,
+            "DSI": 0.623,
+            "EI": 1,
+            "YearFinal": 2012,
+            "YearInitial": 2012,
+            "gene_id": 345275,
+            "gene_name": "HSD17B13",
+            "pubmed": [
+              23045263
+            ],
+            "score": 0.01,
+            "source": "BEFREE"
+          }
+        ],
+        "variants_related_to_disease": [
+          {
+            "DPI": 0.68,
+            "DSI": 0.555,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "chrom": "6",
+            "pos": 151842200,
+            "pubmed": [
+              28117266
+            ],
+            "rsid": "rs2234693",
+            "score": 0.01,
+            "source": "BEFREE"
+          },
+          {
+            "DPI": 0.68,
+            "DSI": 0.583,
+            "EI": 1,
+            "YearFinal": 2017,
+            "YearInitial": 2017,
+            "chrom": "6",
+            "pos": 151842246,
+            "pubmed": [
+              28117266
+            ],
+            "rsid": "rs9340799",
+            "score": 0.01,
+            "source": "BEFREE"
+          }
+        ],
+        "xrefs": {
+          "disease_name": "Gender Dysphoria",
+          "mesh": "D000068116",
+          "mondo": "MONDO:0001153",
+          "umls": "C0686346"
+        }
+      },
+      "mondo": {
+        "ancestors": [
+          "MONDO:0002025",
+          "MONDO:0001500",
+          "MONDO:0000001"
+        ],
+        "children": [],
+        "definition": "\"A marked difference between the individual's expressed/experienced gender and the gender others would assign him or her, and it must continue for at least six months. (from DSM-5)\" [MESH:D000068116]",
+        "descendants": [],
+        "label": "gender dysphoria",
+        "mondo": "MONDO:0001153",
+        "parents": [
+          "MONDO:0001500"
+        ],
+        "synonym": {
+          "related": [
+            "transsexualism"
+          ]
+        },
+        "xrefs": {
+          "doid": [
+            "DOID:10919"
+          ],
+          "icd9": [
+            "302.50"
+          ],
+          "mesh": [
+            "D000068116"
+          ],
+          "sctid": [
+            "93461009"
+          ]
+        }
+      }
+    },
+    {
+      "_id": "MONDO:0000595",
+      "_score": 8.011011,
+      "disease_ontology": {
+        "_license": "https://github.com/DiseaseOntology/HumanDiseaseOntology/blob/master/DO_LICENSE.txt",
+        "ancestors": [
+          "DOID:150",
+          "DOID:4"
+        ],
+        "children": [
+          "DOID:0060044",
+          "DOID:10132",
+          "DOID:10817",
+          "DOID:10849",
+          "DOID:1876"
+        ],
+        "def": "\"A disease of mental health that involves the impairment in normal sexual functioning.\" [url:https\\://my.clevelandclinic.org/health/diseases/9121-sexual-dysfunction]",
+        "descendants": [
+          "DOID:1875",
+          "DOID:11120",
+          "DOID:10834",
+          "DOID:10131",
+          "DOID:4762",
+          "DOID:10132",
+          "DOID:10817",
+          "DOID:10849",
+          "DOID:1233",
+          "DOID:10236",
+          "DOID:13709",
+          "DOID:13868",
+          "DOID:1235",
+          "DOID:13351",
+          "DOID:9336",
+          "DOID:1876",
+          "DOID:0060044"
+        ],
+        "doid": "DOID:0060043",
+        "name": "sexual disorder",
+        "parents": [
+          "DOID:150"
+        ],
+        "synonyms": {},
+        "xrefs": {}
+      },
+      "mondo": {
+        "ancestors": [
+          "MONDO:0000001",
+          "MONDO:0002025"
+        ],
+        "children": [
+          "MONDO:0000947",
+          "MONDO:0001132",
+          "MONDO:0001139",
+          "MONDO:0001780",
+          "MONDO:0002134"
+        ],
+        "definition": "\"A category of psychiatric disorders characterized by a disturbance in sexual desire and in the psychophysiological changes that make up the sexual response cycle.\" [NCIT:C92202]",
+        "descendants": [
+          "MONDO:0001135",
+          "MONDO:0004745",
+          "MONDO:0000946",
+          "MONDO:0001821",
+          "MONDO:0040674",
+          "MONDO:0001692",
+          "MONDO:0004258",
+          "MONDO:0002134",
+          "MONDO:0003522",
+          "MONDO:0005362",
+          "MONDO:0000947",
+          "MONDO:0001139",
+          "MONDO:0001196",
+          "MONDO:0001504",
+          "MONDO:0000983",
+          "MONDO:0007013",
+          "MONDO:0001780",
+          "MONDO:0001132",
+          "MONDO:0004759",
+          "MONDO:0000596"
+        ],
+        "label": "sexual and gender identity disorders",
+        "mondo": "MONDO:0000595",
+        "parents": [
+          "MONDO:0002025"
+        ],
+        "synonym": {
+          "exact": [
+            "sexual disorder"
+          ]
+        },
+        "xrefs": {
+          "doid": [
+            "DOID:0060043"
+          ],
+          "ncit": [
+            "C92202"
+          ],
+          "sctid": [
+            "231532002"
+          ]
+        }
+      }
+    },
+    {
+      "_id": "MONDO:0001693",
+      "_score": 10.927889,
+      "disease_ontology": {
+        "_license": "https://github.com/DiseaseOntology/HumanDiseaseOntology/blob/master/DO_LICENSE.txt",
+        "ancestors": [
+          "DOID:1234",
+          "DOID:150",
+          "DOID:4"
+        ],
+        "children": [],
+        "def": "\"A gender identity disorder that is characterized by having a sexual orientation or an attraction that is at odds with one's idealized self-image, causing anxiety and a desire to change one's orientation or become more comfortable with one's sexual orientation.\" [url:http\\://en.wikipedia.org/wiki/Ego-dystonic_sexual_orientation]",
+        "descendants": [],
+        "doid": "DOID:13352",
+        "name": "ego-dystonic sexual orientation",
+        "parents": [
+          "DOID:1234"
+        ],
+        "synonyms": {},
+        "xrefs": {
+          "icd9": "302.0",
+          "snomedct_us_2020_09_01": "52813007",
+          "umls_cui": "C0233880"
+        }
+      },
+      "mondo": {
+        "ancestors": [
+          "MONDO:0001500",
+          "MONDO:0000001",
+          "MONDO:0002025"
+        ],
+        "children": [],
+        "definition": "\"A gender identity disorder that is characterized by having a sexual orientation or an attraction that is at odds with one's idealized self-image, causing anxiety and a desire to change one's orientation or become more comfortable with one's sexual orientation.\" [DOID:13352, http://en.wikipedia.org/wiki/Ego-dystonic_sexual_orientation]",
+        "descendants": [],
+        "label": "ego-dystonic sexual orientation",
+        "mondo": "MONDO:0001693",
+        "parents": [
+          "MONDO:0001500"
+        ],
+        "synonym": {},
+        "xrefs": {
+          "cohd": [
+            "434903"
+          ],
+          "doid": [
+            "DOID:13352"
+          ],
+          "icd9": [
+            "302.0"
+          ]
+        }
+      }
+    }
+  ]
+}
