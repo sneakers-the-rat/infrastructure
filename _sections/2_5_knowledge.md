@@ -1,6 +1,8 @@
 
 !! jimmy wales on wikipedia: 
 
+!! why is it that literally every project is organized on google docs and slack? we can do better for collective organization
+
 !! https://www.dbpedia.org/
 
 !! why is public trust in scientists so low? could it be that there is an alternative to scientists seeing themselves as cloistered experts? re: cold war peer review paper
