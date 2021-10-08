@@ -73,7 +73,7 @@ test2
 
 {% include_relative _sections/2_1_p2p.md %}
 
-### Linked Data or Surveillence?
+### Linked Data or Surveillence Capitalism?
 
 {% include_relative _sections/2_1_1_linking.md %}
 
