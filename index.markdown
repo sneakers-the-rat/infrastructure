@@ -73,7 +73,7 @@ test2
 
 {% include_relative _sections/2_1_p2p.md %}
 
-### Some Problems with Linking
+### Linked Data or Surveillence?
 
 {% include_relative _sections/2_1_1_linking.md %}
 

@@ -43,54 +43,7 @@ The Translator is being developed by 28 institutions and nearly 200 team members
 
 They articulate a very similar set of beliefs about the impossibility of a unified dataset or ontology[^impossibledata]{% cite consortiumUniversalBiomedicalData2019 %}, although arguably create one in [biolink](https://biolink.github.io/biolink-model/docs/), and then arrive at the conclusion that the answer is Machine Learning. This form of a database linking system effectively kicks the can of the impossibility of a single ontology of everything up a level to an ontology of ontologies of everything, and then proposes to use black-box machine learning models to bring them back down to usability. The final form of the translator is still unclear, but between [SmartAPI](https://smart-api.info/portal/translator), a seemingly-preliminary description of the reasoning engine {% cite goelExplanationContainerCaseBased2021 %}, and descriptions from contractors {% cite ROBOKOPCoVar2021 %}, the model of the Translator could actually be quite dangerous.
 
-The Translator builds on top of a large number of databases and database aggregators, and so for any given query of "genes implicated in x disease," since the translator is designed to be a knowledge generation system, it needs to rank the and aggregate the results. As with any machine-learning based system, if the input data is biased or otherwise (inevitably) problematic then the algorithm can only reflect that. Taking a very narrow sample of APIs that return data about diseases, I queried [mydisease.info](https://mydisease.info) to see if it still had the outmoded definition of "transsexualism" as a disease {% cite ramTransphobiaEncodedExamination2021 %}. Perhaps unsurprisingly, it did, and was more than happy to give me a list of genes and variants that supposedly "cause" it - [see for yourself](http://mydisease.info/v1/query?q=%22DOID%3A10919%22).
-
-An abbreviated sample for the sake of illustration: 
-
-{% highlight json %}
-{
-    "disease_ontology":
-    {
-        "ancestors":
-        [
-            "DOID:1234",
-            "DOID:150",
-            "DOID:4"
-        ],
-        "def": "\"A gender identity disorder that is characterized by an individual's identification with a gender inconsistent or not culturally associated with their biological sex.\" [url:http\\://en.wikipedia.org/wiki/Transsexualism]",
-        "doid": "DOID:10919",
-        "name": "transsexualism",
-        "parents":["DOID:1234"],
-        "xrefs":
-        {
-            "icd9": "302.50",
-            "snomedct_us_2020_09_01": "191782007",
-            "umls_cui": "C0040630"
-        }
-    },
-    "disgenet":
-    {
-        "genes_related_to_disease":
-        [
-            {
-                "DPI": 0.846,
-                "DSI": 0.35100000000000003,
-                "EI": 1,
-                "YearFinal": 2017,
-                "YearInitial": 2017,
-                "gene_id": 367,
-                "gene_name": "AR",
-                "pubmed":
-                [
-                    28539237
-                ],
-                "score": 0.01,
-                "source": "BEFREE"
-            }
-        ]
-    }
-}
-{% endhighlight %}
+The Translator builds on top of a large number of databases and database aggregators, and so for any given query of "genes implicated in x disease," since the translator is designed to be a knowledge generation system, it needs to rank the and aggregate the results. As with any machine-learning based system, if the input data is biased or otherwise (inevitably) problematic then the algorithm can only reflect that. Taking a very narrow sample of APIs that return data about diseases, I queried [mydisease.info](https://mydisease.info) to see if it still had the outmoded definition of "transsexualism" as a disease {% cite ramTransphobiaEncodedExamination2021 %}. Perhaps unsurprisingly, it did, and was more than happy to give me a list of genes and variants that supposedly "cause" it - [see for yourself](http://mydisease.info/v1/query?q=%22DOID%3A10919%22)[^transgenes].
 
 This example shows the fragility just underneath the surface of centralized knowledge graphs built by aggregating opaquely sourced data. If one follows the provenance of the entry for "gender identity disorder" (renamed in DSM-V), one reaches first the disease ontology [DOID:1234](https://web.archive.org/web/20211007053446/https://www.ebi.ac.uk/ols/ontologies/doid/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDOID_1234) which seems to trace back into an entry in a graph aggregator [Ontobee](http://www.ontobee.org/ontology/DOID?iri=http://purl.obolibrary.org/obo/DOID_1234) ([Archive Link](https://web.archive.org/web/20210923110103/http://www.ontobee.org/ontology/DOID?iri=http://purl.obolibrary.org/obo/DOID_1234)), which in turn lists this [github repository](https://github.com/jannahastings/mental-functioning-ontology) **maintained by a single person** as its source[^ipredit].
 
@@ -134,65 +87,44 @@ I think it is important to pause and appreciate the potential for harm in the da
 
 Through STRIDES, cloud providers like AWS, Google Cloud, and Microsoft Azure are intended to become the primary custodians of scientific data. Regardless of contracts and assurances, since their system is opaque and proprietary, there is no way to ensure that they will not crawl this data and use it to train their various algorithms-as-a-service --- and they seem all too happy to do so, as evidenced by GitHub Co-Pilot reproducing copyrighted code and code with licenses that explicitly forbade its use in that context. Given that Amazon is expanding aggressively into health technology{% cite AWSAnnouncesAWS2021 %}, including wearables and literally providing [health care](https://amazon.care/) {% cite lermanAmazonBuiltIts2021 %}, primary scientific data is a valuable prize in their mission to cement dominance in algorithmic health. 
 
-The effort to unify data across the landscape of databases, patient data, and so on is built atop a rickety pile of SaaS so fragile that a single person with a single repository can have ripple effects across the aggregators that impact the whole knowledge graph. In the above example, an outdated set of terminology classifies a subset of human gender as a disease, which then is linked to candidate genes and other nodes in the knowledge graph. Since there is a preponderance of misguided research about about the etiology and "biological mechanisms" of transgender people, the graph neighboorhood around transness is rich with biomarkers and functional data. 
+The effort to unify data across the landscape of databases, patient data, and so on is built atop a rickety pile of SaaS so fragile that a *single person* with a *single repository* can have ripple effects across the aggregators that impact the whole knowledge graph. In the above example, an outdated set of terminology classifies a subset of human gender as a disease, which then is linked to candidate genes and other nodes in the knowledge graph. Since there is a preponderance of misguided research about about the etiology and "biological mechanisms" of transgender people, the graph neighboorhood around transness is rich with biomarkers and functional data. 
 
 All of the above is known to be true now, but let's see how it could play out practically in an all-too-plausible thought experiment.
 
 Though the translator system now is intended for basic research and drug discovery, there is stated desire for it to eventually become a consumer/clinical product {% cite hailuNIHfundedProjectAims2019 %}. Say a cloud provider rolls out a service for clinical recommendations for doctors informed by the full range of scientific, clinical, wearable, and other personal data they have available --- a trivial extension of [existing](https://web.archive.org/web/20211003070018/https://support.apple.com/en-us/HT208680) patient medical aggregation and [recommendation](https://web.archive.org/web/20210408221213/https://support.google.com/fit/answer/7619539?hl=en&co=GENIE.Platform%3DAndroid) services that [express](https://web.archive.org/web/20210930203834/https://press.aboutamazon.com/news-releases/news-release-details/amazon-adds-more-halo-introducing-halo-view-halo-fitness-and) their biopolitical control as a slick wristband with app. It's very "smart" and is very "private" in the sense that only the algorithm ever sees your personal data. 
 
-Since these cloud providers as a rule depend on developing elaborate personal profiles for targeted advertising algorithmically inferred from available data[^googlepatent], that naturally includes diagnosed or inferred disease --- a practice they explicitly describe in the patents for the targeting technology{% cite bharatGeneratingUserInformation2005 %}, gone to court to defend {% cite SmithFacebookInc2018 %}, formed secretive joint projects with healthcare systems to pursue {% cite bourreauGoogleFitbitWill2020 %}, and so on. 
+Since these cloud providers as a rule depend on developing elaborate personal profiles for targeted advertising algorithmically inferred from available data[^googlepatent], that naturally includes diagnosed or inferred disease --- a practice they explicitly describe in the patents for the targeting technology{% cite bharatGeneratingUserInformation2005 %}, gone to court to defend {% cite SmithFacebookInc2018 krashinskyGoogleBrokeCanada2014 %}, formed secretive joint projects with healthcare systems to pursue {% cite bourreauGoogleFitbitWill2020 %}, and so on. Nothing too diabolical here, just a system wherein **your search results and online shopping habits influence your health care in unpredictable and frequently inaccurate {%cite rasmyMedBERTPretrainedContextualized2021 %} ways.**
 
-[^googlepatent]: A patent from Google is telling about how they view privacy concerns: whatever we can't get explicitly, we'll infer to sell better ads!
-> One possible method to improve ad targeting is for ad targeting systems to obtain and use user profiles. For example, user profiles may be determined using information voluntarily given by users (e.g., when they subscribe to a service). This user attribute information may then be matched against advertiser specified attributes of the ad (e.g., targeting criteria). Unfortunately, user profile information is not always available since many Websites (e.g., search engines) do not require subscription or user registration. Moreover, even when available, the user profile may be incomplete (e.g., because the information given at the time of subscription may be limited to what is needed for the service and hence not comprehensive, because of privacy considerations, etc.). Furthermore, advertisers may need to manually define user profile targeting information. In addition, even if user profile information is available, advertisers may not be able to use this information to target ads effectively. {% cite bharatGeneratingUserInformation2005 %}
+Imagine, through some pattern in your personal data, **Amazon diagnoses you as trans.**Whether their assessment is true or not is unimportant. Since the Translator works as a graph-based knowledge engine, your algorithmic transness, with its links through related genes, "symptoms," and whatever other uninspectable network links the knowledge graph has, influences the medical care you receive. All part of the constellation of personalized information that constitutes "personalized medicine." 
 
+The Translator assures us that it will give doctors understandable provenance by being able to explain how it arrived at its recommendation. Let's assume from prior experience with neural net language models that part of the process doesn't work very well, or at least doesn't give a fully exhaustive description of every single relevant graph entity. Now let's further assume based on the above DILI example that the knowledge graph is not able to reliably "understand" the complex cultural-technological context of transness, and since it is classified as a "disease" decides that you need to be "cured." Since it has access to a diverse array of biomedical data, it might even be able to concoct a very effective conversion therapy regimen *personalized just for you.* The algorithm could prescribe your conversion therapy *without you or the doctor knowing it.*
 
+Transphobic behavior that impacts treatment is common {% cite ramTransphobiaEncodedExamination2021 strangioCanReproductiveTrans2016 %}. Since the Translator's algorithm is designed to learn from feedback and use{% cite consortiumUniversalBiomedicalData2019 %}, transphobic practices could easily reinforce and magnify the algorithm's initial guess about what transness being a disease should mean for trans people in practice. Combined with the limitations on provision of care from insurance systems {% cite strangioCanReproductiveTrans2016 %}, on a wide scale transphobic medical practices could be transmuted into a "scientifically justified" standard of care.
 
-!* (true) A single person maintains a single repository that defines being "transsexual" as a disease.
-!* (true) A single knowledge graph aggregator indexes that repository
-! * (true) A broad array of meta-indexers and aggregators index that repository and include it in meta knowledge graphs
-! * (true) AWS is the official data and analytic host of all NIH-funded scientific, including biomedical research
-! * (true) Amazon crawls your personal data to make inferences on a personal profile
-! * (true) An large amount of misguided research is done to study the "biological mechanisms" of transgender people: fMRI scans, endocrinology, facial features, etc.
-! * (in progress) NIH funds tool to combine commercial knowledgebases, primary research data, and personal health data
-* (true) Tool is graph-based query. Ask a question: "What [drug] reduces inflammation?" To rank answers, the algorithm measures the structural similarity between candidates by looking several nodes outward in the knowledge graph {% cite goelExplanationContainerCaseBased2021 %} -- eg. when comparing two candidate drugs, if one of them has an "upregulates" link with a protein that is also connected with inflammation, it is a more likely match than one that doesn't. Connections extend arbitrary distances because the algorithm is proprietary
+Scaling out further, the original intention of the tool is to guide drug discovery and pharmaceutical research, so harm could be encoded into the indefinite future of biomedical research --- imperceptibly guiding the array of candidate drugs to test based on an algorithmically biased perception of biology and medical prerogative. Even in the case that society changes and we attempt to make amends in our institution for outdated and harmful notions, the long tail of ingrained learning in a proprietary algorithm could be hard to unlearn if the proprieter is inclined to try at all. So even many years into the future when we "know better," the ghosts of algorithmically guided medical reserach and practice could still unknowingly guide our hands.
 
-Follow me a few steps further on a thought experiment, though at each point I want to emphasize that what I am describing is not a *possible* decision but the kind of decision that is *always* made.
+The pathologizing of transgender people is just one example among many demonstrated instances of algorithmic bias like race, disability, and effectively any other marginalized group. The critical issue is that **we might not have any idea** how the algorithm is influencing research and practice at scales large and small, immediate and indefinite.
 
-* (of course they will) Based on machine learning algorithms trained on the world's basic research and wearable data, combined with your shopping, browsing, and other data, **Amazon diagnoses you as trans,** doesn't tell you, (available by searching a raw GDPR dump tho)
-* (consequence of algorithm design) Being trans is a disease, knowledge graph has no means of parsing the cultural or technological context of the disease object in the database, so drug and treatment recommendations recalibrate to eliminate the disease
-* (in progress) Tool is currently for primary research only, but is designed as a clinical use tool and built in collaboration with clinical technology companies. Doctor prescribes algorithmically recommended medicines, trusting its "robust provenance assurance" to always explain the reason for the recommendation in plain english.
-* (true) Algorithm is only able to explain its decisionmaking process with the elegance of BERT neural-net language model {% cite goelExplanationContainerCaseBased2021 %}
-* (consequence of algorithm design) You are, at best, prevented from receiving medical care, and at worst, prescribed medicine to "reduce" their transness. 
-* (consequence of algorithm design) Patient has no way of knowing. Doctor has no way of knowing. Amazon has plausible deniability if they have any way of knowing. Engineers lauded for their work because no one has any way of knowing that a single person with digitally encoded transphobia in a single github repository has, maybe entirely by accident, and entirely automatically, committed mass eugenics.
-* (???) The algorithm had a 60% certainty you were trans, so who knows? The prescribed drugs were given an algorithmic efficacy rating of "15.78" but the scale is uninterpretable, so who knows what they do? The algorithm is designed to learn from its mistakes {% cite goelExplanationContainerCaseBased2021 %}, so just consider yourself training data.
-* (stated design goal) The algorithm is used to steer automated, high-throughput drug screening and development. and so it went.
-* (true) trans people are fucking smart, and talk, and figure out that they shouldn't participate in any research and self-seclude from society. 
-* (???) society at large sees science as it will be, another branch of amazon, and has no reason to participate in it as its study subjects, or believe it as true at all.
+--- 
 
-!! Where is this story wrong?
+How did we get here? How could an effort to link biomedical data become an instrument of mass surveillance and harm? 
 
----
+I have no doubt that everyone working on the Translator is doing so for good reasons, and they have done useful work. Forming a consortium and settling on a development model is hard work and this group should be applauded for that. Unifying APIs with Smart-API, drafting an ontology, and making a knowledge graph, are all directly useful to reducing barriers to desiloing data and shared in the vision articulated here. 
 
-I have no doubt that everyone working on the Translator is doing so for good reasons, and they have done useful work. Forming a consortium and settling on a development model is hard work and this group should be applauded for that. Unifying APIs with Smart-API, drafting an ontology, and making a knowledge graph, are all directly useful to reducing barriers to desiloing data and shared in the vision articulated here. So where does the translator lose its way?
+The problems here come in a few mutually reinforcing flavors, I'll group them crudely into the constraints of existing infrastructure, centralized models of development, and a misspecification of what the purpose of the infrastructure should be.
 
+Navigating a relationship with existing technology in new development is tricky, but there is a distinction between integrating with it and embodying its implications. Since the other projects spawned from the Data Science Initiative embraced the use of cloud storage, the constraint of using centralized servers with the need for a linking overlay was baked in the project from the beginning. From this decision immediately comes the impossibility of enforcing privacy guarantees and the rigidity of database formats and tooling. Since the project started from a place of presuming that the data would be hosted "out there" where much of its existence is prespecified, building the Translator "on top" of that system is a natural conclusion. Further, since the centralized systems proposed in the other projects don't aim to provide a means of standardization or integration of scientific data that doesn't already have a form, the reliance on APIs for access to structured data follows as well.
 
+Organizing the process as building a set of tools as a relatively large, but nonetheless centralized and demarcated group pose additional challenges. I won't speculate on the incentives and personal dynamics that led there, but I also believe this development model comes from good intention. While there is clearly a lot of delegation and distributed work, the project in its different teams takes on specific tools that *they* build and *we* use. This is broadly true of scientific tools, especially databases, and contributes to how they *feel*: they feel disconnected with our work, don't necessarily help us do it more easily or more effectively, and contributing to them is a burdensome act of charity.
 
-Navigating a relationship with existing technology in new development is tricky, but there is a distinction between integrating with it and embodying its implications. It is true that 
+This is reflected in the form of the biolink ontology, where rather than a tool for scientists to *build* ontologies, they built one themselves. There is tension between the articulated impossibility of a grand unified ontology and the eventual form of the algorithm that depends on one that, in their words, motivated the turn to machine learning to reconcile that impossibility. The compromise seems to be the use of a quasi-"neutral" meta-ontology that instantiates its different abstract objects depending on the contents of its APIs. A ranking algorithm to parse the potentially infinite results follows, and so too does the need for feedback and training and the potential for long-lived and uninterrogatable algorithmic bias.
 
-- constrained by existing infra, so intrinsicly embraces it. presumption of cloud, resting on benevolence of APIs
-- doesn't cover (and doesn't purport to cover) all data
-- lack of transparent control over data sharing
-- centralized governance: 
-- focus on communal interaction with code only
-- integration into the daily practice of science
-- ultimately the question is what is the *goal* -- do we want to do some diderot-like encyclopedia, or do we want to make something useful?
+These all contribute to the misdirection in the goal of the project. Linking *all* or *most*biomedical data in single mutually coherent system drifted into an API-driven knowledge-graph for pharmaceutical and clinical recommendations. Here we meet a bit of a reprise of the [#neat](#neatness-vs-scruffiness) mindset, which emphasizes global coherence as a basis for reasoning rather than providing a means of expressing the natural connections between things in their local usage. Put another way, the emphasis is on making something logically complete for some dream of algorithmically-perfect future rather than to be useful to do the things researchers at large want to do but find difficult. The press releases and papers of the Translator project echo a lot of the heady days of the semantic web[^diderot] and its attempt to link everything --- and seems ready to follow the same path of the fledgling technologies being gobbled up by technology giants to finish and privatize.
 
+[^diderot]: not to mention a sort of enlightenment-era diderot-like quest for the encyclopedia of everything
 
+I think the problem with the initial and eventual goals of the translater can be illustrated by problematizing the central focus on linking "all data," or at least "all biomedical data." Who wants "all (biomedical) data?" Outside of metascientists and pharmaceutical companies, I think most people are interested primarily in the data of their colleagues and surrounding disciplines. Every infrastructural model is an act of balancing constraints, and prioritizing "all data" seems to imply "for some people." Who is supposed to be able to upload data? change the ontology? inspect the machine learning model? Who is in charge of what? Who is a knowledge-graph query engine useful for?
 
-!! example of how everyone locally thinks they are doing good, the technologies are good, but in the broader context of how the infrastructure is developed and deployed can become very dangerous
+Another prioritization might be building systems for *all people* that can *embed with existing practices* and *help them do their work* which typically involves accessing *some data.* The system needs to not only be designed to allow anyone to integrate their data into it, but also to be integrated into how researchers collect and use their data. It needs to give them firm, verifiable, and fine-grained control over who has access to their data and for what purpose. It needs to be *multiple,* governable and malleable in local communities of practice. Through the normal act of making my data available to my colleague and vice versa, build on a cumulative and negotiable understanding of the relationship between our work and its meaning. 
 
-Overlay-like systems like this can replicate the design problems they aim to solve: because the format of the different existing databases are mutually incompatible and changing them would be cumbersome becauase they are so rigid, we need to link them. If the linking is then cumbersome, rigid, and centralized, then one might expect the cycle to repeat indefinitely.
-
-we can't hope to rely on small dedicated groups of people to be able to provide linkings between all forms of all data, nor can we turn to the dark magic of machine learning and hope it fixes everything. 
-
-Let's return to the scheduled programming.
+Without too much more prefacing, let's return to the scheduled programming.
