@@ -16,7 +16,8 @@ gem "minima", "~> 2.5"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "tale"
-  gem "jekyll-scholar", "~>7.0"
+  # gem "jekyll-scholar", "~>7.0"
+  gem "jekyll-scholar", :git => "https://github.com/sneakers-the-rat/jekyll-scholar", :branch => "cache"
   gem "jekyll-seo-tag"
 end
 

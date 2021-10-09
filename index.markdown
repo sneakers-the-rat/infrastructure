@@ -99,7 +99,7 @@ test2
 
 # References
 
-{% bibliography --cited %}
+{% include_relative _sections/bib.md %}
 
 # Footnotes
 
