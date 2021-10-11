@@ -48,6 +48,8 @@ Acknowledgements (make sure to double check spelling!!!):
 * metascience class for some of these ideas <3
 * mike for letting me always go rogue
 * os & avery for STS recs
+* Joel Chan @ UMD 
+* Tomasz Pluskiewicz
 * add rest from presentation
 test2
 
