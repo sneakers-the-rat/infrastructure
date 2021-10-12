@@ -59,7 +59,15 @@ test2
 
 # The State of Things
 
+## The Costs of being Deinfrastructured
+
+{% include_relative _sections/1_0_costs.md %}
+
+## Systems Neuroscience Specifically...
+
 {% include_relative _sections/1_0_state-neuro.md %}
+
+## Scientific Software Generally...
 
 {% include_relative _sections/1_1_state-general.md %}
 

@@ -1,0 +1,29 @@
+name: Build .tex version of paper
+
+on:
+  push:
+    branches:
+      - main # or master before October 2020
+
+jobs:
+
+  build-tex:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+      - name: install pandoc
+        run: sudo apt install -y pandoc 
+      - name: install python deps
+        run: pip install pypandoc
+      - name: generate .tex
+        run: cd code && python jekyll_to_tex.py && cd../
+      - name: build tex 
+
+
+

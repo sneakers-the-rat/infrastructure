@@ -1,0 +1,13 @@
+% Options for packages loaded elsewhere
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\begin{document}
+\maketitle
+\tableofcontents
+\pagebreak
+
+$body$
+

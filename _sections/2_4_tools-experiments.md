@@ -50,7 +50,7 @@ From the user's perspective: We could have implemented the sensor fusion algorit
 
 In autopilot, we can express the rest of what we need as a series of ``transform`` objects that can be added together with ``+`` and ``+=``:
 
-{% highlight python %}
+```python
 from autopilot import transform as t
 
 # we start with some measurement of
@@ -68,11 +68,11 @@ z_velocity += t.math.Add(-9.8)
 # and then integrate the acceleration measurements
 # over time to get velocity
 z_velocity += t.timeseries.Integrate(dt_scale = True)
-{% endhighlight %}
+```
 
 So then when used with the IMU object...
 
-{% highlight python %}
+```python
 from autopilot.hardware.i2c import IMU_9DOF
 
 # create the sensor object to read from it
@@ -86,7 +86,7 @@ array([0,0,9.8])
 # and orientation readings to our transform object
 >>> z_velocity.process((sensor.acceleration, sensor.rotation))
 1.6095 # or whatever m/s
-{% endhighlight %}
+```
 
 This transformation could itself be built into the sensor object as an additional ``IMU_9DOF.velocity`` property, as was done for ``.rotation``, reconfigured to add additional processing stages, and so on.
 

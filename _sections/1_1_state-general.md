@@ -1,6 +1,4 @@
 
-## Scientific Software Generally...
-
 The constraints posed by the structure of systems neuroscience as a discipline are of course echos and elaborations of larger constraints in the system of scientific infrastructure production. 
 
 ### Incentivized Fragmentation
@@ -52,6 +50,8 @@ Developing digital infrastructure must be both bound to fulfilling immediate nee
 
 
 {% cite gawerBridgingDifferingPerspectives2014 %}
+
+test
 
 ### "Neatness" vs "Scruffiness"
 
