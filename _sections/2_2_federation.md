@@ -56,7 +56,7 @@ Let us also assume that there is no difference between `@usernames` used by indi
 
 The peer starts with their data in some discipline-specific format, which let us assume for the sake of concreteness has a representation as an [OWL](https://www.w3.org/OWL/) schema. 
 
-That schema could be "owned" by the `@username` corresponding to the standard-writing group --- eg `@nwb` for neurodata without borders. In a [turtle-like](https://www.w3.org/TR/turtle/) pseudocode, then, our dataset might look like this:
+That schema could be "owned" by the `@username` corresponding to the standard-writing group --- eg `@nwb` for neurodata without borders. In a [turtle-ish](https://www.w3.org/TR/turtle/) pseudocode, then, our dataset might look like this:
 
 ```
 <#dataset-name>
@@ -80,7 +80,7 @@ I have some custom field for my data, though, which I extend the format specific
 ```
 !! think of a better example lmao^^ and then annotate what's going on.
 
-!! Announcing namespaces alongside data in a DHT, as well as the opportunity/possibility for aggregators to build on top of this to be able to capture the DHT and index peers directly. let's assume it's possible for me to sign my namespaces and data so that you can tell they're coming from me with a hash.
+There are many strategies for making my ontology extension available to others in a federated network. We could use a distributed hash table, or [**DHT**](https://en.wikipedia.org/wiki/Distributed_hash_table), like bittorrent, which distributes references to information across a network of peers (eg. {% cite pirroDHTbasedSemanticOverlay2012 %}). We could use a strategy like the [**Matrix** messaging protocol](https://matrix.org/), where users belong to a single home server that federates with other servers. Each server is responsible for keeping a copy of the messages sent on the servers and rooms it's federated with. We could use [**ActivityPub** (AP)](https://www.w3.org/TR/2018/REC-activitypub-20180123/) {% cite Webber:18:A %}, a publisher-subscriber model where users affiliated with a server post messages to their 'outbox' and are sent to listening servers (or made available to HTTP GET requests). AP uses [JSON-LD](https://json-ld.org/) {% cite spornyJSONLDJSONbasedSerialization2020 %}, so is already capable of representing linked data, and the related ActivityStreams vocabulary {% cite snellActivityStreams2017 %} also has plenty of relevant [action types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types) for [creating](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [discussing](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-question), and [negotiating](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-tentativeaccept) over links (also see [cpub](https://github.com/openEngiadina/cpub)). We'll return to ActivityPub later, but for now the point is to let us assume we have a system for distributing schemas/extensions/links associated with an identity publicly or to a select group of peers.
 
 !! Now ppl can query by my additional datatype alongside nwb datatypes
 
@@ -93,11 +93,13 @@ I have some custom field for my data, though, which I extend the format specific
 
 !! making this mapping lets me *use* their data, rather than being the drudgery of linking --- hold on till the next section. This is something that happens all the time in the normal course of reserach, but by integrating it into the system of our data's representation and giving me agency over it, I contribute to the rest of it.
 
-!! ah but what of different data implementations? how do i actually *read* the data if it's in hdf and i'm used to SQL? well there's no reason that the implementation cant' itself be a schema that instructs us how to read the data (in turn allowing us to overwrite it and make our own mapping between eg. a video file held externally.) !! same thing with linking up with existing databases -- if they aren't p2p, just indicate that in the representational schema. 
+!! ah but what of different data implementations? how do i actually *read* the data if it's in hdf and i'm used to SQL? well there's no reason that the implementation cant' itself be a schema that instructs us how to read the data (in turn allowing us to overwrite it and make our own mapping between eg. a video file held externally.) !! same thing with linking up with existing databases -- if they aren't p2p, just indicate that in the representational schema. !! to enable p2p with arbitrary data structures (we just have to add a step to hash the addressable pieces of data)
 
 !! illustrate incentive to fix and link terminology to be discoverable as well as do your own work.
 
-!! example of search between two schemas -- find me all the ways that these schemas have been related and let me pick them! Browse all the ways this schema has been extended.
+!! example of search between two schemas -- find me all the ways that these schemas have been related and let me pick them! Browse all the ways this schema has been extended. !! federated querying like SPARQL are complicated and involve breaking up the request and executing it, but let's also assume that's possible. !! separate the querying part which refers to content-addresses hashes and the p2p part
+
+!! again being purposefully nonprescriptive in implementation here -- eg. you could have aggregators built on top that make queries speedier, and so on.
 
 !! Now to search and download many other schemas -- query your federation -- again also could have trackerlike sites sitting on top to make indexing faster, or DHT system, implementation not important here. The point is we *want* lots of space to make different kinds of community overlays, interfaces, and tools. You do a query to find the unique IDs of the dataset that you want, then start the transfer. 
 
@@ -131,9 +133,6 @@ The fundamental tradeoff between centralized and decentralized database systems 
 
 !! lots of times this has been proposed before {% cite simaEnablingSemanticQueries2019 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017 %}
 
-!! A practical example of a federated system is email: you can choose from a variety of email services, each of which could have a wholly different set of features and design, but you can still send anyone[^email] an email. More recent examples are the [Matrix messaging protocol](https://matrix.org/) and the ["Fediverse"](https://en.wikipedia.org/wiki/Fediverse) built on W3C's [ActivityPub](https://www.w3.org/TR/2018/REC-activitypub-20180123/) protocol {% cite Webber:18:A %} for social networks. Users in ActivityPub networks, rather than joining a single service as one would with traditional commercial social media networks, join individual servers (or can create their own). Each server chooses its own software that implements the ActivityPub standard, and is free to set its own rules, privileges, and whether or not it wants to be able to send and receive messages from other servers.
-
-[^email]: dont @ me about html vs plain text messages, providers with varying degrees of message authentication that get bounced by others, ya know what i mean.
 
 
 !! [DataLad](https://www.datalad.org/) {% cite halchenkoDataLadDistributedSystem2021 %} and its application in Neuroscience as [DANDI](https://dandiarchive.org) are two projects that are conceptually and practically much closer to the kinds of systems that I am describing here (a peer-to-peer backend for DataLad is, I think, a promising development path). !! brief explanation of datalad !! problem is that it slices the problem in a different place, and needs two extensions: federation for affiliating into larger networks, and federation for negotiating distributed queries across linked datasets
