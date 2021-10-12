@@ -13,6 +13,8 @@ canonical_url: "https://jon-e.net/infrastructure"
 1. table of contents
 {:toc}
 
+[**PDF VERSION**](/infrastructure/tex/decentralized_infrastructure_render.pdf)
+
 
 *This is a draft document, so if you do work that you think is relevant here but I am not citing it, it's 99% likely that's because I haven't read it , not that I'm deliberately ignoring you! Odds are I'd love to read & cite your work, and if you're working in the same space try and join efforts!*
 
