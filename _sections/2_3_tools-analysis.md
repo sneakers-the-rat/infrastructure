@@ -1,3 +1,5 @@
+!! This section will be relatively short, as I think the design of a distributed analytical platform is a bit easier to explain, basically has a settled form I find uncontroversial, and directly extends out of our federated data system. The tools part i might cut short just because I'm a lil shy about it and also have previously written at length about it, but also because the world is much more open there. In both cases, one of the major things I want to be demonstrating is the multiplicative, combinatoric power of multiple interoperable decentralized infrastructures can do. THen return to some notion of how to govern them.
+
 
 !! talk about Plugin Oriented Programming (pypi POP page) as a design philosophy
 
@@ -15,10 +17,6 @@
 > - Jeffrey Spies, A workflow-centric approach to increasing reproducibility and data integrity (2017) {% cite spiesWorkflowCentricApproachIncreasing2017 %}
 
 
-If we're building infrastructure to allow us to build on each other's labor by sharing data, why not do the same for the tools that analyze and collect the data while we're at it? The benefits of distributed infrastructure that allow us to preserve our collected labor and knowledge compound when applied in multiple domains. The benefits of shared data, analytical, and experimental infrastructure are far more than the sum of their parts. Each is useful on its own, but as additional components of the system are developed they make the incentive to develop the rest even stronger <- this para is dogshit. rewrite with a clear head. 
-
-This section will be relatively short as I feel like a shared analytical framework is relatively uncontroversial, just a matter of putting labor in the right place. I also don't want to give the impression of self-promotion, as I have spent the last several years designing an [experimental framework](https://docs.auto-pi-lot.com), autopilot. I will discuss it because, unsurprisingly, I designed it based on the same thoughts that have since developed into this paper, but I want to be clear that as with the rest of the paper, my focus is on the *kind* of tools we need rather than promoting one specific tool. 
-
 ### Analytical Framework
 
 The first natural companion of shared data infrastructure is a shared analytical framework. A major driver for the need for everyone to write their own analysis code largely from scratch is that it needs to account for the idiosyncratic structure of everyone's data. Most scientists are (blessedly) not trained programmers, so code for loading and negotiating loading data is often intertwined with the code used to analyze it, so it is often difficult to adapt another lab's analysis code for use in other contexts. If instead neuroscientists had all their data in a standardized format, then it would be possible to write an analysis method once and allow the rest of the community to benefit from it. 
@@ -33,6 +31,8 @@ A shared analytical framework should be
 Thankfully, [DataJoint](https://datajoint.io/) already does most of this, and is expanding its modularity with its recent [Elements](https://github.com/datajoint/datajoint-elements) project. 
 
 !! need to revisit this in light of the paper: {% cite yatsenkoDataJointElementsData2021 %} 
+
+!! continue the example of needing to select within datasets instead of metadata from federation section.
 
 Though it currently uses a [MySQL](https://docs.datajoint.io/python/admin/1-hosting.html), relational database as its backend, extending it to incorporate with the peer to peer database system described above would be an early, concrete development goal for this program. I have heard rumors they are considering adopting a decentralized traditional relational database like [CockroachDB](https://www.cockroachlabs.com/product/), which is not the same thing as a p2p federated semantic database system as I describe here, but is certainly a step in that direction. The rest is in the minutiae of normal software development, as well as building a user interface and collaboration platform for curation and management of shared pipelines. Thank you DataJoint team for making this section so simple.
 

@@ -6,11 +6,10 @@ That's a lot of heterogeneity to manage, but fret not: there is hope. Researcher
 
 Federated systems consist of *distributed*, *heterogeneous*, and *autonomous* agents that implement some minimal agreed-upon standards for mutual communication and (co-)operation. Federated databases[^federatedterm] were proposed in the early 1980's {% cite heimbignerFederatedArchitectureInformation1985 %} and have been developed and refined in the decades since as an alternative to either centralization or non-integration {% cite litwinInteroperabilityMultipleAutonomous1990 kashyapSemanticSchematicSimilarities1996 hullManagingSemanticHeterogeneity1997 %}. Their application to the dispersion of scientific data in local filesystems is not new {% cite busseFederatedInformationSystems1999 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017  %}, but their implementation is more challenging than imposing order with a centralized database or punting the question into the unknowable maw of machine learning. 
 
-!! we also have to give up the golden idol of perfect computability, reasoning, and integrity in favor of transparency, autonomy. not just as a "it's hard in federated dbs" but also because we *shouldn't try* to do them because those projects are fundamentally coercive. !! the goal is to make something that *works* and *does the things that scientists want to do* instead of something *magic*. Those constraints are mostly from the needs of corporate DBs who don't need people to access and modify the database. We have different needs -- something to support our research instead creating a database for the sake of the database.
 
 [^federatedterm]: though there are subtleties to the terminology, with related terms like "multidatabase," "data integration," and "data lake" composing subtle shades of a shared idea. I will use federated databases as a single term that encompasses these multiple ideas here, for the sake of constraining the scope of the paper.  
 
-Amit Sheth and James Larson, in their reference description of federated database systems, describe the *design autonomy* as one critical dimension that characterizes them:
+Amit Sheth and James Larson, in their reference description of federated database systems, describe **design autonomy** as one critical dimension that characterizes them:
 
 > Design autonomy refers to the ability of a component DBS to choose its own design with respect to any matter, including 
 > 
@@ -28,11 +27,9 @@ Amit Sheth and James Larson, in their reference description of federated databas
 >
 > (g) The **implementation** (e.g., record and file structures, concurrency control algorithms). 
 
-Susanne Busse and colleagues add an additional dimension of **evolvability**: "Following "natural" tendencies, autonomous components will inevitably develop heterogeneous structures. It is the task of the federation layer to cope with the different types of heterogeneity." {% cite busseFederatedInformationSystems1999 %}. 
+Susanne Busse and colleagues add an additional dimension of **evolvability,** or the ability of a particular system to adapt to inevitable changing uses and requirements {% cite busseFederatedInformationSystems1999 %}. 
 
-!! critically we also need *communication, association, and execution autonomy* to control the use of data.
-
-The typical conceptualization of federated databases that follow typically have five layers {% cite shethFederatedDatabaseSystems1990 %}:
+In order to support such radical autonomy and evolvability, federated systems need some means of translating queries and representations between heterogeneous components. The typical conceptualization of federated databases have five layers that implement different parts of this reconciliation process {% cite shethFederatedDatabaseSystems1990 %}:
 
 * A **local schema** is the representation of the data on local servers, including the means by which they are implemented in binary on the disk
 * A **component schema** serves to translate the local schema to a format that is compatible with the larger, federated schema
@@ -40,105 +37,156 @@ The typical conceptualization of federated databases that follow typically have 
 * The **federated schema** is the collection of export schemas, allowing a query to be broken apart and addressed to different export schemas. There can be multiple federated schemas to accomodate different combinations of export schemas.
 * An **export schema** can further be used to make the federated schema better available to external users, but in this case since there is no notion of "external" it is less relevant.
 
-This conceptualization provides a good starting framework and isolation of the different components of a database system, but a peer-to-peer database system has different constraints and opportunities {% cite bonifatiDistributedDatabasesPeertopeer2008 %}. 
+This conceptualization provides a good starting framework and isolation of the different components of a database system, but a peer-to-peer database system has different constraints and opportunities {% cite bonifatiDistributedDatabasesPeertopeer2008 %}. In the strictest, "tightly coupled" federated systems, all heterogeneity in individual components has to be mapped to a single, unified federation-level schema. Loose federations don't assume a unified schema, but settle for a uniform query language, and allow multiple translations and views on data to coexist. A p2p system naturally lends itself to a looser federation, and also gives us some additional opportunities to give peers agency over schemas while also preserving some coherence across the system. I will likely make some database engineers cringe, but the emphasis for us will be more on building a system to support distributed social control over the database, rather than guaranteeing consistency and transparency between the different components.
 
----
+Though there are hundreds of subtleties and choices in implementation beneath the level of detail I'll reach here, allow me to illustrate the system by example:
 
-!! drafting the sketch here so i can refine it later i am very tired!
+Let us start with the ability for a peer to choose who they are associated with at multiple scales of organization: a peer can directly connect with another peer, but peers can also federate into groups, groups can federate into groups of groups, and so on. Within each of these grouping structures, the peer is given control over what data of theirs is shared. 
 
-Beneath this description is a tremendous amount of subtlety and contingency in implementation, but bear with me through a conceptual description.
+Clearly, we need some form of *identity* in the system, let's make it simple and flat and denote that in pseudocode as `@username` --- in reality, without any form of distributed uniqueness checking, we would need to have some notion of where this username is "from," so let's say we actually have a system like `username@name-provider` but for this example assume a single name provider, say ORCID[^chainz]. Let us also assume that there is no categorical difference between `@usernames` used by individual researchers, institutions, consortia, etc. --- everyone is on the same level. 
 
-Let us start with the ability for a peer to choose who they are associated with and what they share at multiple scales of organization: a peer can directly connect with another peer, but peers can also federate into groups, groups can federate into groups of groups, and so on. Within each of these grouping structures, the peer is given control over what data of theirs is shared. Clearly, we need some form of *identity* in the system, let's make it simple and flat and denote that in pseudocode as `@username` --- in reality, without any form of distributed uniqueness checking, we would need to have some notion of where this username is "from," so let's say we actually have a system like `username@name-provider` but for this example assume a single name provider, say ORCID.
+[^chainz]: !! now would be the time blockchain ppl are like "but wait! that's centralization! how can you trust ORCID??" Those kinds of systems are designed for zero-trust environments, but we don't need absolute zero trust in this system since we are assuming we're operating with visible entities in a system already bound to some degree by reputation.
 
-!! now would be the time blockchain ppl are like "but wait! that's centralization! how can you trust ORCID??" Those kinds of systems are designed for zero-trust environments, but we don't need absolute zero trust in this system since we are assuming we're operating with visible entities in a system already bound to some degree by reputation.
-
-Let us also assume that there is no difference between `@usernames` used by individual researchers, institutions, consortia, etc. 
-
-The peer starts with their data in some discipline-specific format, which let us assume for the sake of concreteness has a representation as an [OWL](https://www.w3.org/OWL/) schema. 
+We pick up where we left off earlier with a peer who has their data in some discipline-specific format, which let us assume for the sake of concreteness has a representation as an [OWL](https://www.w3.org/OWL/) schema. 
 
 That schema could be "owned" by the `@username` corresponding to the standard-writing group --- eg `@nwb` for neurodata without borders. In a [turtle-ish](https://www.w3.org/TR/turtle/) pseudocode, then, our dataset might look like this:
 
 ```
-<#dataset-name>
-	@nwb:general:experimenter @jonny
-	@nwb:ElectricalSeries
-	    .electrodes [1, 2, 3]
-	    .rate 30000
-	    .data [...]
+<#cool-dataset>
+    a @nwb:NWBFile
+    @nwb:general:experimenter @jonny
+    @nwb:ElectricalSeries
+        .electrodes [1, 2, 3]
+        .rate 30000
+        .data [...]
 ```
 
-Where I indicate that me, `@jonny` collected a dataset (indicated with `<#dataset-name>` to differentiate an application/instantiation of a schema from its definition) that consisted of an `@nwb:ElectricalSeries` and the relevant attributes (where a leading `.` is a shorthand for the parent schema element.)
+Where I indicate that me, `@jonny` collected `a @nwb:NWBFile` dataset (indicated with `<#dataset-name>` to differentiate an application/instantiation of a schema from its definition) that consisted of an `@nwb:ElectricalSeries` and the relevant attributes (where a leading `.` is a shorthand for the parent schema element).
+
+!! pause to describe notion of using triplet links and the generality they afford us.
 
 I have some custom field for my data, though, which I extend the format specification to represent. Say I have invented some new kind of solar-powered electrophysiological device and want to annotate its specs alongside my data. 
 
 ```
-<@jonny:SolarEphys < @nwb:NWBContainer>
-	ManufactureDate
-	InputWattageSeries < @nwb:ElectricalSeries
-	    newprop
-	    -removedprop
+@jonny:SolarEphys < @nwb:NWBContainer
+    ManufactureDate
+    InputWattageSeries < @nwb:ElectricalSeries
+        newprop
+        -removedprop
 ```
 !! think of a better example lmao^^ and then annotate what's going on.
 
-There are many strategies for making my ontology extension available to others in a federated network. We could use a distributed hash table, or [**DHT**](https://en.wikipedia.org/wiki/Distributed_hash_table), like bittorrent, which distributes references to information across a network of peers (eg. {% cite pirroDHTbasedSemanticOverlay2012 %}). We could use a strategy like the [**Matrix** messaging protocol](https://matrix.org/), where users belong to a single home server that federates with other servers. Each server is responsible for keeping a copy of the messages sent on the servers and rooms it's federated with. We could use [**ActivityPub** (AP)](https://www.w3.org/TR/2018/REC-activitypub-20180123/) {% cite Webber:18:A %}, a publisher-subscriber model where users affiliated with a server post messages to their 'outbox' and are sent to listening servers (or made available to HTTP GET requests). AP uses [JSON-LD](https://json-ld.org/) {% cite spornyJSONLDJSONbasedSerialization2020 %}, so is already capable of representing linked data, and the related ActivityStreams vocabulary {% cite snellActivityStreams2017 %} also has plenty of relevant [action types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types) for [creating](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [discussing](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-question), and [negotiating](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-tentativeaccept) over links (also see [cpub](https://github.com/openEngiadina/cpub)). We'll return to ActivityPub later, but for now the point is to let us assume we have a system for distributing schemas/extensions/links associated with an identity publicly or to a select group of peers.
+There are many strategies for making my ontology extension available to others in a federated network. We could use a distributed hash table, or [**DHT**](https://en.wikipedia.org/wiki/Distributed_hash_table), like bittorrent, which distributes references to information across a network of peers (eg. {% cite pirroDHTbasedSemanticOverlay2012 %}). We could use a strategy like the [**Matrix** messaging protocol](https://matrix.org/), where users belong to a single home server that federates with other servers. Each server is responsible for keeping a synchronized copy of the messages sent on the servers and rooms it's federated with, and each server is capable of continuing communication if any of the others failed. We could use [**ActivityPub** (AP)](https://www.w3.org/TR/2018/REC-activitypub-20180123/) {% cite Webber:18:A %}, a publisher-subscriber model where users affiliated with a server post messages to their 'outbox' and are sent to listening servers (or made available to HTTP GET requests). AP uses [JSON-LD](https://json-ld.org/) {% cite spornyJSONLDJSONbasedSerialization2020 %}, so is already capable of representing linked data, and the related ActivityStreams vocabulary {% cite snellActivityStreams2017 %} also has plenty of relevant [action types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types) for [creating](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [discussing](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-question), and [negotiating](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-tentativeaccept) over links (also see [cpub](https://github.com/openEngiadina/cpub)). We'll return to ActivityPub later, but for now the point is to let us assume we have a system for distributing schemas/extensions/links associated with an identity publicly or to a select group of peers.
 
-!! Now ppl can query by my additional datatype alongside nwb datatypes
-
-!! Now I want to make use of my colleagues data. In order to bridge them together and compare like terms, I could describe some link between them. Say I use some vocabulary someone has set up to describe different links, say we use [`@skos`](https://www.w3.org/2009/08/skos-reference/skos.html)
+For the moment our universe is limited only to other researchers using NWB. Conveniently, the folks at NWB have set up a federating group so that everyone who uses it can share their format extensions. Since our linking system for manipulating schemas is relatively general, we can use it to "formalize" a basic configuration for a federating group that automatically `Accept`s request to `Join` and allows any schema that inherits from their base `@nwb:NWBContainer` schema. Let's say `@fed` defines some basic properties of our federating system --- it constitutes our federating "protocol" --- and loosely use some terms from the [ActivityStreams](https://www.w3.org/ns/activitystreams#class-definitions) vocabulary as `@as`
 
 ```
-<@jonny:ElectricalSeries < @nwb:ElectricalSeries>
-	@skos:closeMatch .frequency @chemistry:ReagentMonitor:fs
+<#nwbFederation>
+  a @fed:Federation
+  onReceive
+    @as:Join @as:Accept
+  allowSchema
+    extensionOf @nwb:NWBContainer
 ```
 
-!! making this mapping lets me *use* their data, rather than being the drudgery of linking --- hold on till the next section. This is something that happens all the time in the normal course of reserach, but by integrating it into the system of our data's representation and giving me agency over it, I contribute to the rest of it.
+Now anyone that is a part of the `@nwbFederation` would be able to see the schemas we have submitted, sort of like a beefed up, semantically-aware version of the existing [neurodata extensions catalog](https://nwb-extensions.github.io/). In this system, many overlapping schemas could exist simultaneously, but wouldn't become a hopeless clutter because similar schemas could be compared and reconciled based on their semantic properties. 
 
-!! ah but what of different data implementations? how do i actually *read* the data if it's in hdf and i'm used to SQL? well there's no reason that the implementation cant' itself be a schema that instructs us how to read the data (in turn allowing us to overwrite it and make our own mapping between eg. a video file held externally.) !! same thing with linking up with existing databases -- if they aren't p2p, just indicate that in the representational schema. !! to enable p2p with arbitrary data structures (we just have to add a step to hash the addressable pieces of data)
+So far we have been in the realm of metadata, but how would my computer know how to read and write the data to my disk so i can use it? In a system with heterogeneous data types and database implementations, we need some means of specifying different programs to use to read and write, different APIs, etc. Why not make that part of the file schema as well? Suppose the HDF5 group (or anyone, really!) has a namespace `@hdf` that defines the properties of an `@hdf:HDF5` file, basic operations like `Read`, `Write`, or `Select`. NWB could specify that in their definition of `@nwb:NWBFile`:
 
-!! illustrate incentive to fix and link terminology to be discoverable as well as do your own work.
+```
+@nwb.NWBFile
+  a @hdf:HDF5
+    isVersion x.y.z
+    hasDependency libhdf5==x.y.z
+  usesContainer @nwb:NWBContainer
+```
 
-!! example of search between two schemas -- find me all the ways that these schemas have been related and let me pick them! Browse all the ways this schema has been extended. !! federated querying like SPARQL are complicated and involve breaking up the request and executing it, but let's also assume that's possible. !! separate the querying part which refers to content-addresses hashes and the p2p part
+The abstraction around the file implementation makes it easier for others to consume my data, but it also makes it easier for *me* to use and contribute to the system. Making an extension to the schema wasn't some act of charity, it was the most direct way for me to use the tool to do what I wanted. Win-win: I get to use my fancy new instrument and store its data by extending some existing format standard, and in the process make the standard more complete and useful. We are able to make my work useful by *aligning the modalities of use and contribution.*
 
-!! again being purposefully nonprescriptive in implementation here -- eg. you could have aggregators built on top that make queries speedier, and so on.
+Now that I've got my schema extension written and submitted to the federation, time to submit my data! Since it's a p2p system, I don't need to manually upload it, but I do want to control who gets it. By default, I have all my NWB datasets set to be available to the `@nwbFederation` , and I list all my metadata on, say the Society for Neuroscience's `@sfnFederation`. 
 
-!! Now to search and download many other schemas -- query your federation -- again also could have trackerlike sites sitting on top to make indexing faster, or DHT system, implementation not important here. The point is we *want* lots of space to make different kinds of community overlays, interfaces, and tools. You do a query to find the unique IDs of the dataset that you want, then start the transfer. 
+```
+<#globalPermissions>
+  a @fed:Permissions
+  permissionsFor @jonny
 
-!! extend this beyond just pairwise interactions. I don't know what the physicists are up to, but the *chemists might.* so I could try traversing the graph and find out what links have been made to get there. If they don't exist, i can make my own.
+  federatedWith 
+    name @nwbFederation
+    @fed:shareData 
+      is @nwb:NWBFile
 
-!! long-range schema resolution is what's needed, that's shared knowledge section
+  federatedWith
+    name @sfnFederation
+    @fed:shareMetadata
+```
 
-!! what we're *not* trying to do is make an automated, web-crawlable system to serve corporate clients, but make something that is social, communal, evolving (and maybe eventually it will reach a point of coherency where that is possible, but it really isn't the goal -- we'd rather have some of the data and understand where it came from than access to all of the data with some of it potentially being junk and off-target but we just machine-learned through it anywaay). 
+Let's say this dataset in particular is a bit sensitive --- say we apply a set of permission controls to be compliant with `@hhs.HIPAA` --- but we do want to make use of some public server space run by our Institution, so we let it serve an encrypted copy that those I've shared it with can decrypt. Since we've applied the `@hhs.HIPAA` ruleset, we would be able to automatically detect if we have any conflicting permissions, but we're doing fine in this example.
 
-!! we don't *need* to appeal to a single unifying graph because we have many overlapping ones at multiple scales. Ya it's noisier, but that's the point -- it's about deducing graph structure from use rather than imposing it. If you don't like a particular structure, you're free to fork it (if they export their schemas) or make your own. If people want to use your data, they can write links from their format to yours, and vice versa. You *should* be able to determine which dialect your data is in in the same way you get to choose how you speak, and it doesn't necessarily need to be mutually compatible with others. If translations are possible, then great we should make them, but universality is not part of this system.
+```
+<#datasetPermissions>
+  a @fed:Permissions
+  permissionsFor @jonny:cool-dataset
 
----
+  accessRuleset @hhs:HIPAA
+    .authorizedRecipient <#hash-of-patient-ids>
+  
+  federatedWith
+    name @institutionalCloud
+    @fed:shareEncrypted
+```
 
-In the case of federated database systems, the federation layer provides a uniform  way to mediate differences in schemas and formats between individual databases in the system. To share data between subdisciplines and fields we need to be able to perform some *mapping* between the different data formats and standards that they use: we need some way of translating the neuroscientist's `GENOTYPE` to the geneticists `GENETIC_SEQUENCE`. 
+Now I want to make use of some of my colleagues data. Say I am doing an experiment with a transgenic dragonfly and collaborating with a chemist down the hall. This transgene, known colloquially in our discipline as `"@neuro:superstar6"` (oh-so-uncreatively ripped off by the chemists as `"@chem:SUPER6"`) fluoresces when the dragonfly is feeling bashful, and we have plenty of photometry data stored as `@nwb:Fluorescence` objects. We think that its fluorescence is caused by the temperature-dependent conformational change from blushing. They've gathered NMR and Emission spectroscopy data in their chemistry-specific format, say `@acs:NMR` and `@acs:Spectroscopy`. 
 
-
-!! I will be purposefully vague about the means of implementing these mappings until we reach the [shared knowledge](#shared-knowledge) section, but first we need a brief practical example of how a system like this might work.
-
-
-Say I'm a neuroscientist who just collected a dataset that consists of a few electrophysiological recordings from a cluster of Consciousness Cells in some obscure midbrain nucleus, and then sectioned the brain and imaged their positions. I deposit my dataset on my local in-lab server, which I have set up to federate with the fancy new Neurophysiologist's Extravagant, Undying, Repository of Open data (NEUROd). All servers in this federation are required to have their data in the standardized NWB format, and since mine already is (go me!) my server announces to the others that we have some new data available! Some enterprising group of neuroscientific programmers has built a website that allows its users to search, browse, and do all the fancy visualization of data they would expect from a modern database, so I go and see how my new dataset has changed some standard aggregated analysis of all the Concscious Cells from all the other labs participating in the federation. Hang on, I say, a question mark appearing over my head like a cartoon caricature of a curious scientist -- I wonder if these Consciousness Cells are in the same place in the evolutionary neighbors of my model organism!? I then run a query for all datasets that have positional data for Consciousness Cells. NEUROd has chosen to federate with the Evolutionary Volitional data sharing Operation (EVO), a federation of evolutionary biologists, some of whom study the origins of Consciousness Cells. They have their data in their own evolutionary biologist-specific format, but since there is some mapping between fields in the NWB standard and theirs, that's no problem. My search then returns data from not only all the other neuroscientists in NEUROd, then, but also matching data from EVO --- and my cross-disciplinary question then becomes trivial to answer. 
-
-(figure of federated databases here).
-
-The federated database system extends the peer to peer systems discussed earlier and provides a direct means of solving the problems of database fragmentation by subdiscipline. Since the requirements for being a 'node' in the federation are minimal, individual, local servers work seamlessly with institutional servers and large, national servers to take advantage of all available storage and bandwidth of the participating servers ---  a promising way to solve the problems posed by the "big data" of contemporary science (eg. one articulation by {% cite charlesCommunityDrivenBigOpen2020 %}). While mappings between schemas are not magical and require work, they provide a single point of mediation between the data formats of different disciplines. Federation gets us the best of both worlds: the flexibility and domain-specific tools of subdisciplinary databases with the availability of domain-general databases. The radical autonomy of federated systems dramatically lowers the barriers to standardization: rather than requiring everyone to do *the same thing in the same way* and fundamentally change how they do things, researchers need to just build the bridges to connect their existing systems to the federated standard. These bridges can be created gradually. Since nodes in a federated system are free to choose whether they connect to others, there do not need to be mappings between *all* types of data in a federation, and there is no need for creating the oft-fabled *"one true standard"* for all data. Researchers that are interested in interfacing their data with others are strongly incentivized to write the mappings that permit it, and so they can emerge as they are demanded. Researchers are also given far more control over their own data than is afforded by traditional databases: it is entirely possible to have fine-grained permissions controls that allow researchers to share only the data they want to with the rest of the system while still taking advantage of, for example, locally federated servers that make their data available to other collaborating labs.
-
-It's difficult to overstate how fundamentally a widely-adopted federated database system would be for all domains of science: when designing a behavioral experiment to study the circadian cycle, rather than relying on rules of thumbs or a handful of papers, one could directly query data about the sleep-wake cycles of animals recorded by field biologists in their natural habitats, cross reference that with geophysical measurements of daylight times and temperatures in those locations, and normalize the intensity of light you plan to give your animals by estimating tree-canopy coverage from LIDAR data from the geographers. One could make extraordinarily biophysically realistic models of neural networks by incorporating biophysical data about the properties of ion channels and cell membranes, tractography data from human DTI fMRI images, and then compare some dynamical measurement of your network against other dynamic systems models like power grids, telecommunications networks, swarming ants, and so on. Seemingly-intractable problems like the "file drawer" problem simply dissolve: null results are self-evident and don't *need* publication when researchers asking a question are able to see it themselves by analyzing all previous data gathered. Without exaggeration, they present the possibility of making *all* experiments multidisciplinary, making use of our collected human knowledge without disciplinary barriers. Indeed nearly all scientific literature [is already available on a federated database system](https://freeread.org/ipfs/) to anyone with an internet connection --- arguably the largest expansion of scientific knowledge accessibility ever.
-
-The fundamental tradeoff between centralized and decentralized database systems is that of flexibility vs. coherence: centralized systems can simply enforce a single standard for data and assume that everything it works with will have it. Federated systems require some means of maintaining the mappings between schemas that allow their fluid translation. They also require some means of representing and negotiating data that is unanticipated by existing schemas. The fine details of implementing a federated database system are outside the scope of this paper, but we will return to a means of distributed maintenance of mappings between schemas by taking advantage of semantic web technologies in [shared knowledge](#shared-knowledge). Before we do though, we need to discuss the shared tools to analyze and generate the data for the system in this section.
-
-!! federated systems let us bridge the gap between localized server technology like datajoint and mass server technology like databases. If you let people federate at a local scale to share data between an institute, a consortium, etc. and then let those things scale to federate together you have a plausible means by which slowly a generalized database system could be accumulated over time.
-
-!! lots of times this has been proposed before {% cite simaEnablingSemanticQueries2019 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017 %}
-
+We get tired of having our data separated and needing to maintain a bunch of pesky scripts and folders, so we decide to make a bridge between our datasets. We need to indicate that our different names for the gene are actually the same thing and relate the spectroscopy data.   
 
 
-!! [DataLad](https://www.datalad.org/) {% cite halchenkoDataLadDistributedSystem2021 %} and its application in Neuroscience as [DANDI](https://dandiarchive.org) are two projects that are conceptually and practically much closer to the kinds of systems that I am describing here (a peer-to-peer backend for DataLad is, I think, a promising development path). !! brief explanation of datalad !! problem is that it slices the problem in a different place, and needs two extensions: federation for affiliating into larger networks, and federation for negotiating distributed queries across linked datasets
+Let's make the link explicit, say we use [`@skos`](https://www.w3.org/2009/08/skos-reference/skos.html)?
 
-!! finally and perhaps most importantly we need to build the UI and communication tools to let us fluidly negotiate over the schema, including how to make multiple overlapping schemas associated eg. with a username. across several levels, eg. a format can have an export schema, and there can be canonical mappings between export schemas, which can the in turn be combined into higher-level common standards for combinations of formats, and so on. We want to be able to flexibly use these mappings without necessarily participating in the entire system, and we also want to make it possible for our local changes to be accessed by the larger system.
+```
+<#super-link-6>
+  a @fed:Link
+  
+  from @neuro:superstar6
+  to @chem:SUPER6
+  link @skos:exactMatch
 
+```
+
+Our `@nwb:Fluorescence` data has the emission wavelength in its `@nwb:Fluorescence:excitation_lambda` property[^notreallynwb], which is the value of their `@acs:Spectroscopy` data at a particular value of its `wavelength`. Unfortunately, `wavelength` isn't metadata for our friend, but a column in the `@acs:Spectroscopy:readings` table, so for now the best we can do is indicate that `excitation_lambda` is one of the values in `wavelength` and pick it up in our analysis tools.
+
+[^notreallynwb]: not really where it would be in the standard, but go with it plz
+
+```
+<#imaging>
+ a @fed:Link
+ 
+ from @nwb:Fluorescence:excitation_lambda
+ to @acs:Spectroscopy:readings
+ link @fed:Subset
+   valueIn "wavelength"
+```
+
+This makes it much easier for us to index our data against each other and solves a few real practical problems we were facing in our collaboration. We don't need to do as much cleaning when it's time to publish the data since it can be released as a single linked entity.
+
+Rinse and repeat our sharing and federating process from our previous schema extension, add a little bit of extra federation with the `@acs` namespace, and in the normal course of our doing our research we've contributed to the graph structure linking two common data formats. Ours is one of many, with ugly little names like `@jonny:super-link-6`[^creditte]. We might not have followed the exact rules, and we only made a few links rather than a single authoratative mapping, but if someone is interested in compiling one down the line they'll start off a hell of a lot further than if we hadn't contributed it!
+
+[^creditte]: we'll return to credit assignment, don't worry! I wouldn't leave a friend out to dry.
+
+With a protocol for how queries can be forwarded and transformed between users and federations, one could access the same kind of complex query structure as traditional databases with [SPARQL](https://www.w3.org/TR/sparql11-federated-query/) {% cite SPARQLFederatedQuery2013 %} as has been proposed for biology many times before {% cite simaEnablingSemanticQueries2019 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017 %}. Some division in the way that data and metadata are handled is necessary for the network to work in practice, since we can't expect a search to require terabytes of data transfer. A natural solution to this is to have metadata query results point to [content addressed](https://en.wikipedia.org/wiki/Content-addressable_storage) identifiers that are served peer to peer. A mutable/changeable/human-readable name and metadata system that points to a system of permanent, unique identifiers has been one need that has hobbled IPFS, and is the direction pointed to by DataLad {% cite hankeDefenseDecentralizedResearch2021 %}
+
+In this example I have been implicitly treating the `@nwbFederation` users like bittorrent trackers, keeping track of different datasets in their federation, but there is no reason why queries couldn't themselves be distributed across the participating peers, though I believe tracker-like federations are useful and might emerge naturally. A system like this doesn't need the radical zero trust design of, for example, some distributed ledgers, and an overlapping array of institutional, disciplinary, interest, and so on federations would be a good means of realizing the evolvable community structure needed for sustained archives. 
+
+Extend this practice across the many overlapping gradients of cooperation and collaboration in science, and on a larger scale a system like this could serve as a way to concretize and elevate the organic, continual negotiation over meaning and practice that centralized ontologies can only capture as a snapshot. It doesn't have the same guarantees of consistency or support for algorithmic reasoning as a top-down system would in theory, but it would give us agency over the structure of our information and have the potential to be useful for a far broader base of researchers. 
+
+I have no idea where the physicists' store their data or what format it's in, *but the chemists might,* and the best way to get there from here might be a dense, multiplicative web of actual practical knowledge instead of some sparsely used corporate API. 
+
+I have been purposefully nonprescriptive about implementation and fine details here, what have we described so far? !! short summary of preceding section !! recall that what i am describing is protocol-like, so having multiple implementations that evolve is sorta the point.
+
+Like the preceding description of the basic peer-to-peer system, this joint metadata/p2p system could be fully compatible with existing systems. Translating between a metadata query and a means of accessing it on heterogeneous databases is a requisite part of the system, so, for example, there's no reason that an HTTP-based API like SmartAPI couldn't be queried.  
+
+
+[DataLad](https://www.datalad.org/) {% cite halchenkoDataLadDistributedSystem2021 hankeDefenseDecentralizedResearch2021  %} and its application in Neuroscience as [DANDI](https://dandiarchive.org) are two projects that are *very close* to what I have been describing here --- developing a p2p backend for datalad and derivation into a protocol might even be a promising development path towards it.
 
 !! close this section by taking a larger view - {% cite langilleBioTorrentsFileSharing2010 %} DANDI is in on the p2p system, as is kachery-p2p!! p2p systems already plenty in use, academic torrents, biotorrents, libgen on IPFS !! the proof of their utility is in the pudding, arguably when i've been talkiung about 'centralized servers' what i'm actually talking about content delivery networks, which are effectively p2p systems -- they just own all the peers.
 
+!! note that this is all fully compatible with existing systems and is a superset of centralized servers with centralized schemas! 

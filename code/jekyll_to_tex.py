@@ -123,7 +123,7 @@ def include(match):
 
 def split_cites(match):
     match_text = str(match.group(0).strip())
-    splitted = [cite.strip() for cite in match_text.split(' ') if len(cite)>0]
+    splitted = [cite.strip() for cite in re.split(r'\s|\n', match_text) if len(cite)>0]
     return ', '.join(splitted)
 
 
@@ -175,7 +175,7 @@ if __name__ == "__main__":
         text = jekyll_to_tex(
             in_fn,
             document_class= document_class,
-            document_class_options=["11pt"],
+            document_class_options=["10pt"],
             title = "Decentralized Infrastructure for Neuro(science)",
             author = "Jonny L. Saunders",
             date = "\\today",
