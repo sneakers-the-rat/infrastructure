@@ -46,6 +46,10 @@ blockquote {
   margin: .8rem 0;
   padding: .5rem 1rem;
 
+  p {
+    margin: 0 0 0.5rem;
+  }
+
   p:last-child {
     margin-bottom: 0;
   }

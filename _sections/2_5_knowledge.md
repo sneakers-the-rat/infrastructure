@@ -1,4 +1,6 @@
 
+!! cite that one paper about how tons of papers don't make for better research
+
 !! jimmy wales on wikipedia: 
 
 !! why is it that literally every project is organized on google docs and slack? we can do better for collective organization

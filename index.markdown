@@ -52,6 +52,7 @@ Acknowledgements (make sure to double check spelling!!!):
 * os & avery for STS recs
 * Joel Chan @ UMD 
 * Tomasz Pluskiewicz
+* James Meickle
 * add rest from presentation
 test2
 
@@ -83,13 +84,15 @@ test2
 
 ## Shared Data
 
+### Formats as Onramps
+
 {% include_relative _sections/2_1_p2p.md %}
 
 ### Linked Data or Surveillance Capitalism?
 
 {% include_relative _sections/2_1_1_linking.md %}
 
-### Federated Systems
+### Federated Systems (of Language)
 
 {% include_relative _sections/2_2_federation.md %}
 
@@ -116,6 +119,5 @@ test2
 # Footnotes
 
 {% include_relative _sections/x_footnotes.md %}
-
 
 
