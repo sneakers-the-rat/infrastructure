@@ -1,44 +1,47 @@
 ---
 layout: default
 ---
-
 <div class="post">
-  <div class="post-info">
-    <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.subtitle %}
-      <h2 class="post-subtitle">{{ page.subtitle }}</h2>
-    {% endif %}
-    <div class="post-line"></div>
+    <div class="post-info">
+        <h1 class="post-title">{{ page.title }}</h1>
+        
+        {% if page.subtitle %}
+          <h2 class="post-subtitle">{{ page.subtitle }}</h2>
+        {% endif %}
 
-    <span>Written by</span>
-    {% if page.author %}
-        {{ page.author }}
-    {% else %}
-        {{ site.author.name }}
-    {% endif %}
+        <div class="post-line"></div>
 
-    {% if page.date %}
-      <br>
-      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-    {% endif %}
-  </div>
+        {% if page.author %}
+          <span class="post-author">{{ page.author }}</span>
+        {% else %}
+          <span class="post-author">{{ site.author.name }}</span>
+        {% endif %}
 
+        <br>
 
-
-  {{ content }}
+        {% if page.date %}
+        <div class="post-date">
+            <span>First Published &nbsp;</span>
+            <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        </div>
+        {% endif %}
+        
+        <div class="post-date">
+            <span>Rendered: </span>
+            <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time>
+        </div>
+    </div>
+    {{ content }}
 </div>
-
 {% if page.comments %}
-  {% include disqus_comments.html %}
+{% include disqus_comments.html %}
 {% endif %}
-
 <div class="pagination">
-  {% if page.next.url %}
+    {% if page.next.url %}
     <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if page.previous.url %}
+    {% endif %}
+    {% if page.previous.url %}
     <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-  {% endif %}
-
-  <a href="#" class="top">Top</a>
+    {% endif %}
+    <a href="#" class="top">Top</a>
 </div>

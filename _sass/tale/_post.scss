@@ -2,34 +2,58 @@
   padding: 3rem 0;
 
   &-info {
-    color: $default-tint;
-    font-family: $serif-secondary;
-    letter-spacing: 0.5px;
-    text-align: center;
+    // color: $default-tint;
+    font-family: $serif-primary;
 
-    span {
-      font-style: italic;
-    }
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin-bottom: 2rem;
+
+  }
+
+  &-date {
+    font-style: italic;
+  } 
+
+  &-author {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-style: none;
   }
 
   &-title {
     color: $default-shade;
-    font-family: $sans-serif;
-    font-size: 4rem;
+    font-family: "Source Serif Pro";
+    font-weight: 900;
+    font-size: 5rem;
     margin: 1rem 0;
+    text-align: left;
+    margin-bottom: 0;
     // text-align: center;
 
     @media (max-width: $width-tablet){
       font-size: 3rem;
     }
 
+    @media (max-width: $width-mobile){
+      font-size: 2rem;
+    }
+
+  }
+
+  &-subtitle {
+    font-style: italic;
+    font-weight: 200;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   &-line {
-    border-top: 0.4rem solid $default-shade;
+    border-top: 1px solid $default-shade;
     display: block;
-    margin: 0 auto 3rem;
-    width: 4rem;
+    margin: 1rem auto 0.5rem 0;
+    width: 50%;
   }
 
   p {
