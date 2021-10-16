@@ -33,30 +33,37 @@ I will argue that we should build a semantically-enabled communication and knowl
 
 ### Axes of Communication Systems
 
+!! we need a few things, but there's no reason they should be different things! we need a system for
 
-### Semantic Wikis - Technical Knowledge Preservation
+- permanent communication for archiving
+- durable communication like technical knowledge and scientific discourse proper, like a wiki
+- rapid communication for like talking lmao -- but not purposely temporary the way that social media is!
+
+each of these systems can have multiple iterations, with different rules, and so forth, and we should have control over our content and contribution to all of them (opt-in).
+
+
+### The Wiki Way
+
+!! wiki cultural history stuff!!
+
+!! give the example of the autopilot wiki
+
+!! contextual knowledge stuff in this section, theory wiki stuff in next section
+
+> Two essential features coordinate this information to better serve our organizational decision-making, learning, and memory. The first is our constellation of Working Groups that maintain and distribute local, specialized knowledge to other groups across the network. [...] A second, more emergent property is the subgroup of IBL researchers who have become experts, liaisons, and interpreters of knowledge across the network. These members each manage a domain of explicit records (e.g., written protocols) and tacit information (e.g., colloquialisms, decision histories) that are quickly and informally disseminated to address real-time needs and problems. A remarkable nimbleness is afforded by this system of rapid responders deployed across our web of Working Groups. However, this kind of internalized knowledge can be vulnerable to drop-out when people leave the collaboration, and can be complex to archive. An ongoing challenge for our collaboration is how to archive both our explicit and tacit processes held in both people and places. This is not only to document our own history but as part of a roadmap for future science teams, whose dynamics are still not fully understood. {% cite woolKnowledgeNetworksHow2020 %}
 
 {% cite kamelboulosSemanticWikisComprehensible2009 %}
 
 !! Read and cite! {% cite classeDistributedInfrastructureSupport2017 %}
-
-!! the word for communally curated schemas is https://en.wikipedia.org/wiki/Folksonomy
 
 !! {% cite goodSocialTaggingLife2009 %}
 
 !! wikibase can do federated SPARQL queries https://wikiba.se/
 - and has been used to make folksonomies https://biss.pensoft.net/article/37212/
 
-> I can see my bank statements on the web, and my photographs, and I can see my appointments in a calendar. But can I see my photos in a calendar to see what I was doing when I took them? Can I see bank statement lines in a calendar? https://www.w3.org/2001/sw/
-
 !! lots of scientific wikis 
 - https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki/Other_Wikis
 - https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki
-
-
-
-
-### Semantic Wikis - Schema Resolution & Communication platform
 
 !! bids is doing something like this https://nidm-terms.github.io/
 
@@ -67,21 +74,20 @@ I will argue that we should build a semantically-enabled communication and knowl
 !! Semantic combination of databases in science are also not new {% cite cheungSemanticWebApproach2007 simaEnablingSemanticQueries2019 %}. We need both though! semantic federated databases!
 
 
-Part of what is missing and a place where we could learn from librarians is the notion of governance over a knowledge schema. People have a lot of trouble with NWB because they doubt if it could account for all the idiosyncracies in the types of data that we have to represent. But instead if we have a way of capturing all that thought and insight and practical experience in a governance and decisionmaking structure then we could flexibily work our way to a set of schemas that work for everyone. Part of what needs to be done is to move from SQL queries to a more expressive abstract system of schema creation that more people can participate in -- that's what infrastructure building is, making things that seem impossible or difficult routine. Practically, this can mean an explicit versioning system that not only specifies different versions of a data representation, but for every transition between state there is some notion of making that transition in the data structure. (give example of the subject upgrade system). If that was possible, then the notion of data structure would entirely evaporate, best of both worlds. we get everything and the game is over forever. This is also the distinction between centralized and decentralized systems. we can just make the changes and since they're done against a background of unified intent and expression they can exist simulataneously, commune with one another, while being forwardly productive as their contradictions are resolved.
+### Rebuilding Scientific Communication
 
+!! take stock of our communication technology, we publish pdfs in journals, have science twitter, and then a bunch of private slacks and smalltime stuff??? Science is fundamentally a communicative process, literally every part fo the system that I have described has been built aroudn the ability to express the structure of things, the order of things, how it relates to other things and *that's communication baby.* The system we've imagined so far takes us so far from forums and the ultradominant feed -> shallow thread-based communication that we're used to though. This is a system where we can have continuous dialogue about linked topics, be able to branch and see the reflections and subtle variations on ideas in the same place that we have our data, analysis, and tools.
 
-### Linked communication platform 
+!! theory wiki example from presentation
 
-We all hate science twitter, why does it exist?
+!! discovery of papers for scientists as well as general public, being able to trace history.
 
 > Though frequently viewed as a product to finish, it is dynamic ontologies with associated process-building activities designed, developed, and deployed locally that will allow ontologies to grow and to change. And finally, the technical activity of ontology building is always coupled with the background work of identifying and informing a broader community of future ontology users. {% cite bowkerInformationInfrastructureStudies2010 %}
 
-good science community infra
-- https://www.zooniverse.org
+!! stop sweating about computational accuracy and completeness. the only danger is a system that makes appeal to perfection and promises accuracy like those sold in golden foil by the platform capitalists. if we are conceptualizing this appropriately as a *system of communication* where particular results are intended to be *interpreted in context* then we would treat computational errors and semantic inaccuracies like we do with *language*: like a *joke*.
 
-> Two essential features coordinate this information to better serve our organizational decision-making, learning, and memory. The first is our constellation of Working Groups that maintain and distribute local, specialized knowledge to other groups across the network. [...] A second, more emergent property is the subgroup of IBL researchers who have become experts, liaisons, and interpreters of knowledge across the network. These members each manage a domain of explicit records (e.g., written protocols) and tacit information (e.g., colloquialisms, decision histories) that are quickly and informally disseminated to address real-time needs and problems. A remarkable nimbleness is afforded by this system of rapid responders deployed across our web of Working Groups. However, this kind of internalized knowledge can be vulnerable to drop-out when people leave the collaboration, and can be complex to archive. An ongoing challenge for our collaboration is how to archive both our explicit and tacit processes held in both people and places. This is not only to document our own history but as part of a roadmap for future science teams, whose dynamics are still not fully understood. {% cite woolKnowledgeNetworksHow2020 %}
+> For example, one person may define a vehicle as having a number of wheels and a weight and a length, but not foresee a color. This will not stop another person making the assertion that a given car is red, using the color vocabular from elsewhere. - https://www.w3.org/DesignIssues/RDB-RDF.html
 
-importantly, semantic wiki can be accessed progrtammatically, so you don't need to use the service and can build your own interface to it.
 
 >  Relational database systems, manage RDF data, but in a specialized way. In a table, there are many records with the same set of properties. An individual cell (which corresponds to an RDF property) is not often thought of on its own. SQL queries can join tables and extract data from tables, and the result is generally a table. So, the practical use for which RDB software is used typically optimized for soing operations with a small number of tables some of which may have a large number of elements.
 > 
@@ -89,21 +95,12 @@ importantly, semantic wiki can be accessed progrtammatically, so you don't need 
 > 
 > The Semantic Web is not designed just as a new data model - it is specifically appropriate to the linking of data of many different models. One of the great things it will allow is to add information relating different databases on the Web, to allow sophisticated operations to be performed across them. https://www.w3.org/DesignIssues/RDFnot.html
 
-in addition to a wiki, we need some conversational engine -- talk pages are ok, but they're too fragmented and all hard to keep up to date with. Realtime, chatlike interfaces don't preserve information well, so we should use some intermediate medium like a forum or stack exchange that allows conversations to be tagged and searched and sorted and organized. 
-
-Social incentive structure is huge here. 
-
-Compared to RDBMS https://www.w3.org/DesignIssues/RDB-RDF.html -- rather than individual schemas, groupings of properties, we have 'relationships.' this example is good:
-
-> For example, one person may define a vehicle as having a number of wheels and a weight and a length, but not foresee a color. This will not stop another person making the assertion that a given car is red, using the color vocabular from elsewhere. 
-
-We're talking about a collaboration medium here... we need a way of organizing open questions in the field and discussing them in a straightfoward way. Why is it that every scientist needs to figure out their own completely gray-area way of discovering papers? 
-
-Bad APIs have killed projects with shitloads of funding like NWB and IPFS https://macwright.com/2019/06/08/ipfs-again.html - usability needs to be *the first priority* - you can develop all the fancy shit that you want, if no one can install and unse it in 10 minutes then it's totally useless. This is why the community also has to be collaborative, not just the technology, hends the shared governance idea... ppl note that IPFS has no economic model -- that's like true, because there has to be some other incentive system for using it -- it makes your work more powerful, it plugs you into a community, etc. https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b
+!! caution about slipping into techno-utopianism even here, we need the UI and tooling here to be simple to not only use but also build on. yes that does mean yet another framework! but this one is the most mythical yet, because I don't really know what it would look like! but bad UI has killed lots of projects, eg. IPFS (though it's not dead just slow!)
+ https://macwright.com/2019/06/08/ipfs-again.html
+https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b
 
 ### Credit Assignment
 
-
-depth of linking is combinatoric -- if you have a paper ecosystem where the numbers are linked to the data, and then the data is annotated, then it's possible to index information across papers not just by textual similarity metrics but on similarity of the structure of experiment and data. 
-
 the work of maintaining the system can't be invisible, read & cite {% cite classeDistributedInfrastructureSupport2017 bowkerInformationInfrastructureStudies2010 %}
+
+!! essentially all questions about "changing the system of science" inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.

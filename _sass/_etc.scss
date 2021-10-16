@@ -1,0 +1,21 @@
+#draftmarker {
+	padding: 20px;
+	background-color: #005500;
+	color: #ff5555;
+	font-style: italic;
+	font-size: 3rem;
+	border: 20px yellow dashed;
+
+	h1 {
+		font-size: 5rem;
+		color: #ffffff;
+	}
+
+  @media (max-width: $width-tablet) {
+    font-size: 2rem;
+
+    h1 {
+    	font-size: 2rem;
+    }
+  }
+}

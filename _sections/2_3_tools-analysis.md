@@ -36,22 +36,99 @@ It's unlikely that we will solve the problem by teaching every scientist good pr
 * **Deployable** - For wide use, the framework needs to be easy to install and deploy locally and on computing clusters. A primary obstacle is dependency management, or making sure that the computer has everything needed to run the program. Some care needs to be taken here, as there are multiple emphases in deployability that can be in conflict. Deployable for who? A system that can be relatively challenging to use for routine exploratory data analysis but can distribute analysis across 10,000 GPUs has a very circumscribed set of people it is useful for. This is a matter of balancing design constraints, but we should prioritize broad access, minimal assumptions of technological access, and ease of use over being able to perform the most computationally demanding analyses possible when in conflict. Containerization is a common, and the most likely strategy here, but the interface to containers may need a lot of care to make accessible compared to opening a fresh .py file.
 * **Reproducible** - The framework should separate the *parameterization* of a pipeline, the specific options set by the user, and its *implementation*, the code that constitutes it. The parameterization of a pipeline or analysis DAG should be portable such that it, for example, can be published in the supplementary materials of a paper and reproduced exactly by anyone using the system. The isolation of parameters from implementation is complementary to the separation of metadata from data and if implemented with semantic triplets would facilitate a continuous interface from our data to analysis system. This will be explored further below and in [shared knowledge](#shared-knowledge)
 
-Thankfully a number of existing projects that are very similar to this description are actively being built. One example is [DataJoint](https://datajoint.io/) {% cite yatsenkoDataJointSimplerRelational2018 %}, which recently expanded its facility for modularity with its recent [Elements](https://github.com/datajoint/datajoint-elements) project {% cite yatsenkoDataJointElementsData2021 %}. Datajoint is a system for creating analysis pipelines built from a graph of processing stages (among [other features](https://docs.datajoint.org/python/v0.13/intro/01-Data-Pipelines.html#what-is-datajoint)). It is designed around a refinement on traditional relational data models, which is reflected throughout the system as most operations being expressed in its particular schema, data manipulation, and query languages. This is useful for operations that are expressed in the system, but makes it harder to integrate external tools with their dependencies --- [at the moment](https://github.com/datajoint/element-array-ephys/blob/1fdbcf12d1a518e686b6b79e9fbe77b736cb606a/Background.md) it appears that spike sorting has to happen outside of the extracellular electrophysiology elements pipeline. 
+Thankfully a number of existing projects that are very similar to this description are actively being built. One example is [DataJoint](https://datajoint.io/) {% cite yatsenkoDataJointSimplerRelational2018 %}, which recently expanded its facility for modularity with its recent [Elements](https://github.com/datajoint/datajoint-elements) project {% cite yatsenkoDataJointElementsData2021 %}. Datajoint is a system for creating analysis pipelines built from a graph of processing stages (among [other features](https://docs.datajoint.org/python/v0.13/intro/01-Data-Pipelines.html#what-is-datajoint)). It is designed around a refinement on traditional relational data models, which is reflected throughout the system as most operations being expressed in its particular schema, data manipulation, and query languages. This is useful for operations that are expressed in the system, but makes it harder to integrate external tools with their dependencies --- [at the moment](https://github.com/datajoint/element-array-ephys/blob/1fdbcf12d1a518e686b6b79e9fbe77b736cb606a/Background.md) it appears that spike sorting (with [Kilosort](https://github.com/MouseLand/Kilosort) {% cite pachitariuKilosortRealtimeSpikesorting2016 %}) has to happen outside of the extracellular electrophysiology elements pipeline.
 
-The project is designed as most analysis pipelining tools are, to support building pipelines, but sharing them to facilitate distributed development can be [challenging](https://docs.datajoint.org/python/v0.13/existing/5-Loading-Classes.html). !! elements being built as workflows in specific repositories rather than as decomposasble single elements --- "a "kilosort" node, a "temporal binning" node" !! need some system for sharing, discussing, and cohering individual elements as well as specifying them in portable configs. 
+Kilosort is an excellent and incredibly useful tool, but its idiomatic architecture designed for standalone use is illustrative of the challenge of making a general-purpose analytic framework that can integrate a broad array of existing tools. It is built in MATLAB, which requires a paid license, making arbitrary deployment difficult, and MATLAB's flat path system requires careful and usual manual orchestration of potentially conflicting names in different packages. Its parameterization and use are combined in a "[main](https://github.com/MouseLand/Kilosort/blob/db3a3353d9a374ea2f71674bbe443be21986c82c/main_kilosort3.m)" script in the repository root that creates a MATLAB struct and runs a series of functions --- requiring some means for a wrapping framework to translate between input parameters and the representation expected by the tool. Its preprocessing script combines [I/O](https://github.com/MouseLand/Kilosort/blob/a1fccd9abf13ce5dc3340fae8050f9b1d0f8ab7a/preProcess/datashift.m#L74-L77), preprocessing, and [plotting](https://github.com/MouseLand/Kilosort/blob/a1fccd9abf13ce5dc3340fae8050f9b1d0f8ab7a/preProcess/datashift.m#L57-L68), and requires data to be [loaded from disk](https://github.com/MouseLand/Kilosort/blob/a1fccd9abf13ce5dc3340fae8050f9b1d0f8ab7a/preProcess/preprocessDataSub.m#L82-L84) rather than passed as arguments to preserve memory --- making chaining in a pipeline difficult.
 
-!! the being able to indicate analysis nodes in a flexible parameterization is a p big deal especially when combined with the semantic annotation of data.
+This is not a criticism of Datajoint or Kilosort, which were both designed for different uses and with different philosophies (that are of course, also valid). I mean this as a brief illustration of the design challenges and tradeoffs of these systems. 
 
-Papers published with a concise, inspectable description of their analytical pipeline sidestep the vagueries of methods section prose and allow widescale independent replication of published analyses. A system of documenting and discussing the countless hyperparameters and preprocessing tricks, often as much art as science, could operate as a means of implementing the countless papers describing best practices in analysis. 
+---
 
-A common admonishment in cryptographically-adjacent communities is to "never roll your own crypto," because your homebrew crypto library will never be more secure than reference implementations that have an entire profession of people trying to expose and patch their weaknesses. Bugs in analysis code that produce inaccurate results are inevitable and rampant {% cite millerScientistNightmareSoftware2006 soergelRampantSoftwareErrors2015 eklundClusterFailureWhy2016a bhandarineupaneCharacterizationLeptazolinesPolar2019 %}, but impossible to diagnose when every paper writes its own pipeline. A common analysis framework would be a single point of inspection for bugs, and facilitate re-analysis and re-evaluation of affected results after a patch. 
+<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
 
-Perhaps more idealistic is the possibility of a new kind of scientific consensus. Scientific consensus is subtle and elusive, but to a very crude approximation two of the most common means of its expression are review papers and meta-analyses. Review papers make a prose argument for a consensus interpretation of a body of literature. Meta analyses do the same with secondary analyses, most often on the statistics reported in papers rather than the raw data itself. Both are vulnerable to sampling problems, where the author of a review may selectively cite papers to make an argument, and meta-analyses might be unable to recover all the relevant work from incomplete search and data availability. Instead if one could index across all data relevant to a particular question, and aggregate the different pipelines used to analyze it, it would be possible to make statements of scientific consensus rooted in a full provenance chain back to the raw data.
+We can start getting a better picture for the way a decentralized analysis framework might work by sketching the separation between the metadata and code modules. Since we're considering modular analysis elements, each module would need some elemental properties like the parameters that define it, its inputs, outputs, as well as some additional metadata about its implementation (eg. this one takes *numpy arrays* and this one takes *matlab structs*). The precise implementation of a modular protocol also depends on the graph structure of the analysis system. We invoked DAGs before, but analysis graph structure of course has its own body of researchers refining them into eg. [Petri nets](https://en.wikipedia.org/wiki/Petri_net) which are graphs whose nodes necessarily alternate between "places" (eg. cached intermediate data) and "transitions" (eg. an analysis operation), and their related workflow markup languages (eg. [WDL](https://openwdl.org/) or {% cite vanderaalstYAWLAnotherWorkflow2005 %}). 
 
-More fundamentally, a shared data and analysis framework would change the nature of secondary analysis. Increasing rates of data publication and the creation of large public datasets like those of the Allen Observatory make it possible for metascientists and theoreticians to re-analyze existing data with new methods and tools. There is now such a need for secondary analysis that the NIH, among other organizations, is providing [specific funding opportunities](https://grants.nih.gov/grants/guide/rfa-files/rfa-mh-20-120.html) to encourage it. Secondary analyses are still (unfortunately) treated as second-class research, and are limited to analyzing one or a small number of datasets due to the labor involved and the diversity of analytical strategies that makes a common point of comparison different. If, say some theoretician were to develop some new analytical technique that replaced some traditional step in a shared processing pipeline, in our beautiful world of infrastructure it would be possible to not only aggregate across existng analyses, as above, but apply their new method across an entire category of research. 
+In pseudocode, I could define a set of nodes like this:
 
-In effect, analytical infrastructure can at least partially "decouple" the data in a paper from its analyis, and thus the interpretations offered by the primary researchers. For a given paper, if it was possible to see its results as analyzed by all the different processing pipelines that have been applied to it, then a set of observations remains a living object rather than a fixed, historical object frozen in carbonite at the time of publication. In addition to statements of consensus that can programmatically aggregate *existing* results as described by the primary researchers, it also becomes possible to make *fluid* statements of consensus, such that a body of data when analyzed with some new analysis pipeline can yield an entirely *new* set of outcomes unanticipated by the original authors. I think many scientists would agree that this is how an ideal scientific process would work, and this is one way of dramatically lowering the structural barriers that make it deviate from that ideal.
+```
+# TODO
+- I/O
+- input data format
+- dependencies
+- repository and hash
+- location of code object
+- tests
+- version of node markup (in case there are competing syntaxes, know how to process.)
+- ...
+```
 
-I'll give one more tantalizing possibility here: at the point when we have a peer-to-peer federated system of data-sharing servers integrated with some easily deployable analysis pipelining framework, then we also get a distributed computing grid akin to [Folding@Home](https://foldingathome.org/) where users donate some of the computing power of their servers to analyze pieces of some large analysis job with very little additional development.
+Where I could implement the code for one of them by, for example, providing a set of methods to implement the different parts of the node (a la [luigi](https://luigi.readthedocs.io/en/stable/tasks.html)). This lets us implement the logic of the node directly in the method, but also provides a very thin wrapper that we can place around existing tools. Here I'll show an example that sets some of the metadata in the preceding spec in the code --- since we assume that `Example_Framework` is only one of many that implements the workflow syntax, our framework is designed to let people write nodes easily and then export their metadata as-needed.
+
+```python
+from Example_Framework import Node, Param, Types
+
+class Bin(Node):
+	bin_width = Param(default=10)
+
+	def input(self, input_1: Types[some_typinglike_example]):
+		# validate
+		self.input = input_1
+
+	def process() -> typing[output_type]:
+		# some stuff!
+		return [answer]
+```
+
+Then I could describe some workflow like this, using some .wdl-like pseudocode:
+
+```
+workflow @jonny.mydata {
+	Input InputAlias < @nwb:NWBFile
+	Output InputAlias:processed
+
+	Param ParamAlias < Step2.param1.type
+
+	step Step1 { input: InputAlias.neurophys }
+	step Step2 { 
+		input: Step1.output.value, 
+		param1: ParamAlias 
+	}
+}
+```
+
+!! explain markup, make sure the input/output/etc. param names are recursively valid with nodes.
+
+Having kept the description of our data in particular abstract from the implementation of the code and the workflow specification, we now have a reusable workflow we can apply to all of our datasets! Assuming literally zero abstraction and using the tried-and-true "hardcoded dataset list" pattern, something like:
+
+```
+project @jonny:project_name {
+	analyze @jonny.mydata:v0.1.0:raw { 
+		Input=@jonny:cool-dataset1, Param="hi!" 
+		} ->  @jonny.mydata:v0.1.0:processed
+	analyze @jonny.mydata2:^0.1.*:raw { 
+		Input=@jonny:cool-dataset1, Param="hi!" 
+	    } -> @jonny.mydata2:-:processed
+}
+```
+
+So that's useful, but the faint residue of "well actually" that hangs in the air while people google the link for that xkcd comic about format expansion is not lost on me. The magic is in the way this hypothetical analysis framework and markup interact with our data system and emerging federated metadata system --- The layers of abstraction here are worth unpacking.
+
+-  First, the markup description of the node gives us abstraction from programming language and implementation. This lets us do stuff like use multiple tools with competing environmental needs, adapt to multiple versions of the code markup as it develops, etc. Note the interaction with the rest of the metadata system: because we required a particular type of data file, and that link should provide us some means of opening/instantiating the file with dependencies, we didn't need to write loading code. Since it's in a linked system, someone could override the implementation of my node -- say someone comes up with a faster means of binning, then they just inherit from my node and replace the reference to the code. Boom we have cumulative and linked development.
+- The separation of the node from the workflow means that the node can be shared and swapped and reintegrated easily, dramatically reducing the brittleness of the systme. Since there is no restriction on what constitutes a node, though, there's no reason that nodes can't be either made massive, like putting a whole library in the process method, or be packaged up together. If we made the argument and method names recursive between the workflow and the node objects then tooling could automatically traverse multiple layers of node/workflow combinations at different levels of abstraction. This being a schematic description means that there can be multiple "workflow runner" packages that eg. distribute the task across a billion supercomputers or not. 
+- Finally, the separation between the data applied and the workflow itself are very cool indeed given our linked and namespaced system. My workflow effectively constitutes "an unit of analysis." I have linked my data to this unit of analysis. Play out the permutations: 
+
+    - I can see all the analyses that this particular pipeline has been applied to. Since it is embedded within the same federated system as our schema system, I can draw and connect semantic links to similar analysis pipelines as well as pipeline/data combinations. 
+    - I can see all the different analyses that have been applied to my data: if my data is analyzed a zillion different times, in a zillion different combinations of data, I effectively get a "multiverse analysis" (cite dani) and we get to measure robustness of my data for free. It also gets to live forever and keep contributing to problems !! and i also get credited for it automatically by golly! This also applies on cases like cross-validation or evaluating different models on the same data: the versioning of it falls out naturally. Also since model weights would be an input to an analysis chain, we also get stuff like DLC's model zoo where we can share different model weights, combine them, and have a cumulative library of pretrained models as well!
+    - being able to look across the landscape... we start being able to actually really make cumulative progress on best practices. A common admonishment in cryptographically-adjacent communities is to "never roll your own crypto," because your homebrew crypto library will never be more secure than reference implementations that have an entire profession of people trying to expose and patch their weaknesses. Bugs in analysis code that produce inaccurate results are inevitable and rampant {% cite millerScientistNightmareSoftware2006 soergelRampantSoftwareErrors2015 eklundClusterFailureWhy2016a bhandarineupaneCharacterizationLeptazolinesPolar2019 %}, but impossible to diagnose when every paper writes its own pipeline. A common analysis framework would be a single point of inspection for bugs, and facilitate re-analysis and re-evaluation of affected results after a patch. 
+    - looking forward, we might imagine our project object being linked to a DOI... we'll get there.
+
+
+!! this is all extraordinarily reproducible because even though I have my portable markup description of the analysis, I can just refer to it by name in my paper (ya ya need some content based hash or archive but you get the idea)
+
+!! since we have a bunch of p2p systems all hooked up with constantly-running daemons, to compete with the compute side of cloud technology we also should implement a voluntary compute grid akin to  [Folding@Home](https://foldingathome.org/). This has the same strawmen and answers to them as the peer-to-peer system --- no i'm not saying everyone puts their shitty GPU up, but it lets us combine the resources that are present at an institutional level and makes a very cheap onramp for government-level systems to be added to the mix.
+
+!! this is all very exciting, and we can immediately start digging towards larger scientific problems, eg. what it would mean for the file drawer problem and publication bias when the barriers to analyzing data are so low you don't even need to write the null result: the data is already there, semantically annotated and all. Dreams of infinite meta-analyses across all data and all time, but hold your horses! We don't get magic for free, we haven't talked about the community systems yet that are the unspoken glue of all of this!!
 
 !! continue the example of needing to select within datasets instead of metadata from federation section.
+
+

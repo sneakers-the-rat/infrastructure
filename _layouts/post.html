@@ -25,23 +25,11 @@ layout: default
             <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
         </div>
         {% endif %}
-        
+
         <div class="post-date">
             <span>Rendered: </span>
             <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time>
         </div>
     </div>
     {{ content }}
-</div>
-{% if page.comments %}
-{% include disqus_comments.html %}
-{% endif %}
-<div class="pagination">
-    {% if page.next.url %}
-    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-    {% endif %}
-    {% if page.previous.url %}
-    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-    {% endif %}
-    <a href="#" class="top">Top</a>
 </div>
