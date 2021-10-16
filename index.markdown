@@ -41,21 +41,48 @@ canonical_url: "https://jon-e.net/infrastructure"
 
 > The critical issue is, how do actors establish generative platforms by instituting a set of control points acceptable to others in a nascent ecosystem? {% cite tilsonDigitalInfrastructuresMissing2010 %}
 
-Acknowledgements (make sure to double check spelling!!!):
-* Lauren E. Wool
-* Gaby Hayden
+Acknowledgements in no order at all!!! (make sure to double check spelling!!! and then also double check it's cool to list them!!!):
+
+* Lucas Ott, the steadfast
+* Tillie Morris
+* Nick Sattler
+* Sam Mehan
+* Molly Shallow
+* Mike and as always ty for letting me always go rogue
+* Matt Smear
+* Santiago Jaramillo
+* Gabriele Hayden
 * Eartha Mae
 * jakob voigts for participating in the glue wiki
 * nwb & dandi team for dealing w/ my inane rambling
-* open behavior team
-* metascience class for some of these ideas <3
-* mike for letting me always go rogue
-* os & avery for STS recs
-* Joel Chan @ UMD 
 * Tomasz Pluskiewicz
 * James Meickle
-* add rest from presentation
-test2
+* Gonçalo Lopes
+* Mackenzie Mathis
+* Lauren E. Wool
+* Gabi Hayden
+* Mark Laubach & Open Behavior Team
+* Os Keyes
+* Avery Everhart
+* Eartha Mae Guthman
+* Olivia Guest
+* NWB & DANDI teams
+* Kris Chauvin
+* Phil Parker
+* Chris Rogers
+* Danny Mclanahan
+* Petar 
+* Jeremy Delahanty
+* Andrey Andreev
+* Joel Chan @ UMD 
+* Sanjay Srivastava & Metascience Class
+* Ralph Emilio Peterson
+* Manuel Schottdorf
+* Ceci Herbert
+* The Emerging ONICE team
+* The Janet Smith House, especially Leslie Harka
+* Rumbly Tumbly Lawnmower
+* lmk if we talked and i missed ya!
 
 # Introduction
 
