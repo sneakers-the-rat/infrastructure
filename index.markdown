@@ -74,7 +74,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 * Petar 
 * Jeremy Delahanty
 * Andrey Andreev
-* Joel Chan @ UMD 
+* Joel Chan
 * Sanjay Srivastava & Metascience Class
 * Ralph Emilio Peterson
 * Manuel Schottdorf
