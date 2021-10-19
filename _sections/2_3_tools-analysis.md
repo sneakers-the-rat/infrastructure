@@ -19,7 +19,7 @@ Integrated scientific workflows have been written about many times before, typic
 >
 > Best, we could... make it automatic {% cite spiesWorkflowCentricApproachIncreasing2017 %}
 
-To build an infrastructural system that enables "open" practices, *convincing* or *mandating* a change are much less likely to be successful and sustainable than focusing on building them to make doing work easier and openness automatic. To make this possible, we should focus on developing *frameworks to build* experimental and analysis tools, rather than developing more tools themselves.
+To build an infrastructural system that enables "open" practices, *convincing* or *mandating* a change are much less likely to be successful and sustainable than focusing on building them to make doing work easier and openness automatic. To make this possible, we should focus on developing *frameworks to build* experimental and analysis tools, rather than developing more tools themselves. 
 
 ### Analytical Framework
 
@@ -46,21 +46,50 @@ This is not a criticism of Datajoint or Kilosort, which were both designed for d
 
 <div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
 
-We can start getting a better picture for the way a decentralized analysis framework might work by sketching the separation between the metadata and code modules. Since we're considering modular analysis elements, each module would need some elemental properties like the parameters that define it, its inputs, outputs, as well as some additional metadata about its implementation (eg. this one takes *numpy arrays* and this one takes *matlab structs*). The precise implementation of a modular protocol also depends on the graph structure of the analysis system. We invoked DAGs before, but analysis graph structure of course has its own body of researchers refining them into eg. [Petri nets](https://en.wikipedia.org/wiki/Petri_net) which are graphs whose nodes necessarily alternate between "places" (eg. cached intermediate data) and "transitions" (eg. an analysis operation), and their related workflow markup languages (eg. [WDL](https://openwdl.org/) or {% cite vanderaalstYAWLAnotherWorkflow2005 %}). 
+We can start getting a better picture for the way a decentralized analysis framework might work by considering the separation between the metadata and code modules, hinting at a protocol as in the federated systems sketh above. Since we're considering modular analysis elements, each module would need some elemental properties like the parameters that define it, its inputs, outputs, dependencies, as well as some additional metadata about its implementation (eg. this one takes *numpy arrays* and this one takes *matlab structs*). The precise implementation of a modular protocol also depends on the graph structure of the analysis system. We invoked DAGs before, but analysis graph structure of course has its own body of researchers refining them into eg. [Petri nets](https://en.wikipedia.org/wiki/Petri_net) which are graphs whose nodes necessarily alternate between "places" (eg. intermediate data) and "transitions" (eg. an analysis operation), and their related workflow markup languages (eg. [WDL](https://openwdl.org/) or {% cite vanderaalstYAWLAnotherWorkflow2005 %}). In that scheme, a framework could provide tools for converting data between types, caching intermediate data, etc. between analysis steps, as an example of how different graph structures might influence its implementation.
 
-In pseudocode, I could define a set of nodes like this:
+Say we use `@analysis` as the namespace for our analysis protocol. In pseudocode, I could define some analysis node for, say, some analysis node that converts an RGB image to grayscale like this:
 
 ```
-# TODO
-- I/O
-- input data format
-- dependencies
-- repository and hash
-- location of code object
-- tests
-- version of node markup (in case there are competing syntaxes, know how to process.)
-- ...
+
+<#bin-spikes>
+	a @analysis.node
+	  Version >=1.0.0
+
+	hasDescription
+	  "Convert an RGB Image to a grayscale image"
+
+	inputAllowed
+	  @nwb:image:RGBImage
+	  @opencv:OutputArray
+	  @numpy:ndarray
+
+  inputType
+    @numpy:ndarray
+
+  outputType
+    @nwb:image:GrayscaleImage
+
+  dependsOn
+    @ubuntu:^20.*:x64
+    @python:3.8
+    @apt:opencv:^4.*.*
+    @pip:opencv-python:^4.*.*
+    @pip:numpy:^14.*.*
+
+  providedBy
+    @git:repository https://mygitserver.com/binspikes/fast-binspikes.git
+      @git:hash fj9wbkl
+    @python:class /main-module/binspikes.py:Bin_Spikes
 ```
+
+!! explanation of ^^ as needed. u can find it at @jonny:bin-spikes
+
+!! we can see a number of powerful advantages of our federated linking system already... !! mapping multiple inputs together: we require a numpy ndarray, but indicate the range of inputs that we would expect it to support. If someone has written some mapping transformation between the formats, we could allow the analysis framework to convert between them. If they haven't been written, we could leave an indication that this *should* be supported. !! we can maintain our abstraction (so that multiple tools can implement it) and unify our specification of dependencies -- this *could* be done with containers, but it also could be done in for example some local computing environment that also satisfies these dependencies on its own with its system packages. !! we don't need the official packages to go along! there's nothing special about the #official `@pip` namespace, if someone has written some third-party dependency specification called `@pipbridger` it could work the same. 
+
+!! we could imagine some other group of people coming along later and writing some additional metadata metadata system where different analysis tools have different categorizations like computer vision tools, color conversion tools. they could link our analysis method to their schema so it could be discovered that way. (example)
+
+!! lead into next section with saying "we use providedBy to indicate a python class..." we could imagine one instance of an analysis framework implementing in python like this...
 
 Where I could implement the code for one of them by, for example, providing a set of methods to implement the different parts of the node (a la [luigi](https://luigi.readthedocs.io/en/stable/tasks.html)). This lets us implement the logic of the node directly in the method, but also provides a very thin wrapper that we can place around existing tools. Here I'll show an example that sets some of the metadata in the preceding spec in the code --- since we assume that `Example_Framework` is only one of many that implements the workflow syntax, our framework is designed to let people write nodes easily and then export their metadata as-needed.
 
@@ -68,7 +97,8 @@ Where I could implement the code for one of them by, for example, providing a se
 from Example_Framework import Node, Param, Types
 
 class Bin(Node):
-	bin_width = Param(default=10)
+	bin_width = Param(dtype=int, default=10)
+	input_format = 
 
 	def input(self, input_1: Types[some_typinglike_example]):
 		# validate
@@ -93,6 +123,7 @@ workflow @jonny.mydata {
 		input: Step1.output.value, 
 		param1: ParamAlias 
 	}
+	split Step3_1 { input: Step2.output1.value}
 }
 ```
 
