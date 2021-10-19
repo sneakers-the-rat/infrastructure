@@ -27,9 +27,13 @@ The first natural companion of shared data infrastructure is a shared analytical
 
 Analytical tools (anecdotally) make up the bulk of open source scientific software, and range from foundational and general-purpose tools like numpy {% cite harrisArrayProgrammingNumPy2020 %} and scipy {% cite virtanenSciPyFundamentalAlgorithms2020 %}, through tools that implement a class of analysis like DeepLabCut {% cite mathisDeepLabCutMarkerlessPose2018a %} and scikit-learn {% cite pedregosaScikitlearnMachineLearning2011 %}, to tools for a specific technique like MoSeq {% cite wiltschkoRevealingStructurePharmacobehavioral2020 %} and DeepSqueak {% cite coffeyDeepSqueakDeepLearningbased2019 %}. The pattern of their use is then to build them into a custom analysis system that can then in turn range in sophistication from a handful of flash-drive-versioned scripts to automated pipelines. 
 
-Having tools like these of course puts researchers miles ahead of where they would be without them, and the developers of the mentioned tools have put in a tremendous amount of work to build sensible interfaces and make them easier to use. For researchers, their disconnection makes the differences in their APIs a relatively sizable technical challenge to integrate together, a problem compounded by the incentives for fragmentation described previously. For toolbuilders, many parts of any given tool from architecture to interface have to be redesigned with varying degrees of success each time. For science at large, with few exceptions of well-annotated and packaged code, most results are only replicable with great effort.
+Having tools like these of course puts researchers miles ahead of where they would be without them, and the developers of the mentioned tools have put in a tremendous amount of work to build sensible interfaces and make them easier to use. No matter how much good work might be done, inevitable differences between APIs is a relatively sizable technical challenge for researchers --- a problem compounded by the incentives for fragmentation described previously. For toolbuilders, many parts of any given tool from architecture to interface have to be redesigned with varying degrees of success each time. For science at large, with few exceptions of well-annotated and packaged code, most results are only replicable with great effort. 
 
-It's unlikely that we will solve the problem by teaching every scientist good programming practices, but we can build experimental frameworks that make analysis tools easier to build and use. Specifically, a shared analytical framework should be 
+To be clear, we have reached levels of "not the developer's fault" to the tune of "API discontinuity" being *"the norm for 99% of software."* Negotiating boundaries between (and even within) software and information structures is an elemental part of computing. The only time it becomes a conceivable problem to "solve" is when the problem domain coalesces to the point where it is possible to articulate its abstract structure as a protocol, and the incentives are great enough to adopt it. Thankfully that's what we're trying to do here. 
+
+It's unlikely that we will solve the problem of data analysis being complicated, time consuming, and error prone by teaching every scientist to be a good programmer, but we can build experimental frameworks that make analysis tools easier to build and use. 
+
+Specifically, a shared analytical framework should be 
 
 * **Modular** - Rather than implementing an entire analysis pipeline as a monolith, the system should be broken into minimal, composable modules. The threshold of what constitutes "minimal" is of course to some degree a matter of taste, but the framework doesn't need to make normative decisions like that. The system should support modularity by providing a clear set of hooks that tools can provide: eg. a clear place for a given tool to accept some input, parameters, and so on. Since data analysis can often be broken up into a series of relatively independent stages, a straightforward (and common) system for modularity is to build hooks to make a directed acyclic graph (DAG) of data transformation operations. This structure naturally lends itself to many common problems: caching intermediate results, splitting and joining multiple inputs and outputs, distributing computation over many machines, among others. Modularity is also needed within the different parts of the system itself -- eg. running an analysis chain shouldn't require a GUI, but one should be available, etc.
 * **Pluggable** - The framework needs to provide a clear way of incorporating external analysis packages, handling their dependencies, and exposing their parameters to the user. Development should ideally not be limited to a single body of code with a single mode of governance, but should instead be relatively conservative about requirements for integrating code, and liberal with the types of functionality that can be modified with a plugin. Supporting plugins means supporting people developing tools for the framework, so it needs to make some part of the toolbuilding process easier or otherwise empower them relative to an independent package. This includes building a visible and expressive system for submitting and indexing plugins so they can be discovered and credit can be given to the developers. Reciprocal to supporting plugins is being interoperable with existing and future systems, which the reader may have assumed was a given by now.
@@ -48,7 +52,9 @@ This is not a criticism of Datajoint or Kilosort, which were both designed for d
 
 We can start getting a better picture for the way a decentralized analysis framework might work by considering the separation between the metadata and code modules, hinting at a protocol as in the federated systems sketh above. Since we're considering modular analysis elements, each module would need some elemental properties like the parameters that define it, its inputs, outputs, dependencies, as well as some additional metadata about its implementation (eg. this one takes *numpy arrays* and this one takes *matlab structs*). The precise implementation of a modular protocol also depends on the graph structure of the analysis system. We invoked DAGs before, but analysis graph structure of course has its own body of researchers refining them into eg. [Petri nets](https://en.wikipedia.org/wiki/Petri_net) which are graphs whose nodes necessarily alternate between "places" (eg. intermediate data) and "transitions" (eg. an analysis operation), and their related workflow markup languages (eg. [WDL](https://openwdl.org/) or {% cite vanderaalstYAWLAnotherWorkflow2005 %}). In that scheme, a framework could provide tools for converting data between types, caching intermediate data, etc. between analysis steps, as an example of how different graph structures might influence its implementation.
 
-Say we use `@analysis` as the namespace for our analysis protocol. In pseudocode, I could define some analysis node for, say, some analysis node that converts an RGB image to grayscale like this:
+Say we use `@analysis` as the namespace for our analysis protocol, and `~someone~` has provided mappings to objects in `numpy`. We can assume they are provided by the package maintainers, but that's not necessary: this is my node and it takes what I want it to! 
+
+In pseudocode, I could define some analysis node for, say, converting an RGB image to grayscale under my namespace as `@jonny:bin-spikes` like this:
 
 ```
 
@@ -59,17 +65,20 @@ Say we use `@analysis` as the namespace for our analysis protocol. In pseudocode
 	hasDescription
 	  "Convert an RGB Image to a grayscale image"
 
-	inputAllowed
-	  @nwb:image:RGBImage
-	  @opencv:OutputArray
-	  @numpy:ndarray
-
   inputType
     @numpy:ndarray
+      # ... some spec of shape ...
 
   outputType
-    @nwb:image:GrayscaleImage
+    @numpy:ndarray
+      # ... some spec of shape ...
+```
 
+I have abbreviated the specification of shape to not overcomplicate the pseudocode example, but say we successfully specify a 3 dimensional (width x height x channels) array with 3 channels as input, and a a 2 dimensional (width x height) array as output.
+
+Here we're just using an external namespace as we have before, 
+
+```
   dependsOn
     @ubuntu:^20.*:x64
     @python:3.8
@@ -82,6 +91,8 @@ Say we use `@analysis` as the namespace for our analysis protocol. In pseudocode
       @git:hash fj9wbkl
     @python:class /main-module/binspikes.py:Bin_Spikes
 ```
+
+
 
 !! explanation of ^^ as needed. u can find it at @jonny:bin-spikes
 
