@@ -79,3 +79,4 @@ exclude:
   - assets/.jekyll-cache
   - data/
   - code/
+  - _react/

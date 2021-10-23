@@ -7,6 +7,8 @@ navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
 ---
 
+<div id="react-test"></div>
+
 {% include status.html %}
 {% include annotation.html %}
 
