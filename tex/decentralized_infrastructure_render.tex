@@ -177,7 +177,7 @@ spelling!!! and then also double check it's cool to list them!!!):
 \item
   Andrey Andreev
 \item
-  Joel Chan @ UMD
+  Joel Chan
 \item
   Sanjay Srivastava \& Metascience Class
 \item
@@ -1266,7 +1266,7 @@ complex web of local history brought them about.
 
 \href{https://projectreporter.nih.gov/project_info_details.cfm?aid=9444124}{PNI
 Systems Core} lists
-\href{https://projectreporter.nih.gov/project_info_subprojects.cfm?aid=9444124\&icde=0}{subprojects}
+\href{https://reporter.nih.gov/project-details/9444124\#sub-Projects}{subprojects}
 echo a lot of the thoughts here, particularly around effort
 duplication\footnote{Thanks a lot to the one-and-only stunning and
   brilliant Dr.~Eartha Mae Guthman for suggesting looking at the BRAIN
@@ -3237,6 +3237,13 @@ dispersion of scientific data in local filesystems is not new \cite{busseFederat
 challenging than imposing order with a centralized database or punting
 the question into the unknowable maw of machine learning.
 
+!! There is a lot of subtlety to the terminology surrounding
+``federated'' and the typology of distributed systems generally, I am
+using it more in the federated messaging sense of forming groups of
+people, rather than the strict term federated databases which do imply a
+standardized schema across a federation. I am largely in line with the
+notion of distributed databases here \cite{hankeDefenseDecentralizedResearch2021} .
+
 Amit Sheth and James Larson, in their reference description of federated
 database systems, describe \textbf{design autonomy} as one critical
 dimension that characterizes them:
@@ -3339,8 +3346,12 @@ ORCID\footnote{!! now would be the time blockchain ppl are like ``but
   of systems are designed for zero-trust environments, but we don't need
   absolute zero trust in this system since we are assuming we're
   operating with visible entities in a system already bound to some
-  degree by reputation.}. Let us also assume that there is no
-categorical difference between \texttt{@usernames} used by individual
+  degree by reputation.}. Someone would then be able to use their
+\texttt{@name}space as a root, under which they could refer to their
+data, schemas, and so on, which will be denoted \texttt{@name:subobject}
+(see this notion of personal namespaces for knowledge organization
+discussed in early wiki culture here \cite{MeatballWikiPersonalCategories} ). Let us also assume that there is
+no categorical difference between \texttt{@usernames} used by individual
 researchers, institutions, consortia, etc. --- everyone is on the same
 level.
 
@@ -3753,19 +3764,30 @@ flash-drive-versioned scripts to automated pipelines.
 Having tools like these of course puts researchers miles ahead of where
 they would be without them, and the developers of the mentioned tools
 have put in a tremendous amount of work to build sensible interfaces and
-make them easier to use. For researchers, their disconnection makes the
-differences in their APIs a relatively sizable technical challenge to
-integrate together, a problem compounded by the incentives for
+make them easier to use. No matter how much good work might be done,
+inevitable differences between APIs is a relatively sizable technical
+challenge for researchers --- a problem compounded by the incentives for
 fragmentation described previously. For toolbuilders, many parts of any
 given tool from architecture to interface have to be redesigned with
 varying degrees of success each time. For science at large, with few
 exceptions of well-annotated and packaged code, most results are only
 replicable with great effort.
 
-It's unlikely that we will solve the problem by teaching every scientist
-good programming practices, but we can build experimental frameworks
-that make analysis tools easier to build and use. Specifically, a shared
-analytical framework should be
+To be clear, we have reached levels of ``not the developer's fault'' to
+the tune of ``API discontinuity'' being \emph{``the norm for 99\% of
+software.''} Negotiating boundaries between (and even within) software
+and information structures is an elemental part of computing. The only
+time it becomes a conceivable problem to ``solve'' is when the problem
+domain coalesces to the point where it is possible to articulate its
+abstract structure as a protocol, and the incentives are great enough to
+adopt it. Thankfully that's what we're trying to do here.
+
+It's unlikely that we will solve the problem of data analysis being
+complicated, time consuming, and error prone by teaching every scientist
+to be a good programmer, but we can build experimental frameworks that
+make analysis tools easier to build and use.
+
+Specifically, a shared analytical framework should be
 
 \begin{itemize}
 
@@ -3879,6 +3901,227 @@ designed for different uses and with different philosophies (that are of
 course, also valid). I mean this as a brief illustration of the design
 challenges and tradeoffs of these systems.
 
+We can start getting a better picture for the way a decentralized
+analysis framework might work by considering the separation between the
+metadata and code modules, hinting at a protocol as in the federated
+systems sketh above. Since we're considering modular analysis elements,
+each module would need some elemental properties like the parameters
+that define it, its inputs, outputs, dependencies, as well as some
+additional metadata about its implementation (eg. this one takes
+\emph{numpy arrays} and this one takes \emph{matlab structs}). The
+precise implementation of a modular protocol also depends on the graph
+structure of the analysis system. We invoked DAGs before, but analysis
+graph structure of course has its own body of researchers refining them
+into eg. \href{https://en.wikipedia.org/wiki/Petri_net}{Petri nets}
+which are graphs whose nodes necessarily alternate between ``places''
+(eg. intermediate data) and ``transitions'' (eg. an analysis operation),
+and their related workflow markup languages (eg.
+\href{https://openwdl.org/}{WDL} or \cite{vanderaalstYAWLAnotherWorkflow2005} ). In that scheme, a framework
+could provide tools for converting data between types, caching
+intermediate data, etc. between analysis steps, as an example of how
+different graph structures might influence its implementation.
+
+Say we use \texttt{@analysis} as the namespace for our analysis
+protocol, and \texttt{\textasciitilde{}someone\textasciitilde{}} has
+provided mappings to objects in \texttt{numpy}. We can assume they are
+provided by the package maintainers, but that's not necessary: this is
+my node and it takes what I want it to!
+
+In pseudocode, I could define some analysis node for, say, converting an
+RGB image to grayscale under my namespace as \texttt{@jonny:bin-spikes}
+like this:
+
+\begin{verbatim}
+<#bin-spikes>
+  a @analysis:node
+    Version >=1.0.0
+
+  hasDescription
+    "Convert an RGB Image to a grayscale image"
+
+  inputType
+    @numpy:ndarray
+      # ... some spec of shape ...
+
+  outputType
+    @numpy:ndarray
+      # ... some spec of shape ...
+\end{verbatim}
+
+I have abbreviated the specification of shape to not overcomplicate the
+pseudocode example, but say we successfully specify a 3 dimensional
+(width x height x channels) array with 3 channels as input, and a a 2
+dimensional (width x height) array as output.
+
+The code doesn't run on nothing! We need to specify our node's
+dependencies, say in this case we need to specify an operating system
+image \texttt{ubuntu}, a version of \texttt{python}, a system-level
+package \texttt{opencv}, and a few python packages on \texttt{pip}. We
+are pinning specific versions with \href{https://semver.org/}{semantic
+versioning}, but the syntax isn't terribly important. Then we just need
+to specify where the code for the node itself comes from:
+
+\begin{verbatim}
+  dependsOn
+    @ubuntu:^20.*:x64
+    @python:3.8
+    @apt:opencv:^4.*.*
+    @pip:opencv-python:^4.*.*
+    @pip:numpy:^14.*.*
+
+  providedBy
+    @git:repository https://mygitserver.com/binspikes/fast-binspikes.git
+      @git:hash fj9wbkl
+    @python:class /main-module/binspikes.py:Bin_Spikes
+\end{verbatim}
+
+Here we can see the advantage of being able to mix and match different
+namespaces in a practical sense. Our \texttt{@analysis.node} protocol
+gives us several slots to connect different tools together, each in turn
+presumably provides some minimal functionality expected by that slot:
+eg. \texttt{inputType} can expect \texttt{@numpy:ndarray} to specify its
+own dependencies, the programming language it is written in, shape, data
+type, and so on. Coercing data between chained nodes then becomes a
+matter of mapping between the \texttt{@numpy} and, say a \texttt{@nwb}
+namespace of another format. In the same way that there can be multiple,
+potentially overlapping between data schemas, it would then be possible
+for people to implement mappings between intermediate data formats
+as-needed.
+
+This node also becomes available to extend, say someone wanted to add an
+additional input format to my node:
+
+\begin{verbatim}
+<@friend#bin-spikes>
+  a @jonny:bin-spikes
+
+  inputType
+    @pandas:DataFrame
+
+  providedBy
+    ...
+\end{verbatim}
+
+They don't have to interact with my potentially messy codebase at all,
+but it is automatically linked to my work so I am credited. One could
+imagine a particular analysis framework implementation that would then
+search through extensions of a particular node for a version that
+supports the input/output combinations appropriate for their analysis
+pipeline, so the work is cumulative. This functions as a dramatic
+decrease in the size of a unit of work that can be shared.
+
+This also gives us healthy abstraction over implementation. Since the
+functionality is provided by different, mutable namespaces, we're not
+locked into any particular piece of software --- even our
+\texttt{@analysis} namespace that gives the \texttt{inputType} etc.
+slots could be forked. We could implement the dependency resolution
+system as, eg. a docker container, but it also could be just a check on
+the local environment if someone is just looking to run a small analysis
+on their laptop with those packages already installed.
+
+We use providedBy to indicate a python class which implements the node
+in code. We could use an \texttt{Example\_Framework} that provides a set
+of classes and methods to implement the different parts of the node (a
+la \href{https://luigi.readthedocs.io/en/stable/tasks.html}{luigi}). Our
+\texttt{Bin} class inherits from \texttt{Node}, and we implement the
+logic of the function by overriding its \texttt{run} method and specify
+an output file to store intermediate data (if requested by the pipeline)
+with an \texttt{output} method. We also specify a \texttt{bin\_width} as
+a \texttt{Param}eter for our node, as an example of how a lightweight
+protocol could be bidirectionally specified: we could receive a
+parameterization from our pseudocode specification, or we could write a
+framework with a \texttt{Bin.export\_schema()} that constructs the
+pseudocode specification from code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ Example\_Framework }\ImportTok{import}\NormalTok{ Node, Param, Target}
+
+\KeywordTok{class}\NormalTok{ Bin(Node):}
+\NormalTok{  bin\_width }\OperatorTok{=}\NormalTok{ Param(dtype}\OperatorTok{=}\BuiltInTok{int}\NormalTok{, default}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+
+  \KeywordTok{def}\NormalTok{ output(}\VariableTok{self}\NormalTok{) }\OperatorTok{{-}\textgreater{}}\NormalTok{ Target:}
+    \ControlFlowTok{return}\NormalTok{ Target(}\StringTok{\textquotesingle{}temporary\_data.pck\textquotesingle{}}\NormalTok{)}
+
+  \KeywordTok{def}\NormalTok{ run(}\VariableTok{self}\NormalTok{, }\BuiltInTok{input}\NormalTok{:}\StringTok{\textquotesingle{}numpy.ndarray\textquotesingle{}}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \StringTok{\textquotesingle{}numpy.ndarray\textquotesingle{}}\NormalTok{:}
+    \CommentTok{\# do some stuff}
+    \ControlFlowTok{return}\NormalTok{ output}
+\end{Highlighting}
+\end{Shaded}
+
+Now that we have a handful of processing nodes, we could then describe
+some \texttt{@workflow}, taking some \texttt{@nwb:NWBFile} as input, and
+then returning some output as a \texttt{:processed} child beneath its
+existing namespace. We'll only make a linear pipeline with two stages,
+but there's no reason more complex branching and merging couldn't be
+described as well.
+
+\begin{verbatim}
+<#my-analysis>
+  a @analysis:workflow
+
+  inputType 
+    @jonny:bin-spikes:inputType
+
+  outputName
+    .inputType:processed
+
+  step Step1 @jonny:bin-spikes
+  step Step2 @someone-else:another-step
+    input Step1:output
+\end{verbatim}
+
+Having kept the description of our data in particular abstract from the
+implementation of the code and the workflow specification, the only
+thing left is to apply it to our data! Since the parameters are linked
+from the analysis nodes, we can specify them here (or in the workflow).
+Assuming literally zero abstraction and using the tried-and-true
+``hardcoded dataset list'' pattern, something like:
+
+\begin{verbatim}
+<#project-name>
+  a @analysis:project
+
+  hasDescription
+    "I gathered some data, and it is great!"
+
+  researchTopic
+    @neuro:systems:auditory:speech-processing
+    @linguistics:phonetics:perception:auditory-only
+
+  inPaper
+    @doi:10.1121:1.5091776 
+
+  workflow Analysis1 @jonny:my-analysis
+    globalParams
+      .Step1:params:bin_width 10
+
+    datasets
+      @jonny.mydata1:v0.1.0:raw
+      @jonny.mydata2:^0.2.*:raw
+      @jonny.mydata3:>=0.1.1:raw
+\end{verbatim}
+
+And there we are! The missing parameters like \texttt{outputName} from
+our workflow can be filled in from the defaults filled in the workflow
+node. We get some inkling of where we're going later by also being able
+to specify the paper this data is associated with, as well as some broad
+categories of research topics so that our data as well as the results of
+the analysis can be found.
+
+!! brief description of the state of the system at this point, we can
+link from data to analyses! reapply analyses across different datasets!
+and so on\ldots{}
+
+So that's useful, but the faint residue of ``well actually'' that hangs
+in the air while people google the link for that xkcd comic about format
+expansion is not lost on me. The important part is in the way this
+hypothetical analysis framework and markup interact with our data system
+and emerging federated metadata system --- The layers of abstraction
+here are worth unpacking, but we'll hold until the end of the shared
+tools section and we have a chance to consider what this system might
+look like for experimental tools.
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{draftmarker}{}
@@ -3887,108 +4130,31 @@ challenges and tradeoffs of these systems.
 \textasciitilde{} everything past here is purely draft placeholder text
 \textasciitilde{}
 
-We can start getting a better picture for the way a decentralized
-analysis framework might work by sketching the separation between the
-metadata and code modules. Since we're considering modular analysis
-elements, each module would need some elemental properties like the
-parameters that define it, its inputs, outputs, as well as some
-additional metadata about its implementation (eg. this one takes
-\emph{numpy arrays} and this one takes \emph{matlab structs}). The
-precise implementation of a modular protocol also depends on the graph
-structure of the analysis system. We invoked DAGs before, but analysis
-graph structure of course has its own body of researchers refining them
-into eg. \href{https://en.wikipedia.org/wiki/Petri_net}{Petri nets}
-which are graphs whose nodes necessarily alternate between ``places''
-(eg. cached intermediate data) and ``transitions'' (eg. an analysis
-operation), and their related workflow markup languages (eg.
-\href{https://openwdl.org/}{WDL} or \cite{vanderaalstYAWLAnotherWorkflow2005} ).
 
-In pseudocode, I could define a set of nodes like this:
+\end{multicols}
 
-\begin{verbatim}
-# TODO
-- I/O
-- input data format
-- dependencies
-- repository and hash
-- location of code object
-- tests
-- version of node markup (in case there are competing syntaxes, know how to process.)
-- ...
-\end{verbatim}
 
-Where I could implement the code for one of them by, for example,
-providing a set of methods to implement the different parts of the node
-(a la \href{https://luigi.readthedocs.io/en/stable/tasks.html}{luigi}).
-This lets us implement the logic of the node directly in the method, but
-also provides a very thin wrapper that we can place around existing
-tools. Here I'll show an example that sets some of the metadata in the
-preceding spec in the code --- since we assume that
-\texttt{Example\_Framework} is only one of many that implements the
-workflow syntax, our framework is designed to let people write nodes
-easily and then export their metadata as-needed.
+\hypertarget{experimental-framework}{%
+\subsubsection{Experimental Framework}\label{experimental-framework}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ Example\_Framework }\ImportTok{import}\NormalTok{ Node, Param, Types}
+I've taken this out for now because it needs to be reworked
+dramatically, but it's basically a lot of what I talk about in the
+autopilot manuscript, cross apply a lot of the same thinking from the
+previous section, and put it on the other side of the data where we're
+feeding data directly from the tool into the data stream. The other part
+to note is that it becomes possible to make the same kinds of semantic
+links that we're talking about from a semantic communication medium
+(next section) that can gather contextual knowledge, publications, etc.
+back to the code we used to run the experiments.
 
-\KeywordTok{class}\NormalTok{ Bin(Node):}
-\NormalTok{    bin\_width }\OperatorTok{=}\NormalTok{ Param(default}\OperatorTok{=}\DecValTok{10}\NormalTok{)}
+\hypertarget{collectivizing-the-state-of-the-art}{%
+\subsubsection{Collectivizing the State of the
+Art}\label{collectivizing-the-state-of-the-art}}
 
-    \KeywordTok{def} \BuiltInTok{input}\NormalTok{(}\VariableTok{self}\NormalTok{, input\_1: Types[some\_typinglike\_example]):}
-        \CommentTok{\# validate}
-        \VariableTok{self}\NormalTok{.}\BuiltInTok{input} \OperatorTok{=}\NormalTok{ input\_1}
 
-    \KeywordTok{def}\NormalTok{ process() }\OperatorTok{{-}\textgreater{}}\NormalTok{ typing[output\_type]:}
-        \CommentTok{\# some stuff!}
-        \ControlFlowTok{return}\NormalTok{ [answer]}
-\end{Highlighting}
-\end{Shaded}
-
-Then I could describe some workflow like this, using some .wdl-like
-pseudocode:
-
-\begin{verbatim}
-workflow @jonny.mydata {
-    Input InputAlias < @nwb:NWBFile
-    Output InputAlias:processed
-
-    Param ParamAlias < Step2.param1.type
-
-    step Step1 { input: InputAlias.neurophys }
-    step Step2 { 
-        input: Step1.output.value, 
-        param1: ParamAlias 
-    }
-}
-\end{verbatim}
-
-!! explain markup, make sure the input/output/etc. param names are
-recursively valid with nodes.
-
-Having kept the description of our data in particular abstract from the
-implementation of the code and the workflow specification, we now have a
-reusable workflow we can apply to all of our datasets! Assuming
-literally zero abstraction and using the tried-and-true ``hardcoded
-dataset list'' pattern, something like:
-
-\begin{verbatim}
-project @jonny:project_name {
-    analyze @jonny.mydata:v0.1.0:raw { 
-        Input=@jonny:cool-dataset1, Param="hi!" 
-        } ->  @jonny.mydata:v0.1.0:processed
-    analyze @jonny.mydata2:^0.1.*:raw { 
-        Input=@jonny:cool-dataset1, Param="hi!" 
-        } -> @jonny.mydata2:-:processed
-}
-\end{verbatim}
-
-So that's useful, but the faint residue of ``well actually'' that hangs
-in the air while people google the link for that xkcd comic about format
-expansion is not lost on me. The magic is in the way this hypothetical
-analysis framework and markup interact with our data system and emerging
-federated metadata system --- The layers of abstraction here are worth
-unpacking.
+\begin{multicols}{2}
+ !! how about just move this until after the tools section
+because i bet we'll end up saying a lot of the same things.
 
 \begin{itemize}
 \item
@@ -4086,24 +4252,9 @@ don't get magic for free, we haven't talked about the community systems
 yet that are the unspoken glue of all of this!!
 
 !! continue the example of needing to select within datasets instead of
-metadata from federation section.
-
-
+metadata from federation section. 
 \end{multicols}
 
-
-\hypertarget{experimental-framework}{%
-\subsubsection{Experimental Framework}\label{experimental-framework}}
-
-I've taken this out for now because it needs to be reworked
-dramatically, but it's basically a lot of what I talk about in the
-autopilot manuscript, cross apply a lot of the same thinking from the
-previous section, and put it on the other side of the data where we're
-feeding data directly from the tool into the data stream. The other part
-to note is that it becomes possible to make the same kinds of semantic
-links that we're talking about from a semantic communication medium
-(next section) that can gather contextual knowledge, publications, etc.
-back to the code we used to run the experiments.
 
 \hypertarget{shared-knowledge}{%
 \subsection{Shared Knowledge}\label{shared-knowledge}}
@@ -4119,6 +4270,27 @@ for better research
 and slack? we can do better for collective organization
 
 !! https://www.dbpedia.org/
+
+!! important of ease of leaving
+http://meatballwiki.org/wiki/RightToLeave
+
+!! we've been tracing a distinction between the ability to express
+fluidly the contents of our reality with developing platforms that sift
+through it in an automated way, something that was an explicit cultural
+division throughout the semantic web project \cite{swartzTechniquesMassCollaboration2006} , which Peter Norvig (director
+of search at Google at the time) primarily attributes to user
+incompetence \cite{lombardiGoogleExecChallenges2007} . On trust,
+TBL says ``Berners-Lee agreed with Norvig that deception on the Internet
+is a problem, but he argued that part of the Semantic Web is about
+identifying the originator of information, and identifying why the
+information can be trusted, not just the content of the information
+itself.''
+
+!! more techniques of communtiy growth
+http://meatballwiki.org/wiki/RewardReputation
+
+!! wikis work! but they can break when people get too much power!
+http://www.aaronsw.com/weblog/whorunswikipedia
 
 !! why is public trust in scientists so low? could it be that there is
 an alternative to scientists seeing themselves as cloistered experts?
@@ -4232,7 +4404,54 @@ contribution to all of them (opt-in).
 \hypertarget{the-wiki-way}{%
 \subsubsection{The Wiki Way}\label{the-wiki-way}}
 
-!! wiki cultural history stuff!!
+\begin{leftbar}
+So that's it --- insecure but reliable, indiscriminate and subtle, user
+hostile yet easy to use, slow but up to date, and full of difficult,
+nit-picking people who exhibit a remarkable community camaraderie.
+Confused? Any other online community would count each of these
+``negatives'' as a terrible flaw, and the contradictions as impossible
+to reconcile. Perhaps wiki works because the other online communities
+don't. \cite{leufWikiWayQuick2001a, -l, 329} 
+\end{leftbar}
+
+!! wiki cultural history stuff!! differences in wiki philosophy,
+deletists vs not. !! meatball stuff on community maintenace, conflict
+resolution,
+
+!! also hints at the problems, difficulties with wiki culture
+
+\begin{leftbar}
+It's not too late to turn things around. Specs could be moved back into
+the wiki until they're nearly done. Editors, instead of being
+gatekeepers, could be helpful moderators. A clear process for making
+controvertial decisions could be decided on. And the validator could
+follow consensus instead of leading it. But do the people running the
+show want this?
+
+Standards bodies tread a fine line between organizations for the public
+good and shelters for protecting collusion that would be otherwise
+illegal under antitrust law. For the dominent vendors involved, the goal
+is to give the illusion of openness while giving themselves full control
+to enforce their will behind the scenes.
+
+The IETF is a good example of this. Often lauded by the public as a
+model of openness and and and freedom, the reality is that working group
+chairs, appointed by a self-elected ruling board, get away with
+declaring whatever they want (usually an inferior and difficult to
+implement alternative) as ``rough consensus'', routinely ignoring
+comments from the public and objections from working group members. One
+working group (in charge of DNS extentsions) went so far as to censor
+mail from working group members. The dictators running the IETF, when
+informed, didn't seem to mind.
+
+Is the same sort of thing at work in the Pie/Echo/Atom Project? It
+appears so at first glance: Sam running the show from behind the scenes,
+putting friends in charge of the specs (although that isn't what
+actually happened). The lack of a dispute-resolution process only makes
+things worse: when there's no clear guide on how to make decisions or
+contributions, it's far from obvious how to challenge a decision Sam has
+made. \cite{swartzSecretsStandards2003} 
+\end{leftbar}
 
 !! give the example of the autopilot wiki
 
@@ -4411,6 +4630,12 @@ how we relate with other scientists.
 
 Dont want to be prescriptive here, but that we can learn from previous
 efforts like https://en.wikipedia.org/wiki/Evergreen\_(software) ,
+
+!! multiplicity is in itself a form of governance, where rather than
+needing to canalize things into a single decision, it is possible to
+have all the options exist simultaneously and let history sort them out.
+http://meatballwiki.org/wiki/VotingIsEvil
+http://meatballwiki.org/wiki/EnlargeSpace
 
 \hypertarget{contrasting-visions-for-science}{%
 \subsection{Contrasting visions for
