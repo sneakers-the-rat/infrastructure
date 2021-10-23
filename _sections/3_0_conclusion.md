@@ -9,6 +9,8 @@
 
 Dont want to be prescriptive here, but that we can learn from previous efforts like  https://en.wikipedia.org/wiki/Evergreen_(software) , 
 
+!! multiplicity is in itself a form of governance, where rather than needing to canalize things into a single decision, it is possible to have all the options exist simultaneously and let history sort them out. http://meatballwiki.org/wiki/VotingIsEvil  http://meatballwiki.org/wiki/EnlargeSpace
+
 ## Contrasting visions for science
 
 !! through this text I have tried to sketch in parallel the vision of scientific practice as I see it heading now, into a platform capitalist hell, and an alternative, which is not a utopia but it is a place where we save a shitload of labor and (revisit the harms in the introduction). 

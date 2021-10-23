@@ -7,6 +7,14 @@
 
 !! https://www.dbpedia.org/
 
+!! important of ease of leaving http://meatballwiki.org/wiki/RightToLeave
+
+!! we've been tracing a distinction between the ability to express fluidly the contents of our reality with developing platforms that sift through it in an automated way, something that was an explicit cultural division throughout the semantic web project {% cite swartzTechniquesMassCollaboration2006 %}, which Peter Norvig (director of search at Google at the time) primarily attributes to user incompetence {% cite lombardiGoogleExecChallenges2007 %}. On trust, TBL says "Berners-Lee agreed with Norvig that deception on the Internet is a problem, but he argued that part of the Semantic Web is about identifying the originator of information, and identifying why the information can be trusted, not just the content of the information itself."
+
+!! more techniques of communtiy growth http://meatballwiki.org/wiki/RewardReputation
+
+!! wikis work! but they can break when people get too much power! http://www.aaronsw.com/weblog/whorunswikipedia 
+
 !! why is public trust in scientists so low? could it be that there is an alternative to scientists seeing themselves as cloistered experts? re: cold war peer review paper
 
 The (part of the system that's most needed and potentially transformative) is a system of scientific communication. 
@@ -44,7 +52,19 @@ each of these systems can have multiple iterations, with different rules, and so
 
 ### The Wiki Way
 
-!! wiki cultural history stuff!!
+> So that's it --- insecure but reliable, indiscriminate and subtle, user hostile yet easy to use, slow but up to date, and full of difficult, nit-picking people who exhibit a remarkable community camaraderie. Confused? Any other online community would count each of these "negatives" as a terrible flaw, and the contradictions as impossible to reconcile. Perhaps wiki works because the other online communities don't. {% cite leufWikiWayQuick2001a -l 329 %}
+
+!! wiki cultural history stuff!! differences in wiki philosophy, deletists vs not. !! meatball stuff on community maintenace, conflict resolution, 
+
+!! also hints at the problems, difficulties with wiki culture
+
+> It’s not too late to turn things around. Specs could be moved back into the wiki until they’re nearly done. Editors, instead of being gatekeepers, could be helpful moderators. A clear process for making controvertial decisions could be decided on. And the validator could follow consensus instead of leading it. But do the people running the show want this?
+>
+> Standards bodies tread a fine line between organizations for the public good and shelters for protecting collusion that would be otherwise illegal under antitrust law. For the dominent vendors involved, the goal is to give the illusion of openness while giving themselves full control to enforce their will behind the scenes.
+>
+> The IETF is a good example of this. Often lauded by the public as a model of openness and and and freedom, the reality is that working group chairs, appointed by a self-elected ruling board, get away with declaring whatever they want (usually an inferior and difficult to implement alternative) as “rough consensus”, routinely ignoring comments from the public and objections from working group members. One working group (in charge of DNS extentsions) went so far as to censor mail from working group members. The dictators running the IETF, when informed, didn’t seem to mind.
+> 
+> Is the same sort of thing at work in the Pie/Echo/Atom Project? It appears so at first glance: Sam running the show from behind the scenes, putting friends in charge of the specs (although that isn’t what actually happened). The lack of a dispute-resolution process only makes things worse: when there’s no clear guide on how to make decisions or contributions, it’s far from obvious how to challenge a decision Sam has made. {% cite swartzSecretsStandards2003 %}
 
 !! give the example of the autopilot wiki
 

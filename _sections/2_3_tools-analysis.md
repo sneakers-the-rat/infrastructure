@@ -59,11 +59,11 @@ In pseudocode, I could define some analysis node for, say, converting an RGB ima
 ```
 
 <#bin-spikes>
-	a @analysis.node
-	  Version >=1.0.0
+  a @analysis.node
+    Version >=1.0.0
 
-	hasDescription
-	  "Convert an RGB Image to a grayscale image"
+  hasDescription
+    "Convert an RGB Image to a grayscale image"
 
   inputType
     @numpy:ndarray
@@ -76,7 +76,7 @@ In pseudocode, I could define some analysis node for, say, converting an RGB ima
 
 I have abbreviated the specification of shape to not overcomplicate the pseudocode example, but say we successfully specify a 3 dimensional (width x height x channels) array with 3 channels as input, and a a 2 dimensional (width x height) array as output.
 
-Here we're just using an external namespace as we have before, 
+The code doesn't run on nothing! We need to specify our node's dependencies, say in this case we need to specify an operating system image `ubuntu`, a version of `python`, a system-level package `opencv`, and a few python packages on `pip`. We are pinning specific versions with [semantic versioning](https://semver.org/), but the syntax isn't terribly important. Then we just need to specify where the code for the node itself comes from:
 
 ```
   dependsOn
@@ -92,15 +92,26 @@ Here we're just using an external namespace as we have before,
     @python:class /main-module/binspikes.py:Bin_Spikes
 ```
 
+Here we can see the advantage of being able to mix and match different namespaces in a practical sense. Our `@analysis.node` protocol gives us several slots to connect different tools together, each in turn presumably provides some minimal functionality expected by that slot: eg. `inputType` can expect `@numpy:ndarray` to specify its own dependencies, the programming language it is written in, shape, data type, and so on. Coercing data between chained nodes then becomes a matter of mapping between the `@numpy` and, say a `@nwb` namespace of another format. In the same way that there can be multiple, potentially overlapping between data schemas, it would then be possible for people to implement mappings between intermediate data formats as-needed. 
 
+This node also becomes available to extend, say someone wanted to add an additional input format to my node:
 
-!! explanation of ^^ as needed. u can find it at @jonny:bin-spikes
+```
+<@friend#bin-spikes>
+  a @jonny:bin-spikes
 
-!! we can see a number of powerful advantages of our federated linking system already... !! mapping multiple inputs together: we require a numpy ndarray, but indicate the range of inputs that we would expect it to support. If someone has written some mapping transformation between the formats, we could allow the analysis framework to convert between them. If they haven't been written, we could leave an indication that this *should* be supported. !! we can maintain our abstraction (so that multiple tools can implement it) and unify our specification of dependencies -- this *could* be done with containers, but it also could be done in for example some local computing environment that also satisfies these dependencies on its own with its system packages. !! we don't need the official packages to go along! there's nothing special about the #official `@pip` namespace, if someone has written some third-party dependency specification called `@pipbridger` it could work the same. 
+  inputType
+    @pandas:DataFrame
 
-!! we could imagine some other group of people coming along later and writing some additional metadata metadata system where different analysis tools have different categorizations like computer vision tools, color conversion tools. they could link our analysis method to their schema so it could be discovered that way. (example)
+  providedBy
+    ...
+```
 
-!! lead into next section with saying "we use providedBy to indicate a python class..." we could imagine one instance of an analysis framework implementing in python like this...
+They don't have to interact with my potentially messy codebase at all, but it is automatically linked to my work so I am credited. One could imagine a particular analysis framework implementation that would then search through extensions of a particular node for a version that supports the input/output combinations appropriate for their analysis pipeline, so the work is cumulative. This functions as a dramatic decrease in the size of a unit of work that can be shared.
+
+This also gives us healthy abstraction over implementation. Since the functionality is provided by different, mutable namespaces, we're not locked into any particular piece of software --- even our `@analysis` namespace that gives the `inputType` etc. slots could be forked. We could implement the dependency resolution system as, eg. a docker container, but it also could be just a check on the local environment if someone is just looking to run a small analysis on their laptop with those packages already installed.
+
+We use providedBy to indicate a python class which implements the node in code. 
 
 Where I could implement the code for one of them by, for example, providing a set of methods to implement the different parts of the node (a la [luigi](https://luigi.readthedocs.io/en/stable/tasks.html)). This lets us implement the logic of the node directly in the method, but also provides a very thin wrapper that we can place around existing tools. Here I'll show an example that sets some of the metadata in the preceding spec in the code --- since we assume that `Example_Framework` is only one of many that implements the workflow syntax, our framework is designed to let people write nodes easily and then export their metadata as-needed.
 
@@ -108,33 +119,33 @@ Where I could implement the code for one of them by, for example, providing a se
 from Example_Framework import Node, Param, Types
 
 class Bin(Node):
-	bin_width = Param(dtype=int, default=10)
-	input_format = 
+  bin_width = Param(dtype=int, default=10)
+  input_format = 
 
-	def input(self, input_1: Types[some_typinglike_example]):
-		# validate
-		self.input = input_1
+  def input(self, input_1: Types[some_typinglike_example]):
+    # validate
+    self.input = input_1
 
-	def process() -> typing[output_type]:
-		# some stuff!
-		return [answer]
+  def process() -> typing[output_type]:
+    # some stuff!
+    return [answer]
 ```
 
 Then I could describe some workflow like this, using some .wdl-like pseudocode:
 
 ```
 workflow @jonny.mydata {
-	Input InputAlias < @nwb:NWBFile
-	Output InputAlias:processed
+  Input InputAlias < @nwb:NWBFile
+  Output InputAlias:processed
 
-	Param ParamAlias < Step2.param1.type
+  Param ParamAlias < Step2.param1.type
 
-	step Step1 { input: InputAlias.neurophys }
-	step Step2 { 
-		input: Step1.output.value, 
-		param1: ParamAlias 
-	}
-	split Step3_1 { input: Step2.output1.value}
+  step Step1 { input: InputAlias.neurophys }
+  step Step2 { 
+    input: Step1.output.value, 
+    param1: ParamAlias 
+  }
+  split Step3_1 { input: Step2.output1.value}
 }
 ```
 
@@ -144,12 +155,12 @@ Having kept the description of our data in particular abstract from the implemen
 
 ```
 project @jonny:project_name {
-	analyze @jonny.mydata:v0.1.0:raw { 
-		Input=@jonny:cool-dataset1, Param="hi!" 
-		} ->  @jonny.mydata:v0.1.0:processed
-	analyze @jonny.mydata2:^0.1.*:raw { 
-		Input=@jonny:cool-dataset1, Param="hi!" 
-	    } -> @jonny.mydata2:-:processed
+  analyze @jonny.mydata:v0.1.0:raw { 
+    Input=@jonny:cool-dataset1, Param="hi!" 
+    } ->  @jonny.mydata:v0.1.0:processed
+  analyze @jonny.mydata2:^0.1.*:raw { 
+    Input=@jonny:cool-dataset1, Param="hi!" 
+      } -> @jonny.mydata2:-:processed
 }
 ```
 
