@@ -46,10 +46,6 @@ Kilosort is an excellent and incredibly useful tool, but its idiomatic architect
 
 This is not a criticism of Datajoint or Kilosort, which were both designed for different uses and with different philosophies (that are of course, also valid). I mean this as a brief illustration of the design challenges and tradeoffs of these systems. 
 
----
-
-<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
-
 We can start getting a better picture for the way a decentralized analysis framework might work by considering the separation between the metadata and code modules, hinting at a protocol as in the federated systems sketh above. Since we're considering modular analysis elements, each module would need some elemental properties like the parameters that define it, its inputs, outputs, dependencies, as well as some additional metadata about its implementation (eg. this one takes *numpy arrays* and this one takes *matlab structs*). The precise implementation of a modular protocol also depends on the graph structure of the analysis system. We invoked DAGs before, but analysis graph structure of course has its own body of researchers refining them into eg. [Petri nets](https://en.wikipedia.org/wiki/Petri_net) which are graphs whose nodes necessarily alternate between "places" (eg. intermediate data) and "transitions" (eg. an analysis operation), and their related workflow markup languages (eg. [WDL](https://openwdl.org/) or {% cite vanderaalstYAWLAnotherWorkflow2005 %}). In that scheme, a framework could provide tools for converting data between types, caching intermediate data, etc. between analysis steps, as an example of how different graph structures might influence its implementation.
 
 Say we use `@analysis` as the namespace for our analysis protocol, and `~someone~` has provided mappings to objects in `numpy`. We can assume they are provided by the package maintainers, but that's not necessary: this is my node and it takes what I want it to! 
@@ -57,9 +53,8 @@ Say we use `@analysis` as the namespace for our analysis protocol, and `~someone
 In pseudocode, I could define some analysis node for, say, converting an RGB image to grayscale under my namespace as `@jonny:bin-spikes` like this:
 
 ```
-
 <#bin-spikes>
-  a @analysis.node
+  a @analysis:node
     Version >=1.0.0
 
   hasDescription
@@ -111,77 +106,73 @@ They don't have to interact with my potentially messy codebase at all, but it is
 
 This also gives us healthy abstraction over implementation. Since the functionality is provided by different, mutable namespaces, we're not locked into any particular piece of software --- even our `@analysis` namespace that gives the `inputType` etc. slots could be forked. We could implement the dependency resolution system as, eg. a docker container, but it also could be just a check on the local environment if someone is just looking to run a small analysis on their laptop with those packages already installed.
 
-We use providedBy to indicate a python class which implements the node in code. 
-
-Where I could implement the code for one of them by, for example, providing a set of methods to implement the different parts of the node (a la [luigi](https://luigi.readthedocs.io/en/stable/tasks.html)). This lets us implement the logic of the node directly in the method, but also provides a very thin wrapper that we can place around existing tools. Here I'll show an example that sets some of the metadata in the preceding spec in the code --- since we assume that `Example_Framework` is only one of many that implements the workflow syntax, our framework is designed to let people write nodes easily and then export their metadata as-needed.
+We use providedBy to indicate a python class which implements the node in code. We could use an `Example_Framework` that provides a set of classes and methods to implement the different parts of the node (a la [luigi](https://luigi.readthedocs.io/en/stable/tasks.html)). Our `Bin` class inherits from `Node`, and we implement the logic of the function by overriding its `run` method and specify an output file to store intermediate data (if requested by the pipeline) with an `output` method. We also specify a `bin_width` as a `Param`eter for our node, as an example of how a lightweight protocol could be bidirectionally specified: we could receive a parameterization from our pseudocode specification, or we could write a framework with a `Bin.export_schema()` that constructs the pseudocode specification from code.
 
 ```python
-from Example_Framework import Node, Param, Types
+from Example_Framework import Node, Param, Target
 
 class Bin(Node):
   bin_width = Param(dtype=int, default=10)
-  input_format = 
 
-  def input(self, input_1: Types[some_typinglike_example]):
-    # validate
-    self.input = input_1
+  def output(self) -> Target:
+    return Target('temporary_data.pck')
 
-  def process() -> typing[output_type]:
-    # some stuff!
-    return [answer]
+  def run(self, input:'numpy.ndarray') -> 'numpy.ndarray':
+    # do some stuff
+    return output
 ```
 
-Then I could describe some workflow like this, using some .wdl-like pseudocode:
+Now that we have a handful of processing nodes, we could then describe some `@workflow`, taking some `@nwb:NWBFile` as input, and then returning some output as a `:processed` child beneath its existing namespace. We'll only make a linear pipeline with two stages, but there's no reason more complex branching and merging couldn't be described as well. 
 
 ```
-workflow @jonny.mydata {
-  Input InputAlias < @nwb:NWBFile
-  Output InputAlias:processed
+<#my-analysis>
+  a @analysis:workflow
 
-  Param ParamAlias < Step2.param1.type
+  inputType 
+    @jonny:bin-spikes:inputType
 
-  step Step1 { input: InputAlias.neurophys }
-  step Step2 { 
-    input: Step1.output.value, 
-    param1: ParamAlias 
-  }
-  split Step3_1 { input: Step2.output1.value}
-}
+  outputName
+    .inputType:processed
+
+  step Step1 @jonny:bin-spikes
+  step Step2 @someone-else:another-step
+    input Step1:output
 ```
 
-!! explain markup, make sure the input/output/etc. param names are recursively valid with nodes.
-
-Having kept the description of our data in particular abstract from the implementation of the code and the workflow specification, we now have a reusable workflow we can apply to all of our datasets! Assuming literally zero abstraction and using the tried-and-true "hardcoded dataset list" pattern, something like:
+Having kept the description of our data in particular abstract from the implementation of the code and the workflow specification, the only thing left is to apply it to our data! Since the parameters are linked from the analysis nodes, we can specify them here (or in the workflow). Assuming literally zero abstraction and using the tried-and-true "hardcoded dataset list" pattern, something like:
 
 ```
-project @jonny:project_name {
-  analyze @jonny.mydata:v0.1.0:raw { 
-    Input=@jonny:cool-dataset1, Param="hi!" 
-    } ->  @jonny.mydata:v0.1.0:processed
-  analyze @jonny.mydata2:^0.1.*:raw { 
-    Input=@jonny:cool-dataset1, Param="hi!" 
-      } -> @jonny.mydata2:-:processed
-}
+<#project-name>
+  a @analysis:project
+
+  hasDescription
+    "I gathered some data, and it is great!"
+
+  researchTopic
+    @neuro:systems:auditory:speech-processing
+    @linguistics:phonetics:perception:auditory-only
+
+  inPaper
+    @doi:10.1121:1.5091776 
+
+  workflow Analysis1 @jonny:my-analysis
+    globalParams
+      .Step1:params:bin_width 10
+
+    datasets
+      @jonny.mydata1:v0.1.0:raw
+      @jonny.mydata2:^0.2.*:raw
+      @jonny.mydata3:>=0.1.1:raw
 ```
 
-So that's useful, but the faint residue of "well actually" that hangs in the air while people google the link for that xkcd comic about format expansion is not lost on me. The magic is in the way this hypothetical analysis framework and markup interact with our data system and emerging federated metadata system --- The layers of abstraction here are worth unpacking.
+And there we are! The missing parameters like `outputName` from our workflow can be filled in from the defaults filled in the workflow node. We get some inkling of where we're going later by also being able to specify the paper this data is associated with, as well as some broad categories of research topics so that our data as well as the results of the analysis can be found. 
 
--  First, the markup description of the node gives us abstraction from programming language and implementation. This lets us do stuff like use multiple tools with competing environmental needs, adapt to multiple versions of the code markup as it develops, etc. Note the interaction with the rest of the metadata system: because we required a particular type of data file, and that link should provide us some means of opening/instantiating the file with dependencies, we didn't need to write loading code. Since it's in a linked system, someone could override the implementation of my node -- say someone comes up with a faster means of binning, then they just inherit from my node and replace the reference to the code. Boom we have cumulative and linked development.
-- The separation of the node from the workflow means that the node can be shared and swapped and reintegrated easily, dramatically reducing the brittleness of the systme. Since there is no restriction on what constitutes a node, though, there's no reason that nodes can't be either made massive, like putting a whole library in the process method, or be packaged up together. If we made the argument and method names recursive between the workflow and the node objects then tooling could automatically traverse multiple layers of node/workflow combinations at different levels of abstraction. This being a schematic description means that there can be multiple "workflow runner" packages that eg. distribute the task across a billion supercomputers or not. 
-- Finally, the separation between the data applied and the workflow itself are very cool indeed given our linked and namespaced system. My workflow effectively constitutes "an unit of analysis." I have linked my data to this unit of analysis. Play out the permutations: 
+!! brief description of the state of the system at this point, we can link from data to analyses! reapply analyses across different datasets! and so on...
 
-    - I can see all the analyses that this particular pipeline has been applied to. Since it is embedded within the same federated system as our schema system, I can draw and connect semantic links to similar analysis pipelines as well as pipeline/data combinations. 
-    - I can see all the different analyses that have been applied to my data: if my data is analyzed a zillion different times, in a zillion different combinations of data, I effectively get a "multiverse analysis" (cite dani) and we get to measure robustness of my data for free. It also gets to live forever and keep contributing to problems !! and i also get credited for it automatically by golly! This also applies on cases like cross-validation or evaluating different models on the same data: the versioning of it falls out naturally. Also since model weights would be an input to an analysis chain, we also get stuff like DLC's model zoo where we can share different model weights, combine them, and have a cumulative library of pretrained models as well!
-    - being able to look across the landscape... we start being able to actually really make cumulative progress on best practices. A common admonishment in cryptographically-adjacent communities is to "never roll your own crypto," because your homebrew crypto library will never be more secure than reference implementations that have an entire profession of people trying to expose and patch their weaknesses. Bugs in analysis code that produce inaccurate results are inevitable and rampant {% cite millerScientistNightmareSoftware2006 soergelRampantSoftwareErrors2015 eklundClusterFailureWhy2016a bhandarineupaneCharacterizationLeptazolinesPolar2019 %}, but impossible to diagnose when every paper writes its own pipeline. A common analysis framework would be a single point of inspection for bugs, and facilitate re-analysis and re-evaluation of affected results after a patch. 
-    - looking forward, we might imagine our project object being linked to a DOI... we'll get there.
+So that's useful, but the faint residue of "well actually" that hangs in the air while people google the link for that xkcd comic about format expansion is not lost on me. The important part is in the way this hypothetical analysis framework and markup interact with our data system and emerging federated metadata system --- The layers of abstraction here are worth unpacking, but we'll hold until the end of the shared tools section and we have a chance to consider what this system might look like for experimental tools.
 
+---
 
-!! this is all extraordinarily reproducible because even though I have my portable markup description of the analysis, I can just refer to it by name in my paper (ya ya need some content based hash or archive but you get the idea)
-
-!! since we have a bunch of p2p systems all hooked up with constantly-running daemons, to compete with the compute side of cloud technology we also should implement a voluntary compute grid akin to  [Folding@Home](https://foldingathome.org/). This has the same strawmen and answers to them as the peer-to-peer system --- no i'm not saying everyone puts their shitty GPU up, but it lets us combine the resources that are present at an institutional level and makes a very cheap onramp for government-level systems to be added to the mix.
-
-!! this is all very exciting, and we can immediately start digging towards larger scientific problems, eg. what it would mean for the file drawer problem and publication bias when the barriers to analyzing data are so low you don't even need to write the null result: the data is already there, semantically annotated and all. Dreams of infinite meta-analyses across all data and all time, but hold your horses! We don't get magic for free, we haven't talked about the community systems yet that are the unspoken glue of all of this!!
-
-!! continue the example of needing to select within datasets instead of metadata from federation section.
+<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
 
 
