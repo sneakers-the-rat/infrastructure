@@ -1,11 +1,26 @@
+The remaining set of problems implied by the infrastructural system sketched in the preceding sections is the *communication* and *organization* systems that make up the interfaces to maintain and use it. In doing so we return to the open problems we laid breadcrumbs from before: negotiating over distributed and conflicting data schema, the potential forms of social systems for incentivizing and organizing labor discussed previously in the context of bittorrent trackers, and a means of maintaining the links between the broadly dispersed components of the infrastructure. 
 
-!! cite that one paper about how tons of papers don't make for better research
+To do that we'll trace a bit more of the history of the semantic web community, as well as the parallel but distinct history of the early wiki movement. We'll land back in the realm of ActivityPub 
 
-!! jimmy wales on wikipedia: 
+!! we'll describe a way to [summarize open spaces left by preceding sections] !! while a full consideration of the journal system as a whole is strictly out of scope of this paper, the system as developed renders it effectively irrelevant.
 
-!! why is it that literally every project is organized on google docs and slack? we can do better for collective organization
 
-!! https://www.dbpedia.org/
+current status
+- our current systems are largely journals and conferences, but as evidenced by the unfortunate but widescale adoption of twitter, scientific communication naturally spans dispersed forms of communication at different scales of formality, length, public engagement, etc.
+- when we go to organize ourselves, why is the best we can do google docs and slack? 
+
+problems 
+- Despite being, in some sense, an effort to organize and systematize human knowledge, *science effectively has no system of organization.* 
+- The best we have is journals that are only loosely organized around large topic areas and citation networks, citation networks, which are un-annotated and un-descriptive, and unidimensional keywords. 
+- So one way of reading {% cite chuSlowedCanonicalProgress2021 %} is that there are too many papers, but another way of reading it is that our systems of organizing scientific communication simply don't scale well since they rely mostly on scanning TOC alerts, google scholar, and happenstance. 
+- Another impact of the arcanity of scientific knowledge organization is that it is effectively impenetrable to people that aren't domain experts. Why is trust in science so low right now? one contributor is that they have no idea what the hell we do or how different domains of knowledge have evolved. (cite cold war peer review and journals paper)
+- Practically, this makes the quality of scientific literature constantly in question. Each paper effectively exists as an island, and engagement with prior literature is effectively optional (outside the minimum bar set by the 3-5 additional private peer reviewers, each with their own limited scope and conflicting interests). Forensic peer-reviewers have been ringing the alarm bell, saying that there is "no net" to bad research {% cite heathersRealScandalIvermectin2021 %}, and brave and highly-skilled investigators like [Elisabeth Bik](https://scienceintegritydigest.com/) have found thousands of papers with evidence of purposeful manipulation {% cite shenMeetThisSuperspotter2020 bikPrevalenceInappropriateImage2016 %}. 
+- So our existing systems of communication and organization are woefully inadequate for our needs, and don't serve the role of guaranteeing consistency or reliability in research that they claim to. 
+
+contextual knowledge needed
+- our limited systems of communication also render large sections of needed scientific communication without venue. The existing tools that *do* give some means of sharing technical knowledge are distinctly charity-driven, and don't confer the same type of credit incentive that publications do.
+
+
 
 !! important of ease of leaving http://meatballwiki.org/wiki/RightToLeave
 
@@ -13,31 +28,17 @@
 
 !! more techniques of communtiy growth http://meatballwiki.org/wiki/RewardReputation
 
-!! wikis work! but they can break when people get too much power! http://www.aaronsw.com/weblog/whorunswikipedia 
-
-!! why is public trust in scientists so low? could it be that there is an alternative to scientists seeing themselves as cloistered experts? re: cold war peer review paper
-
-The (part of the system that's most needed and potentially transformative) is a system of scientific communication. 
-
-Except for certain domain-specific exceptions, the scientific communication system consists of the two ancient monoliths groaning with the dust of their obsolescence: the dead and static papers of the traditional journal system, and the ephemeral halo of insider knowledge shared at conferences. The remainder of the gigantic overflowing franzia bag of scientific discourse is funelled ingloriously onto Twitter[^twitterheg] --- and it *sucks*.
-
-Since the advent of the contemporary journal system, communication technology has been stripped to its very atoms and rebuilt --- and it has managed to dig in and *persist* while all the letterman jackets and beatniks of its era have become vape teens on tiktok. A reconsideration of the entire scientific publishing system is strictly out of scope for this paper, but the communication system I will describe exists in the gaps of need it leaves unfilled. Criticisms of the scientific communication system typically start by imaginging much of the contemporary journal system as etched as fact on the face of reality, and tweaking at a few of its more ticklish knobs (eg. {% cite heesenPeerReviewGood2020 %}). Instead let's try it the other way: to trace the outlines of how a scientific communication system *should* work, given the basis of holistic infrastructure described so far. I will argue that a communication system, and more specifically the community it supports, is the blood that must pump through any of these digital systems that aspire to call themselves infrastructure. To arrive at a proposed form for a system, I'll start by laying the basic axes of communication technology, and then load the scales with the empirical girth of the largest knowledge systems that have ever existed: Wikipedia and internet piracy. 
+!! wikis work! but they can break when people get too much power! http://www.aaronsw.com/weblog/whorunswikipedia
 
 There simply isn't a place to have longform, thoughtful, durable discussions about science. The direct connection between the lack of a communcaition venue to the lack of a way of storing technical, contextual knowledge is often overlooked. Because we don't have a place to talk about what we do, we don't have a place to write down how to do it. Science needs a communcation platform, but the needs and constraints of a scientific communication platform are different than those satisfied by the major paradigms of chatrooms, forums etc. By considering this platform as another infrastructure project alongside and integrated with those described in the previous sections, its form becomes much clearer, and it could serve as the centerpiece of scientific infrastructure.
 
-I will argue that we should build a semantically-enabled communication and knowledge-base system on top of activitypub to unify the preceding digital infrastructure elements. !!importantly, should also have means of ingest for existing tools and elements -- easy to import existing papers and citation trees, plugins for existing data sharing systems. 
-
-
+!! importantly, should also have means of ingest for existing tools and elements -- easy to import existing papers and citation trees, plugins for existing data sharing systems. 
 
 !! description of its role as a schema resolution system -- currently we implement all these protocols and standards in these siloed, centralized groups that are inherently slow to respond to changes and needs in the field. instead we want to give people the tools so that their the knowledge can be directly preserved and acted on. 
 
 !! descrption of its role as a tool of scientific discussion -- integrated with the data server and standardized analysis pipelines, it could be possible to have a discussion board where we were able to pose novel scientific questions, answerable with transparent, interrogatable analysis systems. Semantic linking makes the major questions in the field possible to answer, as discussions are linked to one another in a structured way and it is possible to literally trace the flow of thought. 
 
-!! let's tour through wikipedia for a second and see how it's organized. Look at these community incentive structures and the huge macro-to-micro level organization of the wiki projects. The infinitely mutable nature of a wiki is what makes it powerful, but the SaaS wikis we're familiar with don't capture the same kind of 'build the ground you walk on ' energy of the real wiki movement. 
-
-[^twitterheg]: no citation needed, right? if there is some other bastion of scientific discourse i would love to know about it.
-
-!! what's critically different here between other projects is that we are explicitly considering the incentives to join each of these efforts, and by integrating them explicitly, each of them is more appealing. so while there are lots of databases, lots of analysis systems, lots of wikis, and so on, there aren't many that are linked with one another such that participating in one part of the system makes the rest of the system more powerful as well as makes it more useful to the user.
+!! should trace the development of AP and the difficulty of doing these things as a way to explaining the ecosystem and the different parts that are needed in it: https://www.w3.org/TR/social-web-protocols/ 
 
 ### Axes of Communication Systems
 
@@ -92,6 +93,9 @@ each of these systems can have multiple iterations, with different rules, and so
 > The Semantic Web is about two things. It is about common formats for integration and combination of data drawn from diverse sources, where on the original Web mainly concentrated on the interchange of documents. It is also about language for recording how the data relates to real world objects. That allows a person, or a machine, to start off in one database, and then move through an unending set of databases which are connected not by wires but by being about the same thing. https://www.w3.org/2001/sw/
 
 !! Semantic combination of databases in science are also not new {% cite cheungSemanticWebApproach2007 simaEnablingSemanticQueries2019 %}. We need both though! semantic federated databases!
+
+!! let's tour through wikipedia for a second and see how it's organized. Look at these community incentive structures and the huge macro-to-micro level organization of the wiki projects. The infinitely mutable nature of a wiki is what makes it powerful, but the SaaS wikis we're familiar with don't capture the same kind of 'build the ground you walk on ' energy of the real wiki movement. 
+
 
 
 ### Rebuilding Scientific Communication
