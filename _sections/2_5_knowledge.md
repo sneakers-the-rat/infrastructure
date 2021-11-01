@@ -100,6 +100,8 @@ each of these systems can have multiple iterations, with different rules, and so
 
 ### Rebuilding Scientific Communication
 
+!! skohub! https://skohub.io/
+
 !! take stock of our communication technology, we publish pdfs in journals, have science twitter, and then a bunch of private slacks and smalltime stuff??? Science is fundamentally a communicative process, literally every part fo the system that I have described has been built aroudn the ability to express the structure of things, the order of things, how it relates to other things and *that's communication baby.* The system we've imagined so far takes us so far from forums and the ultradominant feed -> shallow thread-based communication that we're used to though. This is a system where we can have continuous dialogue about linked topics, be able to branch and see the reflections and subtle variations on ideas in the same place that we have our data, analysis, and tools.
 
 !! theory wiki example from presentation

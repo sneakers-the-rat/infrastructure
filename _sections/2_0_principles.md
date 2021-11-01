@@ -9,6 +9,8 @@ Throughout this section, when I am referring to any particular piece of software
 
 I won't attempt to derive a definition of decentralized systems from base principles here, but from the systemic constraints described above, some design principles that illustrate the idea emerge naturally. For the sake of concrete illustration, in some of these I will additionally draw from the architectural principles of the internet protocols: the most successful decentralized digital technology project.
 
+!! need to integrate {% cite larsenPoliticalNatureTCP2012 %}
+
 ### Protocols, not Platforms
 
 Much of the basic technology of the internet was developed as *protocols* that describe the basic attributes and operations of a process. A simple and common example is email over SMTP (Simple Mail Transfer Protocol){% cite Rfc5321SimpleMail %}. SMTP describes a series of steps that email servers must follow to send a message: the sender initiates a connection to the recipient server, the recipient server acknowledges the connection, a few more handshake steps ensue to describe the senders and receivers of the message, and then the data of the message is transferred. Any software that implements the protocol can send and and receive emails to and from any other. The protocol basis of email is the reason why it is possible to send an email from a gmail account to a hotmail account (or any other hacky homebrew SMTP client) despite being wholly different pieces of software. 
