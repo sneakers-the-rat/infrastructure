@@ -51,14 +51,12 @@
 \tableofcontents
 \pagebreak
 
+\hypertarget{react-test}{}
+
 \{\% include status.html \%\} \{\% include annotation.html \%\}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-
-\item
-  table of contents \{:toc\}
-\end{enumerate}
+\{\% include toc\_start.html \%\} 1. table of contents \{:toc\} \{\%
+include toc\_end.html \%\}
 
 \href{https://jon-e.net/infrastructure/tex/decentralized_infrastructure_render.pdf}{\textbf{PDF
 VERSION}}
@@ -986,6 +984,9 @@ prioritized local systems of knowledge, expressivity, ``believing that
 ontologies will evolve organically as everyday webmasters figure out
 what schemas they need to describe and link their data. \cite{poirierTurnScruffyEthnographic2017} ''
 
+!! include `hippie anarchists' vs `we reject kings, presidents and
+voting. we believe in rough consensus and running code' from \cite{larsenPoliticalNatureTCP2012}  ???
+
 Practically, the differences between these thought communities impact
 the tools they build. Aaron Swartz put the approach of the ``neat''
 semantic web architects the way he did:
@@ -1594,6 +1595,8 @@ the sake of concrete illustration, in some of these I will additionally
 draw from the architectural principles of the internet protocols: the
 most successful decentralized digital technology project.
 
+!! need to integrate \cite{larsenPoliticalNatureTCP2012} 
+
 \hypertarget{protocols-not-platforms}{%
 \subsubsection{Protocols, not Platforms}\label{protocols-not-platforms}}
 
@@ -2145,6 +2148,15 @@ seek to download will have to `earn' it by finding some chunk of data
 that the other peers want, download, and share them, though it seems
 like an empirical question whether or not a barter system works or is
 necessary.
+
+\href{https://solidproject.org/}{Solid} is a project that almost exactly
+meets all these needs \cite{capadisliSolidProtocol2020, sambraSolidPlatformDecentralized2016, SolidP2PFoundation} . Solid
+allows people to share data in
+\href{https://solidproject.org/about}{Pods}, which let them control
+access and distribution across storage system with a unified identity
+system. It is implementation-agnostic, and so can support peer-to-peer
+storage and transfer systems that comply with its
+\href{https://solidproject.org/TR/protocol}{protocol specification}.
 
 There are a number of additional requirements for a peer to peer
 scientific data infrastructure, but even these seemingly very technical
@@ -2941,6 +2953,56 @@ for data to train an algorithm, you need to feed it data, and so the
 translator gains the incentive to suck up as much personal and other
 data as it can.
 
+!! It doesn't even need to be Amazon, the publishers are getting into it
+too! RELX owns lexisnexis, a big identity management company, and is
+aggressively building out its machine-learning tools for science. From
+their 2019 annual shareholders report:
+
+\begin{leftbar}
+Elsevier serves academic and government research administrators and
+leaders through its Research Intelligence suite of products. SciVal is a
+decision tool that helps institutions to establish, execute and evaluate
+research strategies by leveraging bibliometric data {[}\ldots{]}
+Elsevier expanded its leadership position in research institution
+benchmarking analytics through further investment in its SciVal Topic
+Prominence in Science. Big data technology takes into consideration
+nearly all of the articles available in Scopus since 1996 and clusters
+them into nearly 96,000 global, unique research topics based on
+citations patterns.
+
+Elsevier's flagship clinical reference platform, ClinicalKey, provides
+physicians, nurses and pharmacists with access to leading Elsevier and
+third-party reference and evidence-based medical content {[}\ldots{]}
+Elsevier has developed a Healthcare Knowledge Graph, which utilises ML
+and Natural Language Processing (NLP) to knit together its collection of
+the world's foremost clinical knowledge. The Healthcare Knowledge Graph
+enhances ClincialKey, the portal into Elsevier's vast medical content
+library by providing more timely clinical results for users.
+
+{[}\ldots{]} For healthcare professionals, Elsevier's clinical solutions
+include Interactive Patient Education and Care Planning. Elsevier's
+ClinicalPath (formerly Via Oncology) provides clinical pathways
+delivering personalised, evidence-based oncology guidance at the point
+of care. Elsevier's analytics capabilities in oncology support our
+ClinicalPath customers in answering increasingly complex questions
+around the delivery of cancer care, such as appropriate use of precision
+oncology and treatment adherence.
+\end{leftbar}
+
+!! So not only do we risk distorting the practice of medicine, we could
+distort the entire trajectory of science. SciVal autoranks researchers
+and institutions based on how ``hot'' their research programs are, and
+helps suggest topics that are more likely to get a grant, etc. Since
+they also aggressively control what gets recommended, and have also
+recently started literally selling ads on their websites, they could
+easily create the same kind of informational bubbles that we are
+familiar with from social media. And with the combination of a
+biomedical knowledge graph contiguous with the pharmaceutical industry,
+they could steer all basic research --- perhaps with us being only dimly
+aware --- to support the profit of their pharmaceutical partners. This
+isn't even speculative !
+https://www.elsevier.com/solutions/biology-knowledge-graph
+
 Even assuming the Translator works perfectly and has zero unanticipated
 consequences, the development strategy still reflects the inequities
 that pervade science rather than challenge them. Biopharmaceutical
@@ -3613,7 +3675,15 @@ point to
 addressed} identifiers that are served peer to peer. A
 mutable/changeable/human-readable name and metadata system that points
 to a system of permanent, unique identifiers has been one need that has
-hobbled IPFS, and is the direction pointed to by DataLad \cite{hankeDefenseDecentralizedResearch2021} 
+hobbled IPFS, and is the direction pointed to by DataLad \cite{hankeDefenseDecentralizedResearch2021} . A
+\href{https://mastodon.social/@humanetech/107155144840782386}{parallel}
+\href{https://web.archive.org/web/20211024082055/https://socialhub.activitypub.rocks/t/which-links-between-activitypub-and-solid-project/529}{set}
+of
+\href{https://web.archive.org/web/20211024080845/https://socialhub.activitypub.rocks/t/how-solid-and-activitypub-complement-each-other-best/727}{conversations}
+has been
+\href{https://web.archive.org/web/20211024081238/https://forum.solidproject.org/t/discussion-solid-vs-activitypub/2685}{happening}
+in the broader linked data community with regard to using ActivityPub as
+a way to index data on Solid.
 
 In this example I have been implicitly treating the
 \texttt{@nwbFederation} users like bittorrent trackers, keeping track of
@@ -3734,8 +3804,8 @@ doing work easier and openness automatic. To make this possible, we
 should focus on developing \emph{frameworks to build} experimental and
 analysis tools, rather than developing more tools themselves.
 
-\hypertarget{analytical-framework}{%
-\subsubsection{Analytical Framework}\label{analytical-framework}}
+\hypertarget{analytical-frameworks}{%
+\subsubsection{Analytical Frameworks}\label{analytical-frameworks}}
 
 The first natural companion of shared data infrastructure is a shared
 analytical framework. A major driver for the need for everyone to write
@@ -4122,6 +4192,162 @@ here are worth unpacking, but we'll hold until the end of the shared
 tools section and we have a chance to consider what this system might
 look like for experimental tools.
 
+
+\end{multicols}
+
+
+\hypertarget{experimental-frameworks}{%
+\subsubsection{Experimental Frameworks}\label{experimental-frameworks}}
+
+
+\begin{multicols}{2}
+ Data that is to be analyzed has to be collected somehow.
+Tools to bridge the body of experimental practice are a different
+challenge than analyzing data, or at least so an anecdotal census of
+scientific software tools would suggest. \emph{Everyone needs completely
+different things!} As practiced, we might imagine the practice of
+science as a cone of complexity: We can imagine the relatively few
+statistical outcomes from a family of tests and models. For every test
+statistic we can imagine a thousand analysis scripts, for every analysis
+script we might expect a hundred thousand data formats, and so the
+french-horn-bell convexity of complexity of experimental tools used to
+collect the data feels \ldots{} different.
+
+Beyond a narrow focus of the software for performing experiments itself,
+the contextual knowledge work that surrounds it largely lacks a means of
+communication and organization. Scientific papers have increasingly
+marginalized methods sections, being pushed to the bottom, abbreviated,
+and relegated to supplemental material. The large body of work that is
+not immediately germane to experimental results, like animal care,
+engineering instruments, lab management, etc. have effectively no formal
+means of communication --- and so little formal means of credit
+assignment.
+
+Extending our ecosystem to include experimental tools has a few
+immediate benefits: bridging the gap between collection and sharing data
+would resolve the need for format conversion as a prerequisite for
+inclusion in the linked system, allowing the expression of data to be a
+fluid part of the experiment itself; and serving as a concrete means of
+implementing and building a body of cumulative contextual knowledge in a
+creditable system.
+
+I have previously written about the design of a generalizable,
+distributed experimental framework in section 2, and about one modular
+implementation in section 3 of \cite{saundersAutopilotAutomatingBehavioral2019} , and since many of the
+ideas from the section on analysis tools apply here as well, I will be
+relatively brief.
+
+We don't have the luxury of a natural formalism like a DAG to structure
+our experimental tools. Some design constraints on experimental
+frameworks might help explain why:
+
+\begin{itemize}
+
+\item
+  They need to support a wide variety of instrumentation, from
+  \textbf{off-the-shelf parts,} to \textbf{proprietary instruments} as
+  are common in eg. microscopy, to \textbf{custom, idiosyncratic
+  designs} that might make up the existing infrastructure in a lab.
+\item
+  To be supportive, rather than constraining, they need to be able to
+  \textbf{flexibly perform many kinds of experiments} in a way that is
+  \textbf{familiar to patterns of existing practice.} That effectively
+  means being able to coordinate heterogeneous instruments in some
+  ``task'' with a flexible syntax.
+\item
+  They need to be \textbf{inexpensive to implement,} in terms of both
+  money and labor, so it can't require buying a whole new set of
+  hardware or dramatically restructuring existing research practices.
+\item
+  They need to be \textbf{accessible and extensible,} with many
+  different points of control with different expectations of expertise
+  and commitment to the framework. It needs to be useful for someone who
+  doesn't want to learn it to its depths, but also have a comprehensible
+  codebase at multiple scales so that reasearchers can \textbf{easily
+  extend} it when needed.
+\item
+  They need to be designed to support \textbf{reproducibility and
+  provenance,} which is a significant challenge given the heterogeneity
+  inherent in the system. On one hand, being able to produce \emph{data
+  that is clean at the time of acquisition} simplifies automated
+  provenance, but enabling experimental replication requires multiple
+  layers of abstraction to keep the idiosyncracies of an experiment
+  separable from its implementation: it shouldn't require building
+  \emph{exactly} the same apparatus with \emph{exactly} the same parts
+  connected in \emph{exactly} the same way to replicate an experiment.
+\item
+  Ideally, they need to support \textbf{cumulative labor and knowledge
+  organization,} so an additional concern with designing abstractions
+  between system components is allowing work to be made portable and
+  combinable with others. The barriers to contribution should be
+  extremely minimal, not requiring someone to be a professional
+  programmer to make a pull request to a central library, and
+  contributions should come in many modes --- code is not the only form
+  of knowing and it's far from the only thing needed to perform an
+  experiment.
+\end{itemize}
+
+Here, as in the domains of data and analysis, the temptation to be
+universalizing is strong, and the parts of the problem that are
+emphasized influence the tools that are produced. A common design tactic
+for experimental tools is to design them as state machines, a system of
+states and transitions not unlike the analysis DAGs above. One such
+nascent project is
+\href{https://archive.org/details/beadl-xml-documentation-v-0.1/mode/2up}{BEADL}
+\cite{wulfBEADLXMLDocumentation2020}  from a Neurodata Without
+Borders
+\href{https://archive.org/details/nwb-behavioral-task-wg}{working
+group}. BEADL is an XML-based markup for standardizing a behavioral task
+as an abstraction of finite state machines called
+\href{https://statecharts.github.io/}{statecharts}. Experiments are
+fully abstract from their hardware implementation, and can be formally
+validated in simulations. The working group also describes creating a
+standardized ontology and metadata schema for declaring all the many
+variable parameters for experiments, like reward sizes, stimuli, and
+responses \cite{nwbbehavioraltaskwgNWBBehavioralTask2020} . This
+group, largely composed of members from the Neurodata Without Borders
+team, understandably emphasize systematic description and uniform
+metadata as a primary design principle.
+
+This means of standardization has many attractive qualities and is being
+led by very capable researchers, but I think the project is illustrative
+of how the differing constraints of different systems and differing
+goals of different approaches influence the possible space of tooling.
+Analysis tasks are often asynchronous, where the precise timing of each
+node's completion is less important than the path dependencies between
+different nodes be clearly specified. Analysis tasks often have a
+clearly defined set of start, end, and intermediate cache points, rather
+than branching or cyclical decision paths that change over multiple
+timescales. Statecharts are a hierarchical abstraction of finite state
+machines, the primary advantage of which is that they are better able to
+incorporate continuous and history-dependent behavior, which causes
+state explosion in traditional finite-state machines.
+
+The syntax of statecharts is actually nice, and I am personally a fan.
+The problem is that it's not necessarily natural to express things as
+statecharts as you would want to, or in the way that your existing,
+long-developed local experimental code does. There are only a few
+syntactical features needed to understand the following statechart:
+blocks are states, they can be inside each other. Arrows move between
+blocks depending on some condition. Entering and exiting blocks can make
+things happen. Short little arrows from filled spots are where you start
+in a block, and when you get to the end of the chart you go back to the
+first one. See the following example of a statechart for controlling a
+light, described in the
+\href{https://statecharts.dev/on-off-statechart.html}{introductory
+documentation} and summarized in the figure caption:
+
+\includegraphics[width=\linewidth]{../assets/images/on-off-delayed-exit-1.png}
+\emph{``When you flick a lightswitch, wait 0.5 seconds before turning
+the light on, then once it's on wait 0.5 seconds before being able to
+turn it back off again. When you flick it off, wait 2 seconds before you
+can turn it on again.}
+
+They have an extensive set of documents that defend the consistency and
+readability of statecharts on their
+\href{https://statecharts.dev/}{homepage}, and my point here is not to
+disagree with them.
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{draftmarker}{}
@@ -4130,22 +4356,76 @@ look like for experimental tools.
 \textasciitilde{} everything past here is purely draft placeholder text
 \textasciitilde{}
 
+!! complexity of system leads us to need to adopt statecharts to handle
+time !! focus on format makes us want to adopt schema, and that's really
+why we're cluing in here: bunch of people in very similar space and
+aligned ideas but very different conclusions. !! instead of focusing on
+the design of the system in a metastructural sense, ie. by finding a way
+to represent it as a DAGlike or model-based thing, here the design of
+the system demands a different kind of system, but one that's relatively
+well accomodated by a system that's based around expression rather than
+logical completeness. !! but statecharts clearly demonstrate the way
+that different constraints on schemas constrain different possible
+styles of thought. Sure it's possible to reason through that, and it
+might even be delightful, but how does that look to a stressed grad
+student trying to figure out how to make the dozens of different
+hardware components linked together using a body of code summoned from
+hell itself work in some fancy new system!? It's definitely more logical
+and testable and has fewer side effects, but is that the main problem we
+have!? !! because we can't imagine the possible different needs of the
+system \emph{in action} we can split it along different domains of the
+\emph{tools employed.} Focusing on the ways people already think about
+the problem rather than redesigning the problem. !! this is a matter of
+slicing the problem differently: a lightbulb in statecharts is
+represented as \ldots{} but in autopilot we would think of it as a
+hardware object. !! an attractive feature of statecharts is their
+abstraction from implementation, but that's possible in other ways too
+(see autopilot) !! both are representable in our semantic federation
+naming system. but the question is how they are embedded in the current
+practices. This system would be a big lift to incorporate into existing
+practice. And so as a protocol it does enable a body of different
+implementations to use it, the schema itself is complicated and encodes
+a particular style fo thinking. !! and finally returning to
+standardization of schemas, rather than trying to define some vocabulary
+that evetyon agrees on using in the one means of expressing experiments,
+it's impossible to take a lesson from language and instead define terms
+depending on their use: see plugin model and flexible semantic linking.
+which leads into next section\ldots.
+
+!! fit this next idea in in above section where appropriate: !! this is
+not to pick on statecharts themselves or to make too big a deal out of
+them. Upstream a bit we have general purpose tools like psychopy,
+psychtoolbox, and Bonsai\ldots{} !! all these are useful contributions
+to the domain, but contrastive with a generalizable framework. !! really
+bigg empathy with statechart ppl, like basically agree with this
+https://statecharts.dev/faq/why-statecharts-are-not-used.html and they
+should be used more, but talking broad scale ``what works for everyone''
+it's just too specific!!! !! the alternative model here really is just
+community control and communication, and statecharts are fully
+compatible with that. statechart ppl get their own namespace. !! here
+we're trying to illustrate not the best approach to \emph{experimental
+software} but how a generalized infrastructure is capable of reflecting
+itself differently in different domains, and illustrate some advantages
+of designs that explicitly are intended to accomodate that.
+
+!! proceed to autopilot description, through wiki stuff, to next
+section. !! points to highlight are different division of labor, the
+choice to have schemas be resolved by wiki and continual deliberation
+rather than constraining a terminological space. plugins that describe
+different modes of using a system that can all be contributed and are
+focused on recombination rather than state charts which are more for
+discrete programming. !! incomplete, but keep brief, demonstrate
+reference to same idea implemented in statecharts and autopilot-like
+syntax being able to be linked with different namespaces !! emphasize
+reuse of labor by emphasizing recombining different elements. DAGs might
+not work here, but if the individual nodes are different hardware
+objects and so on we get a bit closer. Bonsai is a good example of this
+too, it too has different (valid) design goals/constraints but along
+different axes.
+
 
 \end{multicols}
 
-
-\hypertarget{experimental-framework}{%
-\subsubsection{Experimental Framework}\label{experimental-framework}}
-
-I've taken this out for now because it needs to be reworked
-dramatically, but it's basically a lot of what I talk about in the
-autopilot manuscript, cross apply a lot of the same thinking from the
-previous section, and put it on the other side of the data where we're
-feeding data directly from the tool into the data stream. The other part
-to note is that it becomes possible to make the same kinds of semantic
-links that we're talking about from a semantic communication medium
-(next section) that can gather contextual knowledge, publications, etc.
-back to the code we used to run the experiments.
 
 \hypertarget{collectivizing-the-state-of-the-art}{%
 \subsubsection{Collectivizing the State of the
@@ -4261,15 +4541,64 @@ metadata from federation section.
 
 
 \begin{multicols}{2}
- !! cite that one paper about how tons of papers don't make
-for better research
+ The remaining set of problems implied by the
+infrastructural system sketched in the preceding sections is the
+\emph{communication} and \emph{organization} systems that make up the
+interfaces to maintain and use it. We can finally return to some of the
+breadcrumbs laid before: negotiating over distributed and conflicting
+data schema, the potential forms of social systems for incentivizing and
+organizing labor discussed previously in the context of bittorrent
+trackers, and a means of maintaining the links between the broadly
+dispersed components of the infrastructure.
 
-!! jimmy wales on wikipedia:
+To do that we'll trace a bit more of the history of the semantic web
+community, as well as the parallel but distinct history of the early
+wiki movement. We'll land back in the realm of ActivityPub
 
-!! why is it that literally every project is organized on google docs
-and slack? we can do better for collective organization
+!! we'll describe a way to {[}summarize open spaces left by preceding
+sections{]} !! while a full consideration of the journal system as a
+whole is strictly out of scope of this paper, the system as developed
+renders it effectively irrelevant.
 
-!! https://www.dbpedia.org/
+current status - our current systems are largely journals and
+conferences, but as evidenced by the unfortunate but widescale adoption
+of twitter, scientific communication naturally spans dispersed forms of
+communication at different scales of formality, length, public
+engagement, etc. - when we go to organize ourselves, why is the best we
+can do google docs and slack?
+
+problems - Despite being, in some sense, an effort to organize and
+systematize human knowledge, \emph{science effectively has no system of
+organization.} - The best we have is journals that are only loosely
+organized around large topic areas and citation networks, citation
+networks, which are un-annotated and un-descriptive, and unidimensional
+keywords. - So one way of reading \cite{chuSlowedCanonicalProgress2021}  is that there are too many papers,
+but another way of reading it is that our systems of organizing
+scientific communication simply don't scale well since they rely mostly
+on scanning TOC alerts, google scholar, and happenstance. - Another
+impact of the arcanity of scientific knowledge organization is that it
+is effectively impenetrable to people that aren't domain experts. Why is
+trust in science so low right now? one contributor is that they have no
+idea what the hell we do or how different domains of knowledge have
+evolved. (cite cold war peer review and journals paper) - Practically,
+this makes the quality of scientific literature constantly in question.
+Each paper effectively exists as an island, and engagement with prior
+literature is effectively optional (outside the minimum bar set by the
+3-5 additional private peer reviewers, each with their own limited scope
+and conflicting interests). Forensic peer-reviewers have been ringing
+the alarm bell, saying that there is ``no net'' to bad research \cite{heathersRealScandalIvermectin2021} , and brave and
+highly-skilled investigators like
+\href{https://scienceintegritydigest.com/}{Elisabeth Bik} have found
+thousands of papers with evidence of purposeful manipulation \cite{shenMeetThisSuperspotter2020, bikPrevalenceInappropriateImage2016} . -
+So our existing systems of communication and organization are woefully
+inadequate for our needs, and don't serve the role of guaranteeing
+consistency or reliability in research that they claim to.
+
+contextual knowledge needed - our limited systems of communication also
+render large sections of needed scientific communication without venue.
+The existing tools that \emph{do} give some means of sharing technical
+knowledge are distinctly charity-driven, and don't confer the same type
+of credit incentive that publications do.
 
 !! important of ease of leaving
 http://meatballwiki.org/wiki/RightToLeave
@@ -4292,43 +4621,6 @@ http://meatballwiki.org/wiki/RewardReputation
 !! wikis work! but they can break when people get too much power!
 http://www.aaronsw.com/weblog/whorunswikipedia
 
-!! why is public trust in scientists so low? could it be that there is
-an alternative to scientists seeing themselves as cloistered experts?
-re: cold war peer review paper
-
-The (part of the system that's most needed and potentially
-transformative) is a system of scientific communication.
-
-Except for certain domain-specific exceptions, the scientific
-communication system consists of the two ancient monoliths groaning with
-the dust of their obsolescence: the dead and static papers of the
-traditional journal system, and the ephemeral halo of insider knowledge
-shared at conferences. The remainder of the gigantic overflowing franzia
-bag of scientific discourse is funelled ingloriously onto
-Twitter\footnote{no citation needed, right? if there is some other
-  bastion of scientific discourse i would love to know about it.} ---
-and it \emph{sucks}.
-
-Since the advent of the contemporary journal system, communication
-technology has been stripped to its very atoms and rebuilt --- and it
-has managed to dig in and \emph{persist} while all the letterman jackets
-and beatniks of its era have become vape teens on tiktok. A
-reconsideration of the entire scientific publishing system is strictly
-out of scope for this paper, but the communication system I will
-describe exists in the gaps of need it leaves unfilled. Criticisms of
-the scientific communication system typically start by imaginging much
-of the contemporary journal system as etched as fact on the face of
-reality, and tweaking at a few of its more ticklish knobs (eg. \cite{heesenPeerReviewGood2020} ). Instead let's try it the other way: to
-trace the outlines of how a scientific communication system
-\emph{should} work, given the basis of holistic infrastructure described
-so far. I will argue that a communication system, and more specifically
-the community it supports, is the blood that must pump through any of
-these digital systems that aspire to call themselves infrastructure. To
-arrive at a proposed form for a system, I'll start by laying the basic
-axes of communication technology, and then load the scales with the
-empirical girth of the largest knowledge systems that have ever existed:
-Wikipedia and internet piracy.
-
 There simply isn't a place to have longform, thoughtful, durable
 discussions about science. The direct connection between the lack of a
 communcaition venue to the lack of a way of storing technical,
@@ -4342,11 +4634,9 @@ and integrated with those described in the previous sections, its form
 becomes much clearer, and it could serve as the centerpiece of
 scientific infrastructure.
 
-I will argue that we should build a semantically-enabled communication
-and knowledge-base system on top of activitypub to unify the preceding
-digital infrastructure elements. !!importantly, should also have means
-of ingest for existing tools and elements -- easy to import existing
-papers and citation trees, plugins for existing data sharing systems.
+!! importantly, should also have means of ingest for existing tools and
+elements -- easy to import existing papers and citation trees, plugins
+for existing data sharing systems.
 
 !! description of its role as a schema resolution system -- currently we
 implement all these protocols and standards in these siloed, centralized
@@ -4363,20 +4653,9 @@ field possible to answer, as discussions are linked to one another in a
 structured way and it is possible to literally trace the flow of
 thought.
 
-!! let's tour through wikipedia for a second and see how it's organized.
-Look at these community incentive structures and the huge macro-to-micro
-level organization of the wiki projects. The infinitely mutable nature
-of a wiki is what makes it powerful, but the SaaS wikis we're familiar
-with don't capture the same kind of `build the ground you walk on'
-energy of the real wiki movement.
-
-!! what's critically different here between other projects is that we
-are explicitly considering the incentives to join each of these efforts,
-and by integrating them explicitly, each of them is more appealing. so
-while there are lots of databases, lots of analysis systems, lots of
-wikis, and so on, there aren't many that are linked with one another
-such that participating in one part of the system makes the rest of the
-system more powerful as well as makes it more useful to the user.
+!! should trace the development of AP and the difficulty of doing these
+things as a way to explaining the ecosystem and the different parts that
+are needed in it: https://www.w3.org/TR/social-web-protocols/
 
 \hypertarget{axes-of-communication-systems}{%
 \subsubsection{Axes of Communication
@@ -4511,9 +4790,18 @@ https://www.w3.org/2001/sw/
 !! Semantic combination of databases in science are also not new \cite{cheungSemanticWebApproach2007, simaEnablingSemanticQueries2019} .
 We need both though! semantic federated databases!
 
+!! let's tour through wikipedia for a second and see how it's organized.
+Look at these community incentive structures and the huge macro-to-micro
+level organization of the wiki projects. The infinitely mutable nature
+of a wiki is what makes it powerful, but the SaaS wikis we're familiar
+with don't capture the same kind of `build the ground you walk on'
+energy of the real wiki movement.
+
 \hypertarget{rebuilding-scientific-communication}{%
 \subsubsection{Rebuilding Scientific
 Communication}\label{rebuilding-scientific-communication}}
+
+!! skohub! https://skohub.io/
 
 !! take stock of our communication technology, we publish pdfs in
 journals, have science twitter, and then a bunch of private slacks and

@@ -21,10 +21,15 @@ This means of standardization has many attractive qualities and is being led by 
 
 The syntax of statecharts is actually nice, and I am personally a fan. The problem is that it's not necessarily natural to express things as statecharts as you would want to, or in the way that your existing, long-developed local experimental code does. There are only a few syntactical features needed to understand the following statechart: blocks are states, they can be inside each other. Arrows move between blocks depending on some condition. Entering and exiting blocks can make things happen. Short little arrows from filled spots are where you start in a block, and when you get to the end of the chart you go back to the first one. See the following example of a statechart for controlling a light, described in the [introductory documentation](https://statecharts.dev/on-off-statechart.html) and summarized in the figure caption:
 
-![on off delayed exit statechart, see https://statecharts.dev/on-off-statechart.html for full descriptive text](assets/images/on-off-delayed-exit-1.svg)
+![on off delayed exit statechart, see https://statecharts.dev/on-off-statechart.html for full descriptive text](/infrastructure/assets/images/on-off-delayed-exit-1.svg)
 *"When you flick a lightswitch, wait 0.5 seconds before turning the light on, then once it's on wait 0.5 seconds before being able to turn it back off again. When you flick it off, wait 2 seconds before you can turn it on again.*
 
 They have an extensive set of documents that defend the consistency and readability of statecharts on their [homepage](https://statecharts.dev/), and my point here is not to disagree with them.
+
+---
+
+<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
+
 
 !! complexity of system leads us to need to adopt statecharts to handle time
 !! focus on format makes us want to adopt schema, and that's really why we're cluing in here: bunch of people in very similar space and aligned ideas but very different conclusions.
