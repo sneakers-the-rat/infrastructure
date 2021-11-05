@@ -27,8 +27,11 @@
 \usepackage{fancyvrb}
 \usepackage{listings}
 \usepackage[savepos]{zref}
+\usepackage{layout}
+\usepackage{setspace}
 % \usepackage{bigfoot}
 \usepackage{tocloft}
+\usepackage{etoolbox}
 \usepackage[font=footnotesize, labelfont=bf]{caption}
 \usepackage{svg}
 \usepackage[
@@ -60,10 +63,10 @@
 
 %% para spacing instead of indents
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
+\setlength{\parskip}{0.5em}
 
 %% no spacing in lists
-\setlist{nosep, itemsep=0.5em}
+\setlist{nosep, itemsep=0.5em, itemindent=0em, labelindent=0em, leftmargin=1em}
 % \setlist[1]{labelindent=1em, itemsep=0.5em}
 % \setenum{nosep, itemsep=0.5em}
 
@@ -88,6 +91,12 @@
 \renewenvironment{leftbar}
 {\def\FrameCommand{\hspace{0em}\vrule width 0.5pt \hspace{1em}}\MakeFramed {\advance\hsize-\width \FrameRestore}}
 {\endMakeFramed}
+
+% restyling blockquotes
+\patchcmd{\quote}{\rightmargin}{\leftmargin 1em \rightmargin}{}{}
+
+
+\AtBeginEnvironment{quote}{\singlespacing\small}
 
 \newenvironment{ideabox}
 {\def\FrameCommand{\hspace{0em}{\color{red}\vrule width 0.5pt} \hspace{1em}}\MakeFramed {\advance\hsize-\width \FrameRestore}}
@@ -139,7 +148,7 @@
 \setlength{\abovecaptionskip}{3pt plus 2pt minus 3pt}
 
 %% restyle sectino headers
-\titleformat{\section}{\normalfont\Huge\bfseries}{\thesection.}{1em}{}
+\titleformat{\section}{\normalfont\huge\bfseries}{\thesection.}{1em}{}
 \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
 % \let\clearpage\relax
 

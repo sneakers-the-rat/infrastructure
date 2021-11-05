@@ -191,13 +191,16 @@ if __name__ == "__main__":
 
 
     text = re.compile(r'(?<=\\includegraphics\{)/blog([^}]*)').sub(fr'{"/Users/jonny/git/sneakers-the-rat.github.io/_preblog"}\1', text)
-    text = re.compile(r'\\begin\{quote\}').sub(r'\\begin{leftbar}', text)
-    text = re.compile(r'\\end\{quote\}').sub(r'\\end{leftbar}', text)
+    # text = re.compile(r'\\begin\{quote\}').sub(r'\\begin{leftbar}', text)
+    # text = re.compile(r'\\end\{quote\}').sub(r'\\end{leftbar}', text)
     text = re.compile(r'(?<=\\includegraphics)(\{[^}]*})').sub(r'[width=\\linewidth]\1', text)
     # fix relative links to images
     text = re.compile(r'(?<=\\includegraphics\[width=\\linewidth\]\{)/infrastructure').sub(r'..', text)
     # strip that one \cite{d} that always shows up
     text = re.compile(r"\\cite\{d\}").sub('', text)
+    # svg to png
+    text = re.compile(r"\.svg").sub(r'.png', text)
+
 
 
     with open(out_fn, 'w') as out_f:

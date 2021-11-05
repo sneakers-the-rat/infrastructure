@@ -19,3 +19,26 @@
     }
   }
 }
+
+
+.trimlink {
+	width: 100%;
+	border: 1px solid black;
+  background-color: orangered;
+  color: white;
+	box-shadow: 5px 5px black;
+	margin: 0 0 1em 0;
+	padding: 15px;
+
+	a {
+		background-color:white;
+		box-shadow: 5px 5px black;
+		padding: 5px;
+		margin: 5px;
+		font-family: $monospaced;
+	}
+
+	span {
+		
+	}
+}

@@ -64,6 +64,10 @@ More fundamentally, a shared data and analysis framework would change the nature
 
 In effect, analytical infrastructure can at least partially "decouple" the data in a paper from its analyis, and thus the interpretations offered by the primary researchers. For a given paper, if it was possible to see its results as analyzed by all the different processing pipelines that have been applied to it, then a set of observations remains a living object rather than a fixed, historical object frozen in carbonite at the time of publication. In addition to statements of consensus that can programmatically aggregate *existing* results as described by the primary researchers, it also becomes possible to make *fluid* statements of consensus, such that a body of data when analyzed with some new analysis pipeline can yield an entirely *new* set of outcomes unanticipated by the original authors. I think many scientists would agree that this is how an ideal scientific process would work, and this is one way of dramatically lowering the structural barriers that make it deviate from that ideal.
 
+---
+
+centralized infrastructure and information companies are 7 out of the 10 largest companies in the world (cite mozilla internet health), and if there are any goodhearted decentralized tech companies out there they're simply swamped in size. 
+
 
 
 ----------

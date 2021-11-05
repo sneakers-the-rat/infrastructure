@@ -7,7 +7,10 @@ navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
 ---
 
-<div id="react-test"></div>
+<div class="trimlink">
+<a href="trims">Trimmings</a> <span>from the main document for future pieces</span>
+</div>
+
 
 {% include status.html %}
 {% include annotation.html %}
@@ -97,11 +100,12 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 {% include_relative _sections/1_0_costs.md %}
 
-## Systems Neuroscience Specifically...
 
-{% include_relative _sections/1_0_state-neuro.md %}
+## (Mis)incentives in Scientific Software
 
-## Scientific Software Generally...
+<div class="trimlink">
+<a href="trims.html#systems-neuroscience-specifically">Systems Neuro</a> <span>specific problems for infrastructure</span>
+</div>
 
 {% include_relative _sections/1_1_state-general.md %}
 
