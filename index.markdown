@@ -12,9 +12,10 @@ canonical_url: "https://jon-e.net/infrastructure"
 {% include status.html %}
 {% include annotation.html %}
 
-
+{% include toc_start.html %}
 1. table of contents
 {:toc}
+{% include toc_end.html %}
 
 [**PDF VERSION**](/infrastructure/tex/decentralized_infrastructure_render.pdf)
 
