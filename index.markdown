@@ -132,7 +132,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 {% include_relative _sections/2_3_tools-analysis.md %}
 
 
-### Experimental Framework
+### Experimental Frameworks
 
 > I've taken this out for now because it needs to be reworked dramatically, but it's basically a lot of what I talk about in the autopilot manuscript, cross apply a lot of the same thinking from the previous section, and put it on the other side of the data where we're feeding data directly from the tool into the data stream. The other part to note is that it becomes possible to make the same kinds of semantic links that we're talking about from a semantic communication medium (next section) that can gather contextual knowledge, publications, etc. back to the code we used to run the experiments. - jonny
 
