@@ -3,13 +3,13 @@
 
   {% include head.html %}
 
-  <body>
+  <body vocab="https://schema.org/" typeof="ScholarlyArticle">
 
     {% if page.navigation %}
     {% include navigation.html %}
     {% endif %}
 
-    <main>
+    <main property="articleBody">
       {{ content }}
     </main>
 

@@ -60,7 +60,11 @@ scholar:
 #
 
 # why does it take longer and longer to build every time
-disable_disk_cache: true
+disable_disk_cache: false
+
+kramdown:
+  parse_block_html: false
+
 
 exclude:
   - .DS_Store

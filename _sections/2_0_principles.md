@@ -11,9 +11,14 @@ I won't attempt to derive a definition of decentralized systems from base princi
 
 !! need to integrate {% cite larsenPoliticalNatureTCP2012 %}
 
-### Protocols, not Platforms
+{% include rdfa.html 
+resource="protocols" 
+typeof="skos:Concept" 
+contents="###  Protocols, not Platforms" %}
 
-Much of the basic technology of the internet was developed as *protocols* that describe the basic attributes and operations of a process. A simple and common example is email over SMTP (Simple Mail Transfer Protocol){% cite Rfc5321SimpleMail %}. SMTP describes a series of steps that email servers must follow to send a message: the sender initiates a connection to the recipient server, the recipient server acknowledges the connection, a few more handshake steps ensue to describe the senders and receivers of the message, and then the data of the message is transferred. Any software that implements the protocol can send and and receive emails to and from any other. The protocol basis of email is the reason why it is possible to send an email from a gmail account to a hotmail account (or any other hacky homebrew SMTP client) despite being wholly different pieces of software. 
+Much of the basic technology of the internet was developed as *protocols* that describe the basic attributes and operations of a process. 
+{% include rdfa2.html resource="protocols" property="skos:example" contents="A simple and common example is email over SMTP (Simple Mail Transfer Protocol)" %}
+{% cite Rfc5321SimpleMail %}. SMTP describes a series of steps that email servers must follow to send a message: the sender initiates a connection to the recipient server, the recipient server acknowledges the connection, a few more handshake steps ensue to describe the senders and receivers of the message, and then the data of the message is transferred. Any software that implements the protocol can send and and receive emails to and from any other. The protocol basis of email is the reason why it is possible to send an email from a gmail account to a hotmail account (or any other hacky homebrew SMTP client) despite being wholly different pieces of software. 
 
 In contrast, *platforms* provide some service with a specific body of code usually without any pretense of generality. In contrast to email over SMTP, we have grown accustomed to not being able to send a message to someone using Telegram from WhatsApp, switching between multiple mutually incompatible apps that serve nearly identical purposes. Platforms, despite being *theoretically* more limited than associated protocols, are attractive for many reasons: they provide funding and administrative agencies a single point of contracting and liability, they typically provide a much more polished user interface, and so on. These benefits are short-lived, however, as the inevitable toll of lock-in and shadowy business models is realized.
 
