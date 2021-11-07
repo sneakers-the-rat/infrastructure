@@ -17,13 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		lastPathEnd;
 
 	var lastVisible;
+	var lastContainer;
 
 	window.addEventListener( 'resize', drawPath, false );
 	window.addEventListener( 'scroll', sync, false );
 
+	initPath();
 	drawPath();
 
-	function drawPath() {
+	function initPath() {
 
 		tocItems = [].slice.call( toc.querySelectorAll( 'li' ) );
 
@@ -43,6 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		tocItems = tocItems.filter( function( item ) {
 			return !!item.target;
 		} );
+	}
+
+	function drawPath() {
+
 
 		var path = [];
 		var pathIndent;
@@ -80,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		pathLength = tocPath.getTotalLength();
 
-		sync();
+		// sync();
 
 	}
 
@@ -105,8 +111,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 				visibleItems += 1;
 				lastVisible = item;
+				// lastContainer = item.listItem.parentElement;
 
 				item.listItem.classList.add( 'visible' );
+				console.log('visible item', item);
+
+				// checkContainers(lastVisible);
 			}
 			else {
 				if (visibleItems>1 || item !== lastVisible){
@@ -115,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 
 		} );
+
 
 		// Specify the visible path or hide the path altogether
 		// if there are no visible items
@@ -133,6 +144,34 @@ document.addEventListener("DOMContentLoaded", function() {
 		lastPathEnd = pathEnd;
 
 	}
+
+
+ //    function checkContainers(item){
+ //    	if (lastContainer == undefined ){
+ //    		lastContainer = item.listItem.parentElement;
+ //    	}
+ //    	if (item.listItem.parentElement !== lastContainer){
+ //    		if (!lastContainer.contains(item.listItem.parentElement)){
+ //    			let remcontainer = lastContainer;
+ //    			while (!remcontainer.classList.contains('toc')){
+ //    				remcontainer.classList.remove('opened');
+ //    				remcontainer = remcontainer.parentElement;
+ //    			}
+
+ //    		}
+
+ //    		lastContainer = item.listItem.parentElement;
+
+ //    		let addcontainer = lastContainer;
+ //    		while (!addcontainer.classList.contains('toc')){
+ //    			addcontainer.classList.add('opened');
+ //    			addcontainer = addcontainer.parentElement;
+ //    		}
+
+ //    		drawPath();
+ //    	}
+
+	// }
 
 }
 )

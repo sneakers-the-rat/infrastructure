@@ -64,6 +64,7 @@ disable_disk_cache: false
 
 kramdown:
   parse_block_html: false
+  toc_levels: "1,2"
 
 
 exclude:

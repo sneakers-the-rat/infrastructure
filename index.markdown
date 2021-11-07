@@ -5,6 +5,7 @@ subtitle: "Or, Kill the Cloud in Your Mind"
 author: "Jonny Saunders"
 navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
+toc_levels: "1..2"
 ---
 
 <div class="trimlink">
