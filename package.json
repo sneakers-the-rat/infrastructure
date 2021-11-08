@@ -6,7 +6,7 @@
   "author": "sneakers-the-rat <JLSaunders987@gmail.com>",
   "license": "MPL-2.0",
   "scripts": {
-    "start": "webpack serve -c ./_react/config/webpack.dev.js --mode development",
+    "start": "webpack -c ./_react/config/webpack.dev.js --mode development",
     "build": "webpack -c ./_react/config/webpack.prod.js  --mode production"
   },
   "dependencies": {

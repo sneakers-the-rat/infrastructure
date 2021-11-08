@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './components/App'
+import RDFA from './components/rdfa'
 
-ReactDOM.render(<App/>, document.getElementById('react-test'))
+ReactDOM.render(<RDFA/>, document.getElementById('rdfa-component'))
 
 

@@ -47,3 +47,4 @@ vendor
 
 node_modules
 
+assets/js/main.*

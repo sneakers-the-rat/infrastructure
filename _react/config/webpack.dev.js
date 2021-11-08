@@ -8,6 +8,10 @@ const common = require('./webpack.common.js')
 module.exports = merge(common, {
   // Set the mode to development or production
   mode: 'development',
+  watch: true,
+  watchOptions: {
+    ignored: '**/node_modules/',
+  },
 
   // Control how source maps are generated
   devtool: 'inline-source-map',
