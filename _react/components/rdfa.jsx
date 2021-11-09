@@ -141,9 +141,9 @@ export default function RDFA(props){
   
 
   return(
-  <div>
+  <Card>
     {highlighted ? itemView(highlighted) : <div></div>}
-  </div>
+  </Card>
   )
 
 }
