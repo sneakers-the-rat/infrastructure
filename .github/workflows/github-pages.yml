@@ -17,16 +17,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - name: Main Jekyll Build
-        uses: helaili/jekyll-action@v2
+        uses: helaili/jekyll-action@2.2.0
         with:
           token: ${{ secrets.GH_PAGES }}
           keep_history: true
+          target_path: /
       - name: Get Short Hash
         id: vars
         shell: bash
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Versioned Jekyll Build
-        uses: helaili/jekyll-action@v2
+        uses: helaili/jekyll-action@2.2.0
         with:
           token: ${{ secrets.GH_PAGES }}
           keep_history: true
