@@ -67,6 +67,8 @@ each of these systems can have multiple iterations, with different rules, and so
 > 
 > Is the same sort of thing at work in the Pie/Echo/Atom Project? It appears so at first glance: Sam running the show from behind the scenes, putting friends in charge of the specs (although that isn’t what actually happened). The lack of a dispute-resolution process only makes things worse: when there’s no clear guide on how to make decisions or contributions, it’s far from obvious how to challenge a decision Sam has made. {% cite swartzSecretsStandards2003 %}
 
+> c2wiki is an exercise in dialogical methods. of laying bare the fact that knowledge and ideas are not some truth delivered from On High, but rather a social process, a conversation, a dialectic, between various views and interests {% cite valentineC2wikiExerciseDialogical2021 %}
+
 !! give the example of the autopilot wiki
 
 !! contextual knowledge stuff in this section, theory wiki stuff in next section

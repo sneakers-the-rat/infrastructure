@@ -125,28 +125,28 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 ### Linked Data or Surveillance Capitalism?
 
-{% include_relative _sections/2_1_1_linking.md %}
+{% include_relative _sections/2_2_ld-or-surveillance.md %}
 
 ### Federated Systems (of Language)
 
-{% include_relative _sections/2_2_federation.md %}
+{% include_relative _sections/2_3_federation.md %}
 
 ## Shared Tools
 
-{% include_relative _sections/2_3_tools-analysis.md %}
+{% include_relative _sections/2_4_tools-analysis.md %}
 
 
 ### Experimental Frameworks
 
-{% include_relative _sections/2_4_tools-experiments.md %}
+{% include_relative _sections/2_5_tools-experiments.md %}
 
 ### Collectivizing the State of the Art
 
-{% include_relative _sections/2_4_1_collectivize-sota.md %}
+{% include_relative _sections/2_6_collectivize-sota.md %}
 
 ## Shared Knowledge
 
-{% include_relative _sections/2_5_knowledge.md %}
+{% include_relative _sections/2_7_knowledge.md %}
 
 # Conclusion
 
