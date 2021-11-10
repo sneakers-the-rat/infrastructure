@@ -64,6 +64,8 @@ disable_disk_cache: true
 
 keep_files:
   - versions/*
+  - ../versions
+  - versions
   - .git
 
 exclude:
