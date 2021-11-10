@@ -28,7 +28,7 @@ layout: default
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time>
+            <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time> - <a href="https://github.com/sneakers-the-rat/infrastructure/commit/{{ site.data['hash'] }}"><code>{{ site.data['hash'] }}</code></a>
         </div>
     </div>
     {{ content }}

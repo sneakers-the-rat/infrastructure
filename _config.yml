@@ -62,6 +62,10 @@ scholar:
 # why does it take longer and longer to build every time
 disable_disk_cache: true
 
+keep_files:
+  - versions/*
+  - .git
+
 exclude:
   - .DS_Store
   - README.md
