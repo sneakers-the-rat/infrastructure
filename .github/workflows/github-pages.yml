@@ -17,7 +17,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - name: Main Jekyll Build
-        uses: helaili/jekyll-action@2.2.0
+        uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
         with:
           token: ${{ secrets.GH_PAGES }}
           keep_history: true
@@ -27,7 +27,7 @@ jobs:
         shell: bash
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Versioned Jekyll Build
-        uses: helaili/jekyll-action@2.2.0
+        uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
         with:
           token: ${{ secrets.GH_PAGES }}
           keep_history: true
