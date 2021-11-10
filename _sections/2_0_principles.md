@@ -12,6 +12,7 @@ I won't attempt to derive a definition of decentralized systems from base princi
 !! need to integrate {% cite larsenPoliticalNatureTCP2012 %}
 
 {% include rdfa.html 
+id="protocols"
 resource="protocols" 
 typeof="skos:Concept" 
 contents="###  Protocols, not Platforms" %}

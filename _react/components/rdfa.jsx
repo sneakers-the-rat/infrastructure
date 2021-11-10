@@ -83,26 +83,27 @@ export default function RDFA(props){
 
   // highlight 
   useEffect(() => {
-
+    console.log('highlight', links, highlighted)
     links.forEach(link => {
-      if (highlighted === undefined || link.resouce !== highlighted.resource){
+      if (highlighted === undefined || link.resource !== highlighted.resource){
         link.element.classList.remove('highlighted')
       } else {
         link.element.classList.add('highlighted')
       }
+      link.element.classList.remove('primary')
     });
     if (highlighted !== undefined){
       highlighted.element.classList.add('highlighted');
+      highlighted.element.classList.add('primary');
       console.log('scrollto', highlighted.element);
-      highlighted.element.scrollTo()
+      highlighted.element.scrollIntoView({behavior: 'smooth', block: 'center'});
     }
   }, [highlighted])
 
   const itemView = function(highlighted){
     let res_links = links.filter(link => link.resource == highlighted.resource)
-    console.log('itemview');
+    console.log('highlighted', highlighted);
     let objects = Object.keys(groupBy(res_links, 'property')).map(property => (property));
-    console.log(objects);
     return(
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <Box sx={{ my: 3, mx: 2 }}>
@@ -122,9 +123,10 @@ export default function RDFA(props){
   }
 
   const propertyView = function(links){
-    return(<>{Object.keys(groupBy(links, 'property')).map(property => (
+    return(<>{Object.keys(groupBy(links, 'property')
+      ).filter(property => property != 'null'
+      ).map(property => (
               <>
-              <Divider variant="middle"/>
               <Typography key={property}>{property}</Typography>
               {links.filter(link => link.property === property).map(link => (
                 <Card variant="outlined" onClick={function(){setHighlighted(link)}}>
@@ -132,7 +134,7 @@ export default function RDFA(props){
                 {link.element.textContent}
                 </Typography>
               </Card>
-              ))}</>
+              ))}<Divider variant="middle"/></>
           ))}</>)
   }
   // {Object.entries(groupBy(links, 'property')).forEach(

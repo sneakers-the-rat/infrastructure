@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				// lastContainer = item.listItem.parentElement;
 
 				item.listItem.classList.add( 'visible' );
-				console.log('visible item', item);
+				// console.log('visible item', item);
 
 				// checkContainers(lastVisible);
 			}
