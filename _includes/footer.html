@@ -2,6 +2,9 @@
   <!-- hypothes.is -->
 <!--     <script src="{{ site.baseurl }}/assets/js/react.js"></script> -->
 <!-- <script src="{{ site.baseurl }}/assets/js/toc.js"></script> -->
-<!--     <script async=async src="https://hypothes.is/embed.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/hypothesis.js"></script> -->
+
+  {% if jekyll.environment != "development" %}
+    <script async=async src="https://hypothes.is/embed.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/hypothesis.js"></script>
+  {% endif %}
 </footer>

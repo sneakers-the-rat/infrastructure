@@ -11,9 +11,6 @@ canonical_url: "https://jon-e.net/infrastructure"
 <a href="trims">Trimmings</a> <span>from the main document for future pieces</span>
 </div>
 
-testing versioned build
-
-
 {% include status.html %}
 {% include annotation.html %}
 
