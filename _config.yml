@@ -64,6 +64,12 @@ kramdown:
   toc_levels: "1,2"
 
 
+keep_files:
+  - versions/*
+  - ../versions
+  - versions
+  - .git
+
 exclude:
   - .DS_Store
   - README.md

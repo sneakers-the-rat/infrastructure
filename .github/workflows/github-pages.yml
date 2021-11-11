@@ -10,6 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: helaili/jekyll-action@v2
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Main Jekyll Build
+        uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
         with:
           token: ${{ secrets.GH_PAGES }}
+          keep_history: true
+          target_path: /
+      - name: Get Short Hash
+        id: vars
+        shell: bash
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Versioned Jekyll Build
+        uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
+        with:
+          token: ${{ secrets.GH_PAGES }}
+          keep_history: true
+          target_path: versions/${{ steps.vars.outputs.sha_short }}
