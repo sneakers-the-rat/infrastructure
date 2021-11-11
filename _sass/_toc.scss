@@ -1,8 +1,15 @@
 $menuWidth: 30%;
 $menuPaddingLeft: 5%;
 
+$break-sm: 600px;
+$break-md: 900px;
+
 body {
   padding: 0 $menuWidth+$menuPaddingLeft 0 0;
+
+  @media (max-width: $break-md) {
+    padding: 0;
+  }
 }
 
 
