@@ -7,7 +7,7 @@ html, body { color: #111; margin: 0; padding: 0; }
 
 html { font-family: "EB Garamond", "Times New Roman", Times, serif; font-size: 18px; overflow-y: scroll; }
 
-@media (max-width: 840px) { html { font-size: 18px; } }
+@media (max-width: 900px) { html { font-size: 18px; } }
 
 body { -webkit-text-size-adjust: 100%; }
 
@@ -51,7 +51,7 @@ pre code { background-color: transparent; color: inherit; font-size: 100%; paddi
 
 .post-title { color: #353535; font-family: "Source Serif Pro"; font-weight: 900; font-size: 5rem; margin: 1rem 0; text-align: left; margin-bottom: 0; }
 
-@media (max-width: 840px) { .post-title { font-size: 3rem; } }
+@media (max-width: 900px) { .post-title { font-size: 3rem; } }
 
 @media (max-width: 480px) { .post-title { font-size: 2rem; } }
 
@@ -255,11 +255,11 @@ pre code { background-color: transparent; color: inherit; font-size: 100%; paddi
 /* Literal.Number.Integer.Long */
 .css .o, .css .o + .nt, .css .nt + .nt { color: #999; }
 
-.container { margin: 0 auto; max-width: 800px; width: 80%; }
+.container { margin: 0 auto; max-width: 750px; width: 80%; }
 
-main, footer, .nav-container { display: block; margin: 0 auto; max-width: 800px; width: 80%; }
+main, footer, .nav-container { display: block; margin: 0 auto; max-width: 750px; width: 80%; }
 
-@media (max-width: 840px) { main, footer, .nav-container { width: 90%; } }
+@media (max-width: 900px) { main, footer, .nav-container { width: 90%; } }
 
 .nav { box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2); overflow: auto; }
 
@@ -311,6 +311,8 @@ footer span { color: #111; font-size: .8rem; }
 
 .annotation-container { width: 100%; background-color: #ffefef; border: 5px solid #ffcccc; border-radius: 5px; padding: 20px; margin-bottom: 1em; }
 
+.bibliography { overflow-x: scroll; }
+
 blockquote strong { color: #4A4A4A; }
 
 pre { font-size: 16px; }
@@ -321,10 +323,52 @@ hypothesis-sidebar /deep/ .Buckets__list { background-color: 0; }
 
 #draftmarker h1 { font-size: 5rem; color: #ffffff; }
 
-@media (max-width: 840px) { #draftmarker { font-size: 2rem; } #draftmarker h1 { font-size: 2rem; } }
+@media (max-width: 900px) { #draftmarker { font-size: 2rem; } #draftmarker h1 { font-size: 2rem; } }
 
 .trimlink { width: 100%; border: 1px solid black; background-color: orangered; color: white; box-shadow: 5px 5px black; margin: 0 0 1em 0; padding: 15px; }
 
 .trimlink a { background-color: white; box-shadow: 5px 5px black; padding: 5px; margin: 5px; font-family: "Cutive Mono", Menlo, Monaco, monospace; }
+
+.rdfa { display: inline; background-color: rgba(1, 1, 1, 0.05); transition: background-color 0.5s, box-shadow 1s, filter 0.5s; }
+
+.rdfa h3 { background-color: rgba(1, 1, 1, 0.05); }
+
+.rdfa.highlighted { background-color: #ffffff; box-shadow: 5px 5px; }
+
+.rdfa.highlighted h3 { background-color: #ffffff; box-shadow: 5px 5px; }
+
+.rdfa.highlighted.primary { filter: drop-shadow(0 0 10px #fff); }
+
+body { transition: background-color 0.5s; }
+
+body.faded { background-color: #888; }
+
+body { padding: 0 35% 0 0; }
+
+@media (max-width: 900px) { body { padding: 0; } }
+
+.toc { top: 2%; padding: 5%; width: 100%; line-height: 2; }
+
+.toc > ol > li { margin-left: 15px; }
+
+.toc ul, .toc ol { list-style: none; padding: 0; margin: 0; margin-bottom: 10px; counter-reset: toc-subcount; }
+
+.toc ol > li { counter-increment: toc-subcount; }
+
+.toc ol > li:hover::before, .toc ol > li.visible::before { content: counters(toc-subcount, "."); }
+
+.toc ol > li:before { padding-right: 10px; position: absolute; left: 20px; }
+
+.toc ul ul, .toc ol ol { padding-left: 1em; }
+
+.toc li a { display: inline-block; color: #888; text-decoration: none; transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+
+.toc li { padding-left: 8px; }
+
+.toc li.visible > a, .toc li:hover > a { color: #111; }
+
+.toc-marker { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+
+.toc-marker path { transition: all 0.3s ease; }
 
 /*# sourceMappingURL=main.css.map */
