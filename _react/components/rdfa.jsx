@@ -129,7 +129,7 @@ export default function RDFA(props){
               <>
               <Typography key={property}>{property}</Typography>
               {links.filter(link => link.property === property).map(link => (
-                <Card variant="outlined" onClick={function(){setHighlighted(link)}}>
+                <Card variant="outlined" key={link.property} onClick={function(){setHighlighted(link)}}>
                 <Typography color="text.secondary" variant="body2">
                 {link.element.textContent}
                 </Typography>

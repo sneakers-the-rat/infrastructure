@@ -1,6 +1,7 @@
 
 
-import * as React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -18,6 +19,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
+import Slide from '@mui/material/Slide';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
+
+import RDFA from './rdfa';
+
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+
 
 const apink = pink[500];
 const drawerWidth = "30%";
@@ -35,6 +44,7 @@ function TOC(props) {
   console.log('drawer', props);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [toc, setTOC] = React.useState(<></>);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -46,14 +56,30 @@ function TOC(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  // ----------
+  //  steal the toc
+  useEffect(() => {
+    let thetoc = document.getElementById('toc');
+    let toc_component = ReactHtmlParser(thetoc.outerHTML);
+    thetoc.remove();
+    setTOC(toc_component);
+  }, [])
+
+
   return (
     <Box sx={{ display: 'flex' }}>
+      <Slide appear={false} direction="down" in={!trigger}>
       <AppBar
         position="fixed"
         sx={{
           width: "100%",
           visibility: 'hidden',
           ml: { sm: `${drawerWidth}px` },
+          borderLeft: "none"
         }}
       >
         <Toolbar>
@@ -61,12 +87,18 @@ function TOC(props) {
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: 'none' }, visibility: 'visible' , color: "#ff0000", marginLeft: "auto" }}
+            sx={{ mr: 2, display: { md: 'none' }, 
+            visibility: 'visible' , color: "#ff0000", 
+            marginLeft: "auto", marginRight: "10px",
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            filter: "drop-shadow(5px 5px 5px #eee)"
+          }}
           >
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
+      </Slide>
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -88,7 +120,8 @@ function TOC(props) {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidthMobile },
           }}
         >
-          {props.children}
+        {toc}
+        <RDFA/>
         </Drawer>
         <Drawer
           id="drawer2"
@@ -100,7 +133,8 @@ function TOC(props) {
           }}
           open
         >
-          {props.children}
+        {toc}
+        <RDFA/>
         </Drawer>
       </Box>
       <Box

@@ -1,5 +1,5 @@
-$menuWidth: 30%;
-$menuPaddingLeft: 5%;
+$menuWidth: 35%;
+$menuPaddingLeft: 0%;
 
 $break-sm: 600px;
 $break-md: 900px;
@@ -14,11 +14,11 @@ body {
 
 
 .toc {
-  position: fixed;
-  right: $menuPaddingLeft;
+  // position: fixed;
+  // right: $menuPaddingLeft;
   top: 2%;
-  padding: 0;
-  width: $menuWidth;
+  padding: 5%;
+  width: 100%;
   line-height: 2;
 
   &>ol>li {
@@ -46,7 +46,7 @@ body {
       // list-style: none;
       padding-right: 10px;
       position:absolute;
-      left:0;
+      left:20px;
     }
   }
 
@@ -56,7 +56,7 @@ body {
 
   li a {
     display: inline-block;
-    color: #aaa;
+    color: #888;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
   }
@@ -67,7 +67,7 @@ body {
 
   li.visible>a, li:hover>a {
     color: #111;
-    transform: translate( 2px );
+    // transform: translate( 2px );
   }
 
   // collapse

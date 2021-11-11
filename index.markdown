@@ -114,7 +114,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 {% include_relative _sections/1_1_state-general.md %}
 
-## Whose Job is Infrastructure? - The Ivies, Institutes, Consortia, and "The Rest of Us"
+## The Ivies, Institutes, and "The Rest of Us"
 
 {% include_relative _sections/1_2_state-who.md %}
 
