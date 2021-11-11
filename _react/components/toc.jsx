@@ -86,10 +86,11 @@ function TOC(props) {
           <IconButton
             aria-label="open drawer"
             edge="end"
+            size="large"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { md: 'none' }, 
             visibility: 'visible' , color: "#ff0000", 
-            marginLeft: "auto", marginRight: "10px",
+            marginLeft: "auto", marginRight: "30px",
             backgroundColor: "rgba(255, 255, 255, 0.5)",
             filter: "drop-shadow(5px 5px 5px #eee)"
           }}
