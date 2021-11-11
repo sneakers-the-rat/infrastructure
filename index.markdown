@@ -139,7 +139,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 {% include_relative _sections/2_5_tools-experiments.md %}
 
-### Collectivizing the State of the Art
+### Abstraction & Protocol Design
 
 {% include_relative _sections/2_6_collectivize-sota.md %}
 

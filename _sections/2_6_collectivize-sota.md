@@ -1,27 +1,11 @@
-To take stock:
+Though there are many similarities between the three domains of data, analytical, and experimental tools, the different constraints each impose on a generalizable framework for integration and interoperability are instructive. Each requires a careful consideration of the *layers of abstraction* needed to maintain the modularity of the system --- this is an elemental feature of any protocol design. What are the minimal affordances needed to implement a wide array of systems and technologies within each domain? By being careful with specifying abstraction, when considered together, the linked system described so far represents a powerful step towards *collectivizing the scientific state of the art.*
 
----
-<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
----
-
-- So far we have described a system for using **semantic web** and **linked data** technology to bridge several interacting subsystems. 
-- We have endorsed a **folksonomy** oriented system with 
-- a low barrier to **identity declaration** 
-- but with ability to **federate** at multiple scales and in overlapping groups, !! specifics on using AS for creating norms and rules 
-- **versioning**
-- A **peer-to-peer** data sharing system 
-- Use of formats for establishing a base of OWL/RDF-based schema as a seed.
-- content addressing from metadata index
-- **data sharding**
-- **I/O abstraction** to introduce the notion of metadata indicating code routines
-- **flexible attribute propagation** eg. the ability to have stuff spec hooks like `accessRuleset` accepts `@hhs:HIPAA` and being able to resolve dependencies flatly
-- **embracing the notion of expand space** by letting people declare and link schema extensions
-- ... brb 
-
-!! this system as described is a two-layer system, with a few different domains linked by a flexible metadata linking layer. But we also haven't necessarily *just* described a metadata linking system. We haven't been describing linking things in a vaccuum, but as applied in several different domains, so we can think of it as "functional metadata" -- or metadata that can *do something* by declaring it. Eg. by linking our data to a new datatype, it can then make use of linked code to actually literally read and write the files and make that happen. The act of declaring an analysis chain is continuous with applying that analysis chain to a series of datasets. In short we have been attempting to describe a system that *embeds the act of sharing and curation in the practice of science.* Rather than a thankless post-hoc process, we can align the practice of our daily work in a system that makes it easier as well as allows it to be cumulative with the work of other scientists. 
+There are three primary layers of abstraction in the analysis system described: the interface between the metadata description of a node and the code that implements it, the separation of individual nodes and a notion of a combined workflow, and perhaps more subtly the separation of the data applied to the workflow and the workflow itself. 
 
 
 
+
+!! while the analysis system seeks to make multiple software packages and environments be interoperable together, the experimental framework makes no such attempt. !! the need for careful timing and adaptation to individual systems leaves integration for the implementing codebases.
 
 -  First, the markup description of the node gives us abstraction from programming language and implementation. This lets us do stuff like use multiple tools with competing environmental needs, adapt to multiple versions of the code markup as it develops, etc. Note the interaction with the rest of the metadata system: because we required a particular type of data file, and that link should provide us some means of opening/instantiating the file with dependencies, we didn't need to write loading code. Since it's in a linked system, someone could override the implementation of my node -- say someone comes up with a faster means of binning, then they just inherit from my node and replace the reference to the code. Boom we have cumulative and linked development.
 - The separation of the node from the workflow means that the node can be shared and swapped and reintegrated easily, dramatically reducing the brittleness of the systme. Since there is no restriction on what constitutes a node, though, there's no reason that nodes can't be either made massive, like putting a whole library in the process method, or be packaged up together. If we made the argument and method names recursive between the workflow and the node objects then tooling could automatically traverse multiple layers of node/workflow combinations at different levels of abstraction. This being a schematic description means that there can be multiple "workflow runner" packages that eg. distribute the task across a billion supercomputers or not. 
@@ -48,3 +32,18 @@ The category distinction between experimental and analytical tools is, of course
 !! reciprocally, we can also imagine the reverse: being able to develop metadata structures that are then code generators for tools that have a sufficiently sophisticated API -- for example remember how we said Bonsai might have a hard time making generalizable behavioral tasks/etc? Imagine if someone made a code compilation tool that allowed people to declare abstract structures that could then be reusably reparameterzied that autocreated a bonsai workflow? In the same way that the metadata system can be used for *storage* of existing work, it can also be used to create abbreviate and abstract constructs for *use* with other tools. 
 
 !! continue the example of needing to select within datasets instead of metadata from federation section.
+
+To take stock:
+
+We have described a system of three component modalities: **data, analytical tools, and experimental tools** connected by a **linked data** layer. We started by describing the need for a **peer-to-peer** data system that makes use of **data standards** as an onramp to linked metadata. To interact with the system, we described an identity-based linked data system that lets individual people declare linked data resources and properties that link to **content addressed** resources in the p2p system, as well as **federate** into multiple larger organizations. We described the requirements for **DAG-based analytical frameworks** that allow people to declare individual nodes for a processing chain linked to code, combine them into workflows, and apply them to data. Finally, we described a design strategy for **component-based experimental frameworks** that lets people specify experimental metadata, tools, and output data. 
+
+This system as described is a two-layer system, with a few different domains linked by a flexible metadata linking layer. The metadata system as described is not merely *inert* metadata, but metadata linked to code that can *do something* --- eg. specify access permissions, translate between data formats, execute analayis workflows, parameterize experiments, etc. Put another way, we have been attempting to describe a system that *embeds the act of sharing and curation in the practice of science.* Rather than a thankless post-hoc process, the system attempts to provide a means for aligning the daily work of scientists so that it can be cumulative and collaborative. To do this, we have tried to avoid rigid specifications of system structure, and instead described a system that allows researchers to pluralistically define the structure themselves.
+
+!! Now we need to consider the social tools needed to communicate within, negotiate over, and govern the system.
+
+
+---
+<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
+---
+
+

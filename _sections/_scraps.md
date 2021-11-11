@@ -211,3 +211,19 @@ At this point we have largely closed the loop of science: starting with standard
 
 ... the major part that's missing is some means of negotiating our schemas and data ... transition to next section
 
+
+## Collectivizing SOTA 
+
+- So far we have described a system for using **semantic web** and **linked data** technology to bridge several interacting subsystems. 
+- We have endorsed a **folksonomy** oriented system with 
+- a low barrier to **identity declaration** 
+- but with ability to **federate** at multiple scales and in overlapping groups, !! specifics on using AS for creating norms and rules 
+- **versioning**
+- A **peer-to-peer** data sharing system 
+- Use of formats for establishing a base of OWL/RDF-based schema as a seed.
+- content addressing from metadata index
+- **data sharding**
+- **I/O abstraction** to introduce the notion of metadata indicating code routines
+- **flexible attribute propagation** eg. the ability to have stuff spec hooks like `accessRuleset` accepts `@hhs:HIPAA` and being able to resolve dependencies flatly
+- **embracing the notion of expand space** by letting people declare and link schema extensions
+- ... brb 
