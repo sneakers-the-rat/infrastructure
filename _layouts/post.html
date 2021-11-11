@@ -28,7 +28,7 @@ layout: default
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time> - <a href="/infrastructure/versions/{{ site.data['hash'] }}"><code>{{ site.data['hash'] }}</code></a>
+            <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/{{ site.data['hash'] }}"><code>{{ site.data['hash'] }}</code></a>
         </div>
     </div>
     {{ content }}

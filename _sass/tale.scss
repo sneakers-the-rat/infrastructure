@@ -10,9 +10,11 @@
 // @import 'tale/tags';
 
 @import 'sections/annotation';
+@import 'sections/bib';
 
 
 @import 'typography';
 @import 'hypothesis';
 @import 'etc';
-// @import 'toc';
+@import 'rdfa';
+@import 'toc';

@@ -5,6 +5,7 @@ subtitle: "Or, Kill the Cloud in Your Mind"
 author: "Jonny Saunders"
 navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
+toc_levels: "1..2"
 ---
 
 <div class="trimlink">
@@ -14,10 +15,13 @@ canonical_url: "https://jon-e.net/infrastructure"
 {% include status.html %}
 {% include annotation.html %}
 
+
+
 {% include toc_start.html %}
 1. table of contents
 {:toc}
 {% include toc_end.html %}
+
 
 [**PDF VERSION**](/infrastructure/tex/decentralized_infrastructure_render.pdf)
 
@@ -80,6 +84,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 * Jeremy Delahanty
 * Andrey Andreev
 * Joel Chan
+* Björn Brembs
 * Sanjay Srivastava & Metascience Class
 * Ralph Emilio Peterson
 * Manuel Schottdorf
@@ -108,7 +113,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 {% include_relative _sections/1_1_state-general.md %}
 
-## Whose Job is Infrastructure? - The Ivies, Institutes, Consortia, and "The Rest of Us"
+## The Ivies, Institutes, and "The Rest of Us"
 
 {% include_relative _sections/1_2_state-who.md %}
 
@@ -139,7 +144,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 {% include_relative _sections/2_5_tools-experiments.md %}
 
-### Collectivizing the State of the Art
+### Abstraction & Protocol Design
 
 {% include_relative _sections/2_6_collectivize-sota.md %}
 

@@ -1,0 +1,36 @@
+$faded-bg: #888;
+
+.rdfa {
+	display: inline;
+	background-color: rgba(1,1,1,0.05);
+	transition: background-color 0.5s, box-shadow 1s, filter 0.5s;
+
+
+
+	h3 {
+		background-color: rgba(1,1,1,0.05);
+	}
+
+	&.highlighted {
+		background-color: #ffffff;
+		box-shadow: 5px 5px;
+
+		h3 {
+			background-color: #ffffff;
+			box-shadow: 5px 5px;
+		}
+
+		&.primary {
+			filter: drop-shadow(0 0 10px #fff);
+		}
+
+	}
+}
+
+body {
+	transition: background-color 0.5s;
+
+	&.faded {
+		background-color: $faded-bg;
+	}
+}

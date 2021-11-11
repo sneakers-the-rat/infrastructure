@@ -1,8 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import App from './components/App'
+import RDFA from './components/rdfa';
+import TOC from './components/toc';
 
-ReactDOM.render(<App/>, document.getElementById('react-test'))
+// ReactDOM.render(<RDFA/>, document.getElementById('rdfa-component'))
+ReactDOM.render(<TOC/>, document.getElementById('toc-drawer'))
+
 
 
