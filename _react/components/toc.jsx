@@ -111,6 +111,7 @@ function TOC(props) {
           anchor="right"
           container={container}
           variant="temporary"
+          className="mobile-toc-drawer"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{

@@ -11,13 +11,15 @@ I won't attempt to derive a definition of decentralized systems from base princi
 
 !! need to integrate {% cite larsenPoliticalNatureTCP2012 %}
 
-{% include rdfa.html 
+
+###  Protocols, not Platforms
+
+Much of the basic technology of the internet was developed as
+{% include rdfa2.html 
 id="protocols"
 resource="protocols" 
 typeof="skos:Concept" 
-contents="###  Protocols, not Platforms" %}
-
-Much of the basic technology of the internet was developed as *protocols* that describe the basic attributes and operations of a process. 
+contents = "*protocols*" %} that describe the basic attributes and operations of a process.
 {% include rdfa2.html resource="protocols" property="skos:example" contents="A simple and common example is email over SMTP (Simple Mail Transfer Protocol)" %}
 {% cite Rfc5321SimpleMail %}. SMTP describes a series of steps that email servers must follow to send a message: the sender initiates a connection to the recipient server, the recipient server acknowledges the connection, a few more handshake steps ensue to describe the senders and receivers of the message, and then the data of the message is transferred. Any software that implements the protocol can send and and receive emails to and from any other. The protocol basis of email is the reason why it is possible to send an email from a gmail account to a hotmail account (or any other hacky homebrew SMTP client) despite being wholly different pieces of software. 
 

@@ -87,12 +87,20 @@ body {
     }
   }
 
-  // &>ol>li:hover {
+  // ol>li:hover {
   //   &>ol {
-  //     display: inherit;
-  //     height: 100%;
+  //     max-height: 1000px;
+  //     margin: 0 0 10px 0;
+  //     transition-delay: 0.5s;
   //   }
   // }
+}
+
+.mobile-toc-drawer {
+  ol>li ol {
+    max-height: 1000px;
+    margin: 0 0 10px 0;
+  }
 }
 
 .toc-marker {
