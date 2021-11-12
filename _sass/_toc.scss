@@ -66,24 +66,26 @@ body {
   }
 
   li.visible>a, li:hover>a {
-    color: #111;
+    color: #000;
     // transform: translate( 2px );
   }
 
   // collapse
-  // ol>li ol {
-  //   // display: none;
-  //   height: 0px;
-  //   overflow: hidden;
+  ol>li ol {
+    // display: none;
+    height: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    margin: 0;
+    transition: max-height 1s ease, margin 0.1s linear;
+    // height: 0;
 
-  //   transition: height 1s linear;
-  //   // height: 0;
-
-  //   &.opened, {
-  //     // display: inherit;
-  //     height: 100%;
-  //   }
-  // }
+    &.opened, {
+      // display: inherit;
+      max-height: 1000px;
+      margin: 0 0 10px 0;
+    }
+  }
 
   // &>ol>li:hover {
   //   &>ol {
