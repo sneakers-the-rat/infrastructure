@@ -32,6 +32,7 @@ Beyond journals, the other technologies of communication that have been adopted 
 
 These technologies point to a few overlapping and not altogether binary axes of communication systems. 
 !! make this a table? with technological examples for each.
+
 - **Durable vs Ephemeral** - journals seek to represent information as permanent, archival-grade material, but scientific communication also necessarily exists as wholly contextual, temporally specific snapshots.
 - **Structured vs Chronological** - scientific communication both needs to present itself as a structured basis of information with formal semantic linking, but also needs the chronological structure that ties ideas to their context. This axis is a gradient from formal ontologies, through intermediate systems like forums with hierarchical topic structure that embeds a feed, to the purely chronological feed-based social media systems.
 - **Messaging vs Indexing** - Communication can be person-to-person or person-to-group messaging with defined senders and recipients, or intended as a generalizable category of objects. This ranges from entirely-specific DMs through domain-specific tool indexes like OpenBehavior through the uniform indexing of Wikipedia.
@@ -42,7 +43,7 @@ These technologies point to a few overlapping and not altogether binary axes of 
 
 ### The Wiki Way
 
-
+x
 
 
 
