@@ -61,7 +61,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-35-11"> 2021-11-11</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/4d7d8a2"><code>4d7d8a2</code></a>
+            <time datetime="2021-55-12"> 2021-11-12</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/3ba7d36"><code>3ba7d36</code></a>
         </div>
     </div>
     <div class="trimlink">
@@ -72,7 +72,7 @@
 	<h2>Current Document Status (21-11-04):</h2>
 	<p>
 		I have removed all the text past the <p><a href="#draftmarker"><code class="language-plaintext highlighter-rouge">#draftmarker</code></a></p>
- and replaced it with extreme summary placeholder text so that I could start sharing this with people to read and give feedback on. If you are reading this, at this point <strong>please do not redistribute this link!</strong>
+ and replaced it with extreme summary placeholder text so that I could start sharing this with people to read and give feedback on. If you are reading this, at this point <strong>please do not redistribute this link!</strong> As you'll see it is still *very* drafty &lt;3
 	</p>
 	<p>
 		I've started <a href="trims">trimming</a> pieces that either don't fit or otherwise make the piece too long. The goal now is to make the piece manageable by deciding how its many arguments should be split into other pieces.
@@ -81,7 +81,7 @@
 		Paragraphs preceded with double exclamation points !! are provisional, placeholder text that is intended to be rewritten &lt;3 
 	</p>
 	<p>
-		Everything else is text that has been drafted several times, but as of the current draft needs an enormous amount of editing! sorry for the redundancy (please mark it when you see it)!
+		The page loading is being bogged down by hypothes.is, unfortunately. I've submitted an issue: <a href="https://github.com/hypothesis/client/issues/3919">https://github.com/hypothesis/client/issues/3919</a>
 	</p>
 </div>
 <div class="annotation-container">
@@ -1284,6 +1284,8 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <h3 id="abstraction--protocol-design">Abstraction &amp; Protocol Design</h3>
 
+<div style="color: #f00; padding: 20px; border: 1px red dashed; border-radius: 20px; background-color:#fff5f5;">This section should be split back up s.t. the parts specific to analysis/experimental tools are at the ends of those sections, and we should move the discussion about layers of abstraction congealing into a protocol in the end in the practical implementation section. I'm leaving this here until I have time to do that, but for now you probably want to skip to the next section :)</div>
+
 <p>Though there are many similarities between the three domains of data, analytical, and experimental tools, the different constraints each impose on a generalizable framework for integration and interoperability are instructive. Each requires a careful consideration of the <em>layers of abstraction</em> needed to maintain the modularity of the system — this is an elemental feature of any protocol design. What are the minimal affordances needed to implement a wide array of systems and technologies within each domain? By being careful with specifying abstraction, when considered together, the linked system described so far represents a powerful step towards <em>collectivizing the scientific state of the art.</em></p>
 
 <p>There are three primary layers of abstraction in the analysis system described: the interface between the metadata description of a node and the code that implements it, the separation of individual nodes and a notion of a combined workflow, and perhaps more subtly the separation of the data applied to the workflow and the workflow itself.</p>
@@ -1329,32 +1331,62 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>!! Now we need to consider the social tools needed to communicate within, negotiate over, and govern the system.</p>
 
+<h2 id="shared-knowledge">Shared Knowledge</h2>
+
+<p>The remaining set of problems implied by the infrastructural system sketched in the preceding sections is the <em>communication</em> and <em>organization</em> systems that make up the interfaces to maintain and use it. We can finally return to some of the breadcrumbs laid before: the need for negotiating over distributed and conflicting data schema, for incentivizing and organizing collective labor, and ultimately for communicating scientific results.</p>
+
+<p>The communication systems that are needed double as <em>knowledge organization</em> systems. Knowledge organization has the rosy hue of something that might be uncontroversial and apolitical — surely everyone involved in scientific communication wants knowledge to be organized, right? The reality of scientific practice might give a hint at our naivete. Despite being, in some sense, itself an effort to organize knowledge, <em>scientific results effectively have no system of organization.</em> There is no means of, say, “finding all the papers about a research question.” The problem is so fundamental it seems natural: the usual methods of using search engines, asking around on Twitter, and chasing citation trees are flex tape slapped over the central absence of a system for formally relating our work as a shared body of knowledge.</p>
+
+<p>Information capitalism, in its terrifying splendor, here too pits private profit against public good. Analogously to the necessary functional limitations of SaaS platforms, artificially limiting knowledge organization opens space for new products and profit opportunities. In their 2020 shareholder report, RELX, the parent of Elsevier, lists increasing the number of journals and papers as a primary means of increasing revenue <a class="citation" href="#RELXAnnualReport2020">[27]</a>. In the next breath, they describe how “in databases &amp; tools and electronic reference, representing over a third of divisional<sup id="fnref:whatdivision" role="doc-noteref"><a href="#fn:whatdivision" class="footnote" rel="footnote">24</a></sup> revenue, we continued to drive good growth through content development and enhanced machine learning [ML] and natural language processing [NLP] based functionality.”</p>
+
+<p>What ML and NLP systems are they referring to? The 2019 report is a bit more revealing (emphases mine):</p>
+
+<blockquote>
+  <p>Elsevier looks to enhance quality by building on its premium brands and <strong>grow article volume</strong> through <strong>new journal launches,</strong> the expansion of open access journals and growth from emerging markets; and add value to core platforms by implementing capabilities such as <strong>advanced recommendations on ScienceDirect and social collaboration through reference manager and collaboration tool Mendeley.</strong></p>
+
+  <p><strong>In every market, Elsevier is applying advanced ML and NLP techniques</strong> to help researchers, engineers and clinicians perform their work better. For example, in research, ScienceDirect Topics, a free layer of content that enhances the user experience, uses <strong>ML and NLP techniques to classify scientific content and organise it thematically,</strong> enabling users to get faster access to relevant results and related scientific topics. The feature, launched in 2017, is proving popular, generating 15% of monthly unique visitors to ScienceDirect via a topic page. <strong>Elsevier also applies advanced ML techniques that detect trending topics per domain,</strong> helping researchers make more informed decisions about their research. <strong>Coupled with the automated profiling and extraction of funding body information from scientific articles,</strong> this process supports the whole researcher journey; from planning, to execution and funding. <a class="citation" href="#RELXAnnualReport2019">[150]</a></p>
+</blockquote>
+
+<p>Reading between the lines, it’s clear that the difficulty of finding research is a feature, not a bug of their system. Their explicit business model is to increase the number of publications and sell organization back to us with recommendation services. The recommendation system might be free*, but the business is to develop dependence to sell ad placement — which they proudly describe as looking very similar to their research content <a class="citation" href="#springernatureBrandedContent">[151, 152]</a>.</p>
+
+<p>It gets more sinister: Elsevier sells multiple products to recommend ‘trending’ research areas likely to win grants, rank scientists, etc., algorithmically filling a need created by knowledge disorganization. The branding varies by audience, but the products are the same. For pharmaceutical companies <a href="https://www.elsevier.com/solutions/professional-services/drug-design-optimization#opportunity">“scientific opportunity analysis”</a> promises custom reports that answer questions like “Which targets are currently being studied?” “Which experts are not collaborating with a competitor?” and “How much funding is dedicated to a particular area of research, and how much progress has been made?” <a class="citation" href="#elsevierDrugDesignOptimization">[153]</a>. For academics, <a href="https://www.elsevier.com/solutions/scival/features/topic-prominence-in-science#how">“Topic Prominence in Science”</a> offers university administrators tools to “enrich strategic research planning with portfolio overviews of their own and peer institutions.” Researchers get tools to “identify experts and potential cross-sector collaborators in specific Topics to strengthen their project teams and funding bids and identify Topics which are likely to be well funded.” <a class="citation" href="#elsevierTopicProminenceScienceb">[154]</a></p>
+
+<p>These tools are, of course, designed for a race to the bottom — if my colleague is getting an algorithmic leg up, how can I afford not to? Naturally only those labs that <em>can</em> afford them and the costs of rapidly pivoting research topics will benefit from them, making yet another mechanism that reentrenches scientific inequity for profit. Knowledge disorganization, coupled with a little surveillance capitalism that monitors the activity of colleagues and rivals <a class="citation" href="#brembsReplacingAcademicJournals2021">[24]</a>, has given publishers powerful control over the course of science, and they are more than happy to ride algorithmically amplified scientific hype cycles in fragmented research bubbles all the way to the bank.</p>
+
+<p>The consequences are hard to overstate. In addition to literature search being an unnecessarily huge sink of time and labor,  science operates as a wash of tail-chasing results that only rarely seem to cumulatively build on one another. The need to constantly reinforce the norm that purposeful failure to cite prior work is research misconduct is itself a symptom of how engaging with a larger body of work is both extremely labor intensive and <em>strictly optional</em> in the communication regime of journal publication. Despite the profusion of papers, by some measures progress in science has slowed to a crawl as the long tail of papers with very few citations grows ever longer <a class="citation" href="#chuSlowedCanonicalProgress2021">[155]</a>.</p>
+
+<p>While Chu and Evans correctly diagnose <em>symptoms</em> of knowledge disorganization like the need to “resort to heuristics to make continued sense of the field” and reliance on canonical papers, by treating the journal model as a natural phenomenon and citation as the only means of ordering research, they misattribute root <em>causes.</em> The problem is not people publishing <em>too many papers,</em> or a <em>breakdown of traditional publication hierarchies,</em> but the <em>profitability of knowledge disorganization.</em> Their prescription for “a clearer hierarchy of journals” misses the role of organizing scientific work in journals ranked by prestige, rather than by the content of the work, as a potentially major driver of extremely skewed citation distributions. It also misses the publisher’s stated goal of pushing algorithmic paper recommendations, as there is nothing recommendation algorithms love recommending more than things that are alreaady popular. Without diagnosing knowledge disorganization as a core part of the business model of scientific publishers, we can be led to prescriptions that would make the problem worse.</p>
+
+<p>!! Another impact of the arcanity of scientific knowledge organization is that it is effectively impenetrable to people that aren’t domain experts. Why is trust in science so low right now? one contributor is that they have no idea what the hell we do or how different domains of knowledge have evolved. (cite cold war peer review and journals paper)</p>
+
+<p>!! Practically, this makes the quality of scientific literature constantly in question. Each paper effectively exists as an island, and engagement with prior literature is effectively optional (outside the minimum bar set by the 3-5 additional private peer reviewers, each with their own limited scope and conflicting interests). Forensic peer-reviewers have been ringing the alarm bell, saying that there is “no net” to bad research <a class="citation" href="#heathersRealScandalIvermectin2021">[156]</a>, and brave and highly-skilled investigators like <a href="https://scienceintegritydigest.com/">Elisabeth Bik</a> have found thousands of papers with evidence of purposeful manipulation <a class="citation" href="#shenMeetThisSuperspotter2020">[157, 158]</a>. !! So our existing systems of communication and organization are woefully inadequate for our needs, and don’t serve the role of guaranteeing consistency or reliability in research that they claim to.</p>
+
+<p>It’s hard to imagine an alternative to journals that doesn’t look like, well, journals. While a full treatment of the journal system is outside the scope of this paper, the system we describe here renders them <em>effectively irrelevant</em> by making papers as we know them <em>unnecessary.</em> Rather than facing the massive collective action problem of asking everyone to change their publication practices head on, by reconsidering the way we organize the surrounding infrastructure of science we can flank journals and replace them “from below” with something qualitatively more useful.</p>
+
+<p>Beyond journals, the other technologies of communication that have been adopted out of need, though not necessarily design, serve as <a href="https://en.wikipedia.org/wiki/Desire_path">desire paths</a> that trace other needs for scientific communication. As a rough sample: Researchers often prepare their manuscripts using platforms like Google Drive, indicating a need for collaborative tools in perparation of an idea. When working in teams, we often use tools like Slack to plan our work. Scientific conferences reflect the need for federated communication within subdisciplines, and we have adopted Twitter as a de facto platform for socializing and sharing our work to a broader audience. We use a handful of blogs and other sites like <a href="https://edspace.american.edu/openbehavior/">OpenBehavior</a> <a class="citation" href="#whiteFutureOpenOpenSource2019">[159]</a>, <a href="https://open-neuroscience.com/">Open Neuroscience</a>, and many others to index technical knowledge and tools. Finally we use sites like <a href="https://pubpeer.com">PubPeer</a> and ResearchGate for comment and criticism.</p>
+
+<p>These technologies point to a few overlapping and not altogether binary axes of communication systems. 
+!! make this a table? with technological examples for each.</p>
+<ul>
+  <li><strong>Durable vs Ephemeral</strong> - journals seek to represent information as permanent, archival-grade material, but scientific communication also necessarily exists as wholly contextual, temporally specific snapshots.</li>
+  <li><strong>Structured vs Chronological</strong> - scientific communication both needs to present itself as a structured basis of information with formal semantic linking, but also needs the chronological structure that ties ideas to their context. This axis is a gradient from formal ontologies, through intermediate systems like forums with hierarchical topic structure that embeds a feed, to the purely chronological feed-based social media systems.</li>
+  <li><strong>Messaging vs Indexing</strong> - Communication can be person-to-person or person-to-group messaging with defined senders and recipients, or intended as a generalizable category of objects. This ranges from entirely-specific DMs through domain-specific tool indexes like OpenBehavior through the uniform indexing of Wikipedia.</li>
+  <li><strong>Public vs. Private</strong> - Communication can be composed of entirely private notes to self, through communication in a lab, collaboration group, discipline, and landing in the entirely public realm of global communication.</li>
+  <li><strong>Formal vs. Informal</strong> - Journal articles and encyclopedia-bound writing that conforms to a particular modality of expression vs. a vernacular style intended to communicate with people outside the jargon culture.</li>
+</ul>
+
+<p>!! There are many tunnels of internet history that have traced different parts of these axes, but particularly relevant here are the overlapping histories of early wikis, wikipedia, the semantic web, and activitypub. This is a knotty and tangled history, so I am not attempting a full recounting, but will be selectively telling the story to motivate the kinds of tools we need.</p>
+
+<h3 id="the-wiki-way">The Wiki Way</h3>
+
 <hr />
 <div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
 <hr />
-
-<h2 id="shared-knowledge">Shared Knowledge</h2>
-
-<p>The remaining set of problems implied by the infrastructural system sketched in the preceding sections is the <em>communication</em> and <em>organization</em> systems that make up the interfaces to maintain and use it. We can finally return to some of the breadcrumbs laid before: negotiating over distributed and conflicting data schema, the potential forms of social systems for incentivizing and organizing labor discussed previously in the context of bittorrent trackers, and a means of maintaining the links between the broadly dispersed components of the infrastructure.</p>
-
-<p>To do that we’ll trace a bit more of the history of the semantic web community, as well as the parallel but distinct history of the early wiki movement. We’ll land back in the realm of ActivityPub</p>
-
-<p>!! we’ll describe a way to [summarize open spaces left by preceding sections] !! while a full consideration of the journal system as a whole is strictly out of scope of this paper, the system as developed renders it effectively irrelevant.</p>
 
 <p>current status</p>
 <ul>
   <li>our current systems are largely journals and conferences, but as evidenced by the unfortunate but widescale adoption of twitter, scientific communication naturally spans dispersed forms of communication at different scales of formality, length, public engagement, etc.</li>
   <li>when we go to organize ourselves, why is the best we can do google docs and slack?</li>
-</ul>
-
-<p>problems</p>
-<ul>
-  <li>Despite being, in some sense, an effort to organize and systematize human knowledge, <em>science effectively has no system of organization.</em></li>
-  <li>The best we have is journals that are only loosely organized around large topic areas and citation networks, citation networks, which are un-annotated and un-descriptive, and unidimensional keywords.</li>
-  <li>So one way of reading <a class="citation" href="#chuSlowedCanonicalProgress2021">[150]</a> is that there are too many papers, but another way of reading it is that our systems of organizing scientific communication simply don’t scale well since they rely mostly on scanning TOC alerts, google scholar, and happenstance.</li>
-  <li>Another impact of the arcanity of scientific knowledge organization is that it is effectively impenetrable to people that aren’t domain experts. Why is trust in science so low right now? one contributor is that they have no idea what the hell we do or how different domains of knowledge have evolved. (cite cold war peer review and journals paper)</li>
-  <li>Practically, this makes the quality of scientific literature constantly in question. Each paper effectively exists as an island, and engagement with prior literature is effectively optional (outside the minimum bar set by the 3-5 additional private peer reviewers, each with their own limited scope and conflicting interests). Forensic peer-reviewers have been ringing the alarm bell, saying that there is “no net” to bad research <a class="citation" href="#heathersRealScandalIvermectin2021">[151]</a>, and brave and highly-skilled investigators like <a href="https://scienceintegritydigest.com/">Elisabeth Bik</a> have found thousands of papers with evidence of purposeful manipulation <a class="citation" href="#shenMeetThisSuperspotter2020">[152, 153]</a>.</li>
-  <li>So our existing systems of communication and organization are woefully inadequate for our needs, and don’t serve the role of guaranteeing consistency or reliability in research that they claim to.</li>
 </ul>
 
 <p>contextual knowledge needed</p>
@@ -1364,7 +1396,7 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>!! important of ease of leaving http://meatballwiki.org/wiki/RightToLeave</p>
 
-<p>!! we’ve been tracing a distinction between the ability to express fluidly the contents of our reality with developing platforms that sift through it in an automated way, something that was an explicit cultural division throughout the semantic web project <a class="citation" href="#swartzTechniquesMassCollaboration2006">[154]</a>, which Peter Norvig (director of search at Google at the time) primarily attributes to user incompetence <a class="citation" href="#lombardiGoogleExecChallenges2007">[155]</a>. On trust, TBL says “Berners-Lee agreed with Norvig that deception on the Internet is a problem, but he argued that part of the Semantic Web is about identifying the originator of information, and identifying why the information can be trusted, not just the content of the information itself.”</p>
+<p>!! we’ve been tracing a distinction between the ability to express fluidly the contents of our reality with developing platforms that sift through it in an automated way, something that was an explicit cultural division throughout the semantic web project <a class="citation" href="#swartzTechniquesMassCollaboration2006">[160]</a>, which Peter Norvig (director of search at Google at the time) primarily attributes to user incompetence <a class="citation" href="#lombardiGoogleExecChallenges2007">[161]</a>. On trust, TBL says “Berners-Lee agreed with Norvig that deception on the Internet is a problem, but he argued that part of the Semantic Web is about identifying the originator of information, and identifying why the information can be trusted, not just the content of the information itself.”</p>
 
 <p>!! more techniques of communtiy growth http://meatballwiki.org/wiki/RewardReputation</p>
 
@@ -1380,22 +1412,10 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>!! should trace the development of AP and the difficulty of doing these things as a way to explaining the ecosystem and the different parts that are needed in it: https://www.w3.org/TR/social-web-protocols/</p>
 
-<h3 id="axes-of-communication-systems">Axes of Communication Systems</h3>
-
-<p>!! we need a few things, but there’s no reason they should be different things! we need a system for</p>
-
-<ul>
-  <li>permanent communication for archiving</li>
-  <li>durable communication like technical knowledge and scientific discourse proper, like a wiki</li>
-  <li>rapid communication for like talking lmao – but not purposely temporary the way that social media is!</li>
-</ul>
-
-<p>each of these systems can have multiple iterations, with different rules, and so forth, and we should have control over our content and contribution to all of them (opt-in).</p>
-
-<h3 id="the-wiki-way">The Wiki Way</h3>
+<h3 id="the-wiki-way-1">The Wiki Way</h3>
 
 <blockquote>
-  <p>So that’s it — insecure but reliable, indiscriminate and subtle, user hostile yet easy to use, slow but up to date, and full of difficult, nit-picking people who exhibit a remarkable community camaraderie. Confused? Any other online community would count each of these “negatives” as a terrible flaw, and the contradictions as impossible to reconcile. Perhaps wiki works because the other online communities don’t. <a class="citation" href="#leufWikiWayQuick2001a">[156]</a></p>
+  <p>So that’s it — insecure but reliable, indiscriminate and subtle, user hostile yet easy to use, slow but up to date, and full of difficult, nit-picking people who exhibit a remarkable community camaraderie. Confused? Any other online community would count each of these “negatives” as a terrible flaw, and the contradictions as impossible to reconcile. Perhaps wiki works because the other online communities don’t. <a class="citation" href="#leufWikiWayQuick2001a">[162]</a></p>
 </blockquote>
 
 <p>!! wiki cultural history stuff!! differences in wiki philosophy, deletists vs not. !! meatball stuff on community maintenace, conflict resolution,</p>
@@ -1409,11 +1429,11 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
   <p>The IETF is a good example of this. Often lauded by the public as a model of openness and and and freedom, the reality is that working group chairs, appointed by a self-elected ruling board, get away with declaring whatever they want (usually an inferior and difficult to implement alternative) as “rough consensus”, routinely ignoring comments from the public and objections from working group members. One working group (in charge of DNS extentsions) went so far as to censor mail from working group members. The dictators running the IETF, when informed, didn’t seem to mind.</p>
 
-  <p>Is the same sort of thing at work in the Pie/Echo/Atom Project? It appears so at first glance: Sam running the show from behind the scenes, putting friends in charge of the specs (although that isn’t what actually happened). The lack of a dispute-resolution process only makes things worse: when there’s no clear guide on how to make decisions or contributions, it’s far from obvious how to challenge a decision Sam has made. <a class="citation" href="#swartzSecretsStandards2003">[157]</a></p>
+  <p>Is the same sort of thing at work in the Pie/Echo/Atom Project? It appears so at first glance: Sam running the show from behind the scenes, putting friends in charge of the specs (although that isn’t what actually happened). The lack of a dispute-resolution process only makes things worse: when there’s no clear guide on how to make decisions or contributions, it’s far from obvious how to challenge a decision Sam has made. <a class="citation" href="#swartzSecretsStandards2003">[163]</a></p>
 </blockquote>
 
 <blockquote>
-  <p>c2wiki is an exercise in dialogical methods. of laying bare the fact that knowledge and ideas are not some truth delivered from On High, but rather a social process, a conversation, a dialectic, between various views and interests <a class="citation" href="#valentineC2wikiExerciseDialogical2021">[158]</a></p>
+  <p>c2wiki is an exercise in dialogical methods. of laying bare the fact that knowledge and ideas are not some truth delivered from On High, but rather a social process, a conversation, a dialectic, between various views and interests <a class="citation" href="#valentineC2wikiExerciseDialogical2021">[164]</a></p>
 </blockquote>
 
 <p>!! give the example of the autopilot wiki</p>
@@ -1424,11 +1444,11 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
   <p>Two essential features coordinate this information to better serve our organizational decision-making, learning, and memory. The first is our constellation of Working Groups that maintain and distribute local, specialized knowledge to other groups across the network. […] A second, more emergent property is the subgroup of IBL researchers who have become experts, liaisons, and interpreters of knowledge across the network. These members each manage a domain of explicit records (e.g., written protocols) and tacit information (e.g., colloquialisms, decision histories) that are quickly and informally disseminated to address real-time needs and problems. A remarkable nimbleness is afforded by this system of rapid responders deployed across our web of Working Groups. However, this kind of internalized knowledge can be vulnerable to drop-out when people leave the collaboration, and can be complex to archive. An ongoing challenge for our collaboration is how to archive both our explicit and tacit processes held in both people and places. This is not only to document our own history but as part of a roadmap for future science teams, whose dynamics are still not fully understood. <a class="citation" href="#woolKnowledgeNetworksHow2020">[7]</a></p>
 </blockquote>
 
-<p><a class="citation" href="#kamelboulosSemanticWikisComprehensible2009">[159]</a></p>
+<p><a class="citation" href="#kamelboulosSemanticWikisComprehensible2009">[165]</a></p>
 
-<p>!! Read and cite! <a class="citation" href="#classeDistributedInfrastructureSupport2017">[160]</a></p>
+<p>!! Read and cite! <a class="citation" href="#classeDistributedInfrastructureSupport2017">[166]</a></p>
 
-<p>!! <a class="citation" href="#goodSocialTaggingLife2009">[161]</a></p>
+<p>!! <a class="citation" href="#goodSocialTaggingLife2009">[167]</a></p>
 
 <p>!! wikibase can do federated SPARQL queries https://wikiba.se/</p>
 <ul>
@@ -1449,7 +1469,7 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
   <p>The Semantic Web is about two things. It is about common formats for integration and combination of data drawn from diverse sources, where on the original Web mainly concentrated on the interchange of documents. It is also about language for recording how the data relates to real world objects. That allows a person, or a machine, to start off in one database, and then move through an unending set of databases which are connected not by wires but by being about the same thing. https://www.w3.org/2001/sw/</p>
 </blockquote>
 
-<p>!! Semantic combination of databases in science are also not new <a class="citation" href="#cheungSemanticWebApproach2007">[162, 127]</a>. We need both though! semantic federated databases!</p>
+<p>!! Semantic combination of databases in science are also not new <a class="citation" href="#cheungSemanticWebApproach2007">[168, 127]</a>. We need both though! semantic federated databases!</p>
 
 <p>!! let’s tour through wikipedia for a second and see how it’s organized. Look at these community incentive structures and the huge macro-to-micro level organization of the wiki projects. The infinitely mutable nature of a wiki is what makes it powerful, but the SaaS wikis we’re familiar with don’t capture the same kind of ‘build the ground you walk on ‘ energy of the real wiki movement.</p>
 
@@ -1487,7 +1507,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 
 <h3 id="credit-assignment">Credit Assignment</h3>
 
-<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[160, 1]</a></p>
+<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[166, 1]</a></p>
 
 <p>!! essentially all questions about “changing the system of science” inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.</p>
 
@@ -1551,7 +1571,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <li><span id="brembsReplacingAcademicJournals2021">24. Brembs B, Huneman P, Schönbrodt F, Nilsonne G, Susi T, Siems R, Perakakis P, Trachana V, Ma L, Rodriguez-Cuadrado S (2021) Replacing Academic Journals. https://doi.org/10.5281/zenodo.5526635</span></li>
 <li><span id="ElsevierSevenBridges2017">25. (2017) Elsevier and Seven Bridges Receive NIH Data Commons Grant for Biomedical Data Analysis. https://www.elsevier.com/about/press-releases/archive/science-and-technology/elsevier-and-seven-bridges-receive-nih-data-commons-grant-for-biomedical-data-analysis</span></li>
 <li><span id="macinnesCompatibilityStandardsMonopoly2005">26. MacInnes I (2005) Compatibility Standards and Monopoly Incentives: The Impact of Service-Based Software Licensing. <i>International Journal of Services and Standards</i>, 1(3):255–270. https://doi.org/10.1504/IJSS.2005.005799</span></li>
-<li><span id="RELXAnnualReport2020">27. (2020) RELX Annual Report 2020. <i>Corporate Responsibility</i>, :196. https://www.relx.com/ /media/Files/R/RELX-Group/documents/reports/annual-reports/2020-annual-report.pdf</span></li>
+<li><span id="RELXAnnualReport2020">27. (2020) RELX Annual Report 2020. :196. https://www.relx.com/ /media/Files/R/RELX-Group/documents/reports/annual-reports/2020-annual-report.pdf</span></li>
 <li><span id="brembsAlgorithmicEmploymentDecisions2021">28. Brembs B (2021) Algorithmic Employment Decisions in Academia? <i>bjoern.brembs.blog</i>, http://bjoern.brembs.net/2021/09/algorithmic-employment-decisions-in-academia/</span></li>
 <li><span id="biddleLexisNexisProvideGiant2021">29. Biddle S (2021) LexisNexis to Provide Giant Database of Personal Information to ICE. <i>The Intercept</i>, https://theintercept.com/2021/04/02/ice-database-surveillance-lexisnexis/</span></li>
 <li><span id="CriticismAmazon2021">30. (2021) Criticism of Amazon. <i>Wikipedia</i>, https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&amp;oldid=1043543093</span></li>
@@ -1674,19 +1694,25 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <li><span id="eklundClusterFailureWhy2016a">147. Eklund A, Nichols TE, Knutsson H (2016) Cluster Failure: Why fMRI Inferences for Spatial Extent Have Inflated False-Positive Rates. <i>Proceedings of the National Academy of Sciences</i>, 113(28):7900–7905. https://doi.org/10.1073/pnas.1602413113</span></li>
 <li><span id="bhandarineupaneCharacterizationLeptazolinesPolar2019">148. Bhandari Neupane J, Neupane RP, Luo Y, Yoshida WY, Sun R, Williams PG (2019) Characterization of Leptazolines A–D, Polar Oxazolines from the Cyanobacterium Leptolyngbya Sp., Reveals a Glitch with the “Willoughby–Hoye” Scripts for Calculating NMR Chemical Shifts. <i>Organic Letters</i>, 21(20):8449–8453. https://doi.org/10.1021/acs.orglett.9b03216</span></li>
 <li><span id="kaneRealtimeLowlatencyClosedloop2020">149. Kane GA, Lopes G, Saunders JL, Mathis A, Mathis MW (2020) Real-Time, Low-Latency Closed-Loop Feedback Using Markerless Posture Tracking. <i>eLife</i>, 9:e61909. https://doi.org/10.7554/eLife.61909</span></li>
-<li><span id="chuSlowedCanonicalProgress2021">150. Chu JSG, Evans JA (2021) Slowed Canonical Progress in Large Fields of Science. <i>Proceedings of the National Academy of Sciences</i>, 118(41)https://doi.org/10.1073/pnas.2021636118</span></li>
-<li><span id="heathersRealScandalIvermectin2021">151. Heathers J (2021) The Real Scandal About Ivermectin. <i>The Atlantic</i>, https://www.theatlantic.com/science/archive/2021/10/ivermectin-research-problems/620473/</span></li>
-<li><span id="shenMeetThisSuperspotter2020">152. Shen H (2020) Meet This Super-Spotter of Duplicated Images in Science Papers. <i>Nature</i>, 581(7807):132–136. https://doi.org/10.1038/d41586-020-01363-z</span></li>
-<li><span id="bikPrevalenceInappropriateImage2016">153. Bik EM, Casadevall A, Fang FC (2016) The Prevalence of Inappropriate Image Duplication in Biomedical Research Publications. <i>mBio</i>, 7(3):e00809–16. https://doi.org/10.1128/mBio.00809-16</span></li>
-<li><span id="swartzTechniquesMassCollaboration2006">154. Swartz A (2006) The Techniques of Mass Collaboration: A Third Way Out (Aaron Swartz’s Raw Thought). http://www.aaronsw.com/weblog/masscollab2</span></li>
-<li><span id="lombardiGoogleExecChallenges2007">155. Lombardi C (2007) Google Exec Challenges Berners-Lee | CNET News.Com. https://web.archive.org/web/20070105030625/http://news.com.com/Google+exec+challenges+Berners-Lee/2100-1025_3-6095705.html</span></li>
-<li><span id="leufWikiWayQuick2001a">156. Leuf B, Cunningham W (2001) The Wiki Way : Quick Collaboration on the Web. http://archive.org/details/isbn_9780201714999</span></li>
-<li><span id="swartzSecretsStandards2003">157. Swartz A (2003) Secrets of Standards. <i>Aaron Swartz: The Weblog</i>, http://www.aaronsw.com/weblog/001027</span></li>
-<li><span id="valentineC2wikiExerciseDialogical2021">158. valentine beka (2021) C2wiki Is an Exercise in Dialogical Methods. of Laying Bare the Fact That Knowledge and Ideas Are Not Some Truth Delivered from On High, but Rather a Social Process, a Conversation, a Dialectic, between Various Views and Interests. <i>@beka_valentine</i>, https://twitter.com/beka_valentine/status/1454522998594043906</span></li>
-<li><span id="kamelboulosSemanticWikisComprehensible2009">159. Kamel Boulos M (2009) Semantic Wikis: A Comprehensible Introduction with Examples from the Health Sciences. <i>Journal of Emerging Technologies in Web Intelligence</i>, 1https://doi.org/10.4304/jetwi.1.1.94-96</span></li>
-<li><span id="classeDistributedInfrastructureSupport2017">160. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
-<li><span id="goodSocialTaggingLife2009">161. Good BM, Tennis JT, Wilkinson MD (2009) Social Tagging in the Life Sciences: Characterizing a New Metadata Resource for Bioinformatics. <i>BMC Bioinformatics</i>, 10(1):313. https://doi.org/10.1186/1471-2105-10-313</span></li>
-<li><span id="cheungSemanticWebApproach2007">162. Cheung K-H, Smith AK, Yip KYL, Baker CJO, Gerstein MB (2007) Semantic Web Approach to Database Integration in the Life Sciences. <i>Semantic Web</i>, :11–30. https://doi.org/10.1007/978-0-387-48438-9_2</span></li></ol>
+<li><span id="RELXAnnualReport2019">150. (2019) RELX Annual Report 2019. https://www.relx.com/ /media/Files/R/RELX-Group/documents/reports/annual-reports/2019-annual-report.pdf</span></li>
+<li><span id="springernatureBrandedContent">151. Springer Nature Branded Content. <i>Nature Research Partnerships</i>, https://partnerships.nature.com/product/branded-content-native-advertising/</span></li>
+<li><span id="elsevier360AdvertisingSolutions">152. Elsevier 360\textdegree Advertising Solutions | Advertising | Advertisers. <i>Elsevier.com</i>, https://www.elsevier.com/advertising-reprints-supplements/advertising</span></li>
+<li><span id="elsevierDrugDesignOptimization">153. Elsevier Drug Design Optimization. <i>Elsevier.com</i>, https://www.elsevier.com/solutions/professional-services/drug-design-optimization</span></li>
+<li><span id="elsevierTopicProminenceScienceb">154. Elsevier Topic Prominence in Science - Scival | Elsevier Solutions. <i>Elsevier.com</i>, https://www.elsevier.com/solutions/scival/features/topic-prominence-in-science</span></li>
+<li><span id="chuSlowedCanonicalProgress2021">155. Chu JSG, Evans JA (2021) Slowed Canonical Progress in Large Fields of Science. <i>Proceedings of the National Academy of Sciences</i>, 118(41)https://doi.org/10.1073/pnas.2021636118</span></li>
+<li><span id="heathersRealScandalIvermectin2021">156. Heathers J (2021) The Real Scandal About Ivermectin. <i>The Atlantic</i>, https://www.theatlantic.com/science/archive/2021/10/ivermectin-research-problems/620473/</span></li>
+<li><span id="shenMeetThisSuperspotter2020">157. Shen H (2020) Meet This Super-Spotter of Duplicated Images in Science Papers. <i>Nature</i>, 581(7807):132–136. https://doi.org/10.1038/d41586-020-01363-z</span></li>
+<li><span id="bikPrevalenceInappropriateImage2016">158. Bik EM, Casadevall A, Fang FC (2016) The Prevalence of Inappropriate Image Duplication in Biomedical Research Publications. <i>mBio</i>, 7(3):e00809–16. https://doi.org/10.1128/mBio.00809-16</span></li>
+<li><span id="whiteFutureOpenOpenSource2019">159. White SR, Amarante LM, Kravitz AV, Laubach M (2019) The Future Is Open: Open-Source Tools for Behavioral Neuroscience Research. <i>eNeuro</i>, 6(4):ENEURO.0223–19.2019. https://doi.org/10.1523/ENEURO.0223-19.2019</span></li>
+<li><span id="swartzTechniquesMassCollaboration2006">160. Swartz A (2006) The Techniques of Mass Collaboration: A Third Way Out (Aaron Swartz’s Raw Thought). http://www.aaronsw.com/weblog/masscollab2</span></li>
+<li><span id="lombardiGoogleExecChallenges2007">161. Lombardi C (2007) Google Exec Challenges Berners-Lee | CNET News.Com. https://web.archive.org/web/20070105030625/http://news.com.com/Google+exec+challenges+Berners-Lee/2100-1025_3-6095705.html</span></li>
+<li><span id="leufWikiWayQuick2001a">162. Leuf B, Cunningham W (2001) The Wiki Way : Quick Collaboration on the Web. http://archive.org/details/isbn_9780201714999</span></li>
+<li><span id="swartzSecretsStandards2003">163. Swartz A (2003) Secrets of Standards. <i>Aaron Swartz: The Weblog</i>, http://www.aaronsw.com/weblog/001027</span></li>
+<li><span id="valentineC2wikiExerciseDialogical2021">164. valentine beka (2021) C2wiki Is an Exercise in Dialogical Methods. of Laying Bare the Fact That Knowledge and Ideas Are Not Some Truth Delivered from On High, but Rather a Social Process, a Conversation, a Dialectic, between Various Views and Interests. <i>@beka_valentine</i>, https://twitter.com/beka_valentine/status/1454522998594043906</span></li>
+<li><span id="kamelboulosSemanticWikisComprehensible2009">165. Kamel Boulos M (2009) Semantic Wikis: A Comprehensible Introduction with Examples from the Health Sciences. <i>Journal of Emerging Technologies in Web Intelligence</i>, 1https://doi.org/10.4304/jetwi.1.1.94-96</span></li>
+<li><span id="classeDistributedInfrastructureSupport2017">166. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
+<li><span id="goodSocialTaggingLife2009">167. Good BM, Tennis JT, Wilkinson MD (2009) Social Tagging in the Life Sciences: Characterizing a New Metadata Resource for Bioinformatics. <i>BMC Bioinformatics</i>, 10(1):313. https://doi.org/10.1186/1471-2105-10-313</span></li>
+<li><span id="cheungSemanticWebApproach2007">168. Cheung K-H, Smith AK, Yip KYL, Baker CJO, Gerstein MB (2007) Semantic Web Approach to Database Integration in the Life Sciences. <i>Semantic Web</i>, :11–30. https://doi.org/10.1007/978-0-387-48438-9_2</span></li></ol>
 
 <h1 id="footnotes">Footnotes</h1>
 
@@ -1784,6 +1810,9 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
     </li>
     <li id="fn:creditte" role="doc-endnote">
       <p>we’ll return to credit assignment, don’t worry! I wouldn’t leave a friend out to dry. <a href="#fnref:creditte" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:whatdivision" role="doc-endnote">
+      <p>RELX is a huge information conglomerate, and scientific publication is just one division. <a href="#fnref:whatdivision" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
