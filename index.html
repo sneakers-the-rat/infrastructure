@@ -61,7 +61,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-59-12"> 2021-11-12</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/8781d16"><code>8781d16</code></a>
+            <time datetime="2021-20-12"> 2021-11-12</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/736da47"><code>736da47</code></a>
         </div>
     </div>
     <div class="trimlink">
@@ -123,6 +123,7 @@
   </li>
   <li><a href="#a-draft-of-decentralized-scientific-infrastructure" id="markdown-toc-a-draft-of-decentralized-scientific-infrastructure">A Draft of Decentralized Scientific Infrastructure</a>    <ol>
       <li><a href="#design-principles" id="markdown-toc-design-principles">Design Principles</a>        <ol>
+          <li><a href="#protocols-not-platforms" id="markdown-toc-protocols-not-platforms">Protocols, not Platforms</a></li>
           <li><a href="#integration-not-invention" id="markdown-toc-integration-not-invention">Integration, not Invention</a></li>
           <li><a href="#embrace-heterogeneity-be-uncoercive" id="markdown-toc-embrace-heterogeneity-be-uncoercive">Embrace Heterogeneity, Be Uncoercive</a></li>
           <li><a href="#empower-people-not-systems" id="markdown-toc-empower-people-not-systems">Empower People, not Systems</a></li>
@@ -522,12 +523,10 @@ These constraints manifest differently depending on the circumstance of scientif
 
 <p>!! need to integrate <a class="citation" href="#larsenPoliticalNatureTCP2012">[20]</a></p>
 
-<div class="rdfa" typeof="skos:Concept" resource="#protocols" id="protocols">
 <h3 id="protocols-not-platforms">Protocols, not Platforms</h3>
- 
-</div>
 
-<p>Much of the basic technology of the internet was developed as <em>protocols</em> that describe the basic attributes and operations of a process. 
+<p>Much of the basic technology of the internet was developed as
+<span class="rdfa" typeof="skos:Concept" resource="#protocols"><em>protocols</em></span> that describe the basic attributes and operations of a process.
 <span class="rdfa" property="skos:example" resource="#protocols">A simple and common example is email over SMTP (Simple Mail Transfer Protocol)</span>
 <a class="citation" href="#Rfc5321SimpleMail">[43]</a>. SMTP describes a series of steps that email servers must follow to send a message: the sender initiates a connection to the recipient server, the recipient server acknowledges the connection, a few more handshake steps ensue to describe the senders and receivers of the message, and then the data of the message is transferred. Any software that implements the protocol can send and and receive emails to and from any other. The protocol basis of email is the reason why it is possible to send an email from a gmail account to a hotmail account (or any other hacky homebrew SMTP client) despite being wholly different pieces of software.</p>
 
