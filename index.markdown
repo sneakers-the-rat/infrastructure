@@ -152,6 +152,15 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 {% include_relative _sections/2_7_knowledge.md %}
 
+### The Wiki Way 
+
+{% include_relative _sections/2_8_wikis.md %}
+
+
+### Credit Assignment
+
+{% include_relative _sections/2_9_credit-incentives.md %}
+
 # Conclusion
 
 {% include_relative _sections/3_0_conclusion.md %}
