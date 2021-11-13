@@ -1,6 +1,13 @@
 
 > So that's it --- insecure but reliable, indiscriminate and subtle, user hostile yet easy to use, slow but up to date, and full of difficult, nit-picking people who exhibit a remarkable community camaraderie. Confused? Any other online community would count each of these "negatives" as a terrible flaw, and the contradictions as impossible to reconcile. Perhaps wiki works because the other online communities don't. {% cite leufWikiWayQuick2001a -l 329 %} and in [WhyWikiWorks](http://wiki.c2.com/?WhyWikiWorks)
 
+> For the wiki to grow and stay healthy, it may be interesting to note that all four elements from Alchemy must be present.
+> 
+> - Earth: the wiki corpus, put into textual form.
+> - Sun: the eyes gazing upon the wiki, giving it attention.
+> - Air: the invisible server on which wiki rests, available at all points. - available from the "ether" (net), you might say?
+> - Water: the interactions from WikiCommunity, making it grow. [AlchemyOfWiki](http://wiki.c2.com/?AlchemyOfWiki)
+
 - There is no larger collective digital knowledge organization effort, aside from the internet itself, than Wikipedia. 
 - Wikis now are ubiquitous, but they tend to be extremely circumscribed in purpose, audience, etc. and we don't tend to use them for communication.
 - Before Wikipedia, there were a series of independent precursor wikis
