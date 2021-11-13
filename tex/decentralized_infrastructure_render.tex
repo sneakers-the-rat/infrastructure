@@ -177,6 +177,8 @@ spelling!!! and then also double check it's cool to list them!!!):
 \item
   Joel Chan
 \item
+  Björn Brembs
+\item
   Sanjay Srivastava \& Metascience Class
 \item
   Ralph Emilio Peterson
@@ -1012,10 +1014,9 @@ journal our papers go into.
 \end{multicols}
 
 
-\hypertarget{whose-job-is-infrastructure---the-ivies-institutes-consortia-and-the-rest-of-us}{%
-\subsection{Whose Job is Infrastructure? - The Ivies, Institutes,
-Consortia, and ``The Rest of
-Us''}\label{whose-job-is-infrastructure---the-ivies-institutes-consortia-and-the-rest-of-us}}
+\hypertarget{the-ivies-institutes-and-the-rest-of-us}{%
+\subsection{The Ivies, Institutes, and ``The Rest of
+Us''}\label{the-ivies-institutes-and-the-rest-of-us}}
 
 
 \begin{multicols}{2}
@@ -1312,22 +1313,24 @@ most successful decentralized digital technology project.
 
 !! need to integrate \cite{larsenPoliticalNatureTCP2012} 
 
-\hypertarget{protocols-not-platforms}{%
-\subsubsection{Protocols, not Platforms}\label{protocols-not-platforms}}
+\{\% include rdfa.html id=``protocols'' resource=``protocols''
+typeof=``skos:Concept'' contents=``\#\#\# Protocols, not Platforms''
+\%\}
 
 Much of the basic technology of the internet was developed as
 \emph{protocols} that describe the basic attributes and operations of a
-process. A simple and common example is email over SMTP (Simple Mail
-Transfer Protocol)\cite{Rfc5321SimpleMail} . SMTP describes a
-series of steps that email servers must follow to send a message: the
-sender initiates a connection to the recipient server, the recipient
-server acknowledges the connection, a few more handshake steps ensue to
-describe the senders and receivers of the message, and then the data of
-the message is transferred. Any software that implements the protocol
-can send and and receive emails to and from any other. The protocol
-basis of email is the reason why it is possible to send an email from a
-gmail account to a hotmail account (or any other hacky homebrew SMTP
-client) despite being wholly different pieces of software.
+process. \{\% include rdfa2.html resource=``protocols''
+property=``skos:example'' contents=``A simple and common example is
+email over SMTP (Simple Mail Transfer Protocol)'' \%\} \cite{Rfc5321SimpleMail} . SMTP describes a series of steps that email
+servers must follow to send a message: the sender initiates a connection
+to the recipient server, the recipient server acknowledges the
+connection, a few more handshake steps ensue to describe the senders and
+receivers of the message, and then the data of the message is
+transferred. Any software that implements the protocol can send and and
+receive emails to and from any other. The protocol basis of email is the
+reason why it is possible to send an email from a gmail account to a
+hotmail account (or any other hacky homebrew SMTP client) despite being
+wholly different pieces of software.
 
 In contrast, \emph{platforms} provide some service with a specific body
 of code usually without any pretense of generality. In contrast to email
@@ -3685,9 +3688,9 @@ creditable system.
 
 I have previously written about the design of a generalizable,
 distributed experimental framework in section 2, and about one modular
-implementation in section 3 of \cite{saundersAutopilotAutomatingBehavioral2019} , and since many of the
-ideas from the section on analysis tools apply here as well, I will be
-relatively brief.
+implementation in section 3 of \cite{saundersAutopilotAutomatingBehavioral2019} , so to avoid repeating
+myself, and since many of the ideas from the section on analysis tools
+apply here as well, I will be relatively brief.
 
 We don't have the luxury of a natural formalism like a DAG to structure
 our experimental tools. Some design constraints on experimental
@@ -3761,6 +3764,39 @@ group, largely composed of members from the Neurodata Without Borders
 team, understandably emphasize systematic description and uniform
 metadata as a primary design principle.
 
+Personally, I \emph{like} statecharts. The problem is that it's not
+necessarily natural to express things as statecharts as you would want
+to, or in the way that your existing, long-developed local experimental
+code does. There are only a few syntactical features needed to
+understand the following statechart: blocks are states, they can be
+inside each other. Arrows move between blocks depending on some
+condition. Entering and exiting blocks can make things happen. Short
+little arrows from filled spots are where you start in a block, and when
+you get to the end of the chart you go back to the first one. See the
+following example of a statechart for controlling a light, described in
+the \href{https://statecharts.dev/on-off-statechart.html}{introductory
+documentation} and summarized in the figure caption:
+
+\includegraphics[width=\linewidth]{../assets/images/on-off-delayed-exit-1.png}
+\emph{``When you flick a lightswitch, wait 0.5 seconds before turning
+the light on, then once it's on wait 0.5 seconds before being able to
+turn it back off again. When you flick it off, wait 2 seconds before you
+can turn it on again.}
+
+They have an extensive set of documents that defend the consistency and
+readability of statecharts on their
+\href{https://statecharts.dev/}{homepage}, and my point here is not to
+disagree with them. My point is instead that tools that aspire to the
+status of generalized infrastructure can't ask people to dramatically
+change the way they think about and do science. There are many possible
+realizations of this task, and each is more or less natural to every
+person.
+
+The problem here is really one of emphasis, BEADL seeks to solve
+problems with inconsistencies in terminology by standardizing them, and
+in order to do that seeks to standardize the syntax for specifying
+experiments.
+
 This means of standardization has many attractive qualities and is being
 led by very capable researchers, but I think the project is illustrative
 of how the differing constraints of different systems and differing
@@ -3775,118 +3811,306 @@ machines, the primary advantage of which is that they are better able to
 incorporate continuous and history-dependent behavior, which causes
 state explosion in traditional finite-state machines.
 
-The syntax of statecharts is actually nice, and I am personally a fan.
-The problem is that it's not necessarily natural to express things as
-statecharts as you would want to, or in the way that your existing,
-long-developed local experimental code does. There are only a few
-syntactical features needed to understand the following statechart:
-blocks are states, they can be inside each other. Arrows move between
-blocks depending on some condition. Entering and exiting blocks can make
-things happen. Short little arrows from filled spots are where you start
-in a block, and when you get to the end of the chart you go back to the
-first one. See the following example of a statechart for controlling a
-light, described in the
-\href{https://statecharts.dev/on-off-statechart.html}{introductory
-documentation} and summarized in the figure caption:
+\href{https://docs.auto-pi-lot.com}{Autopilot} \cite{saundersAutopilotAutomatingBehavioral2019}  approaches the problem
+differently by avoiding standardizing \emph{experiments} themselves,
+instead providing smaller building blocks of experimental tools like
+hardware drivers, data transformations, etc. and emphasizing
+understanding their use in \emph{context.} This approach sacrifices some
+of the qualities of a standardized system like being a logically
+complete or having guaranteed interoperability of terms in order to
+better support integrating with existing work patterns and making work
+cumulative. It is a bit more humble: because we can't possibly predict
+the needs and limitations of a totalizing system, we split the problem
+along the different domains of tools and give facility for describing
+how they are used together.
 
-\includegraphics[width=\linewidth]{../assets/images/on-off-delayed-exit-1.png}
-\emph{``When you flick a lightswitch, wait 0.5 seconds before turning
-the light on, then once it's on wait 0.5 seconds before being able to
-turn it back off again. When you flick it off, wait 2 seconds before you
-can turn it on again.}
+For concrete example, we might imagine the lightswitch in an
+autopilot-like framework like this:
 
-They have an extensive set of documents that defend the consistency and
-readability of statecharts on their
-\href{https://statecharts.dev/}{homepage}, and my point here is not to
-disagree with them.
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ autopilot.hardware.gpio }\ImportTok{import}\NormalTok{ Digital\_Out}
+\ImportTok{from}\NormalTok{ time }\ImportTok{import}\NormalTok{ sleep}
+\ImportTok{from}\NormalTok{ threading }\ImportTok{import}\NormalTok{ Lock}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\KeywordTok{class}\NormalTok{ Lightswitch(Digital\_Out):}
+  \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{,}
+\NormalTok{    off\_debounce: }\BuiltInTok{float} \OperatorTok{=} \DecValTok{2}\NormalTok{,}
+\NormalTok{    on\_delay:     }\BuiltInTok{float} \OperatorTok{=} \FloatTok{0.5}\NormalTok{,}
+\NormalTok{    on\_debounce:  }\BuiltInTok{float} \OperatorTok{=} \FloatTok{0.5}\NormalTok{):}
+    \CommentTok{"""}
+\CommentTok{    Args:}
+\CommentTok{      off\_debounce (float): }
+\CommentTok{        Time (s) before light can be turned back on}
+\CommentTok{      on\_delay (float): }
+\CommentTok{        Time (s) before light is turned on}
+\CommentTok{      on\_debounce (float): }
+\CommentTok{        Time (s) after turning on that light can\textquotesingle{}t be turned off}
+\CommentTok{    """}
+    \VariableTok{self}\NormalTok{.off\_debounce }\OperatorTok{=}\NormalTok{ off\_debounce}
+    \VariableTok{self}\NormalTok{.on\_delay     }\OperatorTok{=}\NormalTok{ on\_delay}
+    \VariableTok{self}\NormalTok{.on\_debounce  }\OperatorTok{=}\NormalTok{ on\_debounce}
 
-\hypertarget{draftmarker}{}
-\# draftmarker
+    \VariableTok{self}\NormalTok{.on }\OperatorTok{=} \VariableTok{False}
+    \VariableTok{self}\NormalTok{.lock }\OperatorTok{=}\NormalTok{ Lock()}
 
-\textasciitilde{} everything past here is purely draft placeholder text
-\textasciitilde{}
+  \KeywordTok{def}\NormalTok{ switch(}\VariableTok{self}\NormalTok{):}
+    \CommentTok{\# use a lock to make sure if}
+    \CommentTok{\# called while waiting, we ignore it}
+    \ControlFlowTok{if} \KeywordTok{not} \VariableTok{self}\NormalTok{.lock.acquire():}
+      \ControlFlowTok{return}
 
-!! complexity of system leads us to need to adopt statecharts to handle
-time !! focus on format makes us want to adopt schema, and that's really
-why we're cluing in here: bunch of people in very similar space and
-aligned ideas but very different conclusions. !! instead of focusing on
-the design of the system in a metastructural sense, ie. by finding a way
-to represent it as a DAGlike or model-based thing, here the design of
-the system demands a different kind of system, but one that's relatively
-well accomodated by a system that's based around expression rather than
-logical completeness. !! but statecharts clearly demonstrate the way
-that different constraints on schemas constrain different possible
-styles of thought. Sure it's possible to reason through that, and it
-might even be delightful, but how does that look to a stressed grad
-student trying to figure out how to make the dozens of different
-hardware components linked together using a body of code summoned from
-hell itself work in some fancy new system!? It's definitely more logical
-and testable and has fewer side effects, but is that the main problem we
-have!? !! because we can't imagine the possible different needs of the
-system \emph{in action} we can split it along different domains of the
-\emph{tools employed.} Focusing on the ways people already think about
-the problem rather than redesigning the problem. !! this is a matter of
-slicing the problem differently: a lightbulb in statecharts is
-represented as \ldots{} but in autopilot we would think of it as a
-hardware object. !! an attractive feature of statecharts is their
-abstraction from implementation, but that's possible in other ways too
-(see autopilot) !! both are representable in our semantic federation
-naming system. but the question is how they are embedded in the current
-practices. This system would be a big lift to incorporate into existing
-practice. And so as a protocol it does enable a body of different
-implementations to use it, the schema itself is complicated and encodes
-a particular style fo thinking. !! and finally returning to
-standardization of schemas, rather than trying to define some vocabulary
-that evetyon agrees on using in the one means of expressing experiments,
-it's impossible to take a lesson from language and instead define terms
-depending on their use: see plugin model and flexible semantic linking.
-which leads into next section\ldots.
+    \CommentTok{\# if already on, switch off}
+    \ControlFlowTok{if} \VariableTok{self}\NormalTok{.on: }
+      \VariableTok{self}\NormalTok{.on }\OperatorTok{=} \VariableTok{False}
+\NormalTok{      sleep(}\VariableTok{self}\NormalTok{.off\_debounce)}
 
-!! fit this next idea in in above section where appropriate: !! this is
-not to pick on statecharts themselves or to make too big a deal out of
-them. Upstream a bit we have general purpose tools like psychopy,
-psychtoolbox, and Bonsai\ldots{} !! all these are useful contributions
-to the domain, but contrastive with a generalizable framework. !! really
-bigg empathy with statechart ppl, like basically agree with this
-https://statecharts.dev/faq/why-statecharts-are-not-used.html and they
-should be used more, but talking broad scale ``what works for everyone''
-it's just too specific!!! !! the alternative model here really is just
-community control and communication, and statecharts are fully
-compatible with that. statechart ppl get their own namespace. !! here
-we're trying to illustrate not the best approach to \emph{experimental
-software} but how a generalized infrastructure is capable of reflecting
-itself differently in different domains, and illustrate some advantages
-of designs that explicitly are intended to accomodate that.
+    \CommentTok{\# otherwise switch on}
+    \ControlFlowTok{else}\NormalTok{: }
+\NormalTok{      sleep(}\VariableTok{self}\NormalTok{.on\_delay)}
+      \VariableTok{self}\NormalTok{.on }\OperatorTok{=} \VariableTok{True}
+\NormalTok{      sleep(}\VariableTok{self}\NormalTok{.on\_debounce)}
 
-!! proceed to autopilot description, through wiki stuff, to next
-section. !! points to highlight are different division of labor, the
-choice to have schemas be resolved by wiki and continual deliberation
-rather than constraining a terminological space. plugins that describe
-different modes of using a system that can all be contributed and are
-focused on recombination rather than state charts which are more for
-discrete programming. !! incomplete, but keep brief, demonstrate
-reference to same idea implemented in statecharts and autopilot-like
-syntax being able to be linked with different namespaces !! emphasize
-reuse of labor by emphasizing recombining different elements. DAGs might
-not work here, but if the individual nodes are different hardware
-objects and so on we get a bit closer. Bonsai is a good example of this
-too, it too has different (valid) design goals/constraints but along
-different axes.
+    \VariableTok{self}\NormalTok{.lock.release()}
+\end{Highlighting}
+\end{Shaded}
+
+The terms \texttt{off\_debounce}, \texttt{on\_delay}, and
+\texttt{on\_debounce} are certainly not part of a controlled ontology,
+but we have described how they are used in the docstring and how they
+are used is inspectable in the class itself.
+
+The difficulty of a controlled ontology for experimental frameworks is
+perhaps better illustrated by considering a full experiment. In
+Autopilot, a full experiment can be parameterized by the \texttt{.json}
+files that define the task itself and the system-specific configuration
+of the hardware. An
+\href{https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e}{example
+task} from our lab consists of 7 behavioral shaping stages that
+introduce the animal to different features of a fairly typical auditory
+categorization task, each of which includes the parameters for at most
+12 different stimuli per stage, probabilities for presenting lasers,
+bias correction, reinforcement, criteria for advancing to the next
+stage, etc. So just for one relatively straightforward experiment, in
+one lab, in one subdiscipline, there are \textbf{268 parameters} --
+excluding all the default parameters encoded in the software.
+
+The way Autopilot handles various parameters are part of set of layers
+of abstraction that separate idiosyncratic logic from the generic form
+of a particular \texttt{Task} or \texttt{Hardware} class. The general
+structure of a two-alternative forced choice task is shared across a
+number of experiments, but they may have different stimuli, different
+hardware, and so on. Autopilot \texttt{Task}s use abstract references to
+classes of hardware components that are required to run them, but
+separates their implementation as a system-specific configuration so
+that it's not necessary to have \emph{exactly the same} components
+plugged into \emph{exactly the same} GPIO pins, etc. Task parameters
+like stimuli, reward timings, etc. are similarly split into a separate
+task parameterization that both allow \texttt{Task}s to be generic and
+make provenance and experimental history easier to track. \texttt{Task}
+classes can be subclasses to add or modify logic while being able to
+reuse much of the structure and maintain the link between the root task
+and its derivatives --- for example
+\href{https://github.com/auto-pi-lot/autopilot-plugin-wehrlab/blob/9cfffcf5fe1886d25658d4f1f0c0ffe41c18e2cc/gap/nafc_gap.py\#L13-L49}{one
+task we use} that starts a continuous background sound but otherwise is
+the same as the root \texttt{Nafc} class. The result of these points of
+abstraction is to allow exact experimental replication on inexactly
+replicated experimental apparatuses.
+
+In contrast, workflows in Bonsai \cite{lopesBonsaiEventbasedFramework2015a, lopesNewOpenSourceTools2021} ,
+another very popular and very capable experimental tool,
+\href{https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai}{combine
+the pattern of nodes} that constitute an experiment with idiosyncratic
+parameters like a
+\href{https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai\#L76-L85}{crop
+bounding box}. To be clear, I love Bonsai, and this kind of workflow
+reproducibility is a huge step up from the more common practice of
+totally lab-specific code. The flat design of Bonsai is extremely useful
+for prototyping and extends through to complex experiments, but would
+have a hard time being able to support generalizable and reusable
+software classes for basic experimental operations, as well as creation
+and negotiation over experimental terminology.
+
+We can imagine extending the abstract specification of experimental
+parameters, hardware requirements, and so on to work with our federated
+naming system to overcome the challenges to standardizing. First, we can
+imagine being able to make explicit declarations about the relationship
+between our potentially very local terminology. Here we can declare our
+\texttt{Lightswitch} object and 1) link its \texttt{on\_delay} to our
+friend \texttt{@rumbly}'s object that implements the same thing as
+\texttt{on\_latency}, and 2) link it to a standardized \texttt{Latency}
+term from
+\href{https://scicrunch.org/scicrunch/interlex/view/ilx_0106040\#annotations}{interlex},
+but since that term is for time elapsed between a stimulus and
+behavioral response in a psychophysical context, it's only a partial
+match.
+
+\begin{verbatim}
+<#Lightswitch>
+  a @autopilot.hardware.Digital_Out
+
+  param on_delay
+    @skos:exactMatch @rumbly:LED:on_latency
+    @skos:nearMatch @interlex:Latency
+
+  providedBy
+    @git:repository ...
+    @python:class ...
+\end{verbatim}
+
+Further, since our experimental frameworks are intended to handle off
+the shelf parts as well as our potentially idiosyncratic lightbulb
+class, we can link many implementations of a hardware controlling class
+to the product itself. Take for example the
+\href{https://docs.auto-pi-lot.com/en/latest/hardware/i2c.html\#autopilot.hardware.i2c.I2C_9DOF}{I2C\_9DOF}
+class that controls a 9 degree of freedom motion sensor from
+\href{https://www.sparkfun.com/products/13944}{Sparkfun} where we both
+indicate the specific part itself as well as the generic \texttt{ic}
+that it uses:
+
+\begin{verbatim}
+<#I2C_9DOF>
+  @autopilot.controlsHardware
+    @sparkfun:13944
+    @ic:LSM9DS1
+\end{verbatim}
+
+This hints at the first steps of a system that would make our technical
+work more cumulative, as it is then easy to imagine being able to search
+for all the different implementations for a given piece of hardware.
+Since the \texttt{@sparkfun:13944} element can in turn specify
+properties like being an inertial motion sensor, this kind of linking
+becomes powerful very quickly to make bridges that allow similar work to
+be discovered and redeployed quickly.
+
+We can also extend our previous connection between a dataset and the
+results of its analysis to also include the tools that were used to
+collect it. Say we want to declare the
+\href{https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e}{example
+experiment} above, and then extend our
+\texttt{\textless{}\#project-name\textgreater{}} project to, also above,
+to reference it:
+
+\begin{verbatim}
+<#example-experiment>
+  a @autopilot:protocol
+
+  level @autopilot:freeWater
+    reward
+      type mL
+      value 5
+    graduation 
+      a @autopilot:graduation:ntrials
+      n_trials 200
+
+  level @autopilot:Nafc
+    stim
+      @autopilot:stim:sound:Tone
+        frequency 5000
+        duration 100
+
+  ...
+
+  @autopilot:prefs
+    @jonny:Lightswitch
+      on_delay 1
+
+<#project-name-2>
+  a @jonny:project-name
+  collectedBy @jonny:example-experiment
+\end{verbatim}
+
+So while we sacrifice the direct declaration of standardized terminology
+and syntax, we gain the potential for a much denser and richer
+expressive structure for our experiments. Instead of a single
+authoritative dictionarylike meaning for a term, we instead appreciate
+it in the context of its use, linked to the code that implements it as
+well as the data it produces and the kinds of arguments that are made
+with different analysis chains. Of course there is no intrinsic conflict
+with this kind of freewheeling system and controlled vocabularies and
+syntaxes: in this system, they can be one of many means of expression
+rather than need to be singular sources of truth that depend on wide
+adoption. While individual instances of uncontrolled vocabularies might
+mean chaos, when they are integrated in a system of practice we get
+something much wilder but also more intricate, beautiful, and useful.
+
+As in the case of analytical tools, the role of the experimental
+frameworks is also to make interacting with the rest of the system
+easier and doesn't involve manually editing a lot of metadata. For
+example, currently autopilot \texttt{Task}s ask users to declare
+collected data as a \href{https://www.pytables.org/}{pytables} \cite{altedPyTablesProcessingAnalyzing2003}  datatypes like
+\texttt{target\ =\ tables.StringCol(1)} to record whether a target is
+\texttt{\textquotesingle{}L\textquotesingle{}} or
+\texttt{\textquotesingle{}R\textquotesingle{}}. If instead it was
+capable of specifying a Neurodata Without Borders data type like
+\texttt{target\ =\ \textquotesingle{}@nwb:behavior:BehavioralEvents\textquotesingle{}},
+then it would be possible to directly output to a standardized format,
+potentially also automatically creating a
+\href{https://pynwb.readthedocs.io/en/stable/pynwb.behavior.html\#pynwb.behavior.BehavioralEpochs}{\texttt{BehavioralEpochs}}
+container or other data that are implied but otherwise have to be
+explicitly created. Autopilot already automatically tracks the entire
+behavioral history of an experimental subject, so we can also imagine it
+being able to automatically create a \texttt{@analysis:project} object
+described above that groups together multiple datasets that connected
+them to an analysis pathway. So in this example the elusive workflow
+where experimental data is automatically scooped up and incrementally
+analyzed that is typically a hard-won engineering battle within a single
+lab would become the normal mode of using the system.
+
+The experimental framework described so far could solve some of the
+software challenges of doing experiments by providing a system for
+extending a set of reusable classes that can be combined into
+experiments and linked together, but we haven't described anything to
+address the rest of the contextual knowledge of practical scientific
+work. We also haven't described any sort of governance or development
+system that makes these packages anything more than ``some repository on
+GitHub somewhere'' with all the propensity to calcify into fiefdoms that
+those entail. This leads us back to a system of communication, the
+central piece of missingness that we have been circling around the whole
+piece. If you'll allow me one more delay, I want to summarize the system
+so far before finally arriving there.
 
 
 \end{multicols}
 
 
-\hypertarget{collectivizing-the-state-of-the-art}{%
-\subsubsection{Collectivizing the State of the
-Art}\label{collectivizing-the-state-of-the-art}}
+\hypertarget{abstraction-protocol-design}{%
+\subsubsection{Abstraction \& Protocol
+Design}\label{abstraction-protocol-design}}
 
 
 \begin{multicols}{2}
- !! how about just move this until after the tools section
-because i bet we'll end up saying a lot of the same things.
+
+
+This section should be split back up s.t. the parts specific to
+analysis/experimental tools are at the ends of those sections, and we
+should move the discussion about layers of abstraction congealing into a
+protocol in the end in the practical implementation section. I'm leaving
+this here until I have time to do that, but for now you probably want to
+skip to the next section :)
+
+Though there are many similarities between the three domains of data,
+analytical, and experimental tools, the different constraints each
+impose on a generalizable framework for integration and interoperability
+are instructive. Each requires a careful consideration of the
+\emph{layers of abstraction} needed to maintain the modularity of the
+system --- this is an elemental feature of any protocol design. What are
+the minimal affordances needed to implement a wide array of systems and
+technologies within each domain? By being careful with specifying
+abstraction, when considered together, the linked system described so
+far represents a powerful step towards \emph{collectivizing the
+scientific state of the art.}
+
+There are three primary layers of abstraction in the analysis system
+described: the interface between the metadata description of a node and
+the code that implements it, the separation of individual nodes and a
+notion of a combined workflow, and perhaps more subtly the separation of
+the data applied to the workflow and the workflow itself.
+
+!! while the analysis system seeks to make multiple software packages
+and environments be interoperable together, the experimental framework
+makes no such attempt. !! the need for careful timing and adaptation to
+individual systems leaves integration for the implementing codebases.
 
 \begin{itemize}
 \item
@@ -3983,8 +4207,79 @@ meta-analyses across all data and all time, but hold your horses! We
 don't get magic for free, we haven't talked about the community systems
 yet that are the unspoken glue of all of this!!
 
+The category distinction between experimental and analytical tools is,
+of course, a convenient ordering fiction for the purpose of this piece.
+Autopilot is designed to make it easy to integrate other tools, and \cite{kaneRealtimeLowlatencyClosedloop2020} 
+
+!! so in parallel to our linking scheme is the development patterns that
+we use. The linking system is general enough for allcomers, and it
+implies the patterns of linkage that should exist, but they then need to
+be implemented. Much like desire pathways though, the frequent co-use of
+different tools gives a good idea about the direction that development
+should go. So the systems work reciprocally: metadata linking system
+connect ideas and tools, and can
+
+!! these are examples of what happens when you relax the demanding parts
+of an exact ontology/knowledge graph -- we don't guarantee computability
+across the graph itself, there's no way to automatically whiz
+uncritically across all datasets in the system, but as we have seen
+that's also not really true of the other systems either, to the degree
+that it's desirable at all. Instead of having formal guarantees on the
+graph, we can design tools that automate certain parts of the
+interaction with the system to actually make our jobs easier. By being
+very permissive, we let the desire paths of tool use form. This is a
+very literal example of the `empower people, not systems' principle.
+
+!! reciprocally, we can also imagine the reverse: being able to develop
+metadata structures that are then code generators for tools that have a
+sufficiently sophisticated API -- for example remember how we said
+Bonsai might have a hard time making generalizable behavioral tasks/etc?
+Imagine if someone made a code compilation tool that allowed people to
+declare abstract structures that could then be reusably reparameterzied
+that autocreated a bonsai workflow? In the same way that the metadata
+system can be used for \emph{storage} of existing work, it can also be
+used to create abbreviate and abstract constructs for \emph{use} with
+other tools.
+
 !! continue the example of needing to select within datasets instead of
-metadata from federation section. 
+metadata from federation section.
+
+To take stock:
+
+We have described a system of three component modalities: \textbf{data,
+analytical tools, and experimental tools} connected by a \textbf{linked
+data} layer. We started by describing the need for a
+\textbf{peer-to-peer} data system that makes use of \textbf{data
+standards} as an onramp to linked metadata. To interact with the system,
+we described an identity-based linked data system that lets individual
+people declare linked data resources and properties that link to
+\textbf{content addressed} resources in the p2p system, as well as
+\textbf{federate} into multiple larger organizations. We described the
+requirements for \textbf{DAG-based analytical frameworks} that allow
+people to declare individual nodes for a processing chain linked to
+code, combine them into workflows, and apply them to data. Finally, we
+described a design strategy for \textbf{component-based experimental
+frameworks} that lets people specify experimental metadata, tools, and
+output data.
+
+This system as described is a two-layer system, with a few different
+domains linked by a flexible metadata linking layer. The metadata system
+as described is not merely \emph{inert} metadata, but metadata linked to
+code that can \emph{do something} --- eg. specify access permissions,
+translate between data formats, execute analayis workflows, parameterize
+experiments, etc. Put another way, we have been attempting to describe a
+system that \emph{embeds the act of sharing and curation in the practice
+of science.} Rather than a thankless post-hoc process, the system
+attempts to provide a means for aligning the daily work of scientists so
+that it can be cumulative and collaborative. To do this, we have tried
+to avoid rigid specifications of system structure, and instead described
+a system that allows researchers to pluralistically define the structure
+themselves.
+
+!! Now we need to consider the social tools needed to communicate
+within, negotiate over, and govern the system.
+
+
 \end{multicols}
 
 
@@ -3997,20 +4292,228 @@ metadata from federation section.
 infrastructural system sketched in the preceding sections is the
 \emph{communication} and \emph{organization} systems that make up the
 interfaces to maintain and use it. We can finally return to some of the
-breadcrumbs laid before: negotiating over distributed and conflicting
-data schema, the potential forms of social systems for incentivizing and
-organizing labor discussed previously in the context of bittorrent
-trackers, and a means of maintaining the links between the broadly
-dispersed components of the infrastructure.
+breadcrumbs laid before: the need for negotiating over distributed and
+conflicting data schema, for incentivizing and organizing collective
+labor, and ultimately for communicating scientific results.
 
-To do that we'll trace a bit more of the history of the semantic web
-community, as well as the parallel but distinct history of the early
-wiki movement. We'll land back in the realm of ActivityPub
+The communication systems that are needed double as \emph{knowledge
+organization} systems. Knowledge organization has the rosy hue of
+something that might be uncontroversial and apolitical --- surely
+everyone involved in scientific communication wants knowledge to be
+organized, right? The reality of scientific practice might give a hint
+at our naivete. Despite being, in some sense, itself an effort to
+organize knowledge, \emph{scientific results effectively have no system
+of organization.} There is no means of, say, ``finding all the papers
+about a research question.'' The problem is so fundamental it seems
+natural: the usual methods of using search engines, asking around on
+Twitter, and chasing citation trees are flex tape slapped over the
+central absence of a system for formally relating our work as a shared
+body of knowledge.
 
-!! we'll describe a way to {[}summarize open spaces left by preceding
-sections{]} !! while a full consideration of the journal system as a
-whole is strictly out of scope of this paper, the system as developed
-renders it effectively irrelevant.
+Information capitalism, in its terrifying splendor, here too pits
+private profit against public good. Analogously to the necessary
+functional limitations of SaaS platforms, artificially limiting
+knowledge organization opens space for new products and profit
+opportunities. In their 2020 shareholder report, RELX, the parent of
+Elsevier, lists increasing the number of journals and papers as a
+primary means of increasing revenue \cite{RELXAnnualReport2020} .
+In the next breath, they describe how ``in databases \& tools and
+electronic reference, representing over a third of divisional\footnote{RELX
+  is a huge information conglomerate, and scientific publication is just
+  one division.} revenue, we continued to drive good growth through
+content development and enhanced machine learning {[}ML{]} and natural
+language processing {[}NLP{]} based functionality.''
+
+What ML and NLP systems are they referring to? The 2019 report is a bit
+more revealing (emphases mine):
+
+\begin{quote}
+Elsevier looks to enhance quality by building on its premium brands and
+\textbf{grow article volume} through \textbf{new journal launches,} the
+expansion of open access journals and growth from emerging markets; and
+add value to core platforms by implementing capabilities such as
+\textbf{advanced recommendations on ScienceDirect and social
+collaboration through reference manager and collaboration tool
+Mendeley.}
+
+\textbf{In every market, Elsevier is applying advanced ML and NLP
+techniques} to help researchers, engineers and clinicians perform their
+work better. For example, in research, ScienceDirect Topics, a free
+layer of content that enhances the user experience, uses \textbf{ML and
+NLP techniques to classify scientific content and organise it
+thematically,} enabling users to get faster access to relevant results
+and related scientific topics. The feature, launched in 2017, is proving
+popular, generating 15\% of monthly unique visitors to ScienceDirect via
+a topic page. \textbf{Elsevier also applies advanced ML techniques that
+detect trending topics per domain,} helping researchers make more
+informed decisions about their research. \textbf{Coupled with the
+automated profiling and extraction of funding body information from
+scientific articles,} this process supports the whole researcher
+journey; from planning, to execution and funding. \cite{RELXAnnualReport2019} 
+\end{quote}
+
+Reading between the lines, it's clear that the difficulty of finding
+research is a feature, not a bug of their system. Their explicit
+business model is to increase the number of publications and sell
+organization back to us with recommendation services. The recommendation
+system might be free*, but the business is to develop dependence to sell
+ad placement --- which they proudly describe as looking very similar to
+their research content \cite{springernatureBrandedContent, elsevier360AdvertisingSolutions} .
+
+It gets more sinister: Elsevier sells multiple products to recommend
+`trending' research areas likely to win grants, rank scientists, etc.,
+algorithmically filling a need created by knowledge disorganization. The
+branding varies by audience, but the products are the same. For
+pharmaceutical companies
+\href{https://www.elsevier.com/solutions/professional-services/drug-design-optimization\#opportunity}{``scientific
+opportunity analysis''} promises custom reports that answer questions
+like ``Which targets are currently being studied?'' ``Which experts are
+not collaborating with a competitor?'' and ``How much funding is
+dedicated to a particular area of research, and how much progress has
+been made?'' \cite{elsevierDrugDesignOptimization} . For
+academics,
+\href{https://www.elsevier.com/solutions/scival/features/topic-prominence-in-science\#how}{``Topic
+Prominence in Science''} offers university administrators tools to
+``enrich strategic research planning with portfolio overviews of their
+own and peer institutions.'' Researchers get tools to ``identify experts
+and potential cross-sector collaborators in specific Topics to
+strengthen their project teams and funding bids and identify Topics
+which are likely to be well funded.'' \cite{elsevierTopicProminenceScienceb} 
+
+These tools are, of course, designed for a race to the bottom --- if my
+colleague is getting an algorithmic leg up, how can I afford not to?
+Naturally only those labs that \emph{can} afford them and the costs of
+rapidly pivoting research topics will benefit from them, making yet
+another mechanism that reentrenches scientific inequity for profit.
+Knowledge disorganization, coupled with a little surveillance capitalism
+that monitors the activity of colleagues and rivals \cite{brembsReplacingAcademicJournals2021} , has given publishers powerful
+control over the course of science, and they are more than happy to ride
+algorithmically amplified scientific hype cycles in fragmented research
+bubbles all the way to the bank.
+
+The consequences are hard to overstate. In addition to literature search
+being an unnecessarily huge sink of time and labor, science operates as
+a wash of tail-chasing results that only rarely seem to cumulatively
+build on one another. The need to constantly reinforce the norm that
+purposeful failure to cite prior work is research misconduct is itself a
+symptom of how engaging with a larger body of work is both extremely
+labor intensive and \emph{strictly optional} in the communication regime
+of journal publication. Despite the profusion of papers, by some
+measures progress in science has slowed to a crawl as the long tail of
+papers with very few citations grows ever longer \cite{chuSlowedCanonicalProgress2021} .
+
+While Chu and Evans correctly diagnose \emph{symptoms} of knowledge
+disorganization like the need to ``resort to heuristics to make
+continued sense of the field'' and reliance on canonical papers, by
+treating the journal model as a natural phenomenon and citation as the
+only means of ordering research, they misattribute root \emph{causes.}
+The problem is not people publishing \emph{too many papers,} or a
+\emph{breakdown of traditional publication hierarchies,} but the
+\emph{profitability of knowledge disorganization.} Their prescription
+for ``a clearer hierarchy of journals'' misses the role of organizing
+scientific work in journals ranked by prestige, rather than by the
+content of the work, as a potentially major driver of extremely skewed
+citation distributions. It also misses the publisher's stated goal of
+pushing algorithmic paper recommendations, as there is nothing
+recommendation algorithms love recommending more than things that are
+alreaady popular. Without diagnosing knowledge disorganization as a core
+part of the business model of scientific publishers, we can be led to
+prescriptions that would make the problem worse.
+
+!! Another impact of the arcanity of scientific knowledge organization
+is that it is effectively impenetrable to people that aren't domain
+experts. Why is trust in science so low right now? one contributor is
+that they have no idea what the hell we do or how different domains of
+knowledge have evolved. (cite cold war peer review and journals paper)
+
+!! Practically, this makes the quality of scientific literature
+constantly in question. Each paper effectively exists as an island, and
+engagement with prior literature is effectively optional (outside the
+minimum bar set by the 3-5 additional private peer reviewers, each with
+their own limited scope and conflicting interests). Forensic
+peer-reviewers have been ringing the alarm bell, saying that there is
+``no net'' to bad research \cite{heathersRealScandalIvermectin2021} , and brave and highly-skilled investigators like
+\href{https://scienceintegritydigest.com/}{Elisabeth Bik} have found
+thousands of papers with evidence of purposeful manipulation \cite{shenMeetThisSuperspotter2020, bikPrevalenceInappropriateImage2016} .
+!! So our existing systems of communication and organization are
+woefully inadequate for our needs, and don't serve the role of
+guaranteeing consistency or reliability in research that they claim to.
+
+It's hard to imagine an alternative to journals that doesn't look like,
+well, journals. While a full treatment of the journal system is outside
+the scope of this paper, the system we describe here renders them
+\emph{effectively irrelevant} by making papers as we know them
+\emph{unnecessary.} Rather than facing the massive collective action
+problem of asking everyone to change their publication practices head
+on, by reconsidering the way we organize the surrounding infrastructure
+of science we can flank journals and replace them ``from below'' with
+something qualitatively more useful.
+
+Beyond journals, the other technologies of communication that have been
+adopted out of need, though not necessarily design, serve as
+\href{https://en.wikipedia.org/wiki/Desire_path}{desire paths} that
+trace other needs for scientific communication. As a rough sample:
+Researchers often prepare their manuscripts using platforms like Google
+Drive, indicating a need for collaborative tools in perparation of an
+idea. When working in teams, we often use tools like Slack to plan our
+work. Scientific conferences reflect the need for federated
+communication within subdisciplines, and we have adopted Twitter as a de
+facto platform for socializing and sharing our work to a broader
+audience. We use a handful of blogs and other sites like
+\href{https://edspace.american.edu/openbehavior/}{OpenBehavior} \cite{whiteFutureOpenOpenSource2019} ,
+\href{https://open-neuroscience.com/}{Open Neuroscience}, and many
+others to index technical knowledge and tools. Finally we use sites like
+\href{https://pubpeer.com}{PubPeer} and ResearchGate for comment and
+criticism.
+
+These technologies point to a few overlapping and not altogether binary
+axes of communication systems. !! make this a table? with technological
+examples for each.
+
+\begin{itemize}
+
+\item
+  \textbf{Durable vs Ephemeral} - journals seek to represent information
+  as permanent, archival-grade material, but scientific communication
+  also necessarily exists as wholly contextual, temporally specific
+  snapshots.
+\item
+  \textbf{Structured vs Chronological} - scientific communication both
+  needs to present itself as a structured basis of information with
+  formal semantic linking, but also needs the chronological structure
+  that ties ideas to their context. This axis is a gradient from formal
+  ontologies, through intermediate systems like forums with hierarchical
+  topic structure that embeds a feed, to the purely chronological
+  feed-based social media systems.
+\item
+  \textbf{Messaging vs Indexing} - Communication can be person-to-person
+  or person-to-group messaging with defined senders and recipients, or
+  intended as a generalizable category of objects. This ranges from
+  entirely-specific DMs through domain-specific tool indexes like
+  OpenBehavior through the uniform indexing of Wikipedia.
+\item
+  \textbf{Public vs.~Private} - Communication can be composed of
+  entirely private notes to self, through communication in a lab,
+  collaboration group, discipline, and landing in the entirely public
+  realm of global communication.
+\item
+  \textbf{Formal vs.~Informal} - Journal articles and encyclopedia-bound
+  writing that conforms to a particular modality of expression vs.~a
+  vernacular style intended to communicate with people outside the
+  jargon culture.
+\end{itemize}
+
+!! There are many tunnels of internet history that have traced different
+parts of these axes, but particularly relevant here are the overlapping
+histories of early wikis, wikipedia, the semantic web, and activitypub.
+This is a knotty and tangled history, so I am not attempting a full
+recounting, but will be selectively telling the story to motivate the
+kinds of tools we need.
+
+\hypertarget{the-wiki-way}{%
+\subsubsection{The Wiki Way}\label{the-wiki-way}}
+
+x
 
 current status - our current systems are largely journals and
 conferences, but as evidenced by the unfortunate but widescale adoption
@@ -4018,33 +4521,6 @@ of twitter, scientific communication naturally spans dispersed forms of
 communication at different scales of formality, length, public
 engagement, etc. - when we go to organize ourselves, why is the best we
 can do google docs and slack?
-
-problems - Despite being, in some sense, an effort to organize and
-systematize human knowledge, \emph{science effectively has no system of
-organization.} - The best we have is journals that are only loosely
-organized around large topic areas and citation networks, citation
-networks, which are un-annotated and un-descriptive, and unidimensional
-keywords. - So one way of reading \cite{chuSlowedCanonicalProgress2021}  is that there are too many papers,
-but another way of reading it is that our systems of organizing
-scientific communication simply don't scale well since they rely mostly
-on scanning TOC alerts, google scholar, and happenstance. - Another
-impact of the arcanity of scientific knowledge organization is that it
-is effectively impenetrable to people that aren't domain experts. Why is
-trust in science so low right now? one contributor is that they have no
-idea what the hell we do or how different domains of knowledge have
-evolved. (cite cold war peer review and journals paper) - Practically,
-this makes the quality of scientific literature constantly in question.
-Each paper effectively exists as an island, and engagement with prior
-literature is effectively optional (outside the minimum bar set by the
-3-5 additional private peer reviewers, each with their own limited scope
-and conflicting interests). Forensic peer-reviewers have been ringing
-the alarm bell, saying that there is ``no net'' to bad research \cite{heathersRealScandalIvermectin2021} , and brave and
-highly-skilled investigators like
-\href{https://scienceintegritydigest.com/}{Elisabeth Bik} have found
-thousands of papers with evidence of purposeful manipulation \cite{shenMeetThisSuperspotter2020, bikPrevalenceInappropriateImage2016} . -
-So our existing systems of communication and organization are woefully
-inadequate for our needs, and don't serve the role of guaranteeing
-consistency or reliability in research that they claim to.
 
 contextual knowledge needed - our limited systems of communication also
 render large sections of needed scientific communication without venue.
@@ -4109,31 +4585,8 @@ thought.
 things as a way to explaining the ecosystem and the different parts that
 are needed in it: https://www.w3.org/TR/social-web-protocols/
 
-\hypertarget{axes-of-communication-systems}{%
-\subsubsection{Axes of Communication
-Systems}\label{axes-of-communication-systems}}
-
-!! we need a few things, but there's no reason they should be different
-things! we need a system for
-
-\begin{itemize}
-
-\item
-  permanent communication for archiving
-\item
-  durable communication like technical knowledge and scientific
-  discourse proper, like a wiki
-\item
-  rapid communication for like talking lmao -- but not purposely
-  temporary the way that social media is!
-\end{itemize}
-
-each of these systems can have multiple iterations, with different
-rules, and so forth, and we should have control over our content and
-contribution to all of them (opt-in).
-
-\hypertarget{the-wiki-way}{%
-\subsubsection{The Wiki Way}\label{the-wiki-way}}
+\hypertarget{the-wiki-way-1}{%
+\subsubsection{The Wiki Way}\label{the-wiki-way-1}}
 
 \begin{quote}
 So that's it --- insecure but reliable, indiscriminate and subtle, user
@@ -4182,6 +4635,13 @@ actually happened). The lack of a dispute-resolution process only makes
 things worse: when there's no clear guide on how to make decisions or
 contributions, it's far from obvious how to challenge a decision Sam has
 made. \cite{swartzSecretsStandards2003} 
+\end{quote}
+
+\begin{quote}
+c2wiki is an exercise in dialogical methods. of laying bare the fact
+that knowledge and ideas are not some truth delivered from On High, but
+rather a social process, a conversation, a dialectic, between various
+views and interests \cite{valentineC2wikiExerciseDialogical2021} 
 \end{quote}
 
 !! give the example of the autopilot wiki
@@ -4376,6 +4836,25 @@ needing to canalize things into a single decision, it is possible to
 have all the options exist simultaneously and let history sort them out.
 http://meatballwiki.org/wiki/VotingIsEvil
 http://meatballwiki.org/wiki/EnlargeSpace
+
+\hypertarget{tactics-strategy}{%
+\subsection{Tactics \& Strategy}\label{tactics-strategy}}
+
+!! How do we make this happen? Practical recommendations for various
+stakeholders
+
+!! Some of the tactical vision for this is embedded in the structure and
+serial order of the piece. There is no reason that the metadata
+framework described here needs to be intrinsically linked to the p2p
+data sharing system, and there is no inherent need to first arrive at
+some state of quasi-standardization, but because many data standards are
+already in OWL or other RDF system and need some mechanism for making
+extensions, there is an immediate practical problem solved by
+implementing a linked data layer on top of a data standard and sharing
+system. There is little reason for a developer of an experimental
+library to declare a rich metadata system, but if it was possible to use
+it to make data output easier and make the system more powerful in the
+process, we then have a strong incentive.
 
 \hypertarget{contrasting-visions-for-science}{%
 \subsection{Contrasting visions for

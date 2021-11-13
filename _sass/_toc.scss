@@ -1,8 +1,8 @@
-$menuWidth: 35%;
+$menuWidth: 30%;
 $menuPaddingLeft: 0%;
 
 $break-sm: 600px;
-$break-md: 900px;
+$break-md: 839px;
 
 body {
   padding: 0 $menuWidth+$menuPaddingLeft 0 0;
@@ -66,31 +66,41 @@ body {
   }
 
   li.visible>a, li:hover>a {
-    color: #111;
+    color: #000;
     // transform: translate( 2px );
   }
 
   // collapse
-  // ol>li ol {
-  //   // display: none;
-  //   height: 0px;
-  //   overflow: hidden;
+  ol>li ol {
+    // display: none;
+    height: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    margin: 0;
+    transition: max-height 1s ease, margin 0.1s linear;
+    // height: 0;
 
-  //   transition: height 1s linear;
-  //   // height: 0;
+    &.opened, {
+      // display: inherit;
+      max-height: 1000px;
+      margin: 0 0 10px 0;
+    }
+  }
 
-  //   &.opened, {
-  //     // display: inherit;
-  //     height: 100%;
-  //   }
-  // }
-
-  // &>ol>li:hover {
+  // ol>li:hover {
   //   &>ol {
-  //     display: inherit;
-  //     height: 100%;
+  //     max-height: 1000px;
+  //     margin: 0 0 10px 0;
+  //     transition-delay: 0.5s;
   //   }
   // }
+}
+
+.mobile-toc-drawer {
+  ol>li ol {
+    max-height: 1000px;
+    margin: 0 0 10px 0;
+  }
 }
 
 .toc-marker {

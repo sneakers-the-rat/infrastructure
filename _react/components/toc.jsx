@@ -21,6 +21,7 @@ import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 
 import RDFA from './rdfa';
@@ -40,8 +41,20 @@ const drawerWidthMobile = "70%";
 //   }
 // })
 
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 840,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+});
+
+
 function TOC(props) {
-  console.log('drawer', props);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [toc, setTOC] = React.useState(<></>);
@@ -71,6 +84,7 @@ function TOC(props) {
 
 
   return (
+    <ThemeProvider theme={theme}>
     <Box sx={{ display: 'flex' }}>
       <Slide appear={false} direction="down" in={!trigger}>
       <AppBar
@@ -111,6 +125,7 @@ function TOC(props) {
           anchor="right"
           container={container}
           variant="temporary"
+          className="mobile-toc-drawer"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
@@ -145,6 +160,7 @@ function TOC(props) {
         <Toolbar />
       </Box>
     </Box>
+    </ThemeProvider>
   );
 }
 

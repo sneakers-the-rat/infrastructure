@@ -78,6 +78,23 @@ centralized infrastructure and information companies are 7 out of the 10 largest
 Part of what is missing and a place where we could learn from librarians is the notion of governance over a knowledge schema. People have a lot of trouble with NWB because they doubt if it could account for all the idiosyncracies in the types of data that we have to represent. But instead if we have a way of capturing all that thought and insight and practical experience in a governance and decisionmaking structure then we could flexibily work our way to a set of schemas that work for everyone. Part of what needs to be done is to move from SQL queries to a more expressive abstract system of schema creation that more people can participate in -- that's what infrastructure building is, making things that seem impossible or difficult routine. Practically, this can mean an explicit versioning system that not only specifies different versions of a data representation, but for every transition between state there is some notion of making that transition in the data structure. (give example of the subject upgrade system). If that was possible, then the notion of data structure would entirely evaporate, best of both worlds. we get everything and the game is over forever. This is also the distinction between centralized and decentralized systems. we can just make the changes and since they're done against a background of unified intent and expression they can exist simulataneously, commune with one another, while being forwardly productive as their contradictions are resolved.
 
 
+contextual knowledge needed
+- our limited systems of communication also render large sections of needed scientific communication without venue. The existing tools that *do* give some means of sharing technical knowledge are distinctly charity-driven, and don't confer the same type of credit incentive that publications do.
+
+
+
+!! we've been tracing a distinction between the ability to express fluidly the contents of our reality with developing platforms that sift through it in an automated way, something that was an explicit cultural division throughout the semantic web project {% cite swartzTechniquesMassCollaboration2006 %}, which Peter Norvig (director of search at Google at the time) primarily attributes to user incompetence {% cite lombardiGoogleExecChallenges2007 %}. On trust, TBL says "Berners-Lee agreed with Norvig that deception on the Internet is a problem, but he argued that part of the Semantic Web is about identifying the originator of information, and identifying why the information can be trusted, not just the content of the information itself."
+
+!! importantly, should also have means of ingest for existing tools and elements -- easy to import existing papers and citation trees, plugins for existing data sharing systems. 
+
+!! description of its role as a schema resolution system -- currently we implement all these protocols and standards in these siloed, centralized groups that are inherently slow to respond to changes and needs in the field. instead we want to give people the tools so that their the knowledge can be directly preserved and acted on. 
+
+!! descrption of its role as a tool of scientific discussion -- integrated with the data server and standardized analysis pipelines, it could be possible to have a discussion board where we were able to pose novel scientific questions, answerable with transparent, interrogatable analysis systems. Semantic linking makes the major questions in the field possible to answer, as discussions are linked to one another in a structured way and it is possible to literally trace the flow of thought. 
+
+!! should trace the development of AP and the difficulty of doing these things as a way to explaining the ecosystem and the different parts that are needed in it: https://www.w3.org/TR/social-web-protocols/ 
+
+
+
 --------
 
 # conclusion

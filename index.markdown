@@ -5,7 +5,7 @@ subtitle: "Or, Kill the Cloud in Your Mind"
 author: "Jonny Saunders"
 navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
-toc_levels: "1..2"
+toc_levels: "1..3"
 ---
 
 <div class="trimlink">
@@ -151,6 +151,15 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 ## Shared Knowledge
 
 {% include_relative _sections/2_7_knowledge.md %}
+
+### The Wiki Way 
+
+{% include_relative _sections/2_8_wikis.md %}
+
+
+### Credit Assignment
+
+{% include_relative _sections/2_9_credit-incentives.md %}
 
 # Conclusion
 
