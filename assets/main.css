@@ -343,9 +343,9 @@ body { transition: background-color 0.5s; }
 
 body.faded { background-color: #888; }
 
-body { padding: 0 35% 0 0; }
+body { padding: 0 30% 0 0; }
 
-@media (max-width: 900px) { body { padding: 0; } }
+@media (max-width: 839px) { body { padding: 0; } }
 
 .toc { top: 2%; padding: 5%; width: 100%; line-height: 2; }
 
