@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@900&display=swap');
 
+@font-face {
+    font-family: "fairfax";
+    font-style: normal;
+  	font-weight: 400;
+    src: url("/infrastructure/assets/fonts/Fairfax.woff2") format('woff2');
+}
+
 blockquote strong {
 	color: #4A4A4A;
 }
