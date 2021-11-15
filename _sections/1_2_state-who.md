@@ -55,5 +55,4 @@ Outside of ivies with rich core facilities, institutes like the Allen, or nascen
 
 The state of broader scientific deinfrastructuring is perhaps to be expected given its dependence on informational monopolies that in some part depend on it, but unlike many other industries or professions there is reason for hope in science. Science is packed with people with an enormous diversity of skills, resources, and perspectives. Publicly funded science is relatively unique as a labor system that does not strictly depend on profit. There is widespread discontent with the systems of scientific practice, and so the question becomes how we can organize our skill, labor, and energy to rebuild the systems that constrain us.
 
-
 A third option from the standardization offered by centralization and the blooming, buzzing, beautiful chaos of disconnected open-source development is that of decentralized systems, and with them we might build the means by which the "rest of us" can mutually benefit by capturing and making use of each other's knowledge and labor.

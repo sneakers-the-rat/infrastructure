@@ -30,6 +30,8 @@ It's hard to imagine an alternative to journals that doesn't look like, well, jo
 
 Beyond journals, the other technologies of communication that have been adopted out of need, though not necessarily design, serve as [desire paths](https://en.wikipedia.org/wiki/Desire_path) that trace other needs for scientific communication. As a rough sample: Researchers often prepare their manuscripts using platforms like Google Drive, indicating a need for collaborative tools in perparation of an idea. When working in teams, we often use tools like Slack to plan our work. Scientific conferences reflect the need for federated communication within subdisciplines, and we have adopted Twitter as a de facto platform for socializing and sharing our work to a broader audience. We use a handful of blogs and other sites like [OpenBehavior](https://edspace.american.edu/openbehavior/) {% cite whiteFutureOpenOpenSource2019 %}, [Open Neuroscience](https://open-neuroscience.com/), and many others to index technical knowledge and tools. Finally we use sites like [PubPeer](https://pubpeer.com) and ResearchGate for comment and criticism.
 
+!! these tools are don't really suit our needs at all, and constrain rather than support some basic things that we want to do. For example, there is really no venue where we can have sustained, longform, multiparty discussions about difficult topics in our field. Sure, it is possible to publish series of commentary pieces back and forth, or to write blog posts against one another, or to squabble on twitter, but there's nothing that truly supports a cumulative body of public understanding well. 
+
 These technologies point to a few overlapping and not altogether binary axes of communication systems. 
 !! make this a table? with technological examples for each.
 
@@ -40,11 +42,8 @@ These technologies point to a few overlapping and not altogether binary axes of 
 - **Formal vs. Informal** - Journal articles and encyclopedia-bound writing that conforms to a particular modality of expression vs. a vernacular style intended to communicate with people outside the jargon culture.
 - **Push vs. Pull** - Do you go to get information from a reference location, or does information come to you as an alert or message?
 
-!! There are many tunnels of internet history that have traced different parts of these axes, but particularly relevant here are the overlapping histories of early wikis, wikipedia, the semantic web, and activitypub. This is a knotty and tangled history, so I am not attempting a full recounting, but will be selectively telling the story to motivate the kinds of tools we need. 
+Clearly a variety of different types of communication tools are needed, but there is no reason that each of them should be isolated and inoperable with the others. We have already seen several of the ideas that help bring an alternative into focus. Piracy communities demonstrate ways to build social systems that can sustain infrastructure. Federated and protocol-based systems show us that we don't need to choose between a single monolithic system or many disconnected ones, but can have a heterogeneous space of tools linked by a basic protocol. The semantic web and linked data people showed us the power of triplet links as a very general means of linking disparate systems. We can bridge these lessons with some from the early wiki movement to get a more practical sense of what it takes to give people total control over the structure of their communication and knowledge systems. Together with our sketches of data, analytical, and experimental tools we can start imagining a system for coordinating them --- as well as displacing some of the more intractable systems that misstructure the practice of science.
 
----
-<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
----
-
+!! This is a knotty and tangled history, so I am not attempting a full recounting, but will be selectively telling the story to motivate the kinds of tools we need. 
 
 

@@ -14,3 +14,12 @@
 
 [^googlepatent]: A patent from Google is telling about how they view privacy concerns: whatever we can't get explicitly, we'll infer to sell better ads!
     > One possible method to improve ad targeting is for ad targeting systems to obtain and use user profiles. For example, user profiles may be determined using information voluntarily given by users (e.g., when they subscribe to a service). This user attribute information may then be matched against advertiser specified attributes of the ad (e.g., targeting criteria). Unfortunately, user profile information is not always available since many Websites (e.g., search engines) do not require subscription or user registration. Moreover, even when available, the user profile may be incomplete (e.g., because the information given at the time of subscription may be limited to what is needed for the service and hence not comprehensive, because of privacy considerations, etc.). Furthermore, advertisers may need to manually define user profile targeting information. In addition, even if user profile information is available, advertisers may not be able to use this information to target ads effectively. {% cite bharatGeneratingUserInformation2005 %}
+
+[^wikiwording]: Interestingly, this quote is almost, but not exactly the same as that on [Ward's wiki](http://wiki.c2.com/?WhyWikiWorks): 
+	> So that's it - insecure, indiscriminate, user-hostile, slow, full of difficult, nit-picking people, and frivolous. Any other online community would count each of these strengths as a terrible flaw. Perhaps wiki works because the other online communities do not. 
+
+	I can't tell if Ward Cunningham wrote the original entry in the wiki, but in any case seems to have found a bit of optimism in the book.
+
+[^corporatewikis]: though their corporate manifestations would probably be unrecognizable to the project early wiki users imagined.
+
+[^wikistart]: it's complicated: http://wiki.c2.com/?WardsWikiTenthAnniversary
