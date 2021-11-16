@@ -25,7 +25,28 @@ And further:
 
 We know a lot more now than in 2006, of course. Wikipedia has since spawned a [huge number](https://meta.wikimedia.org/wiki/Complete_list_of_Wikimedia_projects) of technologies and projects like [MediaWiki](https://meta.wikimedia.org/wiki/MediaWiki) and [Wikidata](https://meta.wikimedia.org/wiki/Wikidata), each with their own long and occasionally torrid histories. The dream of a centralized, but mass-edited encyclopedia of everything seems to be waning, and its slow retreat from wild openness has run parallel to a long decline in contributors {% cite hillWikipediaEndOpen2019 halfakerRiseDeclineOpen2013 %}. The discussions about what radically open web communities could be like, inventing a world in realtime, are a continuous history with projects like Wikipedia and have lessons with familiar echoes.
 
-The first "wiki" as such was launched in 1995[^wikistart] (and is [still online](http://wiki.c2.com/)) and came to be known as Ward's wiki after its author [WardCunningham](http://wiki.c2.com/?WardCunningham). Technically, it was extremely simple: a handful of [TextFormattingRules](http://wiki.c2.com/?TextFormattingRules) and use of [WikiCase](http://wiki.c2.com/?WikiCase) where by [JoinCapitalizedWords](http://wiki.c2.com/?JoinCapitalizedWords) you create a link to a (potentially new) [WikiPage](http://wiki.c2.com/?WikiPage) --- and the ability for anyone to edit any page. These very simple [WikiDesignPrinciples](http://wiki.c2.com/?WikiDesignPrinciples) led to a sprawling and continuous conversation that spanned more than a [decade](http://wiki.c2.com/?WardsWikiTenthAnniversary) and thousands ([23,244](http://c2.com/wiki/history/)) that, because of the nature of the medium, is left fully preserved in amber. 
+The first wiki was launched in 1995[^wikistart] (and is [still online](http://wiki.c2.com/)) and came to be known as Ward's wiki after its author [WardCunningham](http://wiki.c2.com/?WardCunningham). Technically, it was extremely simple: a handful of [TextFormattingRules](http://wiki.c2.com/?TextFormattingRules) and use of [WikiCase](http://wiki.c2.com/?WikiCase) where if you [JoinCapitalizedWords](http://wiki.c2.com/?JoinCapitalizedWords) you create a link to a (potentially new) [WikiPage](http://wiki.c2.com/?WikiPage) --- and the ability for anyone to edit any page. These very simple [WikiDesignPrinciples](http://wiki.c2.com/?WikiDesignPrinciples) led to a sprawling and continuous conversation that spanned more than a [decade](http://wiki.c2.com/?WardsWikiTenthAnniversary) and thousands ([23,244](http://c2.com/wiki/history/)) of pages that, because of the nature of the medium, is left fully preserved in amber. Those conversations are a history of thought on what makes wiki communities work (eg. [WhyWikiWorks](http://wiki.c2.com/?WhyWikiWorks), [WhyWikiWorksNot](http://wiki.c2.com/?WhyWikiWorksNot)), and what is needed to sustain them. 
+
+One tension that emerged early and was never fully resolved by these wikis is the balance between "[DocumentMode](http://wiki.c2.com/?DocumentMode)" writing that serves as linearly-readable reference material, similar to that of Wikipedia, and "[ThreadMode](http://wiki.c2.com/?ThreadMode)" writing that is a nonlinear representation of a conversation. Ward Cunningham and other more organizationally-oriented contributors opposed ThreadMode (eg. [ThreadModeConsideredHarmful](http://wiki.c2.com/?ThreadModeConsideredHarmful), [InFavorOfDissertation](http://wiki.c2.com/?InFavorOfDissertation)) for a number of reasons, largely due to the [ThreadMess](http://wiki.c2.com/?ThreadMess) and [WikiChaos](http://wiki.c2.com/?WikiChaos) it had the potential of creating. 
+
+> I occasionally suggest how this site should be used. My [GoodStyle](http://wiki.c2.com/?GoodStyle) suggestions have been here since the beginning and are linked from the edit page should anyone forget. I have done my best to discourage dialog [InFavorOfDissertation](http://wiki.c2.com/?InFavorOfDissertation) which offers a better fit to this medium. I've been overruled. I will continue to make small edits to pages for the sake of brevity. -- [WardCunningham](http://wiki.c2.com/?WardCunningham) {% cite C2wikiWikiHistory %} 
+
+Most pages are thus a combination of both, usually with some DocumentMode text at the top with ThreadMode conversations interspersed throughout without necessarily having any clean delineation between the two. Far from just being raw disorder, this mixed mode of writing gave it a peculiar character of being *both* a folk reference for a library of concepts *as well as* a history of discussion that made the contingency of that reference material plain. Beka Valentine put it well:
+
+> c2wiki is an exercise in dialogical methods. of laying bare the fact that knowledge and ideas are not some truth delivered from On High, but rather a social process, a conversation, a dialectic, between various views and interests {% cite valentineC2wikiExerciseDialogical2021 %}
+
+This tension and its surrounding discussions point to the need for multiple representations of a single idea: that both the social and reference representations of a concept are valuable, but aren't necessarily best served by being represented in the same place. There was relatively common understanding that the natural order of things was to have many ThreadMode conversations that would gradually be converted to DocumentMode in a process of [BrainStormFirstCleanLater](http://wiki.c2.com/?BrainStormFirstCleanLater). Many [proposed solutions](http://wiki.c2.com/?ConvertThreadModeToDocumentMode) orbit around making parallel pages with similar names to clean up a document while preserving the threads (though there were plenty of interesting alternatives, eg. [DialecticMode](http://wiki.c2.com/?DialecticMode)).
+
+Wikipedia cut the Gordian Knot by splitting each page into a separate **Article** and **Talk** pages, with the talk page in its own **Namespace** -- eg. [Gordian_Knot](https://en.wikipedia.org/wiki/Gordian_Knot) vs [Talk:Gordian_Knot](https://en.wikipedia.org/wiki/Talk:Gordian_Knot). Talk pages resemble a lot of the energy of early wikis: disorganized, sometimes silly, sometimes angry, and usually charmingly pedantic. Namespaces extend the traditional "everything is a page" notion encoded in the WikiCase link system by giving different pages different roles --- in addition to having parallel conversations on articles and talk pages, it is possible to have template pages that can be included on wiki pages with `{% raw %}{{double curly bracket}}{% endraw %}` syntax -- eg. [Template:Citation_Needed](https://en.wikipedia.org/wiki/Template:Citation_needed) renders `{% raw %}{{Citation needed}}{% endraw %}` as <sup><i>[citation needed]</i></sup>. 
+
+The complete segregation of discussion to Talk pages is driven by Wikipedia's aspirations as an encyclopedia, with reminders that is the "[sole purpose](https://en.wikipedia.org/wiki/Wikipedia:Don't_lose_the_thread#Move_to_the_article_talk_page)" peppered throughout the rules and guidelines. The presence of messy subjective discussions would of course be discordant with the very austere and "neutral" articles of an encyclopedia. There are no visible indications that the talk pages even exist in the main text, and so even deeply controversial topics have no references to the conversations in talk pages that surround them --- despite this being a requested feature by both administrators and editors {% cite schneiderUnderstandingImprovingWikipedia2011 %}. 
+
+!! functions to obscure the dialogic nature of wikipedia, the site appears as if it is "always already there" rather than conditioned by a dense thicket of social norms. also functions to segregate editors from readers, minimize onramp points where readers might be inspired to become editors, and reciprocally provides no means of credit for the few editors that do maintain the content.
+
+!! continuity with highlighting and annotation, need for multiple namespaces with parallel forms of conversation, but also need to link between them. Practically speaking this requires communications systems have some means of visible backlinking, but that in turn implies some means of moderation about which backlinks are shown.
+
+
+
 
 
 ---
@@ -42,6 +63,7 @@ Important principles:
 - tension between unitary platform, vs. complexity of linking
 from wikipedia
 - becoming too massive causes difficult to manage social problems, necessitating right to fork. stabler smaller communities that are linked through a common means of practice.
+- transclusion
 
 ---
 
@@ -67,8 +89,6 @@ from wikipedia
 	- http://wiki.c2.com/?GoodStyle 
 	- wikipedia split into talk pages, had a subtle  but extremely powerful effect on the document organization
 
-> I occasionally suggest how this site should be used. My GoodStyle suggestions have been here since the beginning and are linked from the edit page should anyone forget. I have done my best to discourage dialog [InFavorOfDissertation](http://wiki.c2.com/?InFavorOfDissertation) which offers a better fit to this medium. I've been overruled. I will continue to make small edits to pages for the sake of brevity. -- [WardCunningham](http://wiki.c2.com/?WardCunningham) {% cite C2wikiWikiHistory %} 
-
 - everything2 as a transitional medium
 - struggled with cultures of wiki editing, deletists, etc.
 	- strugs http://wiki.c2.com/?WikiMindWipe
@@ -92,8 +112,6 @@ from wikipedia
 > The IETF is a good example of this. Often lauded by the public as a model of openness and and and freedom, the reality is that working group chairs, appointed by a self-elected ruling board, get away with declaring whatever they want (usually an inferior and difficult to implement alternative) as “rough consensus”, routinely ignoring comments from the public and objections from working group members. One working group (in charge of DNS extentsions) went so far as to censor mail from working group members. The dictators running the IETF, when informed, didn’t seem to mind.
 > 
 > Is the same sort of thing at work in the Pie/Echo/Atom Project? It appears so at first glance: Sam running the show from behind the scenes, putting friends in charge of the specs (although that isn’t what actually happened). The lack of a dispute-resolution process only makes things worse: when there’s no clear guide on how to make decisions or contributions, it’s far from obvious how to challenge a decision Sam has made. {% cite swartzSecretsStandards2003 %}
-
-> c2wiki is an exercise in dialogical methods. of laying bare the fact that knowledge and ideas are not some truth delivered from On High, but rather a social process, a conversation, a dialectic, between various views and interests {% cite valentineC2wikiExerciseDialogical2021 %}
 
 !! give the example of the autopilot wiki
 

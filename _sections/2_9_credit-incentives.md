@@ -6,6 +6,7 @@ the work of maintaining the system can't be invisible, read & cite {% cite class
 
 !! essentially all questions about "changing the system of science" inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.
 
+!! cite eLife EIC's comments on scientific credit assignment systems
 
 ### Rebuilding Scientific Communication
 
