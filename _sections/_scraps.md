@@ -244,3 +244,20 @@ At this point we have largely closed the loop of science: starting with standard
 - **flexible attribute propagation** eg. the ability to have stuff spec hooks like `accessRuleset` accepts `@hhs:HIPAA` and being able to resolve dependencies flatly
 - **embracing the notion of expand space** by letting people declare and link schema extensions
 - ... brb 
+
+
+## Wikis
+
+
+{% cite kamelboulosSemanticWikisComprehensible2009 %}
+
+!! Read and cite! {% cite classeDistributedInfrastructureSupport2017 %}
+
+!! {% cite goodSocialTaggingLife2009 %}
+
+!! wikibase can do federated SPARQL queries https://wikiba.se/
+- and has been used to make folksonomies https://biss.pensoft.net/article/37212/
+
+!! lots of scientific wikis 
+- https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki/Other_Wikis
+- https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki

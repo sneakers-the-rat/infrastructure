@@ -35,18 +35,25 @@ Most pages are thus a combination of both, usually with some DocumentMode text a
 
 > c2wiki is an exercise in dialogical methods. of laying bare the fact that knowledge and ideas are not some truth delivered from On High, but rather a social process, a conversation, a dialectic, between various views and interests {% cite valentineC2wikiExerciseDialogical2021 %}
 
-This tension and its surrounding discussions point to the need for multiple representations of a single idea: that both the social and reference representations of a concept are valuable, but aren't necessarily best served by being represented in the same place. There was relatively common understanding that the natural order of things was to have many ThreadMode conversations that would gradually be converted to DocumentMode in a process of [BrainStormFirstCleanLater](http://wiki.c2.com/?BrainStormFirstCleanLater). Many [proposed solutions](http://wiki.c2.com/?ConvertThreadModeToDocumentMode) orbit around making parallel pages with similar names to clean up a document while preserving the threads (though there were plenty of interesting alternatives, eg. [DialecticMode](http://wiki.c2.com/?DialecticMode)).
+This tension and its surrounding discussions point to the need for multiple representations of a single idea: that both the social and reference representations of a concept are valuable, but aren't necessarily best served by being represented in the same place. There was relatively common understanding that the natural order of things was to have many ThreadMode conversations that would gradually be converted to DocumentMode in a process of [BrainStormFirstCleanLater](http://wiki.c2.com/?BrainStormFirstCleanLater). Many [proposed solutions](http://wiki.c2.com/?ConvertThreadModeToDocumentMode) orbit around making parallel pages with similar names (like \<pagename\>Discussion) to clean up a document while preserving the threads (though there were plenty of interesting alternatives, eg. [DialecticMode](http://wiki.c2.com/?DialecticMode))[^contemporarywikithought].
 
-Wikipedia cut the Gordian Knot by splitting each page into a separate **Article** and **Talk** pages, with the talk page in its own **Namespace** -- eg. [Gordian_Knot](https://en.wikipedia.org/wiki/Gordian_Knot) vs [Talk:Gordian_Knot](https://en.wikipedia.org/wiki/Talk:Gordian_Knot). Talk pages resemble a lot of the energy of early wikis: disorganized, sometimes silly, sometimes angry, and usually charmingly pedantic. Namespaces extend the traditional "everything is a page" notion encoded in the WikiCase link system by giving different pages different roles --- in addition to having parallel conversations on articles and talk pages, it is possible to have template pages that can be included on wiki pages with `{% raw %}{{double curly bracket}}{% endraw %}` syntax -- eg. [Template:Citation_Needed](https://en.wikipedia.org/wiki/Template:Citation_needed) renders `{% raw %}{{Citation needed}}{% endraw %}` as <sup><i>[citation needed]</i></sup>. 
+Wikipedia cut the Gordian Knot by splitting each page into a separate *Article* and *Talk* pages, with the talk page in its own **Namespace** -- eg. [Gordian_Knot](https://en.wikipedia.org/wiki/Gordian_Knot) vs [Talk:Gordian_Knot](https://en.wikipedia.org/wiki/Talk:Gordian_Knot). Talk pages resemble a lot of the energy of early wikis: disorganized, sometimes silly, sometimes angry, and usually charmingly pedantic. Namespaces extend the traditional "everything is a page" notion encoded in the WikiCase link system by giving different pages different roles. In addition to having parallel conversations on articles and talk pages, it is possible to have template pages that can be included on wiki pages with `{% raw %}{{double curly bracket}}{% endraw %}` syntax -- eg. [Template:Citation_Needed](https://en.wikipedia.org/wiki/Template:Citation_needed) renders `{% raw %}{{Citation needed}}{% endraw %}` as <sup><i>[citation needed]</i></sup>. Talk pages have their own **functional differentiation,** with features for threading and annotating discussions that aren't present on the main article pages (see [Wikipedia:Flow](https://en.wikipedia.org/wiki/Wikipedia:Flow) {% cite WikipediaFlow2021 %}).
 
 The complete segregation of discussion to Talk pages is driven by Wikipedia's aspirations as an encyclopedia, with reminders that is the "[sole purpose](https://en.wikipedia.org/wiki/Wikipedia:Don't_lose_the_thread#Move_to_the_article_talk_page)" peppered throughout the rules and guidelines. The presence of messy subjective discussions would of course be discordant with the very austere and "neutral" articles of an encyclopedia. There are no visible indications that the talk pages even exist in the main text, and so even deeply controversial topics have no references to the conversations in talk pages that surround them --- despite this being a requested feature by both administrators and editors {% cite schneiderUnderstandingImprovingWikipedia2011 %}. 
 
-!! functions to obscure the dialogic nature of wikipedia, the site appears as if it is "always already there" rather than conditioned by a dense thicket of social norms. also functions to segregate editors from readers, minimize onramp points where readers might be inspired to become editors, and reciprocally provides no means of credit for the few editors that do maintain the content.
+Talk pages serve as one of the primary points of coordination and conflict resolution on Wikipedia, and also provide a low-barrier entrypoint for questions posed to a space they perceive to be "an approchable community of experts" {% cite viegasTalkYouType2007 %}. The separation of Talk pages and the [labyrinthine rules](https://en.wikipedia.org/wiki/Wikipedia:Talk_page_guidelines) governing their use function to obscure the dialogical and collective production of knowledge at the heart of wikis and Wikipedia. The body of thought that structures Wikipedia, most of which is in its [Wikipedia:\*](https://en.wikipedia.org/wiki/Wikipedia:Community_portal) namespace, is immense and extremely valuable, but is largely hidden from most people. Since Wikipedia is "always already there" often without trace of its massively collective nature, relatively few people ever contribute to it. Reciprocally, since acknowledging personal contribution is or point of view is [explicitly](https://en.wikipedia.org/wiki/Wikipedia:No_original_research) against some of its [core](https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view) policies and [traditions](https://en.wikipedia.org/wiki/Wikipedia:Avoid_thread_mode), there is little public credit outside the Wikipedia community itself for the labor of maintaining it. 
 
-!! continuity with highlighting and annotation, need for multiple namespaces with parallel forms of conversation, but also need to link between them. Practically speaking this requires communications systems have some means of visible backlinking, but that in turn implies some means of moderation about which backlinks are shown.
+The forking of Wards Wikis into the first [SisterSites](http://wiki.c2.com/?SisterSites) teaches a parallel strain of lessons. Ward's Wiki started as a means of organizing knowledge for the Portland Pattern Repository[^wardinvite], a programming community (referred to as [DesignPatterns](http://wiki.c2.com/?DesignPatterns) below), and in 1998 they were overwhelmed with proponents of [ExtremeProgramming](http://wiki.c2.com/?ExtremeProgramming), which caused the first fissure in the wiki:
 
+> XP advocates seemed to be talking about XP at every possible opportunity and seemingly on every page with content the least bit related to software development. This annoyed a number people who were here to discuss patterns, leading to the tag [XpFreeZone](http://wiki.c2.com/?XpFreeZone), as a request not to talk about ExtremeProgramming on that page. 
+>
+> It was difficult to pick out the [DesignPatterns](http://wiki.c2.com/?DesignPatterns) discussion on [RecentChanges](http://wiki.c2.com/?RecentChanges)[^recentchanges], because most of the activity was related to ExtremeProgramming. Eventually, most of the [DesignPatterns](http://wiki.c2.com/?DesignPatterns) people left, to discuss patterns in a "quieter" environment, and people started referring to this site as [WardsWiki](http://wiki.c2.com/?WardsWiki) instead of the [PortlandPatternRepository](http://wiki.c2.com/?PortlandPatternRepository) {% cite C2wikiWikiHistory %}
 
+One of the first and most influential Sister Sites was [Meatball Wiki](http://meatballwiki.org/), described on Wards Wiki:
 
+> SunirShah founded MeatballWiki to absorb and enlarge the discussion of what wiki and wiki like sites might be. That discussion still simmers here. But here it can take on a negative tone sounding more like complaining. On meatball, under Sunir's careful leadership, the ideas, wild or not, stay amazingly upbeat. - [SisterSites](http://wiki.c2.com/?SisterSites)
+
+MeatballWiki became the spiritual successor to Ward's Wiki, which at that point had its own momentum of culture less interested in being the repository of wiki thought[^meatballthought]. Though there are a truly monstrous number of ideas on MeatballWiki, the most relevant here here might be those concerning its very existence as a SisterSite. A series of discussions that have a relatively low word count have become fundamental background knowledge in free and open source computing, in part: [RightToFork](http://meatballwiki.org/wiki/RightToFork), [RightToLeave](http://meatballwiki.org/wiki/RightToLeave), and [EnlargeSpace](http://meatballwiki.org/wiki/EnlargeSpace).
 
 
 ---
@@ -55,7 +62,13 @@ The complete segregation of discussion to Talk pages is driven by Wikipedia's as
 
 
 
+---
 
+!! So multiple namespaces with functional differences can accomodate the difference in [perception of time](https://communitywiki.org/wiki/TimeInWikis) between thread and document mode, but we still need to preserve the voice of the contributor to be present across multiple representations of the same information.  !! continuity with highlighting and annotation, need for multiple namespaces with parallel forms of conversation, but also need to link between them. Practically speaking this requires communications systems have some means of visible backlinking. !! effectively this means a multilayered document that corresponds to a multilayered namespace. !! that in turn implies some means of moderation about which backlinks/namespaces are shown.
+
+!! return to after discussing right to fork and the need for cultural regeneration
+
+Editorship has steadily declined from a peak in 2007. !! its relatively invisible community systems make it mostly a matter of chance or ideology that new contributors are attracted int he first place. !!  In its calcification of norms, largely to protect against legitimate challenges to the integrity of the encyclopedia, any newcomers that do find their way into editing now have little chance to catch a foothold in the culture before they are frustrated by (sometimes algorithmic) rejection {% cite hillWikipediaEndOpen2019 halfakerRiseDeclineOpen2013 %}. 
 
 Important principles:
 - right to fork - splitting of community from difference of interests
@@ -79,17 +92,6 @@ from wikipedia
 	- all the indexing schemes http://meatballwiki.org/wiki/IndexingScheme
 	- planning http://wiki.c2.com/?RoadMaps
 
-
-- document mode / thread mode
-	- before the form of wikipedia became dominant, the basic form of communication had to develop
-	- http://wiki.c2.com/?ThreadMode
-	- http://wiki.c2.com/?PatternMode
-	- http://wiki.c2.com/?DocumentMode
-	- http://wiki.c2.com/?ThreadModeConsideredHarmful
-	- http://wiki.c2.com/?GoodStyle 
-	- wikipedia split into talk pages, had a subtle  but extremely powerful effect on the document organization
-
-- everything2 as a transitional medium
 - struggled with cultures of wiki editing, deletists, etc.
 	- strugs http://wiki.c2.com/?WikiMindWipe
 	- wikis work! but they can break when people get too much power! http://www.aaronsw.com/weblog/whorunswikipedia
@@ -101,6 +103,9 @@ from wikipedia
 
 - enter wikipedia
 	- https://en.wikibooks.org/wiki/Wikibooks_talk:Policies_and_guidelines
+
+- contemporary wikis
+	- list of 'would be nice' in wiki engines: https://communitywiki.org/wiki/CategoryWikiTechnology
 
 
 
@@ -122,19 +127,6 @@ from wikipedia
 
 
 > Two essential features coordinate this information to better serve our organizational decision-making, learning, and memory. The first is our constellation of Working Groups that maintain and distribute local, specialized knowledge to other groups across the network. [...] A second, more emergent property is the subgroup of IBL researchers who have become experts, liaisons, and interpreters of knowledge across the network. These members each manage a domain of explicit records (e.g., written protocols) and tacit information (e.g., colloquialisms, decision histories) that are quickly and informally disseminated to address real-time needs and problems. A remarkable nimbleness is afforded by this system of rapid responders deployed across our web of Working Groups. However, this kind of internalized knowledge can be vulnerable to drop-out when people leave the collaboration, and can be complex to archive. An ongoing challenge for our collaboration is how to archive both our explicit and tacit processes held in both people and places. This is not only to document our own history but as part of a roadmap for future science teams, whose dynamics are still not fully understood. {% cite woolKnowledgeNetworksHow2020 %}
-
-{% cite kamelboulosSemanticWikisComprehensible2009 %}
-
-!! Read and cite! {% cite classeDistributedInfrastructureSupport2017 %}
-
-!! {% cite goodSocialTaggingLife2009 %}
-
-!! wikibase can do federated SPARQL queries https://wikiba.se/
-- and has been used to make folksonomies https://biss.pensoft.net/article/37212/
-
-!! lots of scientific wikis 
-- https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki/Other_Wikis
-- https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki
 
 !! bids is doing something like this https://nidm-terms.github.io/
 

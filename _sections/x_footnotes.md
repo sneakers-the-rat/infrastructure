@@ -23,3 +23,15 @@
 [^corporatewikis]: though their corporate manifestations would probably be unrecognizable to the project early wiki users imagined.
 
 [^wikistart]: it's complicated: http://wiki.c2.com/?WardsWikiTenthAnniversary
+
+[^contemporarywikithought]: Contemporary wikis have continued this conversation, see [DocumentsVsMessages](https://communitywiki.org/wiki/DocumentsVsMessages) on communitywiki.org
+
+[^wardinvite]: The initial motivations are actually stunningly close to the kinds of communication and knowledge organization problems we are still solving today (even in this piece) 
+	> Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn't have to be so repetitive since the things being discussed don't disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It's not quite a chat, still, conversation is possible.” - {% cite cummingsWhatWasWikiWhy2009 %}
+
+[^recentchanges]: Recent Changes was the dominant, if not controversial means of keeping track with recent wiki traffic, see [RecentChangesJunkie](http://wiki.c2.com/?RecentChangesJunkie)
+
+[^meatballthought]: There seems to have been an overriding belief that theoretical ideas about wikis and wiki culture belong on Meatball Wiki, from [WikiWikiWebFaq](http://wiki.c2.com/?WikiWikiWebFaq):
+	> Q: Do two separate wikis ever merge together to create one new wiki? Has this happened before? Keep in mind that I don't just mean two different pages within a wiki. (And for that matter, where is an appropriate page where I can post questions about the history of all wikis, not just this one?)
+	>
+	> A1: I don't know of any such wiki merge, nor of any discussion of the history of all wikis. Such a discussion should probably reside (if created) on MeatballWiki. 
