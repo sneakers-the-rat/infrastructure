@@ -261,3 +261,39 @@ At this point we have largely closed the loop of science: starting with standard
 !! lots of scientific wikis 
 - https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki/Other_Wikis
 - https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Molecular_Biology/Genetics/Gene_Wiki
+
+- contemporary wikis
+	- list of 'would be nice' in wiki engines: https://communitywiki.org/wiki/CategoryWikiTechnology
+
+> It’s not too late to turn things around. Specs could be moved back into the wiki until they’re nearly done. Editors, instead of being gatekeepers, could be helpful moderators. A clear process for making controvertial decisions could be decided on. And the validator could follow consensus instead of leading it. But do the people running the show want this?
+>
+> Standards bodies tread a fine line between organizations for the public good and shelters for protecting collusion that would be otherwise illegal under antitrust law. For the dominent vendors involved, the goal is to give the illusion of openness while giving themselves full control to enforce their will behind the scenes.
+>
+> The IETF is a good example of this. Often lauded by the public as a model of openness and and and freedom, the reality is that working group chairs, appointed by a self-elected ruling board, get away with declaring whatever they want (usually an inferior and difficult to implement alternative) as “rough consensus”, routinely ignoring comments from the public and objections from working group members. One working group (in charge of DNS extentsions) went so far as to censor mail from working group members. The dictators running the IETF, when informed, didn’t seem to mind.
+> 
+> Is the same sort of thing at work in the Pie/Echo/Atom Project? It appears so at first glance: Sam running the show from behind the scenes, putting friends in charge of the specs (although that isn’t what actually happened). The lack of a dispute-resolution process only makes things worse: when there’s no clear guide on how to make decisions or contributions, it’s far from obvious how to challenge a decision Sam has made. {% cite swartzSecretsStandards2003 %}
+
+!! give the example of the autopilot wiki
+
+**wikipedia probs**
+
+> Over time, the initial openness of these communities seems to shift. A body of recent researchincluding a number of studies that we have conducted—suggests that the decline in contributors in both English Wikipedia and a range of other peer production projects has been driven by an increase in newcomer rejection that results in a decrease in newcomer retention. {% cite hillWikipediaEndOpen2019 %}
+(wikipedia probs are general probs)
+
+
+> Two essential features coordinate this information to better serve our organizational decision-making, learning, and memory. The first is our constellation of Working Groups that maintain and distribute local, specialized knowledge to other groups across the network. [...] A second, more emergent property is the subgroup of IBL researchers who have become experts, liaisons, and interpreters of knowledge across the network. These members each manage a domain of explicit records (e.g., written protocols) and tacit information (e.g., colloquialisms, decision histories) that are quickly and informally disseminated to address real-time needs and problems. A remarkable nimbleness is afforded by this system of rapid responders deployed across our web of Working Groups. However, this kind of internalized knowledge can be vulnerable to drop-out when people leave the collaboration, and can be complex to archive. An ongoing challenge for our collaboration is how to archive both our explicit and tacit processes held in both people and places. This is not only to document our own history but as part of a roadmap for future science teams, whose dynamics are still not fully understood. {% cite woolKnowledgeNetworksHow2020 %}
+
+!! bids is doing something like this https://nidm-terms.github.io/
+
+> The Semantic Web is about two things. It is about common formats for integration and combination of data drawn from diverse sources, where on the original Web mainly concentrated on the interchange of documents. It is also about language for recording how the data relates to real world objects. That allows a person, or a machine, to start off in one database, and then move through an unending set of databases which are connected not by wires but by being about the same thing. https://www.w3.org/2001/sw/
+
+!! Semantic combination of databases in science are also not new {% cite cheungSemanticWebApproach2007 simaEnablingSemanticQueries2019 %}. We need both though! semantic federated databases!
+
+> For those that don't know, Linked Data type people and Indieweb type people have, for whatever reason, historically been at each others' throats despite (or perhaps because of) the enormous similarity between the kind of work that they're doing (the main disagreements being "should we treat everything like a graph" and "are namespaces a good idea" and also, let's be honest, just historical grudges). But Amy Guy long made the case in the group that actually the divisions between the groups were very shallow and that with just a few tweaks we could actually bridge the gap (this was the real origin of the Social Web Protocols document, which though it eventually became a document of the different things we produced, was originally an analysis of how they weren't so different at all). {% cite lemmer-webberStandardsDivisionsCollaboration2018 %}
+
+> For the wiki to grow and stay healthy, it may be interesting to note that all four elements from Alchemy must be present.
+> 
+> - Earth: the wiki corpus, put into textual form.
+> - Sun: the eyes gazing upon the wiki, giving it attention.
+> - Air: the invisible server on which wiki rests, available at all points. - available from the "ether" (net), you might say?
+> - Water: the interactions from WikiCommunity, making it grow. [AlchemyOfWiki](http://wiki.c2.com/?AlchemyOfWiki)

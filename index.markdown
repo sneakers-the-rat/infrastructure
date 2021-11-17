@@ -157,7 +157,8 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 {% include_relative _sections/2_8_wikis.md %}
 
 
-### Credit Assignment
+
+### Rebuilding Scientific Communication
 
 {% include_relative _sections/2_9_credit-incentives.md %}
 
