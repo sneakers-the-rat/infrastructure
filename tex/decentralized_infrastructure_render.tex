@@ -1266,6 +1266,17 @@ grant money, scrape together from local knowledge, methods sections,
 begging, borrowing, and (hopefully not too much) stealing from
 neighboring labs.
 
+The state of broader scientific deinfrastructuring is perhaps to be
+expected given its dependence on informational monopolies that in some
+part depend on it, but unlike many other industries or professions there
+is reason for hope in science. Science is packed with people with an
+enormous diversity of skills, resources, and perspectives. Publicly
+funded science is relatively unique as a labor system that does not
+strictly depend on profit. There is widespread discontent with the
+systems of scientific practice, and so the question becomes how we can
+organize our skill, labor, and energy to rebuild the systems that
+constrain us.
+
 A third option from the standardization offered by centralization and
 the blooming, buzzing, beautiful chaos of disconnected open-source
 development is that of decentralized systems, and with them we might
@@ -1313,24 +1324,25 @@ most successful decentralized digital technology project.
 
 !! need to integrate \cite{larsenPoliticalNatureTCP2012} 
 
-\{\% include rdfa.html id=``protocols'' resource=``protocols''
-typeof=``skos:Concept'' contents=``\#\#\# Protocols, not Platforms''
-\%\}
+\hypertarget{protocols-not-platforms}{%
+\subsubsection{Protocols, not Platforms}\label{protocols-not-platforms}}
 
-Much of the basic technology of the internet was developed as
-\emph{protocols} that describe the basic attributes and operations of a
-process. \{\% include rdfa2.html resource=``protocols''
-property=``skos:example'' contents=``A simple and common example is
-email over SMTP (Simple Mail Transfer Protocol)'' \%\} \cite{Rfc5321SimpleMail} . SMTP describes a series of steps that email
-servers must follow to send a message: the sender initiates a connection
-to the recipient server, the recipient server acknowledges the
-connection, a few more handshake steps ensue to describe the senders and
-receivers of the message, and then the data of the message is
-transferred. Any software that implements the protocol can send and and
-receive emails to and from any other. The protocol basis of email is the
-reason why it is possible to send an email from a gmail account to a
-hotmail account (or any other hacky homebrew SMTP client) despite being
-wholly different pieces of software.
+Much of the basic technology of the internet was developed as \{\%
+include rdfa2.html id=``protocols'' resource=``protocols''
+typeof=``skos:Concept'' contents = ``\emph{protocols}'' \%\} that
+describe the basic attributes and operations of a process. \{\% include
+rdfa2.html resource=``protocols'' property=``skos:example'' contents=``A
+simple and common example is email over SMTP (Simple Mail Transfer
+Protocol)'' \%\} \cite{Rfc5321SimpleMail} . SMTP describes a
+series of steps that email servers must follow to send a message: the
+sender initiates a connection to the recipient server, the recipient
+server acknowledges the connection, a few more handshake steps ensue to
+describe the senders and receivers of the message, and then the data of
+the message is transferred. Any software that implements the protocol
+can send and and receive emails to and from any other. The protocol
+basis of email is the reason why it is possible to send an email from a
+gmail account to a hotmail account (or any other hacky homebrew SMTP
+client) despite being wholly different pieces of software.
 
 In contrast, \emph{platforms} provide some service with a specific body
 of code usually without any pretense of generality. In contrast to email
@@ -4303,10 +4315,10 @@ everyone involved in scientific communication wants knowledge to be
 organized, right? The reality of scientific practice might give a hint
 at our naivete. Despite being, in some sense, itself an effort to
 organize knowledge, \emph{scientific results effectively have no system
-of organization.} There is no means of, say, ``finding all the papers
-about a research question.'' The problem is so fundamental it seems
-natural: the usual methods of using search engines, asking around on
-Twitter, and chasing citation trees are flex tape slapped over the
+of explicit organization.} There is no means of, say, ``finding all the
+papers about a research question.'' The problem is so fundamental it
+seems natural: the usual methods of using search engines, asking around
+on Twitter, and chasing citation trees are flex tape slapped over the
 central absence of a system for formally relating our work as a shared
 body of knowledge.
 
@@ -4466,6 +4478,15 @@ others to index technical knowledge and tools. Finally we use sites like
 \href{https://pubpeer.com}{PubPeer} and ResearchGate for comment and
 criticism.
 
+!! these tools are don't really suit our needs at all, and constrain
+rather than support some basic things that we want to do. For example,
+there is really no venue where we can have sustained, longform,
+multiparty discussions about difficult topics in our field. Sure, it is
+possible to publish series of commentary pieces back and forth, or to
+write blog posts against one another, or to squabble on twitter, but
+there's nothing that truly supports a cumulative body of public
+understanding well.
+
 These technologies point to a few overlapping and not altogether binary
 axes of communication systems. !! make this a table? with technological
 examples for each.
@@ -4475,8 +4496,7 @@ examples for each.
 \item
   \textbf{Durable vs Ephemeral} - journals seek to represent information
   as permanent, archival-grade material, but scientific communication
-  also necessarily exists as wholly contextual, temporally specific
-  snapshots.
+  also necessarily exists as contextual, temporally specific snapshots.
 \item
   \textbf{Structured vs Chronological} - scientific communication both
   needs to present itself as a structured basis of information with
@@ -4492,101 +4512,58 @@ examples for each.
   entirely-specific DMs through domain-specific tool indexes like
   OpenBehavior through the uniform indexing of Wikipedia.
 \item
-  \textbf{Public vs.~Private} - Communication can be composed of
-  entirely private notes to self, through communication in a lab,
-  collaboration group, discipline, and landing in the entirely public
-  realm of global communication.
+  \textbf{Public vs.~Private} - Who gets to read, who gets to
+  contribute? Communication can be composed of entirely private notes to
+  self, through communication in a lab, collaboration group, discipline,
+  and landing in the entirely public realm of global communication.
 \item
   \textbf{Formal vs.~Informal} - Journal articles and encyclopedia-bound
   writing that conforms to a particular modality of expression vs.~a
   vernacular style intended to communicate with people outside the
   jargon culture.
+\item
+  \textbf{Push vs.~Pull} - Do you go to get information from a reference
+  location, or does information come to you as an alert or message?
 \end{itemize}
 
-!! There are many tunnels of internet history that have traced different
-parts of these axes, but particularly relevant here are the overlapping
-histories of early wikis, wikipedia, the semantic web, and activitypub.
-This is a knotty and tangled history, so I am not attempting a full
+Clearly a variety of different types of communication tools are needed,
+but there is no reason that each of them should be isolated and
+inoperable with the others. We have already seen several of the ideas
+that help bring an alternative into focus. Piracy communities
+demonstrate ways to build social systems that can sustain
+infrastructure. Federated and protocol-based systems show us that we
+don't need to choose between a single monolithic system or many
+disconnected ones, but can have a heterogeneous space of tools linked by
+a basic protocol. The semantic web and linked data people showed us the
+power of triplet links as a very general means of linking disparate
+systems. We can bridge these lessons with some from the early wiki
+movement to get a more practical sense of what it takes to give people
+total control over the structure of their communication and knowledge
+systems. Together with our sketches of data, analytical, and
+experimental tools we can start imagining a system for coordinating them
+--- as well as displacing some of the more intractable systems that
+misstructure the practice of science.
+
+!! This is a knotty and tangled history, so I am not attempting a full
 recounting, but will be selectively telling the story to motivate the
 kinds of tools we need.
+
+
+\end{multicols}
+
 
 \hypertarget{the-wiki-way}{%
 \subsubsection{The Wiki Way}\label{the-wiki-way}}
 
-x
 
-current status - our current systems are largely journals and
-conferences, but as evidenced by the unfortunate but widescale adoption
-of twitter, scientific communication naturally spans dispersed forms of
-communication at different scales of formality, length, public
-engagement, etc. - when we go to organize ourselves, why is the best we
-can do google docs and slack?
-
-contextual knowledge needed - our limited systems of communication also
-render large sections of needed scientific communication without venue.
-The existing tools that \emph{do} give some means of sharing technical
-knowledge are distinctly charity-driven, and don't confer the same type
-of credit incentive that publications do.
-
-!! important of ease of leaving
-http://meatballwiki.org/wiki/RightToLeave
-
-!! we've been tracing a distinction between the ability to express
-fluidly the contents of our reality with developing platforms that sift
-through it in an automated way, something that was an explicit cultural
-division throughout the semantic web project \cite{swartzTechniquesMassCollaboration2006} , which Peter Norvig (director
-of search at Google at the time) primarily attributes to user
-incompetence \cite{lombardiGoogleExecChallenges2007} . On trust,
-TBL says ``Berners-Lee agreed with Norvig that deception on the Internet
-is a problem, but he argued that part of the Semantic Web is about
-identifying the originator of information, and identifying why the
-information can be trusted, not just the content of the information
-itself.''
-
-!! more techniques of communtiy growth
-http://meatballwiki.org/wiki/RewardReputation
-
-!! wikis work! but they can break when people get too much power!
-http://www.aaronsw.com/weblog/whorunswikipedia
-
-There simply isn't a place to have longform, thoughtful, durable
-discussions about science. The direct connection between the lack of a
-communcaition venue to the lack of a way of storing technical,
-contextual knowledge is often overlooked. Because we don't have a place
-to talk about what we do, we don't have a place to write down how to do
-it. Science needs a communcation platform, but the needs and constraints
-of a scientific communication platform are different than those
-satisfied by the major paradigms of chatrooms, forums etc. By
-considering this platform as another infrastructure project alongside
-and integrated with those described in the previous sections, its form
-becomes much clearer, and it could serve as the centerpiece of
-scientific infrastructure.
-
-!! importantly, should also have means of ingest for existing tools and
-elements -- easy to import existing papers and citation trees, plugins
-for existing data sharing systems.
-
-!! description of its role as a schema resolution system -- currently we
-implement all these protocols and standards in these siloed, centralized
-groups that are inherently slow to respond to changes and needs in the
-field. instead we want to give people the tools so that their the
-knowledge can be directly preserved and acted on.
-
-!! descrption of its role as a tool of scientific discussion --
-integrated with the data server and standardized analysis pipelines, it
-could be possible to have a discussion board where we were able to pose
-novel scientific questions, answerable with transparent, interrogatable
-analysis systems. Semantic linking makes the major questions in the
-field possible to answer, as discussions are linked to one another in a
-structured way and it is possible to literally trace the flow of
-thought.
-
-!! should trace the development of AP and the difficulty of doing these
-things as a way to explaining the ecosystem and the different parts that
-are needed in it: https://www.w3.org/TR/social-web-protocols/
-
-\hypertarget{the-wiki-way-1}{%
-\subsubsection{The Wiki Way}\label{the-wiki-way-1}}
+\begin{multicols}{2}
+ \textgreater{} If we take radical collaboration as our
+core, then it becomes clear that extending Wikipedia's success doesn't
+simply mean installing more copies of wiki software for different tasks.
+It means figuring out the key principles that make radical collaboration
+work. What kinds of projects is it good for? How do you get them
+started? How do you keep them growing? What rules do you put in place?
+What software do you use? \cite{swartzMakingMoreWikipedias2006} 
 
 \begin{quote}
 So that's it --- insecure but reliable, indiscriminate and subtle, user
@@ -4595,47 +4572,136 @@ nit-picking people who exhibit a remarkable community camaraderie.
 Confused? Any other online community would count each of these
 ``negatives'' as a terrible flaw, and the contradictions as impossible
 to reconcile. Perhaps wiki works because the other online communities
-don't. \cite{leufWikiWayQuick2001a, -l, 329} 
+don't. \cite{leufWikiWayQuick2001a, -l, 329}  and in
+\href{http://wiki.c2.com/?WhyWikiWorks}{WhyWikiWorks}\footnote{Interestingly,
+  this quote is almost, but not exactly the same as that on
+  \href{http://wiki.c2.com/?WhyWikiWorks}{Ward's wiki}: \textgreater{}
+  So that's it - insecure, indiscriminate, user-hostile, slow, full of
+  difficult, nit-picking people, and frivolous. Any other online
+  community would count each of these strengths as a terrible flaw.
+  Perhaps wiki works because the other online communities do not.
+
+  I can't tell if Ward Cunningham wrote the original entry in the wiki,
+  but in any case seems to have found a bit of optimism in the book.}
 \end{quote}
 
-!! wiki cultural history stuff!! differences in wiki philosophy,
-deletists vs not. !! meatball stuff on community maintenace, conflict
-resolution,
+Aside from maybe the internet itself, there is no larger public digital
+knowledge organization effort than Wikipedia. While there are many
+lessons to be learned from Wikipedia itself, it emerged from a prior
+base of thought and experimentation in radically permissive,
+self-structuring read/write --- sometimes called ``peer production''
+\cite{hillWikipediaEndOpen2019}  --- communities. Wikis are now
+quasi-ubiquitous today\footnote{though their corporate manifestations
+  would probably be unrecognizable to the project early wiki users
+  imagined.}, largely thanks to Wikipedia, but its specific history and
+intent to be an \emph{encyclopedia} entwines it with a very particular
+technological and social system that obscures some of the broader dreams
+of early wikis.
 
-!! also hints at the problems, difficulties with wiki culture
+Aaron Swartz recounts a quote from Jimmy Wales, co-founder of Wikipedia:
 
 \begin{quote}
-It's not too late to turn things around. Specs could be moved back into
-the wiki until they're nearly done. Editors, instead of being
-gatekeepers, could be helpful moderators. A clear process for making
-controvertial decisions could be decided on. And the validator could
-follow consensus instead of leading it. But do the people running the
-show want this?
-
-Standards bodies tread a fine line between organizations for the public
-good and shelters for protecting collusion that would be otherwise
-illegal under antitrust law. For the dominent vendors involved, the goal
-is to give the illusion of openness while giving themselves full control
-to enforce their will behind the scenes.
-
-The IETF is a good example of this. Often lauded by the public as a
-model of openness and and and freedom, the reality is that working group
-chairs, appointed by a self-elected ruling board, get away with
-declaring whatever they want (usually an inferior and difficult to
-implement alternative) as ``rough consensus'', routinely ignoring
-comments from the public and objections from working group members. One
-working group (in charge of DNS extentsions) went so far as to censor
-mail from working group members. The dictators running the IETF, when
-informed, didn't seem to mind.
-
-Is the same sort of thing at work in the Pie/Echo/Atom Project? It
-appears so at first glance: Sam running the show from behind the scenes,
-putting friends in charge of the specs (although that isn't what
-actually happened). The lack of a dispute-resolution process only makes
-things worse: when there's no clear guide on how to make decisions or
-contributions, it's far from obvious how to challenge a decision Sam has
-made. \cite{swartzSecretsStandards2003} 
+``I'm not a wiki person who happened to go into encyclopedias,'' Wales
+told the crowd at Oxford. ``I'm an encyclopedia person who happened to
+use a wiki.'' \cite{swartzWhoWritesWikipedia2006} 
 \end{quote}
+
+And further describes how this origin and mission differentiates it from
+other internet communities:
+
+\begin{quote}
+But Wikipedia isn't even a typical community. Usually Internet
+communities are groups of people who come together to discuss something,
+like cryptography or the writing of a technical specification. Perhaps
+they meet in an IRC channel, a web forum, a newsgroup, or on a mailing
+list, but the focus is always something ``out there'', something outside
+the discussion itself.
+
+But \textbf{with Wikipedia, the goal is building Wikipedia.} It's not a
+community set up to make some other thing, it's a community set up to
+make itself. And since Wikipedia was one of the first sites to do it, we
+know hardly anything about building communities like that. \cite{swartzMakingMoreWikipedias2006} 
+\end{quote}
+
+We know a lot more now than in 2006, of course, but Wikipedia still has
+outsized structuring influence on our beliefs about what Wikis can be.
+Wikipedia has since spawned a
+\href{https://meta.wikimedia.org/wiki/Complete_list_of_Wikimedia_projects}{huge
+number} of technologies and projects like
+\href{https://meta.wikimedia.org/wiki/MediaWiki}{MediaWiki} and
+\href{https://meta.wikimedia.org/wiki/Wikidata}{Wikidata}, each with
+their own long and occasionally torrid histories. I won't dwell on the
+obvious and massive feat of collective organzation that the greater
+Wikipedia project represents --- learning from its imperfections is more
+useful to us here, especially for things that aren't encyclopedias. The
+dream of a centralized, but mass-edited ``encyclopedia of everything''
+seems to be waning, and its slow retreat from wild openness has run
+parallel to a long decline in contributors \cite{hillWikipediaEndOpen2019, halfakerRiseDeclineOpen2013} . Throughout
+that time, there has been a separate (and largely skeptical) set of wiki
+communities holding court on what radically open web communities can be
+like, inventing their worlds in realtime. These thought communities have
+histories that are continuous with one another, and in their mutual
+reaction and inspiration sometimes teach similar lessons from across the
+divides of their very different structure.
+
+The first wiki was launched in 1995\footnote{it's complicated:
+  http://wiki.c2.com/?WardsWikiTenthAnniversary}
+(\href{http://wiki.c2.com/}{still up}) and came to be known as Ward's
+wiki after its author
+\href{http://wiki.c2.com/?WardCunningham}{WardCunningham}. Technically,
+it was extremely simple: a handful of
+\href{http://wiki.c2.com/?TextFormattingRules}{TextFormattingRules} and
+use of \href{http://wiki.c2.com/?WikiCase}{WikiCase} where if you
+\href{http://wiki.c2.com/?JoinCapitalizedWords}{JoinCapitalizedWords}
+you create a link to a (potentially new)
+\href{http://wiki.c2.com/?WikiPage}{WikiPage} --- and the ability for
+anyone to edit any page. These very simple
+\href{http://wiki.c2.com/?WikiDesignPrinciples}{WikiDesignPrinciples}
+led to a sprawling and continuous conversation that spanned more than a
+\href{http://wiki.c2.com/?WardsWikiTenthAnniversary}{decade} and
+thousands\footnote{\href{http://c2.com/wiki/history/}{23,244} unique
+  page names according to the edit history, but the edit history was
+  also purposely pruned from time to time.} of pages that, because of
+the nature of the medium, is left fully preserved in amber. Those
+conversations are a history of thought on what makes wiki communities
+work (eg. \href{http://wiki.c2.com/?WhyWikiWorks}{WhyWikiWorks},
+\href{http://wiki.c2.com/?WhyWikiWorksNot}{WhyWikiWorksNot}), and what
+is needed to sustain them.
+
+One tension that emerged early and was never fully resolved by these
+wikis is the balance between
+``\href{http://wiki.c2.com/?DocumentMode}{DocumentMode}'' writing that
+serves as linearly-readable reference material, similar to that of
+Wikipedia, and ``\href{http://wiki.c2.com/?ThreadMode}{ThreadMode}''
+writing that is a nonlinear representation of a conversation. Ward
+Cunningham and other more organizationally-oriented contributors opposed
+ThreadMode (eg.
+\href{http://wiki.c2.com/?ThreadModeConsideredHarmful}{ThreadModeConsideredHarmful},
+\href{http://wiki.c2.com/?InFavorOfDissertation}{InFavorOfDissertation})
+for a number of reasons, largely due to the
+\href{http://wiki.c2.com/?ThreadMess}{ThreadMess} and
+\href{http://wiki.c2.com/?WikiChaos}{WikiChaos} it had the potential of
+creating.
+
+\begin{quote}
+I occasionally suggest how this site should be used. My
+\href{http://wiki.c2.com/?GoodStyle}{GoodStyle} suggestions have been
+here since the beginning and are linked from the edit page should anyone
+forget. I have done my best to discourage dialog
+\href{http://wiki.c2.com/?InFavorOfDissertation}{InFavorOfDissertation}
+which offers a better fit to this medium. I've been overruled. I will
+continue to make small edits to pages for the sake of brevity. --
+\href{http://wiki.c2.com/?WardCunningham}{WardCunningham} \cite{C2wikiWikiHistory} 
+\end{quote}
+
+Most pages are thus a combination of both, usually with some
+DocumentMode text at the top with ThreadMode conversations interspersed
+throughout without necessarily having any clean delineation between the
+two. Far from just being raw disorder, this mixed mode of writing gave
+it a peculiar character of being \emph{both} a folk reference for a
+library of concepts \emph{as well as} a history of discussion that made
+the contingency of that reference material plain. Beka Valentine put it
+well:
 
 \begin{quote}
 c2wiki is an exercise in dialogical methods. of laying bare the fact
@@ -4644,70 +4710,398 @@ rather a social process, a conversation, a dialectic, between various
 views and interests \cite{valentineC2wikiExerciseDialogical2021} 
 \end{quote}
 
-!! give the example of the autopilot wiki
+This tension and its surrounding discussions point to the need for
+multiple representations of a single idea: that both the social and
+reference representations of a concept are valuable, but aren't
+necessarily best served by being represented in the same place. There
+was relatively common understanding that the intended order of things
+was to have many ThreadMode conversations that would gradually be
+converted to DocumentMode in a process of
+\href{http://wiki.c2.com/?BrainStormFirstCleanLater}{BrainStormFirstCleanLater}.
+Many \href{http://wiki.c2.com/?ConvertThreadModeToDocumentMode}{proposed
+solutions} orbit around making parallel pages with similar names (like
+\textless pagename\textgreater Discussion) to clean up a document while
+preserving the threads (though there were plenty of interesting
+alternatives, eg.
+\href{http://wiki.c2.com/?DialecticMode}{DialecticMode})\footnote{Contemporary
+  wikis have continued this conversation, see
+  \href{https://communitywiki.org/wiki/DocumentsVsMessages}{DocumentsVsMessages}
+  on communitywiki.org}.
 
-!! contextual knowledge stuff in this section, theory wiki stuff in next
-section
+Wikipedia cut the Gordian Knot by splitting each page into a separate
+\emph{Article} and \emph{Talk} pages, with the talk page in its own
+\textbf{Namespace} -- eg.
+\href{https://en.wikipedia.org/wiki/Gordian_Knot}{Gordian\_Knot} vs
+\href{https://en.wikipedia.org/wiki/Talk:Gordian_Knot}{Talk:Gordian\_Knot}.
+Talk pages resemble a lot of the energy of early wikis: disorganized,
+sometimes silly, sometimes angry, and usually charmingly pedantic.
+Namespaces extend the traditional ``everything is a page'' notion
+encoded in the WikiCase link system by giving different pages different
+roles. In addition to having parallel conversations on articles and talk
+pages, it is possible to have template pages that can be included on
+wiki pages with
+\texttt{\{\%\ raw\ \%\}\{\{double\ curly\ bracket\}\}\{\%\ endraw\ \%\}}
+syntax -- eg.
+\href{https://en.wikipedia.org/wiki/Template:Citation_needed}{Template:Citation\_Needed}
+renders
+\texttt{\{\%\ raw\ \%\}\{\{Citation\ needed\}\}\{\%\ endraw\ \%\}} as
+{[}citation needed{]}. Talk pages have their own \textbf{functional
+differentiation,} with features for threading and annotating discussions
+that aren't present on the main article pages (see
+\href{https://en.wikipedia.org/wiki/Wikipedia:Flow}{Wikipedia:Flow} \cite{WikipediaFlow2021} ).
+
+The complete segregation of discussion to Talk pages is driven by
+Wikipedia's aspirations as an encyclopedia, with reminders that is the
+``\href{https://en.wikipedia.org/wiki/Wikipedia:Don't_lose_the_thread\#Move_to_the_article_talk_page}{sole
+purpose}'' peppered throughout the rules and guidelines. The presence of
+messy subjective discussions would of course be discordant with the very
+austere and ``neutral'' articles of an encyclopedia. There are no
+visible indications that the talk pages even exist in the main text, and
+so even deeply controversial topics have no references to the
+conversations in talk pages that surround them --- despite this being a
+requested feature by both administrators and editors \cite{schneiderUnderstandingImprovingWikipedia2011} .
+
+Talk pages serve as one of the primary points of coordination and
+conflict resolution on Wikipedia, and also provide a low-barrier
+entrypoint for questions posed to a space they perceive to be ``an
+approchable community of experts'' \cite{viegasTalkYouType2007} .
+The separation of Talk pages and the
+\href{https://en.wikipedia.org/wiki/Wikipedia:Talk_page_guidelines}{labyrinthine
+rules} governing their use function to obscure the dialogical and
+collective production of knowledge at the heart of wikis and Wikipedia.
+The body of thought that structures Wikipedia, most of which is in its
+\href{https://en.wikipedia.org/wiki/Wikipedia:Community_portal}{Wikipedia:*}
+namespace, is immense and extremely valuable, but is largely hidden from
+most people. Since Wikipedia is ``always already there'' often without
+trace of its massively collective nature, relatively few people ever
+contribute to it. Reciprocally, since acknowledging personal
+contribution is or point of view is
+\href{https://en.wikipedia.org/wiki/Wikipedia:No_original_research}{explicitly}
+against some of its
+\href{https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view}{core}
+policies and
+\href{https://en.wikipedia.org/wiki/Wikipedia:Avoid_thread_mode}{traditions},
+there is little public credit outside the Wikipedia community itself for
+the labor of maintaining it.
+
+The forking of Wards Wikis into the first
+\href{http://wiki.c2.com/?SisterSites}{SisterSites} teaches a parallel
+strain of lessons. Ward's Wiki started as a means of organizing
+knowledge for the Portland Pattern Repository\footnote{The initial
+  motivations are actually stunningly close to the kinds of
+  communication and knowledge organization problems we are still solving
+  today (even in this piece) \textgreater{} Cunningham had developed a
+  database to collect the contributions of the listserv members. He had
+  noticed that the content of the listserv tended to get buried, and
+  therefore the most recent post might be under-informed about posts
+  which came before it. The way around this problem was to collect ideas
+  in a database, and then edit those ideas rather than begin anew with
+  each listserv posting. Cunningham's post states that ``The plan is to
+  have interested parties write web pages about the People, Projects and
+  Patterns that have changed the way they program. Short stories that
+  hint at patterns are welcome too.'' As to the rhetorical expectations,
+  Cunningham added ``The writing style is casual, like email or netnews,
+  but doesn't have to be so repetitive since the things being discussed
+  don't disappear. Think of it as a moderated list where anyone can be
+  moderator and everything is archived. It's not quite a chat, still,
+  conversation is possible.'' - \cite{cummingsWhatWasWikiWhy2009} }, a programming community (referred to as
+\href{http://wiki.c2.com/?DesignPatterns}{DesignPatterns} below), and in
+1998 they were overwhelmed with proponents of
+\href{http://wiki.c2.com/?ExtremeProgramming}{ExtremeProgramming}, which
+caused the first fissure in the wiki:
 
 \begin{quote}
-Two essential features coordinate this information to better serve our
-organizational decision-making, learning, and memory. The first is our
-constellation of Working Groups that maintain and distribute local,
-specialized knowledge to other groups across the network. {[}\ldots{]} A
-second, more emergent property is the subgroup of IBL researchers who
-have become experts, liaisons, and interpreters of knowledge across the
-network. These members each manage a domain of explicit records (e.g.,
-written protocols) and tacit information (e.g., colloquialisms, decision
-histories) that are quickly and informally disseminated to address
-real-time needs and problems. A remarkable nimbleness is afforded by
-this system of rapid responders deployed across our web of Working
-Groups. However, this kind of internalized knowledge can be vulnerable
-to drop-out when people leave the collaboration, and can be complex to
-archive. An ongoing challenge for our collaboration is how to archive
-both our explicit and tacit processes held in both people and places.
-This is not only to document our own history but as part of a roadmap
-for future science teams, whose dynamics are still not fully understood.
-\cite{woolKnowledgeNetworksHow2020} 
+XP advocates seemed to be talking about XP at every possible opportunity
+and seemingly on every page with content the least bit related to
+software development. This annoyed a number people who were here to
+discuss patterns, leading to the tag
+\href{http://wiki.c2.com/?XpFreeZone}{XpFreeZone}, as a request not to
+talk about ExtremeProgramming on that page.
+
+It was difficult to pick out the
+\href{http://wiki.c2.com/?DesignPatterns}{DesignPatterns} discussion on
+\href{http://wiki.c2.com/?RecentChanges}{RecentChanges}\footnote{Recent
+  Changes was the dominant, if not controversial means of keeping track
+  with recent wiki traffic, see
+  \href{http://wiki.c2.com/?RecentChangesJunkie}{RecentChangesJunkie}},
+because most of the activity was related to ExtremeProgramming.
+Eventually, most of the
+\href{http://wiki.c2.com/?DesignPatterns}{DesignPatterns} people left,
+to discuss patterns in a ``quieter'' environment, and people started
+referring to this site as
+\href{http://wiki.c2.com/?WardsWiki}{WardsWiki} instead of the
+\href{http://wiki.c2.com/?PortlandPatternRepository}{PortlandPatternRepository}
+\cite{C2wikiWikiHistory} 
 \end{quote}
 
-\cite{kamelboulosSemanticWikisComprehensible2009} 
-
-!! Read and cite! \cite{classeDistributedInfrastructureSupport2017} 
-
-!! \cite{goodSocialTaggingLife2009} 
-
-!! wikibase can do federated SPARQL queries https://wikiba.se/ - and has
-been used to make folksonomies https://biss.pensoft.net/article/37212/
-
-!! lots of scientific wikis -
-https://en.wikipedia.org/wiki/Wikipedia:WikiProject\_Molecular\_Biology/Genetics/Gene\_Wiki/Other\_Wikis
--
-https://en.wikipedia.org/wiki/Wikipedia:WikiProject\_Molecular\_Biology/Genetics/Gene\_Wiki
-
-!! bids is doing something like this https://nidm-terms.github.io/
-
-!! interlex
+One of the first and most influential Sister Sites was
+\href{http://meatballwiki.org/}{Meatball Wiki}, described on Wards Wiki:
 
 \begin{quote}
-The Semantic Web is about two things. It is about common formats for
-integration and combination of data drawn from diverse sources, where on
-the original Web mainly concentrated on the interchange of documents. It
-is also about language for recording how the data relates to real world
-objects. That allows a person, or a machine, to start off in one
-database, and then move through an unending set of databases which are
-connected not by wires but by being about the same thing.
-https://www.w3.org/2001/sw/
+SunirShah founded MeatballWiki to absorb and enlarge the discussion of
+what wiki and wiki like sites might be. That discussion still simmers
+here. But here it can take on a negative tone sounding more like
+complaining. On meatball, under Sunir's careful leadership, the ideas,
+wild or not, stay amazingly upbeat. -
+\href{http://wiki.c2.com/?SisterSites}{SisterSites}
 \end{quote}
 
-!! Semantic combination of databases in science are also not new \cite{cheungSemanticWebApproach2007, simaEnablingSemanticQueries2019} .
-We need both though! semantic federated databases!
+MeatballWiki became the spiritual successor to Ward's Wiki, which at
+that point had its own momentum of culture less interested in being the
+repository of wiki thought\footnote{There seems to have been an
+  overriding belief that theoretical ideas about wikis and wiki culture
+  belong on Meatball Wiki, from
+  \href{http://wiki.c2.com/?WikiWikiWebFaq}{WikiWikiWebFaq}:
+  \textgreater{} Q: Do two separate wikis ever merge together to create
+  one new wiki? Has this happened before? Keep in mind that I don't just
+  mean two different pages within a wiki. (And for that matter, where is
+  an appropriate page where I can post questions about the history of
+  all wikis, not just this one?) \textgreater{} \textgreater{} A1: I
+  don't know of any such wiki merge, nor of any discussion of the
+  history of all wikis. Such a discussion should probably reside (if
+  created) on MeatballWiki.}. Though there are a truly monstrous number
+of ideas on MeatballWiki, the most relevant here here might be those
+concerning its very existence as a SisterSite. These were a series of
+discussions that melded thoughts from open source computing with social
+systems; in part:
+\href{http://meatballwiki.org/wiki/RightToFork}{RightToFork},
+\href{http://meatballwiki.org/wiki/RightToLeave}{RightToLeave},
+\href{http://meatballwiki.org/wiki/EnlargeSpace}{EnlargeSpace}, and
+\href{http://meatballwiki.org/wiki/TransClusion}{TransClusion}.
 
-!! let's tour through wikipedia for a second and see how it's organized.
-Look at these community incentive structures and the huge macro-to-micro
-level organization of the wiki projects. The infinitely mutable nature
-of a wiki is what makes it powerful, but the SaaS wikis we're familiar
-with don't capture the same kind of `build the ground you walk on'
-energy of the real wiki movement.
+What can be done when the internal divisions in a wiki community and the
+weight of its history make healthy contribution impossible? The first
+place to start is with the
+\href{http://meatballwiki.org/wiki/RightToLeave}{RightToLeave}, where it
+is always possible to just stop being part of a community. This approach
+is clearly the most destructive, as it involves abandoning the emotional
+bonds of a community, prior work (see the
+\href{http://wiki.c2.com/?WikiMindWipe}{WikiMindWipe} where a user left
+and took all their contributions with them), and doesn't necessarily
+provide an alternative that alleviates the cause of the tension. The
+next idea is to \emph{fork} the community, where the body of a community
+--- in the case of wikis the pages and history --- can be duplicated so
+that it can proceed along two parallel tracks. Exercising the right to
+fork is, according to Meatball, ``people exercising their RightToLeave
+whilst maintaining their emotional stake'' \cite{MeatballWikiRightToLeave} .
+
+The discussion around the Right to Fork on Meatball is far from
+uniformly positive, and is certainly colored by the strong presence of
+its
+\href{http://meatballwiki.org/wiki/BenevolentDictator}{BenevolentDictator}
+Sunir Shah who viewed it as a last resort after all attempts at
+\href{http://meatballwiki.org/wiki/ConflictResolution}{ConflictResolution}
+have failed. They point to the potentially damaging effects of a fork,
+like bitterness, disputes over content ownership (see
+\href{http://meatballwiki.org/wiki/MeatballIsNotFree}{MeatballIsNotFree}),
+and potentially an avoidance of conflict resolution that is a normal and
+healthy part of any community. Others place it more in the realm of a
+radical \emph{political} action rather than a strictly social action.
+Writing about the fork of OpenOffice to LibreOffice, Terry Hancock
+writes:
+
+\begin{quote}
+{[}In{]} proprietary software {[}a{]} political executive decision can
+kill a project, regardless of developer or user interest. But with free
+software, the power lies with the people who make it and use it, and the
+freedom to fork is the guarantee of that power. {[}\ldots{]} The freedom
+to fork a free software project is {[}a{]} ``tool of revolution''
+intended to safeguard the real freedoms in free software. \cite{hancockOpenOfficeOrgDead2010} 
+\end{quote}
+
+Forking digital communities can be much less acrimonious than
+physically-based communities because of the ability to
+\href{http://meatballwiki.org/wiki/EnlargeSpace}{EnlargeSpace} given by
+the medium:
+
+\begin{quote}
+In order to preserve
+\href{http://meatballwiki.org/wiki/GlobalResource}{GlobalResources},
+create more public space. This reduces limited resource tension. Unlike
+the \href{http://meatballwiki.org/wiki/RealWorld}{RealWorld}, land is
+cheap online. In effect, this nullifies the
+\href{http://meatballwiki.org/wiki/GlobalResource}{TragedyOfTheCommons}
+by removing the resource pressure that created the ``tragedy'' in the
+first place. \textbf{You can't overgraze the infinity.} - \cite{MeatballWikiEnlargeSpace} 
+\end{quote}
+
+It is always possible to duplicate digital resources, create more spaces
+to resolve tensions over shared resources, and so on. Enlarging space
+has the natural potential to make the broader social scene bewildering
+with a geyser of pages and communities, but can be further made less
+damaging by having mechanisms to link histories, trace their divergence,
+and potentially resolve a fork as is common in open source software
+development. Forking is then a natural process of community
+regeneration, allowing people to regroup to make healthier spaces when
+needed, where the fork is itself part of the history of the community
+rather than an unfathomable rift.
+
+Forking communities is not the same as forking community resources:
+``you can't fork a community {[}\ldots{]} what you can do is fork the
+content and to \emph{split} the community'' \cite{MeatballWikiForkingOfOnlineCommunitiesa} . As described so far, a
+fork divides people into unreconciled and separate communities. In some
+cases this makes forking difficult, in others it makes it impossible:
+the prime example, again, is Wikipedia. It is simply too large and too
+culturally dominant to fork. Even though it is
+\href{https://en.wikipedia.org/wiki/Wikipedia:FAQ/Forking\#Am_I_allowed_to_fork_Wikipedia?}{technically
+possible} to fork Wikipedia, if you succeeded, then what? Who would come
+with you to build it, and who would that be useful for? This is partly a
+product of its totalizing effort to be an encyclopedia of everything
+(what good would \emph{another} encyclopedia of everything be?) but also
+the weight of history: you won't get enough long-encultured Wikipedians
+to join you.
+
+The last major effort to fork Wikipedia was in 2002 with an effort led
+by Edgar Enyedy to move the Spanish Wikipedia to The Enciclopedia Libre
+Universal en Español \cite{tkaczSpanishForkWikipedia2011, tkaczWikipediaPoliticsOpenness2014} . Though it was brief and
+unsuccessful, Enyedy claims that because Jimmy Wales was worried about
+other non-English communities following their lead, he and the other
+admins capitulated to the demands for no advertising and a transfer to a
+.org domain, among others\footnote{Jimmy Wales, naturally, disputes this
+  characterization of events.}. Even a politically symbolic fork is
+dependent on the perceived threat to the original project, and that
+window seems to have been closed after 2002.
+
+The cultural tensions and difficulties that lead other wikis and
+projects to fork have taken their toll on the editorship and culture of
+Wikipedia. The community is drawn into
+\href{https://meta.wikimedia.org/wiki/Conflicting_Wikipedia_philosophies}{dozens}
+of conflicting philosophical camps: the
+\href{https://meta.wikimedia.org/wiki/Special:MyLanguage/Deletionism}{Deletionists}
+vs.~the
+\href{https://meta.wikimedia.org/wiki/Special:MyLanguage/Inclusionism}{Inclusionists},
+\href{https://meta.wikimedia.org/wiki/Eventualism}{Eventualists}
+vs.~\href{https://meta.wikimedia.org/wiki/Immediatism}{Immediatists},
+\href{https://meta.wikimedia.org/wiki/Special:MyLanguage/Mergism}{Mergists}
+vs.~\href{https://meta.wikimedia.org/wiki/Special:MyLanguage/Separatism}{Separatists},
+and yes even a stub page for
+\href{https://meta.wikimedia.org/wiki/Wikisecessionism}{Wikisecessionism}.
+Editorship has steadily declined from a peak in 2007. Its relatively
+invisible community systems make it mostly a matter of chance or
+ideology that new contributors are attracted in the first place. In its
+calcification of norms, largely to protect against legitimate challenges
+to the integrity of the encyclopedia, any newcomers that do find their
+way into editing now have little chance to catch a foothold in the
+culture before they are frustrated by (sometimes algorithmic) rejection
+\cite{hillWikipediaEndOpen2019, halfakerRiseDeclineOpen2013} .
+
+Arguably all internet communities have some kind of
+\href{http://meatballwiki.org/wiki/WikiLifeCycle}{life cycle}, so the
+question becomes how to design systems that support healthy forking
+without replicating the current situation of fragmentation. Wikis,
+including \href{http://www.meatballwiki.org/wiki/TransClusion}{Meatball}
+and
+\href{https://www.mediawiki.org/wiki/Extension:Interwiki}{MediaWiki}, as
+well as other projects like
+\href{https://en.wikipedia.org/wiki/Project_Xanadu}{Xanadu} often turn
+to \textbf{transclusion} --- or being able to reference and include the
+content of one wiki (or wiki page) in another. Rather than copying and
+pasting, the remote content is kept updated with any changes made to it.
+
+Transclusion naturally brings with it a set of additional challenges:
+Who can transclude my work? Whose work can I transclude? Can my edits be
+propagated back to their work? What can be transcluded, at what level of
+granularity, and how? While before we had characterized splitting
+communities as an intrinsic part of a fork, that need not be the case in
+a system built for transclusion. Instead relationships post-fork are
+then made an \emph{explicit social process} within the system, where
+even if a community wants to work as separate subgroups, it is possible
+for them to arrive at some agreement over what they want to share and
+what they want to keep separate. This kind of decentralized work system
+resembles radical organizing tactics like hub-and-spoke models or
+affinity groups where many autonomous groups fluidly work together or
+separately on an array of shared projects without aspiring to create
+``one big movement'' \cite{kleinWereDCSeattle2001} . Murray
+Bookchin describes:
+
+\begin{quote}
+The groups proliferate on a molecular level and they have their own
+''Brownian movement.'' Whether they link together or separate is
+determined by living situations, not by bureaucratic fiat from a distant
+center. {[}\ldots{]}
+
+{[}N{]}othing prevents affinity groups from working together closely on
+any scale required by a living situation. They can easily federate by
+means of local, regional or national assemblies to formulate common
+policies and they can create temporary action committees (like those of
+the French students and workers in 1968) to coordinate specific tasks.
+{[}\ldots{]} As a result of their autonomy and localism, the groups can
+retain a sensitive appreciation of new possibilities. Intensely
+experimental and variegated in lifestyles, they act as a stimulus on
+each other as well as on the popular movement. \cite{bookchinNoteAffinityGroups1969} 
+\end{quote}
+
+To cherrypick a few lessons from more than 25 years of thought from tens
+of thousands of people: The differing models of document vs.~thread
+modes and separate article vs.~talk pages show us that using
+\textbf{namespaces} is an effective way to bridge multimodal expression
+on the same topic across
+\href{https://communitywiki.org/wiki/TimeInWikis}{percerceived
+timescales} or other conflicting communicative needs. This is especially
+true when the namespaces have \textbf{functional differentiation} like
+the tools for threading conversations on Wikipedia Talk pages and the
+parsing and code generation tools of Templates. These namespaces need to
+be \textbf{visibly crosslinked} both to preserve the social character of
+knowledge work, but also to provide a means of credit assignment and
+tool development between namespaces. Any communication system needs to
+be designed to \textbf{prioritize ease of leaving} and \textbf{ease of
+forking} such that a person can take their work and represent it on some
+new system or start a new group to encourage experimentation in
+governance models and technologies. One way of accomplishing these goals
+might be to build a system around \textbf{social transclusion} such that
+work across many systems and domains can be linked into a larger body of
+work without needing to create a system that becomes too large to fork.
+The need for communication across namespaces and systems, coupled with
+transclusion further implies the need for \textbf{bidirectional
+transclusion} so that in addition to being able to transclude something
+in a document, there is visible representation of work being transcluded
+(eg. commented on, used in an analysis, etc.) by allowed peers and
+federations.
+
+These lessons, coupled with those from private bittorrent trackers,
+linked data communities, and the p2p federated system we have sketched
+so far give us some guidelines and motivating examples to build a varied
+space of communication tools to communicate our work, govern the system,
+and grow a shared, cumulative body of knowledge.
+
+
+\end{multicols}
+
+
+\hypertarget{credit-assignment}{%
+\subsubsection{Credit Assignment}\label{credit-assignment}}
+
+
+\begin{multicols}{2}
+ !!The critical anchor of the entire scientific
+communication system is the system of professional incentives that make
+it so nothing outside of a journal counts as science. Blog posts are
+nice and all, but they aren't \emph{science.} One way of approaching
+this problem is convincing, en masse, a majority of researchers to
+boycott journals or value other mediums in hiring decisions. That seems
+pretty unlikely for all the reasons all collective action problems are.
+Instead of approaching it prestige-side first, we can approach from the
+credit assignment side. !! make it easy for someone else to use your
+work and then by using it you have some verifiable record that other
+people like and use your stuff! !! this appeals to a much broader base
+of people not traditionally in the scientific value system, so they
+might be interested. !! also lets us value different kinds of scientific
+labor, like mentorship, advice, debugging, etc. without necessarily
+needing to gamify it. !! Deep linking and long provenance lets us see
+our impact on the broader scientific world, which is a much more
+valuable and informative than shitty journal rankings. !! people always
+talk about how shitty journal metrics are, and so that's an opening! !!
+
+the work of maintaining the system can't be invisible, read \& cite \cite{classeDistributedInfrastructureSupport2017, bowkerInformationInfrastructureStudies2010} 
+
+!! essentially all questions about ``changing the system of science''
+inevitably lead to credit assignment, but in our system it is the same
+as provenance. We can give credit to all work from data production,
+analysis tooling, technical work, theoretical work, and so on that we
+currently do with just author lists. brief nod to semantic publishing,
+though a treatment of the journal system is officially out of scope.
+
+!! cite eLife EIC's comments on scientific credit assignment systems
 
 \hypertarget{rebuilding-scientific-communication}{%
 \subsubsection{Rebuilding Scientific
@@ -4792,18 +5186,6 @@ killed lots of projects, eg. IPFS (though it's not dead just slow!)
 https://macwright.com/2019/06/08/ipfs-again.html
 https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b
 
-\hypertarget{credit-assignment}{%
-\subsubsection{Credit Assignment}\label{credit-assignment}}
-
-the work of maintaining the system can't be invisible, read \& cite \cite{classeDistributedInfrastructureSupport2017, bowkerInformationInfrastructureStudies2010} 
-
-!! essentially all questions about ``changing the system of science''
-inevitably lead to credit assignment, but in our system it is the same
-as provenance. We can give credit to all work from data production,
-analysis tooling, technical work, theoretical work, and so on that we
-currently do with just author lists. brief nod to semantic publishing,
-though a treatment of the journal system is officially out of scope.
-
 \end{multicols}
 
 
@@ -4836,6 +5218,34 @@ needing to canalize things into a single decision, it is possible to
 have all the options exist simultaneously and let history sort them out.
 http://meatballwiki.org/wiki/VotingIsEvil
 http://meatballwiki.org/wiki/EnlargeSpace
+
+!! what `whoops we created a bureaucracy' teaches us is that wikis and
+wikilike technologies are important means of realizing multiple systems
+of governance and norms. see also the tyranny of structurelessness
+
+\begin{quote}
+For everyone to have the opportunity to be involved in a given group and
+to participate in its activities the structure must be explicit, not
+implicit. The rules of decision-making must be open and available to
+everyone, and this can happen only if they are formalized. This is not
+to say that formalization of a structure of a group will destroy the
+informal structure. It usually doesn't. But it does hinder the informal
+structure from having predominant control and make available some means
+of attacking it if the people involved are not at least responsible to
+the needs of the group at large.
+
+The end of consciousness-raising leaves people with no place to go, and
+the lack of structure leaves them with no way of getting there. The
+women the movement either turn in on themselves and their sisters or
+seek other alternatives of action. There are few that are available.
+Some women just ``do their own thing.'' This can lead to a great deal of
+individual creativity, much of which is useful for the movement, but it
+is not a viable alternative for most women and certainly does not foster
+a spirit of cooperative group effort. Other women drift out of the
+movement entirely because they don't want to develop an individual
+project and they have found no way of discovering, joining, or starting
+group projects that interest them. \cite{freemanTyrannyStucturelessness1970} 
+\end{quote}
 
 \hypertarget{tactics-strategy}{%
 \subsection{Tactics \& Strategy}\label{tactics-strategy}}
