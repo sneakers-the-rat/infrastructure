@@ -160,7 +160,11 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 ### Rebuilding Scientific Communication
 
-{% include_relative _sections/2_9_credit-incentives.md %}
+{% include_relative _sections/2_9_communication.md %}
+
+### Credit Assignment
+
+{% include_relative _sections/2_10_credit-assignment.md %}
 
 # Conclusion
 

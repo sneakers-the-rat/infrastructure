@@ -1,0 +1,9 @@
+!!The critical anchor of the entire scientific communication system is the system of professional incentives that make it so nothing outside of a journal counts as science. Blog posts are nice and all, but they aren't *science.* One way of approaching this problem is convincing, en masse, a majority of researchers to boycott journals or value other mediums in hiring decisions. That seems pretty unlikely for all the reasons all collective action problems are. Instead of approaching it prestige-side first, we can approach from the credit assignment side. !! make it easy for someone else to use your work and then by using it you have some verifiable record that other people like and use your stuff! !! this appeals to a much broader base of people not traditionally in the scientific value system, so they might be interested. !! also lets us value different kinds of scientific labor, like mentorship, advice, debugging, etc. without necessarily needing to gamify it. !! Deep linking and long provenance lets us see our impact on the broader scientific world, which is a much more valuable and informative than shitty journal rankings. !! people always talk about how shitty journal metrics are, and so that's an opening! !! 
+
+
+the work of maintaining the system can't be invisible, read & cite {% cite classeDistributedInfrastructureSupport2017 bowkerInformationInfrastructureStudies2010 %}
+
+!! essentially all questions about "changing the system of science" inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.
+
+!! cite eLife EIC's comments on scientific credit assignment systems
+

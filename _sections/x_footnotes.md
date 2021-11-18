@@ -35,3 +35,5 @@
 	> Q: Do two separate wikis ever merge together to create one new wiki? Has this happened before? Keep in mind that I don't just mean two different pages within a wiki. (And for that matter, where is an appropriate page where I can post questions about the history of all wikis, not just this one?)
 	>
 	> A1: I don't know of any such wiki merge, nor of any discussion of the history of all wikis. Such a discussion should probably reside (if created) on MeatballWiki. 
+
+[^AWWDMBJAWGCAWAIFDSPBATDMTAD]: Also see [Association of Wikipedians Who Dislike Making Broad Judgments About the Worthiness of a General Category of Article, and Who Are in Favor of the Deletion of Some Particularly Bad Articles, but That Doesn't Mean They Are Deletionists](https://meta.wikimedia.org/wiki/Association_of_Wikipedians_Who_Dislike_Making_Broad_Judgments_About_the_Worthiness_of_a_General_Category_of_Article,_and_Who_Are_in_Favor_of_the_Deletion_of_Some_Particularly_Bad_Articles,_but_That_Doesn%27t_Mean_They_Are_Deletionists)

@@ -297,3 +297,13 @@ At this point we have largely closed the loop of science: starting with standard
 > - Sun: the eyes gazing upon the wiki, giving it attention.
 > - Air: the invisible server on which wiki rests, available at all points. - available from the "ether" (net), you might say?
 > - Water: the interactions from WikiCommunity, making it grow. [AlchemyOfWiki](http://wiki.c2.com/?AlchemyOfWiki)
+
+### rebuilding communication
+
+Though we can quickly reconstruct existing technologies of scientific communication with our linked data system, there's no reason to be limited to the world imagined for us by platform holders. 
+
+Instead let's think through an example "unit" of scientific work, from idea to publication, to imagine the process with fresh eyes:
+
+
+!! take stock of our communication technology, we publish pdfs in journals, have science twitter, and then a bunch of private slacks and smalltime stuff??? Science is fundamentally a communicative process, literally every part fo the system that I have described has been built aroudn the ability to express the structure of things, the order of things, how it relates to other things and *that's communication baby.* The system we've imagined so far takes us so far from forums and the ultradominant feed -> shallow thread-based communication that we're used to though. This is a system where we can have continuous dialogue about linked topics, be able to branch and see the reflections and subtle variations on ideas in the same place that we have our data, analysis, and tools.
+
