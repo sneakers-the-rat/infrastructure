@@ -48,6 +48,8 @@ So we are already used to working with interfaces to data models, we just need t
 
 Let's pick up where we left off with our linked data and tools. Recall that we had a `project` named `#my-project` that made reference to our experiment, a few datasets that it produced, and an analysis pipeline that we ran on it. We *could* just ship the raw numbers from the analysis, wash our hands of it, and walk straight into the ocean without looking back, but usually scientists like to take a few additional steps to visualize the data and write about what it means. 
 
+#### Notebooks (JSON-LD)
+
 Say we have a means of downloading the results of some analysis we have already run as a result of `#my-project`. Recall that the data system we described was a system that links names under our `@jonny` namespace to a content-addressed p2p system, but someone has built a package to handle that under the hood. We might do a quick writeup in a notebook like this:
 
 !! insert jupyter notebook here!
@@ -82,28 +84,76 @@ We could make use of another linked data technology, [JSON-LD](https://json-ld.o
 
 Now say we have another little interface to declare links inline in our notebook using [magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html). We might declare the name of our notebook like 
 
-`%%docName @jonny:my-project:Writeup`
+`%%docId @jonny:my-project:Writeup`
 
 and then in the cell we indicate that we have plotted our data like this:
 
-`%%cellLink @comms:plotsData @jonny:my-project:Analysis1`
+```
+%%cellId Plotty
+%%cellLink @comms:plotsData @jonny:my-project:Analysis1
+```
 
+So then, say, we indicate in `@jonny:my-project` that this document is related to it, and the links embedded within the notebook indicate that it has cells that use a specific result and plot it. If I enable sharing from my namespace, it becomes a creditable and discoverable part of my scientific work --- a straightforward means of breaking up the scientific paper as the unit of knowledge work. Recall that our sharing rules weren't just a binary switch, but can indicate different people and groups, so we can communicate the intention of publication and status of the document[^explicitlytoo] on an analogue scale from a private demo to our lab, a presentation to an institute or conference, or a public part of the scientific discourse.
 
+[^explicitlytoo]: While we're at it, why not make it explicit by declaring its [`creativeWorkStatus`](https://schema.org/creativeWorkStatus) as `Draft`
 
+#### Forums
 
+Communication doesn't need to be (and shouldn't be) exclusively unidirectional statements of fact. Our linked data system that allows us to directly references the subcomponents of an experiment, including analysis results and visualizations, naturally lends itself to use in a **forum.** In between feed-only mediums like most social media platforms and the indexical permanence of a wiki or publication, forums are a currently missing piece in most scientific communication systems: a way to have longform discussions about science in a public and semipermanent environment. 
 
+We can start by imagining a forum where people in our discipline go to present their work and solicit feedback. We think we really have something, and it challenges some widely held previous results:
 
+> hi everyone it is me, take a look at my analysis: `[[@forum:showImage @jonny:my-project:Writeup:Plotty]]` !!render inline
+>
+> I think it raises a number of interesting questions, in particular about `@rival`'s long-standing argument `@rival:hillsToDieOn:earthIsInsideTheSun` I also wonder what this means about this conversation we've been having more broadly about `@discipline:whereAreThePlanets`. Anyway, write back soon, xoxo
 
+Our rival is polite and professional, so they take the criticism in stride and do their own analysis:
+
+> Interesting results! I think I will have to revisit that, as well as something else I have been working on, `@rival:projects:escapeTheSun`. I wonder what it would look like if we used my analysis pipeline instead. I wrote a few conversion nodes (`@rival:nodes:newNode`) that could make our work easier to synchronize in the future.
+>
+> `[[@forum:rerunAnalysis @jonny:my-project:Analysis1 @rival:newAnalysis]]`
+>
+> `[[@forum:completeGraph @rival:newAnalysis @jonny:my-project:Writeup:Plotty]]`
+>
+> `[[@forum:showImage @rival:newAnalysis:Writeup:Plotty]]`
+
+They have their own compute server set up that listens for commands like `@forum:rerunAnalysis` and so once they post, their server downloads the container and re-runs the analysis. `rerunAnalysis` is a link between our two analysis pipelines, so it is also possible to cross-apply the other parts of my analysis chain to their reanalysis. In this case say my `@rival` was careful to ensure their pipeline returned exactly the same data format as mine did, so it's possible to use something like `completeGraph` to retrace the steps in between the results and the plots that were generated. These are, of course, speculative features of a speculative forum, but they serve as examples of how this kind of federated naming system allows for new kinds of tools. Since the forum itself is an interface to our naming system, we could also imagine that it automatically creates links between our posts, that my rival `@forum:Replied` to me, and so the structure of our conversation would be encoded implicitly in a discourse graph.
+
+Sharing results, communicating them to the people that might be interested, reconsidering and re-analyzing work is an extremely normal part of science, but in this parallel universe we have the tools to also contribute to a cumulative body of knowledge that is explicit and public. If we allowed it, people that were interested in our data would be able to find the other ways it was analyzed, visualized, and discussed. We have recontextualized ours and our `@rival`'s previously published work and enriched the discussion surrounding our discipline's ongoing struggle to understand `whereAreThePlanets`. And we managed to do it incrementally, with a smaller document than an occasionally-titanic manuscript might be.
+
+!! Traditional forums like [phpBB](https://www.phpbb.com/) are housed on a single domain and server, and have fixed moderation and interfaces. A forum built for **transclusion** and **ease of forking** might look a little different. <span style="color: #f00;">does this go here or in section about wikis? example of mirrored discussion communities, stuff is linked to our name rather than the platforms, so it's possible to imagine a system that preserves the links between each of our posts and recache them somewhere else, or if we agree, rehost on different interface. </span> In this case you might imagine crossposting this same post to a bunch of different forums but have them all be linked as the same post identity, so you could solicit advice from different communities but keep them all linked together back from the project. 
+
+!! Rather than aspiring to a single big forum where everyone congregates, this model is closer to many small forums that are able to organize their discussions to suit their potentially very niche needs, and people are free to move their posts between compatible implementations. Finer-scale still, we could imagine it being trivial to deploy a forum for each individual paper --- this isn't that much of a reach, as every git repository can have a [gitter](https://gitter.im) chatroom, and since this paper is hosted on GitHub it [already has one](https://gitter.im/scientific-infrastructure/community). In our system this could be an example of a parallel namespace system like article and Talk pages on Wikipedia: you can find our forum for our project at `:Forum` if I have it turned on!
+
+#### Messaging
+- ex of starting a collaboration
+- p2p masto? 
+- parallel namespaces
+
+#### Trackers
+- getting the data needed to do an experiment
+- federated data indexing
+- return to notions of social incentives to use
+
+#### Annotation
+- preserving traditional writing systems
+- backlinking and transclusions
+- commentary
+- peer review
+
+#### Wikis
+- resolving schema conflicts
+- contextual knowledge
+- programming interfaces a la autopilot wiki 
+- organizing & governance
+- theory wiki yo.
+
+#### ???
+
+- the indefinite future! who knows what people will come up with, and that's the point!
 
 ---
 <div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
----
-
----
-local outline
-- basic linked data writing
-- transclusion to a forum
-
 ---
 
 "full cycle"
