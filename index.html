@@ -61,7 +61,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-25-20"> 2021-11-20</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/7fbaa7d"><code>7fbaa7d</code></a>
+            <time datetime="2021-59-20"> 2021-11-20</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/cf80d6a"><code>cf80d6a</code></a>
         </div>
     </div>
     <div class="trimlink">
@@ -1585,6 +1585,8 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>Let’s pick up where we left off with our linked data and tools. Recall that we had a <code class="language-plaintext highlighter-rouge">project</code> named <code class="language-plaintext highlighter-rouge">#my-project</code> that made reference to our experiment, a few datasets that it produced, and an analysis pipeline that we ran on it. We <em>could</em> just ship the raw numbers from the analysis, wash our hands of it, and walk straight into the ocean without looking back, but usually scientists like to take a few additional steps to visualize the data and write about what it means.</p>
 
+<h4 id="notebooks-json-ld">Notebooks (JSON-LD)</h4>
+
 <p>Say we have a means of downloading the results of some analysis we have already run as a result of <code class="language-plaintext highlighter-rouge">#my-project</code>. Recall that the data system we described was a system that links names under our <code class="language-plaintext highlighter-rouge">@jonny</code> namespace to a content-addressed p2p system, but someone has built a package to handle that under the hood. We might do a quick writeup in a notebook like this:</p>
 
 <p>!! insert jupyter notebook here!</p>
@@ -1617,23 +1619,87 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>Now say we have another little interface to declare links inline in our notebook using <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">magic commands</a>. We might declare the name of our notebook like</p>
 
-<p><code class="language-plaintext highlighter-rouge">%%docName @jonny:my-project:Writeup</code></p>
+<p><code class="language-plaintext highlighter-rouge">%%docId @jonny:my-project:Writeup</code></p>
 
 <p>and then in the cell we indicate that we have plotted our data like this:</p>
 
-<p><code class="language-plaintext highlighter-rouge">%%cellLink @comms:plotsData @jonny:my-project:Analysis1</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%%cellId Plotty
+%%cellLink @comms:plotsData @jonny:my-project:Analysis1
+</code></pre></div></div>
+
+<p>So then, say, we indicate in <code class="language-plaintext highlighter-rouge">@jonny:my-project</code> that this document is related to it, and the links embedded within the notebook indicate that it has cells that use a specific result and plot it. If I enable sharing from my namespace, it becomes a creditable and discoverable part of my scientific work — a straightforward means of breaking up the scientific paper as the unit of knowledge work. Recall that our sharing rules weren’t just a binary switch, but can indicate different people and groups, so we can communicate the intention of publication and status of the document<sup id="fnref:explicitlytoo" role="doc-noteref"><a href="#fn:explicitlytoo" class="footnote" rel="footnote">35</a></sup> on an analogue scale from a private demo to our lab, a presentation to an institute or conference, or a public part of the scientific discourse.</p>
+
+<h4 id="forums">Forums</h4>
+
+<p>Communication doesn’t need to be (and shouldn’t be) exclusively unidirectional statements of fact. Our linked data system that allows us to directly references the subcomponents of an experiment, including analysis results and visualizations, naturally lends itself to use in a <strong>forum.</strong> In between feed-only mediums like most social media platforms and the indexical permanence of a wiki or publication, forums are a currently missing piece in most scientific communication systems: a way to have longform discussions about science in a public and semipermanent environment.</p>
+
+<p>We can start by imagining a forum where people in our discipline go to present their work and solicit feedback. We think we really have something, and it challenges some widely held previous results:</p>
+
+<blockquote>
+  <p>hi everyone it is me, take a look at my analysis: <code class="language-plaintext highlighter-rouge">[[@forum:showImage @jonny:my-project:Writeup:Plotty]]</code> !!render inline</p>
+
+  <p>I think it raises a number of interesting questions, in particular about <code class="language-plaintext highlighter-rouge">@rival</code>’s long-standing argument <code class="language-plaintext highlighter-rouge">@rival:hillsToDieOn:earthIsInsideTheSun</code> I also wonder what this means about this conversation we’ve been having more broadly about <code class="language-plaintext highlighter-rouge">@discipline:whereAreThePlanets</code>. Anyway, write back soon, xoxo</p>
+</blockquote>
+
+<p>Our rival is polite and professional, so they take the criticism in stride and do their own analysis:</p>
+
+<blockquote>
+  <p>Interesting results! I think I will have to revisit that, as well as something else I have been working on, <code class="language-plaintext highlighter-rouge">@rival:projects:escapeTheSun</code>. I wonder what it would look like if we used my analysis pipeline instead. I wrote a few conversion nodes (<code class="language-plaintext highlighter-rouge">@rival:nodes:newNode</code>) that could make our work easier to synchronize in the future.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">[[@forum:rerunAnalysis @jonny:my-project:Analysis1 @rival:newAnalysis]]</code></p>
+
+  <p><code class="language-plaintext highlighter-rouge">[[@forum:completeGraph @rival:newAnalysis @jonny:my-project:Writeup:Plotty]]</code></p>
+
+  <p><code class="language-plaintext highlighter-rouge">[[@forum:showImage @rival:newAnalysis:Writeup:Plotty]]</code></p>
+</blockquote>
+
+<p>They have their own compute server set up that listens for commands like <code class="language-plaintext highlighter-rouge">@forum:rerunAnalysis</code> and so once they post, their server downloads the container and re-runs the analysis. <code class="language-plaintext highlighter-rouge">rerunAnalysis</code> is a link between our two analysis pipelines, so it is also possible to cross-apply the other parts of my analysis chain to their reanalysis. In this case say my <code class="language-plaintext highlighter-rouge">@rival</code> was careful to ensure their pipeline returned exactly the same data format as mine did, so it’s possible to use something like <code class="language-plaintext highlighter-rouge">completeGraph</code> to retrace the steps in between the results and the plots that were generated. These are, of course, speculative features of a speculative forum, but they serve as examples of how this kind of federated naming system allows for new kinds of tools. Since the forum itself is an interface to our naming system, we could also imagine that it automatically creates links between our posts, that my rival <code class="language-plaintext highlighter-rouge">@forum:Replied</code> to me, and so the structure of our conversation would be encoded implicitly in a discourse graph.</p>
+
+<p>Sharing results, communicating them to the people that might be interested, reconsidering and re-analyzing work is an extremely normal part of science, but in this parallel universe we have the tools to also contribute to a cumulative body of knowledge that is explicit and public. If we allowed it, people that were interested in our data would be able to find the other ways it was analyzed, visualized, and discussed. We have recontextualized ours and our <code class="language-plaintext highlighter-rouge">@rival</code>’s previously published work and enriched the discussion surrounding our discipline’s ongoing struggle to understand <code class="language-plaintext highlighter-rouge">whereAreThePlanets</code>. And we managed to do it incrementally, with a smaller document than an occasionally-titanic manuscript might be.</p>
+
+<p>!! Traditional forums like <a href="https://www.phpbb.com/">phpBB</a> are housed on a single domain and server, and have fixed moderation and interfaces. A forum built for <strong>transclusion</strong> and <strong>ease of forking</strong> might look a little different. <span style="color: #f00;">does this go here or in section about wikis? example of mirrored discussion communities, stuff is linked to our name rather than the platforms, so it’s possible to imagine a system that preserves the links between each of our posts and recache them somewhere else, or if we agree, rehost on different interface. </span> In this case you might imagine crossposting this same post to a bunch of different forums but have them all be linked as the same post identity, so you could solicit advice from different communities but keep them all linked together back from the project.</p>
+
+<p>!! Rather than aspiring to a single big forum where everyone congregates, this model is closer to many small forums that are able to organize their discussions to suit their potentially very niche needs, and people are free to move their posts between compatible implementations. Finer-scale still, we could imagine it being trivial to deploy a forum for each individual paper — this isn’t that much of a reach, as every git repository can have a <a href="https://gitter.im">gitter</a> chatroom, and since this paper is hosted on GitHub it <a href="https://gitter.im/scientific-infrastructure/community">already has one</a>. In our system this could be an example of a parallel namespace system like article and Talk pages on Wikipedia: you can find our forum for our project at <code class="language-plaintext highlighter-rouge">:Forum</code> if I have it turned on!</p>
+
+<h4 id="messaging">Messaging</h4>
+<ul>
+  <li>ex of starting a collaboration</li>
+  <li>p2p masto?</li>
+  <li>parallel namespaces</li>
+</ul>
+
+<h4 id="trackers">Trackers</h4>
+<ul>
+  <li>getting the data needed to do an experiment</li>
+  <li>federated data indexing</li>
+  <li>return to notions of social incentives to use</li>
+</ul>
+
+<h4 id="annotation">Annotation</h4>
+<ul>
+  <li>preserving traditional writing systems</li>
+  <li>backlinking and transclusions</li>
+  <li>commentary</li>
+  <li>peer review</li>
+</ul>
+
+<h4 id="wikis">Wikis</h4>
+<ul>
+  <li>resolving schema conflicts</li>
+  <li>contextual knowledge</li>
+  <li>programming interfaces a la autopilot wiki</li>
+  <li>organizing &amp; governance</li>
+  <li>theory wiki yo.</li>
+</ul>
+
+<h4>???</h4>
+
+<ul>
+  <li>the indefinite future! who knows what people will come up with, and that’s the point!</li>
+</ul>
 
 <hr />
 <div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
-<hr />
-
-<hr />
-<p>local outline</p>
-<ul>
-  <li>basic linked data writing</li>
-  <li>transclusion to a forum</li>
-</ul>
-
 <hr />
 
 <p>“full cycle”</p>
@@ -2123,6 +2189,9 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
     </li>
     <li id="fn:AWWDMBJAWGCAWAIFDSPBATDMTAD" role="doc-endnote">
       <p>Also see <a href="https://meta.wikimedia.org/wiki/Association_of_Wikipedians_Who_Dislike_Making_Broad_Judgments_About_the_Worthiness_of_a_General_Category_of_Article,_and_Who_Are_in_Favor_of_the_Deletion_of_Some_Particularly_Bad_Articles,_but_That_Doesn%27t_Mean_They_Are_Deletionists">Association of Wikipedians Who Dislike Making Broad Judgments About the Worthiness of a General Category of Article, and Who Are in Favor of the Deletion of Some Particularly Bad Articles, but That Doesn’t Mean They Are Deletionists</a> <a href="#fnref:AWWDMBJAWGCAWAIFDSPBATDMTAD" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:explicitlytoo" role="doc-endnote">
+      <p>While we’re at it, why not make it explicit by declaring its <a href="https://schema.org/creativeWorkStatus"><code class="language-plaintext highlighter-rouge">creativeWorkStatus</code></a> as <code class="language-plaintext highlighter-rouge">Draft</code> <a href="#fnref:explicitlytoo" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
