@@ -30,7 +30,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}-${{ hashFiles('_config.yml') }}
           restore-keys: |
             ${{ runner.os }}-gems-
       - name: Main Jekyll Build
