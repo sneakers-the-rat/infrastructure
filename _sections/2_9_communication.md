@@ -46,7 +46,52 @@ is represented as JSON (simplified for brevity):
 
 So we are already used to working with interfaces to data models, we just need to think about what kind of interfaces we need for a scientific communication system. 
 
-Let's pick up where we left off with our linked data and tools. When last we left them we had a `project` that made reference to our experiment, the data, and an analysis pipeline that we ran. We *could* just ship the raw numbers from the analysis, wash our hands of it, and walk straight into the ocean without looking back, but usually scientists like to take a few additional steps to visualize the data and write about what it means. 
+Let's pick up where we left off with our linked data and tools. Recall that we had a `project` named `#my-project` that made reference to our experiment, a few datasets that it produced, and an analysis pipeline that we ran on it. We *could* just ship the raw numbers from the analysis, wash our hands of it, and walk straight into the ocean without looking back, but usually scientists like to take a few additional steps to visualize the data and write about what it means. 
+
+Say we have a means of downloading the results of some analysis we have already run as a result of `#my-project`. Recall that the data system we described was a system that links names under our `@jonny` namespace to a content-addressed p2p system, but someone has built a package to handle that under the hood. We might do a quick writeup in a notebook like this:
+
+!! insert jupyter notebook here!
+
+The .json inside our notebook file would look something like this:
+
+```json
+{
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "rapid-information",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    "..."
+   ],
+   "source": [
+    "x, y, sizes = get_data('@jonny:my-project:Analysis1')"
+   ]
+}
+```
+
+We could make use of another linked data technology, [JSON-LD](https://json-ld.org/), that is an extension and format that is interoperable with the RDF links we have been using implicitly throughout, to note that this cell contains a reference to our dataset. Say we use a `@comms` ontology to denote the various parts of our communication system, and put that in the `metadata` field:
+
+```json
+"metadata": {
+  "scrolled": true,
+  "@comms:usesData": "@jonny:my-project:Analysis1"
+}
+```
+
+Now say we have another little interface to declare links inline in our notebook using [magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html). We might declare the name of our notebook like 
+
+`%%docName @jonny:my-project:Writeup`
+
+and then in the cell we indicate that we have plotted our data like this:
+
+`%%cellLink @comms:plotsData @jonny:my-project:Analysis1`
+
+
+
+
+
 
 
 
@@ -54,7 +99,14 @@ Let's pick up where we left off with our linked data and tools. When last we lef
 <div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
 ---
 
+---
+local outline
+- basic linked data writing
+- transclusion to a forum
 
+---
+
+"full cycle"
 - Initial communication
   - p2p mastodon!?
 - Forming a group

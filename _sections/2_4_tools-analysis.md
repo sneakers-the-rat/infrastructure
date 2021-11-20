@@ -142,7 +142,7 @@ Now that we have a handful of processing nodes, we could then describe some `@wo
 Having kept the description of our data in particular abstract from the implementation of the code and the workflow specification, the only thing left is to apply it to our data! Since the parameters are linked from the analysis nodes, we can specify them here (or in the workflow). Assuming literally zero abstraction and using the tried-and-true "hardcoded dataset list" pattern, something like:
 
 ```
-<#project-name>
+<#my-project>
   a @analysis:project
 
   hasDescription

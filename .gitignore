@@ -48,3 +48,5 @@ vendor
 node_modules
 
 assets/js/main.*
+.ipynb_checkpoints
+__pycache__

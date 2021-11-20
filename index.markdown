@@ -75,12 +75,13 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 * Avery Everhart
 * Eartha Mae Guthman
 * Olivia Guest
-* NWB & DANDI teams
+* Irene Knapp
+* Nire Bryce
 * Kris Chauvin
 * Phil Parker
 * Chris Rogers
 * Danny Mclanahan
-* Petar 
+* Petar Todorov
 * Jeremy Delahanty
 * Andrey Andreev
 * Joel Chan

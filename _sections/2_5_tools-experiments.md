@@ -138,7 +138,7 @@ We can also extend our previous connection between a dataset and the results of 
     @jonny:Lightswitch
       on_delay 1
 
-<#project-name-2>
+<#project-name>
   a @jonny:project-name
   collectedBy @jonny:example-experiment
 ```
