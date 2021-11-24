@@ -131,15 +131,70 @@ In the simplest case, the content of our posts could be mirrored between the `@n
 
 We have been considering `@neurochat` as a distinct site with its own code and features, presumably located at something like `neurochat.com`, but we can further imagine it in conversation with the parallel namespaces of wiki `Talk:` pages. If we think of a paper or some other primary text as the "Article" page, we can imagine being able to have a `Forum:` attached to it for further discussion. This isn't far-fetched at all: this paper has [its own gitter chatroom](https://gitter.im/scientific-infrastructure/community), which is a primarily web-based [Matrix](https://matrix.org/) client {% cite hodgsonGitterNowSpeaks2020 hodgsonWelcomingGitterMatrix2020 %}. Combined with transclusion between instances of forums, we could imagine the forum for our particular project being indexed in a larger system of scientific forums. So rather than a collection of empty rooms and new logins to make, our forum is part of a broader scientific conversation, but remains under our control.
 
-Forums are just one point in a continuous feature space of communication media. Specifically, they are nested, chronological, feedlike collections of threads within categories. If we were to take forum threads out of their categories, pour them into our water supply, and drink whatever came our way like a dog drinking out of an algorithmic fire hydrant, we would have Twitter. Algorithmic, rather than purposefully organized feed systems have their own sort of tachycardic charm. They are effective at what they aim to do, presenting us whatever maximizes the amount of time we spend looking at them in a sort of hallucinatory timeless now of infinite disorganization --- at the expense of desirable features of a communication system like autonomy of affiliation, perspective on broader conversation, and a sense of stable community. 
+Forums are just one point in a continuous feature space of communication media: nested, chronological, feedlike collections of threads within categories. If we were to take forum threads out of their categories, pour them into our water supply, and drink whatever came our way like a dog drinking out of an algorithmic fire hydrant, we would have Twitter. Algorithmic, rather than purposefully organized feed systems have their own sort of tachycardic charm. They are effective at what they aim to do, presenting us whatever maximizes the amount of time we spend looking at them in a sort of hallucinatory timeless now of infinite disorganization --- at the expense of desirable features of a communication system like a sense of stable, autonomously chosen community, perspective on broader conversation, and cumulative collective memory. 
 
-!! still, a system for rapid and informal communication has been massively useful for some* scientists, so we should embrace that end of the communications continuum as well rather than focus solely on more formal communication. !! we should embrace the multiple registers of scientific communication rather than run from them.
+Still, the emergence of a recognizable "Science Twitter" demonstrates the depth of need for rapid, informal communication systems in science. We should embrace the plurality of registers in scientific communication, that there needs to be space for near-amateurs to pose naive questions alongside careful and considered formal scholarship. That is just to say that we should reflect the division of formality from scientific value in what we build, and build systems to support the implicit communicative labor of science like whisper networks, mailing lists, and groupchats that have always existed. The blending of digital cultures, and broadly 'non-academic scientists' with traditional scientific communication streams is healthy: with appropriate caveats for abuse, strawmen, et al. I don't think it takes that much critical analysis to argue that "shitposts are good, actually, for science."
 
-- system of linked social media systems with different interfaces already exist, fediverse on top of activitypub
-- mastodon has probs with chronological feed and difficulty of moving identities from server. but p2p and emphasis on preserved communication space across interfaces helps with this. 
-- practical need and use, eg. being able to find multiple registers of communicationa about a paper, ability to send a message to people within a research area, start a collaboration and then work a little less secretively within groups by maintaining a continuous conversation among disciplines across multiple scales of organization. Eg. like what if instead of starting a new slack about everything, we were able to address an intelligible group of people by some self-identified set of labels and tags, etc?
+A federated, multi-interface, autonomously-hosted system of social media systems already exists, and we've been talking about it: the roughly construed "[Fediverse](https://fediverse.party/)" based (largely) on ActivityPub. <span style="color:#f00;">!! check rest of document and see how much explanation of activitypub is needed here/what can be consolidated. but in any case provide some other examples like peertube and agora, dokieli, funkwhale</span>
+
+Mastodon already implements most of the forum example described above: it has its own protocol that [extends activitypub](https://docs.joinmastodon.org/spec/activitypub/), but it functions as an interface to a protocol-based threaded communication. For example [this post](https://social.coop/@jonny/107328829457619549) is represented in (abbreviated) JSON:
+
+```json
+{
+    "id": "107328829457619549",
+    "created_at": "2021-11-23T22:52:49.044Z",
+    "in_reply_to_id": "107328825611826508",
+    "in_reply_to_account_id": "274647",
+    "sensitive": false,
+    "spoiler_text": "",
+    "visibility": "public",
+    "url": "https://social.coop/@jonny/107328829457619549",
+    "content": "<p>and making a reply to the post to show the in_reply_to and context fields</p>",
+    "account":
+    {
+        "id": "274647",
+        "username": "jonny",
+        "fields":
+        [ ...]
+    },
+    "media_attachments": [],
+    "mentions": [],
+    "tags": [],
+}
+```
+
+and then rendered by the particular version of Mastodon implemented on the host, [social.coop](https://social.coop). As long as the host sends and receives post (and other) data in a compatible format, it can render it however it wants, add tools, etc. It becomes trivial to imagine, then, a continuum of communication tools between and around microblogging sites like Twitter and Mastodon and forums: just add categorization, tagging, or systems for whatever need is revealed by the normal dynamics of use. 
+
+---
+<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
+---
+
+
+!! semantic organization as an alternative to algorithmic and chronologically based feeds !!maintaining a continuous conversation among disciplines across multiple scales of organization. Eg. like what if instead of starting a new slack about everything, we were able to address an intelligible group of people by some self-identified set of labels and tags, etc?
+
+
+!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ {% cite graffiLibreSocialPeertopeerFramework2021 %}
+
+!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617
 
 #### Annotation
+
+We can't expect the entire practice of academic publishing to transition to cell-based text editor to express themselves anytime soon. !! We can make a bridge from tools of contemporary writing practice, extend our notions of the UX of backlinking and transclusion, and start to problematize notions of review and social regulation, though by considering annotation overlays.
+
+Cell-based editing systems are a means of giving the primary author control over the conceptual organization of the source document, 
+!! but they are only a crude approximation to the number of reader-specific conceptual partiions.
+!! Annotation systems are bidirectional <-> the normal practice of editing mode commenting and annotating in draft editing phase can be continuous with the public communication of information.
+!! Annotation is placing an anchor, being able to select arbitrary locations on the internet and being able to communicate about them is a novelty of a few tools -- hypothes.is (implemented here) and genius (formerly rapgenius)
+!! Anchors are hard (link to hypothes.is issue description of the multiple means of resolving anchors)
+!! and we also need to regulate who gets to annotate when, moderate. 
+
+!! To some degree, adversarial presentation of information is necessary in the contemporary conception of falsifiable science. Typically this happens behind the scenes in the cigar-smoke filled traincars where the ever elusive "reviewer 2" lives, but we could begin to adopt collective means of "quality control" in science.
+!! distinction between being able to refer to and being able to visually embed. People should have control over the public presentation of their work, but it's also important to preserve the ability for people to choose their overlays and knowledge communities.
+!! by bridging the communicative gap between intermediary communication products and the paper, we can begin to erode the question of replacement 
+
+
+
+
 - preserving traditional writing systems
 - backlinking and transclusions
 - commentary
@@ -158,7 +213,7 @@ Forums are just one point in a continuous feature space of communication media. 
 
 
 #### Wikis
-- resolving schema conflicts
+- resolving schema conflicts -- and as {% cite StandardizingActivityPubGroups2021 %} demonstrates it needs to move constructively within a pluralistic system of governance models.
 - contextual knowledge
 - programming interfaces a la autopilot wiki 
 - organizing & governance
@@ -170,9 +225,6 @@ Forums are just one point in a continuous feature space of communication media. 
 
 - the indefinite future! who knows what people will come up with, and that's the point!
 
----
-<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
----
 
 "full cycle"
 - Initial communication

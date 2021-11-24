@@ -34,3 +34,18 @@ Dont want to be prescriptive here, but that we can learn from previous efforts l
 ### What we could hope for
 
 !! ya remake this description only less ivy and rosewaters and reintroduce some of the frustrations that might occur in the system. yno there are limitations but shit would actually genuinely be useful.
+
+## Limitations
+
+- identity!
+- interaction of p2p and linked data system -- lightweight linked metadata can be reproduced more easily than massive raw data, but it needs to be possible to apply permissions and access regulation with more verifiability than just being able to access a unique tracker ID or being pointed to a UUID.
+
+
+Two outstanding problems on Mastodon hint at a few open challenges to development: feed organization and the fluidity of federation formation, dissolution, and interaction. 
+
+By default, and affirmed by maybe an understandable reaction against algorithmic feed organization, Mastodon is a mostly chronological list of posts from people that you follow and that are in your host server's federated networks. While this transparency is reassuring that we aren't being microtargeted for advertising, it does make the system overwhelming to navigate, and splitting accounts multiple times to accomodate is common. A system of semantic organization is a distinct third way between algorithmic and chronological organization. Building a system that goes beyond moderator-specified category systems familiar in forums towards a sensible interface for navigating tangled concept hierarchies is an open challenge, as far as I'm aware. 
+
+An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations {% cite StandardizingActivityPubGroups2021 %}. 
+
+
+!! portability of identity, necessary negotiation over partitioning of communities.
