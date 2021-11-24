@@ -97,7 +97,9 @@ So then, say, we indicate in `@jonny:my-project` that this document is related t
 
 [^explicitlytoo]: While we're at it, why not make it explicit by declaring its [`creativeWorkStatus`](https://schema.org/creativeWorkStatus) as `Draft`
 
-#### Forums
+!! also brief nod to other document systems like https://dokie.li/
+
+#### Forums & Feeds
 
 Communication doesn't need to be (and shouldn't be) exclusively unidirectional statements of fact. Our linked data system that allows us to directly references the subcomponents of an experiment, including analysis results and visualizations, naturally lends itself to use in a **forum.** In between feed-only mediums like most social media platforms and the indexical permanence of a wiki or publication, forums are a currently missing piece in most scientific communication systems: a way to have longform discussions about science in a public and semipermanent environment. 
 
@@ -117,23 +119,25 @@ Our rival is polite and professional, so they take the criticism in stride and d
 >
 > `[[@forum:showImage @rival:newAnalysis:Writeup:Plotty]]`
 
-They have their own compute server set up that listens for commands like `@forum:rerunAnalysis` and so once they post, their server downloads the container and re-runs the analysis. `rerunAnalysis` is a link between our two analysis pipelines, so it is also possible to cross-apply the other parts of my analysis chain to their reanalysis. In this case say my `@rival` was careful to ensure their pipeline returned exactly the same data format as mine did, so it's possible to use something like `completeGraph` to retrace the steps in between the results and the plots that were generated. These are, of course, speculative features of a speculative forum, but they serve as examples of how this kind of federated naming system allows for new kinds of tools. Since the forum itself is an interface to our naming system, we could also imagine that it automatically creates links between our posts, that my rival `@forum:Replied` to me, and so the structure of our conversation would be encoded implicitly in a discourse graph.
+They have their own compute server set up that listens for commands like `@forum:rerunAnalysis` and so once they post, their server downloads the container and re-runs the analysis. `rerunAnalysis` is a link between our two analysis pipelines, so it is also possible to cross-apply the other parts of my analysis chain to their reanalysis. In this case say my `@rival` was careful to ensure their pipeline returned exactly the same data format as mine did, so it's possible to use something like `completeGraph` to retrace the steps in between the results and the plots that were generated. These are, of course, speculative features of a speculative forum, but they serve as examples of how this kind of federated naming system allows for new kinds of tools.
 
 Sharing results, communicating them to the people that might be interested, reconsidering and re-analyzing work is an extremely normal part of science, but in this parallel universe we have the tools to also contribute to a cumulative body of knowledge that is explicit and public. If we allowed it, people that were interested in our data would be able to find the other ways it was analyzed, visualized, and discussed. We have recontextualized ours and our `@rival`'s previously published work and enriched the discussion surrounding our discipline's ongoing struggle to understand `whereAreThePlanets`. And we managed to do it incrementally, with a smaller document than an occasionally-titanic manuscript might be.
 
-!! Traditional forums like [phpBB](https://www.phpbb.com/) are housed on a single domain and server, and have fixed moderation and interfaces. A forum built for **transclusion** and **ease of forking** might look a little different. <span style="color: #f00;">does this go here or in section about wikis? example of mirrored discussion communities, stuff is linked to our name rather than the platforms, so it's possible to imagine a system that preserves the links between each of our posts and recache them somewhere else, or if we agree, rehost on different interface. </span> In this case you might imagine crossposting this same post to a bunch of different forums but have them all be linked as the same post identity, so you could solicit advice from different communities but keep them all linked together back from the project. 
+Traditional forums like [phpBB](https://www.phpbb.com/) are housed on a single domain and server, and have fixed moderation and structure. A forum built on top of a p2p system of linked data designed for **transclusion** and **ease of forking** could look a little different. Rather than independent web service, we could build a forum as another peer in our p2p swarm, and the forum could operate as an *interface* to the linked data system. 
 
-!! Rather than aspiring to a single big forum where everyone congregates, this model is closer to many small forums that are able to organize their discussions to suit their potentially very niche needs, and people are free to move their posts between compatible implementations. Finer-scale still, we could imagine it being trivial to deploy a forum for each individual paper --- this isn't that much of a reach, as every git repository can have a [gitter](https://gitter.im) chatroom, and since this paper is hosted on GitHub it [already has one](https://gitter.im/scientific-infrastructure/community). In our system this could be an example of a parallel namespace system like article and Talk pages on Wikipedia: you can find our forum for our project at `:Forum` if I have it turned on!
+For concreteness, let's call our forum `@neurochat`. We join the forum with our existing identity by sending them a [`@as.Join`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-join) request from their login portal, which gives them permission to issue certain links and activity on our behalf. `@neurochat` is a minimal forum, a glassy reflection of a platonic ideal projected against the cave wall of our laptop. It has a few broad categories like "Neuromodulation" and "Sensory Neuroscience," within which are collections of threads full of chronologically-sorted posts. This organization is reflective of their internal concept model, so, for example, threads within the Neuromodulation category are represented as members of `@neurochat:categories:Neuromod` and so on. When we post through their web interface, we create a few links with shared custody: We create a [`@as:Note`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-note) that is [`@as:attributedTo`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-attributedto) us, has the [`@as:context`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-context) of the thread we're posting in, and is linked as [`@as:inReplyTo`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-inreplyto) the preceding post or any we've quoted. The forum is thus represented as a *discourse graph* whose structure is encoded as triplet links, but also provides a set of UX tools for viewing and interacting with it. Our humble `@jonny:myproject` now also carries with it references to the places where it is discussed.
 
-#### Messaging
-- ex of starting a collaboration
-- p2p masto? 
-- parallel namespaces
+In the simplest case, the content of our posts could be mirrored between the `@neurochat` server and our own namespace. Say our post `@neurochat:posts:<post_id>` is mirrored as `@jonny:neurochat:...`. The embedding within our linked system give us a much richer space of negotiation over permissions and the status of our writing, though. Since this is a public forum, the server might set posts to be able to be seen and re-represented by default. We could then imagine a set of federated forums where a single post to one of them is then crossposted to several different communities: eg. if our work was an interdisciplinary project that was also releant to some people from `@linguisticsChat`. If we have need for a bit more privacy, our forum could take into account our own blocks of users and federations, eg. if we never wanted our data/posts to be used by any `@amazon`-affiliated federations or by known troll users. `@neurochat` is a very barebones forum, so it would also be possible for someone to create their own *fork* of the *interface* to provide additional functionality, ux improvements, etc. We could then trivially make a *fork* of the *community* by picking up our corner of the discourse graph and associating it with a new forum in the event of, eg. disagreements with the moderation team, the strictures of the category system, etc. Since our posts are in our own namespace, we could then transclude them wherever we wanted, eg. in a wiki page about a topic as in [agora's twitter bot](https://anagora.org/node/agora-bot). 
 
-#### Trackers
-- getting the data needed to do an experiment
-- federated data indexing
-- return to notions of social incentives to use
+We have been considering `@neurochat` as a distinct site with its own code and features, presumably located at something like `neurochat.com`, but we can further imagine it in conversation with the parallel namespaces of wiki `Talk:` pages. If we think of a paper or some other primary text as the "Article" page, we can imagine being able to have a `Forum:` attached to it for further discussion. This isn't far-fetched at all: this paper has [its own gitter chatroom](https://gitter.im/scientific-infrastructure/community), which is a primarily web-based [Matrix](https://matrix.org/) client {% cite hodgsonGitterNowSpeaks2020 hodgsonWelcomingGitterMatrix2020 %}. Combined with transclusion between instances of forums, we could imagine the forum for our particular project being indexed in a larger system of scientific forums. So rather than a collection of empty rooms and new logins to make, our forum is part of a broader scientific conversation, but remains under our control.
+
+Forums are just one point in a continuous feature space of communication media. Specifically, they are nested, chronological, feedlike collections of threads within categories. If we were to take forum threads out of their categories, pour them into our water supply, and drink whatever came our way like a dog drinking out of an algorithmic fire hydrant, we would have Twitter. Algorithmic, rather than purposefully organized feed systems have their own sort of tachycardic charm. They are effective at what they aim to do, presenting us whatever maximizes the amount of time we spend looking at them in a sort of hallucinatory timeless now of infinite disorganization --- at the expense of desirable features of a communication system like autonomy of affiliation, perspective on broader conversation, and a sense of stable community. 
+
+!! still, a system for rapid and informal communication has been massively useful for some* scientists, so we should embrace that end of the communications continuum as well rather than focus solely on more formal communication. !! we should embrace the multiple registers of scientific communication rather than run from them.
+
+- system of linked social media systems with different interfaces already exist, fediverse on top of activitypub
+- mastodon has probs with chronological feed and difficulty of moving identities from server. but p2p and emphasis on preserved communication space across interfaces helps with this. 
+- practical need and use, eg. being able to find multiple registers of communicationa about a paper, ability to send a message to people within a research area, start a collaboration and then work a little less secretively within groups by maintaining a continuous conversation among disciplines across multiple scales of organization. Eg. like what if instead of starting a new slack about everything, we were able to address an intelligible group of people by some self-identified set of labels and tags, etc?
 
 #### Annotation
 - preserving traditional writing systems
@@ -141,12 +145,26 @@ Sharing results, communicating them to the people that might be interested, reco
 - commentary
 - peer review
 
+#### Trackers
+
+- refine the notion of client and tracker: our client needs a UX too!!
+
+- getting the data needed to do an experiment
+- federated data indexing
+- return to notions of social incentives to use
+
+
+
+
+
 #### Wikis
 - resolving schema conflicts
 - contextual knowledge
 - programming interfaces a la autopilot wiki 
 - organizing & governance
 - theory wiki yo.
+
+- [anagora!!!](https://anagora.org/)
 
 #### ???
 
