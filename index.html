@@ -61,7 +61,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-09-24"> 2021-11-24</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/a8db453"><code>a8db453</code></a>
+            <time datetime="2021-25-24"> 2021-11-24</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/e24f3b4"><code>e24f3b4</code></a>
         </div>
     </div>
     <div class="trimlink">
@@ -161,6 +161,7 @@
           <li><a href="#what-we-could-hope-for" id="markdown-toc-what-we-could-hope-for">What we could hope for</a></li>
         </ol>
       </li>
+      <li><a href="#limitations" id="markdown-toc-limitations">Limitations</a></li>
     </ol>
   </li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
@@ -1668,17 +1669,64 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>We have been considering <code class="language-plaintext highlighter-rouge">@neurochat</code> as a distinct site with its own code and features, presumably located at something like <code class="language-plaintext highlighter-rouge">neurochat.com</code>, but we can further imagine it in conversation with the parallel namespaces of wiki <code class="language-plaintext highlighter-rouge">Talk:</code> pages. If we think of a paper or some other primary text as the “Article” page, we can imagine being able to have a <code class="language-plaintext highlighter-rouge">Forum:</code> attached to it for further discussion. This isn’t far-fetched at all: this paper has <a href="https://gitter.im/scientific-infrastructure/community">its own gitter chatroom</a>, which is a primarily web-based <a href="https://matrix.org/">Matrix</a> client <a class="citation" href="#hodgsonGitterNowSpeaks2020">[178, 179]</a>. Combined with transclusion between instances of forums, we could imagine the forum for our particular project being indexed in a larger system of scientific forums. So rather than a collection of empty rooms and new logins to make, our forum is part of a broader scientific conversation, but remains under our control.</p>
 
-<p>Forums are just one point in a continuous feature space of communication media. Specifically, they are nested, chronological, feedlike collections of threads within categories. If we were to take forum threads out of their categories, pour them into our water supply, and drink whatever came our way like a dog drinking out of an algorithmic fire hydrant, we would have Twitter. Algorithmic, rather than purposefully organized feed systems have their own sort of tachycardic charm. They are effective at what they aim to do, presenting us whatever maximizes the amount of time we spend looking at them in a sort of hallucinatory timeless now of infinite disorganization — at the expense of desirable features of a communication system like autonomy of affiliation, perspective on broader conversation, and a sense of stable community.</p>
+<p>Forums are just one point in a continuous feature space of communication media: nested, chronological, feedlike collections of threads within categories. If we were to take forum threads out of their categories, pour them into our water supply, and drink whatever came our way like a dog drinking out of an algorithmic fire hydrant, we would have Twitter. Algorithmic, rather than purposefully organized feed systems have their own sort of tachycardic charm. They are effective at what they aim to do, presenting us whatever maximizes the amount of time we spend looking at them in a sort of hallucinatory timeless now of infinite disorganization — at the expense of desirable features of a communication system like a sense of stable, autonomously chosen community, perspective on broader conversation, and cumulative collective memory.</p>
 
-<p>!! still, a system for rapid and informal communication has been massively useful for some* scientists, so we should embrace that end of the communications continuum as well rather than focus solely on more formal communication. !! we should embrace the multiple registers of scientific communication rather than run from them.</p>
+<p>Still, the emergence of a recognizable “Science Twitter” demonstrates the depth of need for rapid, informal communication systems in science. We should embrace the plurality of registers in scientific communication, that there needs to be space for near-amateurs to pose naive questions alongside careful and considered formal scholarship. That is just to say that we should reflect the division of formality from scientific value in what we build, and build systems to support the implicit communicative labor of science like whisper networks, mailing lists, and groupchats that have always existed. The blending of digital cultures, and broadly ‘non-academic scientists’ with traditional scientific communication streams is healthy: with appropriate caveats for abuse, strawmen, et al. I don’t think it takes that much critical analysis to argue that “shitposts are good, actually, for science.”</p>
 
-<ul>
-  <li>system of linked social media systems with different interfaces already exist, fediverse on top of activitypub</li>
-  <li>mastodon has probs with chronological feed and difficulty of moving identities from server. but p2p and emphasis on preserved communication space across interfaces helps with this.</li>
-  <li>practical need and use, eg. being able to find multiple registers of communicationa about a paper, ability to send a message to people within a research area, start a collaboration and then work a little less secretively within groups by maintaining a continuous conversation among disciplines across multiple scales of organization. Eg. like what if instead of starting a new slack about everything, we were able to address an intelligible group of people by some self-identified set of labels and tags, etc?</li>
-</ul>
+<p>A federated, multi-interface, autonomously-hosted system of social media systems already exists, and we’ve been talking about it: the roughly construed “<a href="https://fediverse.party/">Fediverse</a>” based (largely) on ActivityPub. <span style="color:#f00;">!! check rest of document and see how much explanation of activitypub is needed here/what can be consolidated. but in any case provide some other examples like peertube and agora, dokieli, funkwhale</span></p>
+
+<p>Mastodon already implements most of the forum example described above: it has its own protocol that <a href="https://docs.joinmastodon.org/spec/activitypub/">extends activitypub</a>, but it functions as an interface to a protocol-based threaded communication. For example <a href="https://social.coop/@jonny/107328829457619549">this post</a> is represented in (abbreviated) JSON:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"107328829457619549"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-23T22:52:49.044Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"in_reply_to_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"107328825611826508"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"in_reply_to_account_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"274647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sensitive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"spoiler_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://social.coop/@jonny/107328829457619549"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;and making a reply to the post to show the in_reply_to and context fields&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"account"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"274647"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jonny"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fields"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"media_attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>and then rendered by the particular version of Mastodon implemented on the host, <a href="https://social.coop">social.coop</a>. As long as the host sends and receives post (and other) data in a compatible format, it can render it however it wants, add tools, etc. It becomes trivial to imagine, then, a continuum of communication tools between and around microblogging sites like Twitter and Mastodon and forums: just add categorization, tagging, or systems for whatever need is revealed by the normal dynamics of use.</p>
+
+<hr />
+<div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
+<hr />
+
+<p>!! semantic organization as an alternative to algorithmic and chronologically based feeds !!maintaining a continuous conversation among disciplines across multiple scales of organization. Eg. like what if instead of starting a new slack about everything, we were able to address an intelligible group of people by some self-identified set of labels and tags, etc?</p>
+
+<p>!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ <a class="citation" href="#graffiLibreSocialPeertopeerFramework2021">[180]</a></p>
+
+<p>!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617</p>
 
 <h4 id="annotation">Annotation</h4>
+
+<p>We can’t expect the entire practice of academic publishing to transition to cell-based text editor to express themselves anytime soon. !! We can make a bridge from tools of contemporary writing practice, extend our notions of the UX of backlinking and transclusion, and start to problematize notions of review and social regulation, though by considering annotation overlays.</p>
+
+<p>Cell-based editing systems are a means of giving the primary author control over the conceptual organization of the source document, 
+!! but they are only a crude approximation to the number of reader-specific conceptual partiions.
+!! Annotation systems are bidirectional &lt;-&gt; the normal practice of editing mode commenting and annotating in draft editing phase can be continuous with the public communication of information.
+!! Annotation is placing an anchor, being able to select arbitrary locations on the internet and being able to communicate about them is a novelty of a few tools – hypothes.is (implemented here) and genius (formerly rapgenius)
+!! Anchors are hard (link to hypothes.is issue description of the multiple means of resolving anchors)
+!! and we also need to regulate who gets to annotate when, moderate.</p>
+
+<p>!! To some degree, adversarial presentation of information is necessary in the contemporary conception of falsifiable science. Typically this happens behind the scenes in the cigar-smoke filled traincars where the ever elusive “reviewer 2” lives, but we could begin to adopt collective means of “quality control” in science.
+!! distinction between being able to refer to and being able to visually embed. People should have control over the public presentation of their work, but it’s also important to preserve the ability for people to choose their overlays and knowledge communities.
+!! by bridging the communicative gap between intermediary communication products and the paper, we can begin to erode the question of replacement</p>
+
 <ul>
   <li>preserving traditional writing systems</li>
   <li>backlinking and transclusions</li>
@@ -1699,7 +1747,7 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <h4 id="wikis">Wikis</h4>
 <ul>
-  <li>resolving schema conflicts</li>
+  <li>resolving schema conflicts – and as <a class="citation" href="#StandardizingActivityPubGroups2021">[181]</a> demonstrates it needs to move constructively within a pluralistic system of governance models.</li>
   <li>contextual knowledge</li>
   <li>programming interfaces a la autopilot wiki</li>
   <li>organizing &amp; governance</li>
@@ -1714,10 +1762,6 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 <ul>
   <li>the indefinite future! who knows what people will come up with, and that’s the point!</li>
 </ul>
-
-<hr />
-<div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
-<hr />
 
 <p>“full cycle”</p>
 <ul>
@@ -1834,7 +1878,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 
 <p>!!The critical anchor of the entire scientific communication system is the system of professional incentives that make it so nothing outside of a journal counts as science. Blog posts are nice and all, but they aren’t <em>science.</em> One way of approaching this problem is convincing, en masse, a majority of researchers to boycott journals or value other mediums in hiring decisions. That seems pretty unlikely for all the reasons all collective action problems are. Instead of approaching it prestige-side first, we can approach from the credit assignment side. !! make it easy for someone else to use your work and then by using it you have some verifiable record that other people like and use your stuff! !! this appeals to a much broader base of people not traditionally in the scientific value system, so they might be interested. !! also lets us value different kinds of scientific labor, like mentorship, advice, debugging, etc. without necessarily needing to gamify it. !! Deep linking and long provenance lets us see our impact on the broader scientific world, which is a much more valuable and informative than shitty journal rankings. !! people always talk about how shitty journal metrics are, and so that’s an opening! !!</p>
 
-<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[180, 1]</a></p>
+<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[182, 1]</a></p>
 
 <p>!! essentially all questions about “changing the system of science” inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.</p>
 
@@ -1859,7 +1903,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <blockquote>
   <p>For everyone to have the opportunity to be involved in a given group and to participate in its activities the structure must be explicit, not implicit. The rules of decision-making must be open and available to everyone, and this can happen only if they are formalized. This is not to say that formalization of a structure of a group will destroy the informal structure. It usually doesn’t. But it does hinder the informal structure from having predominant control and make available some means of attacking it if the people involved are not at least responsible to the needs of the group at large.</p>
 
-  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[181]</a></p>
+  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[183]</a></p>
 </blockquote>
 
 <h2 id="tactics--strategy">Tactics &amp; Strategy</h2>
@@ -1879,6 +1923,21 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <h3 id="what-we-could-hope-for">What we could hope for</h3>
 
 <p>!! ya remake this description only less ivy and rosewaters and reintroduce some of the frustrations that might occur in the system. yno there are limitations but shit would actually genuinely be useful.</p>
+
+<h2 id="limitations">Limitations</h2>
+
+<ul>
+  <li>identity!</li>
+  <li>interaction of p2p and linked data system – lightweight linked metadata can be reproduced more easily than massive raw data, but it needs to be possible to apply permissions and access regulation with more verifiability than just being able to access a unique tracker ID or being pointed to a UUID.</li>
+</ul>
+
+<p>Two outstanding problems on Mastodon hint at a few open challenges to development: feed organization and the fluidity of federation formation, dissolution, and interaction.</p>
+
+<p>By default, and affirmed by maybe an understandable reaction against algorithmic feed organization, Mastodon is a mostly chronological list of posts from people that you follow and that are in your host server’s federated networks. While this transparency is reassuring that we aren’t being microtargeted for advertising, it does make the system overwhelming to navigate, and splitting accounts multiple times to accomodate is common. A system of semantic organization is a distinct third way between algorithmic and chronological organization. Building a system that goes beyond moderator-specified category systems familiar in forums towards a sensible interface for navigating tangled concept hierarchies is an open challenge, as far as I’m aware.</p>
+
+<p>An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations <a class="citation" href="#StandardizingActivityPubGroups2021">[181]</a>.</p>
+
+<p>!! portability of identity, necessary negotiation over partitioning of communities.</p>
 
 <h1 id="references">References</h1>
 
@@ -2061,8 +2120,10 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <li><span id="bookchinNoteAffinityGroups1969">177. Bookchin M (1969) A Note on Affinity Groups. :2. </span></li>
 <li><span id="hodgsonGitterNowSpeaks2020">178. Hodgson M (2020) Gitter Now Speaks Matrix! <i>Matrix.org</i>, https://matrix.org/blog/2020/12/07/gitter-now-speaks-matrix</span></li>
 <li><span id="hodgsonWelcomingGitterMatrix2020">179. Hodgson M (2020) Welcoming Gitter to Matrix! <i>Matrix.org</i>, https://matrix.org/blog/2020/09/30/welcoming-gitter-to-matrix</span></li>
-<li><span id="classeDistributedInfrastructureSupport2017">180. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
-<li><span id="freemanTyrannyStucturelessness1970">181. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li></ol>
+<li><span id="graffiLibreSocialPeertopeerFramework2021">180. Graffi K, Masinde N (2021) LibreSocial: A Peer-to-Peer Framework for Online Social Networks. <i>Concurrency and Computation: Practice and Experience</i>, 33(8):e6150. https://doi.org/10.1002/cpe.6150</span></li>
+<li><span id="StandardizingActivityPubGroups2021">181. (2021) Standardizing on ActivityPub Groups - ActivityPub. <i>SocialHub</i>, https://socialhub.activitypub.rocks/t/standardizing-on-activitypub-groups/1984</span></li>
+<li><span id="classeDistributedInfrastructureSupport2017">182. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
+<li><span id="freemanTyrannyStucturelessness1970">183. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li></ol>
 
 <h1 id="footnotes">Footnotes</h1>
 
@@ -2187,7 +2248,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
     <li id="fn:wardinvite" role="doc-endnote">
       <p>The initial motivations are actually stunningly close to the kinds of communication and knowledge organization problems we are still solving today (even in this piece)</p>
       <blockquote>
-        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[183]</a></p>
+        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[185]</a></p>
       </blockquote>
       <p><a href="#fnref:wardinvite" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
