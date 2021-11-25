@@ -155,7 +155,7 @@ Mastodon already implements most of the forum example described above: it has it
         "id": "274647",
         "username": "jonny",
         "fields":
-        [ ...]
+        [ ... ]
     },
     "media_attachments": [],
     "mentions": [],
@@ -165,34 +165,34 @@ Mastodon already implements most of the forum example described above: it has it
 
 and then rendered by the particular version of Mastodon implemented on the host, [social.coop](https://social.coop). As long as the host sends and receives post (and other) data in a compatible format, it can render it however it wants, add tools, etc. It becomes trivial to imagine, then, a continuum of communication tools between and around microblogging sites like Twitter and Mastodon and forums: just add categorization, tagging, or systems for whatever need is revealed by the normal dynamics of use. 
 
+The problem with an endless homogenous feed is filtering and prioritizing what to show. The lack of control over feed content is not an accident: it's the product --- ready access to a hundred million hamsters on personalized content wheels with whatever combination of micro and macrotargeting you could want. Nothing seems out of the ordinary when you have no control over what you see. Reciprocally, there's no way aside from herding a flock of alternate accounts to direct what you say to different audiences. Mastodon can filter posts at a federation level[^onlyfederated], with hashtags, and lets users make lists of peers, but is a proudly chronological feed. No algorithms allowed. Using it has a learning curve, as when you start you see nothing, but before you know it you can't find anything in the pile. Forums threads, within categories are also typically chronologically sorted, but because they are identified with a *subject* rather than by the *person* who started the thread typically have longer lifespans and more findable. 
+
+[^onlyfederated]: Only other servers that the host server federates with are listed
+
+!! There is no single answer to systems of discovery, but somewhere between explicit categorical organization, person and subject-centric threads, semantic annotation, and making smaller p2p federations is a recipe for a broad, continuous, and cumulative scientific discussion. Instead of casting about for advice within our information bubbles, we might aspire to having a *place* to *ask* the people who *might know*. Instead of starting another new slack with a few hundred posts that then vanishes entirely, we might imagine being able to fluidly form and dissolve communities and be able to build on their history.
+
 ---
 <div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
 ---
 
 
-!! semantic organization as an alternative to algorithmic and chronologically based feeds !!maintaining a continuous conversation among disciplines across multiple scales of organization. Eg. like what if instead of starting a new slack about everything, we were able to address an intelligible group of people by some self-identified set of labels and tags, etc?
+#### Annotation & Overlays
 
+We can't expect the entire practice of academic publishing to transition to cell-based text editor to express themselves anytime soon. Repeat that claim across all current practices. In the same way that we discussed frameworks for integrating heterogeneous analytical and experimental tools, we need some means of *bridging* communication tools and *overlays* for interacting with communication formats. !! bridging is much clearer and better explained by just looking at the example of matrix bridges, so we'll focus on overlays. !! overlays are reverse transclusion, and naturally lend themselves to thinking about tools for public peer review and criticism. 
 
-!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ {% cite graffiLibreSocialPeertopeerFramework2021 %}
-
-!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617
-
-#### Annotation
-
-We can't expect the entire practice of academic publishing to transition to cell-based text editor to express themselves anytime soon. !! We can make a bridge from tools of contemporary writing practice, extend our notions of the UX of backlinking and transclusion, and start to problematize notions of review and social regulation, though by considering annotation overlays.
-
-Cell-based editing systems are a means of giving the primary author control over the conceptual organization of the source document, 
-!! but they are only a crude approximation to the number of reader-specific conceptual partiions.
+!! Cell-based editing systems are a means of giving the primary author control over the conceptual organization of the source document, 
+!! but they are only a crude approximation to the number of reader-specific conceptual partiions. we need to give readers a means of making anchors.
 !! Annotation systems are bidirectional <-> the normal practice of editing mode commenting and annotating in draft editing phase can be continuous with the public communication of information.
+
+I think we've been underrating the humble highlighter. 
+
 !! Annotation is placing an anchor, being able to select arbitrary locations on the internet and being able to communicate about them is a novelty of a few tools -- hypothes.is (implemented here) and genius (formerly rapgenius)
 !! Anchors are hard (link to hypothes.is issue description of the multiple means of resolving anchors)
 !! and we also need to regulate who gets to annotate when, moderate. 
 
 !! To some degree, adversarial presentation of information is necessary in the contemporary conception of falsifiable science. Typically this happens behind the scenes in the cigar-smoke filled traincars where the ever elusive "reviewer 2" lives, but we could begin to adopt collective means of "quality control" in science.
 !! distinction between being able to refer to and being able to visually embed. People should have control over the public presentation of their work, but it's also important to preserve the ability for people to choose their overlays and knowledge communities.
-!! by bridging the communicative gap between intermediary communication products and the paper, we can begin to erode the question of replacement 
-
-
+!! by bridging the communicative gap between intermediary communication products and the paper, we can begin to erode the question of replacement of the peer review system to making a new one altogether. One where instead of throwing several years of work against the wall for a thumbs up or down by a panel of judges, we build an incremental system of continuous collective mentorship and advice.
 
 
 - preserving traditional writing systems
@@ -220,6 +220,12 @@ Cell-based editing systems are a means of giving the primary author control over
 - theory wiki yo.
 
 - [anagora!!!](https://anagora.org/)
+
+
+!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ {% cite graffiLibreSocialPeertopeerFramework2021 %}
+
+!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617
+
 
 #### ???
 
@@ -251,35 +257,8 @@ Cell-based editing systems are a means of giving the primary author control over
 
 ---
 
-Example interfaces
-- personal webpage that indexes your links!
-- trackerlike data indexing system
-- semantic notebooks for publication, example with annotations & browser
-- jupyterlike forum
-- highlighter interface for transclusion, anchor dropping, and reverse transclusion
-  - hypothes.is/zoterolike integration to be able to carry annotations between versions of a paper as well as interacting with "non-system" items.
-- Schema resolution linking example
-- Wiki with embedded analyses, theory wiki!
-- Examples of aggregating parameters/metadata for use in experimental tools and analysis chains, autopilot wiki example!
-
-Caveats!
-- Not prescriptive about using these tools in particular! Should be easy to link anything, which it is with p2p! Eg. Need to be able to indicate a .docx without needing to write in a different way as a reference.
-
-
-
-
-
-
-
-Threads left dangling
-- Interfaces for everything!
-- Schema negotiation
-- Contextual knowledge preservation
-- Knowledge Graphs
 
 !! skohub! https://skohub.io/
-
-!!!!!! extending jupyter notebook to use JSON-LD!!!
 
 
 !! discovery of papers for scientists as well as general public, being able to trace history.
