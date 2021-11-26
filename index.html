@@ -61,7 +61,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-41-25"> 2021-11-25</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/0f25b87"><code>0f25b87</code></a>
+            <time datetime="2021-53-26"> 2021-11-26</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/d5a3a38"><code>d5a3a38</code></a>
         </div>
     </div>
     <div class="trimlink">
@@ -1706,34 +1706,27 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>!! There is no single answer to systems of discovery, but somewhere between explicit categorical organization, person and subject-centric threads, semantic annotation, and making smaller p2p federations is a recipe for a broad, continuous, and cumulative scientific discussion. Instead of casting about for advice within our information bubbles, we might aspire to having a <em>place</em> to <em>ask</em> the people who <em>might know</em>. Instead of starting another new slack with a few hundred posts that then vanishes entirely, we might imagine being able to fluidly form and dissolve communities and be able to build on their history.</p>
 
+<h4 id="annotation--overlays">Annotation &amp; Overlays</h4>
+
+<p>We can’t expect the entire practice of academic publishing to transition to cell-based text editors anytime soon. In the same way that we discussed frameworks for integrating heterogeneous analytical and experimental tools, we need some means of <strong>bridging</strong> communication tools and <strong>overlays</strong> for interacting with communication formats. Bridging communication protocols is a relatively well-defined project, eg. the <a href="https://matrix.org/bridges/">many ways to use Matrix</a> with <a href="https://matrix.org/bridges/#slack">Slack</a>, <a href="https://matrix.org/bridges/#email">email</a>, <a href="https://matrix.org/bridges/#signal">Signal</a>, etc. The overlays for websites, pdfs, and other more static media that we’ll discuss are means for annotation and bidirectional transclusion: including pieces of the work elsewhere, and representing inclusions elsewhere on the work. In representing the intrinsically interactive and social nature of reading (eg. see <a class="citation" href="#jacksonMarginaliaReadersWriting2001">[180]</a>), overlays naturally lend themselves to imagining new systems to replace traditional mechanisms for peer-review and criticism. We don’t need to look far to find a well-trod interface for annotation overlays: we shouldn’t underrate the humble highlighter.</p>
+
+<p><a href="https://hypothes.is">Hypothes.is</a>, enabled on this page, lets readers highlight and annotate any webpage with a <a href="https://chrome.google.com/webstore/detail/hypothesis-web-pdf-annota/bjfhmglciegochdpefhhlphglcehbmek">browser extension</a> or javascript bookmarklet. At its heart is a system for making anchors, references to specific places in a text, and the means of matching them even when the text changes or the reference is ambiguous <a class="citation" href="#csillagFuzzyAnchoring2013">[181]</a>. For example, <a href="https://hypothes.is/a/oLw4uk7_Eeyt5N-FVlE3fw">this anchor</a> has three features, a <code class="language-plaintext highlighter-rouge">RangeSelector</code> that anchors it given the position within the paragraph, an absolute <code class="language-plaintext highlighter-rouge">TextPositionSelector</code>, and a contextual <code class="language-plaintext highlighter-rouge">TextQuoteSelector</code> that you can see with an <a href="https://api.hypothes.is/api/annotations/oLw4uk7_Eeyt5N-FVlE3fw">API call</a><sup id="fnref:anchorapi" role="doc-noteref"><a href="#fn:anchorapi" class="footnote" rel="footnote">37</a></sup>.</p>
+
+<p>On its own, it serves to give a <code class="language-plaintext highlighter-rouge">Talk:</code> page to every website. With an integration into a system of linked data and identity, it also serves as a means of extending the notion of bidirectional transclusion described above to work that is not explicitly formatted for it. Most scientific work is represented as <code class="language-plaintext highlighter-rouge">.pdf</code>s rather than <code class="language-plaintext highlighter-rouge">.html</code> pages, and hypothes.is <a href="https://web.hypothes.is/help/annotating-locally-saved-pdfs/">already supports</a> annotating PDFs. With an integration into pdf reading software, for example <a href="https://www.zotero.org/support/pdf_reader_preview">Zotero’s (currently beta) PDF reader</a>, there would be a relatively low barrier to integrating collaborative annotation into existing workflows and practices.</p>
+
+<p>The dream of public peer review with public annotation is relatively straightforward, but so are the nightmares of a scientific literature swamped with trolls. Talking about our work on a forum with a “forward” reference, of the work linked to by the forum or on PubPeer feels fine, but the “reverse” reference of an annotation appearing on your page that links to a forum discussion is significantly more challenging — “who gets to annotate my work?”</p>
+
+<p>Framed as an annotation system, the answer given by the current model of peer review is “usually three, usually anonymous people.” Except the document and annotations are usually private until the author revises the document to the point where no annotations remain, and the peer reviewers become invisible along with the social nature of the review. The notion that the body of scientific knowledge is best curated by passing each paper through a gauntlet of three anonymous reviewers, after which it becomes Fact and nearly as a rule never changed is ridiculous on its face.</p>
+
+<p>Digital publishing makes imagining the social regulation of science as a much more broadly based and continuous process much easier, but the problem of moderation remains. Some movement has been made towards public peer review: eLife has integrated hypothes.is since 2016 <a class="citation" href="#ELifePartnersHypothes2016">[182]</a>, and bioRxiv had decided to integrate it as well in 2017 <a class="citation" href="#dwhlyBioRxivSelectsHypothesis2017">[183]</a> before getting cold feet about the genuinely hard problem of moderation (among others <a class="citation" href="#heatherstainesPreprintServicesGather2018">[184]</a>) and instead adopting the more publisher-friendly TRiP system of refereed peer-reviews <a class="citation" href="#nateangellAnnouncingTRiPTransparent2019">[185]</a>.</p>
+
+<p>Asking every author to become a forum moderator and constantly patrolling the annotations of their papers sounds bad, as does the work of maintaining block and allowlists for every individual account. While a full description of the norms and tools needed to maintain healthy public peer review is out of scope here, the system of autonomous users being able to organize into overlapping federations described throughout <em>provides a space for having that conversation.</em> Authors could, for example, allow the display of annotations from a professional society like <code class="language-plaintext highlighter-rouge">@sfn</code> that has a code of conduct and moderation team, or annotations associated with comments on <code class="language-plaintext highlighter-rouge">@pubpeer</code>, or from a looser organization of colleagues and other <code class="language-plaintext highlighter-rouge">@neurofriends</code>. Conversely, being able to make annotations and comments from different federations gives us a rough proxy to different registers of communication and preserves the plurality of our expression. While my official <code class="language-plaintext highlighter-rouge">@university</code>-affiliated federation is restrained and academic, my <code class="language-plaintext highlighter-rouge">@neurotrans</code> alt might be a little more freewheeling. A protocol for federating peers that we first described in the context of sharing data has the more general consequence of creating a means of negotiating and experimenting with different systems of social norms and governance.</p>
+
+<p>Social tools like these are in the hypothes.is team’s <a href="https://web.archive.org/web/20211015213849/https://github.com/hypothesis/product-backlog/projects/6">development roadmap</a>, but I intend it as a well-developed and mature example of a general type of technology<sup id="fnref:genius" role="doc-noteref"><a href="#fn:genius" class="footnote" rel="footnote">38</a></sup>. Many scientists are already familiar with another implementation: the comment and review features of Google Docs and Microsoft Word. We already use these tools to work together to improve our work, but there’s no reason the process should stop at the time of publication. Combined with a system for valuing and publishing smaller units of work, the process of public peer review starts to look a lot healthier as a continuous process of communication and collective mentorship instead of the current system of a gladitorial thumbs up/down indictment on years of your life.</p>
+
 <hr />
 <div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
 <hr />
-
-<h4 id="annotation--overlays">Annotation &amp; Overlays</h4>
-
-<p>We can’t expect the entire practice of academic publishing to transition to cell-based text editor to express themselves anytime soon. Repeat that claim across all current practices. In the same way that we discussed frameworks for integrating heterogeneous analytical and experimental tools, we need some means of <em>bridging</em> communication tools and <em>overlays</em> for interacting with communication formats. !! bridging is much clearer and better explained by just looking at the example of matrix bridges, so we’ll focus on overlays. !! overlays are reverse transclusion, and naturally lend themselves to thinking about tools for public peer review and criticism.</p>
-
-<p>!! Cell-based editing systems are a means of giving the primary author control over the conceptual organization of the source document, 
-!! but they are only a crude approximation to the number of reader-specific conceptual partiions. we need to give readers a means of making anchors.
-!! Annotation systems are bidirectional &lt;-&gt; the normal practice of editing mode commenting and annotating in draft editing phase can be continuous with the public communication of information.</p>
-
-<p>I think we’ve been underrating the humble highlighter.</p>
-
-<p>!! Annotation is placing an anchor, being able to select arbitrary locations on the internet and being able to communicate about them is a novelty of a few tools – hypothes.is (implemented here) and genius (formerly rapgenius)
-!! Anchors are hard (link to hypothes.is issue description of the multiple means of resolving anchors)
-!! and we also need to regulate who gets to annotate when, moderate.</p>
-
-<p>!! To some degree, adversarial presentation of information is necessary in the contemporary conception of falsifiable science. Typically this happens behind the scenes in the cigar-smoke filled traincars where the ever elusive “reviewer 2” lives, but we could begin to adopt collective means of “quality control” in science.
-!! distinction between being able to refer to and being able to visually embed. People should have control over the public presentation of their work, but it’s also important to preserve the ability for people to choose their overlays and knowledge communities.
-!! by bridging the communicative gap between intermediary communication products and the paper, we can begin to erode the question of replacement of the peer review system to making a new one altogether. One where instead of throwing several years of work against the wall for a thumbs up or down by a panel of judges, we build an incremental system of continuous collective mentorship and advice.</p>
-
-<ul>
-  <li>preserving traditional writing systems</li>
-  <li>backlinking and transclusions</li>
-  <li>commentary</li>
-  <li>peer review</li>
-</ul>
 
 <h4 id="trackers">Trackers</h4>
 
@@ -1748,7 +1741,7 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <h4 id="wikis">Wikis</h4>
 <ul>
-  <li>resolving schema conflicts – and as <a class="citation" href="#StandardizingActivityPubGroups2021">[180]</a> demonstrates it needs to move constructively within a pluralistic system of governance models.</li>
+  <li>resolving schema conflicts – and as <a class="citation" href="#StandardizingActivityPubGroups2021">[186]</a> demonstrates it needs to move constructively within a pluralistic system of governance models.</li>
   <li>contextual knowledge</li>
   <li>programming interfaces a la autopilot wiki</li>
   <li>organizing &amp; governance</li>
@@ -1758,7 +1751,7 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
   <li><a href="https://anagora.org/">anagora!!!</a></li>
 </ul>
 
-<p>!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ <a class="citation" href="#graffiLibreSocialPeertopeerFramework2021">[181]</a></p>
+<p>!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ <a class="citation" href="#graffiLibreSocialPeertopeerFramework2021">[187]</a></p>
 
 <p>!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617</p>
 
@@ -1852,7 +1845,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 
 <p>!!The critical anchor of the entire scientific communication system is the system of professional incentives that make it so nothing outside of a journal counts as science. Blog posts are nice and all, but they aren’t <em>science.</em> One way of approaching this problem is convincing, en masse, a majority of researchers to boycott journals or value other mediums in hiring decisions. That seems pretty unlikely for all the reasons all collective action problems are. Instead of approaching it prestige-side first, we can approach from the credit assignment side. !! make it easy for someone else to use your work and then by using it you have some verifiable record that other people like and use your stuff! !! this appeals to a much broader base of people not traditionally in the scientific value system, so they might be interested. !! also lets us value different kinds of scientific labor, like mentorship, advice, debugging, etc. without necessarily needing to gamify it. !! Deep linking and long provenance lets us see our impact on the broader scientific world, which is a much more valuable and informative than shitty journal rankings. !! people always talk about how shitty journal metrics are, and so that’s an opening! !!</p>
 
-<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[182, 1]</a></p>
+<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[188, 1]</a></p>
 
 <p>!! essentially all questions about “changing the system of science” inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.</p>
 
@@ -1877,7 +1870,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <blockquote>
   <p>For everyone to have the opportunity to be involved in a given group and to participate in its activities the structure must be explicit, not implicit. The rules of decision-making must be open and available to everyone, and this can happen only if they are formalized. This is not to say that formalization of a structure of a group will destroy the informal structure. It usually doesn’t. But it does hinder the informal structure from having predominant control and make available some means of attacking it if the people involved are not at least responsible to the needs of the group at large.</p>
 
-  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[183]</a></p>
+  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[189]</a></p>
 </blockquote>
 
 <h2 id="tactics--strategy">Tactics &amp; Strategy</h2>
@@ -1909,7 +1902,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 
 <p>By default, and affirmed by maybe an understandable reaction against algorithmic feed organization, Mastodon is a mostly chronological list of posts from people that you follow and that are in your host server’s federated networks. While this transparency is reassuring that we aren’t being microtargeted for advertising, it does make the system overwhelming to navigate, and splitting accounts multiple times to accomodate is common. A system of semantic organization is a distinct third way between algorithmic and chronological organization. Building a system that goes beyond moderator-specified category systems familiar in forums towards a sensible interface for navigating tangled concept hierarchies is an open challenge, as far as I’m aware.</p>
 
-<p>An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations <a class="citation" href="#StandardizingActivityPubGroups2021">[180]</a>.</p>
+<p>An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations <a class="citation" href="#StandardizingActivityPubGroups2021">[186]</a>.</p>
 
 <p>!! portability of identity, necessary negotiation over partitioning of communities.</p>
 
@@ -2094,10 +2087,16 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <li><span id="bookchinNoteAffinityGroups1969">177. Bookchin M (1969) A Note on Affinity Groups. :2. </span></li>
 <li><span id="hodgsonGitterNowSpeaks2020">178. Hodgson M (2020) Gitter Now Speaks Matrix! <i>Matrix.org</i>, https://matrix.org/blog/2020/12/07/gitter-now-speaks-matrix</span></li>
 <li><span id="hodgsonWelcomingGitterMatrix2020">179. Hodgson M (2020) Welcoming Gitter to Matrix! <i>Matrix.org</i>, https://matrix.org/blog/2020/09/30/welcoming-gitter-to-matrix</span></li>
-<li><span id="StandardizingActivityPubGroups2021">180. (2021) Standardizing on ActivityPub Groups - ActivityPub. <i>SocialHub</i>, https://socialhub.activitypub.rocks/t/standardizing-on-activitypub-groups/1984</span></li>
-<li><span id="graffiLibreSocialPeertopeerFramework2021">181. Graffi K, Masinde N (2021) LibreSocial: A Peer-to-Peer Framework for Online Social Networks. <i>Concurrency and Computation: Practice and Experience</i>, 33(8):e6150. https://doi.org/10.1002/cpe.6150</span></li>
-<li><span id="classeDistributedInfrastructureSupport2017">182. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
-<li><span id="freemanTyrannyStucturelessness1970">183. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li></ol>
+<li><span id="jacksonMarginaliaReadersWriting2001">180. Jackson HJ (2001) Marginalia: Readers Writing in Books. </span></li>
+<li><span id="csillagFuzzyAnchoring2013">181. csillag (2013) Fuzzy Anchoring. <i>Hypothesis</i>, https://web.hypothes.is/blog/fuzzy-anchoring/</span></li>
+<li><span id="ELifePartnersHypothes2016">182. (2016) eLife Partners with Hypothes.Is to Advance Open Scholarly Annotation. <i>eLife</i>, https://elifesciences.org/for-the-press/7e7220f6/elife-partners-with-hypothes-is-to-advance-open-scholarly-annotation</span></li>
+<li><span id="dwhlyBioRxivSelectsHypothesis2017">183. dwhly (2017) bioRxiv Selects Hypothesis to Enable Annotation on Preprints. <i>Hypothesis</i>, https://web.hypothes.is/blog/biorxiv-selects-hypothesis/</span></li>
+<li><span id="heatherstainesPreprintServicesGather2018">184. heatherstaines (2018) Preprint Services Gather to Explore an Annotated Future. <i>Hypothesis</i>, https://web.hypothes.is/blog/preprint-services-gather-to-explore-an-annotated-future/</span></li>
+<li><span id="nateangellAnnouncingTRiPTransparent2019">185. nateangell (2019) Announcing TRiP: Transparent Review in Preprints, Powered by Hypothesis Annotation. <i>Hypothesis</i>, https://web.hypothes.is/blog/announcing-trip-transparent-review-in-preprints-powered-by-hypothesis-annotation/</span></li>
+<li><span id="StandardizingActivityPubGroups2021">186. (2021) Standardizing on ActivityPub Groups - ActivityPub. <i>SocialHub</i>, https://socialhub.activitypub.rocks/t/standardizing-on-activitypub-groups/1984</span></li>
+<li><span id="graffiLibreSocialPeertopeerFramework2021">187. Graffi K, Masinde N (2021) LibreSocial: A Peer-to-Peer Framework for Online Social Networks. <i>Concurrency and Computation: Practice and Experience</i>, 33(8):e6150. https://doi.org/10.1002/cpe.6150</span></li>
+<li><span id="classeDistributedInfrastructureSupport2017">188. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
+<li><span id="freemanTyrannyStucturelessness1970">189. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li></ol>
 
 <h1 id="footnotes">Footnotes</h1>
 
@@ -2222,7 +2221,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
     <li id="fn:wardinvite" role="doc-endnote">
       <p>The initial motivations are actually stunningly close to the kinds of communication and knowledge organization problems we are still solving today (even in this piece)</p>
       <blockquote>
-        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[185]</a></p>
+        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[191]</a></p>
       </blockquote>
       <p><a href="#fnref:wardinvite" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
@@ -2250,6 +2249,34 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
     <li id="fn:onlyfederated" role="doc-endnote">
       <p>Only other servers that the host server federates with are listed <a href="#fnref:onlyfederated" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
+    <li id="fn:anchorapi" role="doc-endnote">
+      <p>Reproduced here:</p>
+      <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">"selector"</span><span class="p">:</span><span class="w">
+</span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RangeSelector"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">178</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endContainer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/main[1]/div[1]/p[368]"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startContainer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/main[1]/div[1]/p[368]"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="mi">254006</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TextPositionSelector"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="mi">253999</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TextQuoteSelector"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anchors"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ts heart is a system for making "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"suffix"</span><span class="p">:</span><span class="w"> </span><span class="s2">", references to specific places "</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]}</span><span class="w">
+</span></code></pre></div>      </div>
+      <p><a href="#fnref:anchorapi" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:genius" role="doc-endnote">
+      <p>cf. the <a href="https://genius.com">genius.com</a> overlay. <a href="#fnref:genius" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
   </ol>
 </div>
 
@@ -2261,8 +2288,8 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <script src="/infrastructure/assets/js/react.js"></script>
 <script src="/infrastructure/assets/js/toc.js"></script>
 
-  <script defer src="https://hypothes.is/embed.js"></script>
-  <script src="/infrastructure/assets/js/hypothesis.js"></script>
+<script defer src="https://hypothes.is/embed.js"></script>
+<script src="/infrastructure/assets/js/hypothesis.js"></script>
 
 </footer>
 
