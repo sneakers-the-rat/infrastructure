@@ -171,34 +171,30 @@ The problem with an endless homogenous feed is filtering and prioritizing what t
 
 !! There is no single answer to systems of discovery, but somewhere between explicit categorical organization, person and subject-centric threads, semantic annotation, and making smaller p2p federations is a recipe for a broad, continuous, and cumulative scientific discussion. Instead of casting about for advice within our information bubbles, we might aspire to having a *place* to *ask* the people who *might know*. Instead of starting another new slack with a few hundred posts that then vanishes entirely, we might imagine being able to fluidly form and dissolve communities and be able to build on their history.
 
+#### Annotation & Overlays
+
+We can't expect the entire practice of academic publishing to transition to cell-based text editors anytime soon. In the same way that we discussed frameworks for integrating heterogeneous analytical and experimental tools, we need some means of **bridging** communication tools and **overlays** for interacting with communication formats. Bridging communication protocols is a relatively well-defined project, eg. the [many ways to use Matrix](https://matrix.org/bridges/) with [Slack](https://matrix.org/bridges/#slack), [email](https://matrix.org/bridges/#email), [Signal](https://matrix.org/bridges/#signal), etc. The overlays for websites, pdfs, and other more static media that we'll discuss are means for annotation and bidirectional transclusion: including pieces of the work elsewhere, and representing inclusions elsewhere on the work. In representing the intrinsically interactive and social nature of reading (eg. see {% cite jacksonMarginaliaReadersWriting2001 %}), overlays naturally lend themselves to imagining new systems to replace traditional mechanisms for peer-review and criticism. We don't need to look far to find a well-trod interface for annotation overlays: we shouldn't underrate the humble highlighter.
+
+[Hypothes.is](https://hypothes.is), enabled on this page, lets readers highlight and annotate any webpage with a [browser extension](https://chrome.google.com/webstore/detail/hypothesis-web-pdf-annota/bjfhmglciegochdpefhhlphglcehbmek) or javascript bookmarklet. At its heart is a system for making anchors, references to specific places in a text, and the means of matching them even when the text changes or the reference is ambiguous {% cite csillagFuzzyAnchoring2013 %}. For example, [this anchor](https://hypothes.is/a/oLw4uk7_Eeyt5N-FVlE3fw) has three features, a `RangeSelector` that anchors it given the position within the paragraph, an absolute `TextPositionSelector`, and a contextual `TextQuoteSelector` that you can see with an [API call](https://api.hypothes.is/api/annotations/oLw4uk7_Eeyt5N-FVlE3fw)[^anchorapi].
+
+On its own, it serves to give a `Talk:` page to every website. With an integration into a system of linked data and identity, it also serves as a means of extending the notion of bidirectional transclusion described above to work that is not explicitly formatted for it. Most scientific work is represented as `.pdf`s rather than `.html` pages, and hypothes.is [already supports](https://web.hypothes.is/help/annotating-locally-saved-pdfs/) annotating PDFs. With an integration into pdf reading software, for example [Zotero's (currently beta) PDF reader](https://www.zotero.org/support/pdf_reader_preview), there would be a relatively low barrier to integrating collaborative annotation into existing workflows and practices.
+
+The dream of public peer review with public annotation is relatively straightforward, but so are the nightmares of a scientific literature swamped with trolls. Talking about our work on a forum with a "forward" reference, of the work linked to by the forum or on PubPeer feels fine, but the "reverse" reference of an annotation appearing on your page that links to a forum discussion is significantly more challenging --- "who gets to annotate my work?"
+
+Framed as an annotation system, the answer given by the current model of peer review is "usually three, usually anonymous people." Except the document and annotations are usually private until the author revises the document to the point where no annotations remain, and the peer reviewers become invisible along with the social nature of the review. The notion that the body of scientific knowledge is best curated by passing each paper through a gauntlet of three anonymous reviewers, after which it becomes Fact and nearly as a rule never changed is ridiculous on its face.
+
+Digital publishing makes imagining the social regulation of science as a much more broadly based and continuous process much easier, but the problem of moderation remains. Some movement has been made towards public peer review: eLife has integrated hypothes.is since 2016 {% cite ELifePartnersHypothes2016 %}, and bioRxiv had decided to integrate it as well in 2017 {% cite dwhlyBioRxivSelectsHypothesis2017 %} before getting cold feet about the genuinely hard problem of moderation (among others {% cite heatherstainesPreprintServicesGather2018 %}) and instead adopting the more publisher-friendly TRiP system of refereed peer-reviews {% cite nateangellAnnouncingTRiPTransparent2019 %}.
+
+Asking every author to become a forum moderator and constantly patrolling the annotations of their papers sounds bad, as does the work of maintaining block and allowlists for every individual account. While a full description of the norms and tools needed to maintain healthy public peer review is out of scope here, the system of autonomous users being able to organize into overlapping federations described throughout *provides a space for having that conversation.* Authors could, for example, allow the display of annotations from a professional society like `@sfn` that has a code of conduct and moderation team, or annotations associated with comments on `@pubpeer`, or from a looser organization of colleagues and other `@neurofriends`. Conversely, being able to make annotations and comments from different federations gives us a rough proxy to different registers of communication and preserves the plurality of our expression. While my official `@university`-affiliated federation is restrained and academic, my `@neurotrans` alt might be a little more freewheeling. A protocol for federating peers that we first described in the context of sharing data has the more general consequence of creating a means of negotiating and experimenting with different systems of social norms and governance.
+
+Social tools like these are in the hypothes.is team's [development roadmap](https://web.archive.org/web/20211015213849/https://github.com/hypothesis/product-backlog/projects/6), but I intend it as a well-developed and mature example of a general type of technology[^genius]. Many scientists are already familiar with another implementation: the comment and review features of Google Docs and Microsoft Word. We already use these tools to work together to improve our work, but there's no reason the process should stop at the time of publication. Combined with a system for valuing and publishing smaller units of work, the process of public peer review starts to look a lot healthier as a continuous process of communication and collective mentorship instead of the current system of a gladitorial thumbs up/down indictment on years of your life.
+
+[^genius]: cf. the [genius.com](https://genius.com) overlay.
+
 ---
 <div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
 ---
 
-
-#### Annotation & Overlays
-
-We can't expect the entire practice of academic publishing to transition to cell-based text editor to express themselves anytime soon. Repeat that claim across all current practices. In the same way that we discussed frameworks for integrating heterogeneous analytical and experimental tools, we need some means of *bridging* communication tools and *overlays* for interacting with communication formats. !! bridging is much clearer and better explained by just looking at the example of matrix bridges, so we'll focus on overlays. !! overlays are reverse transclusion, and naturally lend themselves to thinking about tools for public peer review and criticism. 
-
-!! Cell-based editing systems are a means of giving the primary author control over the conceptual organization of the source document, 
-!! but they are only a crude approximation to the number of reader-specific conceptual partiions. we need to give readers a means of making anchors.
-!! Annotation systems are bidirectional <-> the normal practice of editing mode commenting and annotating in draft editing phase can be continuous with the public communication of information.
-
-I think we've been underrating the humble highlighter. 
-
-!! Annotation is placing an anchor, being able to select arbitrary locations on the internet and being able to communicate about them is a novelty of a few tools -- hypothes.is (implemented here) and genius (formerly rapgenius)
-!! Anchors are hard (link to hypothes.is issue description of the multiple means of resolving anchors)
-!! and we also need to regulate who gets to annotate when, moderate. 
-
-!! To some degree, adversarial presentation of information is necessary in the contemporary conception of falsifiable science. Typically this happens behind the scenes in the cigar-smoke filled traincars where the ever elusive "reviewer 2" lives, but we could begin to adopt collective means of "quality control" in science.
-!! distinction between being able to refer to and being able to visually embed. People should have control over the public presentation of their work, but it's also important to preserve the ability for people to choose their overlays and knowledge communities.
-!! by bridging the communicative gap between intermediary communication products and the paper, we can begin to erode the question of replacement of the peer review system to making a new one altogether. One where instead of throwing several years of work against the wall for a thumbs up or down by a panel of judges, we build an incremental system of continuous collective mentorship and advice.
-
-
-- preserving traditional writing systems
-- backlinking and transclusions
-- commentary
-- peer review
 
 #### Trackers
 

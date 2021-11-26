@@ -37,3 +37,28 @@
 	> A1: I don't know of any such wiki merge, nor of any discussion of the history of all wikis. Such a discussion should probably reside (if created) on MeatballWiki. 
 
 [^AWWDMBJAWGCAWAIFDSPBATDMTAD]: Also see [Association of Wikipedians Who Dislike Making Broad Judgments About the Worthiness of a General Category of Article, and Who Are in Favor of the Deletion of Some Particularly Bad Articles, but That Doesn't Mean They Are Deletionists](https://meta.wikimedia.org/wiki/Association_of_Wikipedians_Who_Dislike_Making_Broad_Judgments_About_the_Worthiness_of_a_General_Category_of_Article,_and_Who_Are_in_Favor_of_the_Deletion_of_Some_Particularly_Bad_Articles,_but_That_Doesn%27t_Mean_They_Are_Deletionists)
+
+[^anchorapi]: Reproduced here:
+    ```json
+    {"selector":
+    [{
+        "type": "RangeSelector",
+        "endOffset": 178,
+        "startOffset": 171,
+        "endContainer": "/main[1]/div[1]/p[368]",
+        "startContainer": "/main[1]/div[1]/p[368]"
+    },
+    {
+        "end": 254006,
+        "type": "TextPositionSelector",
+        "start": 253999
+    },
+    {
+        "type": "TextQuoteSelector",
+        "exact": "anchors",
+        "prefix": "ts heart is a system for making ",
+        "suffix": ", references to specific places "
+    }
+    ]}
+    ```
+
