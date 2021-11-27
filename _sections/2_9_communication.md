@@ -191,87 +191,85 @@ Social tools like these are in the hypothes.is team's [development roadmap](http
 
 [^genius]: cf. the [genius.com](https://genius.com) overlay.
 
+
+#### Trackers & Wikis
+
+The final set of social interfaces is effectively the "body" of social technology. So far our infrastructural systems have an unsatisfyingly hollow center: there's a lot of talk about tool frameworks and protocols for linked data, but *where is it? what does it look like?* We can pick up the threads left hanging from our description of [bittorrent trackers](#archives-need-communities) and knit them in with those from [the wiki way](#the-wiki-way) and describe how systems for surfacing procedural and technical knowledge work can also serve as a basis of searching, indexing, and governing the rest of the system. 
+
+Bittorrent trackers serve to index data and organize a curation community --- we need that too, let's start there. Say we have a tracker that indexes a particular format of data, as [`@dandihub`](https://hub.dandiarchive.org) does with `@nwb`. We can search for data using all the fields of NWB, but don't want to rely just on the peers that are active, so the role of the tracker is to maintain a searchable index of metadata that refers to the datasets shared by peers. We want to be interoperable with other trackers that index compatible data, so let's say that's implemented as a database that supports [SPARQL federated queries](https://www.w3.org/TR/sparql11-federated-query/)[^sparqldb] where requests can be spread across many databases. For concreteness, let's assume that the results of our search are some content-addressed reference to a resource on a p2p network like a [magnet link](https://en.wikipedia.org/wiki/Magnet_URI_scheme).
+
+We need some kind of *client* that can download files and run in the background to share them. We can start with the image of a bittorrent client like [qBittorrent](https://www.qbittorrent.org/) that does just that, but we also need a means of making the link declarations that we did before in pseudocode, and it makes sense for the client to handle that as well. Let's say our client handles our identity, either by a self-created cryptographic hash as in IPFS{% cite benetIPFSContentAddressed2014 %}, or attested by some trusted third party as in ActivityPub. Instead of our identity being tied to the services provided by the server, however, we can think of this as a peer-to-peer ActivityPub where we can directly send and receive messages containing our links and negotiating our connections. As an interface, say we have a typical file browser that we can set permissions for files, group them into projects, and share them with others. Since the system consists of links, an editor that allows users to visualize and edit a hierarchical graph of nodes and (typed) edges:
+
+!! input network editing React figure from presentation here!
+
+So say it's time for us to share a dataset. We click the 'share' button in our client which sends an ActivityPub-style message saying we have [`@as:Create`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create)d a new resource to the other peers indicated in our permission settings. This message both uploads the metadata for our dataset to the, say, `@dandihub` tracker, but since `@dandihub` is an equivalent peer in our system, and modeling off ActivityPub we are able to have "friends," we can notify other researchers directly. The tracker can host our metadata pointing to our data so it's available from any other peer that's hosting it even if we go offline, but peers can query us directly to enumerate all the links, datasets, etc. we have allowed them to.
+
+What about handling format extensions not included in the base `@nwb` format? Since we own the representation of our data, we can imagine a strict base `@nwb`-only tracker, but also think of `@dandihub` that has built tools to handle extensions. So alongside our dataset we can upload an extension like our `@jonny:SolarEphys` example that derives from `@nwb:ElectricalSeries`, and the tracker then can display our extension as well as all the other extensions that branch off the various points of the standard. At this point we can imagine a spray of thousands of trivially different extensions to handle overlapping data types, which is where most data stores typically stop, but let's explore community systems built on forums and wikis for schema resolution as an example of *distributed governance.*
+
+!! figure of lots of leaf nodes hanging off ElectricalSeries
+
+Wikis are not magical systems of infinite pluralistic knowledge, but one thing they do well is provide the means of developing durable but plastic systems norms and policies for a wide variety of social systems. Butler, Joyce and Pike, emphasis mine:
+
+> Providing tools and infrastructure mechanisms that support the development and management of policies is an important part of creating social computing systems that work. [...] 
+>
+> When organizations invest in [collaborative] technologies, [...] their first step is often to put in place a collection of policies and guidelines regarding their use. **However, less attention is given to the policies and guidelines created by the groups that use these systems which are often left to “emerge” spontaneously.** The examples and concepts described in this paper highlight the complexity of rule formation and suggest that support should be provided to help collaborating groups create and maintain effective rulespaces.
+> 
+> [...] **The true power of wikis lies in the fact that they are a platform that provides affordances which allow for a wide variety of rich, multifaceted organizational structures.** Rather than assuming that rules, policies, and guidelines are operating in only one fashion, wikis allow for, and in fact facilitate, the creation of policies and procedures that serve a wide variety of functions {% cite butlerDonLookNow2008 %} 
+
+So between discussion on the forum or in `Talk:`-like pages, we can imagine a set of norms and policies evolving from the community on this particuar tracker, perhaps unlike other trackers. In this case we can imagine someone wanting to clean up some near-equivalent extensions by starting a thread in the forum to discuss the proposed changes. Say we want to merge `@jonny:Extension1` and `@rumbly:Extension2` -- the forum notifies us that someone is talking about our extension so we have a chance to weigh in. If we reach some sort of amicable consensus where we agree to supercede it with a merged `@forum:Extension3` type, the forum could send us a [`@as:Offer`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-offer) to [`@as:Update`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-update) our extension, which should we [`@as:Accept`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-accept) from our client then notifies all the downstream consumers of our data and extension that its format has changed. 
+
+What if consensus fails? Since every link in the system is underneath a `@namespace`, links never have a pretense of "correctness," but have the ontological status of a linguistic gesture: links are "something someone said" that we're free to disagree with[^timblcar]. In that case, the `@forum:Extension3` exists as "someone said these are equivalent, but I don't necessarily agree" and the forum is free to represent its cleaned up representation while preserving the plurality of expression in our data format. If I want to go to greener pastures to a forum that has policies and culture closer to mine, it's relatively straightforward to federate with a new tracker and move my data there since I still own it all.
+
+[^timblcar]: "For example, one person may define a vehicle as having a number of wheels and a weight and a length, but not foresee a color. This will not stop another person making the assertion that a given car is red, using the color vocabular from elsewhere." - https://www.w3.org/DesignIssues/RDB-RDF.html
+
+Let's pick up scientific communication in linked data [forums](#forums--feeds) in conversation with the [social incentives for curation](#archives-need-communities) of trackers. This system as described is a forum where everyone in the conversation has access to the data and results in question reminiscent of What.cd and access to music. While upload/download ratio might not be the best social incentive system for scientific trackers, there are plenty of others. 
+
+For example, we briefly mentioned a Folding@Home-like system of donated computing resources, and separately described embedding analyses in a forum by calling our own compute resources. Together, a tracker could implement a compute ratio where to use shared computing resources you need to contribute a certain amount of your own. The bounty system where peers would donate their excess upload in exchange for uploading a rare album on what.cd could translate to one where someone who has donated a lot of excess compute time could donate it for someone uploading or collecting a particular dataset. 
+
+Another tracker more focused on sharing and reviewing results might make a review ratio system, where for every review your work receives you need to review n other works. This would effectively function as a **reviewer co-op** that can make the implicit labor of reviewing explicit, and develop systems for tying the reviews required for frequent publication with explicit norms around reciprocal reviewing. 
+
+Forum and feedlike media are good for organizing continuous conversation, but wikis serve as a more durable knowledge store for cumulative reference information. We don't need to imagine wikis as being text-only, with wiki formatting used just to change the appearance of text, but as a means of declaring and manipulating semantic links. For example, [Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) is an extension to Wikipedia's wiki system that extends `[[Wikilinks]]` to be able to declare semantic links like `[[linkType::Target]]`. For example, if our project had a wiki page like `[[My Project]]` we could say it `[[hasType::@analysis:project]]` and `[[usesDataset::@jonny:mydata1]]` etc. These wikis have the capability to not only organize knowledge, but also serve as a flexible means of declaring new programming interfaces and assigning credit. 
+
+As a live example, let's consider the [Autopilot Wiki](https://wiki.auto-pi-lot.com) at [https://wiki.auto-pi-lot.com](https://wiki.auto-pi-lot.com). This wiki has a set of categories, properties, templates, and forms for describing the additional contextual technical knowledge needed to use [Autopilot](https://docs.auto-pi-lot.com/en/latest/), a framework for behavioral experiments {% cite saundersAutopilotAutomatingBehavioral2019 %}. The semantic structure of the links is useful for designing interfaces based on complex queries, for example "find me all the [`passive electronic components`](https://wiki.auto-pi-lot.com/index.php/Category:Passive_Component) that have a [`guide`](https://wiki.auto-pi-lot.com/index.php/Category:Guide) that describes [`using`](https://wiki.auto-pi-lot.com/index.php/Property:Uses_Tool) a [`soldering iron`](https://wiki.auto-pi-lot.com/index.php?title=Property%3AUses+Tool&limit=20&offset=0&filter=Soldering+Iron) to build [`lighting`](https://wiki.auto-pi-lot.com/index.php?title=Property%3AModality&limit=20&offset=0&filter=Illumination) for a behavioral [`enclosure`](https://wiki.auto-pi-lot.com/index.php?title=Property%3AModality&limit=20&offset=0&filter=Enclosures)". Each page can have a [rich semantic description](https://wiki.auto-pi-lot.com/index.php/Autopilot_Behavior_Box#tab-content-facts-list) with multimodal links describing tools, CAD diagrams, associated DOIs, software dependencies, etc. Links can be declared `[[linkModality::inline]]` as a fluid part of writing, but also can be submitted by using forms (eg for new [Parts](https://wiki.auto-pi-lot.com/index.php/Form:Part)) with structured, autocompleting properties to lower syntax barriers for new users. 
+
+The "soft durability" of wikis makes space to discuss "off-label" uses for hardware common across many disciplines that typically exists as lab lore rather than documented. For example, an early-adopter of Autopilot sent me a message saying they weren't able to get ultrasound from an [amplifier](https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2) that was advertised up to 192kHz. Upon further study, we found there was a 20kHz low-pass output filter and were able to find and remove the components and leave a trail of breadcrumbs for future users. Though this is a simple example, it is emblematic of the kind of knowledge work that currently has no good means of communication or professional valuation.
+
+The blend of programmatic and natural language descriptions makes it easy to contribute to, but also makes knowledge organization improve the software that uses it. The [Amp2](https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2) page lists which of the GPIO pins of a raspberry pi it depends on, so Autopilot will be extended to check for conflicting hardware configurations[^mutingamp2]. Better: since it's possible for anyone to make new templates, forms, categories, and pages, the wiki can be used to build new programming interfaces entirely. Autopilot's [plugin system](https://docs.auto-pi-lot.com/en/latest/guide/plugins.html) is built this way, where one submits a [plugin](https://wiki.auto-pi-lot.com/index.php/Autopilot_Plugins) with a [form](https://wiki.auto-pi-lot.com/index.php/Form:Autopilot_Plugin) which then makes it immediately available to any Autopilot user.
+
+[^mutingamp2]: for example, pin 7 mutes the board, but is still exposed in the 40-pin header. We powered an LED with pin 7 and were absolutely baffled why the sound would mute every time the light went on for a week or so.
+
+The addition of structured contextual knowledge to our system gives us an almost comical degree of provenance: from conversations in a forum that reference a paper, that links to its analysis, data, experimental software, all the way back to the properties of the solenoids used in the experiment. It's not just provenance for provenance's sake as extra labor, every step is *useful* to the experimenter. I give the example of the Autopilot wiki for concreteness, but the broader point is that forums and wikis can serve the role of negotiating systems of expression for different parts of the system. 
+
+The same combination of trackers, forums, and wikis has a natural application to analysis pipelines. Ideally, to move beyond fragile code reduplicated in every lab, we need some means of reaching consensus on a few canonical implementations of fundamental analysis operations. Given a system where analysis chains are linked to the formats and subdisciplines they are used with, we can map a semantically dense map of the analysis paths used in a research domain. In neurophysiology: "What are the different ways spikes are extracted and analyzed from extracellular electrophysiology recordings?" Having the ability to discuss and contextualize different analytical methods elevates all the exasperated methods critiques and exhortations to "not use this statistically unsound technique" into something *structurally expressed in the practice of science.* See all the `@neurotheory` threads about this specific analysis chain, or the `@methodswiki` page that summarizes this general category of techniques.
+
+We're now in a place where we can address the problem of a cumulative knowledge system for science directly. In many (most?) scientific epistemologies, scientific results do not directly reflect some truth about reality, but instead instead are embedded in a system of meaning through a process of active interpretation (eg. {% cite meehlTheoreticalRisksTabular1978 %}). The interpretation of every scientific result is left as the responsibility of the authors to recreate and a few reviewers to evaluate, which would be a monumental amount of labor given the velocity of papers, so researchers do the best they can engaging with a small amount of research. Since the space of argumentation is built from scratch each time from incomplete information, there's no guarantee of making cumulative progress on a shared set of theories, and most fall far from the supposed ideal of hard refutation and can have long lives as "zombie theories." van Rooij and Baggio describe the "collecting seashells" approach of gathering many results and leaving the theory for later with an analogy:
+
+> "In a sense, trying to build theories on collections of effects is much like trying to write novels by collecting sentences from randomly generated letter strings. Indeed, each novel ultimately consists of strings of letters, and theories should ultimately be compatible with effects. Still, the majority of the (infinitely possible) effects are irrelevant for the aims of theory building, just as the majority of (infinitely possible) sentences are irrelevant for writing a novel." {% cite vanrooijTheoryTestHow2021 %}
+
+They and others (eg. {% cite guestHowComputationalModeling2021 %}) have argued for an iterative process of experiments informed by theory and modeling that confirm or constrain future models. Their articulation of the need for multiple registers of formality and rigidity is particularly resonant here. van Rooij and Baggio again:
+
+> "The first sketch of an f need not be the final one; what matters is how the initial f is constrained and refined and how the rectification process can actually drive the theory forward. Theory building is a creative process involving a dialectic of divergent and convergent thinking, informal and formal thinking." {% cite vanrooijTheoryTestHow2021 %}
+
+Let's turn our provenance chain into a circle: a means of linking theories to analytical results and interpretation as well as experimental design and tooling. Say the theorists have a wiki. They start making some loose schematic descriptions of their theories and linking them to different experimental results that constrain, affirm, refute, or otherwise interact with them. These could be forward or backlinks: declared by the original author or by someone else describing their results. 
+
 ---
 <div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
 ---
 
-
-#### Trackers
-
-- refine the notion of client and tracker: our client needs a UX too!!
-
-- getting the data needed to do an experiment
-- federated data indexing
-- return to notions of social incentives to use
-
+- theorists have a wiki
+- structurally express theory, but even if not, link to different experimental results
+variations:
+- see how the evidence for a theory is collected -- what papers, datasets, and analysis chains were used to support it?
+- see what happens to the impact of a dataset when analyzed with some new method
+- 
+- recall this is a fluid consensus, and each different wiki can be interpreted in context as the product of the particular community it comes from.
 
 
+!! remember these are all just interfaces to our linked data protocol.
+
+What we've described is a nonutopian, fully realizable path to making a scientific system that is fully negotiable through the entire theoretical-empirical loop with minor development of existing tools and minimal adjustment of scientific practices. No clouds, no journals, a little rough around the edges but collectively owned by all scientists.
+
+We still need a little more strategy...
 
 
-#### Wikis
-- resolving schema conflicts -- and as {% cite StandardizingActivityPubGroups2021 %} demonstrates it needs to move constructively within a pluralistic system of governance models.
-- contextual knowledge
-- programming interfaces a la autopilot wiki 
-- organizing & governance
-- theory wiki yo.
 
-- [anagora!!!](https://anagora.org/)
-
-
-!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ {% cite graffiLibreSocialPeertopeerFramework2021 %}
-
-!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617
-
-
-#### ???
-
-- the indefinite future! who knows what people will come up with, and that's the point!
-
-
-"full cycle"
-- Initial communication
-  - p2p mastodon!?
-- Forming a group
-  - p2p mastodon!
-- Group research & sharing/annotating papers
-  - reference manager & shared annotations & wikilike system for notes. carry through annotations to the writing process & use as backlinks. example of private -> public links
-- Planning experiment
-  - example of autopilot wiki!?
-- Doing experiment & Analysis (we already talked about)
-  - example of autopilot wiki!?
-- Drafting paper
-  - notebooklike interface
-  - early stopping point of not needing to publish a paper at all, every part of the paper is public at this point, so we could communicate in much smaller bites of linked analyses and commentary
-  - example of backlinks put on top of the other paper, since we're friends future people are able to see when a particular part of a paper is being referenced
-- Reviewing paper
-  - public or facilitated peer review
-- Communicating paper
-  - non-ephemeral p2p masto & linked forum, multimodal transclusion
-- Criticism and Integration into larger whole
-  - theory wiki!
-- Splitting of group!
-
----
-
-
-!! skohub! https://skohub.io/
-
-
-!! discovery of papers for scientists as well as general public, being able to trace history.
-
-> Though frequently viewed as a product to finish, it is dynamic ontologies with associated process-building activities designed, developed, and deployed locally that will allow ontologies to grow and to change. And finally, the technical activity of ontology building is always coupled with the background work of identifying and informing a broader community of future ontology users. {% cite bowkerInformationInfrastructureStudies2010 %}
-
-!! stop sweating about computational accuracy and completeness. the only danger is a system that makes appeal to perfection and promises accuracy like those sold in golden foil by the platform capitalists. if we are conceptualizing this appropriately as a *system of communication* where particular results are intended to be *interpreted in context* then we would treat computational errors and semantic inaccuracies like we do with *language*: like a *joke*.
-
-> For example, one person may define a vehicle as having a number of wheels and a weight and a length, but not foresee a color. This will not stop another person making the assertion that a given car is red, using the color vocabular from elsewhere. - https://www.w3.org/DesignIssues/RDB-RDF.html
-
-
->  Relational database systems, manage RDF data, but in a specialized way. In a table, there are many records with the same set of properties. An individual cell (which corresponds to an RDF property) is not often thought of on its own. SQL queries can join tables and extract data from tables, and the result is generally a table. So, the practical use for which RDB software is used typically optimized for soing operations with a small number of tables some of which may have a large number of elements.
-> 
-> RDB systems have datatypes at the atomic (unstructured) level, as RDF and XML will/do. Combination rules tend in RDBs to be loosely enforced, in that a query can join tables by any comlumns which match by datatype -- without any check on the semantics. You could for example create a list of houses that have the same number as rooms as an employee's shoe size, for every employee, even though the sense of that would be questionable.
-> 
-> The Semantic Web is not designed just as a new data model - it is specifically appropriate to the linking of data of many different models. One of the great things it will allow is to add information relating different databases on the Web, to allow sophisticated operations to be performed across them. https://www.w3.org/DesignIssues/RDFnot.html
-
-!! caution about slipping into techno-utopianism even here, we need the UI and tooling here to be simple to not only use but also build on. yes that does mean yet another framework! but this one is the most mythical yet, because I don't really know what it would look like! but bad UI has killed lots of projects, eg. IPFS (though it's not dead just slow!)
- https://macwright.com/2019/06/08/ipfs-again.html
-https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b

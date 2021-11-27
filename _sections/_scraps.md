@@ -307,3 +307,55 @@ Instead let's think through an example "unit" of scientific work, from idea to p
 
 !! take stock of our communication technology, we publish pdfs in journals, have science twitter, and then a bunch of private slacks and smalltime stuff??? Science is fundamentally a communicative process, literally every part fo the system that I have described has been built aroudn the ability to express the structure of things, the order of things, how it relates to other things and *that's communication baby.* The system we've imagined so far takes us so far from forums and the ultradominant feed -> shallow thread-based communication that we're used to though. This is a system where we can have continuous dialogue about linked topics, be able to branch and see the reflections and subtle variations on ideas in the same place that we have our data, analysis, and tools.
 
+
+
+!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ {% cite graffiLibreSocialPeertopeerFramework2021 %}
+
+!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617
+
+!! skohub! https://skohub.io/
+
+
+!! discovery of papers for scientists as well as general public, being able to trace history.
+
+> Though frequently viewed as a product to finish, it is dynamic ontologies with associated process-building activities designed, developed, and deployed locally that will allow ontologies to grow and to change. And finally, the technical activity of ontology building is always coupled with the background work of identifying and informing a broader community of future ontology users. {% cite bowkerInformationInfrastructureStudies2010 %}
+
+
+
+
+
+!! caution about slipping into techno-utopianism even here, we need the UI and tooling here to be simple to not only use but also build on. yes that does mean yet another framework! but this one is the most mythical yet, because I don't really know what it would look like! but bad UI has killed lots of projects, eg. IPFS (though it's not dead just slow!)
+ https://macwright.com/2019/06/08/ipfs-again.html
+https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b
+
+
+#### ???
+
+- the indefinite future! who knows what people will come up with, and that's the point!
+
+
+"full cycle"
+- Initial communication
+  - p2p mastodon!?
+- Forming a group
+  - p2p mastodon!
+- Group research & sharing/annotating papers
+  - reference manager & shared annotations & wikilike system for notes. carry through annotations to the writing process & use as backlinks. example of private -> public links
+- Planning experiment
+  - example of autopilot wiki!?
+- Doing experiment & Analysis (we already talked about)
+  - example of autopilot wiki!?
+- Drafting paper
+  - notebooklike interface
+  - early stopping point of not needing to publish a paper at all, every part of the paper is public at this point, so we could communicate in much smaller bites of linked analyses and commentary
+  - example of backlinks put on top of the other paper, since we're friends future people are able to see when a particular part of a paper is being referenced
+- Reviewing paper
+  - public or facilitated peer review
+- Communicating paper
+  - non-ephemeral p2p masto & linked forum, multimodal transclusion
+- Criticism and Integration into larger whole
+  - theory wiki!
+- Splitting of group!
+
+---
+
