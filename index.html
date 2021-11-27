@@ -61,7 +61,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-53-26"> 2021-11-26</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/d5a3a38"><code>d5a3a38</code></a>
+            <time datetime="2021-31-27"> 2021-11-27</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/7b840ad"><code>7b840ad</code></a>
         </div>
     </div>
     <div class="trimlink">
@@ -1724,128 +1724,93 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>Social tools like these are in the hypothes.is team’s <a href="https://web.archive.org/web/20211015213849/https://github.com/hypothesis/product-backlog/projects/6">development roadmap</a>, but I intend it as a well-developed and mature example of a general type of technology<sup id="fnref:genius" role="doc-noteref"><a href="#fn:genius" class="footnote" rel="footnote">38</a></sup>. Many scientists are already familiar with another implementation: the comment and review features of Google Docs and Microsoft Word. We already use these tools to work together to improve our work, but there’s no reason the process should stop at the time of publication. Combined with a system for valuing and publishing smaller units of work, the process of public peer review starts to look a lot healthier as a continuous process of communication and collective mentorship instead of the current system of a gladitorial thumbs up/down indictment on years of your life.</p>
 
+<h4 id="trackers--wikis">Trackers &amp; Wikis</h4>
+
+<p>The final set of social interfaces is effectively the “body” of social technology. So far our infrastructural systems have an unsatisfyingly hollow center: there’s a lot of talk about tool frameworks and protocols for linked data, but <em>where is it? what does it look like?</em> We can pick up the threads left hanging from our description of <a href="#archives-need-communities">bittorrent trackers</a> and knit them in with those from <a href="#the-wiki-way">the wiki way</a> and describe how systems for surfacing procedural and technical knowledge work can also serve as a basis of searching, indexing, and governing the rest of the system.</p>
+
+<p>Bittorrent trackers serve to index data and organize a curation community — we need that too, let’s start there. Say we have a tracker that indexes a particular format of data, as <a href="https://hub.dandiarchive.org"><code class="language-plaintext highlighter-rouge">@dandihub</code></a> does with <code class="language-plaintext highlighter-rouge">@nwb</code>. We can search for data using all the fields of NWB, but don’t want to rely just on the peers that are active, so the role of the tracker is to maintain a searchable index of metadata that refers to the datasets shared by peers. We want to be interoperable with other trackers that index compatible data, so let’s say that’s implemented as a database that supports <a href="https://www.w3.org/TR/sparql11-federated-query/">SPARQL federated queries</a><sup id="fnref:sparqldb" role="doc-noteref"><a href="#fn:sparqldb" class="footnote" rel="footnote">39</a></sup> where requests can be spread across many databases. For concreteness, let’s assume that the results of our search are some content-addressed reference to a resource on a p2p network like a <a href="https://en.wikipedia.org/wiki/Magnet_URI_scheme">magnet link</a>.</p>
+
+<p>We need some kind of <em>client</em> that can download files and run in the background to share them. We can start with the image of a bittorrent client like <a href="https://www.qbittorrent.org/">qBittorrent</a> that does just that, but we also need a means of making the link declarations that we did before in pseudocode, and it makes sense for the client to handle that as well. Let’s say our client handles our identity, either by a self-created cryptographic hash as in IPFS<a class="citation" href="#benetIPFSContentAddressed2014">[68]</a>, or attested by some trusted third party as in ActivityPub. Instead of our identity being tied to the services provided by the server, however, we can think of this as a peer-to-peer ActivityPub where we can directly send and receive messages containing our links and negotiating our connections. As an interface, say we have a typical file browser that we can set permissions for files, group them into projects, and share them with others. Since the system consists of links, an editor that allows users to visualize and edit a hierarchical graph of nodes and (typed) edges:</p>
+
+<p>!! input network editing React figure from presentation here!</p>
+
+<p>So say it’s time for us to share a dataset. We click the ‘share’ button in our client which sends an ActivityPub-style message saying we have <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create"><code class="language-plaintext highlighter-rouge">@as:Create</code></a>d a new resource to the other peers indicated in our permission settings. This message both uploads the metadata for our dataset to the, say, <code class="language-plaintext highlighter-rouge">@dandihub</code> tracker, but since <code class="language-plaintext highlighter-rouge">@dandihub</code> is an equivalent peer in our system, and modeling off ActivityPub we are able to have “friends,” we can notify other researchers directly. The tracker can host our metadata pointing to our data so it’s available from any other peer that’s hosting it even if we go offline, but peers can query us directly to enumerate all the links, datasets, etc. we have allowed them to.</p>
+
+<p>What about handling format extensions not included in the base <code class="language-plaintext highlighter-rouge">@nwb</code> format? Since we own the representation of our data, we can imagine a strict base <code class="language-plaintext highlighter-rouge">@nwb</code>-only tracker, but also think of <code class="language-plaintext highlighter-rouge">@dandihub</code> that has built tools to handle extensions. So alongside our dataset we can upload an extension like our <code class="language-plaintext highlighter-rouge">@jonny:SolarEphys</code> example that derives from <code class="language-plaintext highlighter-rouge">@nwb:ElectricalSeries</code>, and the tracker then can display our extension as well as all the other extensions that branch off the various points of the standard. At this point we can imagine a spray of thousands of trivially different extensions to handle overlapping data types, which is where most data stores typically stop, but let’s explore community systems built on forums and wikis for schema resolution as an example of <em>distributed governance.</em></p>
+
+<p>!! figure of lots of leaf nodes hanging off ElectricalSeries</p>
+
+<p>Wikis are not magical systems of infinite pluralistic knowledge, but one thing they do well is provide the means of developing durable but plastic systems norms and policies for a wide variety of social systems. Butler, Joyce and Pike, emphasis mine:</p>
+
+<blockquote>
+  <p>Providing tools and infrastructure mechanisms that support the development and management of policies is an important part of creating social computing systems that work. […]</p>
+
+  <p>When organizations invest in [collaborative] technologies, […] their first step is often to put in place a collection of policies and guidelines regarding their use. <strong>However, less attention is given to the policies and guidelines created by the groups that use these systems which are often left to “emerge” spontaneously.</strong> The examples and concepts described in this paper highlight the complexity of rule formation and suggest that support should be provided to help collaborating groups create and maintain effective rulespaces.</p>
+
+  <p>[…] <strong>The true power of wikis lies in the fact that they are a platform that provides affordances which allow for a wide variety of rich, multifaceted organizational structures.</strong> Rather than assuming that rules, policies, and guidelines are operating in only one fashion, wikis allow for, and in fact facilitate, the creation of policies and procedures that serve a wide variety of functions <a class="citation" href="#butlerDonLookNow2008">[186]</a></p>
+</blockquote>
+
+<p>So between discussion on the forum or in <code class="language-plaintext highlighter-rouge">Talk:</code>-like pages, we can imagine a set of norms and policies evolving from the community on this particuar tracker, perhaps unlike other trackers. In this case we can imagine someone wanting to clean up some near-equivalent extensions by starting a thread in the forum to discuss the proposed changes. Say we want to merge <code class="language-plaintext highlighter-rouge">@jonny:Extension1</code> and <code class="language-plaintext highlighter-rouge">@rumbly:Extension2</code> – the forum notifies us that someone is talking about our extension so we have a chance to weigh in. If we reach some sort of amicable consensus where we agree to supercede it with a merged <code class="language-plaintext highlighter-rouge">@forum:Extension3</code> type, the forum could send us a <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-offer"><code class="language-plaintext highlighter-rouge">@as:Offer</code></a> to <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-update"><code class="language-plaintext highlighter-rouge">@as:Update</code></a> our extension, which should we <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-accept"><code class="language-plaintext highlighter-rouge">@as:Accept</code></a> from our client then notifies all the downstream consumers of our data and extension that its format has changed.</p>
+
+<p>What if consensus fails? Since every link in the system is underneath a <code class="language-plaintext highlighter-rouge">@namespace</code>, links never have a pretense of “correctness,” but have the ontological status of a linguistic gesture: links are “something someone said” that we’re free to disagree with<sup id="fnref:timblcar" role="doc-noteref"><a href="#fn:timblcar" class="footnote" rel="footnote">40</a></sup>. In that case, the <code class="language-plaintext highlighter-rouge">@forum:Extension3</code> exists as “someone said these are equivalent, but I don’t necessarily agree” and the forum is free to represent its cleaned up representation while preserving the plurality of expression in our data format. If I want to go to greener pastures to a forum that has policies and culture closer to mine, it’s relatively straightforward to federate with a new tracker and move my data there since I still own it all.</p>
+
+<p>Let’s pick up scientific communication in linked data <a href="#forums--feeds">forums</a> in conversation with the <a href="#archives-need-communities">social incentives for curation</a> of trackers. This system as described is a forum where everyone in the conversation has access to the data and results in question reminiscent of What.cd and access to music. While upload/download ratio might not be the best social incentive system for scientific trackers, there are plenty of others.</p>
+
+<p>For example, we briefly mentioned a Folding@Home-like system of donated computing resources, and separately described embedding analyses in a forum by calling our own compute resources. Together, a tracker could implement a compute ratio where to use shared computing resources you need to contribute a certain amount of your own. The bounty system where peers would donate their excess upload in exchange for uploading a rare album on what.cd could translate to one where someone who has donated a lot of excess compute time could donate it for someone uploading or collecting a particular dataset.</p>
+
+<p>Another tracker more focused on sharing and reviewing results might make a review ratio system, where for every review your work receives you need to review n other works. This would effectively function as a <strong>reviewer co-op</strong> that can make the implicit labor of reviewing explicit, and develop systems for tying the reviews required for frequent publication with explicit norms around reciprocal reviewing.</p>
+
+<p>Forum and feedlike media are good for organizing continuous conversation, but wikis serve as a more durable knowledge store for cumulative reference information. We don’t need to imagine wikis as being text-only, with wiki formatting used just to change the appearance of text, but as a means of declaring and manipulating semantic links. For example, <a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> is an extension to Wikipedia’s wiki system that extends <code class="language-plaintext highlighter-rouge">[[Wikilinks]]</code> to be able to declare semantic links like <code class="language-plaintext highlighter-rouge">[[linkType::Target]]</code>. For example, if our project had a wiki page like <code class="language-plaintext highlighter-rouge">[[My Project]]</code> we could say it <code class="language-plaintext highlighter-rouge">[[hasType::@analysis:project]]</code> and <code class="language-plaintext highlighter-rouge">[[usesDataset::@jonny:mydata1]]</code> etc. These wikis have the capability to not only organize knowledge, but also serve as a flexible means of declaring new programming interfaces and assigning credit.</p>
+
+<p>As a live example, let’s consider the <a href="https://wiki.auto-pi-lot.com">Autopilot Wiki</a> at <a href="https://wiki.auto-pi-lot.com">https://wiki.auto-pi-lot.com</a>. This wiki has a set of categories, properties, templates, and forms for describing the additional contextual technical knowledge needed to use <a href="https://docs.auto-pi-lot.com/en/latest/">Autopilot</a>, a framework for behavioral experiments <a class="citation" href="#saundersAutopilotAutomatingBehavioral2019">[129]</a>. The semantic structure of the links is useful for designing interfaces based on complex queries, for example “find me all the <a href="https://wiki.auto-pi-lot.com/index.php/Category:Passive_Component"><code class="language-plaintext highlighter-rouge">passive electronic components</code></a> that have a <a href="https://wiki.auto-pi-lot.com/index.php/Category:Guide"><code class="language-plaintext highlighter-rouge">guide</code></a> that describes <a href="https://wiki.auto-pi-lot.com/index.php/Property:Uses_Tool"><code class="language-plaintext highlighter-rouge">using</code></a> a <a href="https://wiki.auto-pi-lot.com/index.php?title=Property%3AUses+Tool&amp;limit=20&amp;offset=0&amp;filter=Soldering+Iron"><code class="language-plaintext highlighter-rouge">soldering iron</code></a> to build <a href="https://wiki.auto-pi-lot.com/index.php?title=Property%3AModality&amp;limit=20&amp;offset=0&amp;filter=Illumination"><code class="language-plaintext highlighter-rouge">lighting</code></a> for a behavioral <a href="https://wiki.auto-pi-lot.com/index.php?title=Property%3AModality&amp;limit=20&amp;offset=0&amp;filter=Enclosures"><code class="language-plaintext highlighter-rouge">enclosure</code></a>”. Each page can have a <a href="https://wiki.auto-pi-lot.com/index.php/Autopilot_Behavior_Box#tab-content-facts-list">rich semantic description</a> with multimodal links describing tools, CAD diagrams, associated DOIs, software dependencies, etc. Links can be declared <code class="language-plaintext highlighter-rouge">[[linkModality::inline]]</code> as a fluid part of writing, but also can be submitted by using forms (eg for new <a href="https://wiki.auto-pi-lot.com/index.php/Form:Part">Parts</a>) with structured, autocompleting properties to lower syntax barriers for new users.</p>
+
+<p>The “soft durability” of wikis makes space to discuss “off-label” uses for hardware common across many disciplines that typically exists as lab lore rather than documented. For example, an early-adopter of Autopilot sent me a message saying they weren’t able to get ultrasound from an <a href="https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2">amplifier</a> that was advertised up to 192kHz. Upon further study, we found there was a 20kHz low-pass output filter and were able to find and remove the components and leave a trail of breadcrumbs for future users. Though this is a simple example, it is emblematic of the kind of knowledge work that currently has no good means of communication or professional valuation.</p>
+
+<p>The blend of programmatic and natural language descriptions makes it easy to contribute to, but also makes knowledge organization improve the software that uses it. The <a href="https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2">Amp2</a> page lists which of the GPIO pins of a raspberry pi it depends on, so Autopilot will be extended to check for conflicting hardware configurations<sup id="fnref:mutingamp2" role="doc-noteref"><a href="#fn:mutingamp2" class="footnote" rel="footnote">41</a></sup>. Better: since it’s possible for anyone to make new templates, forms, categories, and pages, the wiki can be used to build new programming interfaces entirely. Autopilot’s <a href="https://docs.auto-pi-lot.com/en/latest/guide/plugins.html">plugin system</a> is built this way, where one submits a <a href="https://wiki.auto-pi-lot.com/index.php/Autopilot_Plugins">plugin</a> with a <a href="https://wiki.auto-pi-lot.com/index.php/Form:Autopilot_Plugin">form</a> which then makes it immediately available to any Autopilot user.</p>
+
+<p>The addition of structured contextual knowledge to our system gives us an almost comical degree of provenance: from conversations in a forum that reference a paper, that links to its analysis, data, experimental software, all the way back to the properties of the solenoids used in the experiment. It’s not just provenance for provenance’s sake as extra labor, every step is <em>useful</em> to the experimenter. I give the example of the Autopilot wiki for concreteness, but the broader point is that forums and wikis can serve the role of negotiating systems of expression for different parts of the system.</p>
+
+<p>The same combination of trackers, forums, and wikis has a natural application to analysis pipelines. Ideally, to move beyond fragile code reduplicated in every lab, we need some means of reaching consensus on a few canonical implementations of fundamental analysis operations. Given a system where analysis chains are linked to the formats and subdisciplines they are used with, we can map a semantically dense map of the analysis paths used in a research domain. In neurophysiology: “What are the different ways spikes are extracted and analyzed from extracellular electrophysiology recordings?” Having the ability to discuss and contextualize different analytical methods elevates all the exasperated methods critiques and exhortations to “not use this statistically unsound technique” into something <em>structurally expressed in the practice of science.</em> See all the <code class="language-plaintext highlighter-rouge">@neurotheory</code> threads about this specific analysis chain, or the <code class="language-plaintext highlighter-rouge">@methodswiki</code> page that summarizes this general category of techniques.</p>
+
+<p>We’re now in a place where we can address the problem of a cumulative knowledge system for science directly. In many (most?) scientific epistemologies, scientific results do not directly reflect some truth about reality, but instead instead are embedded in a system of meaning through a process of active interpretation (eg. <a class="citation" href="#meehlTheoreticalRisksTabular1978">[187]</a>). The interpretation of every scientific result is left as the responsibility of the authors to recreate and a few reviewers to evaluate, which would be a monumental amount of labor given the velocity of papers, so researchers do the best they can engaging with a small amount of research. Since the space of argumentation is built from scratch each time from incomplete information, there’s no guarantee of making cumulative progress on a shared set of theories, and most fall far from the supposed ideal of hard refutation and can have long lives as “zombie theories.” van Rooij and Baggio describe the “collecting seashells” approach of gathering many results and leaving the theory for later with an analogy:</p>
+
+<blockquote>
+  <p>“In a sense, trying to build theories on collections of effects is much like trying to write novels by collecting sentences from randomly generated letter strings. Indeed, each novel ultimately consists of strings of letters, and theories should ultimately be compatible with effects. Still, the majority of the (infinitely possible) effects are irrelevant for the aims of theory building, just as the majority of (infinitely possible) sentences are irrelevant for writing a novel.” <a class="citation" href="#vanrooijTheoryTestHow2021">[188]</a></p>
+</blockquote>
+
+<p>They and others (eg. <a class="citation" href="#guestHowComputationalModeling2021">[189]</a>) have argued for an iterative process of experiments informed by theory and modeling that confirm or constrain future models. Their articulation of the need for multiple registers of formality and rigidity is particularly resonant here. van Rooij and Baggio again:</p>
+
+<blockquote>
+  <p>“The first sketch of an f need not be the final one; what matters is how the initial f is constrained and refined and how the rectification process can actually drive the theory forward. Theory building is a creative process involving a dialectic of divergent and convergent thinking, informal and formal thinking.” <a class="citation" href="#vanrooijTheoryTestHow2021">[188]</a></p>
+</blockquote>
+
+<p>Let’s turn our provenance chain into a circle: a means of linking theories to analytical results and interpretation as well as experimental design and tooling. Say the theorists have a wiki. They start making some loose schematic descriptions of their theories and linking them to different experimental results that constrain, affirm, refute, or otherwise interact with them. These could be forward or backlinks: declared by the original author or by someone else describing their results.</p>
+
 <hr />
 <div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
 <hr />
 
-<h4 id="trackers">Trackers</h4>
-
 <ul>
-  <li>
-    <p>refine the notion of client and tracker: our client needs a UX too!!</p>
-  </li>
-  <li>getting the data needed to do an experiment</li>
-  <li>federated data indexing</li>
-  <li>return to notions of social incentives to use</li>
+  <li>theorists have a wiki</li>
+  <li>structurally express theory, but even if not, link to different experimental results
+variations:</li>
+  <li>see how the evidence for a theory is collected – what papers, datasets, and analysis chains were used to support it?</li>
+  <li>see what happens to the impact of a dataset when analyzed with some new method</li>
+  <li></li>
+  <li>recall this is a fluid consensus, and each different wiki can be interpreted in context as the product of the particular community it comes from.</li>
 </ul>
 
-<h4 id="wikis">Wikis</h4>
-<ul>
-  <li>resolving schema conflicts – and as <a class="citation" href="#StandardizingActivityPubGroups2021">[186]</a> demonstrates it needs to move constructively within a pluralistic system of governance models.</li>
-  <li>contextual knowledge</li>
-  <li>programming interfaces a la autopilot wiki</li>
-  <li>organizing &amp; governance</li>
-  <li>
-    <p>theory wiki yo.</p>
-  </li>
-  <li><a href="https://anagora.org/">anagora!!!</a></li>
-</ul>
+<p>!! remember these are all just interfaces to our linked data protocol.</p>
 
-<p>!! relationship between linked data and social media protocols stuff goes here, as compared to libresocial: https://libresocial.com/en/startpage/ <a class="citation" href="#graffiLibreSocialPeertopeerFramework2021">[187]</a></p>
+<p>What we’ve described is a nonutopian, fully realizable path to making a scientific system that is fully negotiable through the entire theoretical-empirical loop with minor development of existing tools and minimal adjustment of scientific practices. No clouds, no journals, a little rough around the edges but collectively owned by all scientists.</p>
 
-<p>!! open engiadina https://openengiadina.net/ - https://octodon.social/@cwebber/107158266685022617</p>
-
-<h4>???</h4>
-
-<ul>
-  <li>the indefinite future! who knows what people will come up with, and that’s the point!</li>
-</ul>
-
-<p>“full cycle”</p>
-<ul>
-  <li>Initial communication
-    <ul>
-      <li>p2p mastodon!?</li>
-    </ul>
-  </li>
-  <li>Forming a group
-    <ul>
-      <li>p2p mastodon!</li>
-    </ul>
-  </li>
-  <li>Group research &amp; sharing/annotating papers
-    <ul>
-      <li>reference manager &amp; shared annotations &amp; wikilike system for notes. carry through annotations to the writing process &amp; use as backlinks. example of private -&gt; public links</li>
-    </ul>
-  </li>
-  <li>Planning experiment
-    <ul>
-      <li>example of autopilot wiki!?</li>
-    </ul>
-  </li>
-  <li>Doing experiment &amp; Analysis (we already talked about)
-    <ul>
-      <li>example of autopilot wiki!?</li>
-    </ul>
-  </li>
-  <li>Drafting paper
-    <ul>
-      <li>notebooklike interface</li>
-      <li>early stopping point of not needing to publish a paper at all, every part of the paper is public at this point, so we could communicate in much smaller bites of linked analyses and commentary</li>
-      <li>example of backlinks put on top of the other paper, since we’re friends future people are able to see when a particular part of a paper is being referenced</li>
-    </ul>
-  </li>
-  <li>Reviewing paper
-    <ul>
-      <li>public or facilitated peer review</li>
-    </ul>
-  </li>
-  <li>Communicating paper
-    <ul>
-      <li>non-ephemeral p2p masto &amp; linked forum, multimodal transclusion</li>
-    </ul>
-  </li>
-  <li>Criticism and Integration into larger whole
-    <ul>
-      <li>theory wiki!</li>
-    </ul>
-  </li>
-  <li>Splitting of group!</li>
-</ul>
-
-<hr />
-
-<p>!! skohub! https://skohub.io/</p>
-
-<p>!! discovery of papers for scientists as well as general public, being able to trace history.</p>
-
-<blockquote>
-  <p>Though frequently viewed as a product to finish, it is dynamic ontologies with associated process-building activities designed, developed, and deployed locally that will allow ontologies to grow and to change. And finally, the technical activity of ontology building is always coupled with the background work of identifying and informing a broader community of future ontology users. <a class="citation" href="#bowkerInformationInfrastructureStudies2010">[1]</a></p>
-</blockquote>
-
-<p>!! stop sweating about computational accuracy and completeness. the only danger is a system that makes appeal to perfection and promises accuracy like those sold in golden foil by the platform capitalists. if we are conceptualizing this appropriately as a <em>system of communication</em> where particular results are intended to be <em>interpreted in context</em> then we would treat computational errors and semantic inaccuracies like we do with <em>language</em>: like a <em>joke</em>.</p>
-
-<blockquote>
-  <p>For example, one person may define a vehicle as having a number of wheels and a weight and a length, but not foresee a color. This will not stop another person making the assertion that a given car is red, using the color vocabular from elsewhere. - https://www.w3.org/DesignIssues/RDB-RDF.html</p>
-</blockquote>
-
-<blockquote>
-  <p>Relational database systems, manage RDF data, but in a specialized way. In a table, there are many records with the same set of properties. An individual cell (which corresponds to an RDF property) is not often thought of on its own. SQL queries can join tables and extract data from tables, and the result is generally a table. So, the practical use for which RDB software is used typically optimized for soing operations with a small number of tables some of which may have a large number of elements.</p>
-
-  <p>RDB systems have datatypes at the atomic (unstructured) level, as RDF and XML will/do. Combination rules tend in RDBs to be loosely enforced, in that a query can join tables by any comlumns which match by datatype – without any check on the semantics. You could for example create a list of houses that have the same number as rooms as an employee’s shoe size, for every employee, even though the sense of that would be questionable.</p>
-
-  <p>The Semantic Web is not designed just as a new data model - it is specifically appropriate to the linking of data of many different models. One of the great things it will allow is to add information relating different databases on the Web, to allow sophisticated operations to be performed across them. https://www.w3.org/DesignIssues/RDFnot.html</p>
-</blockquote>
-
-<p>!! caution about slipping into techno-utopianism even here, we need the UI and tooling here to be simple to not only use but also build on. yes that does mean yet another framework! but this one is the most mythical yet, because I don’t really know what it would look like! but bad UI has killed lots of projects, eg. IPFS (though it’s not dead just slow!)
- https://macwright.com/2019/06/08/ipfs-again.html
-https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
+<p>We still need a little more strategy…</p>
 
 <h3 id="credit-assignment">Credit Assignment</h3>
 
 <p>!!The critical anchor of the entire scientific communication system is the system of professional incentives that make it so nothing outside of a journal counts as science. Blog posts are nice and all, but they aren’t <em>science.</em> One way of approaching this problem is convincing, en masse, a majority of researchers to boycott journals or value other mediums in hiring decisions. That seems pretty unlikely for all the reasons all collective action problems are. Instead of approaching it prestige-side first, we can approach from the credit assignment side. !! make it easy for someone else to use your work and then by using it you have some verifiable record that other people like and use your stuff! !! this appeals to a much broader base of people not traditionally in the scientific value system, so they might be interested. !! also lets us value different kinds of scientific labor, like mentorship, advice, debugging, etc. without necessarily needing to gamify it. !! Deep linking and long provenance lets us see our impact on the broader scientific world, which is a much more valuable and informative than shitty journal rankings. !! people always talk about how shitty journal metrics are, and so that’s an opening! !!</p>
 
-<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[188, 1]</a></p>
+<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[190, 1]</a></p>
 
 <p>!! essentially all questions about “changing the system of science” inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.</p>
 
@@ -1870,7 +1835,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <blockquote>
   <p>For everyone to have the opportunity to be involved in a given group and to participate in its activities the structure must be explicit, not implicit. The rules of decision-making must be open and available to everyone, and this can happen only if they are formalized. This is not to say that formalization of a structure of a group will destroy the informal structure. It usually doesn’t. But it does hinder the informal structure from having predominant control and make available some means of attacking it if the people involved are not at least responsible to the needs of the group at large.</p>
 
-  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[189]</a></p>
+  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[191]</a></p>
 </blockquote>
 
 <h2 id="tactics--strategy">Tactics &amp; Strategy</h2>
@@ -1902,7 +1867,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 
 <p>By default, and affirmed by maybe an understandable reaction against algorithmic feed organization, Mastodon is a mostly chronological list of posts from people that you follow and that are in your host server’s federated networks. While this transparency is reassuring that we aren’t being microtargeted for advertising, it does make the system overwhelming to navigate, and splitting accounts multiple times to accomodate is common. A system of semantic organization is a distinct third way between algorithmic and chronological organization. Building a system that goes beyond moderator-specified category systems familiar in forums towards a sensible interface for navigating tangled concept hierarchies is an open challenge, as far as I’m aware.</p>
 
-<p>An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations <a class="citation" href="#StandardizingActivityPubGroups2021">[186]</a>.</p>
+<p>An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations <a class="citation" href="#StandardizingActivityPubGroups2021">[192]</a>.</p>
 
 <p>!! portability of identity, necessary negotiation over partitioning of communities.</p>
 
@@ -2093,10 +2058,13 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
 <li><span id="dwhlyBioRxivSelectsHypothesis2017">183. dwhly (2017) bioRxiv Selects Hypothesis to Enable Annotation on Preprints. <i>Hypothesis</i>, https://web.hypothes.is/blog/biorxiv-selects-hypothesis/</span></li>
 <li><span id="heatherstainesPreprintServicesGather2018">184. heatherstaines (2018) Preprint Services Gather to Explore an Annotated Future. <i>Hypothesis</i>, https://web.hypothes.is/blog/preprint-services-gather-to-explore-an-annotated-future/</span></li>
 <li><span id="nateangellAnnouncingTRiPTransparent2019">185. nateangell (2019) Announcing TRiP: Transparent Review in Preprints, Powered by Hypothesis Annotation. <i>Hypothesis</i>, https://web.hypothes.is/blog/announcing-trip-transparent-review-in-preprints-powered-by-hypothesis-annotation/</span></li>
-<li><span id="StandardizingActivityPubGroups2021">186. (2021) Standardizing on ActivityPub Groups - ActivityPub. <i>SocialHub</i>, https://socialhub.activitypub.rocks/t/standardizing-on-activitypub-groups/1984</span></li>
-<li><span id="graffiLibreSocialPeertopeerFramework2021">187. Graffi K, Masinde N (2021) LibreSocial: A Peer-to-Peer Framework for Online Social Networks. <i>Concurrency and Computation: Practice and Experience</i>, 33(8):e6150. https://doi.org/10.1002/cpe.6150</span></li>
-<li><span id="classeDistributedInfrastructureSupport2017">188. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
-<li><span id="freemanTyrannyStucturelessness1970">189. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li></ol>
+<li><span id="butlerDonLookNow2008">186. Butler B, Joyce E, Pike J (2008) Don’t Look Now, but We’ve Created a Bureaucracy: The Nature and Roles of Policies and Rules in Wikipedia. <i>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</i>, :1101–1110. https://doi.org/10.1145/1357054.1357227</span></li>
+<li><span id="meehlTheoreticalRisksTabular1978">187. Meehl PE (1978) Theoretical Risks and Tabular Asterisks: Sir Karl, Sir Ronald, and the Slow Progress of Soft Psychology. <i>Journal of Consulting and Clinical Psychology</i>, 46(4):806–834. https://doi.org/10.1037/0022-006X.46.4.806</span></li>
+<li><span id="vanrooijTheoryTestHow2021">188. van Rooij I, Baggio G (2021) Theory Before the Test: How to Build High-Verisimilitude Explanatory Theories in Psychological Science. <i>Perspectives on Psychological Science</i>, :1745691620970604. https://doi.org/10.1177/1745691620970604</span></li>
+<li><span id="guestHowComputationalModeling2021">189. Guest O, Martin AE (2021) How Computational Modeling Can Force Theory Building in Psychological Science. <i>Perspectives on Psychological Science</i>, :1745691620970585. https://doi.org/10.1177/1745691620970585</span></li>
+<li><span id="classeDistributedInfrastructureSupport2017">190. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
+<li><span id="freemanTyrannyStucturelessness1970">191. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li>
+<li><span id="StandardizingActivityPubGroups2021">192. (2021) Standardizing on ActivityPub Groups - ActivityPub. <i>SocialHub</i>, https://socialhub.activitypub.rocks/t/standardizing-on-activitypub-groups/1984</span></li></ol>
 
 <h1 id="footnotes">Footnotes</h1>
 
@@ -2221,7 +2189,7 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
     <li id="fn:wardinvite" role="doc-endnote">
       <p>The initial motivations are actually stunningly close to the kinds of communication and knowledge organization problems we are still solving today (even in this piece)</p>
       <blockquote>
-        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[191]</a></p>
+        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[194]</a></p>
       </blockquote>
       <p><a href="#fnref:wardinvite" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
@@ -2276,6 +2244,23 @@ https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b</p>
     </li>
     <li id="fn:genius" role="doc-endnote">
       <p>cf. the <a href="https://genius.com">genius.com</a> overlay. <a href="#fnref:genius" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:sparqldb" role="doc-endnote">
+      <p>Tim Berners-Lee describes the distinction between traditional relationship databases and RDF databases:</p>
+      <blockquote>
+        <p>Relational database systems, manage RDF data, but in a specialized way. In a table, there are many records with the same set of properties. An individual cell (which corresponds to an RDF property) is not often thought of on its own. SQL queries can join tables and extract data from tables, and the result is generally a table. So, the practical use for which RDB software is used typically optimized for soing operations with a small number of tables some of which may have a large number of elements.</p>
+
+        <p>RDB systems have datatypes at the atomic (unstructured) level, as RDF and XML will/do. Combination rules tend in RDBs to be loosely enforced, in that a query can join tables by any comlumns which match by datatype – without any check on the semantics. You could for example create a list of houses that have the same number as rooms as an employee’s shoe size, for every employee, even though the sense of that would be questionable.</p>
+
+        <p>The Semantic Web is not designed just as a new data model - it is specifically appropriate to the linking of data of many different models. One of the great things it will allow is to add information relating different databases on the Web, to allow sophisticated operations to be performed across them. https://www.w3.org/DesignIssues/RDFnot.html</p>
+      </blockquote>
+      <p><a href="#fnref:sparqldb" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:timblcar" role="doc-endnote">
+      <p>“For example, one person may define a vehicle as having a number of wheels and a weight and a length, but not foresee a color. This will not stop another person making the assertion that a given car is red, using the color vocabular from elsewhere.” - https://www.w3.org/DesignIssues/RDB-RDF.html <a href="#fnref:timblcar" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:mutingamp2" role="doc-endnote">
+      <p>for example, pin 7 mutes the board, but is still exposed in the 40-pin header. We powered an LED with pin 7 and were absolutely baffled why the sound would mute every time the light went on for a week or so. <a href="#fnref:mutingamp2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
