@@ -23,13 +23,15 @@ Dont want to be prescriptive here, but that we can learn from previous efforts l
 
 !! Some of the tactical vision for this is embedded in the structure and serial order of the piece. There is no reason that the metadata framework described here needs to be intrinsically linked to the p2p data sharing system, and there is no inherent need to first arrive at some state of quasi-standardization, but because many data standards are already in OWL or other RDF system and need some mechanism for making extensions, there is an immediate practical problem solved by implementing a linked data layer on top of a data standard and sharing system. There is little reason for a developer of an experimental library to declare a rich metadata system, but if it was possible to use it to make data output easier and make the system more powerful in the process, we then have a strong incentive.
 
+!! describe need for mutually reinforcing integration and the need for each additional step to be *useful* for the people using and developing the system.
+
 ## Contrasting visions for science
 
 !! through this text I have tried to sketch in parallel the vision of scientific practice as I see it heading now, into a platform capitalist hell, and an alternative, which is not a utopia but it is a place where we save a shitload of labor and (revisit the harms in the introduction). 
 
 ### The worst platform capitalist world
 
-!! ahh huh you know what it is
+- i mean: {% cite pooleySurveillancePublishing2021 %}
 
 ### What we could hope for
 
@@ -39,6 +41,7 @@ Dont want to be prescriptive here, but that we can learn from previous efforts l
 
 - identity!
 - interaction of p2p and linked data system -- lightweight linked metadata can be reproduced more easily than massive raw data, but it needs to be possible to apply permissions and access regulation with more verifiability than just being able to access a unique tracker ID or being pointed to a UUID.
+- some might say we will have a hard time indexing across a bunch of namespaces that people hold individually -- this is actually a good thing. We *want* the system to be difficult to make full scrapes to capture and repackage. We *want* connections to be purposeful and transparent, rather than having arbitrary crawlers sucking up all scientific data.
 
 
 Two outstanding problems on Mastodon hint at a few open challenges to development: feed organization and the fluidity of federation formation, dissolution, and interaction. 

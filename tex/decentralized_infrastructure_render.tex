@@ -159,7 +159,9 @@ spelling!!! and then also double check it's cool to list them!!!):
 \item
   Olivia Guest
 \item
-  NWB \& DANDI teams
+  Irene Knapp
+\item
+  Nire Bryce
 \item
   Kris Chauvin
 \item
@@ -169,7 +171,7 @@ spelling!!! and then also double check it's cool to list them!!!):
 \item
   Danny Mclanahan
 \item
-  Petar
+  Petar Todorov
 \item
   Jeremy Delahanty
 \item
@@ -3616,7 +3618,7 @@ Assuming literally zero abstraction and using the tried-and-true
 ``hardcoded dataset list'' pattern, something like:
 
 \begin{verbatim}
-<#project-name>
+<#my-project>
   a @analysis:project
 
   hasDescription
@@ -4027,7 +4029,7 @@ to reference it:
     @jonny:Lightswitch
       on_delay 1
 
-<#project-name-2>
+<#project-name>
   a @jonny:project-name
   collectedBy @jonny:example-experiment
 \end{verbatim}
@@ -4673,9 +4675,24 @@ wikis is the balance between
 ``\href{http://wiki.c2.com/?DocumentMode}{DocumentMode}'' writing that
 serves as linearly-readable reference material, similar to that of
 Wikipedia, and ``\href{http://wiki.c2.com/?ThreadMode}{ThreadMode}''
-writing that is a nonlinear representation of a conversation. Ward
-Cunningham and other more organizationally-oriented contributors opposed
-ThreadMode (eg.
+writing that is a nonlinear representation of a conversation.
+
+!! order vs contemporaneousness is a fundamental challenge of inventing
+culture in plaintext. The purpose of using a wiki as opposed to other
+technologies that existed at the time like bulletin boards, newsgroups,
+IRC, etc. was that it provided a means of structure (refer to previous
+Ward quote about providing structure for communal development in the
+portland pattern repository group and maybe bring into text to make
+clearer). Tension was always between a desire for long now organization
+but always needed to relate to the immediate communicative and
+organizational needs. Make sure to restructure following reference to
+the utility of talk pages to carry through need for meta-organization in
+addition to any stable knowledge product: the always present need for
+multiple represesentations of the same thought, across timescales and
+interfaces.) http://wiki.c2.com/?WhyBotherToStructure
+
+Ward Cunningham and other more organizationally-oriented contributors
+opposed ThreadMode (eg.
 \href{http://wiki.c2.com/?ThreadModeConsideredHarmful}{ThreadModeConsideredHarmful},
 \href{http://wiki.c2.com/?InFavorOfDissertation}{InFavorOfDissertation})
 for a number of reasons, largely due to the
@@ -4749,6 +4766,13 @@ renders
 differentiation,} with features for threading and annotating discussions
 that aren't present on the main article pages (see
 \href{https://en.wikipedia.org/wiki/Wikipedia:Flow}{Wikipedia:Flow} \cite{WikipediaFlow2021} ).
+
+!! from a starting point of all things being one thing, a la wikis, we
+frame this as functional differentiation in a namespace. We can
+reciprocally frame this as giving a common name to a variety of
+different systems. Talk pages have slowly reinvented forums, but we can
+also think about this problem as making forums and chatrooms and essays
+that are different reflections of a wiki article page.
 
 The complete segregation of discussion to Talk pages is driven by
 Wikipedia's aspirations as an encyclopedia, with reminders that is the
@@ -4967,8 +4991,13 @@ projects to fork have taken their toll on the editorship and culture of
 Wikipedia. The community is drawn into
 \href{https://meta.wikimedia.org/wiki/Conflicting_Wikipedia_philosophies}{dozens}
 of conflicting philosophical camps: the
-\href{https://meta.wikimedia.org/wiki/Special:MyLanguage/Deletionism}{Deletionists}
-vs.~the
+\href{https://meta.wikimedia.org/wiki/Special:MyLanguage/Deletionism}{Deletionists}\footnote{Also
+  see
+  \href{https://meta.wikimedia.org/wiki/Association_of_Wikipedians_Who_Dislike_Making_Broad_Judgments_About_the_Worthiness_of_a_General_Category_of_Article,_and_Who_Are_in_Favor_of_the_Deletion_of_Some_Particularly_Bad_Articles,_but_That_Doesn\%27t_Mean_They_Are_Deletionists}{Association
+  of Wikipedians Who Dislike Making Broad Judgments About the Worthiness
+  of a General Category of Article, and Who Are in Favor of the Deletion
+  of Some Particularly Bad Articles, but That Doesn't Mean They Are
+  Deletionists}} vs.~the
 \href{https://meta.wikimedia.org/wiki/Special:MyLanguage/Inclusionism}{Inclusionists},
 \href{https://meta.wikimedia.org/wiki/Eventualism}{Eventualists}
 vs.~\href{https://meta.wikimedia.org/wiki/Immediatism}{Immediatists},
@@ -5064,6 +5093,915 @@ so far give us some guidelines and motivating examples to build a varied
 space of communication tools to communicate our work, govern the system,
 and grow a shared, cumulative body of knowledge.
 
+!! on to talking about the work being done in this domain, some ux ideas
+from this, and a continuation of the sketch of the system!
+
+
+\end{multicols}
+
+
+\hypertarget{rebuilding-scientific-communication}{%
+\subsubsection{Rebuilding Scientific
+Communication}\label{rebuilding-scientific-communication}}
+
+
+\begin{multicols}{2}
+ !! need introduction!
+
+It's time to start thinking about interfaces. We have sketched our
+system in turtle-like pseudocode, but directly interacting with our
+linking syntax would be labor intensive and technically challenging.
+Instead we can start thinking about tools for interacting with it in an
+abstract way. Beneath every good interface we're familiar with, a data
+model lies in wait. A .docx file is just a zipped archive full of xml,
+so a document with the single word ``melon'' is actually represented
+(after some preamble) like:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}}\KeywordTok{w:body}\NormalTok{\textgreater{}}
+\NormalTok{  \textless{}}\KeywordTok{w:p} 
+\OtherTok{    w14:paraId=}\StringTok{"0667868A"} 
+\OtherTok{    w14:textId=}\StringTok{"50600F77"} 
+\OtherTok{    w:rsidR=}\StringTok{"002B7ADC"} 
+\OtherTok{    w:rsidRDefault=}\StringTok{"00A776E4"}\NormalTok{\textgreater{}}
+\NormalTok{    \textless{}}\KeywordTok{w:r}\NormalTok{\textgreater{}}
+\NormalTok{        \textless{}}\KeywordTok{w:t}\NormalTok{\textgreater{}melon\textless{}/}\KeywordTok{w:t}\NormalTok{\textgreater{}}
+\NormalTok{    \textless{}/}\KeywordTok{w:r}\NormalTok{\textgreater{}}
+\NormalTok{  \textless{}/}\KeywordTok{w:p}\NormalTok{\textgreater{}  }
+\NormalTok{\textless{}/}\KeywordTok{w:body}\NormalTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+Same thing with jupyter notebooks, where a block of code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rating }\OperatorTok{=} \DecValTok{100}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}I rate this dream }\SpecialCharTok{\{}\NormalTok{rating}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\CommentTok{\textquotesingle{}I rate this dream 100\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+is represented as JSON (simplified for brevity):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"cell\_type"}\FunctionTok{:} \StringTok{"code"}\FunctionTok{,}
+  \DataTypeTok{"id"}\FunctionTok{:} \StringTok{"thousand{-}vermont"}\FunctionTok{,}
+  \DataTypeTok{"outputs"}\FunctionTok{:} \OtherTok{[}\FunctionTok{\{}
+    \DataTypeTok{"name"}\FunctionTok{:} \StringTok{"stdout"}\FunctionTok{,}
+    \DataTypeTok{"output\_type"}\FunctionTok{:} \StringTok{"stream"}\FunctionTok{,}
+    \DataTypeTok{"text"}\FunctionTok{:} \OtherTok{[}
+      \StringTok{"I rate this dream 100}\CharTok{\textbackslash{}n}\StringTok{"}
+    \OtherTok{]}
+  \FunctionTok{\}}\OtherTok{]}\FunctionTok{,}
+  \DataTypeTok{"source"}\FunctionTok{:} \OtherTok{[}
+    \StringTok{"rating = 100}\CharTok{\textbackslash{}n}\StringTok{"}\OtherTok{,}
+    \StringTok{"print(f\textquotesingle{}I rate this dream \{rating\}\textquotesingle{})"}
+  \OtherTok{]}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+So we are already used to working with interfaces to data models, we
+just need to think about what kind of interfaces we need for a
+scientific communication system.
+
+Let's pick up where we left off with our linked data and tools. Recall
+that we had a \texttt{project} named \texttt{\#my-project} that made
+reference to our experiment, a few datasets that it produced, and an
+analysis pipeline that we ran on it. We \emph{could} just ship the raw
+numbers from the analysis, wash our hands of it, and walk straight into
+the ocean without looking back, but usually scientists like to take a
+few additional steps to visualize the data and write about what it
+means.
+
+\hypertarget{notebooks-json-ld}{%
+\paragraph{Notebooks (JSON-LD)}\label{notebooks-json-ld}}
+
+Say we have a means of downloading the results of some analysis we have
+already run as a result of \texttt{\#my-project}. Recall that the data
+system we described was a system that links names under our
+\texttt{@jonny} namespace to a content-addressed p2p system, but someone
+has built a package to handle that under the hood. We might do a quick
+writeup in a notebook like this:
+
+!! insert jupyter notebook here!
+
+The .json inside our notebook file would look something like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+   \DataTypeTok{"cell\_type"}\FunctionTok{:} \StringTok{"code"}\FunctionTok{,}
+   \DataTypeTok{"execution\_count"}\FunctionTok{:} \DecValTok{2}\FunctionTok{,}
+   \DataTypeTok{"id"}\FunctionTok{:} \StringTok{"rapid{-}information"}\FunctionTok{,}
+   \DataTypeTok{"metadata"}\FunctionTok{:} \FunctionTok{\{}
+    \DataTypeTok{"scrolled"}\FunctionTok{:} \KeywordTok{true}
+   \FunctionTok{\},}
+   \DataTypeTok{"outputs"}\FunctionTok{:} \OtherTok{[}
+    \StringTok{"..."}
+   \OtherTok{]}\FunctionTok{,}
+   \DataTypeTok{"source"}\FunctionTok{:} \OtherTok{[}
+    \StringTok{"x, y, sizes = get\_data(\textquotesingle{}@jonny:my{-}project:Analysis1\textquotesingle{})"}
+   \OtherTok{]}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+We could make use of another linked data technology,
+\href{https://json-ld.org/}{JSON-LD}, that is an extension and format
+that is interoperable with the RDF links we have been using implicitly
+throughout, to note that this cell contains a reference to our dataset.
+Say we use a \texttt{@comms} ontology to denote the various parts of our
+communication system, and put that in the \texttt{metadata} field:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ErrorTok{"metadata":} \FunctionTok{\{}
+  \DataTypeTok{"scrolled"}\FunctionTok{:} \KeywordTok{true}\FunctionTok{,}
+  \DataTypeTok{"@comms:usesData"}\FunctionTok{:} \StringTok{"@jonny:my{-}project:Analysis1"}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Now say we have another little interface to declare links inline in our
+notebook using
+\href{https://ipython.readthedocs.io/en/stable/interactive/magics.html}{magic
+commands}. We might declare the name of our notebook like
+
+\texttt{\%\%docId\ @jonny:my-project:Writeup}
+
+and then in the cell we indicate that we have plotted our data like
+this:
+
+\begin{verbatim}
+%%cellId Plotty
+%%cellLink @comms:plotsData @jonny:my-project:Analysis1
+\end{verbatim}
+
+So then, say, we indicate in \texttt{@jonny:my-project} that this
+document is related to it, and the links embedded within the notebook
+indicate that it has cells that use a specific result and plot it. If I
+enable sharing from my namespace, it becomes a creditable and
+discoverable part of my scientific work --- a straightforward means of
+breaking up the scientific paper as the unit of knowledge work. Recall
+that our sharing rules weren't just a binary switch, but can indicate
+different people and groups, so we can communicate the intention of
+publication and status of the document\footnote{While we're at it, why
+  not make it explicit by declaring its
+  \href{https://schema.org/creativeWorkStatus}{\texttt{creativeWorkStatus}}
+  as \texttt{Draft}} on an analogue scale from a private demo to our
+lab, a presentation to an institute or conference, or a public part of
+the scientific discourse.
+
+!! also brief nod to other document systems like https://dokie.li/
+
+\hypertarget{forums-feeds}{%
+\paragraph{Forums \& Feeds}\label{forums-feeds}}
+
+Communication doesn't need to be (and shouldn't be) exclusively
+unidirectional statements of fact. Our linked data system that allows us
+to directly references the subcomponents of an experiment, including
+analysis results and visualizations, naturally lends itself to use in a
+\textbf{forum.} In between feed-only mediums like most social media
+platforms and the indexical permanence of a wiki or publication, forums
+are a currently missing piece in most scientific communication systems:
+a way to have longform discussions about science in a public and
+semipermanent environment.
+
+We can start by imagining a forum where people in our discipline go to
+present their work and solicit feedback. We think we really have
+something, and it challenges some widely held previous results:
+
+\begin{quote}
+hi everyone it is me, take a look at my analysis:
+\texttt{{[}{[}@forum:showImage\ @jonny:my-project:Writeup:Plotty{]}{]}}
+!!render inline
+
+I think it raises a number of interesting questions, in particular about
+\texttt{@rival}'s long-standing argument
+\texttt{@rival:hillsToDieOn:earthIsInsideTheSun} I also wonder what this
+means about this conversation we've been having more broadly about
+\texttt{@discipline:whereAreThePlanets}. Anyway, write back soon, xoxo
+\end{quote}
+
+Our rival is polite and professional, so they take the criticism in
+stride and do their own analysis:
+
+\begin{quote}
+Interesting results! I think I will have to revisit that, as well as
+something else I have been working on,
+\texttt{@rival:projects:escapeTheSun}. I wonder what it would look like
+if we used my analysis pipeline instead. I wrote a few conversion nodes
+(\texttt{@rival:nodes:newNode}) that could make our work easier to
+synchronize in the future.
+
+\texttt{{[}{[}@forum:rerunAnalysis\ @jonny:my-project:Analysis1\ @rival:newAnalysis{]}{]}}
+
+\texttt{{[}{[}@forum:completeGraph\ @rival:newAnalysis\ @jonny:my-project:Writeup:Plotty{]}{]}}
+
+\texttt{{[}{[}@forum:showImage\ @rival:newAnalysis:Writeup:Plotty{]}{]}}
+\end{quote}
+
+They have their own compute server set up that listens for commands like
+\texttt{@forum:rerunAnalysis} and so once they post, their server
+downloads the container and re-runs the analysis. \texttt{rerunAnalysis}
+is a link between our two analysis pipelines, so it is also possible to
+cross-apply the other parts of my analysis chain to their reanalysis. In
+this case say my \texttt{@rival} was careful to ensure their pipeline
+returned exactly the same data format as mine did, so it's possible to
+use something like \texttt{completeGraph} to retrace the steps in
+between the results and the plots that were generated. These are, of
+course, speculative features of a speculative forum, but they serve as
+examples of how this kind of federated naming system allows for new
+kinds of tools.
+
+Sharing results, communicating them to the people that might be
+interested, reconsidering and re-analyzing work is an extremely normal
+part of science, but in this parallel universe we have the tools to also
+contribute to a cumulative body of knowledge that is explicit and
+public. If we allowed it, people that were interested in our data would
+be able to find the other ways it was analyzed, visualized, and
+discussed. We have recontextualized ours and our \texttt{@rival}'s
+previously published work and enriched the discussion surrounding our
+discipline's ongoing struggle to understand \texttt{whereAreThePlanets}.
+And we managed to do it incrementally, with a smaller document than an
+occasionally-titanic manuscript might be.
+
+Traditional forums like \href{https://www.phpbb.com/}{phpBB} are housed
+on a single domain and server, and have fixed moderation and structure.
+A forum built on top of a p2p system of linked data designed for
+\textbf{transclusion} and \textbf{ease of forking} could look a little
+different. Rather than independent web service, we could build a forum
+as another peer in our p2p swarm, and the forum could operate as an
+\emph{interface} to the linked data system.
+
+For concreteness, let's call our forum \texttt{@neurochat}. We join the
+forum with our existing identity by sending them a
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-join}{\texttt{@as.Join}}
+request from their login portal, which gives them permission to issue
+certain links and activity on our behalf. \texttt{@neurochat} is a
+minimal forum, a glassy reflection of a platonic ideal projected against
+the cave wall of our laptop. It has a few broad categories like
+``Neuromodulation'' and ``Sensory Neuroscience,'' within which are
+collections of threads full of chronologically-sorted posts. This
+organization is reflective of their internal concept model, so, for
+example, threads within the Neuromodulation category are represented as
+members of \texttt{@neurochat:categories:Neuromod} and so on. When we
+post through their web interface, we create a few links with shared
+custody: We create a
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-note}{\texttt{@as:Note}}
+that is
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-attributedto}{\texttt{@as:attributedTo}}
+us, has the
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-context}{\texttt{@as:context}}
+of the thread we're posting in, and is linked as
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-inreplyto}{\texttt{@as:inReplyTo}}
+the preceding post or any we've quoted. The forum is thus represented as
+a \emph{discourse graph} whose structure is encoded as triplet links,
+but also provides a set of UX tools for viewing and interacting with it.
+Our humble \texttt{@jonny:myproject} now also carries with it references
+to the places where it is discussed.
+
+In the simplest case, the content of our posts could be mirrored between
+the \texttt{@neurochat} server and our own namespace. Say our post
+\texttt{@neurochat:posts:\textless{}post\_id\textgreater{}} is mirrored
+as \texttt{@jonny:neurochat:...}. The embedding within our linked system
+give us a much richer space of negotiation over permissions and the
+status of our writing, though. Since this is a public forum, the server
+might set posts to be able to be seen and re-represented by default. We
+could then imagine a set of federated forums where a single post to one
+of them is then crossposted to several different communities: eg. if our
+work was an interdisciplinary project that was also releant to some
+people from \texttt{@linguisticsChat}. If we have need for a bit more
+privacy, our forum could take into account our own blocks of users and
+federations, eg. if we never wanted our data/posts to be used by any
+\texttt{@amazon}-affiliated federations or by known troll users.
+\texttt{@neurochat} is a very barebones forum, so it would also be
+possible for someone to create their own \emph{fork} of the
+\emph{interface} to provide additional functionality, ux improvements,
+etc. We could then trivially make a \emph{fork} of the \emph{community}
+by picking up our corner of the discourse graph and associating it with
+a new forum in the event of, eg. disagreements with the moderation team,
+the strictures of the category system, etc. Since our posts are in our
+own namespace, we could then transclude them wherever we wanted, eg. in
+a wiki page about a topic as in
+\href{https://anagora.org/node/agora-bot}{agora's twitter bot}.
+
+We have been considering \texttt{@neurochat} as a distinct site with its
+own code and features, presumably located at something like
+\texttt{neurochat.com}, but we can further imagine it in conversation
+with the parallel namespaces of wiki \texttt{Talk:} pages. If we think
+of a paper or some other primary text as the ``Article'' page, we can
+imagine being able to have a \texttt{Forum:} attached to it for further
+discussion. This isn't far-fetched at all: this paper has
+\href{https://gitter.im/scientific-infrastructure/community}{its own
+gitter chatroom}, which is a primarily web-based
+\href{https://matrix.org/}{Matrix} client \cite{hodgsonGitterNowSpeaks2020, hodgsonWelcomingGitterMatrix2020} .
+Combined with transclusion between instances of forums, we could imagine
+the forum for our particular project being indexed in a larger system of
+scientific forums. So rather than a collection of empty rooms and new
+logins to make, our forum is part of a broader scientific conversation,
+but remains under our control.
+
+Forums are just one point in a continuous feature space of communication
+media: nested, chronological, feedlike collections of threads within
+categories. If we were to take forum threads out of their categories,
+pour them into our water supply, and drink whatever came our way like a
+dog drinking out of an algorithmic fire hydrant, we would have Twitter.
+Algorithmic, rather than purposefully organized feed systems have their
+own sort of tachycardic charm. They are effective at what they aim to
+do, presenting us whatever maximizes the amount of time we spend looking
+at them in a sort of hallucinatory timeless now of infinite
+disorganization --- at the expense of desirable features of a
+communication system like a sense of stable, autonomously chosen
+community, perspective on broader conversation, and cumulative
+collective memory.
+
+Still, the emergence of a recognizable ``Science Twitter'' demonstrates
+the depth of need for rapid, informal communication systems in science.
+We should embrace the plurality of registers in scientific
+communication, that there needs to be space for near-amateurs to pose
+naive questions alongside careful and considered formal scholarship.
+That is just to say that we should reflect the division of formality
+from scientific value in what we build, and build systems to support the
+implicit communicative labor of science like whisper networks, mailing
+lists, and groupchats that have always existed. The blending of digital
+cultures, and broadly `non-academic scientists' with traditional
+scientific communication streams is healthy: with appropriate caveats
+for abuse, strawmen, et al.~I don't think it takes that much critical
+analysis to argue that ``shitposts are good, actually, for science.''
+
+A federated, multi-interface, autonomously-hosted system of social media
+systems already exists, and we've been talking about it: the roughly
+construed ``\href{https://fediverse.party/}{Fediverse}'' based (largely)
+on ActivityPub. {!! check rest of document and see how much explanation
+of activitypub is needed here/what can be consolidated. but in any case
+provide some other examples like peertube and agora, dokieli, funkwhale}
+
+Mastodon already implements most of the forum example described above:
+it has its own protocol that
+\href{https://docs.joinmastodon.org/spec/activitypub/}{extends
+activitypub}, but it functions as an interface to a protocol-based
+threaded communication. For example
+\href{https://social.coop/@jonny/107328829457619549}{this post} is
+represented in (abbreviated) JSON:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+    \DataTypeTok{"id"}\FunctionTok{:} \StringTok{"107328829457619549"}\FunctionTok{,}
+    \DataTypeTok{"created\_at"}\FunctionTok{:} \StringTok{"2021{-}11{-}23T22:52:49.044Z"}\FunctionTok{,}
+    \DataTypeTok{"in\_reply\_to\_id"}\FunctionTok{:} \StringTok{"107328825611826508"}\FunctionTok{,}
+    \DataTypeTok{"in\_reply\_to\_account\_id"}\FunctionTok{:} \StringTok{"274647"}\FunctionTok{,}
+    \DataTypeTok{"sensitive"}\FunctionTok{:} \KeywordTok{false}\FunctionTok{,}
+    \DataTypeTok{"spoiler\_text"}\FunctionTok{:} \StringTok{""}\FunctionTok{,}
+    \DataTypeTok{"visibility"}\FunctionTok{:} \StringTok{"public"}\FunctionTok{,}
+    \DataTypeTok{"url"}\FunctionTok{:} \StringTok{"https://social.coop/@jonny/107328829457619549"}\FunctionTok{,}
+    \DataTypeTok{"content"}\FunctionTok{:} \StringTok{"\textless{}p\textgreater{}and making a reply to the post to show the in\_reply\_to and context fields\textless{}/p\textgreater{}"}\FunctionTok{,}
+    \DataTypeTok{"account"}\FunctionTok{:}
+    \FunctionTok{\{}
+        \DataTypeTok{"id"}\FunctionTok{:} \StringTok{"274647"}\FunctionTok{,}
+        \DataTypeTok{"username"}\FunctionTok{:} \StringTok{"jonny"}\FunctionTok{,}
+        \DataTypeTok{"fields"}\FunctionTok{:}
+        \OtherTok{[} \ErrorTok{...} \OtherTok{]}
+    \FunctionTok{\},}
+    \DataTypeTok{"media\_attachments"}\FunctionTok{:} \OtherTok{[]}\FunctionTok{,}
+    \DataTypeTok{"mentions"}\FunctionTok{:} \OtherTok{[]}\FunctionTok{,}
+    \DataTypeTok{"tags"}\FunctionTok{:} \OtherTok{[]}\FunctionTok{,}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+and then rendered by the particular version of Mastodon implemented on
+the host, \href{https://social.coop}{social.coop}. As long as the host
+sends and receives post (and other) data in a compatible format, it can
+render it however it wants, add tools, etc. It becomes trivial to
+imagine, then, a continuum of communication tools between and around
+microblogging sites like Twitter and Mastodon and forums: just add
+categorization, tagging, or systems for whatever need is revealed by the
+normal dynamics of use.
+
+The problem with an endless homogenous feed is filtering and
+prioritizing what to show. The lack of control over feed content is not
+an accident: it's the product --- ready access to a hundred million
+hamsters on personalized content wheels with whatever combination of
+micro and macrotargeting you could want. Nothing seems out of the
+ordinary when you have no control over what you see. Reciprocally,
+there's no way aside from herding a flock of alternate accounts to
+direct what you say to different audiences. Mastodon can filter posts at
+a federation level\footnote{Only other servers that the host server
+  federates with are listed}, with hashtags, and lets users make lists
+of peers, but is a proudly chronological feed. No algorithms allowed.
+Using it has a learning curve, as when you start you see nothing, but
+before you know it you can't find anything in the pile. Forums threads,
+within categories are also typically chronologically sorted, but because
+they are identified with a \emph{subject} rather than by the
+\emph{person} who started the thread typically have longer lifespans and
+more findable.
+
+!! There is no single answer to systems of discovery, but somewhere
+between explicit categorical organization, person and subject-centric
+threads, semantic annotation, and making smaller p2p federations is a
+recipe for a broad, continuous, and cumulative scientific discussion.
+Instead of casting about for advice within our information bubbles, we
+might aspire to having a \emph{place} to \emph{ask} the people who
+\emph{might know}. Instead of starting another new slack with a few
+hundred posts that then vanishes entirely, we might imagine being able
+to fluidly form and dissolve communities and be able to build on their
+history.
+
+\hypertarget{annotation-overlays}{%
+\paragraph{Annotation \& Overlays}\label{annotation-overlays}}
+
+We can't expect the entire practice of academic publishing to transition
+to cell-based text editors anytime soon. In the same way that we
+discussed frameworks for integrating heterogeneous analytical and
+experimental tools, we need some means of \textbf{bridging}
+communication tools and \textbf{overlays} for interacting with
+communication formats. Bridging communication protocols is a relatively
+well-defined project, eg. the \href{https://matrix.org/bridges/}{many
+ways to use Matrix} with
+\href{https://matrix.org/bridges/\#slack}{Slack},
+\href{https://matrix.org/bridges/\#email}{email},
+\href{https://matrix.org/bridges/\#signal}{Signal}, etc. The overlays
+for websites, pdfs, and other more static media that we'll discuss are
+means for annotation and bidirectional transclusion: including pieces of
+the work elsewhere, and representing inclusions elsewhere on the work.
+In representing the intrinsically interactive and social nature of
+reading (eg. see \cite{jacksonMarginaliaReadersWriting2001} ),
+overlays naturally lend themselves to imagining new systems to replace
+traditional mechanisms for peer-review and criticism. We don't need to
+look far to find a well-trod interface for annotation overlays: we
+shouldn't underrate the humble highlighter.
+
+\href{https://hypothes.is}{Hypothes.is}, enabled on this page, lets
+readers highlight and annotate any webpage with a
+\href{https://chrome.google.com/webstore/detail/hypothesis-web-pdf-annota/bjfhmglciegochdpefhhlphglcehbmek}{browser
+extension} or javascript bookmarklet. At its heart is a system for
+making anchors, references to specific places in a text, and the means
+of matching them even when the text changes or the reference is
+ambiguous \cite{csillagFuzzyAnchoring2013} . For example,
+\href{https://hypothes.is/a/oLw4uk7_Eeyt5N-FVlE3fw}{this anchor} has
+three features, a \texttt{RangeSelector} that anchors it given the
+position within the paragraph, an absolute
+\texttt{TextPositionSelector}, and a contextual
+\texttt{TextQuoteSelector} that you can see with an
+\href{https://api.hypothes.is/api/annotations/oLw4uk7_Eeyt5N-FVlE3fw}{API
+call}.
+
+On its own, it serves to give a \texttt{Talk:} page to every website.
+With an integration into a system of linked data and identity, it also
+serves as a means of extending the notion of bidirectional transclusion
+described above to work that is not explicitly formatted for it. Most
+scientific work is represented as \texttt{.pdf}s rather than
+\texttt{.html} pages, and hypothes.is
+\href{https://web.hypothes.is/help/annotating-locally-saved-pdfs/}{already
+supports} annotating PDFs. With an integration into pdf reading
+software, for example
+\href{https://www.zotero.org/support/pdf_reader_preview}{Zotero's
+(currently beta) PDF reader}, there would be a relatively low barrier to
+integrating collaborative annotation into existing workflows and
+practices.
+
+The dream of public peer review with public annotation is relatively
+straightforward, but so are the nightmares of a scientific literature
+swamped with trolls. Talking about our work on a forum with a
+``forward'' reference, of the work linked to by the forum or on PubPeer
+feels fine, but the ``reverse'' reference of an annotation appearing on
+your page that links to a forum discussion is significantly more
+challenging --- ``who gets to annotate my work?''
+
+Framed as an annotation system, the answer given by the current model of
+peer review is ``usually three, usually anonymous people.'' Except the
+document and annotations are usually private until the author revises
+the document to the point where no annotations remain, and the peer
+reviewers become invisible along with the social nature of the review.
+The notion that the body of scientific knowledge is best curated by
+passing each paper through a gauntlet of three anonymous reviewers,
+after which it becomes Fact and nearly as a rule never changed is
+ridiculous on its face.
+
+Digital publishing makes imagining the social regulation of science as a
+much more broadly based and continuous process much easier, but the
+problem of moderation remains. Some movement has been made towards
+public peer review: eLife has integrated hypothes.is since 2016 \cite{ELifePartnersHypothes2016} , and bioRxiv had decided to
+integrate it as well in 2017 \cite{dwhlyBioRxivSelectsHypothesis2017}  before getting cold feet about the genuinely hard problem of
+moderation (among others \cite{heatherstainesPreprintServicesGather2018} ) and instead adopting the
+more publisher-friendly TRiP system of refereed peer-reviews \cite{nateangellAnnouncingTRiPTransparent2019} .
+
+Asking every author to become a forum moderator and constantly
+patrolling the annotations of their papers sounds bad, as does the work
+of maintaining block and allowlists for every individual account. While
+a full description of the norms and tools needed to maintain healthy
+public peer review is out of scope here, the system of autonomous users
+being able to organize into overlapping federations described throughout
+\emph{provides a space for having that conversation.} Authors could, for
+example, allow the display of annotations from a professional society
+like \texttt{@sfn} that has a code of conduct and moderation team, or
+annotations associated with comments on \texttt{@pubpeer}, or from a
+looser organization of colleagues and other \texttt{@neurofriends}.
+Conversely, being able to make annotations and comments from different
+federations gives us a rough proxy to different registers of
+communication and preserves the plurality of our expression. While my
+official \texttt{@university}-affiliated federation is restrained and
+academic, my \texttt{@neurotrans} alt might be a little more
+freewheeling. A protocol for federating peers that we first described in
+the context of sharing data has the more general consequence of creating
+a means of negotiating and experimenting with different systems of
+social norms and governance.
+
+Social tools like these are in the hypothes.is team's
+\href{https://web.archive.org/web/20211015213849/https://github.com/hypothesis/product-backlog/projects/6}{development
+roadmap}, but I intend it as a well-developed and mature example of a
+general type of technology\footnote{cf.~the
+  \href{https://genius.com}{genius.com} overlay.}. Many scientists are
+already familiar with another implementation: the comment and review
+features of Google Docs and Microsoft Word. We already use these tools
+to work together to improve our work, but there's no reason the process
+should stop at the time of publication. Combined with a system for
+valuing and publishing smaller units of work, the process of public peer
+review starts to look a lot healthier as a continuous process of
+communication and collective mentorship instead of the current system of
+a gladitorial thumbs up/down indictment on years of your life.
+
+\hypertarget{trackers-wikis}{%
+\paragraph{Trackers \& Wikis}\label{trackers-wikis}}
+
+The final set of social interfaces is effectively the ``body'' of social
+technology. So far our infrastructural systems have an unsatisfyingly
+hollow center: there's a lot of talk about tool frameworks and protocols
+for linked data, but \emph{where is it? what does it look like?} We can
+pick up the threads left hanging from our description of
+\protect\hyperlink{archives-need-communities}{bittorrent trackers} and
+knit them in with those from \protect\hyperlink{the-wiki-way}{the wiki
+way} and describe how systems for surfacing procedural and technical
+knowledge work can also serve as a basis of searching, indexing, and
+governing the rest of the system.
+
+Bittorrent trackers serve to index data and organize a curation
+community --- we need that too, let's start there. Say we have a tracker
+that indexes a particular format of data, as
+\href{https://hub.dandiarchive.org}{\texttt{@dandihub}} does with
+\texttt{@nwb}. We can search for data using all the fields of NWB, but
+don't want to rely just on the peers that are active, so the role of the
+tracker is to maintain a searchable index of metadata that refers to the
+datasets shared by peers. We want to be interoperable with other
+trackers that index compatible data, so let's say that's implemented as
+a database that supports
+\href{https://www.w3.org/TR/sparql11-federated-query/}{SPARQL federated
+queries}\footnote{Tim Berners-Lee describes the distinction between
+  traditional relationship databases and RDF databases: \textgreater{}
+  Relational database systems, manage RDF data, but in a specialized
+  way. In a table, there are many records with the same set of
+  properties. An individual cell (which corresponds to an RDF property)
+  is not often thought of on its own. SQL queries can join tables and
+  extract data from tables, and the result is generally a table. So, the
+  practical use for which RDB software is used typically optimized for
+  soing operations with a small number of tables some of which may have
+  a large number of elements. \textgreater{} \textgreater{} RDB systems
+  have datatypes at the atomic (unstructured) level, as RDF and XML
+  will/do. Combination rules tend in RDBs to be loosely enforced, in
+  that a query can join tables by any comlumns which match by datatype
+  -- without any check on the semantics. You could for example create a
+  list of houses that have the same number as rooms as an employee's
+  shoe size, for every employee, even though the sense of that would be
+  questionable. \textgreater{} \textgreater{} The Semantic Web is not
+  designed just as a new data model - it is specifically appropriate to
+  the linking of data of many different models. One of the great things
+  it will allow is to add information relating different databases on
+  the Web, to allow sophisticated operations to be performed across
+  them. https://www.w3.org/DesignIssues/RDFnot.html} where requests can
+be spread across many databases. For concreteness, let's assume that the
+results of our search are some content-addressed reference to a resource
+on a p2p network like a
+\href{https://en.wikipedia.org/wiki/Magnet_URI_scheme}{magnet link}.
+
+We need some kind of \emph{client} that can download files and run in
+the background to share them. We can start with the image of a
+bittorrent client like \href{https://www.qbittorrent.org/}{qBittorrent}
+that does just that, but we also need a means of making the link
+declarations that we did before in pseudocode, and it makes sense for
+the client to handle that as well. Let's say our client handles our
+identity, either by a self-created cryptographic hash as in IPFS\cite{benetIPFSContentAddressed2014} , or attested by some trusted
+third party as in ActivityPub. Instead of our identity being tied to the
+services provided by the server, however, we can think of this as a
+peer-to-peer ActivityPub where we can directly send and receive messages
+containing our links and negotiating our connections. As an interface,
+say we have a typical file browser that we can set permissions for
+files, group them into projects, and share them with others. Since the
+system consists of links, an editor that allows users to visualize and
+edit a hierarchical graph of nodes and (typed) edges:
+
+!! input network editing React figure from presentation here!
+
+So say it's time for us to share a dataset. We click the `share' button
+in our client which sends an ActivityPub-style message saying we have
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-create}{\texttt{@as:Create}}d
+a new resource to the other peers indicated in our permission settings.
+This message both uploads the metadata for our dataset to the, say,
+\texttt{@dandihub} tracker, but since \texttt{@dandihub} is an
+equivalent peer in our system, and modeling off ActivityPub we are able
+to have ``friends,'' we can notify other researchers directly. The
+tracker can host our metadata pointing to our data so it's available
+from any other peer that's hosting it even if we go offline, but peers
+can query us directly to enumerate all the links, datasets, etc. we have
+allowed them to.
+
+What about handling format extensions not included in the base
+\texttt{@nwb} format? Since we own the representation of our data, we
+can imagine a strict base \texttt{@nwb}-only tracker, but also think of
+\texttt{@dandihub} that has built tools to handle extensions. So
+alongside our dataset we can upload an extension like our
+\texttt{@jonny:SolarEphys} example that derives from
+\texttt{@nwb:ElectricalSeries}, and the tracker then can display our
+extension as well as all the other extensions that branch off the
+various points of the standard. At this point we can imagine a spray of
+thousands of trivially different extensions to handle overlapping data
+types, which is where most data stores typically stop, but let's explore
+community systems built on forums and wikis for schema resolution as an
+example of \emph{distributed governance.}
+
+!! figure of lots of leaf nodes hanging off ElectricalSeries
+
+Wikis are not magical systems of infinite pluralistic knowledge, but one
+thing they do well is provide the means of developing durable but
+plastic systems norms and policies for a wide variety of social systems.
+Butler, Joyce and Pike, emphasis mine:
+
+\begin{quote}
+Providing tools and infrastructure mechanisms that support the
+development and management of policies is an important part of creating
+social computing systems that work. {[}\ldots{]}
+
+When organizations invest in {[}collaborative{]} technologies,
+{[}\ldots{]} their first step is often to put in place a collection of
+policies and guidelines regarding their use. \textbf{However, less
+attention is given to the policies and guidelines created by the groups
+that use these systems which are often left to ``emerge''
+spontaneously.} The examples and concepts described in this paper
+highlight the complexity of rule formation and suggest that support
+should be provided to help collaborating groups create and maintain
+effective rulespaces.
+
+{[}\ldots{]} \textbf{The true power of wikis lies in the fact that they
+are a platform that provides affordances which allow for a wide variety
+of rich, multifaceted organizational structures.} Rather than assuming
+that rules, policies, and guidelines are operating in only one fashion,
+wikis allow for, and in fact facilitate, the creation of policies and
+procedures that serve a wide variety of functions \cite{butlerDonLookNow2008} 
+\end{quote}
+
+So between discussion on the forum or in \texttt{Talk:}-like pages, we
+can imagine a set of norms and policies evolving from the community on
+this particuar tracker, perhaps unlike other trackers. In this case we
+can imagine someone wanting to clean up some near-equivalent extensions
+by starting a thread in the forum to discuss the proposed changes. Say
+we want to merge \texttt{@jonny:Extension1} and
+\texttt{@rumbly:Extension2} -- the forum notifies us that someone is
+talking about our extension so we have a chance to weigh in. If we reach
+some sort of amicable consensus where we agree to supercede it with a
+merged \texttt{@forum:Extension3} type, the forum could send us a
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-offer}{\texttt{@as:Offer}}
+to
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-update}{\texttt{@as:Update}}
+our extension, which should we
+\href{https://www.w3.org/TR/activitystreams-vocabulary/\#dfn-accept}{\texttt{@as:Accept}}
+from our client then notifies all the downstream consumers of our data
+and extension that its format has changed.
+
+What if consensus fails? Since every link in the system is underneath a
+\texttt{@namespace}, links never have a pretense of ``correctness,'' but
+have the ontological status of a linguistic gesture: links are
+``something someone said'' that we're free to disagree with\footnote{``For
+  example, one person may define a vehicle as having a number of wheels
+  and a weight and a length, but not foresee a color. This will not stop
+  another person making the assertion that a given car is red, using the
+  color vocabular from elsewhere.'' -
+  https://www.w3.org/DesignIssues/RDB-RDF.html}. In that case, the
+\texttt{@forum:Extension3} exists as ``someone said these are
+equivalent, but I don't necessarily agree'' and the forum is free to
+represent its cleaned up representation while preserving the plurality
+of expression in our data format. If I want to go to greener pastures to
+a forum that has policies and culture closer to mine, it's relatively
+straightforward to federate with a new tracker and move my data there
+since I still own it all.
+
+Let's pick up scientific communication in linked data
+\protect\hyperlink{forums--feeds}{forums} in conversation with the
+\protect\hyperlink{archives-need-communities}{social incentives for
+curation} of trackers. This system as described is a forum where
+everyone in the conversation has access to the data and results in
+question reminiscent of What.cd and access to music. While
+upload/download ratio might not be the best social incentive system for
+scientific trackers, there are plenty of others.
+
+For example, we briefly mentioned a Folding@Home-like system of donated
+computing resources, and separately described embedding analyses in a
+forum by calling our own compute resources. Together, a tracker could
+implement a compute ratio where to use shared computing resources you
+need to contribute a certain amount of your own. The bounty system where
+peers would donate their excess upload in exchange for uploading a rare
+album on what.cd could translate to one where someone who has donated a
+lot of excess compute time could donate it for someone uploading or
+collecting a particular dataset.
+
+Another tracker more focused on sharing and reviewing results might make
+a review ratio system, where for every review your work receives you
+need to review n other works. This would effectively function as a
+\textbf{reviewer co-op} that can make the implicit labor of reviewing
+explicit, and develop systems for tying the reviews required for
+frequent publication with explicit norms around reciprocal reviewing.
+
+Forum and feedlike media are good for organizing continuous
+conversation, but wikis serve as a more durable knowledge store for
+cumulative reference information. We don't need to imagine wikis as
+being text-only, with wiki formatting used just to change the appearance
+of text, but as a means of declaring and manipulating semantic links.
+For example,
+\href{https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki}{Semantic
+MediaWiki} is an extension to Wikipedia's wiki system that extends
+\texttt{{[}{[}Wikilinks{]}{]}} to be able to declare semantic links like
+\texttt{{[}{[}linkType::Target{]}{]}}. For example, if our project had a
+wiki page like \texttt{{[}{[}My\ Project{]}{]}} we could say it
+\texttt{{[}{[}hasType::@analysis:project{]}{]}} and
+\texttt{{[}{[}usesDataset::@jonny:mydata1{]}{]}} etc. These wikis have
+the capability to not only organize knowledge, but also serve as a
+flexible means of declaring new programming interfaces and assigning
+credit.
+
+As a live example, let's consider the
+\href{https://wiki.auto-pi-lot.com}{Autopilot Wiki} at
+\url{https://wiki.auto-pi-lot.com}. This wiki has a set of categories,
+properties, templates, and forms for describing the additional
+contextual technical knowledge needed to use
+\href{https://docs.auto-pi-lot.com/en/latest/}{Autopilot}, a framework
+for behavioral experiments \cite{saundersAutopilotAutomatingBehavioral2019} . The semantic structure
+of the links is useful for designing interfaces based on complex
+queries, for example ``find me all the
+\href{https://wiki.auto-pi-lot.com/index.php/Category:Passive_Component}{\texttt{passive\ electronic\ components}}
+that have a
+\href{https://wiki.auto-pi-lot.com/index.php/Category:Guide}{\texttt{guide}}
+that describes
+\href{https://wiki.auto-pi-lot.com/index.php/Property:Uses_Tool}{\texttt{using}}
+a
+\href{https://wiki.auto-pi-lot.com/index.php?title=Property\%3AUses+Tool\&limit=20\&offset=0\&filter=Soldering+Iron}{\texttt{soldering\ iron}}
+to build
+\href{https://wiki.auto-pi-lot.com/index.php?title=Property\%3AModality\&limit=20\&offset=0\&filter=Illumination}{\texttt{lighting}}
+for a behavioral
+\href{https://wiki.auto-pi-lot.com/index.php?title=Property\%3AModality\&limit=20\&offset=0\&filter=Enclosures}{\texttt{enclosure}}''.
+Each page can have a
+\href{https://wiki.auto-pi-lot.com/index.php/Autopilot_Behavior_Box\#tab-content-facts-list}{rich
+semantic description} with multimodal links describing tools, CAD
+diagrams, associated DOIs, software dependencies, etc. Links can be
+declared \texttt{{[}{[}linkModality::inline{]}{]}} as a fluid part of
+writing, but also can be submitted by using forms (eg for new
+\href{https://wiki.auto-pi-lot.com/index.php/Form:Part}{Parts}) with
+structured, autocompleting properties to lower syntax barriers for new
+users.
+
+The ``soft durability'' of wikis makes space to discuss ``off-label''
+uses for hardware common across many disciplines that typically exists
+as lab lore rather than documented. For example, an early-adopter of
+Autopilot sent me a message saying they weren't able to get ultrasound
+from an
+\href{https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2}{amplifier}
+that was advertised up to 192kHz. Upon further study, we found there was
+a 20kHz low-pass output filter and were able to find and remove the
+components and leave a trail of breadcrumbs for future users. Though
+this is a simple example, it is emblematic of the kind of knowledge work
+that currently has no good means of communication or professional
+valuation.
+
+The blend of programmatic and natural language descriptions makes it
+easy to contribute to, but also makes knowledge organization improve the
+software that uses it. The
+\href{https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2}{Amp2} page
+lists which of the GPIO pins of a raspberry pi it depends on, so
+Autopilot will be extended to check for conflicting hardware
+configurations\footnote{for example, pin 7 mutes the board, but is still
+  exposed in the 40-pin header. We powered an LED with pin 7 and were
+  absolutely baffled why the sound would mute every time the light went
+  on for a week or so.}. Better: since it's possible for anyone to make
+new templates, forms, categories, and pages, the wiki can be used to
+build new programming interfaces entirely. Autopilot's
+\href{https://docs.auto-pi-lot.com/en/latest/guide/plugins.html}{plugin
+system} is built this way, where one submits a
+\href{https://wiki.auto-pi-lot.com/index.php/Autopilot_Plugins}{plugin}
+with a
+\href{https://wiki.auto-pi-lot.com/index.php/Form:Autopilot_Plugin}{form}
+which then makes it immediately available to any Autopilot user.
+
+The addition of structured contextual knowledge to our system gives us
+an almost comical degree of provenance: from conversations in a forum
+that reference a paper, that links to its analysis, data, experimental
+software, all the way back to the properties of the solenoids used in
+the experiment. It's not just provenance for provenance's sake as extra
+labor, every step is \emph{useful} to the experimenter. I give the
+example of the Autopilot wiki for concreteness, but the broader point is
+that forums and wikis can serve the role of negotiating systems of
+expression for different parts of the system.
+
+The same combination of trackers, forums, and wikis has a natural
+application to analysis pipelines. Ideally, to move beyond fragile code
+reduplicated in every lab, we need some means of reaching consensus on a
+few canonical implementations of fundamental analysis operations. Given
+a system where analysis chains are linked to the formats and
+subdisciplines they are used with, we can map a semantically dense map
+of the analysis paths used in a research domain. In neurophysiology:
+``What are the different ways spikes are extracted and analyzed from
+extracellular electrophysiology recordings?'' Having the ability to
+discuss and contextualize different analytical methods elevates all the
+exasperated methods critiques and exhortations to ``not use this
+statistically unsound technique'' into something \emph{structurally
+expressed in the practice of science.} See all the \texttt{@neurotheory}
+threads about this specific analysis chain, or the \texttt{@methodswiki}
+page that summarizes this general category of techniques.
+
+We're now in a place where we can address the problem of a cumulative
+knowledge system for science directly. In many (most?) scientific
+epistemologies, scientific results do not directly reflect some truth
+about reality, but instead instead are embedded in a system of meaning
+through a process of active interpretation (eg. \cite{meehlTheoreticalRisksTabular1978} ). The interpretation of every
+scientific result is left as the responsibility of the authors to
+recreate and a few reviewers to evaluate, which would be a monumental
+amount of labor given the velocity of papers, so researchers do the best
+they can engaging with a small amount of research. Since the space of
+argumentation is built from scratch each time from incomplete
+information, there's no guarantee of making cumulative progress on a
+shared set of theories, and most fall far from the supposed ideal of
+hard refutation and can have long lives as ``zombie theories.'' van
+Rooij and Baggio describe the ``collecting seashells'' approach of
+gathering many results and leaving the theory for later with an analogy:
+
+\begin{quote}
+``In a sense, trying to build theories on collections of effects is much
+like trying to write novels by collecting sentences from randomly
+generated letter strings. Indeed, each novel ultimately consists of
+strings of letters, and theories should ultimately be compatible with
+effects. Still, the majority of the (infinitely possible) effects are
+irrelevant for the aims of theory building, just as the majority of
+(infinitely possible) sentences are irrelevant for writing a novel.''
+\cite{vanrooijTheoryTestHow2021} 
+\end{quote}
+
+They and others (eg. \cite{guestHowComputationalModeling2021} )
+have argued for an iterative process of experiments informed by theory
+and modeling that confirm or constrain future models. Their articulation
+of the need for multiple registers of formality and rigidity is
+particularly resonant here. van Rooij and Baggio again:
+
+\begin{quote}
+``The first sketch of an f need not be the final one; what matters is
+how the initial f is constrained and refined and how the rectification
+process can actually drive the theory forward. Theory building is a
+creative process involving a dialectic of divergent and convergent
+thinking, informal and formal thinking.'' \cite{vanrooijTheoryTestHow2021} 
+\end{quote}
+
+Let's turn our provenance chain into a circle: a means of linking
+theories to analytical results and interpretation as well as
+experimental design and tooling. Say the theorists have a wiki. They
+start making some loose schematic descriptions of their theories and
+linking them to different experimental results that constrain, affirm,
+refute, or otherwise interact with them. These could be forward or
+backlinks: declared by the original author or by someone else describing
+their results.
+
+
+\begin{itemize}
+
+\item
+  theorists have a wiki
+\item
+  structurally express theory, but even if not, link to different
+  experimental results variations:
+\item
+  see how the evidence for a theory is collected -- what papers,
+  datasets, and analysis chains were used to support it?
+\item
+  see what happens to the impact of a dataset when analyzed with some
+  new method
+\item
+\item
+  recall this is a fluid consensus, and each different wiki can be
+  interpreted in context as the product of the particular community it
+  comes from.
+\end{itemize}
+
+!! remember these are all just interfaces to our linked data protocol.
+
+What we've described is a nonutopian, fully realizable path to making a
+scientific system that is fully negotiable through the entire
+theoretical-empirical loop with minor development of existing tools and
+minimal adjustment of scientific practices. No clouds, no journals, a
+little rough around the edges but collectively owned by all scientists.
+
+We still need a little more strategy\ldots{}
+
 
 \end{multicols}
 
@@ -5103,88 +6041,6 @@ though a treatment of the journal system is officially out of scope.
 
 !! cite eLife EIC's comments on scientific credit assignment systems
 
-\hypertarget{rebuilding-scientific-communication}{%
-\subsubsection{Rebuilding Scientific
-Communication}\label{rebuilding-scientific-communication}}
-
-!! skohub! https://skohub.io/
-
-!! take stock of our communication technology, we publish pdfs in
-journals, have science twitter, and then a bunch of private slacks and
-smalltime stuff??? Science is fundamentally a communicative process,
-literally every part fo the system that I have described has been built
-aroudn the ability to express the structure of things, the order of
-things, how it relates to other things and \emph{that's communication
-baby.} The system we've imagined so far takes us so far from forums and
-the ultradominant feed -\textgreater{} shallow thread-based
-communication that we're used to though. This is a system where we can
-have continuous dialogue about linked topics, be able to branch and see
-the reflections and subtle variations on ideas in the same place that we
-have our data, analysis, and tools.
-
-!! theory wiki example from presentation
-
-!! discovery of papers for scientists as well as general public, being
-able to trace history.
-
-\begin{quote}
-Though frequently viewed as a product to finish, it is dynamic
-ontologies with associated process-building activities designed,
-developed, and deployed locally that will allow ontologies to grow and
-to change. And finally, the technical activity of ontology building is
-always coupled with the background work of identifying and informing a
-broader community of future ontology users. \cite{bowkerInformationInfrastructureStudies2010} 
-\end{quote}
-
-!! stop sweating about computational accuracy and completeness. the only
-danger is a system that makes appeal to perfection and promises accuracy
-like those sold in golden foil by the platform capitalists. if we are
-conceptualizing this appropriately as a \emph{system of communication}
-where particular results are intended to be \emph{interpreted in
-context} then we would treat computational errors and semantic
-inaccuracies like we do with \emph{language}: like a \emph{joke}.
-
-\begin{quote}
-For example, one person may define a vehicle as having a number of
-wheels and a weight and a length, but not foresee a color. This will not
-stop another person making the assertion that a given car is red, using
-the color vocabular from elsewhere. -
-https://www.w3.org/DesignIssues/RDB-RDF.html
-\end{quote}
-
-\begin{quote}
-Relational database systems, manage RDF data, but in a specialized way.
-In a table, there are many records with the same set of properties. An
-individual cell (which corresponds to an RDF property) is not often
-thought of on its own. SQL queries can join tables and extract data from
-tables, and the result is generally a table. So, the practical use for
-which RDB software is used typically optimized for soing operations with
-a small number of tables some of which may have a large number of
-elements.
-
-RDB systems have datatypes at the atomic (unstructured) level, as RDF
-and XML will/do. Combination rules tend in RDBs to be loosely enforced,
-in that a query can join tables by any comlumns which match by datatype
--- without any check on the semantics. You could for example create a
-list of houses that have the same number as rooms as an employee's shoe
-size, for every employee, even though the sense of that would be
-questionable.
-
-The Semantic Web is not designed just as a new data model - it is
-specifically appropriate to the linking of data of many different
-models. One of the great things it will allow is to add information
-relating different databases on the Web, to allow sophisticated
-operations to be performed across them.
-https://www.w3.org/DesignIssues/RDFnot.html
-\end{quote}
-
-!! caution about slipping into techno-utopianism even here, we need the
-UI and tooling here to be simple to not only use but also build on. yes
-that does mean yet another framework! but this one is the most mythical
-yet, because I don't really know what it would look like! but bad UI has
-killed lots of projects, eg. IPFS (though it's not dead just slow!)
-https://macwright.com/2019/06/08/ipfs-again.html
-https://blog.bluzelle.com/ipfs-is-not-what-you-think-it-is-e0aa8dc69b
 
 \end{multicols}
 
@@ -5288,6 +6144,43 @@ world}\label{the-worst-platform-capitalist-world}}
 reintroduce some of the frustrations that might occur in the system. yno
 there are limitations but shit would actually genuinely be useful.
 
+\hypertarget{limitations}{%
+\subsection{Limitations}\label{limitations}}
+
+\begin{itemize}
+
+\item
+  identity!
+\item
+  interaction of p2p and linked data system -- lightweight linked
+  metadata can be reproduced more easily than massive raw data, but it
+  needs to be possible to apply permissions and access regulation with
+  more verifiability than just being able to access a unique tracker ID
+  or being pointed to a UUID.
+\end{itemize}
+
+Two outstanding problems on Mastodon hint at a few open challenges to
+development: feed organization and the fluidity of federation formation,
+dissolution, and interaction.
+
+By default, and affirmed by maybe an understandable reaction against
+algorithmic feed organization, Mastodon is a mostly chronological list
+of posts from people that you follow and that are in your host server's
+federated networks. While this transparency is reassuring that we aren't
+being microtargeted for advertising, it does make the system
+overwhelming to navigate, and splitting accounts multiple times to
+accomodate is common. A system of semantic organization is a distinct
+third way between algorithmic and chronological organization. Building a
+system that goes beyond moderator-specified category systems familiar in
+forums towards a sensible interface for navigating tangled concept
+hierarchies is an open challenge, as far as I'm aware.
+
+An intermediate goal might be to give finer control over groups, but
+groups are currently a complicated question between fediverse
+implementations \cite{StandardizingActivityPubGroups2021} .
+
+!! portability of identity, necessary negotiation over partitioning of
+communities. 
 \end{multicols}
 
 

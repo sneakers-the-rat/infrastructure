@@ -252,22 +252,21 @@ They and others (eg. {% cite guestHowComputationalModeling2021 %}) have argued f
 
 Let's turn our provenance chain into a circle: a means of linking theories to analytical results and interpretation as well as experimental design and tooling. Say the theorists have a wiki. They start making some loose schematic descriptions of their theories and linking them to different experimental results that constrain, affirm, refute, or otherwise interact with them. These could be forward or backlinks: declared by the original author or by someone else describing their results. 
 
----
-<div id="draftmarker"><h1># draftmarker</h1><br>~ everything past here is purely draft placeholder text ~  </div>
----
+In the most optimistic case, where we have a full provenance chain from analytical results back through experimental practice, we have a means of formally evaluating the empirical contingencies that serve as the evidence for scientific theories. For a given body of experimental data bearing on a theoretical question, what kinds of evidence exist? As the state of the art in analytical tooling changes, how are the interpretations of prior results changed by different analyses? How do different experimental methodologies influence the form of our theories? The points of conflicting evidence and unevaluated predictions of theory are then a means of distributed coordination of future experiments: guided by a distributed body of evidence and interpretation, rather than the amount of the literature base individual researchers are able to hold in mind, what are the most informative experiments to do?
 
-- theorists have a wiki
-- structurally express theory, but even if not, link to different experimental results
-variations:
-- see how the evidence for a theory is collected -- what papers, datasets, and analysis chains were used to support it?
-- see what happens to the impact of a dataset when analyzed with some new method
-- 
-- recall this is a fluid consensus, and each different wiki can be interpreted in context as the product of the particular community it comes from.
+The pessimistic case where we only have scientific papers in their current form to evaluate is not that much worse --- it requires the normal reading and evaluation of experimental results of a review paper, but the process of annotating the paper to describe its experimental and analytical methods as a shared body of links makes that work cumulative. Even more pessimistic, where for some reason we aren't able to formulate theories even as rough schematics but just link experimental results to rough topic domains is still vastly better than the current state of disorganization and proprietary indices. 
 
+For both researchers and the public at large a meta-organization of experimental results changes the way we interact with scientific literature. It currently takes many years of implicit knowledge to understand any scientific subfield: finding canonical papers, knowing which researchers to follow, which keywords to search in table of contents alerts. Being able to find a collection of papers about an object of research, as well as the conversations at all levels of formality that contextualize them --- to say nothing of building a world without paywalls --- would profoundly lower barriers to access to primary scientific knowledge for *everyone.* 
 
-!! remember these are all just interfaces to our linked data protocol.
+It is worth pausing to compare a world where we boisterously and fluidly organize knowledge explicitly as a collective project of understanding with one where knowledge organization is weaponized into a product that lets us get ahead of our competitors without necessarily improving our understanding of the body of scientific literature. One sounds like science, the other sounds like industry capture.
+
+All the technological-social tools described here are not a definitive set of tools needed for scientific communications infrastructure, but *examples of interfaces to a linked data system.* Using JSON-LD notebooks to enable us to embed links in our writing to be mentioned or transcluded elsewhere. Using a forum as a means of creating linked discussions about experimental results and analyses. Using linked microblogging tools for a rapid, informal means of organizing and discussing knowledge. Using all of the above to represent the many expressions of a work across multiple linked namespaces. Using annotation tools to create anchors and links for referencing links in other communication media. Using tracker-like and wiki-like systems to interact with, negotiate about, and govern a wily body of autonomously declared links.
+
+Each is intended to be mutable, easy to iterate on, uncontrolling, mutually coordinated. Each interacts with and augments the previously described systems for shared data, analytical, and experimental tools. The purpose of this section is not to advocate a specific set of technologies, but to describe a base layer of familiar technologies for an indefinite future of possible interfaces for representing and interacting with a body of shared knowledge. 
 
 What we've described is a nonutopian, fully realizable path to making a scientific system that is fully negotiable through the entire theoretical-empirical loop with minor development of existing tools and minimal adjustment of scientific practices. No clouds, no journals, a little rough around the edges but collectively owned by all scientists.
+
+!! brief system summary
 
 We still need a little more strategy...
 
