@@ -61,7 +61,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-31-27"> 2021-11-27</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/7b840ad"><code>7b840ad</code></a>
+            <time datetime="2021-13-30"> 2021-11-30</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/6a95198"><code>6a95198</code></a>
         </div>
     </div>
     <div class="trimlink">
@@ -1786,35 +1786,90 @@ For healthcare professionals, Elsevier’s clinical solutions include Interactiv
 
 <p>Let’s turn our provenance chain into a circle: a means of linking theories to analytical results and interpretation as well as experimental design and tooling. Say the theorists have a wiki. They start making some loose schematic descriptions of their theories and linking them to different experimental results that constrain, affirm, refute, or otherwise interact with them. These could be forward or backlinks: declared by the original author or by someone else describing their results.</p>
 
-<hr />
-<div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
-<hr />
+<p>In the most optimistic case, where we have a full provenance chain from analytical results back through experimental practice, we have a means of formally evaluating the empirical contingencies that serve as the evidence for scientific theories. For a given body of experimental data bearing on a theoretical question, what kinds of evidence exist? As the state of the art in analytical tooling changes, how are the interpretations of prior results changed by different analyses? How do different experimental methodologies influence the form of our theories? The points of conflicting evidence and unevaluated predictions of theory are then a means of distributed coordination of future experiments: guided by a distributed body of evidence and interpretation, rather than the amount of the literature base individual researchers are able to hold in mind, what are the most informative experiments to do?</p>
 
-<ul>
-  <li>theorists have a wiki</li>
-  <li>structurally express theory, but even if not, link to different experimental results
-variations:</li>
-  <li>see how the evidence for a theory is collected – what papers, datasets, and analysis chains were used to support it?</li>
-  <li>see what happens to the impact of a dataset when analyzed with some new method</li>
-  <li></li>
-  <li>recall this is a fluid consensus, and each different wiki can be interpreted in context as the product of the particular community it comes from.</li>
-</ul>
+<p>The pessimistic case where we only have scientific papers in their current form to evaluate is not that much worse — it requires the normal reading and evaluation of experimental results of a review paper, but the process of annotating the paper to describe its experimental and analytical methods as a shared body of links makes that work cumulative. Even more pessimistic, where for some reason we aren’t able to formulate theories even as rough schematics but just link experimental results to rough topic domains is still vastly better than the current state of disorganization and proprietary indices.</p>
 
-<p>!! remember these are all just interfaces to our linked data protocol.</p>
+<p>For both researchers and the public at large a meta-organization of experimental results changes the way we interact with scientific literature. It currently takes many years of implicit knowledge to understand any scientific subfield: finding canonical papers, knowing which researchers to follow, which keywords to search in table of contents alerts. Being able to find a collection of papers about an object of research, as well as the conversations at all levels of formality that contextualize them — to say nothing of building a world without paywalls — would profoundly lower barriers to access to primary scientific knowledge for <em>everyone.</em></p>
+
+<p>It is worth pausing to compare a world where we boisterously and fluidly organize knowledge explicitly as a collective project of understanding with one where knowledge organization is weaponized into a product that lets us get ahead of our competitors without necessarily improving our understanding of the body of scientific literature. One sounds like science, the other sounds like industry capture.</p>
+
+<p>All the technological-social tools described here are not a definitive set of tools needed for scientific communications infrastructure, but <em>examples of interfaces to a linked data system.</em> Using JSON-LD notebooks to enable us to embed links in our writing to be mentioned or transcluded elsewhere. Using a forum as a means of creating linked discussions about experimental results and analyses. Using linked microblogging tools for a rapid, informal means of organizing and discussing knowledge. Using all of the above to represent the many expressions of a work across multiple linked namespaces. Using annotation tools to create anchors and links for referencing links in other communication media. Using tracker-like and wiki-like systems to interact with, negotiate about, and govern a wily body of autonomously declared links.</p>
+
+<p>Each is intended to be mutable, easy to iterate on, uncontrolling, mutually coordinated. Each interacts with and augments the previously described systems for shared data, analytical, and experimental tools. The purpose of this section is not to advocate a specific set of technologies, but to describe a base layer of familiar technologies for an indefinite future of possible interfaces for representing and interacting with a body of shared knowledge.</p>
 
 <p>What we’ve described is a nonutopian, fully realizable path to making a scientific system that is fully negotiable through the entire theoretical-empirical loop with minor development of existing tools and minimal adjustment of scientific practices. No clouds, no journals, a little rough around the edges but collectively owned by all scientists.</p>
+
+<p>!! brief system summary</p>
 
 <p>We still need a little more strategy…</p>
 
 <h3 id="credit-assignment">Credit Assignment</h3>
 
-<p>!!The critical anchor of the entire scientific communication system is the system of professional incentives that make it so nothing outside of a journal counts as science. Blog posts are nice and all, but they aren’t <em>science.</em> One way of approaching this problem is convincing, en masse, a majority of researchers to boycott journals or value other mediums in hiring decisions. That seems pretty unlikely for all the reasons all collective action problems are. Instead of approaching it prestige-side first, we can approach from the credit assignment side. !! make it easy for someone else to use your work and then by using it you have some verifiable record that other people like and use your stuff! !! this appeals to a much broader base of people not traditionally in the scientific value system, so they might be interested. !! also lets us value different kinds of scientific labor, like mentorship, advice, debugging, etc. without necessarily needing to gamify it. !! Deep linking and long provenance lets us see our impact on the broader scientific world, which is a much more valuable and informative than shitty journal rankings. !! people always talk about how shitty journal metrics are, and so that’s an opening! !!</p>
+<blockquote>
+  <p>The reason we are (once again) having a fight about whether the producers of publicly available/published data should be authors on any work using said data is that we have a completely dysfunctional system for crediting the generation of useful data. <a class="citation" href="#eisenReasonWeAre2021">[190]</a></p>
 
-<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[190, 1]</a></p>
+  <p>The same is true for people who generate useful reagents, resources and software. <a class="citation" href="#eisenSameTruePeople2021">[191]</a></p>
 
-<p>!! essentially all questions about “changing the system of science” inevitably lead to credit assignment, but in our system it is the same as provenance. We can give credit to all work from data production, analysis tooling, technical work, theoretical work, and so on that we currently do with just author lists. brief nod to semantic publishing, though a treatment of the journal system is officially out of scope.</p>
+  <p>And like everything, the real answer lies on how we assess candidates for jobs, grants, etc… So long as people treat authorship as the most/only valuable currency, this debate will fester. But it’s in our power to change it. - Michael Eisen, EIC eLife <a class="citation" href="#eisenEverythingRealAnswer2021">[192]</a></p>
+</blockquote>
 
-<p>!! cite eLife EIC’s comments on scientific credit assignment systems</p>
+<p>The critical anchor for changes to the scientific infrastructural systems is the system of professional incentives that structure it. As long as the only thing that has professional value is authorship in journal papers, the system stays: Blog posts, analysis pathways, wikis, and forums are nice and all, but they don’t count as <em>science.</em> !! All the acrimony around the use of the h-index is rooted in authorship and citation count as the sole means of credit assignment.</p>
+
+<p>Imagining different systems of credit assignment is easy: just make a new DOI-like identifier for my datasets that I can put on my CV. Integrating systems of credit assignment into commonly-held beliefs about what is valuable is harder. One way to frame solutions to the credit assignment problem is as a collective action problem: everyone/funding agencies/hiring committees just need to <em>decide</em> that publishing data, reviewing, criticism et al. is valuable without any serious changes to broader scientific infrastructure. Another is to <em>displace</em> the system of credit assignment by aligning the interests of the broad array of researchers, technicians, and students that it directly impacts to build an alternative.</p>
+
+<p>The sheer quantity of work that is currently uncredited in science is a structural advantage to any more expansive system of credit assignment. The strategic question is how to design a system that aligns the self-interest of everyone with uncredited work to build it.</p>
+
+<p>That’s what I’ve tried to do here. Everything that exists in this system is attributable to one or many equal peers. Rather than attempting to be an abstract body of knowledge, clean and tidy, that conceals its social underpinnings, we embrace its messy and pluralistic personality. We have <em>not</em> been focused on some techno-utopian dream of automatically computing over a system of universally linked data, but on representing and negotiating over a globally discontinuous body of work and ideas linked to people and groups. We have <em>not</em> been imagining new platforms and services to suit a limited set of needs, but on a set of tools and frameworks to let people work together to cumulatively build what they need.</p>
+
+<p>Credit is woven throughout this system: the means of using someone else’s work are tied to crediting it. While credit is currently meted out by proprietary journal aggregators like google scholar, citeseer, or web of science; downloading a dataset, using an analysis tool, and so on should be directly attributed to a digital identity that you control.</p>
+
+<p>The first-order effects for the usual suspects in need of credit are straightforward: counting the number of analyses and papers our datasets are cited in, seeing the type of experiments our software was used to perform. Control over the means of credit assignment also opens the possibility of surfacing the work that happens invisibly but is nonetheless essential for the normal operation of research. Why shouldn’t the animal care technician receive credit for caring for the animals that were involved with a study, its results, and its impact on science more broadly?</p>
+
+<p>Contextual technical knowledge is an example that warrants special consideration. Why would anyone spend the time to describe the fine technical details of how to use a type of motor, or which solenoids last the longest, or how to solder this particular type of circuit board?</p>
+
+<hr />
+<div id="draftmarker"><h1># draftmarker</h1><br />~ everything past here is purely draft placeholder text ~  </div>
+<hr />
+
+<p>Let’s say we’re using a semantic wiki for our lab or institute, and use it to coordinate work locally and document lab practices. Let’s also say that we</p>
+
+<ul>
+  <li>integration with experimental tools makes it easier to do experiment (eg. solenoid polarity, autoconfiguring hardware)
+    <ul>
+      <li>say we were using a lab wiki, that could then be transcluded into a broader set of wikis. So just by doing your normal work and documenting basic practices for your lab, you can choose to federate them with maybe a methods wiki.</li>
+    </ul>
+  </li>
+  <li>then network effects of contribution
+    <ul>
+      <li>someone references our documentation in their plugin which is linked to their paper. Your work helped them do their experiment! you should get credit for that.</li>
+      <li>derivative works are then that much easier, so someone remixes your part and then builds a plugin that references that. You had some part in the lineage.</li>
+    </ul>
+  </li>
+  <li>first-order
+    <ul>
+      <li>beyond shitty authorship metrics.</li>
+      <li>crediting new kinds of work</li>
+      <li>also under your control, how you want to represent yourself across multiple domains</li>
+    </ul>
+  </li>
+  <li>network-effects
+    <ul>
+      <li>who uses your work? who uses your work who uses your work?</li>
+      <li>what impact does your work have on a broad range of scientific questions? eg. how did your forum discussion of how to use a solenoid contribute to someone’s paper that then changed the state of the field?</li>
+    </ul>
+  </li>
+  <li>critical for getting the system on its feet and maintaining it
+    <ul>
+      <li>the labor for maintaining the system can’t be invisible!</li>
+      <li>positive feedback loop hopefully!</li>
+    </ul>
+  </li>
+</ul>
+
+<p>!! make it easy for someone else to use your work and then by using it you have some verifiable record that other people like and use your stuff! !! this appeals to a much broader base of people not traditionally in the scientific value system, so they might be interested. !! also lets us value different kinds of scientific labor, like mentorship, advice, debugging, etc. without necessarily needing to gamify it. !! Deep linking and long provenance lets us see our impact on the broader scientific world, which is a much more valuable and informative than shitty journal rankings. !! people always talk about how shitty journal metrics are, and so that’s an opening! !!</p>
+
+<p>the work of maintaining the system can’t be invisible, read &amp; cite <a class="citation" href="#classeDistributedInfrastructureSupport2017">[193, 1]</a></p>
 
 <h1 id="conclusion">Conclusion</h1>
 
@@ -1835,7 +1890,7 @@ variations:</li>
 <blockquote>
   <p>For everyone to have the opportunity to be involved in a given group and to participate in its activities the structure must be explicit, not implicit. The rules of decision-making must be open and available to everyone, and this can happen only if they are formalized. This is not to say that formalization of a structure of a group will destroy the informal structure. It usually doesn’t. But it does hinder the informal structure from having predominant control and make available some means of attacking it if the people involved are not at least responsible to the needs of the group at large.</p>
 
-  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[191]</a></p>
+  <p>The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just “do their own thing.” This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don’t want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  <a class="citation" href="#freemanTyrannyStucturelessness1970">[194]</a></p>
 </blockquote>
 
 <h2 id="tactics--strategy">Tactics &amp; Strategy</h2>
@@ -1844,13 +1899,17 @@ variations:</li>
 
 <p>!! Some of the tactical vision for this is embedded in the structure and serial order of the piece. There is no reason that the metadata framework described here needs to be intrinsically linked to the p2p data sharing system, and there is no inherent need to first arrive at some state of quasi-standardization, but because many data standards are already in OWL or other RDF system and need some mechanism for making extensions, there is an immediate practical problem solved by implementing a linked data layer on top of a data standard and sharing system. There is little reason for a developer of an experimental library to declare a rich metadata system, but if it was possible to use it to make data output easier and make the system more powerful in the process, we then have a strong incentive.</p>
 
+<p>!! describe need for mutually reinforcing integration and the need for each additional step to be <em>useful</em> for the people using and developing the system.</p>
+
 <h2 id="contrasting-visions-for-science">Contrasting visions for science</h2>
 
 <p>!! through this text I have tried to sketch in parallel the vision of scientific practice as I see it heading now, into a platform capitalist hell, and an alternative, which is not a utopia but it is a place where we save a shitload of labor and (revisit the harms in the introduction).</p>
 
 <h3 id="the-worst-platform-capitalist-world">The worst platform capitalist world</h3>
 
-<p>!! ahh huh you know what it is</p>
+<ul>
+  <li>i mean: <a class="citation" href="#pooleySurveillancePublishing2021">[195]</a></li>
+</ul>
 
 <h3 id="what-we-could-hope-for">What we could hope for</h3>
 
@@ -1861,13 +1920,14 @@ variations:</li>
 <ul>
   <li>identity!</li>
   <li>interaction of p2p and linked data system – lightweight linked metadata can be reproduced more easily than massive raw data, but it needs to be possible to apply permissions and access regulation with more verifiability than just being able to access a unique tracker ID or being pointed to a UUID.</li>
+  <li>some might say we will have a hard time indexing across a bunch of namespaces that people hold individually – this is actually a good thing. We <em>want</em> the system to be difficult to make full scrapes to capture and repackage. We <em>want</em> connections to be purposeful and transparent, rather than having arbitrary crawlers sucking up all scientific data.</li>
 </ul>
 
 <p>Two outstanding problems on Mastodon hint at a few open challenges to development: feed organization and the fluidity of federation formation, dissolution, and interaction.</p>
 
 <p>By default, and affirmed by maybe an understandable reaction against algorithmic feed organization, Mastodon is a mostly chronological list of posts from people that you follow and that are in your host server’s federated networks. While this transparency is reassuring that we aren’t being microtargeted for advertising, it does make the system overwhelming to navigate, and splitting accounts multiple times to accomodate is common. A system of semantic organization is a distinct third way between algorithmic and chronological organization. Building a system that goes beyond moderator-specified category systems familiar in forums towards a sensible interface for navigating tangled concept hierarchies is an open challenge, as far as I’m aware.</p>
 
-<p>An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations <a class="citation" href="#StandardizingActivityPubGroups2021">[192]</a>.</p>
+<p>An intermediate goal might be to give finer control over groups, but groups are currently a complicated question between fediverse implementations <a class="citation" href="#StandardizingActivityPubGroups2021">[196]</a>.</p>
 
 <p>!! portability of identity, necessary negotiation over partitioning of communities.</p>
 
@@ -2062,9 +2122,13 @@ variations:</li>
 <li><span id="meehlTheoreticalRisksTabular1978">187. Meehl PE (1978) Theoretical Risks and Tabular Asterisks: Sir Karl, Sir Ronald, and the Slow Progress of Soft Psychology. <i>Journal of Consulting and Clinical Psychology</i>, 46(4):806–834. https://doi.org/10.1037/0022-006X.46.4.806</span></li>
 <li><span id="vanrooijTheoryTestHow2021">188. van Rooij I, Baggio G (2021) Theory Before the Test: How to Build High-Verisimilitude Explanatory Theories in Psychological Science. <i>Perspectives on Psychological Science</i>, :1745691620970604. https://doi.org/10.1177/1745691620970604</span></li>
 <li><span id="guestHowComputationalModeling2021">189. Guest O, Martin AE (2021) How Computational Modeling Can Force Theory Building in Psychological Science. <i>Perspectives on Psychological Science</i>, :1745691620970585. https://doi.org/10.1177/1745691620970585</span></li>
-<li><span id="classeDistributedInfrastructureSupport2017">190. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
-<li><span id="freemanTyrannyStucturelessness1970">191. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li>
-<li><span id="StandardizingActivityPubGroups2021">192. (2021) Standardizing on ActivityPub Groups - ActivityPub. <i>SocialHub</i>, https://socialhub.activitypub.rocks/t/standardizing-on-activitypub-groups/1984</span></li></ol>
+<li><span id="eisenReasonWeAre2021">190. Eisen M (2021) The Reason We Are (Once Again) Having a Fight about Whether the Producers of Publicly Available/Published Data Should Be Authors on Any Work Using Said Data Is That We Have a Completely Dysfunctional System for Crediting the Generation of Useful Data. <i>@mbeisen</i>, https://twitter.com/mbeisen/status/1459911286242701313</span></li>
+<li><span id="eisenSameTruePeople2021">191. Eisen M (2021) The Same Is True for People Who Generate Useful Reagents, Resources and Software. <i>@mbeisen</i>, https://twitter.com/mbeisen/status/1459911287773691906</span></li>
+<li><span id="eisenEverythingRealAnswer2021">192. Eisen M (2021) And like Everything, the Real Answer Lies on How We Assess Candidates for Jobs, Grants, Etc\ldots So Long as People Treat Authorship as the Most/Only Valuable Currency, This Debate Will Fester. But It’s in Our Power to Change It. <i>@mbeisen</i>, https://twitter.com/mbeisen/status/1459911289380093956</span></li>
+<li><span id="classeDistributedInfrastructureSupport2017">193. Classe T, Braga R, David JMN, Campos F, Arbex W (2017) A Distributed Infrastructure to Support Scientific Experiments. <i>Journal of Grid Computing</i>, 15(4):475–500. https://doi.org/10.1007/s10723-017-9401-7</span></li>
+<li><span id="freemanTyrannyStucturelessness1970">194. Freeman J (1970) The Tyranny of Stucturelessness. https://www.jofreeman.com/joreen/tyranny.htm</span></li>
+<li><span id="pooleySurveillancePublishing2021">195. Pooley J (2021) Surveillance Publishing. https://doi.org/10.31235/osf.io/j6ung</span></li>
+<li><span id="StandardizingActivityPubGroups2021">196. (2021) Standardizing on ActivityPub Groups - ActivityPub. <i>SocialHub</i>, https://socialhub.activitypub.rocks/t/standardizing-on-activitypub-groups/1984</span></li></ol>
 
 <h1 id="footnotes">Footnotes</h1>
 
@@ -2189,7 +2253,7 @@ variations:</li>
     <li id="fn:wardinvite" role="doc-endnote">
       <p>The initial motivations are actually stunningly close to the kinds of communication and knowledge organization problems we are still solving today (even in this piece)</p>
       <blockquote>
-        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[194]</a></p>
+        <p>Cunningham had developed a database to collect the contributions of the listserv members. He had noticed that the content of the listserv tended to get buried, and therefore the most recent post might be under-informed about posts which came before it. The way around this problem was to collect ideas in a database, and then edit those ideas rather than begin anew with each listserv posting. Cunningham’s post states that “The plan is to have interested parties write web pages about the People, Projects and Patterns that have changed the way they program. Short stories that hint at patterns are welcome too.” As to the rhetorical expectations, Cunningham added “The writing style is casual, like email or netnews, but doesn’t have to be so repetitive since the things being discussed don’t disappear. Think of it as a moderated list where anyone can be moderator and everything is archived. It’s not quite a chat, still, conversation is possible.” - <a class="citation" href="#cummingsWhatWasWikiWhy2009">[198]</a></p>
       </blockquote>
       <p><a href="#fnref:wardinvite" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
