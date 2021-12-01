@@ -158,7 +158,6 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 {% include_relative _sections/2_8_wikis.md %}
 
 
-
 ### Rebuilding Scientific Communication
 
 {% include_relative _sections/2_9_communication.md %}
@@ -170,6 +169,18 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 # Conclusion
 
 {% include_relative _sections/3_0_conclusion.md %}
+
+## Tactics & Strategy
+
+{% include_relative _sections/3_1_strategy.md %}
+
+## Limitations 
+
+{% include_relative _sections/3_2_limitations.md %}
+
+## Contrasting Visions of Science
+
+{% include_relative _sections/3_3_contrasting_visions.md %}
 
 # References
 

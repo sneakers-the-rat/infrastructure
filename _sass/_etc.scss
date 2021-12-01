@@ -42,3 +42,22 @@
 		
 	}
 }
+
+.draft-text {
+	color: #f00; 
+	padding: 20px; 
+	border: 1px red dashed; 
+	border-radius: 20px; 
+	background-color:#fff5f5;
+	margin-left: 20px;
+
+	&::before {
+		content: "draft!";
+		position: relative;
+		left:-50px;
+		height: 0px;
+		width:0px;
+		display: inline-block;
+		writing-mode: sideways-lr;
+	}
+}

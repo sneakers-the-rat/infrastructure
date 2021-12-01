@@ -1,0 +1,1 @@
+effectively by building a social system for negotiating over LD, we're making a system for continuously creating protocols lmao, and merging the concepts of protocol and ontology. 

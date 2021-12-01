@@ -1,7 +1,7 @@
 
 Where do we go from here? 
 
-The decentralized infrastructure I will describe here is similar to previous notions of "grass-roots" science articulated within systems neuroscience {% cite mainenBetterWayCrack2016 %} but has broad and deep history in many domains of computing. My intention is to provide a more prescriptive scaffolding for its design and potential implementation as a way of painting a picture of what science could be like. This sketch is not intended to be final, but a starting point for further negotiation and refinement.
+The decentralized infrastructure I will describe here is similar to previous notions of "grass-roots" science articulated within systems neuroscience {% cite mainenBetterWayCrack2016 %}, or "small tech" in the web development world {% cite balkanSmallTechnologyFoundation %}, but has broad and deep history in many domains of computing. My intention is to provide a more prescriptive scaffolding for its design and potential implementation as a way of painting a picture of what science could be like. This sketch is not intended to be final, but a starting point for further negotiation and refinement.
 
 Throughout this section, when I am referring to any particular piece of software I want to be clear that I don't intend to be dogmatically advocating that software *in particular*, but software *like it* that *shares its qualities* --- no snake oil is sold in this document. Similarly, when I describe limitations of existing tools, without exception I am describing a tool or platform I love, have learned from, and think is valuable --- learning from something can mean drawing respectful contrast!
 
