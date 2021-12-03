@@ -1,4 +1,4 @@
-\documentclass[10pt]{tufte-book}
+\documentclass[notoc]{tufte-book}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{microtype}
@@ -16,6 +16,8 @@
   \smallcapsspacing{\scshape\MakeTextLowercase{#1}}%
 }
 \renewcommand{\textsc}[1]{\smallcapsspacing{\textsmallcaps{#1}}}
+
+\setcounter{tocdepth}{3}
 
 % \usepackage{jls_base}
 \title{Decentralized Infrastructure for Neuroscience}
@@ -72,15 +74,12 @@
 
 \pagebreak
 
-Trimmings {from the main document for future pieces}
+\tableofcontents
 
-\{\% include status.html \%\} \{\% include annotation.html \%\}
+\clearpage
 
-\{\% include toc\_start.html \%\} 1. table of contents \{:toc\} \{\%
-include toc\_end.html \%\}
+\mainmatter
 
-\href{https://jon-e.net/infrastructure/tex/decentralized_infrastructure_render.pdf}{\textbf{PDF
-VERSION}}
 
 \emph{This is a draft document, so if you do work that you think is
 relevant here but I am not citing it, it's 99\% likely that's because I
@@ -221,7 +220,7 @@ spelling!!! and then also double check it's cool to list them!!!):
 \end{itemize}
 
 
-\section{Introduction}
+\chapter{Introduction}
 
 
 
@@ -355,10 +354,10 @@ modification for distant fields.
 
 
 
-\section{The State of Things}
+\chapter{The State of Things}
 
 
-\subsection{The Costs of being
+\section{The Costs of being
 Deinfrastructured}
 
 
@@ -540,7 +539,7 @@ our tools.
 
 
 
-\subsection{(Mis)incentives in Scientific
+\section{(Mis)incentives in Scientific
 Software}
 
 Systems Neuro {specific problems for infrastructure}
@@ -1039,7 +1038,7 @@ journal our papers go into.
 
 
 
-\subsection{The Ivies, Institutes, and ``The Rest of
+\section{The Ivies, Institutes, and ``The Rest of
 Us''}
 
 
@@ -1311,7 +1310,7 @@ capturing and making use of each other's knowledge and labor.
 
 
 
-\section{A Draft of Decentralized Scientific
+\chapter{A Draft of Decentralized Scientific
 Infrastructure}
 
 
@@ -1337,7 +1336,7 @@ learned from, and think is valuable --- learning from something can mean
 drawing respectful contrast!
 
 
-\subsection{Design Principles}
+\section{Design Principles}
 
 I won't attempt to derive a definition of decentralized systems from
 base principles here, but from the systemic constraints described above,
@@ -1581,7 +1580,7 @@ infrastructure for systems neuroscience as three objectives:
 
 
 
-\subsection{Shared Data}
+\section{Shared Data}
 
 
 \subsection{Formats as Onramps}
@@ -3233,7 +3232,7 @@ superset of centralized servers with centralized schemas!
 
 
 
-\subsection{Shared Tools}
+\section{Shared Tools}
 
 
 
@@ -4320,7 +4319,7 @@ within, negotiate over, and govern the system.
 
 
 
-\subsection{Shared Knowledge}
+\section{Shared Knowledge}
 
 
 
@@ -6068,7 +6067,7 @@ though a treatment of the journal system is officially out of scope.
 
 
 
-\section{Conclusion}
+\chapter{Conclusion}
 
 
 
@@ -6077,7 +6076,7 @@ though a treatment of the journal system is officially out of scope.
 !! description of a new kind of scientific consensus \emph{en toto}
 
 
-\subsection{Shared Governance}
+\section{Shared Governance}
 
 !! the broad and uncertain future here is how this system will be
 goverened and how it will be oeprated. Though we design a system that
@@ -6126,7 +6125,7 @@ group projects that interest them. \citep{freemanTyrannyStucturelessness1970}
 \end{quote}
 
 
-\subsection{Tactics \& Strategy}
+\section{Tactics \& Strategy}
 
 !! How do we make this happen? Practical recommendations for various
 stakeholders
@@ -6145,7 +6144,7 @@ it to make data output easier and make the system more powerful in the
 process, we then have a strong incentive.
 
 
-\subsection{Contrasting visions for
+\section{Contrasting visions for
 science}
 
 !! through this text I have tried to sketch in parallel the vision of
@@ -6167,7 +6166,7 @@ reintroduce some of the frustrations that might occur in the system. yno
 there are limitations but shit would actually genuinely be useful.
 
 
-\subsection{Limitations}
+\section{Limitations}
 
 \begin{itemize}
 

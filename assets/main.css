@@ -329,6 +329,10 @@ hypothesis-sidebar /deep/ .Buckets__list { background-color: 0; }
 
 .trimlink a { background-color: white; box-shadow: 5px 5px black; padding: 5px; margin: 5px; font-family: "Cutive Mono", Menlo, Monaco, monospace; }
 
+.draft-text { color: #f00; padding: 20px; border: 1px red dashed; border-radius: 20px; background-color: #fff5f5; margin-left: 20px; }
+
+.draft-text::before { content: "draft!"; position: relative; left: -50px; height: 0px; width: 0px; display: inline-block; writing-mode: sideways-lr; }
+
 .rdfa { display: inline; background-color: rgba(1, 1, 1, 0.05); transition: background-color 0.5s, box-shadow 1s, filter 0.5s; }
 
 .rdfa h3 { background-color: rgba(1, 1, 1, 0.05); }
