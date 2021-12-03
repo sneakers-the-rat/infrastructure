@@ -32,4 +32,9 @@ It's true that some of these extended metrics are already possible to compute. O
 
 Reaching a critical mass of linked tools and peers is not altogether necessary for them to be useful, but critical mass may trigger a positive feedback loop for the development of the system itself. Even in isolation, a semantic wiki is a better means of assigning credit than a handful of google docs, experimental tools that automatically annotate data are better than a pile of `.csv` files, etc. Bridging two tools to share credit is better than one tool in isolation, and more people using them are better than fewer for any given user of the system. Lessons learned from STS, Computer-Supported Cooperative Work (CSCW), pirates, wikis, forums, et al. make it clear that *the labor of maintaining and building the system can't be invisible.* 
 
-<div class="draft-text">Find citations and quote for ^^. Fortunately building a system for credit assignment should allow you to be credited! Conclude by talking about building more just system of valuing science, and that's one of the critical means by which any infrastructure might displace hegemonic systems!</div>
+<div class="draft-text">Find citations and quote for ^^. Fortunately building a system for credit assignment should allow you to be credited! Conclude by talking about building more just system of valuing science, and that's one of the critical means by which any infrastructure might displace hegemonic systems! 
+</div>
+
+<div class="draft-text">
+We want to be able to do stuff like "these 30 messages were me mentoring," without having any external access to the messages. This is a social question -- you can say you want to call the messages mentoring, ask the other person, and they can accept. It's an open question to me whether this is good, i don't personally like gamifying things, but this is a basic byproduct of people being able to negotiate over a system of meaning. At the point when it's possible for someone to say `@myname:mentorship` and then send `@menteename` a request to send an "affirm" message, then this is possible. 
+</div>

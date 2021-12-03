@@ -1,4 +1,4 @@
-
+d
 # scraps 
 
 !! this is also an ethical disposition: contrast data standardization and archiving being cumbersome, difficult, and with no personal return forcing people to do it by caveats in grant proposals or requirements in publication. vs. wanting to curate data because it gives you access to tools, makes you part of a community, and you can see the positive impacts of a growing cumulative datastore that doesn't feel like a vacant warehouse. We don't need to resort to authoritarianism to get to 'open science' as has plagued the open science community as of late, devolving into a purity contest and widescale bullying and shit!!
