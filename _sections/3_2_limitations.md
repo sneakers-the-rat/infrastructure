@@ -1,3 +1,5 @@
+We can start with the big one: people could ignore this piece entirely and it is dead on arrival. 
+
 
 - identity!
 - interaction of p2p and linked data system -- lightweight linked metadata can be reproduced more easily than massive raw data, but it needs to be possible to apply permissions and access regulation with more verifiability than just being able to access a unique tracker ID or being pointed to a UUID.

@@ -13,9 +13,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-npm-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-npmv1-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-npm-
+            ${{ runner.os }}-npmv1-
       - name: Install Node
         uses: actions/setup-node@v2
         with:
@@ -30,9 +30,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}-${{ hashFiles('_config.yml') }}
+          key: ${{ runner.os }}-gemsv1-${{ hashFiles('**/Gemfile') }}-${{ hashFiles('_config.yml') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
+            ${{ runner.os }}-gemsv1-
       - name: Main Jekyll Build
         uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
         with:
