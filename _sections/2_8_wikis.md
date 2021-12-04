@@ -86,6 +86,16 @@ Transclusion naturally brings with it a set of additional challenges: Who can tr
 
 To cherrypick a few lessons from more than 25 years of thought from tens of thousands of people: The differing models of document vs. thread modes and separate article vs. talk pages show us that using **namespaces** is an effective way to bridge multimodal expression on the same topic across [percerceived timescales](https://communitywiki.org/wiki/TimeInWikis) or other conflicting communicative needs. This is especially true when the namespaces have **functional differentiation** like the tools for threading conversations on Wikipedia Talk pages and the parsing and code generation tools of Templates. These namespaces need to be **visibly crosslinked** both to preserve the social character of knowledge work, but also to provide a means of credit assignment and tool development between namespaces. Any communication system needs to be designed to **prioritize ease of leaving** and **ease of forking** such that a person can take their work and represent it on some new system or start a new group to encourage experimentation in governance models and technologies. One way of accomplishing these goals might be to build a system around **social transclusion** such that work across many systems and domains can be linked into a larger body of work without needing to create a system that becomes too large to fork. The need for communication across namespaces and systems, coupled with transclusion further implies the need for **bidirectional transclusion** so that in addition to being able to transclude something in a document, there is visible representation of work being transcluded (eg. commented on, used in an analysis, etc.) by allowed peers and federations. 
 
+<div class="draft-text">
+Tim BL says as much re: functional differentiation:
+/
+> The technology should define mechanisms wherever possible without defining policy. 
+>
+>because we recognize here that many properties of URIs are social rather than technical in origin.
+>
+>Therefore, you will find pointers in hypertext which point to documents which never change but you will also find pointers to documents which change with time. You will find pointers to documents which are available in more than one format. You will find pointers to documents which look different depending on who is asking for them. There are ways to describe in a machine or human readable way exactly what sort of repeatability you would expect from a URI, but the architecture of the Web is that that is for something for the owner of the URI to determine. https://www.w3.org/DesignIssues/Axioms.html
+</div>
+
 These lessons, coupled with those from private bittorrent trackers, linked data communities, and the p2p federated system we have sketched so far give us some guidelines and motivating examples to build a varied space of communication tools to communicate our work, govern the system, and grow a shared, cumulative body of knowledge.
 
 !! on to talking about the work being done in this domain, some ux ideas from this, and a continuation of the sketch of the system!
