@@ -191,4 +191,6 @@ Like the preceding description of the basic peer-to-peer system, this joint meta
 
 !! close this section by taking a larger view - {% cite langilleBioTorrentsFileSharing2010 %} DANDI is in on the p2p system, as is kachery-p2p!! p2p systems already plenty in use, academic torrents, biotorrents, libgen on IPFS !! the proof of their utility is in the pudding, arguably when i've been talkiung about 'centralized servers' what i'm actually talking about content delivery networks, which are effectively p2p systems -- they just own all the peers.
 
+!! get the stuff from tim BL on the vision of the internet from weaving the web, contrast fixed ontology with this. and then also include the quote about the practical work of the ontology building needing to be continuous and social.
+
 !! note that this is all fully compatible with existing systems and is a superset of centralized servers with centralized schemas! 

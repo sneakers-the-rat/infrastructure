@@ -35,13 +35,14 @@ There is no reason, in principle, that data must first be converted into some st
 Shared data is a concrete, widely understood goal shared by many scientists already, but there are relatively slim incentives for spending the time to do it. The first major hurdle is to make those incentives. Propping up a p2p system will eventually need new development, but existing p2p systems can still make a strong case for themselves with small, local examples: using them to share data with local collaborators, or to share data during a workshop or conference, or even to start rehosting already-public centrally hosted data. Small communities of practice can start their own "retreat from the cloud" by documenting their process and setting up their own local hosting and servers. They also make natural allies with the p2p tool developers. Being a test case for their software and cultivating social ties across domains is one way to start aligning our goals and movement building. Tools like Dat and Solid are good fits, though they currently need some UX and docs work to be accessible to a broad audience.
 
 
-<div class="draft-text">
+<div class="draft-text" markdown="block">
 - once some people are sharing their data on p2p, need some means of organizing it. adapting frontend tools and start using distributed communication tools. People are clearly eager to use stuff like DandiHub and get their data into an index, but they are all so lonely and vacant! Only instead of discord and slack stuff like Matrix is scalable!
 - general pattern of integrating with new communities, for that we need some means of communication. Where are the technologists we should ally with? They're on fediverse and Matrix!
 - Lots of proofs of concept, but need communities to actually start testing them and using them! https://scenaristeur.github.io/agora/ https://openengiadina.net/
 - Starting communication and knowledge organization on wikis and etc. is itself a step towards realizing the system! Tools like Matrix make it so people don't have to commit to *one community or platform in particular* but instead can explore and sort themselves. The UX has come a long way in the last few years, and Element and Gitter are both ready for general use.
 - Knowledge organizing systems like openbehavior and stuff are cool, we should start transcluding them (with credit!) into wikis and other social tools in order to organize a broader scope of the software and social scene.
 - Flanking technologies of data analysis and experimental tooling serve as stronger incentive systems. 
+- Not needing to build a single new platform, or new journal, or even a new organization, but focusing on means of communication. 
 </div>
 
 ### To Whom It May Concern...
