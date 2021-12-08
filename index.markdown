@@ -36,6 +36,7 @@ acknowledgements:
       - Christine Lemmer-Webber
       - Arnold Schrijver
       - Aad Versteden
+      - Leslie Harka
       - nwb & dandi teams
   - name: sts
     prefix: STS
@@ -73,9 +74,10 @@ acknowledgements:
       - Björn Brembs
   - name: general
     prefix: And all the other wisdom givers
+    members:
       - Sanjay Srivastava & Metascience Class
       - The Emerging ONICE team
-      - The Janet Smith House, especially Leslie Harka
+      - The Janet Smith House
       - Rumbly Tumbly Lawnmower
 ---
 
