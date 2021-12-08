@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="foaf: http://xmlns.com/foaf/0.1/">
 
   <head>
   <meta charset="UTF-8">
@@ -40,10 +40,10 @@
 
     
 
-    <main property="articleBody">
+    <main>
       <div class="post">
     <div class="post-info">
-        <h1 class="post-title">Infrastructure Trimmings</h1>
+        <h1 class="post-title" property="title">Infrastructure Trimmings</h1>
         
         
           <h2 class="post-subtitle">Splitting the Monolith</h2>
@@ -52,7 +52,16 @@
         <div class="post-line"></div>
 
         
-          <span class="post-author">Jonny Saunders</span>
+          
+          <span property="author" resource="#au:" typeof="Person">
+            <span class="post-author" property="name"></span>
+            <span property="email" content=""> 
+            <a href="mailto:">
+                <i class="far fa-envelope"></i>
+            </a>
+            </span>
+          </span>
+          
         
 
         <br>
@@ -61,9 +70,17 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2021-16-07"> 2021-12-07</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/dc33a10"><code>dc33a10</code></a>
+            <time datetime="2021-36-08"> 2021-12-08</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/3d2d686"><code>3d2d686</code></a>
         </div>
     </div>
+    
+
+    <div class="acknowledgements">
+        <h3>With gratitude to...</h3>
+        
+    </div>
+
+    <div property="articleBody">
     <p>This document is too long! These are sections that have been taken out of the main piece for want of reorganizing in subsequent writing.</p>
 
 <h2 id="systems-neuroscience-specifically">Systems Neuroscience Specifically…</h2>
@@ -181,6 +198,7 @@
   </ol>
 </div>
 
+    </div>
 </div>
 
     </main>

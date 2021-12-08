@@ -313,6 +313,12 @@ footer span { color: #111; font-size: .8rem; }
 
 .bibliography { overflow-x: scroll; }
 
+.acknowledgements { display: grid; grid-row-gap: 10px; grid-template-columns: auto; }
+
+.acknowledgements .name { font-style: italic; color: #979797; }
+
+.acknowledgements h3 { margin-bottom: 0px; }
+
 blockquote strong { color: #4A4A4A; }
 
 pre { font-size: 16px; }
