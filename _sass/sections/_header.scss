@@ -1,0 +1,14 @@
+.acknowledgements {
+	display: grid;
+	grid-row-gap: 10px;
+	grid-template-columns: auto;
+
+	.name {
+		font-style: italic;
+		color: $grey-1;
+	}
+
+	h3 {
+		margin-bottom: 0px;
+	}
+}

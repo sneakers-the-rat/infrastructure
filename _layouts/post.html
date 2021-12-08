@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="post">
     <div class="post-info">
-        <h1 class="post-title">{{ page.title }}</h1>
+        <h1 class="post-title" property="title">{{ page.title }}</h1>
         
         {% if page.subtitle %}
           <h2 class="post-subtitle">{{ page.subtitle }}</h2>
@@ -12,7 +12,16 @@ layout: default
         <div class="post-line"></div>
 
         {% if page.author %}
-          <span class="post-author">{{ page.author }}</span>
+          {% for author in page.author %}
+          <span property="author" resource="#au:{{ author.name | slugify: "ascii" }}" typeof="Person">
+            <span class="post-author" property="name">{{ author.name }}</span>
+            <span property="email" content="{{ author.email }}"> 
+            <a href="mailto:{{ author.email }}">
+                <i class="far fa-envelope"></i>
+            </a>
+            </span>
+          </span>
+          {% endfor %}
         {% else %}
           <span class="post-author">{{ site.author.name }}</span>
         {% endif %}
@@ -31,5 +40,29 @@ layout: default
             <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/{{ site.data['hash'] }}"><code>{{ site.data['hash'] }}</code></a>
         </div>
     </div>
+    {% if page.abstract %}
+        <div class="abstract" property="abstract">
+            {{ page.abstract }}
+        </div>
+    {% endif %}
+
+    <div class="acknowledgements">
+        <h3>With gratitude to...</h3>
+        {% for group in page.acknowledgements %}
+        <div class="group">
+            <span class="prefix">{{ group.prefix }}</span>
+            {% for contributor in group.members %}
+                <span class="name" property="contributor" typeof="Person">
+                    <span property="name">
+                        {{ contributor }}
+                    </span>, 
+                </span>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div property="articleBody">
     {{ content }}
+    </div>
 </div>

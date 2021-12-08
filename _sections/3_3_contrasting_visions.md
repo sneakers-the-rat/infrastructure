@@ -68,6 +68,6 @@ Scientists, building new systems of communication and tooling and then seeding t
 
 By taking seriously the obligation conferred by their stewardship of the human knowledge project, the scientists rebuilt their infrastructure to serve the public good instead of the companies that parasitize it. In the process they did their part ending some of the worst harms of the era of global information oligopoly. 
 
-Most things aren't completely automatic or infinite, but you don't want them to be. It's nice to be in contact with a community, it makes it feel like we're people instead of products. Being in a silent room where algorithms and clouds shimmer data in every unseen direction and deliver us with whatever we have been taught we can ask for sounds lonely. When incredible things do happen, cascading tectonic shifts across continuous federations, it feels like something we all did ourselves, not something we were sold.
+Most things aren't completely automatic or infinite, but you don't want them to be. It's nice to negotiate with your federations and communities, it makes you feel like a person instead of a product. Being in a silent room where algorithms shimmer data as a dark wind friction-free through the clouds sounds lonely. Now we are the winds and clouds and the birds that gossip between them, and all the chatter reminds us that we forgot what we were taught to want. You take the hiccups and errors and dead links as the work of the world we built together.
 
 Everything is a little rough, a little gestural, and all very human.  

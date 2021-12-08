@@ -2,10 +2,81 @@
 layout: post
 title:  "Decentralized Infrastructure for (Neuro)science"
 subtitle: "Or, Kill the Cloud in Your Mind"
-author: "Jonny Saunders"
+author: 
+  - name: Jonny Saunders
+    affiliation: 
+      - University of Oregon
+      - Institute of Neuroscience
+    email: jsaunder@uoregon.edu
 navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
 toc_levels: "1..3"
+acknowledgements:
+  - name: lab
+    prefix: Labmates
+    members:
+      - Lucas Ott, the steadfast
+      - Tillie Morris
+      - Nick Sattler
+      - Sam Mehan
+      - Molly Shallow
+      - Mike and as always ty for letting me always go rogue
+  - name: committee
+    prefix: Committee
+    members:
+      - Matt Smear
+      - Santiago Jaramillo
+  - name: ld
+    prefix: linked data
+    members:
+      - Gabriele Hayden
+      - Joel Chan
+      - Tomasz Pluskiewicz
+      - James Meickle
+      - Christine Lemmer-Webber
+      - Arnold Schrijver
+      - Aad Versteden
+      - nwb & dandi teams
+  - name: sts
+    prefix: STS
+    members:
+      - Os Keyes
+      - Avery Everhart
+      - Eartha Mae Guthman
+      - Olivia Guest
+  - name: neuroscience
+    prefix: Neuroscientists
+    members:
+      - Lauren E. Wool
+      - Kris Chauvin
+      - Phil Parker
+      - Ceci Herbert
+      - Chris Rogers
+      - Petar Todorov
+      - Jeremy Delahanty
+      - Andrey Andreev
+      - Ralph Emilio Peterson
+      - Manuel Schottdorf
+  - name: hardware
+    prefix: Open Source Ppl
+    members:
+      - jakob voigts for participating in the glue wiki
+      - Gonçalo Lopes
+      - Mackenzie Mathis
+      - Mark Laubach & Open Behavior Team
+  - name: freeinternet
+    prefix: Free Internet and Information Liberationists
+    members:
+      - Irene Knapp
+      - Nire Bryce
+      - Danny Mclanahan
+      - Björn Brembs
+  - name: general
+    prefix: And all the other wisdom givers
+      - Sanjay Srivastava & Metascience Class
+      - The Emerging ONICE team
+      - The Janet Smith House, especially Leslie Harka
+      - Rumbly Tumbly Lawnmower
 ---
 
 <div class="trimlink">
@@ -52,48 +123,6 @@ toc_levels: "1..3"
 
 Acknowledgements in no order at all!!! (make sure to double check spelling!!! and then also double check it's cool to list them!!!):
 
-* Lucas Ott, the steadfast
-* Tillie Morris
-* Nick Sattler
-* Sam Mehan
-* Molly Shallow
-* Mike and as always ty for letting me always go rogue
-* Matt Smear
-* Santiago Jaramillo
-* Gabriele Hayden
-* Eartha Mae
-* jakob voigts for participating in the glue wiki
-* nwb & dandi team for dealing w/ my inane rambling
-* Tomasz Pluskiewicz
-* James Meickle
-* Gonçalo Lopes
-* Mackenzie Mathis
-* Lauren E. Wool
-* Gabi Hayden
-* Mark Laubach & Open Behavior Team
-* Os Keyes
-* Avery Everhart
-* Eartha Mae Guthman
-* Olivia Guest
-* Irene Knapp
-* Nire Bryce
-* Kris Chauvin
-* Phil Parker
-* Chris Rogers
-* Danny Mclanahan
-* Petar Todorov
-* Jeremy Delahanty
-* Andrey Andreev
-* Joel Chan
-* Björn Brembs
-* Sanjay Srivastava & Metascience Class
-* Ralph Emilio Peterson
-* Manuel Schottdorf
-* Ceci Herbert
-* The Emerging ONICE team
-* The Janet Smith House, especially Leslie Harka
-* Rumbly Tumbly Lawnmower
-* lmk if we talked and i missed ya!
 
 # Introduction
 
