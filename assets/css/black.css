@@ -130,8 +130,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal img,
 .reveal video,
 .reveal iframe {
-  max-width: 95%;
-  max-height: 95%;
+  max-width: 80%;
+  max-height: 80%;
+  margin:  auto;
 }
 
 .reveal strong,
@@ -186,7 +187,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
+  width: 100%;
   margin: var(--r-block-margin) auto;
   padding: 5px;
   font-style: italic;
