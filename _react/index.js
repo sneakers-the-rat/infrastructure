@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import RDFA from './components/rdfa';
 import TOC from './components/toc';
 
+import './js/anchors.js';
+
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/regular'
 
