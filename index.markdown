@@ -11,6 +11,7 @@ author:
 navigation: false
 canonical_url: "https://jon-e.net/infrastructure"
 toc_levels: "1..3"
+pdf_link: /infrastructure/tex/decentralized_infrastructure_render.pdf
 acknowledgements:
   - name: lab
     prefix: Labmates
@@ -81,12 +82,15 @@ acknowledgements:
       - Rumbly Tumbly Lawnmower
 ---
 
+
+
+{% include status.html %}
 <div class="trimlink">
 <a href="trims">Trimmings</a> <span>from the main document for future pieces</span>
 </div>
-
-{% include status.html %}
-{% include annotation.html %}
+<div class="trimlink">
+<a href="todo">Todo</a> <span>what's left to be done?</span>
+</div>
 
 
 
@@ -95,13 +99,6 @@ acknowledgements:
 {:toc}
 {% include toc_end.html %}
 
-
-[**PDF VERSION**](/infrastructure/tex/decentralized_infrastructure_render.pdf)
-
-
-*This is a draft document, so if you do work that you think is relevant here but I am not citing it, it's 99% likely that's because I haven't read it , not that I'm deliberately ignoring you! Odds are I'd love to read & cite your work, and if you're working in the same space try and join efforts!*
-
-----
 
 
 > If we can make something decentralised, out of control, and of great simplicity, we must be prepared to be astonished at whatever might grow out of that new medium. 
@@ -123,7 +120,8 @@ acknowledgements:
 
 > The critical issue is, how do actors establish generative platforms by instituting a set of control points acceptable to others in a nascent ecosystem? {% cite tilsonDigitalInfrastructuresMissing2010 %}
 
-Acknowledgements in no order at all!!! (make sure to double check spelling!!! and then also double check it's cool to list them!!!):
+
+----
 
 
 # Introduction
@@ -132,7 +130,7 @@ Acknowledgements in no order at all!!! (make sure to double check spelling!!! an
 
 # The State of Things
 
-## The Costs of being Deinfrastructured
+## The Costs of Deficient Infrastructure
 
 {% include_relative _sections/1_0_costs.md %}
 

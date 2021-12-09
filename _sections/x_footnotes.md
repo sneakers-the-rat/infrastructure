@@ -70,3 +70,4 @@
     > 
     > The Semantic Web is not designed just as a new data model - it is specifically appropriate to the linking of data of many different models. One of the great things it will allow is to add information relating different databases on the Web, to allow sophisticated operations to be performed across them. https://www.w3.org/DesignIssues/RDFnot.html
 
+[^disciplinecaveat]: At least in systems neuroscience, appropriate caveats below.

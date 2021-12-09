@@ -37,8 +37,25 @@ layout: default
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/{{ site.data['hash'] }}"><code>{{ site.data['hash'] }}</code></a>
+            <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/{{ site.data['hash'] }}"><code>{{ site.data['hash'] }}</code></a> {% if page.pdf_link %} - <a href="{{ page.pdf_link }}"><code>PDF VERSION</code></a> {% endif %}
         </div>
+
+        <div class="acknowledgements">
+            <h3>With gratitude to...</h3>
+            {% for group in page.acknowledgements %}
+            <div class="group">
+                <span class="prefix">{{ group.prefix }}</span>
+                {% for contributor in group.members %}
+                    <span class="name" property="contributor" typeof="Person">
+                        <span property="name" content="{{ contributor }}">
+                            {{ contributor }},
+                        </span>
+                    </span>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
     </div>
     {% if page.abstract %}
         <div class="abstract" property="abstract">
@@ -46,21 +63,6 @@ layout: default
         </div>
     {% endif %}
 
-    <div class="acknowledgements">
-        <h3>With gratitude to...</h3>
-        {% for group in page.acknowledgements %}
-        <div class="group">
-            <span class="prefix">{{ group.prefix }}</span>
-            {% for contributor in group.members %}
-                <span class="name" property="contributor" typeof="Person">
-                    <span property="name">
-                        {{ contributor }}
-                    </span>, 
-                </span>
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
 
     <div property="articleBody">
     {{ content }}
