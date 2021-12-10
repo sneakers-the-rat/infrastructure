@@ -335,11 +335,21 @@ hypothesis-sidebar /deep/ .Buckets__list { background-color: 0; }
 
 .trimlink a { background-color: white; box-shadow: 5px 5px black; padding: 5px; margin: 5px; font-family: "Cutive Mono", Menlo, Monaco, monospace; }
 
-.draft-text { color: #f00; padding: 20px; border: 1px red dashed; border-radius: 20px; background-color: #fff5f5; margin-left: 20px; }
+.draft-text { color: #f00; padding: 20px; border: 1px red dashed; border-radius: 20px; background-color: #fff5f5; margin-left: 20px; margin-bottom: 1rem; }
 
-.draft-text::before { content: "draft!"; position: relative; left: -50px; height: 0px; width: 0px; display: inline-block; writing-mode: sideways-lr; }
+.draft-text::before { content: "draft!"; position: relative; left: -50px; top: 10px; height: 0px; width: 0px; display: inline-block; writing-mode: sideways-lr; }
 
 .anchorjs-link { transition: opacity 0.1s ease-out; }
+
+.music { transition: height 0.5s ease-out; height: 80px; }
+
+.music.hidden { height: 0px; }
+
+.music-icon { transition: opacity 0.2s ease; position: absolute; transform: translate(-50px, -42px); }
+
+.music-icon:hover { opacity: 1; }
+
+#taped-on-interfaces-open-loop-user-testing:hover ~ #musicbutton { opacity: 1 !important; }
 
 .rdfa { display: inline; background-color: rgba(1, 1, 1, 0.05); transition: background-color 0.5s, box-shadow 1s, filter 0.5s; }
 
