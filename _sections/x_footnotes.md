@@ -71,3 +71,36 @@
     > The Semantic Web is not designed just as a new data model - it is specifically appropriate to the linking of data of many different models. One of the great things it will allow is to add information relating different databases on the Web, to allow sophisticated operations to be performed across them. https://www.w3.org/DesignIssues/RDFnot.html
 
 [^disciplinecaveat]: At least in systems neuroscience, appropriate caveats below.
+
+[^socialmediaflirting]: (save some [complicated half-in flirtation](#forums-are-just-one-point-in-a-continuous-feature-space-of-commu) with social media).
+
+[^usuallyjusttheirs]: (and usually their lab or institute only)
+
+[^whichvoid]: (Twitter)
+
+[^whatisblast]: "Basic Local Alignment Search Tool" - a tool to compare genetic or protein sequences to find potential matches or analogues.
+
+[^andgoogle]: This isn't a story of "good people" and "bad people," as a lot of the linked data technology also serves as the backbone for abusive technology monopolies like google's acquisition of Freebase {% cite iainFreebaseDeadLong2019 %} and the profusion of knowledge graph-based medical platforms.
+
+[^uxloop]: Incentivized to develop new packages -> need to reinvent interfaces -> hard to develop and extend -> incentivized to develop new packages
+
+[^googleantitrust]: eg. see the complaint in State of Texas et al. v. Google that alleges Google rigs ad markets designed to lessen its dominance and uses its control over Chrome and Android to create a single, always-on tracking ecosystem owned only by them {% cite ReGoogleDigital2021 %}
+
+[^awsdown]: Though the system of engineered helpless that convinces us that we're incapable of managing our own web infrastructure is not actually as reliable and seamless as it claims, as the long history of dramatic outages at AWS can show us {% cite lawlerAmazonServerOutage2021 hutchinsonAmazonWebServices2012 %}
+
+[^selfdescribing]: AKA you shouldn't need to resort to some external source to understand it. Data should come packaged with clear metadata, software should have its own docs, etc.
+
+[^rfc1958]: A "request for comment" from the Network Working Group of the Internet Engineering Task Force on the architecture of the internet. The IETF designs many of the protocols that serve as the backbone of the internet.
+
+[^slackirc]: [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat), internet relay chat, was a messaging system that served many of the same functions as the group messaging program [Slack](https://slack.com/) serves now. Also see its more active cousin [XMPP](https://en.wikipedia.org/wiki/XMPP)
+
+[^tm]: ™️
+
+[^stratplan]: > Through its Biomedical Data Translator program, the National Center for Advancing Translational Sciences (NCATS) is supporting research to develop ways to connect conventionally separated data types to one another to make them more useful for researchers and the public. The Translator aims to bring data types together in ways that will integrate multiple types of existing data sourcess, including objective signs and symptoms of disease, drug effects, and other types of biological data relevant to understanding the development of disease and how it progresses in patients. {% cite NIHStrategicPlan2018 %} 
+
+
+[^impossibledata]: > First, we assert that a single monolithic data set that directly connects the complete set of clinical characteristics to the complete set of biomolecular features, including “-omics” data, will never exist because the number of characteristics and features is constantly shifting and exponentially growing. Second, even if such a single monolithic data set existed, all-vs.-all associations will inevitably succumb to problems with statistical power (i.e., the curse of dimensionality).9 Such problems will get worse, not better, as more and more clinical and biomolecular data are collected and become available. We also assert that there is no single language, software or natural, with which to express clinical and biomolecular observations—these observations are necessarily and appropriately linked to the measurement technologies that produce them, as well as the nuances of language. The lack of a universal language for expressing clinical and biomolecular observations presents a risk of isolation or marginalization of data that are relevant for answering a particular inquiry, but are never accessed because of a failure in translation. 
+    >
+    > Based on these observations, our final assertion is that automating the ability to reason across integrated data sources and providing users who pose inquiries with a dossier of translated answers coupled with full provenance and confidence in the results is critical if we wish to accelerate clinical and translational insights, drive new discoveries, facilitate serendipity, improve clinical-trial design, and ultimately improve clinical care. This final assertion represents the driving motivation for the Translator system. {% cite consortiumUniversalBiomedicalData2019 %}
+
+[^federatedterminology]: There is a lot of subtlety to the terminology surrounding "federated" and the typology of distributed systems generally, I am using it in the federated messaging sense of forming groups of people, rather than the strict term "federated databases" which do imply a standardized schema across a federation. The conception of distributed, autonomous databases described by the DataLad team {% cite hankeDefenseDecentralizedResearch2021 %} is a bit closer to my meaning. In the ActivityPub world, federations refer to a single homeserver under which many people can sign up. We mean something similar but distinct: people that have autonomous "homeservers" in a peer to peer system, typically multiple identities for a single person rather than many people on a single server, that can combine into federations with particular governance structures and technological systems attached.

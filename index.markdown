@@ -130,7 +130,7 @@ acknowledgements:
 
 # The State of Things
 
-## The Costs of Deficient Infrastructure
+## The Costs of Infrastructure Deficits
 
 {% include_relative _sections/1_0_costs.md %}
 

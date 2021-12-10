@@ -50,11 +50,13 @@
 	border-radius: 20px; 
 	background-color:#fff5f5;
 	margin-left: 20px;
+	margin-bottom: 1rem;
 
 	&::before {
 		content: "draft!";
 		position: relative;
 		left:-50px;
+		top: 10px;
 		height: 0px;
 		width:0px;
 		display: inline-block;
@@ -64,4 +66,30 @@
 
 .anchorjs-link {
 	transition: opacity 0.1s ease-out;
+}
+
+.music {
+	transition: height 0.5s ease-out;
+
+	height: 80px;
+
+	&.hidden {
+		height: 0px;
+	}
+}
+
+.music-icon {
+  // opacity: 0;
+  transition: opacity 0.2s ease;
+
+  position: absolute;
+  transform: translate(-50px, -42px);
+
+  &:hover {
+  	opacity: 1;
+  }
+}
+
+#taped-on-interfaces-open-loop-user-testing:hover ~ #musicbutton {
+	opacity: 1 !important;	
 }

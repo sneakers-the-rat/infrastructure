@@ -2,8 +2,6 @@ Straddling our system for sharing data are the tools to gather and analyze it. E
 
 This section will be relatively short compared to [shared data](#shared-data). We have already introduced, motivated, and exemplified many of the design practices of the broader infrastructural system. There is much less to argue against or "undo" in the spaces of analytical and experimental tools because so much more work has been done, and so much more power has been accrued in the domain of data systems. Distributed computing does have a dense history, with huge numbers of people working on the problem, but its hegemonic form is much closer to the system articulated below than centralized servers are to federated semantic p2p systems. I also have written extensively about [experimental frameworks](#experimental-frameworks) before {% cite saundersAutopilotAutomatingBehavioral2019 %}, and develop [one of them](https://docs.auto-pi-lot.com/en/latest/) so I will be brief at risk of repeating myself or appearing self-serving.
 
-!! both these sections are also relatively unstandardized, so before jumping to some protocol just yet, we can build frameworks that start congealing the pieces en route to one.
-
 Integrated scientific workflows have been written about many times before, typically in the context of the "open science" movement. One of the founders of the Center for Open Science, Jeffrey Spies, described a similar ethic of toolbuilding as I have in a 2017 presentation:
 
 > Open Workflow:
@@ -11,13 +9,10 @@ Integrated scientific workflows have been written about many times before, typic
 > 2. Respect current incentives
 > 3. Respect current workflow
 >
-> We could... demonstrate that it makes research more efficient, of higher quality, and more accessible.
->
-> Better, we could... demonstrate that researchers will get published more often.
->
-> Even better, we could... make it easy
->
-> Best, we could... make it automatic {% cite spiesWorkflowCentricApproachIncreasing2017 %}
+> - We could... demonstrate that it makes research more efficient, of higher quality, and more accessible.
+> - Better, we could... demonstrate that researchers will get published more often.
+> - Even better, we could... make it easy.
+> - Best, we could... make it automatic {% cite spiesWorkflowCentricApproachIncreasing2017 %}
 
 To build an infrastructural system that enables "open" practices, *convincing* or *mandating* a change are much less likely to be successful and sustainable than focusing on building them to make doing work easier and openness automatic. To make this possible, we should focus on developing *frameworks to build* experimental and analysis tools, rather than developing more tools themselves. 
 
@@ -27,9 +22,9 @@ The first natural companion of shared data infrastructure is a shared analytical
 
 Analytical tools (anecdotally) make up the bulk of open source scientific software, and range from foundational and general-purpose tools like numpy {% cite harrisArrayProgrammingNumPy2020 %} and scipy {% cite virtanenSciPyFundamentalAlgorithms2020 %}, through tools that implement a class of analysis like DeepLabCut {% cite mathisDeepLabCutMarkerlessPose2018a %} and scikit-learn {% cite pedregosaScikitlearnMachineLearning2011 %}, to tools for a specific technique like MoSeq {% cite wiltschkoRevealingStructurePharmacobehavioral2020 %} and DeepSqueak {% cite coffeyDeepSqueakDeepLearningbased2019 %}. The pattern of their use is then to build them into a custom analysis system that can then in turn range in sophistication from a handful of flash-drive-versioned scripts to automated pipelines. 
 
-Having tools like these of course puts researchers miles ahead of where they would be without them, and the developers of the mentioned tools have put in a tremendous amount of work to build sensible interfaces and make them easier to use. No matter how much good work might be done, inevitable differences between APIs is a relatively sizable technical challenge for researchers --- a problem compounded by the incentives for fragmentation described previously. For toolbuilders, many parts of any given tool from architecture to interface have to be redesigned with varying degrees of success each time. For science at large, with few exceptions of well-annotated and packaged code, most results are only replicable with great effort. 
+Having tools like these of course puts researchers miles ahead of where they would be without them, and the developers of the mentioned tools have put in a tremendous amount of work to build sensible interfaces and make them easier to use. No matter how much good work might be done, inevitable differences between APIs is a relatively sizable technical challenge for researchers --- a problem compounded by the incentives for fragmentation described previously. For toolbuilders, many parts of any given tool from architecture to interface have to be redesigned each time with varying degrees of success . For science at large, with few exceptions of well-annotated and packaged code, most results are only replicable with great effort. 
 
-To be clear, we have reached levels of "not the developer's fault" to the tune of "API discontinuity" being *"the norm for 99% of software."* Negotiating boundaries between (and even within) software and information structures is an elemental part of computing. The only time it becomes a conceivable problem to "solve" is when the problem domain coalesces to the point where it is possible to articulate its abstract structure as a protocol, and the incentives are great enough to adopt it. Thankfully that's what we're trying to do here. 
+Discontinuity between the behavior and interface of different pieces of software is, of course,  overwhelming norm. Negotiating boundaries between (and even within) software and information structures is an elemental part of computing. The only time it becomes a conceivable problem to "solve" interoperability is when the problem domain coalesces to the point where it is possible to articulate its abstract structure as a protocol, and the incentives are great enough to adopt it. Thankfully that's what we're trying to do here. 
 
 It's unlikely that we will solve the problem of data analysis being complicated, time consuming, and error prone by teaching every scientist to be a good programmer, but we can build experimental frameworks that make analysis tools easier to build and use. 
 
@@ -167,9 +162,12 @@ Having kept the description of our data in particular abstract from the implemen
 
 And there we are! The missing parameters like `outputName` from our workflow can be filled in from the defaults filled in the workflow node. We get some inkling of where we're going later by also being able to specify the paper this data is associated with, as well as some broad categories of research topics so that our data as well as the results of the analysis can be found. 
 
-!! brief description of the state of the system at this point, we can link from data to analyses! reapply analyses across different datasets! and so on...
 
-So that's useful, but the faint residue of "well actually" that hangs in the air while people google the link for that xkcd comic about format expansion is not lost on me. The important part is in the way this hypothetical analysis framework and markup interact with our data system and emerging federated metadata system --- The layers of abstraction here are worth unpacking, but we'll hold until the end of the shared tools section and we have a chance to consider what this system might look like for experimental tools.
+<div class="draft-text">
+  Give brief overview of the system to this point
+</div>
+
+So that's useful, but comparable to existing technologies. The important part is in the way this hypothetical analysis framework and markup interact with our data system and emerging federated metadata system --- The layers of abstraction here are worth unpacking, but we'll hold until the end of the shared tools section and we have a chance to consider what this system might look like for experimental tools.
 
 
 

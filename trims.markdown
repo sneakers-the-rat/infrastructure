@@ -22,3 +22,7 @@ This document is too long! These are sections that have been taken out of the ma
 ## Trans Health Example
 
 {% include_relative _trims/2_1_1_trans-health.md %}
+
+## Elsevier Surveillance
+
+{% include_relative _trims/elsev_surveillance.md %}

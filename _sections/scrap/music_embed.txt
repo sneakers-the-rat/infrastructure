@@ -1,0 +1,3 @@
+<a onclick="(function(){document.getElementById('testmusic').classList.toggle('hidden');console.log('clicked');})();" class="music-icon"><i class="far fa-play-circle " id="musicbutton"></i></a>
+
+<iframe src="https://open.spotify.com/embed/track/2ERxhNVMT1Fd5fNyX6CIcW?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" id="testmusic" class="music hidden"></iframe>

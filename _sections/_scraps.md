@@ -396,3 +396,10 @@ Dont want to be prescriptive here, but that we can learn from previous efforts l
 > For everyone to have the opportunity to be involved in a given group and to participate in its activities the structure must be explicit, not implicit. The rules of decision-making must be open and available to everyone, and this can happen only if they are formalized. This is not to say that formalization of a structure of a group will destroy the informal structure. It usually doesn't. But it does hinder the informal structure from having predominant control and make available some means of attacking it if the people involved are not at least responsible to the needs of the group at large.
 >
 > The end of consciousness-raising leaves people with no place to go, and the lack of structure leaves them with no way of getting there. The women the movement either turn in on themselves and their sisters or seek other alternatives of action. There are few that are available. Some women just "do their own thing." This can lead to a great deal of individual creativity, much of which is useful for the movement, but it is not a viable alternative for most women and certainly does not foster a spirit of cooperative group effort. Other women drift out of the movement entirely because they don't want to develop an individual project and they have found no way of discovering, joining, or starting group projects that interest them.  {% cite freemanTyrannyStucturelessness1970 %}
+
+
+# design principles
+
+!! the coercion of centralization has a few forms. this is related to the authoritarian impulse in the open science movement that for awhile bullied people into openness. that instinct in part comes from a belief that everyone should be doing the same thing, should be posting their work on the one system. decentralization is about autonomy, and so a reciprocal approach is to make it easy and automatic.
+
+
