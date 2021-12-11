@@ -48,26 +48,11 @@
 
 \begin{document}
 \maketitle
+\pagebreak
+\newgeometry{top=0.75in,bottom=0.5in}
 \tableofcontents
 \pagebreak
-
-Trimmings {from the main document for future pieces}
-
-\{\% include status.html \%\} \{\% include annotation.html \%\}
-
-\{\% include toc\_start.html \%\} 1. table of contents \{:toc\} \{\%
-include toc\_end.html \%\}
-
-\href{https://jon-e.net/infrastructure/tex/decentralized_infrastructure_render.pdf}{\textbf{PDF
-VERSION}}
-
-\emph{This is a draft document, so if you do work that you think is
-relevant here but I am not citing it, it's 99\% likely that's because I
-haven't read it , not that I'm deliberately ignoring you! Odds are I'd
-love to read \& cite your work, and if you're working in the same space
-try and join efforts!}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\restoregeometry
 
 \begin{quote}
 If we can make something decentralised, out of control, and of great
@@ -107,129 +92,43 @@ instituting a set of control points acceptable to others in a nascent
 ecosystem? \cite{tilsonDigitalInfrastructuresMissing2010} 
 \end{quote}
 
-Acknowledgements in no order at all!!! (make sure to double check
-spelling!!! and then also double check it's cool to list them!!!):
-
-\begin{itemize}
-
-\item
-  Lucas Ott, the steadfast
-\item
-  Tillie Morris
-\item
-  Nick Sattler
-\item
-  Sam Mehan
-\item
-  Molly Shallow
-\item
-  Mike and as always ty for letting me always go rogue
-\item
-  Matt Smear
-\item
-  Santiago Jaramillo
-\item
-  Gabriele Hayden
-\item
-  Eartha Mae
-\item
-  jakob voigts for participating in the glue wiki
-\item
-  nwb \& dandi team for dealing w/ my inane rambling
-\item
-  Tomasz Pluskiewicz
-\item
-  James Meickle
-\item
-  Gonçalo Lopes
-\item
-  Mackenzie Mathis
-\item
-  Lauren E. Wool
-\item
-  Gabi Hayden
-\item
-  Mark Laubach \& Open Behavior Team
-\item
-  Os Keyes
-\item
-  Avery Everhart
-\item
-  Eartha Mae Guthman
-\item
-  Olivia Guest
-\item
-  Irene Knapp
-\item
-  Nire Bryce
-\item
-  Kris Chauvin
-\item
-  Phil Parker
-\item
-  Chris Rogers
-\item
-  Danny Mclanahan
-\item
-  Petar Todorov
-\item
-  Jeremy Delahanty
-\item
-  Andrey Andreev
-\item
-  Joel Chan
-\item
-  Björn Brembs
-\item
-  Sanjay Srivastava \& Metascience Class
-\item
-  Ralph Emilio Peterson
-\item
-  Manuel Schottdorf
-\item
-  Ceci Herbert
-\item
-  The Emerging ONICE team
-\item
-  The Janet Smith House, especially Leslie Harka
-\item
-  Rumbly Tumbly Lawnmower
-\item
-  lmk if we talked and i missed ya!
-\end{itemize}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
 
 \begin{multicols}{2}
- We work in technical islands that range from individual
-researchers, to labs, consortia, and at their largest a few well-funded
-organizations. Our knowledge dissemination systems are as nimble as the
-static pdfs and ephemeral conference talks that they have been for
-decades (save for the godforsaken Science Twitter that we all correctly
-love to hate). Experimental instrumentation except for that at the polar
-extremes of technological complexity or simplicity is designed and built
-custom, locally, and on-demand. Software for performing experiments is a
-patchwork of libraries that satisfy some of the requirements of the
-experiment, sewn together by some uncommented script written years ago
-by a grad student who left the lab long-since. The technical knowledge
-to build both instrumentation and software is fragmented and unavailable
-as it sifts through the funnels of word-limited methods sections and
-never-finished documentation. And O Lord Let Us Pray For The Data, born
-into this world without coherent form to speak of, indexable only by
-passively-encrypted notes in a paper lab notebook, dressed up for the
-analytical ball once before being mothballed in ignominy on some
-unlabeled external drive.
+ We work in an archipelago of technical islands,
+researchers, labs, consortia, and a few well-funded institutions
+reinventing the wheel in parallel. Our knowledge dissemination systems
+are as nimble as the static pdfs and ephemeral conference talks that
+they have been for decades\footnote{(save some
+  \protect\hyperlink{forums-are-just-one-point-in-a-continuous-feature-space-of-commu}{complicated
+  half-in flirtation} with social media).}. Experimental instrumentation
+except for that at the polar extremes of technological complexity or
+simplicity is designed and built custom, locally, and
+on-demand\footnote{At least in systems neuroscience, appropriate caveats
+  below.}. Software for performing experiments is a patchwork of
+libraries that satisfy some of the requirements of the experiment, sewn
+together by some uncommented script written years ago by a grad student
+who left the lab long-since. The technical knowledge to build both
+instrumentation and software is fragmented and unavailable as it sifts
+through the funnels of word-limited methods sections and never-finished
+documentation. And O Lord Let Us Pray For The Data, born into this world
+without coherent form to speak of, indexable only by passively-encrypted
+notes in a paper lab notebook, dressed up for the analytical ball once
+before being mothballed in ignominy on some unlabeled external drive.
 
-In sum, all the ways our use and relations with computers are
-idiosyncratic and improvised are not isolated, but a symptom of a
-broader deficit in \textbf{digital infrastructure} for science. The
-yawning mismatch between our ambitions of what digital technology
-\emph{should} allow us to do and the state of digital infrastructure
-hints at the magnitude of the problem: the degree to which the symptoms
-of digital deinfrastructuring define the daily reality of science is
-left as an exercise to the reader.
+The idiosyncratic and improvised ways we use and relate to computers may
+be unique in each instance, but all are symptomatic of a broader deficit
+in \textbf{digital infrastructure} for science. Every routine need that
+requires heavy technical development or yet another platform
+subscription is an indicator that infrastructural deficits \emph{define
+the daily reality of science.} We \emph{should} be able to easily store,
+share, and search for data; be able to organize and communicate with
+each other; be able to write and review our work, but we are hemmed in
+on all sides by looming tech profiteers and chasms of underdevelopment.
 
 If the term infrastructure conjures images of highways and plumbing,
 then surely digital infrastructure would be flattered at the
@@ -252,31 +151,65 @@ of failure to build or maintain it is not equally shared, as in the
 expression of institutional racism that was the Flint, Michigan water
 crisis \cite{michicancivilrightscommissionFlintWaterCrisis2017} .
 
-Being digitally deinfrastructured is not our inevitable and eternal
-fate, but the course of infrastructuring is far from certain. It is not
-the case that ``scientific digital infrastructure'' will rise from the
-sea monolithically as a natural result of more development time and
-funding, but instead has many possible futures\cite{mirowskiFutureOpenScience2018} , each with their own advocates and
-beneficiaries. Without concerted and strategic counterdevelopment based
-on a shared and liberatory ethical framework, science is poised to
-follow other domains of digital technology down the dark road of
+Infrastructural deficits are not our inevitable and eternal fate, but
+the course of infrastructuring is far from certain. It is not the case
+that ``scientific digital infrastructure'' will rise from the sea
+monolithically as a natural result of more development time and funding,
+but instead has many possible futures\cite{mirowskiFutureOpenScience2018} , each with their own advocates and
+beneficiaries. Without concerted and strategic development based on a
+shared and liberatory ethical framework, science will follow the same
+path as other domains of digital technology down the dark road of
 platform capitalism. The prize of owning the infrastructure that the
 practice of science is built on is too great, and it is not hard to
 imagine tech behemoths buying out the emerging landscape of small
 scientific-software-as-a-service startups and selling subscriptions to
-Science Prime.
+Science Prime. The possibility of future capture is still too naive a
+framing: operating as obligate brokers of (usually surveillance)
+data\cite{pooleySurveillancePublishing2021, zuboffBigOtherSurveillance2015, warkCapitalDeadThis2021} , prestige,
+and computational resources naturally relies on \emph{displacing} the
+possibility of alternative infrastructure. Our predicament is doubly
+difficult: we both have digital infrastructural defits, but are also
+being actively \emph{deinfrastructured.}
 
 This paper is an argument that \textbf{decentralized} digital
-infrastructure is the best means of realizing the promise of digital
-technology for science. I will draw from several disciplines and
-knowledge communities like Science and Technology Studies (STS), Library
-and Information Science, open source software developers, and internet
-pirates, among others to articulate a vision of an infrastructure in
-three parts: \textbf{shared data, shared tools, and shared knowledge.} I
-will start with a brief description of what I understand to be the state
-of our digital infrastructure and the structural barriers and incentives
-that constrain its development. I will then propose a set of design
-principles for decentralized infrastructure and possible means of
+infrastructure is the best means of alleviating the harms of
+infrastructural deficits and building a digital landscape that supports,
+rather than extracts from science. I will draw from several disciplines
+and knowledge communities, across and outside academia to articulate a
+vision of an infrastructure in three parts: \textbf{shared data, shared
+tools, and shared knowledge.} These domains reflect three of the
+dominant modes of digital enclosure prerequisite for platform capture:
+\textbf{storage, computation, and communication.} The systems we will
+describe are in conversation with and a continuation of a long history
+of reimagining the relationship between these domains for a healthier
+web (see eg. \cite{berners-leeSociallyAwareCloud2009, berners-leeWebServicesOverview2009} ). We depart from it to describe
+a system of fluid, peer-to-peer social affiliation and
+\protect\hyperlink{federated-systems-of-language}{folksonomic} linked
+data with lessons primarily from \protect\hyperlink{the-wiki-way}{early
+wikis and Wikipedia}, the fissures of the
+\protect\hyperlink{neatness-vs-scruffiness}{semantic web and linked
+data} communities, the social structure of
+\protect\hyperlink{archives-need-communities}{private bittorrent
+trackers}, and the federation system of
+\protect\hyperlink{forums--feeds}{ActivityPub and the Fediverse}.
+Approaching this problem from science has its constraints --- like the
+structuring need to rebuild systems of
+\protect\hyperlink{credit-assignment}{credit assignment} --- as well as
+the powerful opportunity of one of the last systems of labor largely not
+driven by profit developing technology and seeding communities that
+could begin to directly address the dire, societywide need for digital
+freedom.
+
+The problems we face are different than they were at the dawn of the
+internet, but we can learn from its history: we shouldn't be waiting for
+a new journal-like \textbf{platform,} software package, or subscription
+to save us. We need to build \textbf{protocols} for communication,
+interoperability, and self-governance (see, recently \cite{brembsReplacingAcademicJournals2021} ).
+
+I will start with a brief description of what I understand to be the
+state of our digital infrastructure and the structural barriers and
+incentives that constrain its development. I will then propose a set of
+design principles for decentralized infrastructure and possible means of
 implementing it informed by prior successes and failures at building
 mass digital infrastructure. I will close with contrasting visions of
 what science could be like depending on the course of our
@@ -286,29 +219,24 @@ scientific system can contribute to and benefit from decentralization.
 I insist that what I will describe is \emph{not utopian} but is
 eminently practical --- the truly impractical choice is to do nothing
 and continue to rest the practice of science on a pyramid scheme \cite{ponziSciencePyramidScheme2020}  of underpaid labor. With a bit
-of development to integrate and improve the tools, \textbf{everything I
-propose here already exists and is widely used.} A central principle of
-decentralized systems is embracing heterogeneity: harnessing the power
-of the diverse ways we do science instead of constraining them. Rather
-than a patronizing argument that everyone needs to fundamentally alter
-the way they do science, the systems that I describe are specifically
-designed to be easily incorporated into existing practices and adapted
-to variable needs. In this way I argue decentralized systems are
-\emph{more practical} than the dream that one system will be capable of
-expanding to the scale of all science --- and as will hopefully become
-clear, inarguably \emph{more powerful} than a disconnected sea of
-centralized platforms and services.
-
-!! this is a shift from waiting for a new platform, a new organization,
-a new journal to save us. Instead we focus on building a system that
-gives us a means of using what we already have in a fluid social and
-communication system.
+of development to integrate and improve the tools, \textbf{every class
+of technology I propose here already exists and is widely used.} A
+central principle of decentralized systems is embracing heterogeneity:
+harnessing the power of the diverse ways we do science instead of
+constraining them. Rather than a patronizing argument that everyone
+needs to fundamentally alter the way they do science, the systems that I
+describe are specifically designed to be easily incorporated into
+existing practices and adapted to variable needs. In this way I argue
+decentralized systems are \emph{more practical} than the dream that any
+one system will be capable of expanding to the scale of all science ---
+and as will hopefully become clear, inarguably \emph{more powerful} than
+a disconnected sea of centralized platforms and services.
 
 An easy and common misstep is to categorize this as solely a
 \emph{technical} challenge. Instead the challenge of infrastructure is
 also \emph{social} and \emph{cultural} --- it involves embedding any
 technology in a set of social practices, a shared belief that such
-technology should exist and that its form it not neutral, and a sense of
+technology should exist, that its form is not neutral, and a sense of
 communal valuation and purpose that sustains it \cite{bietzSustainingDevelopmentCyberinfrastructure2012} .
 
 The social and technical perspectives are both essential, but make some
@@ -319,7 +247,8 @@ problems that can be addressed piecemeal with a new package. Such a
 broad scope trades off with a detailed description of the relevant
 technology and systems, but a myopic techno-zealotry that does not
 examine the social and ethical nature of scientific practice risks
-reproducing or creating new sources of harm. As a balance I will not be
+reproducing or creating new sources of harm. That, and
+techno-solutionism never \emph{works} anyway. As a balance I will not be
 proposing a complete technical specification or protocol, but describing
 the general form of the tools and some existing examples that satisfy
 them; I will not attempt a full history or treatment of the problem of
@@ -327,21 +256,19 @@ infrastructuring, but provide enough to motivate the form of the
 proposed implementations.
 
 My understanding of this problem is, of course, uncorrectably structured
-by the horizon of disciplines around systems neuroscience that has
-preoccupied my training. While the core of my argument is intended to be
-a sketch compatible with sciences and knowledge systems generally, my
-examples will sample from, and my focus will skew to my experience. In
-many cases, my use of ``science'' or ``scientist'' could be
-``neuroscience'' or ``neuroscientist,'' but I will mostly use the former
-to avoid the constant context switches. I ask the reader for a measure
-of patience for the many ways this argument requires elaboration and
-modification for distant fields.
-
-!! need to see ``open science'' as problems much larger than science,
-but instead reflective of the entire information ecosystem. Need more
-reflection on the totality of the information economy cf.~chelsea wark
-and tim-bl in later writings
-
+by my training largely centered in systems neuroscience and my position
+as an early career researcher (ECR). While the core of my argument is
+intended to be a sketch compatible with sciences and knowledge systems
+generally, my examples will sample from, and my focus will skew to my
+experience. In many cases, my use of ``science'' or ``scientist'' could
+be ``neuroscience'' or ``neuroscientist,'' but I will mostly use the
+former to avoid the constant context switches. This document is also an
+experiment in public collaboration on a living scientific document: to
+try and ease our way out of disciplinary tunnelvision, we invite
+annotation and contribution with no lower bound --- if you'd like to add
+or correct a sentence or two (or a page or ten), you're welcome as
+coauthor. I ask the reader for a measure of patience for the many ways
+this argument requires elaboration and modification for distant fields.
 
 \end{multicols}
 
@@ -349,25 +276,21 @@ and tim-bl in later writings
 \hypertarget{the-state-of-things}{%
 \section{The State of Things}\label{the-state-of-things}}
 
-\hypertarget{the-costs-of-being-deinfrastructured}{%
-\subsection{The Costs of being
-Deinfrastructured}\label{the-costs-of-being-deinfrastructured}}
+\hypertarget{the-costs-of-infrastructure-deficits}{%
+\subsection{The Costs of Infrastructure
+Deficits}\label{the-costs-of-infrastructure-deficits}}
 
 
 \begin{multicols}{2}
+ An infrastructure deficit framing gives a shared etiology
+to many technical and social harms in scientific work that are typically
+treated separately, and allows us to problematize other symptoms have
+become embedded as norms.
 
-
-Framing the many challenges of scientific digital technology development
-as reflective of a general digital infrastructure deficit gives a shared
-etiology to the technical and social harms that are typically treated
-separately. It also allows us to problematize other symptoms that are
-embedded in the normal practice of contemporary science.
-
-To give a sense of the scale of need for digital scientific
-infrastructure, as well as a general scope for the problems the proposed
-system is intended to address, I will list some of the present costs.
-These lists are grouped into rough and overlapping categories, but make
-no pretense at completeness and have no particular order.
+I will list some of the present costs to give a sense of the scale of
+need, as well as scope for the problems we intend to address here. These
+lists are grouped into rough and overlapping categories, but make no
+pretense at completeness and have no particular order.
 
 Impacts on the \textbf{daily experience} of researchers include:
 
@@ -383,33 +306,31 @@ Impacts on the \textbf{daily experience} of researchers include:
   infrastructure caused by inadequate supply. Labs with enough resources
   are forced to pay from other parts of their grants to hire
   professional programmers and engineers to build the infrastructure for
-  their lab (and usually their lab or institute only), but most just
-  operate on a purely amateur basis. Many PhD students will spend the
-  first several years of their degree re-solving already-solved
-  problems, chasing the tails of the wrong half-readable engineering
-  whitepapers, in their 6th year finally discovering the technique that
-  they actually needed all along. That's not an educational or training
-  model, it's the effect of displacing the undone labor of unbuilt
-  infrastructure on vulnerable graduate workers almost always paid
-  poverty wages.
+  their lab\footnote{(and usually their lab or institute only)}, but
+  most just operate on a purely amateur basis. Many PhD students will
+  spend the first several years of their degree re-solving
+  already-solved problems, chasing the tails of the wrong half-readable
+  engineering whitepapers, in their 6th year finally discovering the
+  technique that they actually needed all along. That's not an
+  educational or training model, it's the effect of displacing the
+  undone labor of unbuilt infrastructure on vulnerable graduate workers
+  almost always paid poverty wages.
 \item
   At least the partial cause of the phenomenon where ``every scientist
   needs to be a programmer now'' as people who aren't particularly
   interested in being programmers --- which is \emph{fine} and
   \emph{normal} --- need to either suffer through code written by some
   other unlucky amateur or learn an entire additional discipline in
-  order to do the work of the one they chose. Because there isn't more
-  basic scientific programming infrastructure, everyone needs to be a
-  programmer.
+  order to do the work of the one they chose.
 \item
-  A great deal of pain and alienation for early- career researchers
-  (ECRs) not previously trained in programming before being thrown in
-  the deep end. Learning data hygeine practices like backup, annotation,
-  etc. ``the hard way'' through some catastrophic loss is accepted myth
-  in much of science. At some scale all the very real and widespread
-  pain, and guilt, and shame felt by people who had little choice but to
-  reinvent their own data management system must be recognized as an
-  infrastructural, rather than a personal problem.
+  A great deal of pain and alienation for early- career researchers not
+  previously trained in programming before being thrown in the deep end.
+  Learning data hygeine practices like backup, annotation, etc. ``the
+  hard way'' through some catastrophic loss is accepted myth in much of
+  science. At some scale all the very real and widespread pain, guilt,
+  and shame felt by people who had little choice but to reinvent their
+  own data management system must be recognized as an infrastructural,
+  rather than a personal problem.
 \item
   The high cost of ``openness'' and the dearth of data transparency. It
   is still rare to publish full, raw data and analysis code, often
@@ -417,11 +338,11 @@ Impacts on the \textbf{daily experience} of researchers include:
   movement, roughly construed, has reached a few hard limits from
   present infrastructure that have forced its energy to leak from the
   sides as bullying leaderboards or sets of symbols that are mere
-  signifiers of openness. ``Openness'' is not a uniform or universal
-  goal for all science, but for those for whom it makes sense, we need
-  to provide the appropriate tooling before insisting on a change in
-  scientific norms. We can't expect data transparency from researchers
-  while it is still so \emph{hard.}
+  signifiers of cultural affiliation to openness. ``Openness'' is not a
+  uniform or universal goal for all science, but for those for whom it
+  makes sense, we need to provide the appropriate tooling before
+  insisting on a change in scientific norms. We can't expect data
+  transparency from researchers while it is still so \emph{hard.}
 \end{itemize}
 
 Impacts on the \textbf{system of scientific inquiry} include:
@@ -441,27 +362,35 @@ Impacts on the \textbf{system of scientific inquiry} include:
   Reliance on communication platforms and knowledge systems that aren't
   designed to, and don't come close to satisfying the needs of
   scientific communication. In the absence of some generalized means of
-  knowledge organization, scientists ask the void (Twitter) for advice
-  or guidance from anyone that algorithmically stumbles by. Often our
-  best recourse is to make a Slack about it, which is incapable of
-  producing a public, durable, and cumulative resource: and so the same
-  questions will be asked again\ldots{} and again\ldots{}
+  knowledge organization, scientists ask the void\footnote{(Twitter)}
+  for advice or guidance from anyone that algorithmically stumbles by.
+  Often our best recourse is to make a Slack about it, which is
+  incapable of producing a public, durable, and cumulative resource: and
+  so the same questions will be asked again\ldots{} and again\ldots{}
 \item
   A perhaps doomed intellectual endeavor as we attempt to understand the staggering
-  complexity of the brain by peering at it through the pinprickiest
-  peephole of just the most recent data you or your lab have collected
-  rather than being able to index across the many measurements of the
-  same phenomena. The unnecessary reduplication of experiments becomes
-  not just a methodological limitation, but an ethical catastrophe as
+  complexity of the brain by peering at it through the camera obscura of
+  just the most recent data you or your lab have collected rather than
+  being able to index across the many measurements of the same
+  phenomena. The unnecessary reduplication of experiments becomes not
+  just a methodological limitation, but an ethical catastrophe as
   researchers have little choice but to abandon the elemental principle
   of sacrificing as few animals as possible.
 \item
-  A hierarchy of prestige that devalues the labor of multiple groups of
+  A near-absence of semantic or topical organization of research that
+  makes cumulative progress in science proabilistic at best, and subject
+  to the malformed incentives of publication and prestige gathering at
+  worst. Since engaging with prior literature is a matter of manually
+  reconstructing a caricature of a field of work in every introduction,
+  continuing lines of inquiry or responding to conflicting results is
+  \emph{strictly optional.}
+\item
+  A hierarchy of prestige that devalues the labor of many groups of
   technicians, animal care workers, and so on. Authorship is the coin of
-  the realm, but many researchers that do work fundamental to the
-  operation of science only receive the credit of an acknowledgement. We
-  need a system to value and assign credit for the immense amount of
-  technical and practical knowledge and labor they produce.
+  the realm, but many workers that are fundamental to the operation of
+  science only receive the credit of an acknowledgement. We need a
+  system to value and assign credit for the immense amount of technical
+  and practical knowledge and labor they contribute.
 \end{itemize}
 
 Impacts on the relationship between \textbf{science and society}:
@@ -485,23 +414,27 @@ Impacts on the relationship between \textbf{science and society}:
   receive, where rather than returning the fruits of the many technical
   challenges we are tasked with solving to the public in the form of
   data, tools, collected practical knowledge, etc. we largely return
-  papers, multiplying the above impacts of labor duplication and
-  knowledge inaccessibility by the scale of society.
+  papers. Since those papers are often impenetrable outside of their
+  discipline or paywalled outside of academia, we multiply the above
+  impacts of labor duplication and knowledge inaccessibility by the
+  scale of society.
 \item
   The complicity of scientists in rendering our collective intellectual
   heritage nothing more than another regiment in the ever-advancing
-  armies of platform capitalism. If our highest aspirations are to shunt
-  all our experiments, data, and analysis tools onto Amazon Web
-  Services, our failure of imagination will be responsible for yet
-  another obligate funnel of wealth into the system of extractive
-  platforms that dominate the flow of global information. For ourselves,
-  we stand to have the practice of science filleted at the seams into a
-  series of mutually incompatible subscription services. For society, we
-  squander the chance for one of the very few domains of non-economic
-  labor to build systems to recollectivize the basic infrastrucutre of
-  the internet: rather than providing an alternative to the information
-  overlords and their digital enclosure movement, we will be run right
-  into their arms.
+  armies of
+  \protect\hyperlink{platforms-industry-capture-and-the-profit-motive}{platform
+  capitalism}. If our highest aspirations are to shunt all our
+  experiments, data, and analysis tools onto Amazon Web Services, our
+  failure of imagination will be responsible for yet another obligate
+  funnel of wealth into the system of extractive platforms that dominate
+  the flow of global information. For ourselves, we stand to have the
+  practice of science filleted at the seams into a series of mutually
+  incompatible subscription services. For society, we squander the
+  chance for one of the very few domains of non-economic labor to build
+  systems to recollectivize the basic infrastrucutre of the internet:
+  rather than providing an alternative to the information overlords and
+  their digital enclosure movement, we will be run right into their
+  arms.
 \end{itemize}
 
 Considered separately, these are serious problems, but together they are
@@ -511,11 +444,11 @@ knowledge project.
 We arrive at this situation not because scientists are lazy and
 incompetent, but because we are embedded in a system of mutually
 reinforcing disincentives to cumulative infrastructure development. Our
-incentive systems are coproductive with a number of deeply-embedded,
-economically powerful entities that would really prefer owning it all
-themselves, thanks. Put bluntly, ``we are dealing with a massively
-entrenched set of institutions, built around the last information age
-and fighting for its life'' \cite{bowkerInformationInfrastructureStudies2010} 
+incentive systems are, in turn, coproductive with a raft of economically
+powerful entities that would really prefer owning it all themselves,
+thanks. Put bluntly, ``we are dealing with a massively entrenched set of
+institutions, built around the last information age and fighting for its
+life'' \cite{bowkerInformationInfrastructureStudies2010} 
 
 There is, of course, an enormous amount of work being done by
 researchers and engineers on all of these problems, and a huge amount of
@@ -551,13 +484,15 @@ Scientific software development favors the production of many isolated,
 single-purpose software packages rather than cumulative work on shared
 infrastructure. The primary means of evaluation for a scientist is
 academic reputation, primarily operationalized by publications, but a
-software project will yield a single (if any) paper. Traditional
+software project will yield a single paper (if any). Traditional
 publications are static units of work that are ``finished'' and frozen
 in time, but software is never finished: the thousands of commits needed
 to maintain and extend the software are formally not a part of the
 system of academic reputation.
 
-Howison \& Herbsleb described this dynamic in the context of BLAST
+Howison \& Herbsleb described this dynamic in the context of
+BLAST\footnote{``Basic Local Alignment Search Tool'' - a tool to compare
+  genetic or protein sequences to find potential matches or analogues.}
 
 \begin{quote}
 In essence we found that BLAST innovations from those motivated to
@@ -582,10 +517,11 @@ it, so outside of the most-used libraries most scientific software is
 brittle and difficult to use \cite{mangulImprovingUsabilityArchival2019, kumarBioinformaticsSoftwareBiologists2007} .
 
 Since the reputational value of a publication depends on its placement
-within a journal and number of citations (among other metrics), and
-citation practices for scientific software are far from uniform and
-universal, the incentive to write scientific software at all is
-relatively low compared to its near-universal use \cite{howisonSoftwareScientificLiterature2016} .
+within a journal and number of citations (among other metrics), citation
+practices for scientific software are far from uniform and universal,
+and relatively few ``prestige'' journals publish software papers at all,
+the incentive to write scientific software in the first place is low
+compared to its near-universal use \cite{howisonSoftwareScientificLiterature2016} .
 
 \hypertarget{domain-specific-silos}{%
 \subsubsection{Domain-Specific Silos}\label{domain-specific-silos}}
@@ -626,14 +562,14 @@ as generalized frameworks to integrate them.
 vs.~Idealism}\label{the-long-now-of-immediacy-vs.-idealism}}
 
 Digital infrastructure development takes place at multiple timescales
-simultaneously --- from the momentary work of implementing it, through
-longer timescales of planning, organization, and documenting to the
+simultaneously --- from the momentary work of implementing it; through
+longer timescales of planning, organization, and documenting; to the
 imagined indefinite future of its use --- what Ribes and Finholt call
 ``The Long Now. \cite{ribesLongNowTechnology2009} ''
 Infrastructural projects constitutively need to contend with the need
 for immediately useful results vs.~general and robust systems; the need
 to involve the effort of skilled workers vs.~the uncertainty of future
-support; the balance between stability with mutability; and so on. The
+support; the balance between stability and mutability; and so on. The
 tension between hacking something together vs.~building something
 sustainable for future use is well-trod territory in the hot-glue and
 exposed wiring of systems neuroscience rigs.
@@ -642,10 +578,11 @@ Deinfrastructuring divides the incentives and interests of junior and
 senior researchers. ECRs might be interested in developing tools they'll
 use throughout their careers, but given the pressure to establish their
 reputation with publications rarely have the time to develop something
-fully. The time pressure never ends, and established researchers also to
-push enough publications through the door to be able to secure the next
-round of funding. The time preference of scientific software development
-is very short: hack it together, get the paper out, we'll fix it later.
+fully. The time pressure never ends, and established researchers also
+need to push enough publications through the door to be able to secure
+the next round of funding. The time preference of scientific software
+development is thus very short: hack it together, get the paper out,
+we'll fix it later.
 
 The constant need to produce software that \emph{does something} in the
 context of scientific programming which largely lacks the institutional
@@ -752,11 +689,11 @@ about who should be able to exercise power and what ends a system should
 serve \cite{larsenPoliticalNatureTCP2012} .
 
 \includegraphics[width=\linewidth]{../assets/images/clark-slide.png} \emph{A
-slide from David Clark's ``Views of the Future''\cite{clarkCloudyCrystalBall1992}  that contrasts differing visions for the
+slide from David Clark's 1992 ``Views of the Future''\cite{clarkCloudyCrystalBall1992}  that contrasts differing visions for the
 development process of the future of the internet. The struggle between
 engineered order and wild untamedness is summarized forcefully as ``We
 reject: kings, presidents and voting. We believe in: rough consensus and
-running code}
+running code''}
 
 Practically, the differences between these thought communities impact
 the tools they build. Aaron Swartz put the approach of the ``neat''
@@ -838,9 +775,9 @@ software companies will exhaustively user-test and refine them with
 pixel precision to avoid any potential customer feeling even a
 thimbleful of frustration. Scientific software development is largely
 disconnected from usability testing, as what little support exists is
-rarely tied to it. This, combined with the above incentives for
-developing new packages -- and thus reduplicating the work of interface
-development -- and the preponderance of semi-amateurs make it perhaps
+rarely tied to it. This, combined with the preponderance of
+semi-amateurs and above incentives for developing new packages -- and
+thus reduplicating the work of interface development -- make it perhaps
 unsurprising that most scientific software is hard to use!
 
 I intend the notion of ``interface'' in an expansive way: In addition to
@@ -859,8 +796,12 @@ to contribute. Additionally, it would include interfaces for use and
 integration with other software. Without care given to either of these
 interfaces, the community of co-developers is likely to remain small,
 and the labor they expend is less likely to be useful outside that
-single project. This, in turn, reinforces the incentives for developing
-new packages and fragmentation.
+single project. This, in turn, closes the loop with incentives to
+develop new packages and makes another vicious cycle reinforcing
+fragmentation\footnote{Incentivized to develop new packages
+  -\textgreater{} need to reinvent interfaces -\textgreater{} hard to
+  develop and extend -\textgreater{} incentivized to develop new
+  packages}.
 
 \hypertarget{platforms-industry-capture-and-the-profit-motive}{%
 \subsubsection{Platforms, Industry Capture, and the Profit
@@ -877,8 +818,8 @@ extend to the rest of our infrastructure as information companies seek
 to build a for-profit platform system that spans the scientific workflow
 (eg. \cite{ElsevierSevenBridges2017} ). The mode of privatization
 of scientific infrastructure follows the broader software market as a
-preponderance of software as a service (SaaS), from startups to
-international megacorporations, that sell access to some, typically
+proliferation of software as a service (SaaS), from startups to
+international megacorporations, that rent access to some, typically
 proprietary software without selling the software itself.
 
 While in isolation SaaS can make individual components of the
@@ -888,8 +829,15 @@ accessible infrastructure. The SaaS model derives revenue from
 subscription or use costs, often operating as ``freemium'' models that
 make some subset of its services available for free. Even in freemium
 models, though, the business model requires that some functionality of
-the platform is paywalled (See a more thorough treatment of platform
-capitalism in science in \cite{mirowskiFutureOpenScience2018} )
+the platform is enclosed and proprietary. To keep the particular domain
+of enclosure viable as a profit stream, the proprietor needs to actively
+defend against competitors as well as any technology that might fill the
+need for the proprietary technology\footnote{eg. see the complaint in
+  State of Texas et al.~v. Google that alleges Google rigs ad markets
+  designed to lessen its dominance and uses its control over Chrome and
+  Android to create a single, always-on tracking ecosystem owned only by
+  them \cite{ReGoogleDigital2021} } (See a more thorough
+treatment of platform capitalism in science in \cite{mirowskiFutureOpenScience2018} )
 
 As isolated services, one can imagine the practice of science devolving
 along a similar path as the increasingly-fragmented streaming video
@@ -909,26 +857,27 @@ monopolists, scientists become complicit in their often profoundly
 unethical behavior of by funneling millions of dollars into them.
 Longterm, unconditional funding of wildly profitable journals has
 allowed conglomerates like Elsevier to become sprawling surveillance
-companies \cite{RELXAnnualReport2020}  that are sucking as much
-data up as they can to market tools like algorithmic ranking of
+companies \cite{RELXAnnualReport2020, pooleySurveillancePublishing2021}  that are sucking as much data up
+as they can to market derivative products like algorithmic ranking of
 scientific productivity \cite{brembsAlgorithmicEmploymentDecisions2021}  and making data sharing
 agreements with ICE \cite{biddleLexisNexisProvideGiant2021} . Or
-see our use of AWS and the laundry list of human rights abuses by Amazon
-\cite{CriticismAmazon2021} . In addition to lock-in, dependence
-on a constellation of SaaS allows the opportunity for platform-holders
-to take advantage of their limitations and \emph{sell us additional
-services to make up for what the other ones purposely lack} --- for
-example Elsevier has taken advantage of our dependence on the journal
-system and its strategic disorganization to sell a tool for summarizing
-trending research areas for tailoring maximally-fundable grants \cite{elsevierTopicProminenceSciencea} .
+our reliance on AWS and the laundry list of human rights abuses by
+Amazon \cite{CriticismAmazon2021} . In addition to lock-in,
+dependence on a constellation of SaaS allows the opportunity for
+platform-holders to take advantage of their limitations and \emph{sell
+us additional services to make up for what the other ones purposely
+lack} --- for example Elsevier has taken advantage of our dependence on
+the journal system and its strategic disorganization to sell a tool for
+summarizing trending research areas for tailoring maximally-fundable
+grants \cite{elsevierTopicProminenceSciencea} .
 
 Funding models and incentive structures in science are uniformly aligned
 towards the platformatization of scientific infrastructure. Aside from
-the corporate doublespeak rhetoric of ``technology transfer'' that
-pervades the neoliberal university, the relative absence of major
-funding opportunities for scientific software developers competitive
-with the profit potential from ``industry'' often leaves it as the only
-viable career path. The preceding structural constraints on local
+the corporate doublespeak ``technology transfer'' rhetoric that pervades
+the neoliberal university, the relative absence of major funding
+opportunities for scientific software developers competitive with the
+profit potential from ``industry'' often leaves it as the only viable
+career path. The preceding structural constraints on local
 infrastructural development strongly incentivize labs and researchers to
 rely on SaaS that provides a readymade solution to specific problems.
 Distressingly, rather than supporting infrastructural development that
@@ -1000,33 +949,38 @@ participating in the system rather than maliciously reinforcing it.
 
 This poses an organizational problem: the kind of infrastructure that
 unwinds platform ownership is not only unprofitable, it's
-anti-profitable -- making it impossible to profit from its domain of
-use. That makes it difficult to rally the kind of development and
-\href{https://www.snsi.info/}{lobbying} resources that profitable
+\textbf{anti-profitable} -- making it impossible to profit from its
+domain of use. That makes it difficult to rally the kind of development
+and \href{https://www.snsi.info/}{lobbying} resources that profitable
 technology can, requiring organization based on ethical principles and a
 commitment to sacrifice control in order to serve a practical need.
 
 The problem is not insurmountable, and there are strategic advantages to
 decentralized infrastructure and its development within science.
 Centralized technologies and companies might have more concerted power,
-but we have \emph{numbers} and can make tools that allow us to combine
-small amounts of labor from many people. A primary criticism of
-infrastructural overhauls is that they will cost a lot of \emph{money,}
-but that's propaganda: the cost of decentralized technologies is far
-smaller than the vast sums of money funnelled into industry profits,
-labor hours spent compensating for the designed inefficiencies of the
-platform model, and the development of a fragmented tool ecosystem built
-around them.
+but we have \emph{numbers} and can make tools that let us combine small
+amounts of labor from many people. We often start (and end) our dreams
+of infrastructure with the belief that they will necessarily cost a lot
+of \emph{money,} but that's propaganda. Of course development isn't
+\emph{free,} but the cost of decentralized technologies is far smaller
+than the vast sums of money funnelled into industry profits, labor hours
+spent compensating for the designed inefficiencies of the platform
+model, and the development of a fragmented tool ecosystem built around
+them.
 
 Science, as one of few domains of non-economic labor, has the
 opportunity to be a seed for decentralized technologies that could
 broadly improve not only the health of scientific practice, but the
-broader information ecosystem. If we develop a plan and mobilize to make
-use of our collective expertise to build tools that have no business
-model and no means of development in commercial domains --- we just need
-to realize what's at stake, develop a plan, and agree that the health of
-science is more important than the convenience of the cloud or which
-journal our papers go into. 
+broader information ecosystem. We can develop a plan and mobilize to
+make use of our collective expertise to build tools that have no
+business model and no means of development in commercial domains --- we
+just need to realize what's at stake and agree that the health of
+science is more important than the convenience of the cloud\footnote{Though
+  the system of engineered helpless that convinces us that we're
+  incapable of managing our own web infrastructure is not actually as
+  reliable and seamless as it claims, as the long history of dramatic
+  outages at AWS can show us \cite{lawlerAmazonServerOutage2021, hutchinsonAmazonWebServices2012} } or which journal our papers go
+into. 
 \end{multicols}
 
 
@@ -1036,11 +990,14 @@ Us''}\label{the-ivies-institutes-and-the-rest-of-us}}
 
 
 \begin{multicols}{2}
- Given these constraints These constraints manifest
-differently depending on the circumstance of scientific practice.
-Differences in circumstance of practices also influence the kind of
-infrastructure developed, as well as where we should expect
-infrastructure development to happen as well as who benefits from it.
+ Given these constraints, who can build new digital
+infrastructure? Constraints, motivations, and strategies all depend on
+the circumstance of those doing the development. The undone work of
+infrastructure is being nibbled at around the edges\footnote{aka doing
+  hard development work in sometimes adverse conditions.} by several
+different kinds of organization already ranging in scale and structure.
+A short survey to give us some notion of how we should seek to organize
+infrastructure building:
 
 \hypertarget{institutional-core-facilities}{%
 \subsubsection{Institutional Core
@@ -1052,13 +1009,15 @@ departments and institutions. These facilities can range from minimal to
 baroque extravagance depending on institutional resources and whatever
 complex web of local history brought them about.
 
+A
+\href{https://reporter.nih.gov/project-details/9444124\#sub-Projects}{subproject}
+within a
 \href{https://projectreporter.nih.gov/project_info_details.cfm?aid=9444124}{PNI
-Systems Core} lists
-\href{https://reporter.nih.gov/project-details/9444124\#sub-Projects}{subprojects}
-echo a lot of the thoughts here, particularly around effort
-duplication\footnote{Thanks a lot to the one-and-only stunning and
-  brilliant Dr.~Eartha Mae Guthman for suggesting looking at the BRAIN
-  initiative grants as a way of getting insight on core facilities.}:
+Systems Core} grant echoes a lot of the thoughts here, particularly
+regardling effort duplication\footnote{Thanks a lot to the one-and-only
+  stunning and brilliant Dr.~Eartha Mae Guthman for suggesting looking
+  at the BRAIN initiative grants as a way of getting insight on core
+  facilities.}:
 
 \begin{quote}
 Creating an Optical Instrumentation Core will address the problem that
@@ -1099,7 +1058,7 @@ its software infrastructure development
   \end{quote}}, which they should be applauded for, but also
 illustrative of the problems with a core-focused infrastructure project.
 For an external user, the documentation and tutorials are incomplete --
-it's not clear to me how I would set this up for my institute, lab, or
+it's not clear to me how one would set this up for my institute, lab, or
 data, and there are several places of hard-coded princeton-specific
 values that I am unsure how exactly to adapt\footnote{Though again, this
   project is examplary, built by friends, and would be an excellent
@@ -1109,6 +1068,14 @@ infrastructure falls far below it. I was unable to find an example of a
 core facility that maintained publicly-accessible documentation on the
 construction and operation of its experimental infrastructure or the
 management of its facility.
+
+This might be unsurprising given the economic structure of most core
+facilities: an institution pays for a core to benefit the institution,
+and downstream public benefits are a nice plus but not high up in the
+list of concerns (if present at all). Core facilities are thus unlikely
+to serve as the source of mass infrastructure, but they do serve as a
+point of local coordination within institutions, and so given some
+larger means of coordination may still be useful.
 
 \hypertarget{centralized-institutes}{%
 \subsubsection{Centralized Institutes}\label{centralized-institutes}}
@@ -1161,9 +1128,15 @@ meaningful social interactions humans can sustain given the size of
 their brain \cite{kochBigScienceTeam2016} 
 \end{quote}
 
-!! These institutes are certainly helpful in building core technologies
+These institutes too are certainly helpful in building core technologies
 for the field, but they aren't necessarily organized for developing
-mass-scale infrastructure.
+mass-scale infrastructure. They reflect the capabilities and needs of
+the institute itself, which are likely to be radically different than a
+small lab. They can build technologies on a background of expensive
+cloud storage and computation and rely on a team of engineers to
+implement and maintain them. So while the tools they make are certainly
+\emph{useful} we shouldn't count on them to build the systems we need
+for scientists at large.
 
 \hypertarget{meso-scale-collaborations}{%
 \subsubsection{Meso-scale
@@ -1253,7 +1226,11 @@ nor their inspiring realization of meso-scale collaboration, but to
 illustrate a problem that I see as an extension of that discussed in the
 context of core facilities --- designing infrastructure for one task, or
 one group in particular makes it much less likely to be portable to
-other tasks and groups.
+other tasks and groups. This argument is much more contingent on the
+specific circumstances of the consortium than the prior arguments about
+core facilities and institutes: when organized with mass-infrastructure
+in mind, collaborations between semi-autonomous groups across
+institutions could be a powerful mode of tool development.
 
 It is also unclear how replicable these consortia are, and whether they
 challenge, rather than reinforce technical inequity in science.
@@ -1308,16 +1285,18 @@ Infrastructure}\label{a-draft-of-decentralized-scientific-infrastructure}}
 
 
 \begin{multicols}{2}
- Where do we go from here?
+ What should we build?
 
 The decentralized infrastructure I will describe here is similar to
 previous notions of ``grass-roots'' science articulated within systems
-neuroscience \cite{mainenBetterWayCrack2016} , or ``small tech''
-in the web development world \cite{balkanSmallTechnologyFoundation} , but has broad and deep history in many domains of computing. My
-intention is to provide a more prescriptive scaffolding for its design
-and potential implementation as a way of painting a picture of what
-science could be like. This sketch is not intended to be final, but a
-starting point for further negotiation and refinement.
+neuroscience \cite{mainenBetterWayCrack2016} , ``small tech'' in
+the web development world \cite{balkanSmallTechnologyFoundation} , and shares some of the motivations of the
+\href{https://solidproject.org/}{Solid project} \cite{sambraSolidPlatformDecentralized2016} , but has broad and deep
+history in many domains of computing. My intention is to provide a more
+prescriptive scaffolding for its design and potential implementation as
+a way of painting a picture of what science could be like. This sketch
+is not intended to be final, but a starting point for further
+negotiation and refinement.
 
 Throughout this section, when I am referring to any particular piece of
 software I want to be clear that I don't intend to be dogmatically
@@ -1336,29 +1315,24 @@ base principles here, but from the systemic constraints described above,
 some design principles that illustrate the idea emerge naturally. For
 the sake of concrete illustration, in some of these I will additionally
 draw from the architectural principles of the internet protocols: the
-most successful decentralized digital technology project.
-
-!! need to integrate \cite{larsenPoliticalNatureTCP2012} 
+most successful decentralized digital technology project to date.
 
 \hypertarget{protocols-not-platforms}{%
 \subsubsection{Protocols, not Platforms}\label{protocols-not-platforms}}
 
-Much of the basic technology of the internet was developed as \{\%
-include rdfa2.html id=``protocols'' resource=``protocols''
-typeof=``skos:Concept'' contents = ``\emph{protocols}'' \%\} that
-describe the basic attributes and operations of a process. \{\% include
-rdfa2.html resource=``protocols'' property=``skos:example'' contents=``A
-simple and common example is email over SMTP (Simple Mail Transfer
-Protocol)'' \%\} \cite{Rfc5321SimpleMail} . SMTP describes a
-series of steps that email servers must follow to send a message: the
-sender initiates a connection to the recipient server, the recipient
-server acknowledges the connection, a few more handshake steps ensue to
-describe the senders and receivers of the message, and then the data of
-the message is transferred. Any software that implements the protocol
-can send and and receive emails to and from any other. The protocol
-basis of email is the reason why it is possible to send an email from a
-gmail account to a hotmail account (or any other hacky homebrew SMTP
-client) despite being wholly different pieces of software.
+Much of the basic technology of the internet was developed as protocols
+that describe the basic attributes and operations of a process. A simple
+and common example is email over SMTP (Simple Mail Transfer Protocol)
+\cite{Rfc5321SimpleMail} . SMTP describes a series of steps that
+email servers must follow to send a message: the sender initiates a
+connection to the recipient server, the recipient server acknowledges
+the connection, a few more handshake steps ensue to describe the senders
+and receivers of the message, and then the data of the message is
+transferred. Any software that implements the protocol can send and and
+receive emails to and from any other. The protocol basis of email is the
+reason why it is possible to send an email from a gmail account to a
+hotmail account (or any other hacky homebrew SMTP client) despite being
+wholly different pieces of software.
 
 In contrast, \emph{platforms} provide some service with a specific body
 of code usually without any pretense of generality. In contrast to email
@@ -1397,8 +1371,8 @@ on. The degree to which switching is seamless is the degree to which
 people will be willing to switch.
 
 This principle runs directly contrary to the current incentives for
-novelty and fragmentation, which must be directly counterbalanced by
-design choices elsewhere to address the incentives driving them.
+novelty and fragmentation and the dominant economic model of software
+platforms, which must be counterbalanced by design choices elsewhere.
 
 \hypertarget{embrace-heterogeneity-be-uncoercive}{%
 \subsubsection{Embrace Heterogeneity, Be
@@ -1436,13 +1410,6 @@ leaving easy also ensures that early missteps in development of the
 system are not fatal to its development, preventing lock-in to a
 component that needs to be restructured.
 
-!! the coercion of centralization has a few forms. this is related to
-the authoritarian impulse in the open science movement that for awhile
-bullied people into openness. that instinct in part comes from a belief
-that everyone should be doing the same thing, should be posting their
-work on the one system. decentralization is about autonomy, and so a
-reciprocal approach is to make it easy and automatic.
-
 \hypertarget{empower-people-not-systems}{%
 \subsubsection{Empower People, not
 Systems}\label{empower-people-not-systems}}
@@ -1450,17 +1417,20 @@ Systems}\label{empower-people-not-systems}}
 Because IP was initially developed as a military technology by DARPA, a
 primary design constraint was survivability in the face of failure. The
 model adopted by internet architects was to move as much functionality
-from the network itself to the end-users of the network --- rather than
-the network itself guaranteeing a packet is transmitted, the sending
-computer will do so by requiring a response from the recipient \cite{clarkDesignPhilosophyDARPA1988} .
+as possible from the network itself to the end-users of the network ---
+rather than the network itself guaranteeing a packet is transmitted, the
+sending computer will do so by requiring a response from the recipient
+\cite{clarkDesignPhilosophyDARPA1988} .
 
 For infrastructure, we should make tools that don't require a central
 team of developers to maintain, a central server-farm to host data, or a
 small group of people to govern. Whenever possible, data, software, and
-hardware should be self-describing, so one needs minimal additional
-tools or resources to understand and use it. It should never be the case
-that funding drying up for one node in the system causes the entire
-system to fail.
+hardware should be self-describing\footnote{AKA you shouldn't need to
+  resort to some external source to understand it. Data should come
+  packaged with clear metadata, software should have its own docs, etc.},
+so one needs minimal additional tools or resources to understand and use
+it. It should never be the case that funding drying up for one node in
+the system causes the entire system to fail.
 
 Practically, this means that the tools of digital infrastructure should
 be deployable by individual people and be capable of recapitulating the
@@ -1482,12 +1452,12 @@ On one side, decentralized governance is the means by which an
 infrastructure can be maintained to serve the ever-evolving needs of its
 users. On the other, a sense of community ownership is what drives
 people to not only adopt but contribute to the development of an
-infrastructure. In addition to a potentially woo-woo sense of socially
-affiliative ``community-ness,'' any collaborative system needs a way of
-ensuring that the practice of maintaining, building, and using it is
-designed to \emph{visibly and tangibly benefit} those that do, rather
-than be relegated to a cabal of invisible developers and maintainers
-\cite{grudinGroupwareSocialDynamics1994, randallDistributedOntologyBuilding2011} .
+infrastructure. In addition to being a source of all the warm fuzzies of
+socially affiliative ``community-ness,'' any collaborative system needs
+a way of ensuring that the practice of maintaining, building, and using
+it is designed to \emph{visibly and tangibly benefit} those that do,
+rather than be relegated to a cabal of invisible developers and
+maintainers \cite{grudinGroupwareSocialDynamics1994, randallDistributedOntologyBuilding2011} .
 
 Governance and communication tools also make it possible to realize the
 infinite variation in application that infrastructures need while
@@ -1495,10 +1465,12 @@ keeping them coherent: tools must be built with means of bringing the
 endless local conversations and modifications of use into a common space
 where they can become a cumulative sense of shared memory.
 
-This idea will be given further treatment and instantiation in a later
-discussion of the social dynamics of private bittorrent trackers, and is
-necessarily diffuse because of the desire to not be authoritarian about
-the structure of governance.
+I will return to this idea in
+\protect\hyperlink{archives-need-communities}{Archives Need Communities}
+in the context of social dynamics of private bittorrent trackers, as
+well as propose a set of basic communication and governance tools in
+\protect\hyperlink{rebuilding-scientific-communication}{Rebuilding
+Scientific Communication}.
 
 \hypertarget{usability-matters}{%
 \subsubsection{Usability Matters}\label{usability-matters}}
@@ -1508,23 +1480,31 @@ will be adopted or even useful, it must be developed embedded within
 communities of practice and \emph{be useful for solving problems that
 people actually have.} We should learn from the struggles of the
 semantic web project. Rather than building a fully prescriptive and
-complete system first and instantiating it later, we should develop
-tools whose usability is continuously improved \emph{en route} to a
-(flexible) completed vision.
+complete system first and deploying it later, we should develop tools
+whose usability is continuously improved \emph{en route} to a (flexible)
+completed vision.
 
-The adage from RFC 1958 ``nothing gets standardized until there are
-multiple instances of running code'' \cite{carpenterRFC1958Architectural1996}  captures the dual nature of the
-constraint well. Workable standards don't emerge until they have been
-extensively tested in the field, but development without an eye to an
-eventual protocol won't make one.
+The adage from RFC 1958\footnote{A ``request for comment'' from the
+  Network Working Group of the Internet Engineering Task Force on the
+  architecture of the internet. The IETF designs many of the protocols
+  that serve as the backbone of the internet.} ``nothing gets
+standardized until there are multiple instances of running code'' \cite{carpenterRFC1958Architectural1996}  captures the dual nature of
+the constraint well. Workable standards don't emerge until they have
+been extensively tested in the field, but development without an eye to
+an eventual protocol won't make one.
 
 We should read the
 \href{https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish}{gobbling
 up} of open protocols into proprietary platforms that defined ``Web
 2.0'' as instructive (in addition to a demonstration of the raw power of
 concentrated capital) \cite{markoffTomorrowWorldWide1996} .
-\emph{Why} did Slack outcompete IRC? The answer is relatively simple: it
-was relatively simple to use. Using a contemporary example, to
+\emph{Why} did Slack outcompete IRC?\footnote{\href{https://en.wikipedia.org/wiki/Internet_Relay_Chat}{IRC},
+  internet relay chat, was a messaging system that served many of the
+  same functions as the group messaging program
+  \href{https://slack.com/}{Slack} serves now. Also see its more active
+  cousin \href{https://en.wikipedia.org/wiki/XMPP}{XMPP}} The answer is
+relatively simple: it was relatively simple to use. Using a contemporary
+example, to
 \href{https://matrix-org.github.io/synapse/latest/setup/installation.html}{set
 up a Synapse server} to communicate over
 \href{https://matrix.org/docs/spec/}{Matrix} one has to wade through
@@ -1542,23 +1522,26 @@ intrinsically harder to use, we just need to focus on user experience to
 a comparable degree that centralized platforms: if it takes a college
 degree to turn the water on, that ain't infrastructure.
 
-People are smart, they just get frustrated easily. We have to raise our
-standards of design such that we don't expect users to have even a
-passing familiarity with programming, attempting to build tools that are
-truly general use. We can't just design a peer-to-peer system, we need
-to make the data ingestion and annotation process automatic and
-effortless. We can't just build a system for credit assignment, it needs
-to happen as an automatic byproduct of using the system. We can't just
-make tools that \emph{work,} they need to \emph{feel good to use.}
+People are smart, they just get frustrated easily and have other things
+to do on a deadline. We have to raise our standards of design such that
+we don't expect users to have even a passing familiarity with
+programming, attempting to build tools that are truly general use. We
+can't just design a peer-to-peer system, we need to make the data
+ingestion and annotation process automatic and effortless. We can't just
+build a system for credit assignment, it needs to happen as an automatic
+byproduct of using the system. We can't just make tools that
+\emph{work,} they need to \emph{feel good to use.}
 
 Centralized systems also have intrinsic limitations that provide
 openings for decentralized systems, like cost, incompatibility with
 other systems, inability for extension, and opacity of function. The
 potential for decentralized systems to capture the independent
 development labor of all of its users, rather than just that of a core
-development team, is one means of competition. If the barriers to
-adoption can be lowered, and the benefits raised these constant negative
-pressures of centralization might overwhelm intertia.
+development team, is one means of competition. If a system is
+sufficiently easy to adopt, at least comparable to prior tooling, and
+gives people a satisfying means of having their work accepted and
+valued, the social and technical joy might be enough to outweigh the
+inertia of change and the convenience of centralized systems.
 
 With these principles in mind, and drawing from other knowledge
 communities solving similar problems: internet infrastructure,
@@ -1600,7 +1583,7 @@ There are a dizzying number of scientific data formats \cite{teamScientificDataF
 impractical here and I will use the Neurodata Without Borders:N
 (NWB)\cite{rubelNWBAccessibleData2019a}  as an example. NWB is
 the de facto standard for systems neuroscience, adopted by many
-institutes and labs, though far from uniformly. NWB
+institutes and labs, though far from universally. NWB
 \href{https://www.nwb.org/nwb-software/}{consists of} a
 \href{https://schema-language.readthedocs.io/en/stable/}{specification
 language}, a \href{https://nwb-schema.readthedocs.io/en/stable/}{schema
@@ -1613,12 +1596,12 @@ needs \cite{rubelNeurodataBordersEcosystem2021}  and making a
 modular, extensible format ecosystem.
 
 The major point of improvement for NWB, and I imagine many data
-standards, is the ease of conversion. The conversion API requires
-extensive programming, knowledge of the format, and navigation of
-several separate tutorial documents. This means that individual labs, if
-they are lucky enough to have some partially standardized format for the
-lab, typically need to write (or hire someone to write) their own
-\href{https://github.com/catalystneuro/tank-lab-to-nwb}{software}
+standards, is the ease of conversion and use. The conversion API
+requires extensive programming, knowledge of the format, and navigation
+of several separate tutorial documents. This means that individual labs,
+if they are lucky enough to have some partially standardized format for
+the lab, typically need to write (or hire someone to write) their
+\href{https://github.com/catalystneuro/tank-lab-to-nwb}{own} software
 \href{https://github.com/catalystneuro/mease-lab-to-nwb}{library} for
 conversion.
 
@@ -1711,7 +1694,8 @@ and interacts directly with each other.
 For the sake of concreteness, we can consider a (simplified) description
 of Bittorrent \cite{cohenBitTorrentProtocolSpecification2017} ,
 arguably the most successful p2p protocol. To share a collection of
-files, a user creates a \texttt{.torrent} file which consists of a
+files, a user creates a \texttt{.torrent} file with their Bittorrent
+client which consists of a
 \href{https://en.wikipedia.org/wiki/Cryptographic_hash_function}{cryptographic
 hash}, or a string that is unique to the collection of files being
 shared; and a list of ``trackers.'' A tracker, appropriately, keeps
@@ -1724,15 +1708,14 @@ download the files (a leecher) will then open the \texttt{.torrent} file
 in their client, which will then ask the tracker for the IP addresses of
 the other peers who are seeding the file, directly connect to them, and
 begin downloading. So far so similar to standard client-server systems,
-but the magic is just getting started. Say another person wants to
-download the same files before the first person has finished downloading
-it: rather than \emph{only} downloading from the original seeder, the
-new leecher downloads from \emph{both} the original seeder and the first
-leecher by requesting pieces of the file from each until they have the
-whole thing. Leechers are incentivized to share among each other to
-prevent the seeders from spending time reuploading the pieces that they
-already have, and once they have finished downloading they become
-seeders themselves.
+but say another person wants to download the same files before the first
+person has finished downloading it: rather than \emph{only} downloading
+from the original seeder, the new leecher downloads from \emph{both} the
+original seeder and the first leecher by requesting pieces of the file
+from each until they have the whole thing. Leechers are incentivized to
+share among each other to prevent the seeders from spending time
+reuploading the pieces that they already have, and once they have
+finished downloading they become seeders themselves.
 
 From this very simple example, a number of qualities of p2p systems
 become clear.
@@ -1767,14 +1750,14 @@ become clear.
   attention to the tools used in the broader archival community,
   especially the archival communities that especially need resilience
   because their archives are frequent targets of governments and
-  IP-holders\cite{spiesDataIntegrityLibrarians2017} . Despite
-  more than 15 years of concerted effort by governments and intellectual
-  property holders, the pirate bay is still alive and kicking \cite{kim15YearsPirate2019} \footnote{knock on wood}. This is because
-  even if the entire infrastructure of the tracker is destroyed, as it
-  was in 2006, the files are distributed across all of its users, the
-  actual database of \texttt{.torrent} metadata is quite small, and the
-  tracker software is extraordinarily simple to rehost \cite{vandersarOpenBayNow2014}  -- The Pirate Bay was back online in 2
-  days. When another tracker, what.cd (which we will return to
+  intellectual property holders\cite{spiesDataIntegrityLibrarians2017} . Despite more than 15 years of
+  concerted effort by governments and intellectual property holders, the
+  pirate bay is still alive and kicking\footnote{knock on wood} \cite{kim15YearsPirate2019} . This is because even if the entire
+  infrastructure of the tracker is destroyed, as it was in 2006, the
+  files are distributed across all of its users, the actual database of
+  \texttt{.torrent} metadata is quite small, and the tracker software is
+  extraordinarily simple to rehost \cite{vandersarOpenBayNow2014}  -- The Pirate Bay was back online in 2 days. When another
+  tracker, what.cd (which we will return to
   \protect\hyperlink{archives-need-communities}{soon}) was shut down, a
   series of successors popped up using the open source tools
   \href{https://github.com/WhatCD/Gazelle}{Gazelle} and
@@ -1785,8 +1768,7 @@ become clear.
   \href{https://wiki.archiveteam.org/index.php/Main_Page}{Archive Team},
   who struggled -- but eventually succeeded -- to disseminate their
   \href{https://wiki.archiveteam.org/index.php/GeoCities_Project}{historic
-  preservation} over a single ``crappy cable modem'' \cite{scottGeocitiesTorrentUpdate2010} . And by groups who disseminate !!
-  return here talking about ddosevrets.
+  preservation} over a single ``crappy cable modem'' \cite{scottGeocitiesTorrentUpdate2010} .
 \item
   The network is extremely \textbf{scalable} since there is no cost to
   connecting new peers and the users of a system expand the storage
@@ -1845,21 +1827,21 @@ between all computers in range simultaneously, full blast through the
 decrepit network switch that won't have seen that much excitement in
 years.
 
-!! if we take the suggestion of Andrey Andreev et al.~and invest in
-server clusters within institutes \cite{andreevBiologistsNeedModern2021, charlesCommunityDrivenBigOpen2020} ,
-their impact could be multiplied manyfold by being able to use them all
-fluidly and simultaneously for file transfer and storage. !! compatible
-and extends calls for more institutional support for storage liek
-andreev's paper, but satisfies the need for generalized storage systems
-that the NIH doesn't have to develop a whole new institute to handle.
-extra bonus! in that system each server would have to serve the entire
-file each time. WIth p2p then the load can be spread between all of
-them, decreasing costs for all institutions!!!!
+If we take the suggestion of Andrey Andreev et al.~and invest in server
+clusters within institutes \cite{andreevBiologistsNeedModern2021, charlesCommunityDrivenBigOpen2020} , their impact could be multiplied
+manyfold by combining them fluidly and simultaneously in a p2p swarm for
+file transfer and storage. While the NIH might be shy to start up
+another server farm for all scientific data and prefer to contract with
+AWS, we don't have to be. P2p systems might also alleviate any nervous
+university administrators concerned about bandwidth costs: instead of
+needing to serve entire datasets to each person who wants them, the load
+can be spread out across many institutes naturally based on the use of
+the file.
 
-So far I have relied on the Extraordinarily Simplified Bittorrent™️
-depiction of a peer to peer system, but there are many improvements and
-variants that can address different needs for scientific data
-infrastructure.
+So far I have relied on the Extraordinarily Simplified
+Bittorrent\footnote{™️} depiction of a peer to peer system, but there
+are many improvements and variants that can address different needs for
+scientific data infrastructure.
 
 One obvious need that bittorrent can't currently support is version
 control, but more recent p2p systems do. \href{https://ipfs.io/}{IPFS}
@@ -2113,13 +2095,14 @@ community \cite{brossCommunityCollaborationContribution2013} . Of
 course, we need to be careful with building the structural incentives
 for a data sharing system: the very last thing we want is another
 \href{https://etiennelebel.com/cs/t-leaderboard/t-leaderboard.html}{coercive
-leaderboard}. In contrast to what.cd, for infrastructure we want
-extremely low barriers to entry, and be agnostic to resources ---
-researchers with access to huge server farms should not be unduly
-favored. We should think carefully about using downloading as the
-``cost,'' because downloading and analyzing huge amounts of data can be
-\emph{good} and exactly what we \emph{want} in some circumstances, but a
-threat to privacy and data governance in others.
+leaderboard} that turns what should be a collaborative effort punitive.
+In contrast to what.cd, for infrastructure we want extremely low
+barriers to entry, and be agnostic to resources --- researchers with
+access to huge server farms should not be unduly favored. We should
+think carefully about using downloading as the ``cost,'' because
+downloading and analyzing huge amounts of data can be \emph{good} and
+exactly what we \emph{want} in some circumstances, but a threat to
+privacy and data governance in others.
 
 This model has its own problems, including the lack of interoperability
 between different trackers, the need to recreate a new set of accounts
@@ -2295,21 +2278,17 @@ overlays. These overlays provide some additional tool that can translate
 and combine data between databases with some mapping between the
 terminology in the overlay and that of the individual databases. The NIH
 articulates this as a ``Biomedical Data Translator'' in its Strategic
-plan for Data Science:
-
-\begin{quote}
-Through its Biomedical Data Translator program, the National Center for
-Advancing Translational Sciences (NCATS) is supporting research to
-develop ways to connect conventionally separated data types to one
-another to make them more useful for researchers and the public. The
-Translator aims to bring data types together in ways that will integrate
-multiple types of existing data sourcess, including objective signs and
-symptoms of disease, drug effects, and other types of biological data
-relevant to understanding the development of disease and how it
-progresses in patients. \cite{NIHStrategicPlan2018} 
-\end{quote}
-
-And NCATS elaborates it a bit more on the project
+plan for Data Science\footnote{\begin{quote}
+  Through its Biomedical Data Translator program, the National Center
+  for Advancing Translational Sciences (NCATS) is supporting research to
+  develop ways to connect conventionally separated data types to one
+  another to make them more useful for researchers and the public. The
+  Translator aims to bring data types together in ways that will
+  integrate multiple types of existing data sourcess, including
+  objective signs and symptoms of disease, drug effects, and other types
+  of biological data relevant to understanding the development of
+  disease and how it progresses in patients. \cite{NIHStrategicPlan2018} 
+  \end{quote}} and NCATS elaborates it a bit more on the project
 \href{https://ncats.nih.gov/translator/about}{``about''} page:
 
 \begin{quote}
@@ -2335,11 +2314,10 @@ for indefinite noncompetitive extensions at the discretion of the agency
 \cite{fleisherOtherTransactionAward2019} .
 
 The project appears to be in a relatively early phase, and so it's
-relatively difficult to figure out exactly what it is that has been
-built. The
-\href{https://web.archive.org/web/20210710012427/https://ncats.nih.gov/translator/projects}{projects
-page} is currently a list of the leaders of different areas, but some
-parts of the project are visible through a bit of searching. They
+difficult to figure out exactly what it is that has been built. The
+\href{https://web.archive.org/web/20211210023403/https://ncats.nih.gov/translator/projects}{projects
+page} is currently just a list of the leaders of different areas, but
+some parts of the project are visible through a bit of searching. They
 describe a registry of APIs for existing databases collected on their
 platform \href{https://smart-api.info/portal/translator}{SmartAPI} that
 are to be combined into a semantic knowledge graph \cite{consortiumUniversalBiomedicalData2019} . There are many kinds of
@@ -2353,8 +2331,8 @@ corresponding API that provides data for both elements. For each edge in
 the graph, then, a number of possible APIs can provide data without
 necessarily making a guarantee of consistency or accuracy.
 
-They articulate a very similar set of beliefs about the impossibility of
-a unified dataset or ontology\footnote{\begin{quote}
+They articulate a set of beliefs about the impossibility of a unified
+dataset or ontology\footnote{\begin{quote}
   First, we assert that a single monolithic data set that directly
   connects the complete set of clinical characteristics to the complete
   set of biomolecular features, including ``-omics'' data, will never
@@ -2384,14 +2362,14 @@ a unified dataset or ontology\footnote{\begin{quote}
   the driving motivation for the Translator system. \cite{consortiumUniversalBiomedicalData2019} 
   \end{quote}}\cite{consortiumUniversalBiomedicalData2019} ,
 although arguably create one in
-\href{https://biolink.github.io/biolink-model/docs/}{biolink}, and this
-problem seems to have driven the focus of the project away from linking
-data as such towards developing a graph-powered query engine. The
-Translator is being designed to use machine-learning powered
-``autonomous relay agents'' that sift through the inhomogenous data from
-the APIs and are able to return a human-readable response, also
-generated with machine-learning. The final form of the translator is
-still unclear, but between
+\href{https://biolink.github.io/biolink-model/docs/}{biolink} that's
+very similar to that described here, and this problem seems to have
+driven the focus of the project away from linking data as such towards
+developing a graph-powered query engine. The Translator is being
+designed to use machine-learning powered ``autonomous relay agents''
+that sift through the inhomogenous data from the APIs and are able to
+return a human-readable response, also generated with machine-learning.
+The final form of the translator is still unclear, but between
 \href{https://smart-api.info/portal/translator}{SmartAPI}, a
 seemingly-preliminary description of the reasoning engine \cite{goelExplanationContainerCaseBased2021} , and descriptions from
 contractors \cite{ROBOKOPCoVar2021} , the machine learning
@@ -2445,12 +2423,16 @@ If at its core the algorithm believes that being transgender is a
 disease, could it misunderstand and try to ``cure'' it? Even if it
 doesn't, won't it influence the surrounding network of entities with its
 links to genes, prior treatment, and so on in unpredictable ways?
-Combined with the online training that is then shared by other users of
-the translator \cite{consortiumUniversalBiomedicalData2019} ,
+Combined with the online training that updates the search model based on
+how it is used \cite{consortiumUniversalBiomedicalData2019} ,
 socially problematic treatment and research practices could be built
-into our data infrastructure without any way of knowing their effect. In
-the long-run, an effort towards transparency could have precisely the
-opposite effect by being run through a series of black boxes.
+into our data infrastructure \emph{without any way of knowing their
+effect on unrelated treatment.} In the long-run, an effort towards
+transparency could have precisely the opposite effect by being run
+through a series of black boxes.
+
+Add information about legal requirements to make algorithmic health
+recommendations explainable from Irene
 
 A larger problem is reflected in the scope and evolving direction of the
 Translator when combined with the preceding discussion of putting all
@@ -2474,6 +2456,8 @@ to language,'' with ambitions of providing a means of making algorithmic
 predictions for drug discovery and clinical practice rather than linking
 data \cite{hailuNIHfundedProjectAims2019}  Tools like these have
 been thoroughly problematized elsewhere, eg. \cite{groteEthicsAlgorithmicDecisionmaking2020, obermeyerDissectingRacialBias2019, panchArtificialIntelligenceAlgorithmic2019, panchInconvenientTruthAI2019} .
+
+This example could be substantially trimmed
 
 As of September 2021, it appears there is still some work left to be
 done to make the Translator functional, but the early example
@@ -2554,7 +2538,7 @@ that are eventually canned -
 million} so far since 2016 for the Translator \cite{RePORTRePORTERBiomedical2021} . As exemplified by the trial and
 discontinuation of the NIH Data Commons after
 \href{https://reporter.nih.gov/search/H4LxgMGK9kGw6SeWCom85Q/projects?shared=true}{\$84.7
-million}, centralized infrastructure projects often an opportunity to
+million}, centralized infrastructure projects can be an opportunity to
 ``dance until the music stops.'' Again, it is relatively difficult to
 see from the outside what work is going on and how it all fits together,
 but judging from RePORTER there seem to be a
@@ -2580,56 +2564,6 @@ for data to train an algorithm, you need to feed it data, and so the
 translator gains the incentive to suck up as much personal and other
 data as it can.
 
-!! It doesn't even need to be Amazon, the publishers are getting into it
-too! RELX owns lexisnexis, a big identity management company, and is
-aggressively building out its machine-learning tools for science. From
-their 2019 annual shareholders report:
-
-\begin{quote}
-Elsevier serves academic and government research administrators and
-leaders through its Research Intelligence suite of products. SciVal is a
-decision tool that helps institutions to establish, execute and evaluate
-research strategies by leveraging bibliometric data {[}\ldots{]}
-Elsevier expanded its leadership position in research institution
-benchmarking analytics through further investment in its SciVal Topic
-Prominence in Science. Big data technology takes into consideration
-nearly all of the articles available in Scopus since 1996 and clusters
-them into nearly 96,000 global, unique research topics based on
-citations patterns.
-
-Elsevier's flagship clinical reference platform, ClinicalKey, provides
-physicians, nurses and pharmacists with access to leading Elsevier and
-third-party reference and evidence-based medical content {[}\ldots{]}
-Elsevier has developed a Healthcare Knowledge Graph, which utilises ML
-and Natural Language Processing (NLP) to knit together its collection of
-the world's foremost clinical knowledge. The Healthcare Knowledge Graph
-enhances ClincialKey, the portal into Elsevier's vast medical content
-library by providing more timely clinical results for users.
-
-{[}\ldots{]} For healthcare professionals, Elsevier's clinical solutions
-include Interactive Patient Education and Care Planning. Elsevier's
-ClinicalPath (formerly Via Oncology) provides clinical pathways
-delivering personalised, evidence-based oncology guidance at the point
-of care. Elsevier's analytics capabilities in oncology support our
-ClinicalPath customers in answering increasingly complex questions
-around the delivery of cancer care, such as appropriate use of precision
-oncology and treatment adherence.
-\end{quote}
-
-!! So not only do we risk distorting the practice of medicine, we could
-distort the entire trajectory of science. SciVal autoranks researchers
-and institutions based on how ``hot'' their research programs are, and
-helps suggest topics that are more likely to get a grant, etc. Since
-they also aggressively control what gets recommended, and have also
-recently started literally selling ads on their websites, they could
-easily create the same kind of informational bubbles that we are
-familiar with from social media. And with the combination of a
-biomedical knowledge graph contiguous with the pharmaceutical industry,
-they could steer all basic research --- perhaps with us being only dimly
-aware --- to support the profit of their pharmaceutical partners. This
-isn't even speculative !
-https://www.elsevier.com/solutions/biology-knowledge-graph
-
 Even assuming the Translator works perfectly and has zero unanticipated
 consequences, the development strategy still reflects the inequities
 that pervade science rather than challenge them. Biopharmaceutical
@@ -2637,8 +2571,6 @@ research, followed by broader biomedical research, being immediately and
 extremely profitable, attracts an enormous quantity of resources and
 develops state of the art infrastructure, while no similar
 infrastructure is built for the rest of science, academia, and society.
-
-Trans health {example of potential harms}
 
 I have no doubt that everyone working on the Translator is doing so for
 good reasons, and they have done useful work. Forming a consortium and
@@ -2711,7 +2643,7 @@ fledgling technologies being gobbled up by technology giants to finish
 and privatize.
 
 I think the problem with the initial and eventual goals of the
-translater can be illustrated by problematizing the central focus on
+translator can be illustrated by problematizing the central focus on
 linking ``all data,'' or at least ``all biomedical data.'' Who is a
 system of ``all (biomedical) data'' for? Outside of metascientists and
 pharmaceutical companies, I think most people are interested primarily
@@ -2729,13 +2661,21 @@ system needs to not only be designed to allow anyone to integrate their
 data into it, but also to be integrated into how researchers collect and
 use their data. It needs to give them firm, verifiable, and fine-grained
 control over who has access to their data and for what purpose. It needs
-to be \emph{multiple,} governable and malleable in local communities of
-practice. Through the normal act of making my data available to my
-colleague and vice versa, build on a cumulative and negotiable
-understanding of the relationship between our work and its meaning.
+to be \emph{pluralistic,} capable of representing multiple potentially
+conflicting representations, governable and malleable in local
+communities of practice. Through the normal act of making my data
+available to my colleague and vice versa, we build on a cumulative and
+negotiable understanding of the relationship between our work and its
+meaning.
 
 Without too much more prefacing, let's return to the scheduled
-programming. 
+programming.
+
+TODO: Elsevier {has even scarier plans}
+
+Trans health {example of potential harms}
+
+
 \end{multicols}
 
 
@@ -2750,8 +2690,9 @@ way of linking data together. Instead of a big bucket of files as is
 traditional in torrents and domain-general databases, we need some way
 of exposing the metadata of disparate data formats so that we can query
 for and find the particular range of datasets appropriate to our
-question. !! For this section, I want to develop a notion of data
-linking that's a lot closer to natural language than an engineering
+question. We'll be playing in the world of linked data and the semantic
+web, but thinking about using those tools for a fluid means of
+expression more akin to natural language than to an engineering
 specification.
 
 Each format has a different metadata structure with different names, and
@@ -2765,29 +2706,31 @@ Researchers navigate this variability manually as a standard part of the
 job, and we can make that work cumulative by building tools that allow
 researchers to communally describe and negotiate over the structure of
 their data and the local relationships to other data structures. We can
-extend our peer-to-peer system to be a \emph{federated database} system.
+extend our peer-to-peer system to be a \emph{federated database}
+system\footnote{There is a lot of subtlety to the terminology
+  surrounding ``federated'' and the typology of distributed systems
+  generally, I am using it in the federated messaging sense of forming
+  groups of people, rather than the strict term ``federated databases''
+  which do imply a standardized schema across a federation. The
+  conception of distributed, autonomous databases described by the
+  DataLad team \cite{hankeDefenseDecentralizedResearch2021}  is a
+  bit closer to my meaning. In the ActivityPub world, federations refer
+  to a single homeserver under which many people can sign up. We mean
+  something similar but distinct: people that have autonomous
+  ``homeservers'' in a peer to peer system, typically multiple
+  identities for a single person rather than many people on a single
+  server, that can combine into federations with particular governance
+  structures and technological systems attached.}.
 
 Federated systems consist of \emph{distributed}, \emph{heterogeneous},
 and \emph{autonomous} agents that implement some minimal agreed-upon
 standards for mutual communication and (co-)operation. Federated
-databases\footnote{though there are subtleties to the terminology, with
-  related terms like ``multidatabase,'' ``data integration,'' and ``data
-  lake'' composing subtle shades of a shared idea. I will use federated
-  databases as a single term that encompasses these multiple ideas here,
-  for the sake of constraining the scope of the paper.} were proposed in
-the early 1980's \cite{heimbignerFederatedArchitectureInformation1985}  and have been
+databases were proposed in the early 1980's \cite{heimbignerFederatedArchitectureInformation1985}  and have been
 developed and refined in the decades since as an alternative to either
 centralization or non-integration \cite{litwinInteroperabilityMultipleAutonomous1990, kashyapSemanticSchematicSimilarities1996, hullManagingSemanticHeterogeneity1997} . Their application to the
 dispersion of scientific data in local filesystems is not new \cite{busseFederatedInformationSystems1999, djokic-petrovicPIBASFedSPARQLWebbased2017, hasnainBioFedFederatedQuery2017} , but their implementation is more
 challenging than imposing order with a centralized database or punting
 the question into the unknowable maw of machine learning.
-
-!! There is a lot of subtlety to the terminology surrounding
-``federated'' and the typology of distributed systems generally, I am
-using it more in the federated messaging sense of forming groups of
-people, rather than the strict term federated databases which do imply a
-standardized schema across a federation. I am largely in line with the
-notion of distributed databases here \cite{hankeDefenseDecentralizedResearch2021} .
 
 Amit Sheth and James Larson, in their reference description of federated
 database systems, describe \textbf{design autonomy} as one critical
@@ -2849,7 +2792,7 @@ this reconciliation process \cite{shethFederatedDatabaseSystems1990} :
   schemas. There can be multiple federated schemas to accomodate
   different combinations of export schemas.
 \item
-  An \textbf{export schema} can further be used to make the federated
+  An \textbf{external schema} can further be used to make the federated
   schema better available to external users, but in this case since
   there is no notion of ``external'' it is less relevant.
 \end{itemize}
@@ -2881,24 +2824,19 @@ these grouping structures, the peer is given control over what data of
 theirs is shared.
 
 Clearly, we need some form of \emph{identity} in the system, let's make
-it simple and flat and denote that in pseudocode as \texttt{@username}
---- in reality, without any form of distributed uniqueness checking, we
-would need to have some notion of where this username is ``from,'' so
-let's say we actually have a system like \texttt{username@name-provider}
-but for this example assume a single name provider, say
-ORCID\footnote{!! now would be the time blockchain ppl are like ``but
-  wait! that's centralization! how can you trust ORCID??'' Those kinds
-  of systems are designed for zero-trust environments, but we don't need
-  absolute zero trust in this system since we are assuming we're
-  operating with visible entities in a system already bound to some
-  degree by reputation.}. Someone would then be able to use their
-\texttt{@name}space as a root, under which they could refer to their
-data, schemas, and so on, which will be denoted \texttt{@name:subobject}
-(see this notion of personal namespaces for knowledge organization
-discussed in early wiki culture here \cite{MeatballWikiPersonalCategories} ). Let us also assume that there is
-no categorical difference between \texttt{@usernames} used by individual
-researchers, institutions, consortia, etc. --- everyone is on the same
-level.
+it simple and flat and denote that in pseudocode as
+\texttt{@username}\footnote{In reality, without any form of distributed
+  uniqueness checking, we would need to have some notion of where this
+  username is ``from,'' so let's say we actually have a system like
+  \texttt{username@name-provider} but for this example assume a single
+  name provider, we'll return to identity provision.}. Someone would
+then be able to use their \texttt{@name}space as a root, under which
+they could refer to their data, schemas, and so on, which will be
+denoted \texttt{@name:subobject} (see this notion of personal namespaces
+for knowledge organization discussed in early wiki culture here \cite{MeatballWikiPersonalCategories} ). Let us also assume that there
+is no categorical difference between \texttt{@usernames} used by
+individual researchers, institutions, consortia, etc. --- everyone is on
+the same level.
 
 We pick up where we left off earlier with a peer who has their data in
 some discipline-specific format, which let us assume for the sake of
@@ -2908,44 +2846,76 @@ concreteness has a representation as an
 That schema could be ``owned'' by the \texttt{@username} corresponding
 to the standard-writing group --- eg \texttt{@nwb} for neurodata without
 borders. In a \href{https://www.w3.org/TR/turtle/}{turtle-ish}
-pseudocode, then, our dataset might look like this:
+pseudocode\footnote{We could use actual turtle or JSON-LD syntax
+  throughout, but I am using a simplified pseudocode to a) make it a bit
+  more readable for the sake of illustration and b) be very explicit
+  that this is not intended to be a proposal for a protocol or
+  specification, but demonstrative of its qualities.}, then, our dataset
+might look like this:
 
-\begin{verbatim}
-<#cool-dataset>
-    a @nwb:NWBFile
-    @nwb:general:experimenter @jonny
-    @nwb:ElectricalSeries
-        .electrodes [1, 2, 3]
-        .rate 30000
-        .data [...]
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#cool{-}dataset\textgreater{}}
+\NormalTok{  a @nwb:NWBFile}
+\NormalTok{  @nwb:general:experimenter @jonny}
+\NormalTok{  @nwb:ElectricalSeries}
+\NormalTok{    .electrodes [1, 2, 3]}
+\NormalTok{    .rate 30000}
+\NormalTok{    .data [...]}
+\end{Highlighting}
+\end{Shaded}
 
-Where I indicate that me, \texttt{@jonny} collected
-\texttt{a\ @nwb:NWBFile} dataset (indicated with
-\texttt{\textless{}\#dataset-name\textgreater{}} to differentiate an
-application/instantiation of a schema from its definition) that
-consisted of an \texttt{@nwb:ElectricalSeries} and the relevant
-attributes (where a leading \texttt{.} is a shorthand for the parent
-schema element).
+This indicates that me, \texttt{@jonny} collected
+\texttt{a\ @nwb:NWBFile} dataset named
+\texttt{\textless{}\#cool-dataset\textgreater{}}, making it available as
+\texttt{@jonny:cool-dataset} that consisted of an
+\texttt{@nwb:ElectricalSeries} and the relevant attributes (where a
+leading \texttt{.} is a shorthand for the parent schema element, so
+\texttt{@nwb:ElectricalSeries:electrodes}).
 
-!! pause to describe notion of using triplet links and the generality
-they afford us.
+\begin{itemize}
+
+\item
+  Here would be a good time to describe triplet links as the basic tech
+  of the semantic web world.
+\item
+  We can use object oriented programming as an example: attributed and
+  methods instead of just pointers.
+\end{itemize}
 
 I have some custom field for my data, though, which I extend the format
 specification to represent. Say I have invented some new kind of
-solar-powered electrophysiological device and want to annotate its specs
-alongside my data.
+solar-powered electrophysiological device --- the SolarPhys2000 --- and
+want to annotate its specs alongside my data.
 
-\begin{verbatim}
-@jonny:SolarEphys < @nwb:NWBContainer
-    ManufactureDate
-    InputWattageSeries < @nwb:ElectricalSeries
-        newprop
-        -removedprop
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#SolarEphys\textgreater{}}
+\NormalTok{  extends @nwb:NWBContainer}
+    
+\NormalTok{  UsedWith @hw:SolarPhys2000}
 
-!! think of a better example lmao\^{}\^{} and then annotate what's going
-on.
+\NormalTok{  ManufactureDate}
+\NormalTok{    a @schema:Date}
+
+\NormalTok{  InputWattageSeries}
+\NormalTok{    extends @nwb:ElectricalSeries}
+
+\NormalTok{    sunIntensity}
+\NormalTok{      a @nwb:TimeSeries}
+\end{Highlighting}
+\end{Shaded}
+
+Here I create a new extension \texttt{@jonny:SolarEphys} that
+\texttt{extends} the \texttt{@nwb:NWBContainer} schema. We use
+\texttt{extends} rather than \texttt{a} because we are adding something
+new to the \emph{description} of the container rather than \emph{making}
+a container to store data. I declare that this container is
+\texttt{UsedWith} our SolarPhys2000 which we have registered in some
+general \texttt{@hw} hardware registry. I then add two new fields,
+\texttt{ManufactureDate} and \texttt{InputWattageSeries}, declaring
+types from, for example
+\href{https://schema.org/Date}{\texttt{@schema:Date}} and \texttt{@nwb}.
 
 There are many strategies for making my ontology extension available to
 others in a federated network. We could use a distributed hash table, or
@@ -2991,22 +2961,25 @@ loosely use some terms from the
 \href{https://www.w3.org/ns/activitystreams\#class-definitions}{ActivityStreams}
 vocabulary as \texttt{@as}
 
-\begin{verbatim}
-<#nwbFederation>
-  a @fed:Federation
-  onReceive
-    @as:Join @as:Accept
-  allowSchema
-    extensionOf @nwb:NWBContainer
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#nwbFederation\textgreater{}}
+\NormalTok{  a @fed:Federation}
+\NormalTok{  onReceive}
+\NormalTok{    @as:Join @as:Accept}
+\NormalTok{  allowSchema}
+\NormalTok{    extensionOf @nwb:NWBContainer}
+\end{Highlighting}
+\end{Shaded}
 
 Now anyone that is a part of the \texttt{@nwbFederation} would be able
 to see the schemas we have submitted, sort of like a beefed up,
 semantically-aware version of the existing
 \href{https://nwb-extensions.github.io/}{neurodata extensions catalog}.
-In this system, many overlapping schemas could exist simultaneously, but
-wouldn't become a hopeless clutter because similar schemas could be
-compared and reconciled based on their semantic properties.
+In this system, many overlapping schemas could exist simultaneously
+under different namespaces, but wouldn't become a hopeless clutter
+because similar schemas could be compared and reconciled based on their
+semantic properties.
 
 So far we have been in the realm of metadata, but how would my computer
 know how to read and write the data to my disk so i can use it? In a
@@ -3018,13 +2991,15 @@ well? Suppose the HDF5 group (or anyone, really!) has a namespace
 basic operations like \texttt{Read}, \texttt{Write}, or \texttt{Select}.
 NWB could specify that in their definition of \texttt{@nwb:NWBFile}:
 
-\begin{verbatim}
-@nwb.NWBFile
-  a @hdf:HDF5
-    isVersion x.y.z
-    hasDependency libhdf5==x.y.z
-  usesContainer @nwb:NWBContainer
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{@nwb.NWBFile}
+\NormalTok{  a @hdf:HDF5}
+\NormalTok{    isVersion "x.y.z"}
+\NormalTok{    hasDependency "libhdf5"=="x.y.z"}
+\NormalTok{  usesContainer @nwb:NWBContainer}
+\end{Highlighting}
+\end{Shaded}
 
 The abstraction around the file implementation makes it easier for
 others to consume my data, but it also makes it easier for \emph{me} to
@@ -3043,20 +3018,22 @@ default, I have all my NWB datasets set to be available to the
 \texttt{@nwbFederation} , and I list all my metadata on, say the Society
 for Neuroscience's \texttt{@sfnFederation}.
 
-\begin{verbatim}
-<#globalPermissions>
-  a @fed:Permissions
-  permissionsFor @jonny
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#globalPermissions\textgreater{}}
+\NormalTok{  a @fed:Permissions}
+\NormalTok{  permissionsFor @jonny}
 
-  federatedWith 
-    name @nwbFederation
-    @fed:shareData 
-      is @nwb:NWBFile
+\NormalTok{  federatedWith }
+\NormalTok{    name @nwbFederation}
+\NormalTok{    @fed:shareData }
+\NormalTok{      is @nwb:NWBFile}
 
-  federatedWith
-    name @sfnFederation
-    @fed:shareMetadata
-\end{verbatim}
+\NormalTok{  federatedWith}
+\NormalTok{    name @sfnFederation}
+\NormalTok{    @fed:shareMetadata}
+\end{Highlighting}
+\end{Shaded}
 
 Let's say this dataset in particular is a bit sensitive --- say we apply
 a set of permission controls to be compliant with \texttt{@hhs.HIPAA}
@@ -3066,25 +3043,27 @@ it with can decrypt. Since we've applied the \texttt{@hhs.HIPAA}
 ruleset, we would be able to automatically detect if we have any
 conflicting permissions, but we're doing fine in this example.
 
-\begin{verbatim}
-<#datasetPermissions>
-  a @fed:Permissions
-  permissionsFor @jonny:cool-dataset
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#datasetPermissions\textgreater{}}
+\NormalTok{  a @fed:Permissions}
+\NormalTok{  permissionsFor @jonny:cool{-}dataset}
 
-  accessRuleset @hhs:HIPAA
-    .authorizedRecipient <#hash-of-patient-ids>
+\NormalTok{  accessRuleset @hhs:HIPAA}
+\NormalTok{    .authorizedRecipient \textless{}\#hash{-}of{-}patient{-}ids\textgreater{}}
   
-  federatedWith
-    name @institutionalCloud
-    @fed:shareEncrypted
-\end{verbatim}
+\NormalTok{  federatedWith}
+\NormalTok{    name @institutionalCloud}
+\NormalTok{    @fed:shareEncrypted}
+\end{Highlighting}
+\end{Shaded}
 
 Now I want to make use of some of my colleagues data. Say I am doing an
 experiment with a transgenic dragonfly and collaborating with a chemist
 down the hall. This transgene, known colloquially in our discipline as
-\texttt{"@neuro:superstar6"} (oh-so-uncreatively ripped off by the
-chemists as \texttt{"@chem:SUPER6"}) fluoresces when the dragonfly is
-feeling bashful, and we have plenty of photometry data stored as
+\texttt{"@neuro:superstar6"} (which the chemists call
+\texttt{"@chem:SUPER6"}) fluoresces when the dragonfly is feeling
+bashful, and we have plenty of photometry data stored as
 \texttt{@nwb:Fluorescence} objects. We think that its fluorescence is
 caused by the temperature-dependent conformational change from blushing.
 They've gathered NMR and Emission spectroscopy data in their
@@ -3096,37 +3075,43 @@ bunch of pesky scripts and folders, so we decide to make a bridge
 between our datasets. We need to indicate that our different names for
 the gene are actually the same thing and relate the spectroscopy data.
 
-Let's make the link explicit, say we use
+Let's make the link explicit, say we use an already-existing vocabulary
+like the ``simple knowledge organization system'' for describing logical
+relationships between concepts:
 \href{https://www.w3.org/2009/08/skos-reference/skos.html}{\texttt{@skos}}?
 
-\begin{verbatim}
-<#super-link-6>
-  a @fed:Link
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#super{-}link{-}6\textgreater{}}
+\NormalTok{  a @fed:Link}
   
-  from @neuro:superstar6
-  to @chem:SUPER6
-  link @skos:exactMatch
-\end{verbatim}
+\NormalTok{  from @neuro:superstar6}
+\NormalTok{  to @chem:SUPER6}
+\NormalTok{  link @skos:exactMatch}
+\end{Highlighting}
+\end{Shaded}
 
 Our \texttt{@nwb:Fluorescence} data has the emission wavelength in its
 \texttt{@nwb:Fluorescence:excitation\_lambda} property\footnote{not
   really where it would be in the standard, but go with it plz}, which
 is the value of their \texttt{@acs:Spectroscopy} data at a particular
 value of its \texttt{wavelength}. Unfortunately, \texttt{wavelength}
-isn't metadata for our friend, but a column in the
+isn't metadata for our friend, but does exist as a column in the
 \texttt{@acs:Spectroscopy:readings} table, so for now the best we can do
 is indicate that \texttt{excitation\_lambda} is one of the values in
 \texttt{wavelength} and pick it up in our analysis tools.
 
-\begin{verbatim}
-<#imaging>
- a @fed:Link
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#imaging\textgreater{}}
+\NormalTok{ a @fed:Link}
  
- from @nwb:Fluorescence:excitation_lambda
- to @acs:Spectroscopy:readings
- link @fed:Subset
-   valueIn "wavelength"
-\end{verbatim}
+\NormalTok{ from @nwb:Fluorescence:excitation\_lambda}
+\NormalTok{ to @acs:Spectroscopy:readings}
+\NormalTok{ link @fed:Subset}
+\NormalTok{   valueIn "wavelength"}
+\end{Highlighting}
+\end{Shaded}
 
 This makes it much easier for us to index our data against each other
 and solves a few real practical problems we were facing in our
@@ -3137,7 +3122,7 @@ Rinse and repeat our sharing and federating process from our previous
 schema extension, add a little bit of extra federation with the
 \texttt{@acs} namespace, and in the normal course of our doing our
 research we've contributed to the graph structure linking two common
-data formats. Ours is one of many, with ugly little names like
+data formats. Ours is one of many, with idiosyncratic names like
 \texttt{@jonny:super-link-6}\footnote{we'll return to credit assignment,
   don't worry! I wouldn't leave a friend out to dry.}. We might not have
 followed the exact rules, and we only made a few links rather than a
@@ -3158,7 +3143,12 @@ point to
 addressed} identifiers that are served peer to peer. A
 mutable/changeable/human-readable name and metadata system that points
 to a system of permanent, unique identifiers has been one need that has
-hobbled IPFS, and is the direction pointed to by DataLad \cite{hankeDefenseDecentralizedResearch2021} . A
+hobbled IPFS, and is the direction pointed to by DataLad\footnote{\href{https://www.datalad.org/}{DataLad}
+  \cite{halchenkoDataLadDistributedSystem2021, hankeDefenseDecentralizedResearch2021}  and its application in
+  Neuroscience as \href{https://dandiarchive.org}{DANDI} are two
+  projects that are \emph{very close} to what I have been describing
+  here --- developing a p2p backend for datalad might even be a
+  promising development path towards it.} \cite{hankeDefenseDecentralizedResearch2021} . A
 \href{https://mastodon.social/@humanetech/107155144840782386}{parallel}
 \href{https://web.archive.org/web/20211024082055/https://socialhub.activitypub.rocks/t/which-links-between-activitypub-and-solid-project/529}{set}
 of
@@ -3169,35 +3159,42 @@ in the broader linked data community with regard to using ActivityPub as
 a way to index data on Solid.
 
 In this example I have been implicitly treating the
-\texttt{@nwbFederation} users like bittorrent trackers, keeping track of
-different datasets in their federation, but there is no reason why
-queries couldn't themselves be distributed across the participating
-peers, though I believe tracker-like federations are useful and might
-emerge naturally. A system like this doesn't need the radical zero trust
-design of, for example, some distributed ledgers, and an overlapping
-array of institutional, disciplinary, interest, and so on federations
-would be a good means of realizing the evolvable community structure
-needed for sustained archives.
+\texttt{@nwbFederation} users like bittorrent
+\protect\hyperlink{trackers--wikis}{trackers}, keeping track of
+different datasets in their federation and caching for faster quaeries.
+There is no reason why queries couldn't themselves be distributed across
+the participating peers, though I believe tracker-like federations at
+various intermediary scales of organization are useful and might emerge
+naturally. A system like this doesn't need the radical zero trust design
+of, for example, some distributed ledgers, and an overlapping array of
+institutional, disciplinary, interest, and so on federations would be a
+good means of realizing the evolvable community structure needed for
+sustained archives.
 
 Extend this practice across the many overlapping gradients of
 cooperation and collaboration in science, and on a larger scale a system
-like this could serve as a way to concretize and elevate the organic,
-continual negotiation over meaning and practice that centralized
-ontologies can only capture as a snapshot. It doesn't have the same
-guarantees of consistency or support for algorithmic reasoning as a
-top-down system would in theory, but it would give us agency over the
-structure of our information and have the potential to be useful for a
-far broader base of researchers.
+like this could serve as a way to make explicit the organic, continual
+negotiation over meaning and practice that centralized ontologies can
+only capture as a snapshot. I don't happen to know where the physicists
+store their data or what format it's in, \emph{but the chemists might,}
+and the best way to get there from here might be a dense, multiplicative
+web of actual practical knowledge instead of some sparsely used
+corporate API. We don't make the same guarantees of consistency or
+support for algorithmic reasoning as a top-down system would in theory,
+but it would give us agency over the structure of our information and
+have the potential to be useful for a far broader base of researchers.
 
-I have no idea where the physicists' store their data or what format
-it's in, \emph{but the chemists might,} and the best way to get there
-from here might be a dense, multiplicative web of actual practical
-knowledge instead of some sparsely used corporate API.
-
-I have been purposefully nonprescriptive about implementation and fine
-details here, what have we described so far? !! short summary of
-preceding section !! recall that what i am describing is protocol-like,
-so having multiple implementations that evolve is sorta the point.
+As will be developed through the rest of the piece, this system
+effectively functions as a \emph{protocol for protocols.} The
+\texttt{@fed:Federation} notion of federation defines its own set of
+properties and requirements that let the people who implement it
+implement a variety of federation types and relationships with each
+other, but it is one of many. By building on the ``meta-protocol'' of a
+peer-to-peer linked data platform we can change the problem from needing
+to agree on a single protocol for scientific communication, data
+indexing, and so on to making a means of creating \emph{many} protocols
+as fluidly as is needed. Are the rules of \texttt{@fed:Federation} too
+limited? Extend it to suit your needs.
 
 Like the preceding description of the basic peer-to-peer system, this
 joint metadata/p2p system could be fully compatible with existing
@@ -3206,26 +3203,17 @@ it on heterogeneous databases is a requisite part of the system, so, for
 example, there's no reason that an HTTP-based API like SmartAPI couldn't
 be queried.
 
-\href{https://www.datalad.org/}{DataLad} \cite{halchenkoDataLadDistributedSystem2021, hankeDefenseDecentralizedResearch2021}  and its application in
-Neuroscience as \href{https://dandiarchive.org}{DANDI} are two projects
-that are \emph{very close} to what I have been describing here ---
-developing a p2p backend for datalad and derivation into a protocol
-might even be a promising development path towards it.
+\begin{itemize}
 
-!! close this section by taking a larger view - \cite{langilleBioTorrentsFileSharing2010}  DANDI is in on the p2p system,
-as is kachery-p2p!! p2p systems already plenty in use, academic
-torrents, biotorrents, libgen on IPFS !! the proof of their utility is
-in the pudding, arguably when i've been talkiung about `centralized
-servers' what i'm actually talking about content delivery networks,
-which are effectively p2p systems -- they just own all the peers.
+\item
+  close by taking a larger view on p2p: p2p systems already in use,
+  academic torrents, biotorrents \cite{langilleBioTorrentsFileSharing2010} , libgen on IPFS
+\item
+  proof of utility is in the pudding: CDNs are effectively p2p systems
+  where they just own all the peers.
+\end{itemize}
 
-!! get the stuff from tim BL on the vision of the internet from weaving
-the web, contrast fixed ontology with this. and then also include the
-quote about the practical work of the ontology building needing to be
-continuous and social.
 
-!! note that this is all fully compatible with existing systems and is a
-superset of centralized servers with centralized schemas! 
 \end{multicols}
 
 
@@ -3235,15 +3223,16 @@ superset of centralized servers with centralized schemas!
 
 \begin{multicols}{2}
  Straddling our system for sharing data are the tools to
-gather and analyze it. Experimental and analytical tools are the natural
-point of extension for collectively developed scientific digital
+gather and analyze it --- two examples of the more general need for
+computational resources. Experimental and analytical tools are the
+natural point of extension for collectively developed scientific digital
 infrastructure, and considering them together shows the combinatoric
 power of integrating interoperable domains of scientific practice. In
 particular, in addition to benefits from their development in isolation,
 we can ask how a more broadly integrated system helps problems like
 adoption and incentives for distributed work, enables a kind of deep
-provenance from experiment to results, and lets us reimagine the form of
-the community and communication tools for science.
+provenance from experiment to results, and further builds us towards
+reimagine the form of the community and communication tools for science.
 
 This section will be relatively short compared to
 \protect\hyperlink{shared-data}{shared data}. We have already
@@ -3253,17 +3242,13 @@ or ``undo'' in the spaces of analytical and experimental tools because
 so much more work has been done, and so much more power has been accrued
 in the domain of data systems. Distributed computing does have a dense
 history, with huge numbers of people working on the problem, but its
-hegemonic form is much closer to the system articulated below than
+dominant form is much closer to the system articulated below than
 centralized servers are to federated semantic p2p systems. I also have
 written extensively about
 \protect\hyperlink{experimental-frameworks}{experimental frameworks}
 before \cite{saundersAutopilotAutomatingBehavioral2019} , and
 develop \href{https://docs.auto-pi-lot.com/en/latest/}{one of them} so I
 will be brief at risk of repeating myself or appearing self-serving.
-
-!! both these sections are also relatively unstandardized, so before
-jumping to some protocol just yet, we can build frameworks that start
-congealing the pieces en route to one.
 
 Integrated scientific workflows have been written about many times
 before, typically in the context of the ``open science'' movement. One
@@ -3274,15 +3259,19 @@ a similar ethic of toolbuilding as I have in a 2017 presentation:
 Open Workflow: 1. Meet users where they are 2. Respect current
 incentives 3. Respect current workflow
 
-We could\ldots{} demonstrate that it makes research more efficient, of
-higher quality, and more accessible.
+\begin{itemize}
 
-Better, we could\ldots{} demonstrate that researchers will get published
-more often.
-
-Even better, we could\ldots{} make it easy
-
-Best, we could\ldots{} make it automatic \cite{spiesWorkflowCentricApproachIncreasing2017} 
+\item
+  We could\ldots{} demonstrate that it makes research more efficient, of
+  higher quality, and more accessible.
+\item
+  Better, we could\ldots{} demonstrate that researchers will get
+  published more often.
+\item
+  Even better, we could\ldots{} make it easy.
+\item
+  Best, we could\ldots{} make it automatic \cite{spiesWorkflowCentricApproachIncreasing2017} 
+\end{itemize}
 \end{quote}
 
 To build an infrastructural system that enables ``open'' practices,
@@ -3326,19 +3315,19 @@ make them easier to use. No matter how much good work might be done,
 inevitable differences between APIs is a relatively sizable technical
 challenge for researchers --- a problem compounded by the incentives for
 fragmentation described previously. For toolbuilders, many parts of any
-given tool from architecture to interface have to be redesigned with
-varying degrees of success each time. For science at large, with few
+given tool from architecture to interface have to be redesigned each
+time with varying degrees of success . For science at large, with few
 exceptions of well-annotated and packaged code, most results are only
 replicable with great effort.
 
-To be clear, we have reached levels of ``not the developer's fault'' to
-the tune of ``API discontinuity'' being \emph{``the norm for 99\% of
-software.''} Negotiating boundaries between (and even within) software
-and information structures is an elemental part of computing. The only
-time it becomes a conceivable problem to ``solve'' is when the problem
-domain coalesces to the point where it is possible to articulate its
-abstract structure as a protocol, and the incentives are great enough to
-adopt it. Thankfully that's what we're trying to do here.
+Discontinuity between the behavior and interface of different pieces of
+software is, of course, overwhelming norm. Negotiating boundaries
+between (and even within) software and information structures is an
+elemental part of computing. The only time it becomes a conceivable
+problem to ``solve'' interoperability is when the problem domain
+coalesces to the point where it is possible to articulate its abstract
+structure as a protocol, and the incentives are great enough to adopt
+it. Thankfully that's what we're trying to do here.
 
 It's unlikely that we will solve the problem of data analysis being
 complicated, time consuming, and error prone by teaching every scientist
@@ -3489,22 +3478,24 @@ In pseudocode, I could define some analysis node for, say, converting an
 RGB image to grayscale under my namespace as \texttt{@jonny:bin-spikes}
 like this:
 
-\begin{verbatim}
-<#bin-spikes>
-  a @analysis:node
-    Version >=1.0.0
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#bin{-}spikes\textgreater{}}
+\NormalTok{  a @analysis:node}
+\NormalTok{    Version "\textgreater{}=1.0.0"}
 
-  hasDescription
-    "Convert an RGB Image to a grayscale image"
+\NormalTok{  hasDescription}
+\NormalTok{    "Convert an RGB Image to a grayscale image"}
 
-  inputType
-    @numpy:ndarray
-      # ... some spec of shape ...
+\NormalTok{  inputType}
+\NormalTok{    @numpy:ndarray}
+\NormalTok{      \# ... some spec of shape ...}
 
-  outputType
-    @numpy:ndarray
-      # ... some spec of shape ...
-\end{verbatim}
+\NormalTok{  outputType}
+\NormalTok{    @numpy:ndarray}
+\NormalTok{      \# ... some spec of shape ...}
+\end{Highlighting}
+\end{Shaded}
 
 I have abbreviated the specification of shape to not overcomplicate the
 pseudocode example, but say we successfully specify a 3 dimensional
@@ -3519,19 +3510,22 @@ are pinning specific versions with \href{https://semver.org/}{semantic
 versioning}, but the syntax isn't terribly important. Then we just need
 to specify where the code for the node itself comes from:
 
-\begin{verbatim}
-  dependsOn
-    @ubuntu:^20.*:x64
-    @python:3.8
-    @apt:opencv:^4.*.*
-    @pip:opencv-python:^4.*.*
-    @pip:numpy:^14.*.*
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  dependsOn}
+\NormalTok{    @ubuntu:"\^{}20.*":x64}
+\NormalTok{    @python:"3.8"}
+\NormalTok{    @apt:opencv:"\^{}4.*.*"}
+\NormalTok{    @pip:opencv{-}python:"\^{}4.*.*"}
+\NormalTok{    @pip:numpy:"\^{}14.*.*"}
 
-  providedBy
-    @git:repository https://mygitserver.com/binspikes/fast-binspikes.git
-      @git:hash fj9wbkl
-    @python:class /main-module/binspikes.py:Bin_Spikes
-\end{verbatim}
+\NormalTok{  providedBy}
+\NormalTok{    @git:repository }
+\NormalTok{      .url "https://mygitserver.com/binspikes/fast{-}binspikes.git"}
+\NormalTok{      .hash "fj9wbkl"}
+\NormalTok{    @python:class "/main{-}module/binspikes.py:Bin\_Spikes"}
+\end{Highlighting}
+\end{Shaded}
 
 Here we can see the advantage of being able to mix and match different
 namespaces in a practical sense. Our \texttt{@analysis.node} protocol
@@ -3549,16 +3543,18 @@ as-needed.
 This node also becomes available to extend, say someone wanted to add an
 additional input format to my node:
 
-\begin{verbatim}
-<@friend#bin-spikes>
-  a @jonny:bin-spikes
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}@friend\#bin{-}spikes\textgreater{}}
+\NormalTok{  extends @jonny:bin{-}spikes}
 
-  inputType
-    @pandas:DataFrame
+\NormalTok{  inputType}
+\NormalTok{    @pandas:DataFrame}
 
-  providedBy
-    ...
-\end{verbatim}
+\NormalTok{  providedBy}
+\NormalTok{    ...}
+\end{Highlighting}
+\end{Shaded}
 
 They don't have to interact with my potentially messy codebase at all,
 but it is automatically linked to my work so I am credited. One could
@@ -3586,10 +3582,12 @@ logic of the function by overriding its \texttt{run} method and specify
 an output file to store intermediate data (if requested by the pipeline)
 with an \texttt{output} method. We also specify a \texttt{bin\_width} as
 a \texttt{Param}eter for our node, as an example of how a lightweight
-protocol could be bidirectionally specified: we could receive a
-parameterization from our pseudocode specification, or we could write a
-framework with a \texttt{Bin.export\_schema()} that constructs the
-pseudocode specification from code.
+protocol could be bidirectionally specified as an
+\protect\hyperlink{shared-knowledge}{interface} to the linked data
+format: we could receive a parameterization from our pseudocode
+specification, or we could write a framework with a
+\texttt{Bin.export\_schema()} that constructs the pseudocode
+specification from code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3614,20 +3612,22 @@ existing namespace. We'll only make a linear pipeline with two stages,
 but there's no reason more complex branching and merging couldn't be
 described as well.
 
-\begin{verbatim}
-<#my-analysis>
-  a @analysis:workflow
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#my{-}analysis\textgreater{}}
+\NormalTok{  a @analysis:workflow}
 
-  inputType 
-    @jonny:bin-spikes:inputType
+\NormalTok{  inputType }
+\NormalTok{    @jonny:bin{-}spikes:inputType}
 
-  outputName
-    .inputType:processed
+\NormalTok{  outputName}
+\NormalTok{    .inputType:processed}
 
-  step Step1 @jonny:bin-spikes
-  step Step2 @someone-else:another-step
-    input Step1:output
-\end{verbatim}
+\NormalTok{  step Step1 @jonny:bin{-}spikes}
+\NormalTok{  step Step2 @someone{-}else:another{-}step}
+\NormalTok{    input Step1:output}
+\end{Highlighting}
+\end{Shaded}
 
 Having kept the description of our data in particular abstract from the
 implementation of the code and the workflow specification, the only
@@ -3636,29 +3636,31 @@ from the analysis nodes, we can specify them here (or in the workflow).
 Assuming literally zero abstraction and using the tried-and-true
 ``hardcoded dataset list'' pattern, something like:
 
-\begin{verbatim}
-<#my-project>
-  a @analysis:project
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#my{-}project\textgreater{}}
+\NormalTok{  a @analysis:project}
 
-  hasDescription
-    "I gathered some data, and it is great!"
+\NormalTok{  hasDescription}
+\NormalTok{    "I gathered some data, and it is great!"}
 
-  researchTopic
-    @neuro:systems:auditory:speech-processing
-    @linguistics:phonetics:perception:auditory-only
+\NormalTok{  researchTopic}
+\NormalTok{    @neuro:systems:auditory:speech{-}processing}
+\NormalTok{    @linguistics:phonetics:perception:auditory{-}only}
 
-  inPaper
-    @doi:10.1121:1.5091776 
+\NormalTok{  inPaper}
+\NormalTok{    @doi:10.1121:1.5091776 }
 
-  workflow Analysis1 @jonny:my-analysis
-    globalParams
-      .Step1:params:bin_width 10
+\NormalTok{  workflow Analysis1 @jonny:my{-}analysis}
+\NormalTok{    globalParams}
+\NormalTok{      .Step1:params:bin\_width 10}
 
-    datasets
-      @jonny.mydata1:v0.1.0:raw
-      @jonny.mydata2:^0.2.*:raw
-      @jonny.mydata3:>=0.1.1:raw
-\end{verbatim}
+\NormalTok{    datasets}
+\NormalTok{      @jonny.mydata1:v0.1.0:raw}
+\NormalTok{      @jonny.mydata2:\^{}0.2.*:raw}
+\NormalTok{      @jonny.mydata3:\textgreater{}=0.1.1:raw}
+\end{Highlighting}
+\end{Shaded}
 
 And there we are! The missing parameters like \texttt{outputName} from
 our workflow can be filled in from the defaults filled in the workflow
@@ -3667,18 +3669,15 @@ to specify the paper this data is associated with, as well as some broad
 categories of research topics so that our data as well as the results of
 the analysis can be found.
 
-!! brief description of the state of the system at this point, we can
-link from data to analyses! reapply analyses across different datasets!
-and so on\ldots{}
+summary figure here
 
-So that's useful, but the faint residue of ``well actually'' that hangs
-in the air while people google the link for that xkcd comic about format
-expansion is not lost on me. The important part is in the way this
-hypothetical analysis framework and markup interact with our data system
-and emerging federated metadata system --- The layers of abstraction
-here are worth unpacking, but we'll hold until the end of the shared
-tools section and we have a chance to consider what this system might
-look like for experimental tools.
+So that's useful, but comparable to existing technologies. The important
+part is in the way this hypothetical analysis framework and markup
+interact with our data system and emerging federated metadata system ---
+The layers of abstraction here are worth unpacking, but we'll hold until
+the end of the shared tools section and we have a chance to consider
+what this system might look like for experimental tools to contrast
+abstraction across the two domains.
 
 
 \end{multicols}
@@ -3712,12 +3711,12 @@ means of communication --- and so little formal means of credit
 assignment.
 
 Extending our ecosystem to include experimental tools has a few
-immediate benefits: bridging the gap between collection and sharing data
-would resolve the need for format conversion as a prerequisite for
+immediate benefits: bridging the gap between collection and sharing of
+data would resolve the need for format conversion as a prerequisite for
 inclusion in the linked system, allowing the expression of data to be a
-fluid part of the experiment itself; and serving as a concrete means of
-implementing and building a body of cumulative contextual knowledge in a
-creditable system.
+fluid part of the experiment itself. It would also serve as a concrete
+means of implementing and building a body of cumulative contextual
+knowledge in a creditable system.
 
 I have previously written about the design of a generalizable,
 distributed experimental framework in section 2, and about one modular
@@ -3919,13 +3918,13 @@ Autopilot, a full experiment can be parameterized by the \texttt{.json}
 files that define the task itself and the system-specific configuration
 of the hardware. An
 \href{https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e}{example
-task} from our lab consists of 7 behavioral shaping stages that
-introduce the animal to different features of a fairly typical auditory
-categorization task, each of which includes the parameters for at most
-12 different stimuli per stage, probabilities for presenting lasers,
-bias correction, reinforcement, criteria for advancing to the next
-stage, etc. So just for one relatively straightforward experiment, in
-one lab, in one subdiscipline, there are \textbf{268 parameters} --
+task} from our lab consists of 7 behavioral shaping stages of increating
+difficulty that introduce the animal to different features of a fairly
+typical auditory categorization task. Each stage includes the parameters
+for at most 12 different stimuli per stage, probabilities for presenting
+lasers, bias correction, reinforcement, criteria for advancing to the
+next stage, etc. So just for one relatively straightforward experiment,
+in one lab, in one subdiscipline, there are \textbf{268 parameters} --
 excluding all the default parameters encoded in the software.
 
 The way Autopilot handles various parameters are part of set of layers
@@ -3967,10 +3966,11 @@ and negotiation over experimental terminology.
 We can imagine extending the abstract specification of experimental
 parameters, hardware requirements, and so on to work with our federated
 naming system to overcome the challenges to standardizing. First, we can
-imagine being able to make explicit declarations about the relationship
-between our potentially very local terminology. Here we can declare our
-\texttt{Lightswitch} object and 1) link its \texttt{on\_delay} to our
-friend \texttt{@rumbly}'s object that implements the same thing as
+make explicit declarations about the relationship between our
+potentially very local vocabulary and other vocabularies at varying
+degrees of generality. Here we can declare our \texttt{Lightswitch}
+object and 1) link its \texttt{on\_delay} to our friend
+\texttt{@rumbly}'s object that implements the same thing as
 \texttt{on\_latency}, and 2) link it to a standardized \texttt{Latency}
 term from
 \href{https://scicrunch.org/scicrunch/interlex/view/ilx_0106040\#annotations}{interlex},
@@ -3978,18 +3978,20 @@ but since that term is for time elapsed between a stimulus and
 behavioral response in a psychophysical context, it's only a partial
 match.
 
-\begin{verbatim}
-<#Lightswitch>
-  a @autopilot.hardware.Digital_Out
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#Lightswitch\textgreater{}}
+\NormalTok{  a @autopilot.hardware.Digital\_Out}
 
-  param on_delay
-    @skos:exactMatch @rumbly:LED:on_latency
-    @skos:nearMatch @interlex:Latency
+\NormalTok{  param on\_delay}
+\NormalTok{    @skos:exactMatch @rumbly:LED:on\_latency}
+\NormalTok{    @skos:nearMatch @interlex:Latency}
 
-  providedBy
-    @git:repository ...
-    @python:class ...
-\end{verbatim}
+\NormalTok{  providedBy}
+\NormalTok{    @git:repository ...}
+\NormalTok{    @python:class ...}
+\end{Highlighting}
+\end{Shaded}
 
 Further, since our experimental frameworks are intended to handle off
 the shelf parts as well as our potentially idiosyncratic lightbulb
@@ -4001,12 +4003,14 @@ class that controls a 9 degree of freedom motion sensor from
 indicate the specific part itself as well as the generic \texttt{ic}
 that it uses:
 
-\begin{verbatim}
-<#I2C_9DOF>
-  @autopilot.controlsHardware
-    @sparkfun:13944
-    @ic:LSM9DS1
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#I2C\_9DOF\textgreater{}}
+\NormalTok{  @autopilot.controlsHardware}
+\NormalTok{    @sparkfun:13944}
+\NormalTok{    @ic:LSM9DS1}
+\end{Highlighting}
+\end{Shaded}
 
 This hints at the first steps of a system that would make our technical
 work more cumulative, as it is then easy to imagine being able to search
@@ -4021,37 +4025,39 @@ results of its analysis to also include the tools that were used to
 collect it. Say we want to declare the
 \href{https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e}{example
 experiment} above, and then extend our
-\texttt{\textless{}\#project-name\textgreater{}} project to, also above,
-to reference it:
+\texttt{\textless{}\#project-name\textgreater{}} project to reference
+it:
 
-\begin{verbatim}
-<#example-experiment>
-  a @autopilot:protocol
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\#example{-}experiment\textgreater{}}
+\NormalTok{  a @autopilot:protocol}
 
-  level @autopilot:freeWater
-    reward
-      type mL
-      value 5
-    graduation 
-      a @autopilot:graduation:ntrials
-      n_trials 200
+\NormalTok{  level @autopilot:freeWater}
+\NormalTok{    reward}
+\NormalTok{      type @si:mL}
+\NormalTok{      value 5}
+\NormalTok{    graduation }
+\NormalTok{      a @autopilot:graduation:ntrials}
+\NormalTok{      n\_trials 200}
 
-  level @autopilot:Nafc
-    stim
-      @autopilot:stim:sound:Tone
-        frequency 5000
-        duration 100
+\NormalTok{  level @autopilot:Nafc}
+\NormalTok{    stim}
+\NormalTok{      @autopilot:stim:sound:Tone}
+\NormalTok{        frequency 5000}
+\NormalTok{        duration 100}
 
-  ...
+\NormalTok{  ...}
 
-  @autopilot:prefs
-    @jonny:Lightswitch
-      on_delay 1
+\NormalTok{  @autopilot:prefs}
+\NormalTok{    @jonny:Lightswitch}
+\NormalTok{      on\_delay 1}
 
-<#project-name>
-  a @jonny:project-name
-  collectedBy @jonny:example-experiment
-\end{verbatim}
+\NormalTok{\textless{}\#project{-}name\textgreater{}}
+\NormalTok{  a @jonny:project{-}name}
+\NormalTok{  collectedBy @jonny:example{-}experiment}
+\end{Highlighting}
+\end{Shaded}
 
 So while we sacrifice the direct declaration of standardized terminology
 and syntax, we gain the potential for a much denser and richer
@@ -4107,9 +4113,8 @@ so far before finally arriving there.
 \end{multicols}
 
 
-\hypertarget{abstraction-protocol-design}{%
-\subsubsection{Abstraction \& Protocol
-Design}\label{abstraction-protocol-design}}
+\hypertarget{abstraction-interfaces}{%
+\subsubsection{Abstraction \& Interfaces}\label{abstraction-interfaces}}
 
 
 \begin{multicols}{2}
@@ -4313,6 +4318,10 @@ themselves.
 !! Now we need to consider the social tools needed to communicate
 within, negotiate over, and govern the system.
 
+\begin{verbatim}
+Point here is to lead into interfaces --- these are two examples of classes of interfaces to and from the linked data system. Ways to create, read, and use links. Translation of our metadata system into code and computation. 
+\end{verbatim}
+
 
 \end{multicols}
 
@@ -4394,9 +4403,9 @@ Reading between the lines, it's clear that the difficulty of finding
 research is a feature, not a bug of their system. Their explicit
 business model is to increase the number of publications and sell
 organization back to us with recommendation services. The recommendation
-system might be free*, but the business is to develop dependence to sell
-ad placement --- which they proudly describe as looking very similar to
-their research content \cite{springernatureBrandedContent, elsevier360AdvertisingSolutions} .
+system might be free\footnote{``free''}, but the business is to develop
+dependence to sell ad placement --- which they proudly describe as
+looking very similar to their research content \cite{springernatureBrandedContent, elsevier360AdvertisingSolutions} .
 
 It gets more sinister: Elsevier sells multiple products to recommend
 `trending' research areas likely to win grants, rank scientists, etc.,
@@ -4429,16 +4438,67 @@ control over the course of science, and they are more than happy to ride
 algorithmically amplified scientific hype cycles in fragmented research
 bubbles all the way to the bank.
 
-The consequences are hard to overstate. In addition to literature search
-being an unnecessarily huge sink of time and labor, science operates as
-a wash of tail-chasing results that only rarely seem to cumulatively
-build on one another. The need to constantly reinforce the norm that
-purposeful failure to cite prior work is research misconduct is itself a
-symptom of how engaging with a larger body of work is both extremely
-labor intensive and \emph{strictly optional} in the communication regime
-of journal publication. Despite the profusion of papers, by some
-measures progress in science has slowed to a crawl as the long tail of
-papers with very few citations grows ever longer \cite{chuSlowedCanonicalProgress2021} .
+One more turn of the screw: limiting the system of scientific
+organization to only citations allows publishers to effectively invent
+the metrics that operationalize ``prestige'' and derivative products
+that cement their position with researchers, governments, and funding
+agencies. The promise of placement in a high prestige journal is high
+citation count, and highly citated research explitly or implicitly is
+seen as prestigious. With semantic structure to locate papers, it
+becomes much more difficult to sell high citation count as a product ---
+people can find what they need, rather than needing to pay attention to
+a few high-profile journals.
+
+Scientists aren't the only customers of citation prestige: in 2020 the
+National Research Foundation of Korea (NRF) and Elsevier published a
+joint report that used a measurement derived from citation counts -
+``Field-weighted citation impact'', or FWCI - to argue for the
+underrated research prestige of South Korea \cite{researchfoundationofkoreaSouthKoreaTechnological2020} . While I don't
+dispute the value of South Korea's research program, the apparent
+bargain that was struck is chilling. South Korea gets a very fancy
+report arguing that more scientists in other countries should work with
+theirs, and Elsevier gets to cement itself into the basic operation of
+science. Elsevier controls the journals that can guarantee high citation
+counts \emph{and} the metrics built on top of them. The Brain Korea
+program Phase II report \footnote{the result of another corporate
+  collaboration with the Rand corporation.} \cite{seongBrainKorea212008} , issued just before the 2009 formation of the
+NRF argued that rankings and funding should be dependent on citation
+counts. The NRF now relies on SciVal and their FWCI measurement as a
+primary means of ranking researchers and determining funding, built into
+the Brain Korea 21 funding system \cite{elsevierCaseStudyNational2019, elsevierkoreaSciValHwalyongeulWihan2021} . Without exaggeration, scientific disorganization and reliance on
+citation counts allowed Elsevier to buy control over the course of
+research in South Korea.
+
+The consequences for science are hard to overstate. In addition to
+literature search being an unnecessarily huge sink of time and labor,
+science operates as a wash of tail-chasing results that only rarely seem
+to cumulatively build on one another. The need to constantly reinforce
+the norm that purposeful failure to cite prior work is research
+misconduct is itself a symptom of how engaging with a larger body of
+work is both extremely labor intensive and \emph{strictly optional} in
+the communication regime of journal publication. The combination of more
+publications translating into more profit and the strategic
+disorganization of science contributes to conditions for scientific
+fraud. An entirely fraudulent paper with nonsensical but carefully
+crafted methods and results can be undetectable outside of domain
+experts. Since papers can effectively be islands, given legitimacy by
+placement in a journal strongly incentivized to accept all comers, and
+there is no good means of evaluating them in context with their
+immediate semantic neighbors, investigating fraud is extremely time
+consuming and almost entirely without reward. And since traditional peer
+review happens once, rather than as a continual public process, the only
+recourse outside of posting on PubPeer is to wait on journal editorial
+boards to review each individual complaint. Forensic peer-reviewers have
+been ringing the alarm bell, saying that there is ``no net'' to bad
+research \cite{heathersRealScandalIvermectin2021} , and brave and
+highly-skilled investigators like
+\href{https://scienceintegritydigest.com/}{Elisabeth Bik} have found
+thousands of papers with evidence of purposeful manipulation \cite{shenMeetThisSuperspotter2020, bikPrevalenceInappropriateImage2016} .
+The economic structure of for-profit journals pits their profit model
+against their function as providing a venue for peer review --- the one
+function most scientists are still sympathetic to. Despite the profusion
+of papers, by some measures progress in science has slowed to a crawl
+\cite{chuSlowedCanonicalProgress2021} .
 
 While Chu and Evans correctly diagnose \emph{symptoms} of knowledge
 disorganization like the need to ``resort to heuristics to make
@@ -4458,33 +4518,6 @@ recommending more than things that are alreaady popular. Without
 diagnosing knowledge disorganization as a core part of the business
 model of scientific publishers, we can be led to prescriptions that
 would make the problem worse.
-
-better way of saying this maybe: why do we have citation limits? Seems
-like you should be able to credit everyone you want to. But what is the
-effect of sorting by citation count? If you could credit everyone, then
-you might create an inflationary economy of citations where canonical
-papers become relatively devalued. It's a form of currency control,
-economic regulation. !! someone must have studied the economics of
-citations specifically w.r.t. price caps, no?
-
-!! Another impact of the arcanity of scientific knowledge organization
-is that it is effectively impenetrable to people that aren't domain
-experts. Why is trust in science so low right now? one contributor is
-that they have no idea what the hell we do or how different domains of
-knowledge have evolved. (cite cold war peer review and journals paper)
-
-!! Practically, this makes the quality of scientific literature
-constantly in question. Each paper effectively exists as an island, and
-engagement with prior literature is effectively optional (outside the
-minimum bar set by the 3-5 additional private peer reviewers, each with
-their own limited scope and conflicting interests). Forensic
-peer-reviewers have been ringing the alarm bell, saying that there is
-``no net'' to bad research \cite{heathersRealScandalIvermectin2021} , and brave and highly-skilled investigators like
-\href{https://scienceintegritydigest.com/}{Elisabeth Bik} have found
-thousands of papers with evidence of purposeful manipulation \cite{shenMeetThisSuperspotter2020, bikPrevalenceInappropriateImage2016} .
-!! So our existing systems of communication and organization are
-woefully inadequate for our needs, and don't serve the role of
-guaranteeing consistency or reliability in research that they claim to.
 
 It's hard to imagine an alternative to journals that doesn't look like,
 well, journals. While a full treatment of the journal system is outside
@@ -4513,18 +4546,8 @@ others to index technical knowledge and tools. Finally we use sites like
 \href{https://pubpeer.com}{PubPeer} and ResearchGate for comment and
 criticism.
 
-!! these tools are don't really suit our needs at all, and constrain
-rather than support some basic things that we want to do. For example,
-there is really no venue where we can have sustained, longform,
-multiparty discussions about difficult topics in our field. Sure, it is
-possible to publish series of commentary pieces back and forth, or to
-write blog posts against one another, or to squabble on twitter, but
-there's nothing that truly supports a cumulative body of public
-understanding well.
-
 These technologies point to a few overlapping and not altogether binary
-axes of communication systems. !! make this a table? with technological
-examples for each.
+axes of communication systems.
 
 \begin{itemize}
 
@@ -4577,13 +4600,7 @@ total control over the structure of their communication and knowledge
 systems. Together with our sketches of data, analytical, and
 experimental tools we can start imagining a system for coordinating them
 --- as well as displacing some of the more intractable systems that
-misstructure the practice of science.
-
-!! This is a knotty and tangled history, so I am not attempting a full
-recounting, but will be selectively telling the story to motivate the
-kinds of tools we need.
-
-
+misstructure the practice of science. 
 \end{multicols}
 
 
@@ -4607,7 +4624,7 @@ nit-picking people who exhibit a remarkable community camaraderie.
 Confused? Any other online community would count each of these
 ``negatives'' as a terrible flaw, and the contradictions as impossible
 to reconcile. Perhaps wiki works because the other online communities
-don't. \cite{leufWikiWayQuick2001a, -l, 329}  and in
+don't. \cite{leufWikiWayQuick2001a}  and in
 \href{http://wiki.c2.com/?WhyWikiWorks}{WhyWikiWorks}\footnote{Interestingly,
   this quote is almost, but not exactly the same as that on
   \href{http://wiki.c2.com/?WhyWikiWorks}{Ward's wiki}: \textgreater{}
@@ -4708,21 +4725,17 @@ wikis is the balance between
 ``\href{http://wiki.c2.com/?DocumentMode}{DocumentMode}'' writing that
 serves as linearly-readable reference material, similar to that of
 Wikipedia, and ``\href{http://wiki.c2.com/?ThreadMode}{ThreadMode}''
-writing that is a nonlinear representation of a conversation.
-
-!! order vs contemporaneousness is a fundamental challenge of inventing
-culture in plaintext. The purpose of using a wiki as opposed to other
-technologies that existed at the time like bulletin boards, newsgroups,
-IRC, etc. was that it provided a means of structure (refer to previous
-Ward quote about providing structure for communal development in the
-portland pattern repository group and maybe bring into text to make
-clearer). Tension was always between a desire for long now organization
-but always needed to relate to the immediate communicative and
-organizational needs. Make sure to restructure following reference to
-the utility of talk pages to carry through need for meta-organization in
-addition to any stable knowledge product: the always present need for
-multiple represesentations of the same thought, across timescales and
-interfaces.) http://wiki.c2.com/?WhyBotherToStructure
+writing that is a nonlinear representation of a conversation. Order vs
+contemporaneousness is a fundamental challenge of inventing culture in
+plaintext. The purpose of using a wiki as opposed to other technologies
+that existed at the time like bulletin boards, newsgroups, IRC, etc. was
+that it provided a means of structure\footnote{Giving a means of
+  organizing the writing of the Portland Pattern Repository was the
+  reason for creating Ward's Wiki in the first place.}. The parallel
+need to communicate and attribute work made it a seeming inevitability
+that even if you went out of your way to restructure a lot of writing
+into a sensible DocumentMode page, someone would soon after create a new
+horizontal divider and start a fresh ThreadMode section.
 
 Ward Cunningham and other more organizationally-oriented contributors
 opposed ThreadMode (eg.
@@ -5098,10 +5111,26 @@ modes and separate article vs.~talk pages show us that using
 on the same topic across
 \href{https://communitywiki.org/wiki/TimeInWikis}{percerceived
 timescales} or other conflicting communicative needs. This is especially
-true when the namespaces have \textbf{functional differentiation} like
-the tools for threading conversations on Wikipedia Talk pages and the
-parsing and code generation tools of Templates. These namespaces need to
-be \textbf{visibly crosslinked} both to preserve the social character of
+true when the namespaces have \textbf{functional
+differentiation}\footnote{Tim Berners-Lee described this notion of
+  functional differentiation in a much more general way in describing
+  the nature of the URI: \textgreater{} The technology should define
+  mechanisms wherever possible without defining policy. \textgreater{}
+  \textgreater{} because we recognize here that many properties of URIs
+  are social rather than technical in origin. \textgreater{}
+  \textgreater{} Therefore, you will find pointers in hypertext which
+  point to documents which never change but you will also find pointers
+  to documents which change with time. You will find pointers to
+  documents which are available in more than one format. You will find
+  pointers to documents which look different depending on who is asking
+  for them. There are ways to describe in a machine or human readable
+  way exactly what sort of repeatability you would expect from a URI,
+  but the architecture of the Web is that that is for something for the
+  owner of the URI to determine.
+  https://www.w3.org/DesignIssues/Axioms.html} like the tools for
+threading conversations on Wikipedia Talk pages and the parsing and code
+generation tools of Templates. These namespaces need to be
+\textbf{visibly crosslinked} both to preserve the social character of
 knowledge work, but also to provide a means of credit assignment and
 tool development between namespaces. Any communication system needs to
 be designed to \textbf{prioritize ease of leaving} and \textbf{ease of
@@ -5118,29 +5147,11 @@ in a document, there is visible representation of work being transcluded
 (eg. commented on, used in an analysis, etc.) by allowed peers and
 federations.
 
-Tim BL says as much re: functional differentiation: / \textgreater{} The
-technology should define mechanisms wherever possible without defining
-policy. \textgreater{} \textgreater because we recognize here that many
-properties of URIs are social rather than technical in origin.
-\textgreater{} \textgreater Therefore, you will find pointers in
-hypertext which point to documents which never change but you will also
-find pointers to documents which change with time. You will find
-pointers to documents which are available in more than one format. You
-will find pointers to documents which look different depending on who is
-asking for them. There are ways to describe in a machine or human
-readable way exactly what sort of repeatability you would expect from a
-URI, but the architecture of the Web is that that is for something for
-the owner of the URI to determine.
-https://www.w3.org/DesignIssues/Axioms.html
-
 These lessons, coupled with those from private bittorrent trackers,
 linked data communities, and the p2p federated system we have sketched
 so far give us some guidelines and motivating examples to build a varied
 space of communication tools to communicate our work, govern the system,
 and grow a shared, cumulative body of knowledge.
-
-!! on to talking about the work being done in this domain, some ux ideas
-from this, and a continuation of the sketch of the system!
 
 
 \end{multicols}
@@ -5152,16 +5163,14 @@ Communication}\label{rebuilding-scientific-communication}}
 
 
 \begin{multicols}{2}
- !! need introduction!
-
-It's time to start thinking about interfaces. We have sketched our
-system in turtle-like pseudocode, but directly interacting with our
-linking syntax would be labor intensive and technically challenging.
-Instead we can start thinking about tools for interacting with it in an
-abstract way. Beneath every good interface we're familiar with, a data
-model lies in wait. A .docx file is just a zipped archive full of xml,
-so a document with the single word ``melon'' is actually represented
-(after some preamble) like:
+ It's time to start thinking about interfaces. We have
+sketched our system in turtle-like pseudocode, but directly interacting
+with our linking syntax would be labor intensive and technically
+challenging. Instead we can start thinking about tools for interacting
+with it in an abstract way. Beneath every good interface we're familiar
+with, a data model lies in wait. A .docx file is just a zipped archive
+full of xml, so a blank word document that contains the single word
+``melon'' is actually represented (after some preamble) like:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5234,7 +5243,7 @@ system we described was a system that links names under our
 has built a package to handle that under the hood. We might do a quick
 writeup in a notebook like this:
 
-!! insert jupyter notebook here!
+embed notebook here
 
 The .json inside our notebook file would look something like this:
 
@@ -5260,9 +5269,11 @@ The .json inside our notebook file would look something like this:
 We could make use of another linked data technology,
 \href{https://json-ld.org/}{JSON-LD}, that is an extension and format
 that is interoperable with the RDF links we have been using implicitly
-throughout, to note that this cell contains a reference to our dataset.
-Say we use a \texttt{@comms} ontology to denote the various parts of our
-communication system, and put that in the \texttt{metadata} field:
+throughout, to note that this cell\footnote{An individual unit of code
+  or writing in a notebook is called a ``cell''} contains a reference to
+our dataset. Say we use a \texttt{@comms} ontology to denote the various
+parts of our communication system, and put that in the \texttt{metadata}
+field:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5303,7 +5314,7 @@ publication and status of the document\footnote{While we're at it, why
 lab, a presentation to an institute or conference, or a public part of
 the scientific discourse.
 
-!! also brief nod to other document systems like https://dokie.li/
+nod to other document systems like https://dokie.li/
 
 \hypertarget{forums-feeds}{%
 \paragraph{Forums \& Feeds}\label{forums-feeds}}
@@ -5484,9 +5495,11 @@ analysis to argue that ``shitposts are good, actually, for science.''
 A federated, multi-interface, autonomously-hosted system of social media
 systems already exists, and we've been talking about it: the roughly
 construed ``\href{https://fediverse.party/}{Fediverse}'' based (largely)
-on ActivityPub. {!! check rest of document and see how much explanation
-of activitypub is needed here/what can be consolidated. but in any case
-provide some other examples like peertube and agora, dokieli, funkwhale}
+on ActivityPub.
+
+!! check rest of document and see how much explanation of activitypub is
+needed here/what can be consolidated. but in any case provide some other
+examples like peertube and agora, dokieli, funkwhale
 
 Mastodon already implements most of the forum example described above:
 it has its own protocol that
@@ -5549,16 +5562,15 @@ they are identified with a \emph{subject} rather than by the
 \emph{person} who started the thread typically have longer lifespans and
 more findable.
 
-!! There is no single answer to systems of discovery, but somewhere
-between explicit categorical organization, person and subject-centric
-threads, semantic annotation, and making smaller p2p federations is a
-recipe for a broad, continuous, and cumulative scientific discussion.
-Instead of casting about for advice within our information bubbles, we
-might aspire to having a \emph{place} to \emph{ask} the people who
-\emph{might know}. Instead of starting another new slack with a few
-hundred posts that then vanishes entirely, we might imagine being able
-to fluidly form and dissolve communities and be able to build on their
-history.
+There is no single answer to systems of discovery, but somewhere between
+explicit categorical organization, person and subject-centric threads,
+semantic annotation, and making smaller p2p federations is a recipe for
+a broad, continuous, and cumulative scientific discussion. Instead of
+casting about for advice within our information bubbles, we might aspire
+to having a \emph{place} to \emph{ask} the people who \emph{might know}.
+Instead of starting another new slack with a few hundred posts that then
+vanishes entirely, we might imagine being able to fluidly form and
+dissolve communities and be able to build on their history.
 
 \hypertarget{annotation-overlays}{%
 \paragraph{Annotation \& Overlays}\label{annotation-overlays}}
@@ -5597,34 +5609,7 @@ position within the paragraph, an absolute
 \texttt{TextPositionSelector}, and a contextual
 \texttt{TextQuoteSelector} that you can see with an
 \href{https://api.hypothes.is/api/annotations/oLw4uk7_Eeyt5N-FVlE3fw}{API
-call}
-
-Reproduced here:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{\{}\DataTypeTok{"selector"}\FunctionTok{:}
-\OtherTok{[}\FunctionTok{\{}
-    \DataTypeTok{"type"}\FunctionTok{:} \StringTok{"RangeSelector"}\FunctionTok{,}
-    \DataTypeTok{"endOffset"}\FunctionTok{:} \DecValTok{178}\FunctionTok{,}
-    \DataTypeTok{"startOffset"}\FunctionTok{:} \DecValTok{171}\FunctionTok{,}
-    \DataTypeTok{"endContainer"}\FunctionTok{:} \StringTok{"/main[1]/div[1]/p[368]"}\FunctionTok{,}
-    \DataTypeTok{"startContainer"}\FunctionTok{:} \StringTok{"/main[1]/div[1]/p[368]"}
-\FunctionTok{\}}\OtherTok{,}
-\FunctionTok{\{}
-    \DataTypeTok{"end"}\FunctionTok{:} \DecValTok{254006}\FunctionTok{,}
-    \DataTypeTok{"type"}\FunctionTok{:} \StringTok{"TextPositionSelector"}\FunctionTok{,}
-    \DataTypeTok{"start"}\FunctionTok{:} \DecValTok{253999}
-\FunctionTok{\}}\OtherTok{,}
-\FunctionTok{\{}
-    \DataTypeTok{"type"}\FunctionTok{:} \StringTok{"TextQuoteSelector"}\FunctionTok{,}
-    \DataTypeTok{"exact"}\FunctionTok{:} \StringTok{"anchors"}\FunctionTok{,}
-    \DataTypeTok{"prefix"}\FunctionTok{:} \StringTok{"ts heart is a system for making "}\FunctionTok{,}
-    \DataTypeTok{"suffix"}\FunctionTok{:} \StringTok{", references to specific places "}
-\FunctionTok{\}}
-\OtherTok{]}\FunctionTok{\}}
-\end{Highlighting}
-\end{Shaded}
+call}.
 
 On its own, it serves to give a \texttt{Talk:} page to every website.
 With an integration into a system of linked data and identity, it also
@@ -6114,9 +6099,7 @@ theoretical-empirical loop with minor development of existing tools and
 minimal adjustment of scientific practices. No clouds, no journals, a
 little rough around the edges but collectively owned by all scientists.
 
-!! brief system summary
-
-We still need a little more strategy\ldots{}
+Final system summary
 
 
 \end{multicols}
@@ -6138,32 +6121,6 @@ software. \cite{eisenSameTruePeople2021}  \textgreater{}
 assess candidates for jobs, grants, etc\ldots{} So long as people treat
 authorship as the most/only valuable currency, this debate will fester.
 But it's in our power to change it. - Michael Eisen, EIC eLife \cite{eisenEverythingRealAnswer2021} 
-
-Need to zoom out a bit here -- credit assignment is really the problem
-here, so what have we done? we've imagined a new way of assigning
-credit. Instead of starting from publication and working backwards to
-identity through citations, we start from identity and build a system
-for creating things and defining the things you do in a public way,
-integrated with the practice of research. The idea of namespaces is a
-foundational part of the web (cite tim BL quote about how scientists
-actually started the notion of linking that inspired the web),
-permalinks and URIs, but it wasn't formulated as a means of identity.
-DNS and the system of domains as it is now, where you need to ask
-permission to create a new one and there is a single representation of a
-name. it's one particular system for assigning identity. We can extend a
-lot of the ideas of the web re: URIs to identites that have multiple
-parallel namespaces by constructing it around a combined p2p and
-computational system. (the point of the tools and analysis section is
-really to illustrate that you can design frameworks for particular
-domains of computation rather than specific things that shoudl be done
-as such. Clarify in introduction that that's the construction of the
-three sections: storage, compute, and communication.). Once we do that
-we disable a whole class of extractive technologies cease to function. /
-Tim BL says as much:\\
-Axiom 2b: identity of URIs clears up the vagueness of 2a and is that the
-significance of identity for a given URI is determined by the person who
-owns the URI, who first determined what it points to.
-https://www.w3.org/DesignIssues/Axioms.html
 
 The critical anchor for changes to the scientific infrastructural
 systems is the system of professional incentives that structure it. As
@@ -6329,15 +6286,21 @@ about building more just system of valuing science, and that's one of
 the critical means by which any infrastructure might displace hegemonic
 systems!
 
-We want to be able to do stuff like ``these 30 messages were me
-mentoring,'' without having any external access to the messages. This is
-a social question -- you can say you want to call the messages
-mentoring, ask the other person, and they can accept. It's an open
-question to me whether this is good, i don't personally like gamifying
-things, but this is a basic byproduct of people being able to negotiate
-over a system of meaning. At the point when it's possible for someone to
-say \texttt{@myname:mentorship} and then send \texttt{@menteename} a
-request to send an ``affirm'' message, then this is possible.
+Need to zoom out a bit here -- credit assignment is really the problem
+here, so what have we done? we've imagined a new way of assigning
+credit. Instead of starting from publication and working backwards to
+identity through citations, we start from identity and build a system
+for creating things and defining the things you do in a public way,
+integrated with the practice of research. The idea of namespaces is a
+foundational part of the web (cite tim BL quote about how scientists
+actually started the notion of linking that inspired the web),
+permalinks and URIs, but it wasn't formulated as a means of identity.
+DNS and the system of domains as it is now, where you need to ask
+permission to create a new one and there is a single representation of a
+name. it's one particular system for assigning identity. We can extend a
+lot of the ideas of the web re: URIs to identites that have multiple
+parallel namespaces by constructing it around a combined p2p and
+computational system.
 
 
 \end{multicols}
@@ -6359,7 +6322,8 @@ request to send an ``affirm'' message, then this is possible.
 
 
 \begin{multicols}{2}
- \#\#\# (Gestural) Roadmap
+\hypertarget{gestural-roadmap}{%
+\subsubsection{(Gestural) Roadmap}\label{gestural-roadmap}}
 
 Some of the tactical vision for this piece is embedded in its structure
 and has been discussed throughout, but to again reaffirm the strictly
@@ -6511,6 +6475,20 @@ domains is one way to start aligning our goals and movement building.
 Tools like Dat and Solid are good fits, though they currently need some
 UX and docs work to be accessible to a broad audience.
 
+Cultivating new relationships with knowledge and technical communities
+outside our usual academic circles is a critical part of any
+infrastructural development project. Though these days we hear about
+disaffected people abandoning academia for industry, there is plenty of
+disaffectation to go around on the other side --- particularly in
+software world. There are a growing number of extremely talented
+programmers that grow disillusioned with working for companies they view
+as unethical, which unfortunately happen to be some of the largest
+employers in the field. Ethical, important, and dare I say fun software
+often has no business model, but data, computation, and communications
+infrastructural infrastructure in science, especially with a coherent
+frame could give many of them a job they don't have to feel conflicted
+about.
+
 \begin{itemize}
 
 \item
@@ -6559,31 +6537,42 @@ addressed to different groups:
 \hypertarget{rank-and-file-researchers}{%
 \paragraph{Rank and File Researchers}\label{rank-and-file-researchers}}
 
-!! PIs vs grad students/post-docs: PIs need to realize that the true
-cost is doing nothing, the ROI on infrastructure is massive given the
-extremely high costs of labor for doing all this shit. Grad students and
-Post docs should start seeing the total isolatino of their local tooling
-as problematic and engage with their neighboring labs to share
-technologies and start building locally integrated tools!
+\begin{itemize}
 
-!! We need to start making alliances we're not necessarily used to, but
-this is the fun part! !! ally with the many disaffected tech workers
-that don't want to work with google and facebook -- we all talk about
-ppl fleeing for industry, but what academia can offer in return is jobs
-building tools that aren't soul sucking click maximizers. !! also need
-to get in better touch with our Librarians, they are also facing the
-squeeze and have had their profession degraded to being subscription
-custodians.
+\item
+  PIs vs grad students/post-docs: PIs need to realize that the true cost
+  is doing nothing, the ROI on infrastructure is massive given the
+  extremely high costs of labor for doing all this shit. Grad students
+  and Post docs should start seeing the total isolation of their local
+  tooling as problematic and engage with their neighboring labs to share
+  technologies and start building locally integrated tools!
+\end{itemize}
 
-!! We need to recognize our place outside of the highest echelons as
-fundamentally in danger by advancing infrastructural polarization. ``Not
-my job'' mentality is not going to cut it.
+Description of ONICE!
 
-!! Less concretely, we need to start expanding what we think is
-possible! We need to be realistic and demand the impossible! Let's let
-the work of escaping ownership by platform capitalism be joyful, a
-rennaisance of working cooperatively and rejuvinating the sense of
-purpose as scientists invested in the health of society.
+\begin{itemize}
+
+\item
+  We need to start making alliances we're not necessarily used to, but
+  this is the fun part! !! ally with the many disaffected tech workers
+  that don't want to work with google and facebook -- we all talk about
+  ppl fleeing for industry, but what academia can offer in return is
+  jobs building tools that aren't soul sucking click maximizers.
+\item
+  We should also start working closer with our Librarians, they are also
+  facing the squeeze and have had their profession degraded to being
+  subscription custodians.
+\item
+  We need to recognize our place outside of the highest echelons as
+  fundamentally in danger by advancing infrastructural polarization. A
+  ``not my job'' mentality might work for now, but for how long?
+\item
+  Less concretely, we need to start expanding what we think is possible!
+  We need to be realistic and demand the impossible! Let's let the work
+  of escaping ownership by platform capitalism be joyful, a rennaisance
+  of working cooperatively and rejuvinating the sense of purpose as
+  scientists invested in the health of society.
+\end{itemize}
 
 \hypertarget{open-source-developers}{%
 \paragraph{Open Source Developers}\label{open-source-developers}}
@@ -6608,30 +6597,49 @@ purpose as scientists invested in the health of society.
 \hypertarget{funding-agencies}{%
 \paragraph{Funding Agencies}\label{funding-agencies}}
 
-!! You're being swindled! Sort of a COI because to some degree
-centralization is politically useful: eg. see data sharing agreement
-with ICE, but this probably isn't shared by the people actually at the
-granting agencies and I don't want to speculate on some conspiracy
-theory. If you pay us we will build it! - fund integrating existing
-tools in addition to maintaining them. Target funding for new tools that
-fill specific gaps --- it's almost impossible to get a really well
-maintained library off the ground b/c catch-22 of development!
+\begin{itemize}
+
+\item
+  If you pay us we will build it!
+\item
+  fund integrating existing tools in addition to maintaining them.
+  Target funding for new tools that fill specific gaps --- it's almost
+  impossible to get a really well maintained library off the ground b/c
+  catch-22 of development!
+\item
+  You're being swindled! Sort of a conflict of interest because to some
+  degree centralization is politically useful: eg. see data sharing
+  agreement with ICE, but this probably isn't shared by the people
+  actually at the granting agencies and I don't want to speculate on
+  some conspiracy theory.
+\end{itemize}
 
 \hypertarget{university-administrators}{%
 \paragraph{University Administrators}\label{university-administrators}}
 
-!! You're also being swindled! Local infrastructure is good for you too
---- many universities are plagued by SaaS that is expedient but
-ultimately makes the entire operation of the university very fragile.
-Having good local data infrastructure is a really good thing to be able
-to tell applicants, and makes use of intranet for collaboration instead
-of external bandwidth. You get to say ``we have a sick new storage and
-compute server'' instead of ``we're a huge subscriber to AWS'' Y'all are
-the ones who have to pay the journal costs and deal with your university
-being uncompetetive with other institutions that can afford more, and so
-you should be leading the charge to nonprofit journals and a move beyond
-them, rather than mandating Open Access which is a regressive move.
+\begin{itemize}
 
+\item
+  You're also being swindled!
+\item
+  Local infrastructure is good for you too --- many universities are
+  plagued by SaaS that is expedient but ultimately makes the entire
+  operation of the university very fragile.
+\item
+  Having good local data infrastructure is a really good thing to be
+  able to tell applicants, and makes use of intranet for collaboration
+  instead of external bandwidth. You get to say ``we have a sick new
+  storage and compute server'' instead of ``we're a huge subscriber to
+  AWS''
+\item
+  Y'all are the ones who have to pay the journal costs and deal with
+  your university being uncompetetive with other institutions that can
+  afford more, and so you should be leading the charge to nonprofit
+  journals and a move beyond them, rather than mandating Open Access
+  which is a regressive move. 
+
+
+\end{itemize}
 
 \end{multicols}
 
@@ -6641,8 +6649,33 @@ them, rather than mandating Open Access which is a regressive move.
 
 
 \begin{multicols}{2}
- We can start with the big one: people could ignore this
-piece entirely and it is dead on arrival.
+ We can start with a few of the big and obvious
+limitations: people could ignore this piece entirely and it is dead on
+arrival. This project would be a direct threat to some of the most
+powerful entities in science, and they will likely actively work against
+it. I could be completely misinformed and missing something fundamental
+about the underlying technologies. The social tensions between the
+relevant development communities could be too great to overcome.
+
+Two outstanding problems on Mastodon hint at a few open challenges to
+development: feed organization and the fluidity of federation formation,
+dissolution, and interaction.
+
+By default, and affirmed by maybe an understandable reaction against
+algorithmic feed organization, Mastodon is a mostly chronological list
+of posts from people that you follow and that are in your host server's
+federated networks. While this transparency is reassuring that we aren't
+being microtargeted for advertising, it does make the system
+overwhelming to navigate, and splitting accounts multiple times to
+accomodate is common. A system of semantic organization is a distinct
+third way between algorithmic and chronological organization. Building a
+system that goes beyond moderator-specified category systems familiar in
+forums towards a sensible interface for navigating tangled concept
+hierarchies is an open challenge, as far as I'm aware.
+
+An intermediate goal might be to give finer control over groups, but
+groups are currently a complicated question between fediverse
+implementations \cite{StandardizingActivityPubGroups2021} .
 
 \begin{itemize}
 
@@ -6667,28 +6700,7 @@ piece entirely and it is dead on arrival.
   infallible/neutral/true.
 \end{itemize}
 
-Two outstanding problems on Mastodon hint at a few open challenges to
-development: feed organization and the fluidity of federation formation,
-dissolution, and interaction.
 
-By default, and affirmed by maybe an understandable reaction against
-algorithmic feed organization, Mastodon is a mostly chronological list
-of posts from people that you follow and that are in your host server's
-federated networks. While this transparency is reassuring that we aren't
-being microtargeted for advertising, it does make the system
-overwhelming to navigate, and splitting accounts multiple times to
-accomodate is common. A system of semantic organization is a distinct
-third way between algorithmic and chronological organization. Building a
-system that goes beyond moderator-specified category systems familiar in
-forums towards a sensible interface for navigating tangled concept
-hierarchies is an open challenge, as far as I'm aware.
-
-An intermediate goal might be to give finer control over groups, but
-groups are currently a complicated question between fediverse
-implementations \cite{StandardizingActivityPubGroups2021} .
-
-!! portability of identity, necessary negotiation over partitioning of
-communities. 
 \end{multicols}
 
 
@@ -6865,8 +6877,8 @@ renting licenses to research by topic area. No one really notices
 intellectual property expansions anymore. There are more papers than
 ever, but the science is all ``fake news.'' Nobody reads it anyway.
 
-\hypertarget{what-we-could-hope-for}{%
-\subsubsection{What we could hope for}\label{what-we-could-hope-for}}
+\hypertarget{what-we-could-build}{%
+\subsubsection{What we could build}\label{what-we-could-build}}
 
 You're a researcher with dead-center median funding at an institute with
 dead-center median prestige, and you have a new idea.
@@ -7085,17 +7097,19 @@ the process they did their part ending some of the worst harms of the
 era of global information oligopoly.
 
 Most things aren't completely automatic or infinite, but you don't want
-them to be. It's nice to be in contact with a community, it makes it
-feel like we're people instead of products. Being in a silent room where
-algorithms and clouds shimmer data in every unseen direction and deliver
-us with whatever we have been taught we can ask for sounds lonely. When
-incredible things do happen, cascading tectonic shifts across continuous
-federations, it feels like something we all did ourselves, not something
-we were sold.
+them to be. It's nice to negotiate with your federations and
+communities, it makes you feel like a person instead of a product. Being
+in a silent room where algorithms shimmer data as a dark wind
+friction-free through the clouds sounds lonely. Now we are the winds and
+clouds and the birds that gossip between them, and all the chatter
+reminds us that we forgot what we were taught to want. You take the
+hiccups and errors and dead links as the work of the world we built
+together.
 
 Everything is a little rough, a little gestural, and all very human.
 
 \end{multicols}
+
 
  
 
