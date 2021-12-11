@@ -4,13 +4,6 @@
 >
 > And like everything, the real answer lies on how we assess candidates for jobs, grants, etc… So long as people treat authorship as the most/only valuable currency, this debate will fester. But it’s in our power to change it. - Michael Eisen, EIC eLife {% cite eisenEverythingRealAnswer2021 %}
 
-<div class="draft-text">Need to zoom out a bit here -- credit assignment is really the problem here, so what have we done? we've imagined a new way of assigning credit. Instead of starting from publication and working backwards to identity through citations, we start from identity and build a system for creating things and defining the things you do in a public way, integrated with the practice of research. The idea of namespaces is a foundational part of the web (cite tim BL quote about how scientists actually started the notion of linking that inspired the web), permalinks and URIs, but it wasn't formulated as a means of identity. DNS and the system of domains as it is now, where you need to ask permission to create a new one and there is a single representation of a name. it's one particular system for assigning identity. We can extend a lot of the ideas of the web re: URIs to identites that have multiple parallel namespaces by constructing it around a combined p2p and computational system. (the point of the tools and analysis section is really to illustrate that you can design frameworks for particular domains of computation rather than specific things that shoudl be done as such. Clarify in introduction that that's the construction of the three sections: storage, compute, and communication.). Once we do that we disable a whole class of extractive technologies cease to function.
-/
-Tim BL says as much:  
-Axiom 2b: identity
-of URIs clears up the vagueness of 2a and is that
-the significance of identity for a given URI is determined by the person who owns the URI, who first determined what it points to. https://www.w3.org/DesignIssues/Axioms.html
-</div>
 
 The critical anchor for changes to the scientific infrastructural systems is the system of professional incentives that structure it. As long as the only thing that has professional value is authorship in journal papers, the system stays: Blog posts, analysis pathways, wikis, and forums are nice and all, but they don't count as *science.*
 
@@ -43,6 +36,6 @@ Reaching a critical mass of linked tools and peers is not altogether necessary f
 <div class="draft-text">Find citations and quote for ^^. Fortunately building a system for credit assignment should allow you to be credited! Conclude by talking about building more just system of valuing science, and that's one of the critical means by which any infrastructure might displace hegemonic systems! 
 </div>
 
-<div class="draft-text">
-We want to be able to do stuff like "these 30 messages were me mentoring," without having any external access to the messages. This is a social question -- you can say you want to call the messages mentoring, ask the other person, and they can accept. It's an open question to me whether this is good, i don't personally like gamifying things, but this is a basic byproduct of people being able to negotiate over a system of meaning. At the point when it's possible for someone to say `@myname:mentorship` and then send `@menteename` a request to send an "affirm" message, then this is possible. 
+
+<div class="draft-text">Need to zoom out a bit here -- credit assignment is really the problem here, so what have we done? we've imagined a new way of assigning credit. Instead of starting from publication and working backwards to identity through citations, we start from identity and build a system for creating things and defining the things you do in a public way, integrated with the practice of research. The idea of namespaces is a foundational part of the web (cite tim BL quote about how scientists actually started the notion of linking that inspired the web), permalinks and URIs, but it wasn't formulated as a means of identity. DNS and the system of domains as it is now, where you need to ask permission to create a new one and there is a single representation of a name. it's one particular system for assigning identity. We can extend a lot of the ideas of the web re: URIs to identites that have multiple parallel namespaces by constructing it around a combined p2p and computational system. 
 </div>

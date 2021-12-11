@@ -34,6 +34,8 @@ There is no reason, in principle, that data must first be converted into some st
 
 Shared data is a concrete, widely understood goal shared by many scientists already, but there are relatively slim incentives for spending the time to do it. The first major hurdle is to make those incentives. Propping up a p2p system will eventually need new development, but existing p2p systems can still make a strong case for themselves with small, local examples: using them to share data with local collaborators, or to share data during a workshop or conference, or even to start rehosting already-public centrally hosted data. Small communities of practice can start their own "retreat from the cloud" by documenting their process and setting up their own local hosting and servers. They also make natural allies with the p2p tool developers. Being a test case for their software and cultivating social ties across domains is one way to start aligning our goals and movement building. Tools like Dat and Solid are good fits, though they currently need some UX and docs work to be accessible to a broad audience.
 
+Cultivating new relationships with knowledge and technical communities outside our usual academic circles is a critical part of any infrastructural development project. Though these days we hear about disaffected people abandoning academia for industry, there is plenty of disaffectation to go around on the other side --- particularly in software world. There are a growing number of extremely talented programmers that grow disillusioned with working for companies they view as unethical, which unfortunately happen to be some of the largest employers in the field. Ethical, important, and dare I say fun software often has no business model, but data, computation, and communications infrastructural infrastructure in science, especially with a coherent frame could give many of them a job they don't have to feel conflicted about. 
+
 
 <div class="draft-text" markdown="block">
 - once some people are sharing their data on p2p, need some means of organizing it. adapting frontend tools and start using distributed communication tools. People are clearly eager to use stuff like DandiHub and get their data into an index, but they are all so lonely and vacant! Only instead of discord and slack stuff like Matrix is scalable!
@@ -51,13 +53,14 @@ Who is supposed to do what, and why would different interested groups want to pu
 
 #### Rank and File Researchers
 
-!! PIs vs grad students/post-docs: PIs need to realize that the true cost is doing nothing, the ROI on infrastructure is massive given the extremely high costs of labor for doing all this shit. Grad students and Post docs should start seeing the total isolatino of their local tooling as problematic and engage with their neighboring labs to share technologies and start building locally integrated tools!
+- PIs vs grad students/post-docs: PIs need to realize that the true cost is doing nothing, the ROI on infrastructure is massive given the extremely high costs of labor for doing all this shit. Grad students and Post docs should start seeing the total isolation of their local tooling as problematic and engage with their neighboring labs to share technologies and start building locally integrated tools! 
 
-!! We need to start making alliances we're not necessarily used to, but this is the fun part! !! ally with the many disaffected tech workers that don't want to work with google and facebook -- we all talk about ppl fleeing for industry, but what academia can offer in return is jobs building tools that aren't soul sucking click maximizers. !! also need to get in better touch with our Librarians, they are also facing the squeeze and have had their profession degraded to being subscription custodians. 
+<div class="draft-text">Description of ONICE!</div>
 
-!! We need to recognize our place outside of the highest echelons as fundamentally in danger by advancing infrastructural polarization. "Not my job" mentality is not going to cut it. 
-
-!! Less concretely, we need to start expanding what we think is possible! We need to be realistic and demand the impossible! Let's let the work of escaping ownership by platform capitalism be joyful, a rennaisance of working cooperatively and rejuvinating the sense of purpose as scientists invested in the health of society.
+- We need to start making alliances we're not necessarily used to, but this is the fun part! !! ally with the many disaffected tech workers that don't want to work with google and facebook -- we all talk about ppl fleeing for industry, but what academia can offer in return is jobs building tools that aren't soul sucking click maximizers. 
+- We should also start working closer with our Librarians, they are also facing the squeeze and have had their profession degraded to being subscription custodians. 
+- We need to recognize our place outside of the highest echelons as fundamentally in danger by advancing infrastructural polarization. A "not my job" mentality might work for now, but for how long? 
+- Less concretely, we need to start expanding what we think is possible! We need to be realistic and demand the impossible! Let's let the work of escaping ownership by platform capitalism be joyful, a rennaisance of working cooperatively and rejuvinating the sense of purpose as scientists invested in the health of society.
 
 #### Open Source Developers
 
@@ -68,14 +71,14 @@ Who is supposed to do what, and why would different interested groups want to pu
 
 #### Funding Agencies
 
-!! You're being swindled! Sort of a COI because to some degree centralization is politically useful: eg. see data sharing agreement with ICE, but this probably isn't shared by the people actually at the granting agencies and I don't want to speculate on some conspiracy theory. If you pay us we will build it! 
-- fund integrating existing tools in addition to maintaining them. Target funding for new tools that fill specific gaps --- it's almost impossible to get a really well maintained library off the ground b/c catch-22 of development!
+- If you pay us we will build it!
+- fund integrating existing tools in addition to maintaining them. Target funding for new tools that fill specific gaps --- it's almost impossible to get a really well maintained library off the ground b/c catch-22 of development! 
+- You're being swindled! Sort of a conflict of interest because to some degree centralization is politically useful: eg. see data sharing agreement with ICE, but this probably isn't shared by the people actually at the granting agencies and I don't want to speculate on some conspiracy theory. 
 
 
 #### University Administrators
 
-!! You're also being swindled! Local infrastructure is good for you too --- many universities are plagued by SaaS that is expedient but ultimately makes the entire operation of the university very fragile. Having good local data infrastructure is a really good thing to be able to tell applicants, and makes use of intranet for collaboration instead of external bandwidth. You get to say "we have a sick new storage and compute server" instead of "we're a huge subscriber to AWS" Y'all are the ones who have to pay the journal costs and deal with your university being uncompetetive with other institutions that can afford more, and so you should be leading the charge to nonprofit journals and a move beyond them, rather than mandating Open Access which is a regressive move.
-
-
-
-
+- You're also being swindled! 
+- Local infrastructure is good for you too --- many universities are plagued by SaaS that is expedient but ultimately makes the entire operation of the university very fragile. 
+- Having good local data infrastructure is a really good thing to be able to tell applicants, and makes use of intranet for collaboration instead of external bandwidth. You get to say "we have a sick new storage and compute server" instead of "we're a huge subscriber to AWS"
+- Y'all are the ones who have to pay the journal costs and deal with your university being uncompetetive with other institutions that can afford more, and so you should be leading the charge to nonprofit journals and a move beyond them, rather than mandating Open Access which is a regressive move.

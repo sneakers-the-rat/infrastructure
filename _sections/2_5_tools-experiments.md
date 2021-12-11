@@ -80,7 +80,7 @@ class Lightswitch(Digital_Out):
 
 The terms `off_debounce`, `on_delay`, and `on_debounce` are certainly not part of a controlled ontology, but we have described how they are used in the docstring and how they are used is inspectable in the class itself. 
 
-The difficulty of a controlled ontology for experimental frameworks is perhaps better illustrated by considering a full experiment. In Autopilot, a full experiment can be parameterized by the `.json` files that define the task itself and the system-specific configuration of the hardware. An [example task](https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e) from our lab consists of 7 behavioral shaping stages that introduce the animal to different features of a fairly typical auditory categorization task, each of which includes the parameters for at most 12 different stimuli per stage, probabilities for presenting lasers, bias correction, reinforcement, criteria for advancing to the next stage, etc. So just for one relatively straightforward experiment, in one lab, in one subdiscipline, there are **268 parameters** -- excluding all the default parameters encoded in the software.
+The difficulty of a controlled ontology for experimental frameworks is perhaps better illustrated by considering a full experiment. In Autopilot, a full experiment can be parameterized by the `.json` files that define the task itself and the system-specific configuration of the hardware. An [example task](https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e) from our lab consists of 7 behavioral shaping stages of increating difficulty that introduce the animal to different features of a fairly typical auditory categorization task. Each stage includes the parameters for at most 12 different stimuli per stage, probabilities for presenting lasers, bias correction, reinforcement, criteria for advancing to the next stage, etc. So just for one relatively straightforward experiment, in one lab, in one subdiscipline, there are **268 parameters** -- excluding all the default parameters encoded in the software.
 
 The way Autopilot handles various parameters are part of set of layers of abstraction that separate idiosyncratic logic from the generic form of a particular `Task` or `Hardware` class. The general structure of a two-alternative forced choice task is shared across a number of experiments, but they may have different stimuli, different hardware, and so on. Autopilot `Task`s use abstract references to classes of hardware components that are required to run them, but separates their implementation as a system-specific configuration so that it's not necessary to have *exactly the same* components plugged into *exactly the same* GPIO pins, etc. Task parameters like stimuli, reward timings, etc. are similarly split into a separate task parameterization that both allow `Task`s to be generic and make provenance and experimental history easier to track. `Task` classes can be subclasses to add or modify logic while being able to reuse much of the structure and maintain the link between the root task and its derivatives --- for example [one task we use](https://github.com/auto-pi-lot/autopilot-plugin-wehrlab/blob/9cfffcf5fe1886d25658d4f1f0c0ffe41c18e2cc/gap/nafc_gap.py#L13-L49) that starts a continuous background sound but otherwise is the same as the root `Nafc` class. The result of these points of abstraction is to allow exact experimental replication on inexactly replicated experimental apparatuses.
 
@@ -88,7 +88,7 @@ In contrast, workflows in Bonsai {% cite lopesBonsaiEventbasedFramework2015a lop
 
 We can imagine extending the abstract specification of experimental parameters, hardware requirements, and so on to work with our federated naming system to overcome the challenges to standardizing. First, we can make explicit declarations about the relationship between our potentially very local vocabulary and other vocabularies at varying degrees of generality. Here we can declare our `Lightswitch` object and 1) link its `on_delay` to our friend `@rumbly`'s object that implements the same thing as `on_latency`, and 2) link it to a standardized `Latency` term from [interlex](https://scicrunch.org/scicrunch/interlex/view/ilx_0106040#annotations), but since that term is for time elapsed between a stimulus and behavioral response in a psychophysical context, it's only a partial match.
 
-```
+```turtle
 <#Lightswitch>
   a @autopilot.hardware.Digital_Out
 
@@ -103,7 +103,7 @@ We can imagine extending the abstract specification of experimental parameters, 
 
 Further, since our experimental frameworks are intended to handle off the shelf parts as well as our potentially idiosyncratic lightbulb class, we can link many implementations of a hardware controlling class to the product itself. Take for example the [I2C_9DOF](https://docs.auto-pi-lot.com/en/latest/hardware/i2c.html#autopilot.hardware.i2c.I2C_9DOF) class that controls a 9 degree of freedom motion sensor from [Sparkfun](https://www.sparkfun.com/products/13944) where we both indicate the specific part itself as well as the generic `ic` that it uses:
 
-```
+```turtle
 <#I2C_9DOF>
   @autopilot.controlsHardware
     @sparkfun:13944
@@ -114,13 +114,13 @@ This hints at the first steps of a system that would make our technical work mor
 
 We can also extend our previous connection between a dataset and the results of its analysis to also include the tools that were used to collect it. Say we want to declare the [example experiment](https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e) above, and then extend our `<#project-name>` project to reference it:
 
-```
+```turtle
 <#example-experiment>
   a @autopilot:protocol
 
   level @autopilot:freeWater
     reward
-      type mL
+      type @si:mL
       value 5
     graduation 
       a @autopilot:graduation:ntrials

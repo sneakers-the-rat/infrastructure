@@ -1,6 +1,4 @@
-!! need introduction!
-
-It's time to start thinking about interfaces. We have sketched our system in turtle-like pseudocode, but directly interacting with our linking syntax would be labor intensive and technically challenging. Instead we can start thinking about tools for interacting with it in an abstract way. Beneath every good interface we're familiar with, a data model lies in wait. A .docx file is just a zipped archive full of xml, so a document with the single word "melon" is actually represented (after some preamble) like:
+It's time to start thinking about interfaces. We have sketched our system in turtle-like pseudocode, but directly interacting with our linking syntax would be labor intensive and technically challenging. Instead we can start thinking about tools for interacting with it in an abstract way. Beneath every good interface we're familiar with, a data model lies in wait. A .docx file is just a zipped archive full of xml, so a blank word document that contains the single word "melon" is actually represented (after some preamble) like:
 
 ```xml
 <w:body>
@@ -52,7 +50,7 @@ Let's pick up where we left off with our linked data and tools. Recall that we h
 
 Say we have a means of downloading the results of some analysis we have already run as a result of `#my-project`. Recall that the data system we described was a system that links names under our `@jonny` namespace to a content-addressed p2p system, but someone has built a package to handle that under the hood. We might do a quick writeup in a notebook like this:
 
-!! insert jupyter notebook here!
+<div class="draft-text">embed notebook here</div>
 
 The .json inside our notebook file would look something like this:
 
@@ -73,7 +71,7 @@ The .json inside our notebook file would look something like this:
 }
 ```
 
-We could make use of another linked data technology, [JSON-LD](https://json-ld.org/), that is an extension and format that is interoperable with the RDF links we have been using implicitly throughout, to note that this cell contains a reference to our dataset. Say we use a `@comms` ontology to denote the various parts of our communication system, and put that in the `metadata` field:
+We could make use of another linked data technology, [JSON-LD](https://json-ld.org/), that is an extension and format that is interoperable with the RDF links we have been using implicitly throughout, to note that this cell[^notebookcell] contains a reference to our dataset. Say we use a `@comms` ontology to denote the various parts of our communication system, and put that in the `metadata` field:
 
 ```json
 "metadata": {
@@ -97,7 +95,7 @@ So then, say, we indicate in `@jonny:my-project` that this document is related t
 
 [^explicitlytoo]: While we're at it, why not make it explicit by declaring its [`creativeWorkStatus`](https://schema.org/creativeWorkStatus) as `Draft`
 
-!! also brief nod to other document systems like https://dokie.li/
+<div class="draft-text">nod to other document systems like https://dokie.li/</div>
 
 #### Forums & Feeds
 
@@ -135,7 +133,9 @@ Forums are just one point in a continuous feature space of communication media: 
 
 Still, the emergence of a recognizable "Science Twitter" demonstrates the depth of need for rapid, informal communication systems in science. We should embrace the plurality of registers in scientific communication, that there needs to be space for near-amateurs to pose naive questions alongside careful and considered formal scholarship. That is just to say that we should reflect the division of formality from scientific value in what we build, and build systems to support the implicit communicative labor of science like whisper networks, mailing lists, and groupchats that have always existed. The blending of digital cultures, and broadly 'non-academic scientists' with traditional scientific communication streams is healthy: with appropriate caveats for abuse, strawmen, et al. I don't think it takes that much critical analysis to argue that "shitposts are good, actually, for science."
 
-A federated, multi-interface, autonomously-hosted system of social media systems already exists, and we've been talking about it: the roughly construed "[Fediverse](https://fediverse.party/)" based (largely) on ActivityPub. <span style="color:#f00;">!! check rest of document and see how much explanation of activitypub is needed here/what can be consolidated. but in any case provide some other examples like peertube and agora, dokieli, funkwhale</span>
+A federated, multi-interface, autonomously-hosted system of social media systems already exists, and we've been talking about it: the roughly construed "[Fediverse](https://fediverse.party/)" based (largely) on ActivityPub. 
+
+<div class="draft-text">!! check rest of document and see how much explanation of activitypub is needed here/what can be consolidated. but in any case provide some other examples like peertube and agora, dokieli, funkwhale</div>
 
 Mastodon already implements most of the forum example described above: it has its own protocol that [extends activitypub](https://docs.joinmastodon.org/spec/activitypub/), but it functions as an interface to a protocol-based threaded communication. For example [this post](https://social.coop/@jonny/107328829457619549) is represented in (abbreviated) JSON:
 
@@ -169,7 +169,7 @@ The problem with an endless homogenous feed is filtering and prioritizing what t
 
 [^onlyfederated]: Only other servers that the host server federates with are listed
 
-!! There is no single answer to systems of discovery, but somewhere between explicit categorical organization, person and subject-centric threads, semantic annotation, and making smaller p2p federations is a recipe for a broad, continuous, and cumulative scientific discussion. Instead of casting about for advice within our information bubbles, we might aspire to having a *place* to *ask* the people who *might know*. Instead of starting another new slack with a few hundred posts that then vanishes entirely, we might imagine being able to fluidly form and dissolve communities and be able to build on their history.
+There is no single answer to systems of discovery, but somewhere between explicit categorical organization, person and subject-centric threads, semantic annotation, and making smaller p2p federations is a recipe for a broad, continuous, and cumulative scientific discussion. Instead of casting about for advice within our information bubbles, we might aspire to having a *place* to *ask* the people who *might know*. Instead of starting another new slack with a few hundred posts that then vanishes entirely, we might imagine being able to fluidly form and dissolve communities and be able to build on their history.
 
 #### Annotation & Overlays
 
@@ -266,9 +266,8 @@ Each is intended to be mutable, easy to iterate on, uncontrolling, mutually coor
 
 What we've described is a nonutopian, fully realizable path to making a scientific system that is fully negotiable through the entire theoretical-empirical loop with minor development of existing tools and minimal adjustment of scientific practices. No clouds, no journals, a little rough around the edges but collectively owned by all scientists.
 
-!! brief system summary
+<div class="draft-text">Final system summary</div>
 
-We still need a little more strategy...
 
 
 

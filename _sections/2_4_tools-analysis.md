@@ -1,6 +1,6 @@
-Straddling our system for sharing data are the tools to gather and analyze it. Experimental and analytical tools are the natural point of extension for collectively developed scientific digital infrastructure, and considering them together shows the combinatoric power of integrating interoperable domains of scientific practice. In particular, in addition to benefits from their development in isolation, we can ask how a more broadly integrated system helps problems like adoption and incentives for distributed work, enables a kind of deep provenance from experiment to results, and lets us reimagine the form of the community and communication tools for science.
+Straddling our system for sharing data are the tools to gather and analyze it --- two examples of the more general need for computational resources. Experimental and analytical tools are the natural point of extension for collectively developed scientific digital infrastructure, and considering them together shows the combinatoric power of integrating interoperable domains of scientific practice. In particular, in addition to benefits from their development in isolation, we can ask how a more broadly integrated system helps problems like adoption and incentives for distributed work, enables a kind of deep provenance from experiment to results, and further builds us towards reimagine the form of the community and communication tools for science.
 
-This section will be relatively short compared to [shared data](#shared-data). We have already introduced, motivated, and exemplified many of the design practices of the broader infrastructural system. There is much less to argue against or "undo" in the spaces of analytical and experimental tools because so much more work has been done, and so much more power has been accrued in the domain of data systems. Distributed computing does have a dense history, with huge numbers of people working on the problem, but its hegemonic form is much closer to the system articulated below than centralized servers are to federated semantic p2p systems. I also have written extensively about [experimental frameworks](#experimental-frameworks) before {% cite saundersAutopilotAutomatingBehavioral2019 %}, and develop [one of them](https://docs.auto-pi-lot.com/en/latest/) so I will be brief at risk of repeating myself or appearing self-serving.
+This section will be relatively short compared to [shared data](#shared-data). We have already introduced, motivated, and exemplified many of the design practices of the broader infrastructural system. There is much less to argue against or "undo" in the spaces of analytical and experimental tools because so much more work has been done, and so much more power has been accrued in the domain of data systems. Distributed computing does have a dense history, with huge numbers of people working on the problem, but its dominant form is much closer to the system articulated below than centralized servers are to federated semantic p2p systems. I also have written extensively about [experimental frameworks](#experimental-frameworks) before {% cite saundersAutopilotAutomatingBehavioral2019 %}, and develop [one of them](https://docs.auto-pi-lot.com/en/latest/) so I will be brief at risk of repeating myself or appearing self-serving.
 
 Integrated scientific workflows have been written about many times before, typically in the context of the "open science" movement. One of the founders of the Center for Open Science, Jeffrey Spies, described a similar ethic of toolbuilding as I have in a 2017 presentation:
 
@@ -47,10 +47,10 @@ Say we use `@analysis` as the namespace for our analysis protocol, and `~someone
 
 In pseudocode, I could define some analysis node for, say, converting an RGB image to grayscale under my namespace as `@jonny:bin-spikes` like this:
 
-```
+```turtle
 <#bin-spikes>
   a @analysis:node
-    Version >=1.0.0
+    Version ">=1.0.0"
 
   hasDescription
     "Convert an RGB Image to a grayscale image"
@@ -68,27 +68,28 @@ I have abbreviated the specification of shape to not overcomplicate the pseudoco
 
 The code doesn't run on nothing! We need to specify our node's dependencies, say in this case we need to specify an operating system image `ubuntu`, a version of `python`, a system-level package `opencv`, and a few python packages on `pip`. We are pinning specific versions with [semantic versioning](https://semver.org/), but the syntax isn't terribly important. Then we just need to specify where the code for the node itself comes from:
 
-```
+```turtle
   dependsOn
-    @ubuntu:^20.*:x64
-    @python:3.8
-    @apt:opencv:^4.*.*
-    @pip:opencv-python:^4.*.*
-    @pip:numpy:^14.*.*
+    @ubuntu:"^20.*":x64
+    @python:"3.8"
+    @apt:opencv:"^4.*.*"
+    @pip:opencv-python:"^4.*.*"
+    @pip:numpy:"^14.*.*"
 
   providedBy
-    @git:repository https://mygitserver.com/binspikes/fast-binspikes.git
-      @git:hash fj9wbkl
-    @python:class /main-module/binspikes.py:Bin_Spikes
+    @git:repository 
+      .url "https://mygitserver.com/binspikes/fast-binspikes.git"
+      .hash "fj9wbkl"
+    @python:class "/main-module/binspikes.py:Bin_Spikes"
 ```
 
 Here we can see the advantage of being able to mix and match different namespaces in a practical sense. Our `@analysis.node` protocol gives us several slots to connect different tools together, each in turn presumably provides some minimal functionality expected by that slot: eg. `inputType` can expect `@numpy:ndarray` to specify its own dependencies, the programming language it is written in, shape, data type, and so on. Coercing data between chained nodes then becomes a matter of mapping between the `@numpy` and, say a `@nwb` namespace of another format. In the same way that there can be multiple, potentially overlapping between data schemas, it would then be possible for people to implement mappings between intermediate data formats as-needed. 
 
 This node also becomes available to extend, say someone wanted to add an additional input format to my node:
 
-```
+```turtle
 <@friend#bin-spikes>
-  a @jonny:bin-spikes
+  extends @jonny:bin-spikes
 
   inputType
     @pandas:DataFrame
@@ -101,7 +102,7 @@ They don't have to interact with my potentially messy codebase at all, but it is
 
 This also gives us healthy abstraction over implementation. Since the functionality is provided by different, mutable namespaces, we're not locked into any particular piece of software --- even our `@analysis` namespace that gives the `inputType` etc. slots could be forked. We could implement the dependency resolution system as, eg. a docker container, but it also could be just a check on the local environment if someone is just looking to run a small analysis on their laptop with those packages already installed.
 
-We use providedBy to indicate a python class which implements the node in code. We could use an `Example_Framework` that provides a set of classes and methods to implement the different parts of the node (a la [luigi](https://luigi.readthedocs.io/en/stable/tasks.html)). Our `Bin` class inherits from `Node`, and we implement the logic of the function by overriding its `run` method and specify an output file to store intermediate data (if requested by the pipeline) with an `output` method. We also specify a `bin_width` as a `Param`eter for our node, as an example of how a lightweight protocol could be bidirectionally specified: we could receive a parameterization from our pseudocode specification, or we could write a framework with a `Bin.export_schema()` that constructs the pseudocode specification from code.
+We use providedBy to indicate a python class which implements the node in code. We could use an `Example_Framework` that provides a set of classes and methods to implement the different parts of the node (a la [luigi](https://luigi.readthedocs.io/en/stable/tasks.html)). Our `Bin` class inherits from `Node`, and we implement the logic of the function by overriding its `run` method and specify an output file to store intermediate data (if requested by the pipeline) with an `output` method. We also specify a `bin_width` as a `Param`eter for our node, as an example of how a lightweight protocol could be bidirectionally specified as an [interface](#shared-knowledge) to the linked data format: we could receive a parameterization from our pseudocode specification, or we could write a framework with a `Bin.export_schema()` that constructs the pseudocode specification from code.
 
 ```python
 from Example_Framework import Node, Param, Target
@@ -119,7 +120,7 @@ class Bin(Node):
 
 Now that we have a handful of processing nodes, we could then describe some `@workflow`, taking some `@nwb:NWBFile` as input, and then returning some output as a `:processed` child beneath its existing namespace. We'll only make a linear pipeline with two stages, but there's no reason more complex branching and merging couldn't be described as well. 
 
-```
+```turtle
 <#my-analysis>
   a @analysis:workflow
 
@@ -136,7 +137,7 @@ Now that we have a handful of processing nodes, we could then describe some `@wo
 
 Having kept the description of our data in particular abstract from the implementation of the code and the workflow specification, the only thing left is to apply it to our data! Since the parameters are linked from the analysis nodes, we can specify them here (or in the workflow). Assuming literally zero abstraction and using the tried-and-true "hardcoded dataset list" pattern, something like:
 
-```
+```turtle
 <#my-project>
   a @analysis:project
 
@@ -164,10 +165,10 @@ And there we are! The missing parameters like `outputName` from our workflow can
 
 
 <div class="draft-text">
-  Give brief overview of the system to this point
+  summary figure here
 </div>
 
-So that's useful, but comparable to existing technologies. The important part is in the way this hypothetical analysis framework and markup interact with our data system and emerging federated metadata system --- The layers of abstraction here are worth unpacking, but we'll hold until the end of the shared tools section and we have a chance to consider what this system might look like for experimental tools.
+So that's useful, but comparable to existing technologies. The important part is in the way this hypothetical analysis framework and markup interact with our data system and emerging federated metadata system --- The layers of abstraction here are worth unpacking, but we'll hold until the end of the shared tools section and we have a chance to consider what this system might look like for experimental tools to contrast abstraction across the two domains.
 
 
 

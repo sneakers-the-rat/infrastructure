@@ -12,7 +12,11 @@ canonical_url: "https://jon-e.net/infrastructure/todo"
 - Integrate {% cite larsenPoliticalNatureTCP2012 %} in [design principles?](/infrastructure#design-principles)
 - Write about DDoSecrets in [p2p benefits?](/infrastructure/#the-network-is-extremely-resilient-since-the-data-is-shared-acro)
 - Write a triplet links description [here?](/infrastructure/#here-would-be-a-good-time-to-describe-triplet-links-as-the-basic)
-- Resolve [Abstraction & Protocol Design](/infrastructure/#abstraction--protocol-design)
+- Resolve [Abstraction & Protocol Design](/infrastructure/#abstraction--interfaces)
+- Summaries at the end of every section that needs them - [full system](/infrastructure/#what-we’ve-described-is-a-nonutopian-fully-realizable-path-to-ma)
+
+# Editing
+- Redundancy in [federated systems](/infrastructure#federated-systems-of-language)
 
 # Trims
 - Trim down translator example/move out of main text.

@@ -43,4 +43,7 @@ This system as described is a two-layer system, with a few different domains lin
 
 !! Now we need to consider the social tools needed to communicate within, negotiate over, and govern the system.
 
+<div class="draft-text">
+    Point here is to lead into interfaces --- these are two examples of classes of interfaces to and from the linked data system. Ways to create, read, and use links. Translation of our metadata system into code and computation. 
+</div>
 

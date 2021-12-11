@@ -77,6 +77,7 @@ acknowledgements:
     prefix: And all the other wisdom givers
     members:
       - Sanjay Srivastava & Metascience Class
+      - Joon An
       - The Emerging ONICE team
       - The Janet Smith House
       - Rumbly Tumbly Lawnmower
@@ -174,7 +175,7 @@ acknowledgements:
 
 {% include_relative _sections/2_5_tools-experiments.md %}
 
-### Abstraction & Protocol Design
+### Abstraction & Interfaces
 
 {% include_relative _sections/2_6_collectivize-sota.md %}
 

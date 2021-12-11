@@ -85,7 +85,11 @@
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
 % remove "contents" from toc
-\renewcommand{\contentsname}{}
+\renewcommand{\contentsname}{ }
+
+\renewcommand{\cftsubsubsecfont}{\small\itshape}
+% \renewcommand{\cftsubsubsecpagefont}{\small}
+
 
 % leftbar for blockquotes
 \renewenvironment{leftbar}

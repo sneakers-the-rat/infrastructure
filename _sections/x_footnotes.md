@@ -104,3 +104,22 @@
     > Based on these observations, our final assertion is that automating the ability to reason across integrated data sources and providing users who pose inquiries with a dossier of translated answers coupled with full provenance and confidence in the results is critical if we wish to accelerate clinical and translational insights, drive new discoveries, facilitate serendipity, improve clinical-trial design, and ultimately improve clinical care. This final assertion represents the driving motivation for the Translator system. {% cite consortiumUniversalBiomedicalData2019 %}
 
 [^federatedterminology]: There is a lot of subtlety to the terminology surrounding "federated" and the typology of distributed systems generally, I am using it in the federated messaging sense of forming groups of people, rather than the strict term "federated databases" which do imply a standardized schema across a federation. The conception of distributed, autonomous databases described by the DataLad team {% cite hankeDefenseDecentralizedResearch2021 %} is a bit closer to my meaning. In the ActivityPub world, federations refer to a single homeserver under which many people can sign up. We mean something similar but distinct: people that have autonomous "homeservers" in a peer to peer system, typically multiple identities for a single person rather than many people on a single server, that can combine into federations with particular governance structures and technological systems attached.
+
+[^chainz]: In reality, without any form of distributed uniqueness checking, we would need to have some notion of where this username is "from," so let's say we actually have a system like `username@name-provider` but for this example assume a single name provider, we'll return to identity provision.
+
+[^whypseudo]: We could use actual turtle or JSON-LD syntax throughout, but I am using a simplified pseudocode to a) make it a bit more readable for the sake of illustration and b) be very explicit that this is not intended to be a proposal for a protocol or specification, but demonstrative of its qualities.
+
+[^p2pdatalad]: [DataLad](https://www.datalad.org/) {% cite halchenkoDataLadDistributedSystem2021 hankeDefenseDecentralizedResearch2021  %} and its application in Neuroscience as [DANDI](https://dandiarchive.org) are two projects that are *very close* to what I have been describing here --- developing a p2p backend for datalad might even be a promising development path towards it.
+
+[^rand]: the result of another corporate collaboration with the Rand corporation.
+
+[^wardcause]: Giving a means of organizing the writing of the Portland Pattern Repository was the reason for creating Ward's Wiki in the first place.
+
+[^timbldifferentiation]: Tim Berners-Lee described this notion of functional differentiation in a much more general way in describing the nature of the URI:
+    > The technology should define mechanisms wherever possible without defining policy. 
+    >
+    > because we recognize here that many properties of URIs are social rather than technical in origin.
+    >
+    > Therefore, you will find pointers in hypertext which point to documents which never change but you will also find pointers to documents which change with time. You will find pointers to documents which are available in more than one format. You will find pointers to documents which look different depending on who is asking for them. There are ways to describe in a machine or human readable way exactly what sort of repeatability you would expect from a URI, but the architecture of the Web is that that is for something for the owner of the URI to determine. https://www.w3.org/DesignIssues/Axioms.html
+
+[^notebookcell]: An individual unit of code or writing in a notebook is called a "cell"
