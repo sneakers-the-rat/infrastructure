@@ -19,6 +19,14 @@ We're using gitter (which recently became a [Matrix](https://matrix.org/) client
 * [![Gitter](https://badges.gitter.im/scientific-infrastructure/prerelease.svg)](https://gitter.im/scientific-infrastructure/prerelease?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) - **Prerelease** - drafting and organizing conversations before release
 * [![Join the chat at https://gitter.im/scientific-infrastructure/community](https://badges.gitter.im/scientific-infrastructure/community.svg)](https://gitter.im/scientific-infrastructure/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) - **Community** - general chat
 
+# Writing Syntax
+
+**TODO**
+
+- normal markdown,
+- `{% cite bibtex-key %}` for citations
+- what else !??!?
+
 # Code Structure
 
 - The document is built using **jekyll** and also includes some page elements built using **react.** 
@@ -28,50 +36,41 @@ We're using gitter (which recently became a [Matrix](https://matrix.org/) client
 	- **bundler** to manage the ruby dependencies. Bundler uses the `Gemfile` to generate the `Gemfile.lock` analogously to yarn.
 	- **webpack** to compile React and other javascript into an included bundle
 
-## Files & Directories
-
 (all `.md` or `.markdown` files are rendered to html, so `index.markdown` becomes `index.html` on the final site.)
 
-### Main Text
+## Main Text
 
 - `index.markdown` is the parent file that structures the document and imports its different sections. 
 - `_sections/` contains each of the sections included into the main document. The sections are numbered, but refer to the index for the definitive ordering.
 - `assets/infrastructure.bib` - a BibTeX file containing all references in the piece, add new references here and cite them with the `@key`.
 
-### Meta Text
+## Meta Text
 
 - `todo.md` - keeping track of things to do
 - `trims.markdown` - large sections of text removed from the main text to try and make it shorter that might find their way into future writing (see `_trims/`)
 
-### Jekyll-specific
+## Jekyll-specific
 
 - `_includes/` - short liquid templates to use in page
 - `_layouts/` - whole-page layout templates to structure html, see the header of each .md/.markdown file
 - `_plugins/` - jekyll plugins
 - `_sass/` - compiled to css, control the look and feel of the site.
 
-### javascript & other web stuff
+## javascript & other web stuff
 
 - `assets/` has vanilla css and javascript, as well as all any images
 - `assets/notebooks` will eventually be included in the document, but the rendering is turned off at the moment while it's being debugged.
 
-### etc.
+## etc.
 
 - `tex/` see [pdf-rendering](#pdf-rendering)
 - `code` contains supplementary code for calculating numbers for the paper/other meta-needs.
 - `data` contains any data referenced in the text.
 
-## Writing Syntax
 
-**TODO**
+# Usage
 
-- normal markdown,
-- `{% cite bibtex-key %}` for citations
-- what else !??!?
-
-## Usage
-
-### Requirements
+## Requirements
 
 You will first need to have installed
 
@@ -92,7 +91,7 @@ gem install bundler
 
 Let me know of any other OS needs by raising an issue!
 
-### Installation
+## Installation
 
 Clone the repository and enter the directory
 
@@ -108,7 +107,7 @@ bundle install
 yarn install
 ```
 
-### Building
+## Building
 
 The build is in two stages, first webpack runs to compile the React and other javascript into a bundle, and then jekyll compiles the markdown, scss, and javascript into the final website. The website is built into the `_site` directory
 
@@ -123,7 +122,7 @@ npm run build_wp
 npm run build_jk
 ```
 
-### Serving
+## Serving
 
 To write locally, you can run a development server which continuously rebuilds the page whenever the files are updated. 
 
@@ -137,7 +136,7 @@ npm run start
 
 and then open `http://127.0.0.1:4000/infrastructure/` in your browser.
 
-### Deploying
+## Deploying
 
 When a new commit is pushed to `main`, the website is built with github actions (see `.github/workflows/github-pages.yml`) and deployed on the `gh_pages` branch, which is what [https://jon-e.net/infrastructure](https://jon-e.net/infrastructure) points to.
 
