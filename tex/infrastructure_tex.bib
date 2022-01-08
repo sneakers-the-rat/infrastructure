@@ -492,6 +492,12 @@
   file = {/Users/jonny/Dropbox/papers/zotero/B/BirneyE/birney_2007_identification_and_analysis_of_functional_elements_in_1%_of_the_human_genome_by.pdf;/Users/jonny/Zotero/storage/SGCCNZ2V/birney2007.pdf#view=FitH.pdf}
 }
 
+@misc{BitTorrentDHTTurns,
+  title = {{{BitTorrent}}'s {{DHT Turns}} 10 {{Years Old}} * {{TorrentFreak}}},
+  abstract = {DHT, the much misunderstood, frequently maligned, yet somewhat critical aspect of Bittorrent turned ten recently. Launched initially by the Azureus client (now Vuze), BitTorrent Inc.'s version joined its mainline client a few weeks later. Now, a decade on, DHT underpins much of the BitTorrent world. This is its history.},
+  langid = {english}
+}
+
 @article{bonifatiDistributedDatabasesPeertopeer2008,
   title = {Distributed Databases and Peer-to-Peer Databases: Past and Present},
   shorttitle = {Distributed Databases and Peer-to-Peer Databases},
@@ -594,7 +600,7 @@
 
 @article{brembsReplacingAcademicJournals2021,
   title = {Replacing Academic Journals},
-  author = {Brembs, Bj{\"o}rn and Huneman, Philippe and Sch{\"o}nbrodt, Felix and Nilsonne, Gustav and Susi, Toma and Siems, Renke and Perakakis, Pandelis and Trachana, Varvara and Ma, Lai and {Rodriguez-Cuadrado}, Sara},
+  author = {Brembs, Bjorn and Huneman, Philippe and Schonbrodt, Felix and Nilsonne, Gustav and Susi, Toma and Siems, Renke and Perakakis, Pandelis and Trachana, Varvara and Ma, Lai and {Rodriguez-Cuadrado}, Sara},
   year = {2021},
   month = sep,
   doi = {10.5281/zenodo.5526635},
@@ -2918,6 +2924,25 @@
   langid = {english}
 }
 
+@inproceedings{maymounkovKademliaPeertoPeerInformation2002,
+  title = {Kademlia: {{A Peer-to-Peer Information System Based}} on the {{XOR Metric}}},
+  shorttitle = {Kademlia},
+  booktitle = {Peer-to-{{Peer Systems}}},
+  author = {Maymounkov, Petar and Mazi{\`e}res, David},
+  editor = {Druschel, Peter and Kaashoek, Frans and Rowstron, Antony},
+  year = {2002},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {53--65},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/3-540-45748-8_5},
+  abstract = {We describe a peer-to-peer distributed hash table with provable consistency and performance in a fault-prone environment. Our system routes queries and locates nodes using a novel XOR-based metric topology that simplifies the algorithm and facilitates our proof. The topology has the property that every message exchanged conveys or reinforces useful contact information. The system exploits this information to send parallel, asynchronous query messages that tolerate node failures without imposing timeout delays on users.},
+  isbn = {978-3-540-45748-0},
+  langid = {english},
+  keywords = {Close Leaf,Close Node,Distribute Hash Table,Empty Bucket,Replacement Cache},
+  file = {/Users/jonny/Dropbox/papers/zotero/M/MaymounkovP/maymounkov_2002_kademlia.pdf}
+}
+
 @misc{MeatballWikiArsElectronicaContest,
   title = {Meatball {{Wiki}}: {{ArsElectronicaContest}}},
   howpublished = {http://meatballwiki.org/wiki/ArsElectronicaContest},
@@ -3370,6 +3395,19 @@
   file = {/Users/jonny/Dropbox/papers/zotero/P/Pellissier TanonT/pellissier_tanon_2016_from_freebase_to_wikidata.pdf}
 }
 
+@article{piatekIncentivesBuildRobustness2007,
+  title = {Do Incentives Build Robustness in {{BitTorrent}}?},
+  author = {Piatek, Michael and Isdal, Tomas and Anderson, Thomas and Krishnamurthy, Arvind and Venkataramani, Arun},
+  year = {2007},
+  month = apr,
+  journal = {Proc. of NSDI},
+  volume = {7},
+  pages = {14},
+  abstract = {A fundamental problem with many peer-to-peer systems is the tendency for users to ``free ride''\textemdash to consume resources without contributing to the system. The popular file distribution tool BitTorrent was explicitly designed to address this problem, using a tit-for-tat reciprocity strategy to provide positive incentives for nodes to contribute resources to the swarm. While BitTorrent has been extremely successful, we show that its incentive mechanism is not robust to strategic clients. Through performance modeling parameterized by real world traces, we demonstrate that all peers contribute resources that do not directly improve their performance. We use these results to drive the design and implementation of BitTyrant, a strategic BitTorrent client that provides a median 70\% performance gain for a 1 Mbit client on live Internet swarms. We further show that when applied universally, strategic clients can hurt average per-swarm performance compared to today's BitTorrent client implementations.},
+  langid = {english},
+  file = {/Users/jonny/Zotero/storage/L7UKAQHA/Piatek et al. - Do incentives build robustness in BitTorrent.pdf}
+}
+
 @misc{PirateBayArchiveteam2020,
   title = {The {{Pirate Bay}} - {{Archiveteam}}},
   year = {2020},
@@ -3641,7 +3679,7 @@
 
 @misc{Rfc5321SimpleMail,
   title = {Rfc5321 - {{Simple Mail Transfer Protocol}}},
-  howpublished = {https://datatracker.ietf.org/doc/html/rfc5321\#section-3},
+  howpublished = {https://datatracker.ietf.org/doc/html/rfc5321},
   file = {/Users/jonny/Zotero/storage/VUZ4PTA6/rfc5321.html}
 }
 
@@ -4251,6 +4289,22 @@
   isbn = {978-1-4503-3566-9},
   keywords = {cyberinfrastructure software,open-source business models,reusability,software sustainability,sustainability},
   file = {/Users/jonny/Dropbox/papers/zotero/S/StewartC/stewart_2015_sustained_software_for_cyberinfrastructure.pdf}
+}
+
+@article{stoicaChordScalablePeertopeer2001,
+  title = {Chord: {{A}} Scalable Peer-to-Peer Lookup Service for Internet Applications},
+  shorttitle = {Chord},
+  author = {Stoica, Ion and Morris, Robert and Karger, David and Kaashoek, M. Frans and Balakrishnan, Hari},
+  year = {2001},
+  month = aug,
+  journal = {ACM SIGCOMM Computer Communication Review},
+  volume = {31},
+  number = {4},
+  pages = {149--160},
+  issn = {0146-4833},
+  doi = {10.1145/964723.383071},
+  abstract = {A fundamental problem that confronts peer-to-peer applications is to efficiently locate the node that stores a particular data item. This paper presents Chord, a distributed lookup protocol that addresses this problem. Chord provides support for just one operation: given a key, it maps the key onto a node. Data location can be easily implemented on top of Chord by associating a key with each data item, and storing the key/data item pair at the node to which the key maps. Chord adapts efficiently as nodes join and leave the system, and can answer queries even if the system is continuously changing. Results from theoretical analysis, simulations, and experiments show that Chord is scalable, with communication cost and the state maintained by each node scaling logarithmically with the number of Chord nodes.},
+  file = {/Users/jonny/Dropbox/papers/zotero/S/StoicaI/stoica_2001_chord.pdf}
 }
 
 @article{stoneQueryExecutionMaintenance,
