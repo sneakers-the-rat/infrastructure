@@ -121,6 +121,13 @@ acknowledgements:
 
 > The critical issue is, how do actors establish generative platforms by instituting a set of control points acceptable to others in a nascent ecosystem? {% cite tilsonDigitalInfrastructuresMissing2010 %}
 
+> Billionaires have squatted on the Magna Cum Lauded / [...]
+> Methodically they plotted against those who fought it / [...] / 
+> Now the scientific process got hijacked for profits /
+> It flows in the direction that a silver spoon prodded / 
+> We'll get science for the people when we run the economics.
+>
+> The Coup (2012) [The Gods of Science](https://youtu.be/lW59xoilGnw)
 
 ----
 

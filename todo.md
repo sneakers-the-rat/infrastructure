@@ -15,6 +15,11 @@ canonical_url: "https://jon-e.net/infrastructure/todo"
 - Resolve [Abstraction & Protocol Design](/infrastructure/#abstraction--interfaces)
 - Summaries at the end of every section that needs them - [full system](/infrastructure/#what-we’ve-described-is-a-nonutopian-fully-realizable-path-to-ma)
 
+## Introduction
+
+- Redo introductory paragraph, too jokey and also doesn't really give a clear explanation of what we're talking about
+- Introduce the notion that we're also talking about the journal system early.
+
 # Editing
 - Redundancy in [federated systems](/infrastructure#federated-systems-of-language)
 
@@ -23,6 +28,13 @@ canonical_url: "https://jon-e.net/infrastructure/todo"
 
 # Organization
 - Glossary for terms with hover for definition! Probably implement as yaml data for multiple render at end of document and in tooltips.
+
+# Updates Pre-Release
+
+Things to update just before releasing a public version
+
+- [/infrastructure#the-articulated-plan-being-to-pay-platform-holders-to-house-data] - cost of STRIDES
+
 
 
 # UX
