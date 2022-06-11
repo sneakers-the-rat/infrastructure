@@ -4,6 +4,16 @@
 >
 > And like everything, the real answer lies on how we assess candidates for jobs, grants, etc… So long as people treat authorship as the most/only valuable currency, this debate will fester. But it’s in our power to change it. - Michael Eisen, EIC eLife {% cite eisenEverythingRealAnswer2021 %}
 
+<div class="draft-text">
+	quote from harold varmus of PubMed: 
+
+	I also think one of the big obstacles to freeing up scientific information remains the way in which we continue to pay allegiance to the idea that the most important work is published in so-called ‘high-impact’ journals that continue to restrict access by imposing highly lucrative subscription fees. These journals continue to thrive, despite a kind of anti-social policy, because so many academic scientists evaluate each other’s work and measure abilities and accomplishments based on where people have published.
+
+	The only way by which we’ll eventually get out of the current situation is by changing the formula dramatically. That means that we’ll probably have to move to a world where the authors have full control – their work will be presented online together with expert reviews and perhaps accompanied by a new evaluation system in which members of the scientific community will provide qualitative and perhaps quantitative measures of the value of the paper. The current world of high- and low-impact journals will eventually dissolve, it's just taking a lot longer than I thought
+
+	{% cite varmusOncogenesOpenScience2019 %}
+</div>
+
 
 The critical anchor for changes to the scientific infrastructural systems is the system of professional incentives that structure it. As long as the only thing that has professional value is authorship in journal papers, the system stays: Blog posts, analysis pathways, wikis, and forums are nice and all, but they don't count as *science.*
 
