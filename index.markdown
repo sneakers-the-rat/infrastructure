@@ -169,7 +169,7 @@ acknowledgements:
 
 {% include_relative _sections/2_2_ld-or-surveillance.md %}
 
-### Federated Systems (of Language)
+### Federated Folksonomic Systems
 
 {% include_relative _sections/2_3_federation.md %}
 

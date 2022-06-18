@@ -402,4 +402,9 @@ Dont want to be prescriptive here, but that we can learn from previous efforts l
 
 !! the coercion of centralization has a few forms. this is related to the authoritarian impulse in the open science movement that for awhile bullied people into openness. that instinct in part comes from a belief that everyone should be doing the same thing, should be posting their work on the one system. decentralization is about autonomy, and so a reciprocal approach is to make it easy and automatic.
 
+## Translator trims (22-06)
+
+The Translator is being developed by 28 institutions and nearly 200 team members as of 2019. They credit their group structure and flexible Other Transaction Award (OTA) funding mechanism for their successes {% cite consortiumBiomedicalDataTranslator2019 %}. OTA awards give the granting agency broad flexibility in to whom and for what money can be given, and consist of an initial competetive segment with possibility for indefinite noncompetitive extensions at the discretion of the agency {% cite fleisherOtherTransactionAward2019 %}. 
+
+
 
