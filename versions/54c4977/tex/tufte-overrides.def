@@ -1,0 +1,33 @@
+\ProvidesFile{tufte-overrides.def}[2021-01-06 overrides for tufte]
+
+\geometry{
+  left=1in, % left margin
+ textwidth=31pc, % main text block
+  marginparsep=1pc, % gutter between main text block and margin notes
+ marginparwidth=10pc % width of margin notes
+}
+
+\renewcommand{\maketitle}{%
+\global\@topnum\z@% prevent floats from being placed at the top of the page
+  \begin{fullwidth}%
+  \rmfamily%
+  {\setlength{\parindent}{0pt}\fontsize{48}{55}\selectfont\noindent\textcolor{darkgray}{\textbf{Decentralized\linebreak Infrastructure\linebreak for (Neuro)science}}}
+  \vspace{1cm}\\
+  \fontsize{16}{30}\selectfont\@author\\
+  \textit{Prelims Edition}
+  \end{fullwidth}
+\thispagestyle{empty}%
+\normalfont
+}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{3}
+
+
+% \renewcommand{\allcapsspacing}[1]{\textls[300]{#1}}
+% \renewcommand{\smallcapsspacing}[1]{\textls[500]{#1}}
+% \renewcommand{\allcaps}[1]{\textls[500]{\MakeTextUppercase{#1}}}
+% \renewcommand{\smallcaps}[1]{%
+%   \smallcapsspacing{\scshape\MakeTextLowercase{#1}}%
+% }
+% \renewcommand{\textsc}[1]{\smallcapsspacing{\textsmallcaps{#1}}}
