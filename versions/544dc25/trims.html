@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" prefix="foaf: http://xmlns.com/foaf/0.1/">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Infrastructure Trimmings | Decentralized Infrastructure for (Neuro)science</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Infrastructure Trimmings" />
+<meta name="author" content="Jonny Saunders" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://jon-e.net/infrastructure/trims" />
+<meta property="og:url" content="https://jon-e.net/infrastructure/trims" />
+<meta property="og:site_name" content="Decentralized Infrastructure for (Neuro)science" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Infrastructure Trimmings" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Jonny Saunders"},"url":"https://jon-e.net/infrastructure/trims","@type":"WebPage","headline":"Infrastructure Trimmings","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/infrastructure/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+<!--   <link rel="icon" type="image/png" sizes="32x32" href="/infrastructure/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/infrastructure/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/infrastructure/assets/apple-touch-icon.png">
+ -->
+  <!-- RSS -->
+
+
+</head>
+
+
+  <body vocab="https://schema.org/" typeof="ScholarlyArticle">
+
+    
+
+    <main>
+      <div class="post">
+    <div class="post-info">
+        <h1 class="post-title" property="title">Infrastructure Trimmings</h1>
+        
+        
+          <h2 class="post-subtitle">Splitting the Monolith</h2>
+        
+
+        <div class="post-line"></div>
+
+        
+          
+          <span property="author" resource="#au:" typeof="Person">
+            <span class="post-author" property="name"></span>
+            <span property="email" content=""> 
+            <a href="mailto:">
+                <i class="far fa-envelope"></i>
+            </a>
+            </span>
+          </span>
+          
+        
+
+        <br>
+
+        
+
+        <div class="post-date">
+            <span>Rendered: </span>
+            <time datetime="2022-11-19"> 2022-06-19</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/"><code></code></a> 
+        </div>
+
+        <div class="acknowledgements">
+            <h3>With gratitude to...</h3>
+            
+        </div>
+
+    </div>
+    
+
+
+    <div property="articleBody">
+    <p>This document is too long! These are sections that have been taken out of the main piece for want of reorganizing in subsequent writing.</p>
+
+<h2 id="systems-neuroscience-specifically">Systems Neuroscience Specifically…</h2>
+
+<p>Every discipline has its own particular technical needs, and is subject to its own peculiar history and culture. Though the type of comprehensive distributed infrastructure I will describe later is a domain-general project, systems neuroscience specifically lacks some features of it that are present in immediately neighboring disciplines like genetics and cognitive psychology. I won’t attempt a complete explanation, but instead will offer a few patterns I have noticed in my own limited exposure to the field that might serve as the beginnings of one. I want to be very clear throughout that I am never intending to cast shade on the work of anyone who has or does build and maintain the scientific infrastructure that exists — in fact the opposite, that y’all deserve more resources.</p>
+
+<h3 id="diversity-of-measurements">Diversity of Measurements</h3>
+
+<p>Molecular biology and genetics are perhaps the neighboring disciplines with the best data sharing and analytical structure, spawning and occupying the near totality of a new subdiscipline of Bioinformatics (for an absolutely fascinating ethnography, see <a class="citation" href="#bietzCollaborationMetagenomicsSequence2009">[1]</a>). Though the experiments are of course just as complex as those in systems neuroscience, most rely on a small number of stereotyped sequencing (meta?)methods that result in the same one-dimensional, four character sequence data structure of base pairs. Systems neuroscience experiments increasingly incorporate dozens of measurements, electrophysiology, calcium imaging, multiple video streams, motion, infrared, and other sensors, and so on. This is increasingly true as neuroscientists are attempting ever more complex and naturalistic neuroethological experiments. Even the seemingly “common” electrophysiological or multiphoton imaging data can have multiple forms — raw voltage traces? spike times? spike templates and times? single or multiunit? And these forms go through multiple intermediate stages of processing — binning, filtering, aggregating, etc. — each of which could be independently valuable and thus represented alongside their provenance in a theoretical data schema. Mainen and colleagues note this problem as well:</p>
+
+<blockquote>
+  <p>The data sets generated by a functional neuroscience experiment are large. They can also be complex and multimodal in ways that, say, genomic data might not be, embracing recordings of activity, behavioural patterns, responses to perturbations, and subsequent anatomical analysis. Researchers have no agreed formats for integrating different types of information. Nor are there standard systems for curating, uploading and hosting highly multimodal data. <a class="citation" href="#mainenBetterWayCrack2016">[2]</a></p>
+</blockquote>
+
+<p>The <a href="https://www.nwb.org/">Neurodata Without Borders</a> project has made a valiant effort to unify these multiple formats, but has for reasons that I won’t lay claim to knowing has yet to see widespread adoption. Contrast this with the <a href="https://bids.neuroimaging.io/">BIDS</a> data structure for fMRI data, where by converting your data to the structure you unlock a huge library of analysis pipelines for free. The beginnings of generalized platforms for neuroscientific data built on top of NWB are starting to happen in trickles and droplets, but they are still very much the exception rather than the rule.</p>
+
+<p>We should not be so proud as to believe that our data is somehow uniquely complex. Theorizing about and reconciling the mass and heterogeneity of data in the universe is the subject of <a href="https://en.wikipedia.org/wiki/Information_science">multiple</a> full-fledged <a href="https://en.wikipedia.org/wiki/Library_science">disciplines</a>, and the conflict between simplified and centralized <a class="citation" href="#bakerMaintainingDublinCore2005">[3]</a> and sprawling and distributed <a class="citation" href="#berners-leeSEMANTICWEB2001">[4]</a> systems is well-trodden — and we should learn from it! We could instead think of the complexity of our data and the tools we develop to address it as what we have to offer the broader human mission towards a unified system of knowledge.</p>
+
+<h3 id="diversity-of-preps">Diversity of Preps</h3>
+
+<p>Though there are certain well-limbered experimental backbones like the two-alternative forced choice task, even within them there seems to be a comparatively broad diversity of experimental preparations in systems neuro relative to adjacent fields. Even a visual two-alternative forced choice task is substantially different than an auditory one, but there is almost nothing shared between those and, for example, <a href="https://doi.org/10.7554/eLife.29053">measuring the representation of 3d space in a free-flying echolocating bat</a>. So unlike cognitive neuroscience and psychophysics that has tools like <a href="https://pavlovia.org/">pavlovia</a> where the basic requirements and structure of experiments are more standardized, BioRXiv is replete with technical papers documenting “high throughput systems for this one very specific experiment” and there <a href="https://docs.auto-pi-lot.com">isn’t</a> a true experimental framework that satisfies the need for flexibility.</p>
+
+<p>Mainen and colleagues note that this causes another problem distinct from variable outcome data, the even more variable and largely unreported metadata that parameterizes the minute details of experimental preps:</p>
+
+<blockquote>
+  <p>Worse, neuroscientists lack standardized vocabularies for describing the experimental conditions that affect brain and behavioural functions. Such a vocabulary is needed to properly annotate functional neural data. For instance, even small differences in when a water drop is released can affect how a mouse’s brain processes this event, but there is no standard way to specify such aspects of an experiment. <a class="citation" href="#mainenBetterWayCrack2016">[2]</a></p>
+</blockquote>
+
+<p>The problem of universal annotation and metadata reporting can be reframed, not as a <em>barrier to developing</em>, but as a <em>design constraint</em> of experimental programming infrastructure.  Because of the fragmentation of scientific programming infrastructure, where each experimental prep is implemented with entirely different, and often single-use software, there is no established reporting system for automatically capturing these minute details — but that doesn’t mean there can’t be (as I wrote previously, see section 2.3 in <a class="citation" href="#saundersAutopilotAutomatingBehavioral2019">[5]</a>, and coincidentally measured the effect of variable water droplets).</p>
+
+<h3 id="the-hacker-spirit-and-celebration-of-heroism">The Hacker Spirit and Celebration of Heroism</h3>
+
+<p>Many people are attracted to systems neuroscience precisely <em>because</em> of the… playful… attitude we take towards our rigs. If you want to do something, don’t ask questions just break out the <a href="http://jvoigts.scripts.mit.edu/blog/review-hot-glue/">hot glue</a>, vaseline, and aluminum foil and hack at it until it does what you want. The natural conclusion of widespread embodiment of this lovable scamp hacker spirit is its veneration as heroism: it is a <em>good thing</em> to have done an experiment that only you are capable of doing because that means you’re the best hacker. Not unrelated is the strong incentive to make something new rather than build on existing tools — you don’t get publications from pull requests, and you don’t get a job without publications. The initial International Brain Laboratory described the wily nature of neuroscientists accordingly:</p>
+
+<blockquote>
+  <p>Simply maintaining a true collaboration between 21 laboratories accustomed to going their own way will be a major novelty in neuroscience. <a class="citation" href="#abbottInternationalLaboratorySystems2017">[6]</a></p>
+</blockquote>
+
+<p>And yes, like the rest of the universe, perhaps the most influential forces in this domain are inertia and entropy. Once the boulder starts rolling down the hill of heroic idiosyncracy, tumbling along in a semi-stable jumble<sup id="fnref:butno" role="doc-noteref"><a href="#fn:butno" class="footnote" rel="footnote">1</a></sup> that supports the experiments of a lab, retooling and standardizing that system has to be <em>so very cool and worth it</em> that it overcomes the various, uncertain, but typically substantial costs (including the valid emotional costs of wishing a peaceful voyage to well-loved handcrafted tools). More than a single moment of adoption, the universe always has room for another course of disorder, and a commitment to using communal tools must be constantly reaffirmed. As we dream up new wild experiments, it needs to be easier to implement them with the existing system and integrate the labor expended in doing so back into it than it is to patch over the problem with a quick script saved to Desktop. As people cycle through the lab, it must be easier to learn than it is to start from scratch.</p>
+
+<p>Yes again, Mainen and colleagues:</p>
+
+<blockquote>
+  <p>Neuroscientists frequently live on the ‘bleeding’ edge technologically, building bespoke and customized tools. This do-it-yourself approach has allowed innovators to get ahead of the competition, but hampered the standardization of methods essential to making experiments efficient and replicable.</p>
+
+  <p>Remarkably, it is standard practice for each lab to custom engineer all manner of apparatus, from microscopes and electrodes to the computer programmes for analysing data. Thousands of labs worldwide use the calcium sensor GCaMP, for example, for imaging neural activity in vivo. Yet neither the microscopes used for GCaMP imaging nor the algorithms used to analyse the resulting data sets have been standardized. <a class="citation" href="#mainenBetterWayCrack2016">[2]</a></p>
+</blockquote>
+
+<p>!! make it clearer that the hacker spirit is not a <em>bad</em> thing but another <em>design constraint</em> and that we should actually avoid the paternalistic approach that says there’s a “right way” to do science, and instead honor, learn from, and support the diversity of our approaches.</p>
+
+<h3 id="focus-on-the-science">Focus on the Science</h3>
+
+<p>Completely understandably… scientists want to focus on their discipline rather than spending time building infrastructure. But because infrastructure touches all of our work and very few people can only build it in their spare time (mostly for the love of the craft) we all have to build some of it. this is a classic collective action problem, and scientists are not evil or selfish for wanting to do their work.</p>
+
+<h3 id="combinatorics-of-recent-technology">Combinatorics of Recent Technology</h3>
+
+<p>A lot of what I will describe here is relatively new! Some ideas are very old, like the semantic web and wikis, but others like federated communication and file transfer protocols are only reaching widespread use recently. The entire universe of open source scientific hardware and software has only sprung into its full and beautiful glory in the last decade or so, from pandas and and jupyter to open ephys and miniscopes and so on. Bittorrent is cool and good but IPFS allows us to think about qualitatively different things. It’s ultimately the <em>combination</em> of these recently technologies that’s important, rather than any single one of them. So in some sense it wasn’t <em>possible</em> to think about the type of basic infrastructure outside the traditional lens of centralized databases and individual experimental software packages.</p>
+
+<h2 id="whatcd-trims">What.cd trims</h2>
+
+<p>When I interviewed in 2009, I had to find my way onto an obscure IRC server, wait in a lobby all day until a volunteer moderator could get to me, and was then grilled on the arcana of digital music formats, spectral analysis<sup id="fnref:spectral" role="doc-noteref"><a href="#fn:spectral" class="footnote" rel="footnote">2</a></sup>, the ethics of piracy, and so on for half an hour. Getting a question wrong was an instant failure and you were banned from the server for 48 hours. A single user was only allowed one account per lifetime, so between that policy and the extremely high barriers to entries, even anonymous users were strongly incentivized to follow <a href="https://opentrackers.org/whatinterviewprep.com/prepare-for-the-interview/what-cd-rules/index.html">the sophisticated, exacting rules for contributing</a>. While we certainly don’t want such a grueling barrier to entry for scientific data infrastructure, the problem is different and arguably simpler when the system can exist in the open. For example public reputation loss can be a reasonably strong incentive to play by the rules that may trade off with the threat of banning.</p>
+
+<p>Depending on the age of your account and the amount you had contributed, what.cd users also were given <em>user classes</em> that conferred differing degrees of prestige and abilities. This is a common tactic for publicly moderates sites like <a href="https://stackexchange.com">StackExchange</a> or <a href="https://genius.com">Genius</a>, where users need to demonstrate a certain degree of competency and good faith before they are given the keys to the castle. User classes are both <em>aspirational</em> and incentivize additional work on the site, as well as <em>reputational</em> where a user class meant you have paid your dues and were a senior contributor.</p>
+
+<p>If the moderation team affirmed your report, they would usually kick back a few gigabytes of upload credit depending on the severity. Unless the problem was a repeat and malicious one, the “offender” was alerted to it, warned, and told what to do instead next time – though,</p>
+
+<p>Independent musicians released albums in the supportive<sup id="fnref:mostly" role="doc-noteref"><a href="#fn:mostly" class="footnote" rel="footnote">3</a></sup> Vanity House section, and people from around the world came to hold the one true album that only they knew about high aloft like a divine tablet.</p>
+
+<p>They continue to ideas like greater reward for data citations (which we will return to in <a href="#credit-assignment">credit assignment</a>), as well as awards for good datasets. Community awards are also longstanding parts of many digital communities, like What.cd’s Album of the Week, which rewarded someone who has done good work by letting them choose an album that would be freely downloadable, or Wikipedia’s <a href="https://en.wikipedia.org/wiki/Wikipedia:Barnstars">Barnstars</a>.</p>
+
+<p>A better system for science might be closer to <a href="https://wiki.installgentoo.com/wiki/Private_trackers#No_economy">ratioless trackers</a> that allow infinite downloads as long as they remain seeded for a certain amount of time afterwards, given whatever permissions have been set on the data.</p>
+
+<p>These are all solvable problems, and can be worked on iteratively. They hint at a communication medium where we can discuss our experiments in the same place that they live; linking, embedding, comparing data and techniques to have the kind of longform, cumulative scientific discourse that is for now still relegated to being a fever dream. Rather than being prescriptive about one community structure, what allowed private bittorent trackers to develop and experiment with many different types of systems is the separation from the underlying data from the community overlay.</p>
+
+<h2 id="trans-health-example">Trans Health Example</h2>
+
+<hr />
+
+<p>I think it is important to pause and appreciate the potential for harm in the data infrastructural system describes so far, continuing to use structural transphobia as one example among many possible harms. First, a brief recap:</p>
+
+<p>Through STRIDES, cloud providers like AWS, Google Cloud, and Microsoft Azure are intended to become the primary custodians of scientific data. Regardless of contracts and assurances, since their system is opaque and proprietary, there is no way to ensure that they will not crawl this data and use it to train their various algorithms-as-a-service — and they seem all too happy to do so, as evidenced by GitHub Co-Pilot reproducing copyrighted code and code with licenses that explicitly forbade its use in that context. Given that Amazon is expanding aggressively into health technology<a class="citation" href="#AWSAnnouncesAWS2021">[7]</a>, including wearables and literally providing <a href="https://amazon.care/">health care</a> <a class="citation" href="#lermanAmazonBuiltIts2021">[8]</a>, primary scientific data is a valuable prize in their mission to cement dominance in algorithmic health.</p>
+
+<p>The effort to unify data across the landscape of databases, patient data, and so on is built atop a rickety pile of SaaS so fragile that a <em>single person</em> with a <em>single repository</em> can have ripple effects across the aggregators that impact the whole knowledge graph. In the above example, an outdated set of terminology classifies a subset of human gender as a disease, which then is linked to candidate genes and other nodes in the knowledge graph. Since there is a preponderance of misguided research about about the etiology and “biological mechanisms” of transgender people, the graph neighboorhood around transness is rich with biomarkers and functional data.</p>
+
+<p>All of the above is known to be true now, but let’s see how it could play out practically in an all-too-plausible thought experiment.</p>
+
+<p>Though the translator system now is intended for basic research and drug discovery, there is stated desire for it to eventually become a consumer/clinical product <a class="citation" href="#hailuNIHfundedProjectAims2019">[9]</a>. Say a cloud provider rolls out a service for clinical recommendations for doctors informed by the full range of scientific, clinical, wearable, and other personal data they have available — a trivial extension of <a href="https://web.archive.org/web/20211003070018/https://support.apple.com/en-us/HT208680">existing</a> patient medical aggregation and <a href="https://web.archive.org/web/20210408221213/https://support.google.com/fit/answer/7619539?hl=en&amp;co=GENIE.Platform%3DAndroid">recommendation</a> services that <a href="https://web.archive.org/web/20210930203834/https://press.aboutamazon.com/news-releases/news-release-details/amazon-adds-more-halo-introducing-halo-view-halo-fitness-and">express</a> their biopolitical control as a slick wristband with app. It’s very “smart” and is very “private” in the sense that only the algorithm ever sees your personal data.</p>
+
+<p>Since these cloud providers as a rule depend on developing elaborate personal profiles for targeted advertising algorithmically inferred from available data[^googlepatent], that naturally includes diagnosed or inferred disease — a practice they explicitly describe in the patents for the targeting technology<a class="citation" href="#bharatGeneratingUserInformation2005">[10]</a>, gone to court to defend <a class="citation" href="#SmithFacebookInc2018">[11, 12]</a>, formed secretive joint projects with healthcare systems to pursue <a class="citation" href="#bourreauGoogleFitbitWill2020">[13]</a>, and so on. Nothing too diabolical here, just a system wherein <strong>your search results and online shopping habits influence your health care in unpredictable and frequently inaccurate <a class="citation" href="#rasmyMedBERTPretrainedContextualized2021">[14]</a> ways.</strong></p>
+
+<p>Imagine, through some pattern in your personal data, <strong>Amazon diagnoses you as trans.</strong>Whether their assessment is true or not is unimportant. Since the Translator works as a graph-based knowledge engine, your algorithmic transness, with its links through related genes, “symptoms,” and whatever other uninspectable network links the knowledge graph has, influences the medical care you receive. All part of the constellation of personalized information that constitutes “personalized medicine.”</p>
+
+<p>The Translator assures us that it will give doctors understandable provenance by being able to explain how it arrived at its recommendation. Let’s assume from prior experience with neural net language models that part of the process doesn’t work very well, or at least doesn’t give a fully exhaustive description of every single relevant graph entity. Now let’s further assume based on the above DILI example that the knowledge graph is not able to reliably “understand” the complex cultural-technological context of transness, and since it is classified as a “disease” decides that you need to be “cured.” Since it has access to a diverse array of biomedical data, it might even be able to concoct a very effective conversion therapy regimen <em>personalized just for you.</em> The algorithm could prescribe your conversion therapy <em>without you or the doctor knowing it.</em></p>
+
+<p>Transphobic behavior that impacts treatment is common <a class="citation" href="#ramTransphobiaEncodedExamination2021">[15, 16]</a>. Since the Translator’s algorithm is designed to learn from feedback and use<a class="citation" href="#consortiumUniversalBiomedicalData2019">[17]</a>, transphobic practices could easily reinforce and magnify the algorithm’s initial guess about what transness being a disease should mean for trans people in practice. Combined with the limitations on provision of care from insurance systems <a class="citation" href="#strangioCanReproductiveTrans2016">[16]</a>, on a wide scale transphobic medical practices could be transmuted into a “scientifically justified” standard of care.</p>
+
+<p>Scaling out further, the original intention of the tool is to guide drug discovery and pharmaceutical research, so harm could be encoded into the indefinite future of biomedical research — imperceptibly guiding the array of candidate drugs to test based on an algorithmically biased perception of biology and medical prerogative. Even in the case that society changes and we attempt to make amends in our institution for outdated and harmful notions, the long tail of ingrained learning in a proprietary algorithm could be hard to unlearn if the proprieter is inclined to try at all. So even many years into the future when we “know better,” the ghosts of algorithmically guided medical reserach and practice could still unknowingly guide our hands.</p>
+
+<p>The pathologizing of transgender people is just one example among many demonstrated instances of algorithmic bias like race, disability, and effectively any other marginalized group. The critical issue is that <strong>we might not have any idea</strong> how the algorithm is influencing research and practice at scales large and small, immediate and indefinite. The impacts don’t have to be as dramatic as this particular thought experiment to be harmful. The subtlety of having dosages, prescriptions, and candidate drugs jittered by a massive integrated machine learning system is harm in itself: our medical care becomes training data. The point is that we <em>can’t know</em> the effects of letting the course of our medical research and clinical care be steered by an algorithm embedded within a platform that has <em>any</em> incentive that conflicts with our collective health.</p>
+
+<hr />
+
+<p>How did we get here? How could an effort to link biomedical data become an instrument of mass surveillance and harm?</p>
+
+<h2 id="elsevier-surveillance">Elsevier Surveillance</h2>
+
+<p>!! It doesn’t even need to be Amazon, the publishers are getting into it too! RELX owns lexisnexis, a big identity management company, and is aggressively building out its machine-learning tools for science. From their 2019 annual shareholders report:</p>
+
+<blockquote>
+  <p>Elsevier serves academic and government research administrators and leaders through its Research Intelligence suite of products. SciVal is a decision tool that helps institutions to establish, execute and evaluate research strategies by leveraging bibliometric data […] Elsevier expanded its leadership position in research institution benchmarking analytics through further investment in its SciVal Topic Prominence in Science. Big data technology takes into consideration nearly all of the articles available in Scopus since 1996 and clusters them into nearly 96,000 global, unique research topics based on citations patterns.</p>
+
+  <p>Elsevier’s flagship clinical reference platform, ClinicalKey, provides physicians, nurses and pharmacists with access to leading Elsevier and third-party reference and evidence-based medical content […] Elsevier has developed a Healthcare Knowledge Graph, which utilises ML and Natural Language Processing (NLP) to knit together its collection of the world’s foremost clinical knowledge. The Healthcare Knowledge Graph enhances ClincialKey, the portal into Elsevier’s vast medical content library by providing more timely clinical results for users.</p>
+
+  <p>[…]
+For healthcare professionals, Elsevier’s clinical solutions include Interactive Patient Education and Care Planning. Elsevier’s ClinicalPath (formerly Via Oncology) provides clinical pathways delivering personalised, evidence-based oncology guidance at the point of care. Elsevier’s analytics capabilities in oncology support our ClinicalPath customers in answering increasingly complex questions around the delivery of cancer care, such as appropriate use of precision oncology and treatment adherence.</p>
+</blockquote>
+
+<p>!! So not only do we risk distorting the practice of medicine, we could distort the entire trajectory of science. SciVal autoranks researchers and institutions based on how “hot” their research programs are, and helps suggest topics that are more likely to get a grant, etc. Since they also aggressively control what gets recommended, and have also recently started literally selling ads on their websites, they could easily create the same kind of informational bubbles that we are familiar with from social media. And with the combination of a biomedical knowledge graph contiguous with the pharmaceutical industry, they could steer all basic research — perhaps with us being only dimly aware — to support the profit of their pharmaceutical partners. This isn’t even speculative ! https://www.elsevier.com/solutions/biology-knowledge-graph</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:butno" role="doc-endnote">
+      <p>A <em>lovely</em> jumble! that probably has a lot of good qualities, it’s just a little lonely maybe :( <a href="#fnref:butno" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:spectral" role="doc-endnote">
+      <p>The average what.cd user was, as a result, on par with many of the auditory neuroscientists I know in their ability to read a spectrogram. <a href="#fnref:spectral" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:mostly" role="doc-endnote">
+      <p>Mostly. You know how the internet goes… <a href="#fnref:mostly" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    </div>
+</div>
+
+    </main>
+
+    <footer>
+<script src="/infrastructure/assets/js/react.js"></script>
+<script src="/infrastructure/assets/js/toc.js"></script>
+
+
+
+<script defer src="https://hypothes.is/embed.js"></script>
+<script src="/infrastructure/assets/js/hypothesis.js"></script>
+
+</footer>
+
+  </body>
+</html>
