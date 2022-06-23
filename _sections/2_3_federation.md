@@ -1,8 +1,55 @@
 <div class="draft-text" markdown="1">
-Frame this section as the difference between indexing and expression -- that the primary design misstep in traditional systems is the emphasis on making a "true" indexical universe within which things fit, rather than a generative means of expression. That we need to build systems where a link or a structure is propositional, not that we enter something into some grand unified encyclopedia, but that things take on the character of "x person said y about z." That's what it means to to think about federated systems as systems of language --- rather than a database that aspires to having a consistent schema across many domains, thinking about systems that share and distribute a flexible system of definition that gives facility to fluid, overlapping, and pluralistic schema.
+
+
+Also acknowledge that federation is a loaded term to some, and that we don't mean federation in the fediverse sense of an 'account' being owned by an instance, but for autonomous peers to be able to create arbitrary groupings with permissions, schemas, etc.
 </div>
 
-When last we left it, our peer-to-peer system needed some way of linking data together. Instead of a big bucket of files as is traditional in torrents and domain-general databases, we need some way of exposing the metadata of disparate data formats so that we can query for and find the particular range of datasets appropriate to our question. We'll be playing in the world of linked data and the semantic web, but thinking about using those tools for a fluid means of expression more akin to natural language than to an engineering specification.
+* Linked data, but what is that?
+  * We just saw one example of linked data, but Tim BL's version is much different.
+* Basics of LD
+  * Triplets
+  * separating data from metadata (LDP and socially aware)
+  * affordances (re: LDP and "what would activitypub look like with capability based security")
+
+
+To structure our p2p data sharing system, we should use *Linked Data.* Linked data is at once exceptionally simple and deceptively complex, a set of technologies and social histories. In this section we will introduce the notion of linked data, extend it for a p2p context, and then add a twist from *federated systems.* Our goal will be to articulate the foundation for a "protocol of protocols," a set of minimal operations by which individual people can create, extend, borrow, and collectively build a space of linked folk schemas and ontologies, or *folksonomies.* 
+
+When last we left it, we had developed the notion of a p2p system to the point where we had big torrentlike piles of files with a few additional features like versioning and sharded storage. We need to add an additional layer of *metadata* that exposes information about the contents of each of these file piles. But what is that metadata *made of?* 
+
+The core format of linked data is the Resource Document Format (RDF) {% cite klyneRDFConceptsAbstract2014 %} and its related syntaxes like Turtle {% cite beckettRDFTurtle2014 %}. Typical hyperlinks are *duplet* links --- linking from the source to the target. The links of linked data are instead **triplet** links that consist of a **subject**, a **predicate** that *describes* the link, and an **object** that is linked to. Subjects and objects (generally, nodes) have particular types like a number, or a date, or something more elaborate like an [Airline](https://schema.org/Airline) or [Movie](https://schema.org/Movie) that have particular sets of predicates or properties: eg. a `Movie` has a `director` property which links to a `Person`. A `Person` has an `address` which links to a `PostalAddress`, and so on. Types and properties are themselves defined in **vocabularies** (or, seemingly interchangeably, ontologies and schemas) by a special subset of RDF schema modeling classes and properties {% cite brickleyRDFSchema2014 %}. Linked data thus consists of semantically annotated **graphs** of linked nodes[^dlg].
+
+[^dlg]: Or, precisely, a "directed labeled graph" (DLG).
+
+<div class='draft-text'>
+  Put a little vocab box here.
+</div>
+
+Linked data representations are very general and encompass many others like relational {% cite berners-leeRelationalDatabasesSemantic2009 %} and object-oriented models, but have a few properties that might be less familiar. The first is that triplet links have the status of an utterance or a proposition: much like typical duplet hyperlinks, anyone can make whatever links they want to a particular object to say what they'd like about it. As opposed to object-oriented models where a class is defined beforehand and its attributes or data are stored "within" the object, RDF schemas are composed of links just like any other, and the link, object, and predicate can all be stored in separate places by different people {% cite berners-leeWhatSemanticWeb1998 %}. For example:
+
+> One person may define a `vehicle` as having a `number of wheels` and a `weight` and a `length`, but not foresee a `color`. This will not stop another person making the assertion that a given car is red, using the color vocabulary from elsewhere. {% cite berners-leeWhatSemanticWeb1998 %}
+
+<div class="draft-text">
+  Jonny starting here 2022-06-22
+</div>
+
+* reusing schemas and be able to pull them from anywhere {% cite berners-leeSemanticWeb2001 %}. The only thing that matters is whether the person you are trying to communicate understand what it means, sorta like language yno.
+
+> Traditional knowledge-representation systems typically have been centralized, requiring everyone to share exactly the same definition of common concepts such as “parent” or “vehicle.” But central control is stifling, and increasing the size and scope of such a system rapidly becomes unmanageable.
+
+* schemas are not strongly typed
+* {% cite speicherLinkedDataPlatform2015 %} - linked data platform, separating binary from RDF.
+* {% cite berners-leeSociallyAwareCloud2009 %} - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.
+
+* p2p
+  * the problem is that it was all supposed to be XML and URIs. but from the start of the internet it was *really hard* for a nontechnical person to host their own schemas and websites and stuff. 
+  * peers maintain their collection of links
+  * replace notion of root domain with a p2p identity
+* Federated databases -- but not like what you're thinking
+  * like AP, but with capabilities
+  * sharded storage of link databases.
+  * shared and multilevel schemas
+
+<div class="draft-text">how do we map our formats?</div>
 
 Each format has a different metadata structure with different names, and even within a single format we want to support researchers who extend and modify the core format. Additionally, each format has a different implementation, eg. as an hdf5 file, binary files in structured subdirectories, SQL-like databases. 
 
