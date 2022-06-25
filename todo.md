@@ -7,6 +7,8 @@ navigation: false
 canonical_url: "https://jon-e.net/infrastructure/todo"
 ---
 
+Use this!!!!!! for LD overlay!!!! https://refer.cx/
+
 # Writing
 
 - Integrate {% cite larsenPoliticalNatureTCP2012 %} in [design principles?](/infrastructure#design-principles)

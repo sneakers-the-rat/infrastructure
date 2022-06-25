@@ -4,15 +4,11 @@
 Also acknowledge that federation is a loaded term to some, and that we don't mean federation in the fediverse sense of an 'account' being owned by an instance, but for autonomous peers to be able to create arbitrary groupings with permissions, schemas, etc.
 </div>
 
-* Linked data, but what is that?
-  * We just saw one example of linked data, but Tim BL's version is much different.
-* Basics of LD
-  * Triplets
-  * separating data from metadata (LDP and socially aware)
-  * affordances (re: LDP and "what would activitypub look like with capability based security")
+> Human language thrives when using the same term to mean somewhat different things, but automation does not. *Tim Berners-Lee (1999) The Semantic Web* {% cite berners-leeSemanticWeb2001 %}
 
+> Wittgenstein’s contribution to communism was his robust proof of the proposition that there is no private language, but in our time, privatized languages are everywhere. And not just languages: Images, codes, algorithms, even genes can become private property, and in turn private property shapes what we imagine the limits and possibilities of this information to be. *McKenzie Wark (2021) Capital Is Dead: Is This Something Worse?* {% cite warkCapitalDeadThis2021 %}
 
-To structure our p2p data sharing system, we should use *Linked Data.* Linked data is at once exceptionally simple and deceptively complex, a set of technologies and social histories. In this section we will introduce the notion of linked data, extend it for a p2p context, and then add a twist from *federated systems.* Our goal will be to articulate the foundation for a "protocol of protocols," a set of minimal operations by which individual people can create, extend, borrow, and collectively build a space of linked folk schemas and ontologies, or *folksonomies.* 
+To structure our p2p data sharing system, we should use *Linked Data.* Linked data is at once exceptionally simple and deceptively complex, a set of technologies and social histories. In this section we will introduce the notion of linked data, extend it for a p2p context, and then add a twist from *federated systems.*[^federatedterminology] Our goal will be to articulate the foundation for a "protocol of protocols," a set of minimal operations by which individual people can create, extend, borrow, and collectively build a space of linked folk schemas and ontologies, or *folksonomies.* 
 
 When last we left it, we had developed the notion of a p2p system to the point where we had big torrentlike piles of files with a few additional features like versioning and sharded storage. We need to add an additional layer of *metadata* that exposes information about the contents of each of these file piles. But what is that metadata *made of?* 
 
@@ -28,34 +24,15 @@ Linked data representations are very general and encompass many others like rela
 
 > One person may define a `vehicle` as having a `number of wheels` and a `weight` and a `length`, but not foresee a `color`. This will not stop another person making the assertion that a given car is red, using the color vocabulary from elsewhere. {% cite berners-leeWhatSemanticWeb1998 %}
 
-<div class="draft-text">
-  Jonny starting here 2022-06-22
-</div>
+Linked data has an ambivalent history of thought regarding the location and distribution of ontology building. Its initial formulation came fresh from the recent incendiary success of the internet, where without any system of organization "people were frightened of getting lost in it. You could follow links forever." {% cite berners-leeWhatSemanticWeb1998 %} Linked data was conceptualized to be explicitly without authoritative ontologies, but intended to evolve like language with local cultures of meaning meshing and separating at multiple scales {% cite berners-leeSemanticWeb2001 %}. The dream of mass automaticity, however, with computational "agents" capable of seamlessly crawling consistent graphs of linked data to extract surplus meaning necessarily requires that the meaning of terms does not "mutate" between different uses. For many early linked data architects the resolution was more automation, to use additional semantic structure about the equivalence between different ontologies as a means of estimating how trustworthy a particular result was. This tension is sewn into one of its most well known ontologies, the Simple Knowledge Organization System (skos) {% cite brickleySKOSCoreGuide2005 %}, which is intended to represent relationships between terms and vocabularies {% cite milesQuickGuidePublishing2005 %}.
 
-* reusing schemas and be able to pull them from anywhere {% cite berners-leeSemanticWeb2001 %}. The only thing that matters is whether the person you are trying to communicate understand what it means, sorta like language yno.
+The fluidity of the original vision for linked data never emerged, however, and is remembered instead as being monstrously complicated {% cite palmerDitchingSemanticWeb2008 %}. While HTML, CSS, and Javascript developed a rich ecosystem of abstractions that let people create websites without directly writing HTML, the same never materialized for RDF. While linked data entities are intended to be designated by the very general notion of a URI, in practice URIs are near-synonymous with URLs, and maintaining a set of URLs is hard. In the absence of interfaces for manipulating linked data and the pain of hosting them, the dream of a distributed negotiation over language-like ontologies was largely confined to information scientists and what became corporate knowledge graphs.
 
-> Traditional knowledge-representation systems typically have been centralized, requiring everyone to share exactly the same definition of common concepts such as “parent” or “vehicle.” But central control is stifling, and increasing the size and scope of such a system rapidly becomes unmanageable.
+In our revival of this dream we are describing a system where heterogeneous data is indicated by its metadata, rather than representing all data in a uniform format --- similarly to the mixture of RDF and non-RDF data in the linked data platform standard {% cite speicherLinkedDataPlatform2015 %}. We want to handle a broad span of heterogeneity: data with different naming schemes, binary representations, sizes, nested structures, and so on. The first task is to describe some means of accessing this heterogeneous data in a reasonably standard way despite these differences.
 
-* schemas are not strongly typed
-* {% cite speicherLinkedDataPlatform2015 %} - linked data platform, separating binary from RDF.
-* {% cite berners-leeSociallyAwareCloud2009 %} - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.
+While that may seem a tall order, currently it's mostly done manually whenever researchers want to use anyone else's data. One way of characterizing the task at hand is systematizing the idiosyncratic paths by which a researcher might dump out a .csv file from a sql database to load into MATLAB to save in the .mat format with the rest of their data. To do that we can draw from a parallel body of thought on *federated databases.*
 
-* p2p
-  * the problem is that it was all supposed to be XML and URIs. but from the start of the internet it was *really hard* for a nontechnical person to host their own schemas and websites and stuff. 
-  * peers maintain their collection of links
-  * replace notion of root domain with a p2p identity
-* Federated databases -- but not like what you're thinking
-  * like AP, but with capabilities
-  * sharded storage of link databases.
-  * shared and multilevel schemas
-
-<div class="draft-text">how do we map our formats?</div>
-
-Each format has a different metadata structure with different names, and even within a single format we want to support researchers who extend and modify the core format. Additionally, each format has a different implementation, eg. as an hdf5 file, binary files in structured subdirectories, SQL-like databases. 
-
-That's a lot of heterogeneity to manage, but fret not: there is hope. Researchers navigate this variability manually as a standard part of the job, and we can make that work cumulative by building tools that allow researchers to communally describe and negotiate over the structure of their data and the local relationships to other data structures. We can extend our peer-to-peer system to be a *federated database* system[^federatedterminology].
-
-Federated systems consist of *distributed*, *heterogeneous*, and *autonomous* agents that implement some minimal agreed-upon standards for mutual communication and (co-)operation. Federated databases were proposed in the early 1980's {% cite heimbignerFederatedArchitectureInformation1985 %} and have been developed and refined in the decades since as an alternative to either centralization or non-integration {% cite litwinInteroperabilityMultipleAutonomous1990 kashyapSemanticSchematicSimilarities1996 hullManagingSemanticHeterogeneity1997 %}. Their application to the dispersion of scientific data in local filesystems is not new {% cite busseFederatedInformationSystems1999 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017  %}, but their implementation is more challenging than imposing order with a centralized database or punting the question into the unknowable maw of machine learning. 
+Like our p2p system, federated systems consist of *distributed*, *heterogeneous*, and *autonomous* agents that implement some minimal agreed-upon standards for mutual communication and (co-)operation. Federated databases were proposed in the early 1980's {% cite heimbignerFederatedArchitectureInformation1985 %} and have been developed and refined in the decades since as an alternative to either centralization or non-integration {% cite litwinInteroperabilityMultipleAutonomous1990 kashyapSemanticSchematicSimilarities1996 hullManagingSemanticHeterogeneity1997 %}. Their application to the dispersion of scientific data in local filesystems is not new {% cite busseFederatedInformationSystems1999 djokic-petrovicPIBASFedSPARQLWebbased2017 hasnainBioFedFederatedQuery2017  %}, but their implementation is more challenging than imposing order with a centralized database or punting the question into the unknowable maw of machine learning. 
 
 Amit Sheth and James Larson, in their reference description of federated database systems, describe **design autonomy** as one critical dimension that characterizes them:
 
@@ -241,7 +218,26 @@ As will be developed through the rest of the piece, this system effectively func
 
 Like the preceding description of the basic peer-to-peer system, this joint metadata/p2p system could be fully compatible with existing systems. Translating between a metadata query and a means of accessing it on heterogeneous databases is a requisite part of the system, so, for example, there's no reason that an HTTP-based API like SmartAPI couldn't be queried.  
 
+
+
+
+<div class="draft-text">how do we map our formats?</div>
+
 <div class="draft-text" markdown="1">
+* schemas are not strongly typed
+* {% cite speicherLinkedDataPlatform2015 %} - linked data platform, separating binary from RDF.
+* {% cite berners-leeSociallyAwareCloud2009 %} - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.
+
+* p2p
+  * the problem is that it was all supposed to be XML and URIs. but from the start of the internet it was *really hard* for a nontechnical person to host their own schemas and websites and stuff. 
+  * peers maintain their collection of links
+  * replace notion of root domain with a p2p identity
+* Federated databases -- but not like what you're thinking
+  * like AP, but with capabilities
+  * sharded storage of link databases.
+  * shared and multilevel schemas
+folksonomies typically are conceptualized as a very very limited thing like just tag clouds, but what we're talking about is resolving the contradiction from eg. here by making it possible to do both in the same effort: {% cite gruberOntologyFolksonomyMashUp2007 %}
+
 - close by taking a larger view on p2p: p2p systems already in use, academic torrents, biotorrents {% cite langilleBioTorrentsFileSharing2010 %}, libgen on IPFS
 - proof of utility is in the pudding: CDNs are effectively p2p systems where they just own all the peers.
 </div>

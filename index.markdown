@@ -169,7 +169,7 @@ acknowledgements:
 
 {% include_relative _sections/2_2_ld-or-surveillance.md %}
 
-### Federated Folksonomic Systems
+### Folk Federation
 
 {% include_relative _sections/2_3_federation.md %}
 
