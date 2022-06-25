@@ -69,7 +69,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2022-38-23"> 2022-06-23</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/"><code></code></a>  - <a href="/infrastructure/tex/decentralized_infrastructure_render.pdf"><code>PDF VERSION</code></a> 
+            <time datetime="2022-40-25"> 2022-06-25</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/"><code></code></a>  - <a href="/infrastructure/tex/decentralized_infrastructure_render.pdf"><code>PDF VERSION</code></a> 
         </div>
 
         <div class="acknowledgements">
@@ -454,7 +454,7 @@
           <li><a href="#peer-to-peer-as-a-backbone" id="markdown-toc-peer-to-peer-as-a-backbone">Peer-to-peer as a Backbone</a></li>
           <li><a href="#archives-need-communities" id="markdown-toc-archives-need-communities">Archives Need Communities</a></li>
           <li><a href="#linked-data-or-surveillance-capitalism" id="markdown-toc-linked-data-or-surveillance-capitalism">Linked Data or Surveillance Capitalism?</a></li>
-          <li><a href="#federated-folksonomic-systems" id="markdown-toc-federated-folksonomic-systems">Federated Folksonomic Systems</a></li>
+          <li><a href="#folk-federation" id="markdown-toc-folk-federation">Folk Federation</a></li>
         </ol>
       </li>
       <li><a href="#shared-tools" id="markdown-toc-shared-tools">Shared Tools</a>        <ol>
@@ -1083,85 +1083,46 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
 
 <p>Picking up the thread of our peer to peer data sharing backbone, we might start to imagine the boistrous multiplicity of an infrastructure based around communication and expression, rather than platformatized perfection.</p>
 
-<h3 id="federated-folksonomic-systems">Federated Folksonomic Systems</h3>
+<h3 id="folk-federation">Folk Federation</h3>
 
 <div class="draft-text">
 
   <p>Also acknowledge that federation is a loaded term to some, and that we don’t mean federation in the fediverse sense of an ‘account’ being owned by an instance, but for autonomous peers to be able to create arbitrary groupings with permissions, schemas, etc.</p>
 </div>
 
-<ul>
-  <li>Linked data, but what is that?
-    <ul>
-      <li>We just saw one example of linked data, but Tim BL’s version is much different.</li>
-    </ul>
-  </li>
-  <li>Basics of LD
-    <ul>
-      <li>Triplets</li>
-      <li>separating data from metadata (LDP and socially aware)</li>
-      <li>affordances (re: LDP and “what would activitypub look like with capability based security”)</li>
-    </ul>
-  </li>
-</ul>
+<blockquote>
+  <p>Human language thrives when using the same term to mean somewhat different things, but automation does not. <em>Tim Berners-Lee (1999) The Semantic Web</em> <a class="citation" href="#berners-leeSemanticWeb2001">[159]</a></p>
+</blockquote>
 
-<p>To structure our p2p data sharing system, we should use <em>Linked Data.</em> Linked data is at once exceptionally simple and deceptively complex, a set of technologies and social histories. In this section we will introduce the notion of linked data, extend it for a p2p context, and then add a twist from <em>federated systems.</em> Our goal will be to articulate the foundation for a “protocol of protocols,” a set of minimal operations by which individual people can create, extend, borrow, and collectively build a space of linked folk schemas and ontologies, or <em>folksonomies.</em></p>
+<blockquote>
+  <p>Wittgenstein’s contribution to communism was his robust proof of the proposition that there is no private language, but in our time, privatized languages are everywhere. And not just languages: Images, codes, algorithms, even genes can become private property, and in turn private property shapes what we imagine the limits and possibilities of this information to be. <em>McKenzie Wark (2021) Capital Is Dead: Is This Something Worse?</em> <a class="citation" href="#warkCapitalDeadThis2021">[8]</a></p>
+</blockquote>
+
+<p>To structure our p2p data sharing system, we should use <em>Linked Data.</em> Linked data is at once exceptionally simple and deceptively complex, a set of technologies and social histories. In this section we will introduce the notion of linked data, extend it for a p2p context, and then add a twist from <em>federated systems.</em><sup id="fnref:federatedterminology" role="doc-noteref"><a href="#fn:federatedterminology" class="footnote" rel="footnote">49</a></sup> Our goal will be to articulate the foundation for a “protocol of protocols,” a set of minimal operations by which individual people can create, extend, borrow, and collectively build a space of linked folk schemas and ontologies, or <em>folksonomies.</em></p>
 
 <p>When last we left it, we had developed the notion of a p2p system to the point where we had big torrentlike piles of files with a few additional features like versioning and sharded storage. We need to add an additional layer of <em>metadata</em> that exposes information about the contents of each of these file piles. But what is that metadata <em>made of?</em></p>
 
-<p>The core format of linked data is the Resource Document Format (RDF) <a class="citation" href="#klyneRDFConceptsAbstract2014">[159]</a> and its related syntaxes like Turtle <a class="citation" href="#beckettRDFTurtle2014">[160]</a>. Typical hyperlinks are <em>duplet</em> links — linking from the source to the target. The links of linked data are instead <strong>triplet</strong> links that consist of a <strong>subject</strong>, a <strong>predicate</strong> that <em>describes</em> the link, and an <strong>object</strong> that is linked to. Subjects and objects (generally, nodes) have particular types like a number, or a date, or something more elaborate like an <a href="https://schema.org/Airline">Airline</a> or <a href="https://schema.org/Movie">Movie</a> that have particular sets of predicates or properties: eg. a <code class="language-plaintext highlighter-rouge">Movie</code> has a <code class="language-plaintext highlighter-rouge">director</code> property which links to a <code class="language-plaintext highlighter-rouge">Person</code>. A <code class="language-plaintext highlighter-rouge">Person</code> has an <code class="language-plaintext highlighter-rouge">address</code> which links to a <code class="language-plaintext highlighter-rouge">PostalAddress</code>, and so on. Types and properties are themselves defined in <strong>vocabularies</strong> (or, seemingly interchangeably, ontologies and schemas) by a special subset of RDF schema modeling classes and properties <a class="citation" href="#brickleyRDFSchema2014">[161]</a>. Linked data thus consists of semantically annotated <strong>graphs</strong> of linked nodes<sup id="fnref:dlg" role="doc-noteref"><a href="#fn:dlg" class="footnote" rel="footnote">49</a></sup>.</p>
+<p>The core format of linked data is the Resource Document Format (RDF) <a class="citation" href="#klyneRDFConceptsAbstract2014">[160]</a> and its related syntaxes like Turtle <a class="citation" href="#beckettRDFTurtle2014">[161]</a>. Typical hyperlinks are <em>duplet</em> links — linking from the source to the target. The links of linked data are instead <strong>triplet</strong> links that consist of a <strong>subject</strong>, a <strong>predicate</strong> that <em>describes</em> the link, and an <strong>object</strong> that is linked to. Subjects and objects (generally, nodes) have particular types like a number, or a date, or something more elaborate like an <a href="https://schema.org/Airline">Airline</a> or <a href="https://schema.org/Movie">Movie</a> that have particular sets of predicates or properties: eg. a <code class="language-plaintext highlighter-rouge">Movie</code> has a <code class="language-plaintext highlighter-rouge">director</code> property which links to a <code class="language-plaintext highlighter-rouge">Person</code>. A <code class="language-plaintext highlighter-rouge">Person</code> has an <code class="language-plaintext highlighter-rouge">address</code> which links to a <code class="language-plaintext highlighter-rouge">PostalAddress</code>, and so on. Types and properties are themselves defined in <strong>vocabularies</strong> (or, seemingly interchangeably, ontologies and schemas) by a special subset of RDF schema modeling classes and properties <a class="citation" href="#brickleyRDFSchema2014">[162]</a>. Linked data thus consists of semantically annotated <strong>graphs</strong> of linked nodes<sup id="fnref:dlg" role="doc-noteref"><a href="#fn:dlg" class="footnote" rel="footnote">50</a></sup>.</p>
 
 <div class="draft-text">
   Put a little vocab box here.
 </div>
 
-<p>Linked data representations are very general and encompass many others like relational <a class="citation" href="#berners-leeRelationalDatabasesSemantic2009">[162]</a> and object-oriented models, but have a few properties that might be less familiar. The first is that triplet links have the status of an utterance or a proposition: much like typical duplet hyperlinks, anyone can make whatever links they want to a particular object to say what they’d like about it. As opposed to object-oriented models where a class is defined beforehand and its attributes or data are stored “within” the object, RDF schemas are composed of links just like any other, and the link, object, and predicate can all be stored in separate places by different people <a class="citation" href="#berners-leeWhatSemanticWeb1998">[163]</a>. For example:</p>
+<p>Linked data representations are very general and encompass many others like relational <a class="citation" href="#berners-leeRelationalDatabasesSemantic2009">[163]</a> and object-oriented models, but have a few properties that might be less familiar. The first is that triplet links have the status of an utterance or a proposition: much like typical duplet hyperlinks, anyone can make whatever links they want to a particular object to say what they’d like about it. As opposed to object-oriented models where a class is defined beforehand and its attributes or data are stored “within” the object, RDF schemas are composed of links just like any other, and the link, object, and predicate can all be stored in separate places by different people <a class="citation" href="#berners-leeWhatSemanticWeb1998">[164]</a>. For example:</p>
 
 <blockquote>
-  <p>One person may define a <code class="language-plaintext highlighter-rouge">vehicle</code> as having a <code class="language-plaintext highlighter-rouge">number of wheels</code> and a <code class="language-plaintext highlighter-rouge">weight</code> and a <code class="language-plaintext highlighter-rouge">length</code>, but not foresee a <code class="language-plaintext highlighter-rouge">color</code>. This will not stop another person making the assertion that a given car is red, using the color vocabulary from elsewhere. <a class="citation" href="#berners-leeWhatSemanticWeb1998">[163]</a></p>
+  <p>One person may define a <code class="language-plaintext highlighter-rouge">vehicle</code> as having a <code class="language-plaintext highlighter-rouge">number of wheels</code> and a <code class="language-plaintext highlighter-rouge">weight</code> and a <code class="language-plaintext highlighter-rouge">length</code>, but not foresee a <code class="language-plaintext highlighter-rouge">color</code>. This will not stop another person making the assertion that a given car is red, using the color vocabulary from elsewhere. <a class="citation" href="#berners-leeWhatSemanticWeb1998">[164]</a></p>
 </blockquote>
 
-<div class="draft-text">
-  Jonny starting here 2022-06-22
-</div>
+<p>Linked data has an ambivalent history of thought regarding the location and distribution of ontology building. Its initial formulation came fresh from the recent incendiary success of the internet, where without any system of organization “people were frightened of getting lost in it. You could follow links forever.” <a class="citation" href="#berners-leeWhatSemanticWeb1998">[164]</a> Linked data was conceptualized to be explicitly without authoritative ontologies, but intended to evolve like language with local cultures of meaning meshing and separating at multiple scales <a class="citation" href="#berners-leeSemanticWeb2001">[159]</a>. The dream of mass automaticity, however, with computational “agents” capable of seamlessly crawling consistent graphs of linked data to extract surplus meaning necessarily requires that the meaning of terms does not “mutate” between different uses. For many early linked data architects the resolution was more automation, to use additional semantic structure about the equivalence between different ontologies as a means of estimating how trustworthy a particular result was. This tension is sewn into one of its most well known ontologies, the Simple Knowledge Organization System (skos) (missing reference), which is intended to represent relationships between terms and vocabularies (missing reference).</p>
 
-<ul>
-  <li>reusing schemas and be able to pull them from anywhere <a class="citation" href="#berners-leeSemanticWeb2001">[164]</a>. The only thing that matters is whether the person you are trying to communicate understand what it means, sorta like language yno.</li>
-</ul>
+<p>The fluidity of the original vision for linked data never emerged, however, and is remembered instead as being monstrously complicated <a class="citation" href="#palmerDitchingSemanticWeb2008">[38]</a>. While HTML, CSS, and Javascript developed a rich ecosystem of abstractions that let people create websites without directly writing HTML, the same never materialized for RDF. While linked data entities are intended to be designated by the very general notion of a URI, in practice URIs are near-synonymous with URLs, and maintaining a set of URLs is hard. In the absence of interfaces for manipulating linked data and the pain of hosting them, the dream of a distributed negotiation over language-like ontologies was largely confined to information scientists and what became corporate knowledge graphs.</p>
 
-<blockquote>
-  <p>Traditional knowledge-representation systems typically have been centralized, requiring everyone to share exactly the same definition of common concepts such as “parent” or “vehicle.” But central control is stifling, and increasing the size and scope of such a system rapidly becomes unmanageable.</p>
-</blockquote>
+<p>In our revival of this dream we are describing a system where heterogeneous data is indicated by its metadata, rather than representing all data in a uniform format — similarly to the mixture of RDF and non-RDF data in the linked data platform standard <a class="citation" href="#speicherLinkedDataPlatform2015">[165]</a>. We want to handle a broad span of heterogeneity: data with different naming schemes, binary representations, sizes, nested structures, and so on. The first task is to describe some means of accessing this heterogeneous data in a reasonably standard way despite these differences.</p>
 
-<ul>
-  <li>schemas are not strongly typed</li>
-  <li><a class="citation" href="#speicherLinkedDataPlatform2015">[165]</a> - linked data platform, separating binary from RDF.</li>
-  <li>
-    <p><a class="citation" href="#berners-leeSociallyAwareCloud2009">[23]</a> - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.</p>
-  </li>
-  <li>p2p
-    <ul>
-      <li>the problem is that it was all supposed to be XML and URIs. but from the start of the internet it was <em>really hard</em> for a nontechnical person to host their own schemas and websites and stuff.</li>
-      <li>peers maintain their collection of links</li>
-      <li>replace notion of root domain with a p2p identity</li>
-    </ul>
-  </li>
-  <li>Federated databases – but not like what you’re thinking
-    <ul>
-      <li>like AP, but with capabilities</li>
-      <li>sharded storage of link databases.</li>
-      <li>shared and multilevel schemas</li>
-    </ul>
-  </li>
-</ul>
+<p>While that may seem a tall order, currently it’s mostly done manually whenever researchers want to use anyone else’s data. One way of characterizing the task at hand is systematizing the idiosyncratic paths by which a researcher might dump out a .csv file from a sql database to load into MATLAB to save in the .mat format with the rest of their data. To do that we can draw from a parallel body of thought on <em>federated databases.</em></p>
 
-<div class="draft-text">how do we map our formats?</div>
-
-<p>Each format has a different metadata structure with different names, and even within a single format we want to support researchers who extend and modify the core format. Additionally, each format has a different implementation, eg. as an hdf5 file, binary files in structured subdirectories, SQL-like databases.</p>
-
-<p>That’s a lot of heterogeneity to manage, but fret not: there is hope. Researchers navigate this variability manually as a standard part of the job, and we can make that work cumulative by building tools that allow researchers to communally describe and negotiate over the structure of their data and the local relationships to other data structures. We can extend our peer-to-peer system to be a <em>federated database</em> system<sup id="fnref:federatedterminology" role="doc-noteref"><a href="#fn:federatedterminology" class="footnote" rel="footnote">50</a></sup>.</p>
-
-<p>Federated systems consist of <em>distributed</em>, <em>heterogeneous</em>, and <em>autonomous</em> agents that implement some minimal agreed-upon standards for mutual communication and (co-)operation. Federated databases were proposed in the early 1980’s <a class="citation" href="#heimbignerFederatedArchitectureInformation1985">[166]</a> and have been developed and refined in the decades since as an alternative to either centralization or non-integration <a class="citation" href="#litwinInteroperabilityMultipleAutonomous1990">[167, 168, 169]</a>. Their application to the dispersion of scientific data in local filesystems is not new <a class="citation" href="#busseFederatedInformationSystems1999">[170, 171, 172]</a>, but their implementation is more challenging than imposing order with a centralized database or punting the question into the unknowable maw of machine learning.</p>
+<p>Like our p2p system, federated systems consist of <em>distributed</em>, <em>heterogeneous</em>, and <em>autonomous</em> agents that implement some minimal agreed-upon standards for mutual communication and (co-)operation. Federated databases were proposed in the early 1980’s <a class="citation" href="#heimbignerFederatedArchitectureInformation1985">[166]</a> and have been developed and refined in the decades since as an alternative to either centralization or non-integration <a class="citation" href="#litwinInteroperabilityMultipleAutonomous1990">[167, 168, 169]</a>. Their application to the dispersion of scientific data in local filesystems is not new <a class="citation" href="#busseFederatedInformationSystems1999">[170, 171, 172]</a>, but their implementation is more challenging than imposing order with a centralized database or punting the question into the unknowable maw of machine learning.</p>
 
 <p>Amit Sheth and James Larson, in their reference description of federated database systems, describe <strong>design autonomy</strong> as one critical dimension that characterizes them:</p>
 
@@ -1340,8 +1301,30 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
 
 <p>Like the preceding description of the basic peer-to-peer system, this joint metadata/p2p system could be fully compatible with existing systems. Translating between a metadata query and a means of accessing it on heterogeneous databases is a requisite part of the system, so, for example, there’s no reason that an HTTP-based API like SmartAPI couldn’t be queried.</p>
 
+<div class="draft-text">how do we map our formats?</div>
+
 <div class="draft-text">
   <ul>
+    <li>schemas are not strongly typed</li>
+    <li><a class="citation" href="#speicherLinkedDataPlatform2015">[165]</a> - linked data platform, separating binary from RDF.</li>
+    <li>
+      <p><a class="citation" href="#berners-leeSociallyAwareCloud2009">[23]</a> - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.</p>
+    </li>
+    <li>p2p
+      <ul>
+        <li>the problem is that it was all supposed to be XML and URIs. but from the start of the internet it was <em>really hard</em> for a nontechnical person to host their own schemas and websites and stuff.</li>
+        <li>peers maintain their collection of links</li>
+        <li>replace notion of root domain with a p2p identity</li>
+      </ul>
+    </li>
+    <li>Federated databases – but not like what you’re thinking
+      <ul>
+        <li>like AP, but with capabilities</li>
+        <li>sharded storage of link databases.</li>
+        <li>shared and multilevel schemas
+folksonomies typically are conceptualized as a very very limited thing like just tag clouds, but what we’re talking about is resolving the contradiction from eg. here by making it possible to do both in the same effort: (missing reference)</li>
+      </ul>
+    </li>
     <li>close by taking a larger view on p2p: p2p systems already in use, academic torrents, biotorrents <a class="citation" href="#langilleBioTorrentsFileSharing2010">[115]</a>, libgen on IPFS</li>
     <li>proof of utility is in the pudding: CDNs are effectively p2p systems where they just own all the peers.</li>
   </ul>
@@ -2562,12 +2545,12 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
 <li><span id="relx2021AnnualReport2021">156. RELX (2021) 2021 Annual Report. https://www.relx.com/ /media/Files/R/RELX-Group/documents/reports/annual-reports/relx-2021-annual-report.pdf</span></li>
 <li><span id="consortiumBiomedicalDataTranslator2019">157. Consortium TBDT (2019) The Biomedical Data Translator Program: Conception, Culture, and Community. <i>Clinical and Translational Science</i>, 12(2):91–94. https://doi.org/10.1111/cts.12592</span></li>
 <li><span id="shammaTranslationColonialism2018">158. Shamma T (2018) Translation and Colonialism. <i>The Routledge Handbook of Translation and Culture</i>, :279–295. </span></li>
-<li><span id="klyneRDFConceptsAbstract2014">159. Klyne G, Wood D, Lanthaler M (2014) RDF 1.1 Concepts and Abstract Syntax. http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/</span></li>
-<li><span id="beckettRDFTurtle2014">160. Beckett D, Berners-Lee T, Prud’hommeaux E, Carothers G (2014) RDF 1.1 Turtle. http://www.w3.org/TR/2014/REC-turtle-20140225/</span></li>
-<li><span id="brickleyRDFSchema2014">161. Brickley D, Guha RV (2014) RDF Schema 1.1. http://www.w3.org/TR/2014/REC-rdf-schema-20140225/</span></li>
-<li><span id="berners-leeRelationalDatabasesSemantic2009">162. Berners-Lee T (2009) Relational Databases and the Semantic Web (in Design Issues). https://www.w3.org/DesignIssues/RDB-RDF.html</span></li>
-<li><span id="berners-leeWhatSemanticWeb1998">163. Berners-Lee T (1998) What the Semantic Web Can Represent. https://www.w3.org/DesignIssues/RDFnot.html</span></li>
-<li><span id="berners-leeSemanticWeb2001">164. Berners-Lee T, HENDLER J, Lassila O (2001) The Semantic Web. <i>Scientific American</i>, 284(5):34–43. https://www.jstor.org/stable/26059207</span></li>
+<li><span id="berners-leeSemanticWeb2001">159. Berners-Lee T, HENDLER J, Lassila O (2001) The Semantic Web. <i>Scientific American</i>, 284(5):34–43. https://www.jstor.org/stable/26059207</span></li>
+<li><span id="klyneRDFConceptsAbstract2014">160. Klyne G, Wood D, Lanthaler M (2014) RDF 1.1 Concepts and Abstract Syntax. http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/</span></li>
+<li><span id="beckettRDFTurtle2014">161. Beckett D, Berners-Lee T, Prud’hommeaux E, Carothers G (2014) RDF 1.1 Turtle. http://www.w3.org/TR/2014/REC-turtle-20140225/</span></li>
+<li><span id="brickleyRDFSchema2014">162. Brickley D, Guha RV (2014) RDF Schema 1.1. http://www.w3.org/TR/2014/REC-rdf-schema-20140225/</span></li>
+<li><span id="berners-leeRelationalDatabasesSemantic2009">163. Berners-Lee T (2009) Relational Databases and the Semantic Web (in Design Issues). https://www.w3.org/DesignIssues/RDB-RDF.html</span></li>
+<li><span id="berners-leeWhatSemanticWeb1998">164. Berners-Lee T (1998) What the Semantic Web Can Represent. https://www.w3.org/DesignIssues/RDFnot.html</span></li>
 <li><span id="speicherLinkedDataPlatform2015">165. Speicher S, Arwe J, Malhotra (2015) Linked Data Platform 1.0. http://www.w3.org/TR/2015/REC-ldp-20150226/</span></li>
 <li><span id="heimbignerFederatedArchitectureInformation1985">166. Heimbigner D, McLeod D (1985) A Federated Architecture for Information Management. <i>ACM Transactions on Information Systems</i>, 3(3):253–278. https://doi.org/10.1145/4229.4233</span></li>
 <li><span id="litwinInteroperabilityMultipleAutonomous1990">167. Litwin W, Mark L, Roussopoulos N (1990) Interoperability of Multiple Autonomous Databases. <i>ACM Computing Surveys</i>, 22(3):267–293. https://doi.org/10.1145/96602.96608</span></li>
@@ -2867,11 +2850,11 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
     <li id="fn:intraconsortium" role="doc-endnote">
       <p>The descriptions of difficulty in interfacing the components of the project internally are littered throughout their public-facing documents: eg. “A lot of the work has been about defining standards, so that the components that each of the 15 teams are building can talk to each other” <a class="citation" href="#renaissancecomputinginstituterenciBiomedicalDataTranslator2022">[129]</a>, “In part due to the speed with which the program has progressed, team members also have found it challenging to coordinate milestones and deliverables across teams and align the goals of the Translator program with the goals of their own nonTranslator research projects.” <a class="citation" href="#consortiumBiomedicalDataTranslator2019">[157]</a>. These problems are, of course, completely reasonable. My comment here merely suggests that solving these problems, particularly on the self-described tight timeline of the Translator’s development, may have edged out concerns for engagemenent with the broader research community. <a href="#fnref:intraconsortium" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:dlg" role="doc-endnote">
-      <p>Or, precisely, a “directed labeled graph” (DLG). <a href="#fnref:dlg" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
     <li id="fn:federatedterminology" role="doc-endnote">
       <p>There is a lot of subtlety to the terminology surrounding “federated” and the typology of distributed systems generally, I am using it in the federated messaging sense of forming groups of people, rather than the strict term “federated databases” which do imply a standardized schema across a federation. The conception of distributed, autonomous databases described by the DataLad team <a class="citation" href="#hankeDefenseDecentralizedResearch2021">[182]</a> is a bit closer to my meaning. In the ActivityPub world, federations refer to a single homeserver under which many people can sign up. We mean something similar but distinct: people that have autonomous “homeservers” in a peer to peer system, typically multiple identities for a single person rather than many people on a single server, that can combine into federations with particular governance structures and technological systems attached. <a href="#fnref:federatedterminology" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:dlg" role="doc-endnote">
+      <p>Or, precisely, a “directed labeled graph” (DLG). <a href="#fnref:dlg" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:chainz" role="doc-endnote">
       <p>In reality, without any form of distributed uniqueness checking, we would need to have some notion of where this username is “from,” so let’s say we actually have a system like <code class="language-plaintext highlighter-rouge">username@name-provider</code> but for this example assume a single name provider, we’ll return to identity provision. <a href="#fnref:chainz" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
