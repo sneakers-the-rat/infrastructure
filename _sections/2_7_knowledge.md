@@ -1,5 +1,11 @@
-<div class="draft-text">
+<div class="draft-text" markdown="1">
 	Talk about history of DOI as reaction by publishers to crush pubmed as way of illustrating that linking and knowledge organization is one of the major means by which they maintain control over the system of science. Here, or maybe in the federated systems & linking section.
+
+todo: 
+
+- mention the idea behind the threadodobot app, maybe in additional 'adversarial interoperability' section? put in context with the agora
+- bump up sections of rebuilding communication by 1 heading level.
+
 </div>
 
 The remaining set of problems implied by the infrastructural system sketched in the preceding sections is the *communication* and *organization* systems that make up the interfaces to maintain and use it. We can finally return to some of the breadcrumbs laid before: the need for negotiating over distributed and conflicting data schema, for incentivizing and organizing collective labor, and ultimately for communicating scientific results. 
@@ -46,5 +52,10 @@ These technologies point to a few overlapping and not altogether binary axes of 
 - **Public vs. Private** - Who gets to read, who gets to contribute? Communication can be composed of entirely private notes to self, through communication in a lab, collaboration group, discipline, and landing in the entirely public realm of global communication. 
 - **Formal vs. Informal** - Journal articles and encyclopedia-bound writing that conforms to a particular modality of expression vs. a vernacular style intended to communicate with people outside the jargon culture.
 - **Push vs. Pull** - Do you go to get information from a reference location, or does information come to you as an alert or message?
+
+<div class="draft-text">
+	Note that "peer reviewed" is *not* one of these because it should be possible to enable or disable reviews and discussion about any kind of communication, and even coordinating traditional private peer review should be completely trivial for any communication system.
+</div>
+
 
 Clearly a variety of different types of communication tools are needed, but there is no reason that each of them should be isolated and inoperable with the others. We have already seen several of the ideas that help bring an alternative into focus. Piracy communities demonstrate ways to build social systems that can sustain infrastructure. Federated and protocol-based systems show us that we don't need to choose between a single monolithic system or many disconnected ones, but can have a heterogeneous space of tools linked by a basic protocol. The semantic web and linked data people showed us the power of triplet links as a very general means of linking disparate systems. We can bridge these lessons with some from the early wiki movement to get a more practical sense of what it takes to give people total control over the structure of their communication and knowledge systems. Together with our sketches of data, analytical, and experimental tools we can start imagining a system for coordinating them --- as well as displacing some of the more intractable systems that misstructure the practice of science.

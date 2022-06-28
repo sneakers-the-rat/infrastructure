@@ -45,6 +45,8 @@ Cultivating new relationships with knowledge and technical communities outside o
 - Knowledge organizing systems like openbehavior and stuff are cool, we should start transcluding them (with credit!) into wikis and other social tools in order to organize a broader scope of the software and social scene.
 - Flanking technologies of data analysis and experimental tooling serve as stronger incentive systems. 
 - Not needing to build a single new platform, or new journal, or even a new organization, but focusing on means of communication. 
+- adversarial interoperability: always focus on being a superset of existing technologies.
+- make metadata declaration easier than translating with the scattered array of data ingestion tools. 
 </div>
 
 ### To Whom It May Concern...
