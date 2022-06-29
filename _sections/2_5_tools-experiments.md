@@ -1,3 +1,15 @@
+<div class="draft-text" markdown="1">
+
+Todo:
+
+- DANDI is already doing this with tools built on top of NWB.
+
+Experimental tools:
+- we intended the bonsai example to be positive dang it! the xml description is good!
+- rewrite autopilot description in light of data module!
+- main revision should be that with experimental tools we probably need to go the other direction: rather than being able to specify experiments post-hoc we need experimental tools that can specify their data and dump it out into linked data format. 
+</div>
+
 Data that is to be analyzed has to be collected somehow. Tools to bridge the body of experimental practice are a different challenge than analyzing data, or at least so an anecdotal census of scientific software tools would suggest. *Everyone needs completely different things!* As practiced, we might imagine the practice of science as a cone of complexity: We can imagine the relatively few statistical outcomes from a family of tests and models. For every test statistic we can imagine a thousand analysis scripts, for every analysis script we might expect a hundred thousand data formats, and so the french-horn-bell convexity of complexity of experimental tools used to collect the data feels ... different. 
 
 Beyond a narrow focus of the software for performing experiments itself, the contextual knowledge work that surrounds it largely lacks a means of communication and organization. Scientific papers have increasingly marginalized methods sections, being pushed to the bottom, abbreviated, and relegated to supplemental material. The large body of work that is not immediately germane to experimental results, like animal care, engineering instruments, lab management, etc. have effectively no formal means of communication --- and so little formal means of credit assignment.
@@ -150,6 +162,12 @@ As in the case of analytical tools, the role of the experimental frameworks is a
 The experimental framework described so far could solve some of the software challenges of doing experiments by providing a system for extending a set of reusable classes that can be combined into experiments and linked together, but we haven't described anything to address the rest of the contextual knowledge of practical scientific work. We also haven't described any sort of governance or development system that makes these packages anything more than "some repository on GitHub somewhere" with all the propensity to calcify into fiefdoms that those entail. This leads us back to a system of communication, the central piece of missingness that we have been circling around the whole piece. If you'll allow me one more delay, I want to summarize the system so far before finally arriving there.
 
 
+
+---
+
+Stuff that's common between analysis and experimental tools
+
+- make tool development easier: Linking domains of data manipulation with analysis makes developing tools easier. Rather than having to reimplement basic routines like data loading and parameterization, developers can contribute to and use methods from a common framework. Since we aren't intending a single framework, but instead a means of linking them, it is possible to spread development of different features beyond the core team, so for example creating links from varying data formats would expand the scope of data a tool is useful for. 
 
 
 
