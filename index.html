@@ -69,7 +69,7 @@
 
         <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2022-35-29"> 2022-06-29</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/"><code></code></a>  - <a href="/infrastructure/tex/decentralized_infrastructure_render.pdf"><code>PDF VERSION</code></a> 
+            <time datetime="2022-00-01"> 2022-07-01</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/"><code></code></a>  - <a href="/infrastructure/tex/decentralized_infrastructure_render.pdf"><code>PDF VERSION</code></a> 
         </div>
 
         <div class="acknowledgements">
@@ -1496,34 +1496,18 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
 
 <h3 id="experimental-frameworks">Experimental Frameworks</h3>
 
-<div class="draft-text">
+<p>Across from the tools to analyze data are those to collect it, and tools to integrate the diversity of experimental practice are a different challenge altogether: <em>everyone needs completely different things!</em> Imagine the different stages of research as a cone of complexity: at the apex we can imagine the relatively few statistical outcomes from a family of tests and models. For every test statistic we can imagine a thousand analysis scripts, for every analysis script we might expect a thousand data formats, and so the complexity of the thousand experimental tools used to collect each type of data feels … different.</p>
 
-  <p>Todo:</p>
+<p>Beyond a narrow focus of the software for performing experiments itself, the surrounding contextual knowledge work largely lacks a means of communication and organization. Methods sections have been increasingly marginalized, abbreviated, pushed to the end, and relegated to the supplement. The large body of work that is not immediately germane to experimental results, like animal care, engineering instruments, lab management, etc. have effectively no formal means of communication — and so little formal means of credit assignment.</p>
 
-  <ul>
-    <li>DANDI is already doing this with tools built on top of NWB.</li>
-  </ul>
+<p>Extending our ecosystem to include experimental tools has a few immediate benefits: bridging the gap between collection and sharing of data would resolve the need for format conversion as a prerequisite for inclusion in the linked system, allowing the expression of data to be a fluid part of the experiment itself. It would also serve as a means of building a body of cumulative contextual knowledge in a creditable system.</p>
 
-  <p>Experimental tools:</p>
-  <ul>
-    <li>we intended the bonsai example to be positive dang it! the xml description is good!</li>
-    <li>rewrite autopilot description in light of data module!</li>
-    <li>main revision should be that with experimental tools we probably need to go the other direction: rather than being able to specify experiments post-hoc we need experimental tools that can specify their data and dump it out into linked data format.</li>
-  </ul>
-</div>
-
-<p>Data that is to be analyzed has to be collected somehow. Tools to bridge the body of experimental practice are a different challenge than analyzing data, or at least so an anecdotal census of scientific software tools would suggest. <em>Everyone needs completely different things!</em> As practiced, we might imagine the practice of science as a cone of complexity: We can imagine the relatively few statistical outcomes from a family of tests and models. For every test statistic we can imagine a thousand analysis scripts, for every analysis script we might expect a hundred thousand data formats, and so the french-horn-bell convexity of complexity of experimental tools used to collect the data feels … different.</p>
-
-<p>Beyond a narrow focus of the software for performing experiments itself, the contextual knowledge work that surrounds it largely lacks a means of communication and organization. Scientific papers have increasingly marginalized methods sections, being pushed to the bottom, abbreviated, and relegated to supplemental material. The large body of work that is not immediately germane to experimental results, like animal care, engineering instruments, lab management, etc. have effectively no formal means of communication — and so little formal means of credit assignment.</p>
-
-<p>Extending our ecosystem to include experimental tools has a few immediate benefits: bridging the gap between collection and sharing of data would resolve the need for format conversion as a prerequisite for inclusion in the linked system, allowing the expression of data to be a fluid part of the experiment itself. It would also serve as a concrete means of implementing and building a body of cumulative contextual knowledge in a creditable system.</p>
-
-<p>I have previously written about the design of a generalizable, distributed experimental framework in section 2, and about one modular implementation in section 3 of <a class="citation" href="#saundersAutopilotAutomatingBehavioral2019">[191]</a>, so to avoid repeating myself, and since many of the ideas from the section on analysis tools apply here as well, I will be relatively brief.</p>
+<p>I have previously written about the design of a generalizable, distributed experimental framework <a class="citation" href="#saundersAutopilotAutomatingBehavioral2019">[191]</a>, so to avoid repeating myself, and since many of the ideas from the section on analysis tools apply here as well, I will be relatively brief.</p>
 
 <p>We don’t have the luxury of a natural formalism like a DAG to structure our experimental tools. Some design constraints on experimental frameworks might help explain why:</p>
 
 <ul>
-  <li>They need to support a wide variety of instrumentation, from <strong>off-the-shelf parts,</strong> to <strong>proprietary instruments</strong> as are common in eg. microscopy, to <strong>custom, idiosyncratic designs</strong> that might make up the existing infrastructure in a lab.</li>
+  <li>They need to support a wide variety of instrumentation, from <strong>off-the-shelf parts,</strong> to <strong>proprietary instruments</strong> as are common in eg. microscopy, to <strong>custom, idiosyncratic designs</strong> that might make up the existing infrastructure in a lab. Writing and testing embedded code that controls external hardware is a wholly different kind of difficulty than writing analysis tools.</li>
   <li>To be supportive, rather than constraining, they need to be able to <strong>flexibly perform many kinds of experiments</strong> in a way that is <strong>familiar to patterns of existing practice.</strong> That effectively means being able to coordinate heterogeneous instruments in some “task” with a flexible syntax.</li>
   <li>They need to be <strong>inexpensive to implement,</strong> in terms of both money and labor, so it can’t require buying a whole new set of hardware or dramatically restructuring existing research practices.</li>
   <li>They need to be <strong>accessible and extensible,</strong> with many different points of control with different expectations of expertise and commitment to the framework. It needs to be useful for someone who doesn’t want to learn it to its depths, but also have a comprehensible codebase at multiple scales so that reasearchers can <strong>easily extend</strong> it when needed.</li>
@@ -1531,20 +1515,24 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
   <li>Ideally, they need to support <strong>cumulative labor and knowledge organization,</strong> so an additional concern with designing abstractions between system components is allowing work to be made portable and combinable with others. The barriers to contribution should be extremely minimal, not requiring someone to be a professional programmer to make a pull request to a central library, and contributions should come in many modes — code is not the only form of knowing and it’s far from the only thing needed to perform an experiment.</li>
 </ul>
 
-<p>Here, as in the domains of data and analysis, the temptation to be universalizing is strong, and the parts of the problem that are emphasized influence the tools that are produced. A common design tactic for experimental tools is to design them as state machines, a system of states and transitions not unlike the analysis DAGs above. One such nascent project is <a href="https://archive.org/details/beadl-xml-documentation-v-0.1/mode/2up">BEADL</a> <a class="citation" href="#wulfBEADLXMLDocumentation2020">[212]</a> from a Neurodata Without Borders <a href="https://archive.org/details/nwb-behavioral-task-wg">working group</a>. BEADL is an XML-based markup for standardizing a behavioral task as an abstraction of finite state machines called <a href="https://statecharts.github.io/">statecharts</a>. Experiments are fully abstract from their hardware implementation, and can be formally validated in simulations. The working group also describes creating a standardized ontology and metadata schema for declaring all the many variable parameters for experiments, like reward sizes, stimuli, and responses <a class="citation" href="#nwbbehavioraltaskwgNWBBehavioralTask2020">[213]</a>. This group, largely composed of members from the Neurodata Without Borders team, understandably emphasize systematic description and uniform metadata as a primary design principle.</p>
+<p>Here, as in the domains of data and analysis, the temptation to universalize is strong, and the parts of the problem that are emphasized influence the tools that are produced. A common design tactic for experimental tools is to design them as state machines, a system of states and transitions not unlike the analysis DAGs above. One such nascent project is <a href="https://archive.org/details/beadl-xml-documentation-v-0.1/mode/2up">BEADL</a> <a class="citation" href="#wulfBEADLXMLDocumentation2020">[212]</a> from a Neurodata Without Borders <a href="https://archive.org/details/nwb-behavioral-task-wg">working group</a>. BEADL is an XML-based markup for standardizing a behavioral task as an abstraction of finite state machines called <a href="https://statecharts.github.io/">statecharts</a>. Experiments are fully abstract from their hardware implementation, and can be formally validated in simulations. The working group also describes creating a standardized ontology and metadata schema for declaring all the many variable parameters for experiments, like reward sizes, stimuli, and responses <a class="citation" href="#nwbbehavioraltaskwgNWBBehavioralTask2020">[213]</a>. This group, largely composed of members from the Neurodata Without Borders team, understandably emphasize systematic description and uniform metadata as a primary design principle.</p>
 
 <p>Personally, I <em>like</em> statecharts. The problem is that it’s not necessarily natural to express things as statecharts as you would want to, or in the way that your existing, long-developed local experimental code does. There are only a few syntactical features needed to understand the following statechart: blocks are states, they can be inside each other. Arrows move between blocks depending on some condition. Entering and exiting blocks can make things happen. Short little arrows from filled spots are where you start in a block, and when you get to the end of the chart you go back to the first one. See the following example of a statechart for controlling a light, described in the <a href="https://statecharts.dev/on-off-statechart.html">introductory documentation</a> and summarized in the figure caption:</p>
 
 <p><img src="/infrastructure/assets/images/on-off-delayed-exit-1.svg" alt="on off delayed exit statechart, see https://statecharts.dev/on-off-statechart.html for full descriptive text" />
 <em>“When you flick a lightswitch, wait 0.5 seconds before turning the light on, then once it’s on wait 0.5 seconds before being able to turn it back off again. When you flick it off, wait 2 seconds before you can turn it on again.</em></p>
 
-<p>They have an extensive set of documents that defend the consistency and readability of statecharts on their <a href="https://statecharts.dev/">homepage</a>, and my point here is not to disagree with them. My point is instead that tools that aspire to the status of generalized infrastructure can’t ask people to dramatically change the way they think about and do science. There are many possible realizations of this task, and each is more or less natural to every person.</p>
+<p>They have an extensive set of documents that defend the consistency and readability of statecharts on their <a href="https://statecharts.dev/">homepage</a>, and my point here is not to disagree with them. My point is instead that tools that aspire to the status of generalized infrastructure can’t ask people to dramatically change the way they think about and do science. There are many possible realizations of any given experiment, and each is more or less natural to every person.</p>
 
 <p>The problem here is really one of emphasis, BEADL seeks to solve problems with inconsistencies in terminology by standardizing them, and in order to do that seeks to standardize the syntax for specifying experiments.</p>
 
-<p>This means of standardization has many attractive qualities and is being led by very capable researchers, but I think the project is illustrative of how the differing constraints of different systems and differing goals of different approaches influence the possible space of tooling. Analysis tasks are often asynchronous, where the precise timing of each node’s completion is less important than the path dependencies between different nodes be clearly specified.  Analysis tasks often have a clearly defined set of start, end, and intermediate cache points, rather than branching or cyclical decision paths that change over multiple timescales. Statecharts are a hierarchical abstraction of finite state machines, the primary advantage of which is that they are better able to incorporate continuous and history-dependent behavior, which causes state explosion in traditional finite-state machines.</p>
+<p>This means of standardization has many attractive qualities and is being led by very capable researchers, but I think the project is illustrative of how the differing structures of problems constrain the possible space of tooling. Analysis tasks are often asynchronous, where the precise timing of each node’s completion is less important than the path dependencies between different nodes.  Analysis tasks often have a clearly defined set of start, end, and intermediate cache points, rather than branching or cyclical decision paths that change over multiple timescales. Statecharts are a hierarchical abstraction of finite state machines, the primary advantage of which is that they are better able to incorporate continuous and history-dependent behavior, which cause state explosion in traditional finite-state machines.</p>
 
-<p><a href="https://docs.auto-pi-lot.com">Autopilot</a> <a class="citation" href="#saundersAutopilotAutomatingBehavioral2019">[191]</a> approaches the problem differently by avoiding standardizing <em>experiments</em> themselves, instead providing smaller building blocks of experimental tools like hardware drivers, data transformations, etc. and emphasizing understanding their use in <em>context.</em> This approach sacrifices some of the qualities of a standardized system like being a logically complete or having guaranteed interoperability of terms in order to better support integrating with existing work patterns and making work cumulative. It is a bit more humble: because we can’t possibly predict the needs and limitations of a totalizing system, we split the problem along the different domains of tools and give facility for describing how they are used together.</p>
+<p>The difficulty of a controlled ontology for experimental frameworks is perhaps better illustrated by considering a full experiment. In Autopilot, a full experiment can be parameterized by the <code class="language-plaintext highlighter-rouge">.json</code> files that define the task itself and the system-specific configuration of the hardware. An <a href="https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e">example task</a> from our lab consists of 7 behavioral shaping stages of increating difficulty that introduce the animal to different features of a fairly typical auditory categorization task. Each stage includes the parameters for at most 12 different stimuli per stage, probabilities for presenting lasers, bias correction, reinforcement, criteria for advancing to the next stage, etc. So just for one relatively straightforward experiment, in one lab, in one subdiscipline, there are <strong>268 parameters</strong> – excluding all the default parameters encoded in the software.</p>
+
+<p>How might we approach this problem differently, to accommodate diversity of thought styles and to be complementary to our data and analysis systems? The primary things we need from our experimental frameworks are a) to be able to link a particular realization of an experiment with the metadata that describes it, and b) to be able to produce similarly metadata-rich data. Rather than linked data indicating code as in our analysis frameworks, we might invert our strategy and think about code that draws from linked data.</p>
+
+<p>As an example, <a href="https://docs.auto-pi-lot.com">Autopilot</a> <a class="citation" href="#saundersAutopilotAutomatingBehavioral2019">[191]</a> approaches the problem by avoiding standardizing <em>experiments</em> themselves, instead providing smaller building blocks of experimental tools like hardware drivers, data transformations, etc. and emphasizing understanding their use in <em>context.</em> This approach sacrifices some of the qualities of a standardized system like being a logically complete or guaranteeing a standardized vocabulary in order to better support integrating with existing work patterns and making work cumulative. Because we can’t possibly predict the needs and limitations of a totalizing system, we split the problem along a different set of concerns, those of the elements of experimental practice, and give facility for describing how they are used together.</p>
 
 <p>For concrete example, we might imagine the lightswitch in an autopilot-like framework like this:</p>
 
@@ -1593,11 +1581,55 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
     <span class="bp">self</span><span class="p">.</span><span class="n">lock</span><span class="p">.</span><span class="n">release</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>The terms <code class="language-plaintext highlighter-rouge">off_debounce</code>, <code class="language-plaintext highlighter-rouge">on_delay</code>, and <code class="language-plaintext highlighter-rouge">on_debounce</code> are certainly not part of a controlled ontology, but we have described how they are used in the docstring and how they are used is inspectable in the class itself.</p>
-
-<p>The difficulty of a controlled ontology for experimental frameworks is perhaps better illustrated by considering a full experiment. In Autopilot, a full experiment can be parameterized by the <code class="language-plaintext highlighter-rouge">.json</code> files that define the task itself and the system-specific configuration of the hardware. An <a href="https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e">example task</a> from our lab consists of 7 behavioral shaping stages of increating difficulty that introduce the animal to different features of a fairly typical auditory categorization task. Each stage includes the parameters for at most 12 different stimuli per stage, probabilities for presenting lasers, bias correction, reinforcement, criteria for advancing to the next stage, etc. So just for one relatively straightforward experiment, in one lab, in one subdiscipline, there are <strong>268 parameters</strong> – excluding all the default parameters encoded in the software.</p>
+<p>The class <code class="language-plaintext highlighter-rouge">Lightswitch</code> inherits from the <code class="language-plaintext highlighter-rouge">Digital_Out</code> class, which in turn inherits from <code class="language-plaintext highlighter-rouge">GPIO</code> and eventually <code class="language-plaintext highlighter-rouge">Hardware</code>. This hierarchy of inheritance carries with it a progressive refinement of meaning about what this class does. The terms <code class="language-plaintext highlighter-rouge">off_debounce</code>, <code class="language-plaintext highlighter-rouge">on_delay</code>, and <code class="language-plaintext highlighter-rouge">on_debounce</code> are certainly not part of a controlled ontology, but the context of their use bounds their meaning. Rather than being bound by, for example, the abstract <code class="language-plaintext highlighter-rouge">Latency</code> term from <a href="https://scicrunch.org/scicrunch/interlex/view/ilx_0106040#annotations">interlex</a>, we have defined terms that we need to make a hardware object do what we need it to. These terms don’t have too much meaning on their own — there isn’t even much in this class to uniquely identify it as a “lightswitch” beyond its name, it is just a timed digital output. What makes them meaningful is how they are used.</p>
 
 <p>The way Autopilot handles various parameters are part of set of layers of abstraction that separate idiosyncratic logic from the generic form of a particular <code class="language-plaintext highlighter-rouge">Task</code> or <code class="language-plaintext highlighter-rouge">Hardware</code> class. The general structure of a two-alternative forced choice task is shared across a number of experiments, but they may have different stimuli, different hardware, and so on. Autopilot <code class="language-plaintext highlighter-rouge">Task</code>s use abstract references to classes of hardware components that are required to run them, but separates their implementation as a system-specific configuration so that it’s not necessary to have <em>exactly the same</em> components plugged into <em>exactly the same</em> GPIO pins, etc. Task parameters like stimuli, reward timings, etc. are similarly split into a separate task parameterization that both allow <code class="language-plaintext highlighter-rouge">Task</code>s to be generic and make provenance and experimental history easier to track. <code class="language-plaintext highlighter-rouge">Task</code> classes can be subclasses to add or modify logic while being able to reuse much of the structure and maintain the link between the root task and its derivatives — for example <a href="https://github.com/auto-pi-lot/autopilot-plugin-wehrlab/blob/9cfffcf5fe1886d25658d4f1f0c0ffe41c18e2cc/gap/nafc_gap.py#L13-L49">one task we use</a> that starts a continuous background sound but otherwise is the same as the root <code class="language-plaintext highlighter-rouge">Nafc</code> class. The result of these points of abstraction is to allow exact experimental replication on inexactly replicated experimental apparatuses.</p>
+
+<p>This separation of the different components of an experiment is a balance between reusable code and clear metadata: we might allow freedom of terminology for each individual class, but by designing the system to encourage reuse of flexible classes we reduce the number of times unique terms need to be redefined. For example, we can imagine a trivial use of our lightswitch inside a task that uses a signal from an analogue sensor to toggle the switch when it passes a certain value. While this is very similar to how Autopilot currently works, note that we are using pseudocode to indicate how it might extend the system we’re describing.</p>
+
+<div class="draft-text">
+  jonny start here 22-06-30
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">autopilot</span> <span class="kn">import</span> <span class="n">Task</span>
+<span class="kn">from</span> <span class="nn">autopilot.data.modeling</span> <span class="kn">import</span> <span class="n">Field</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">class</span> <span class="nc">Controlled_Switch</span><span class="p">(</span><span class="n">Task</span><span class="p">):</span>
+  <span class="k">class</span> <span class="nc">Params</span><span class="p">(</span><span class="n">Task</span><span class="p">.</span><span class="n">Param_Spec</span><span class="p">):</span>
+    <span class="n">on_delay</span><span class="p">:</span> <span class="s">'@si:seconds'</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s">"Delay (s) before turning light on"</span><span class="p">,</span>
+        <span class="n">parameterizes</span><span class="o">=</span><span class="s">"@jonny:hardware:Lightswitch"</span>
+      <span class="p">)</span>
+    <span class="n">threshold</span> <span class="o">=</span> 
+
+  <span class="k">class</span> <span class="nc">TrialData</span><span class="p">(</span><span class="n">Task</span><span class="p">.</span><span class="n">TrialData_Spec</span><span class="p">):</span>
+    <span class="n">switch_time</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s">"Timestamps for switch flicks"</span>
+      <span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<blockquote>
+  <p>describe code</p>
+</blockquote>
+
+<blockquote>
+  <p>plugin system - how it works with the wiki, and how it facilitates the sharing of data and could then be used to pull data in about common hardware components.</p>
+</blockquote>
+
+<blockquote>
+  <p>data architecture - how to make it possible for data to automatically be output into these common formats.</p>
+</blockquote>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+  <p>change bonsai example to being a well defined markup syntax, but one that mixes things together. However with a system like that we could invert the problem and use linked data to define the experiment. Our system could let us generate different experiments: eg we have a more general task structure in the metadata and then use that to separate the task from the instantiation in hardware. As we will soon see, our linked data system gives us a rich framework for designing interfaces.</p>
+</blockquote>
 
 <p>In contrast, workflows in Bonsai <a class="citation" href="#lopesBonsaiEventbasedFramework2015a">[214, 215]</a>, another very popular and very capable experimental tool, <a href="https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai">combine the pattern of nodes</a> that constitute an experiment with idiosyncratic parameters like a <a href="https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai#L76-L85">crop bounding box</a>. To be clear, I love Bonsai, and this kind of workflow reproducibility is a huge step up from the more common practice of totally lab-specific code. The flat design of Bonsai is extremely useful for prototyping and extends through to complex experiments, but would have a hard time being able to support generalizable and reusable software classes for basic experimental operations, as well as creation and negotiation over experimental terminology.</p>
 
@@ -1668,6 +1700,22 @@ Algorithmic recommendation platforms are in a regulatory gray area <a class="cit
 <ul>
   <li>make tool development easier: Linking domains of data manipulation with analysis makes developing tools easier. Rather than having to reimplement basic routines like data loading and parameterization, developers can contribute to and use methods from a common framework. Since we aren’t intending a single framework, but instead a means of linking them, it is possible to spread development of different features beyond the core team, so for example creating links from varying data formats would expand the scope of data a tool is useful for.</li>
 </ul>
+
+<div class="draft-text">
+
+  <p>Todo:</p>
+
+  <ul>
+    <li>DANDI is already doing this with tools built on top of NWB.</li>
+  </ul>
+
+  <p>Experimental tools:</p>
+  <ul>
+    <li>we intended the bonsai example to be positive dang it! the xml description is good!</li>
+    <li>rewrite autopilot description in light of data module!</li>
+    <li>main revision should be that with experimental tools we probably need to go the other direction: rather than being able to specify experiments post-hoc we need experimental tools that can specify their data and dump it out into linked data format.</li>
+  </ul>
+</div>
 
 <h3 id="abstraction--interfaces">Abstraction &amp; Interfaces</h3>
 
