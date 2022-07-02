@@ -86,128 +86,156 @@ The class `Lightswitch` inherits from the `Digital_Out` class, which in turn inh
 
 The way Autopilot handles various parameters are part of set of layers of abstraction that separate idiosyncratic logic from the generic form of a particular `Task` or `Hardware` class. The general structure of a two-alternative forced choice task is shared across a number of experiments, but they may have different stimuli, different hardware, and so on. Autopilot `Task`s use abstract references to classes of hardware components that are required to run them, but separates their implementation as a system-specific configuration so that it's not necessary to have *exactly the same* components plugged into *exactly the same* GPIO pins, etc. Task parameters like stimuli, reward timings, etc. are similarly split into a separate task parameterization that both allow `Task`s to be generic and make provenance and experimental history easier to track. `Task` classes can be subclasses to add or modify logic while being able to reuse much of the structure and maintain the link between the root task and its derivatives --- for example [one task we use](https://github.com/auto-pi-lot/autopilot-plugin-wehrlab/blob/9cfffcf5fe1886d25658d4f1f0c0ffe41c18e2cc/gap/nafc_gap.py#L13-L49) that starts a continuous background sound but otherwise is the same as the root `Nafc` class. The result of these points of abstraction is to allow exact experimental replication on inexactly replicated experimental apparatuses.
 
-This separation of the different components of an experiment is a balance between reusable code and clear metadata: we might allow freedom of terminology for each individual class, but by designing the system to encourage reuse of flexible classes we reduce the number of times unique terms need to be redefined. For example, we can imagine a trivial use of our lightswitch inside a task that uses a signal from an analogue sensor to toggle the switch when it passes a certain value. While this is very similar to how Autopilot currently works, note that we are using pseudocode to indicate how it might extend the system we're describing.
-
-<div class="draft-text">
-  jonny start here 22-06-30
-</div>
+This separation of the different components of an experiment is a balance between reusable code and clear metadata: we might allow freedom of terminology for each individual class, but by designing the system to encourage reuse of flexible classes we reduce the number of times unique terms need to be redefined. For example, we can imagine a trivial use of our lightswitch inside a task measuring an experimental subject's estimation of time intervals: we toggle the switch once some analog sensor reaches a certain threshold, and then the subject tries to press a button at the same time as the light turns on after a fixed delay. While this is very similar to how Autopilot currently works, note that we are using pseudocode to indicate how it might extend the system we're describing.
 
 ```python
 from autopilot import Task
 from autopilot.data.modeling import Field
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class Controlled_Switch(Task):
+  """
+  A [[Discipline::Psychophysics]] experiment 
+  to measure [[Research Topic::Interval Estimation]].
+  """
+
   class Params(Task.Param_Spec):
     on_delay: '@si:seconds' = Field(
         description="Delay (s) before turning light on",
-        parameterizes="@jonny:hardware:Lightswitch"
-      )
-    threshold = 
+        parameterizes="@jonny:hardware:Lightswitch")
+    threshold: float = Field(
+        description="Flick switch above this value",
+        is_a="@interlex:Threshold")
 
   class TrialData(Task.TrialData_Spec):
     switch_time: datetime = Field(
-        description="Timestamps for switch flicks"
-      )
+        description="Time the switch was flicked")
+    target_time: datetime = Field(
+        description="Time the subject should respond")
+    response_time: datetime = Field(
+        description="Time the subject did respond")
+    error: timedelta = Field(
+        description="Difference between target and response",
+        is_a="@psychophys:ReactionTime")
 
 
+  HARDWARE = {
+    'sensor': 'Analog_In',
+    'button': 'Digital_In',
+    'lightswitch': '@jonny:hardware:Lightswitch'
+  }
+
+  def __init__(self, 
+      on_delay:float, 
+      threshold:float):
+    self.on_delay = on_delay
+    self.threshold = threshold
+
+    super(Controlled_Switch, self).__init__()
+    self.poll()
+
+  def poll(self):
+    while self.running:
+      if self.hardware['sensor'].value > self.threshold:
+        self.hardware['lightswitch'].switch()
+        switch_time = datetime.now()
+        target_time = switch_time + self.on_delay
+
+        # Wait for the subject to press the button
+        response_time = self.hardware['button'].wait()
+
+        # Send the data for storage
+        self.node.send(key="DATA", value={
+            'switch_time': switch_time,
+            'target_time': target_time,
+            'response_time': response_time,
+            'error': target_time - response_time
+          })
 ```
 
-> describe code
+In this example, we first define a data model (see section 3.2 - Data in {% cite saundersAUTOPILOTAutomatingExperiments2022 %}) for the Tasks `Params`, the data that the task produces as `TrialData`, and the `HARDWARE` that the task uses. Our `Params` each have a [type hint](https://peps.python.org/pep-0483/) indicating what type of data they are, as well as a `Field` that gives further detail about them. Specifically, we have exposed the Lightswitch's `on_delay` parameter, indicated that it will be in seconds by referring to some namespace that defines SI units `@si` and that it parameterizes the lightswitch object that we defined above. The `TrialData` is similarly annotated, and by default Autopilot will use this specification to create an hdf5 table to store the values. The `HARDWARE` dictionary makes abstract references the hardware objects that will be made available in the task, each of which would have its configuration --- which GPIO pin they are plugged into, the polarity of the signal, etc. --- using some local system configuration. Finally, the single `poll()` method continuously compares the value of the sensor to the threshold, switches the lightswitch when the threshold is crossed, records the time the button was pressed, and sends it for storage with its network node.
 
-> plugin system - how it works with the wiki, and how it facilitates the sharing of data and could then be used to pull data in about common hardware components.
+As before, we are using our experimental framework as an interface to our linked data system. Currently, Autopilot uses a [semantic wiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) to organize technical knowledge and to share [plugins](https://docs.auto-pi-lot.com/en/latest/guide/plugins.html) - [https://wiki.auto-pi-lot.com](https://wiki.auto-pi-lot.com). In this case, I would write my task and hardware classes inside a git repository and then add them to Autopilot's [plugin registry](https://wiki.auto-pi-lot.com/index.php/Autopilot_Plugins), which uses a [form](https://wiki.auto-pi-lot.com/index.php/Form:Autopilot_Plugin) to fill in semantic properties and allows further annotation in free text and semantic markup.
 
-> data architecture - how to make it possible for data to automatically be output into these common formats.
+We could instead imagine being able to document the task in its [docstring](https://peps.python.org/pep-0257/), including describing the relevant subdiscipline, research topic, and any other relevant metadata. Rather than manually entering it in the wiki, then, we might export the triplet annotations directly from the class and make them available from my `@jonny` namespace and mirroring that to the wiki. Since the plugin specifies its dependencies using standard Python tools, it would then be possible for other researchers to use its task and hardware objects by referring to them as above.
 
-> 
+In our pseudocode, the (abbreviated) exported metadata for this task might look like this:
 
-> change bonsai example to being a well defined markup syntax, but one that mixes things together. However with a system like that we could invert the problem and use linked data to define the experiment. Our system could let us generate different experiments: eg we have a more general task structure in the metadata and then use that to separate the task from the instantiation in hardware. As we will soon see, our linked data system gives us a rich framework for designing interfaces.
-
-
-In contrast, workflows in Bonsai {% cite lopesBonsaiEventbasedFramework2015a lopesNewOpenSourceTools2021 %}, another very popular and very capable experimental tool, [combine the pattern of nodes](https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai) that constitute an experiment with idiosyncratic parameters like a [crop bounding box](https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai#L76-L85). To be clear, I love Bonsai, and this kind of workflow reproducibility is a huge step up from the more common practice of totally lab-specific code. The flat design of Bonsai is extremely useful for prototyping and extends through to complex experiments, but would have a hard time being able to support generalizable and reusable software classes for basic experimental operations, as well as creation and negotiation over experimental terminology.
-
-We can imagine extending the abstract specification of experimental parameters, hardware requirements, and so on to work with our federated naming system to overcome the challenges to standardizing. First, we can make explicit declarations about the relationship between our potentially very local vocabulary and other vocabularies at varying degrees of generality. Here we can declare our `Lightswitch` object and 1) link its `on_delay` to our friend `@rumbly`'s object that implements the same thing as `on_latency`, and 2) link it to a standardized `Latency` term from [interlex](https://scicrunch.org/scicrunch/interlex/view/ilx_0106040#annotations), but since that term is for time elapsed between a stimulus and behavioral response in a psychophysical context, it's only a partial match.
 
 ```turtle
-<#Lightswitch>
-  a @autopilot.hardware.Digital_Out
+<#tasks:Controlled_Switch>
+  a @autopilot:Task
 
-  param on_delay
-    @skos:exactMatch @rumbly:LED:on_latency
-    @skos:nearMatch @interlex:Latency
+  hasDescription
+    "A Psychophysics experiment 
+    to measure Interval Estimation."
 
-  providedBy
-    @git:repository ...
-    @python:class ...
+  Discipline "Psychophysics"
+  Research_Topic "Interval Estimation"
+
+  Params
+    on_delay @si:seconds
+      hasDescription "..."
+      parameterizes @jonny:hardware:Lightswitch
+    ...
+
+  TrialData
+    switch_time @python:datetime
+    ...
+
+  usesHardware
+    @autopilot:hardware:Analog_In
+      hasID "sensor"
+    @autopilot:hardware:Digital_In
+      hasID "button"
+    @jonny:hardware:Lightswitch
+      hasID "lightswitch"
 ```
 
-Further, since our experimental frameworks are intended to handle off the shelf parts as well as our potentially idiosyncratic lightbulb class, we can link many implementations of a hardware controlling class to the product itself. Take for example the [I2C_9DOF](https://docs.auto-pi-lot.com/en/latest/hardware/i2c.html#autopilot.hardware.i2c.I2C_9DOF) class that controls a 9 degree of freedom motion sensor from [Sparkfun](https://www.sparkfun.com/products/13944) where we both indicate the specific part itself as well as the generic `ic` that it uses:
+and we might combine it with metadata that describes our particular use of it like this, where we combine that task with a series of other `level`s that shape the behavior, make it more challenging, or measure something else entirely:
 
 ```turtle
-<#I2C_9DOF>
-  @autopilot.controlsHardware
-    @sparkfun:13944
-    @ic:LSM9DS1
-```
-
-This hints at the first steps of a system that would make our technical work more cumulative, as it is then easy to imagine being able to search for all the different implementations for a given piece of hardware. Since the `@sparkfun:13944` element can in turn specify properties like being an inertial motion sensor, this kind of linking becomes powerful very quickly to make bridges that allow similar work to be discovered and redeployed quickly.
-
-We can also extend our previous connection between a dataset and the results of its analysis to also include the tools that were used to collect it. Say we want to declare the [example experiment](https://gist.github.com/sneakers-the-rat/eebe675326a157df49f66f62c4e33a6e) above, and then extend our `<#project-name>` project to reference it:
-
-```turtle
-<#example-experiment>
+<#projects:my-project>
   a @autopilot:protocol
-
-  level @autopilot:freeWater
-    reward
-      type @si:mL
-      value 5
-    graduation 
-      a @autopilot:graduation:ntrials
-      n_trials 200
-
-  level @autopilot:Nafc
-    stim
-      @autopilot:stim:sound:Tone
-        frequency 5000
-        duration 100
-
+  experimenter @jonny
   ...
 
-  @autopilot:prefs
-    @jonny:Lightswitch
-      on_delay 1
+  level @jonny:tasks:Controlled_Switch
+    on_delay 2
+    threshold 0.5
+    graduation @autopilot:graduation:ntrials
+      n_trials 200
 
-<#project-name>
-  a @jonny:project-name
-  collectedBy @jonny:example-experiment
+  level @jonny:tasks:Another_Task
+    ...
+
+  hardwareConfig
+    button @autopilot:hardware:Digital_In
+      gpioPin 17
+      polarity 1
+    sensor @autopilot:hardware:Analog_In
+      usesPart @apwiki:parts:<Part_Number>
+      ...
 ```
 
-So while we sacrifice the direct declaration of standardized terminology and syntax, we gain the potential for a much denser and richer expressive structure for our experiments. Instead of a single authoritative dictionarylike meaning for a term, we instead appreciate it in the context of its use, linked to the code that implements it as well as the data it produces and the kinds of arguments that are made with different analysis chains. Of course there is no intrinsic conflict with this kind of freewheeling system and controlled vocabularies and syntaxes: in this system, they can be one of many means of expression rather than need to be singular sources of truth that depend on wide adoption. While individual instances of uncontrolled vocabularies might mean chaos, when they are integrated in a system of practice we get something much wilder but also more intricate, beautiful, and useful. 
+On the other side, our output data can be automatically exported to NWB[^nwbisanexample]. Our experimental framework knows that data contained within a `TrialData` model is a `@nwb:behavior:BehavioralEvents` object, and can combine it with the metadata in our task docstring and system configuration. If we needed more specific data export - say we wanted to record the timeseries of the analog sensor - we could use the same `is_a` parameter to declare it as a `@nwb:TimeSeries` and create an extension to store the metadata about the sensor alongside it[^autopilotv050].
 
-As in the case of analytical tools, the role of the experimental frameworks is also to make interacting with the rest of the system easier and doesn't involve manually editing a lot of metadata. For example, currently autopilot `Task`s ask users to declare collected data as a [pytables](https://www.pytables.org/) {% cite altedPyTablesProcessingAnalyzing2003 %} datatypes like `target = tables.StringCol(1)` to record whether a target is `'L'` or `'R'`. If instead it was capable of specifying a Neurodata Without Borders data type like `target = '@nwb:behavior:BehavioralEvents'`, then it would be possible to directly output to a standardized format, potentially also automatically creating a [`BehavioralEpochs`](https://pynwb.readthedocs.io/en/stable/pynwb.behavior.html#pynwb.behavior.BehavioralEpochs) container or other data that are implied but otherwise have to be explicitly created. Autopilot already automatically tracks the entire behavioral history of an experimental subject, so we can also imagine it being able to automatically create a `@analysis:project` object described above that groups together multiple datasets that connected them to an analysis pathway. So in this example the elusive workflow where experimental data is automatically scooped up and incrementally analyzed that is typically a hard-won engineering battle within a single lab would become the normal mode of using the system.
+[^nwbisanexample]: Recall that we're using NWB for the sake of concreteness, but this argument applies to any standardized data format.
 
-The experimental framework described so far could solve some of the software challenges of doing experiments by providing a system for extending a set of reusable classes that can be combined into experiments and linked together, but we haven't described anything to address the rest of the contextual knowledge of practical scientific work. We also haven't described any sort of governance or development system that makes these packages anything more than "some repository on GitHub somewhere" with all the propensity to calcify into fiefdoms that those entail. This leads us back to a system of communication, the central piece of missingness that we have been circling around the whole piece. If you'll allow me one more delay, I want to summarize the system so far before finally arriving there.
+[^autopilotv050]: Though this is a description of something we could build towards, v0.5.0 (at the time of writing released as alpha) of Autopilot has a [data modeling](https://docs.auto-pi-lot.com/en/latest/changelog/v0.5.0.html) framework that should make this possible in future versions.
 
+So while our code is mildly annotated and uses a mixture of standard and nonstandard terminology, we make use of the structure of the experimental framework to generate rich provenance to understand our data and task in context. It's worth pausing to consider what this means for our infrastructural system as a whole
 
+To start, we have a means of integrating our task with the knowledge that precedes it in the hardware and system configuration that runs it. In addition to documenting plugins, among others, the Autopilot wiki also has schema for [custom built](https://wiki.auto-pi-lot.com/index.php/Autopilot_Behavior_Box) and [off-the-shelf](https://wiki.auto-pi-lot.com/index.php/Parts) hardware like [sensors](https://wiki.auto-pi-lot.com/index.php/TT_Electronics_OPB901L55) and [sound cards](https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2). These correspond to local hardware configuration entries that link them to the hardware classes required to use them[^futureversions]. That link can be used bidirectionally: metadata about the hardware used to perform an experiment can be used in the experiment and be included with the produced data data, but the data from experiments can also be used to document the hardware. That means that usage data like calibrations and part longevity can be automatically collected and contributed to the wiki and then used to automatically configure hardware in future uses. This makes using the experimental framework more powerful, but also makes building a communal library of technical knowledge a normal part of doing experiments. Though the wiki is a transitional medium towards what we will discuss in the next section, since contributions are tracked and versioned that allows a currently undervalued class of knowledge work to be creditable. 
 
----
+[^futureversions]: Not yet, but this is planned development for future versions.
 
-Stuff that's common between analysis and experimental tools
+This gives us a different model of designing and engineering experiments than we typically follow. Rather than designing most of it from scratch or decoding cryptic methods sections, researchers could start with a question and basic class of experiment, browse through various implementations based on different sets of tools, see which hardware they and analogous experiments use, which is then linked to the code needed to run it. From some basic information researchers would then be most of the way to performing an experiment: clone the task, download the necessary system configuration information to set up the hardware, make incremental modifications to make the experiment match what they had designed, all the while contributing and being credited for their work.
 
-- make tool development easier: Linking domains of data manipulation with analysis makes developing tools easier. Rather than having to reimplement basic routines like data loading and parameterization, developers can contribute to and use methods from a common framework. Since we aren't intending a single framework, but instead a means of linking them, it is possible to spread development of different features beyond the core team, so for example creating links from varying data formats would expand the scope of data a tool is useful for. 
+Much of this is possible because of the way that Autopilot isolates different components of an experiment: hardware is defined separately from tasks, both are separate from their local configuration. In addition to thinking about how to design tools for our infrastructural system, we can also think of the way it might augment existing tools. Another widely used and extremely capable tool, Bonsai {% cite lopesBonsaiEventbasedFramework2015a lopesNewOpenSourceTools2021 %}, is based on XML documents that [combine the pattern of nodes](https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai) that constitute an experiment with specific parameters like a [crop bounding box](https://github.com/bonsai-rx/bonsai-examples/blob/cbc2c1decc11e1dc1df920421ef88a16fd2e184c/RoiTrigger/RoiTrigger.bonsai#L76-L85). That makes sharing and reusing tasks difficult without exactly matching the original hardware configuration, but we could use our metadata system to *generate* code for Bonsai in addition to consuming data from it. Given some schematic pattern of nodes that describes the operation of the experiment, we could combine that with the same notion of separable parameterization and hardware configurations as we might use in Autopilot to generate the XML for a bonsai workflow. As with analytical tools, our infrastructural system could be used to make a wide array of experimental tools interoperable with an evolving set of vernacular metadata schema. 
 
-<div class="draft-text" markdown="1">
+Together, our data, experimental, and analytical infrastructures would dramatically reshape what is possible in science. What we've described is a complete provenance chain that can be traced from analyzed results back through to the code and hardware used to perform the experiment. Trivially, this makes the elusive workflow where experimental data is automatically scooped up and analyzed as soon as it is collected that is typically a hard-won engineering battle within a single lab the normal mode of using the system. Developing tools that give researchers control over the mode of exported data renders the act of cleaning data effectively obsolete. The role of our experimental tool is to be able to make use of collected technical knowledge, but also to lower the barriers to using the rest of the system by integrating it with normal experimental practice.
 
-Todo:
+The effects on collaboration and metascience are deeper though. Most scientific communication describes collecting and analyzing a single dataset. Making sense of many experiments is only possible qualitatively as a review or quantitatively as meta-analysis. Even if we have a means of linking many datasets and analysis pipelines as in the previous section, the subtle details in how a particular experiment is performed matter: things as small as milliseconds of variation in valve timings through larger differences in training sequences or task design powerfully influence the collected data. This makes comparing data from even very similar experiments --- to say nothing of a class of results from a range of different experiments --- a noisy and labor-intensive statistical process, to the degree that it's possible at all. This system extends the horizon of meta-analysis to the experiment itself and turns experimental heterogeneity into a strength rather than a weakness. Is some result a byproduct of some unreported parameter in the experimental code? Is a result only visible when comparing across these different conditions? Individual experiments only allow a relatively limited set of interpretations and inferences to be drawn, but being able to look across the variation in experimental design would allow phenomena to be described in the full richness supported by available observations. 
 
-- DANDI is already doing this with tools built on top of NWB.
-
-Experimental tools:
-- we intended the bonsai example to be positive dang it! the xml description is good!
-- rewrite autopilot description in light of data module!
-- main revision should be that with experimental tools we probably need to go the other direction: rather than being able to specify experiments post-hoc we need experimental tools that can specify their data and dump it out into linked data format. 
-</div>
-
-
-
+This would also effectively dissolve the "file drawer problem." {% cite sterlingPublicationDecisionsTheir1959 francoPublicationBiasSocial2014 %} Though malice is not uncommon in science, I think it's reasonably fair to assume that most researchers do not withhold data given a null result in order to "lie" about an effect, but because there is no reward for a potentially laborious cleaning and publication process. Collecting data that is clean and semantically annotated at the time of acquisition resolves the problem. Even without the analysis or paper, being able to index across experiments of a particular kind would make it possible to have a much fairer look at a landscape distorded by the publication process and prevent us from repeating the same experiments because no one has bothered to publish the null. This would also open new avenues for collaboration as we will explore in the next section.
