@@ -84,3 +84,9 @@ Who is supposed to do what, and why would different interested groups want to pu
 - Local infrastructure is good for you too --- many universities are plagued by SaaS that is expedient but ultimately makes the entire operation of the university very fragile. 
 - Having good local data infrastructure is a really good thing to be able to tell applicants, and makes use of intranet for collaboration instead of external bandwidth. You get to say "we have a sick new storage and compute server" instead of "we're a huge subscriber to AWS"
 - Y'all are the ones who have to pay the journal costs and deal with your university being uncompetetive with other institutions that can afford more, and so you should be leading the charge to nonprofit journals and a move beyond them, rather than mandating Open Access which is a regressive move.
+
+#### Librarians!
+
+We love ya
+
+> In other words—and the Loon is grinning a beaky grin just now, because her BAE said exactly this to a roomful of library linked-data people about a decade ago—make it easy to rely on linked data, easier than it is to rely on MARC, and the library world will shift, from the smallest and poorest libraries upward… and David will at last stone Goliath to death with his linked-data slingshot. {% cite librariaStoningGoliath2022 %}
