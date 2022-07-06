@@ -62,7 +62,7 @@ disable_disk_cache: false
 
 kramdown:
   parse_block_html: false
-  toc_levels: "1,2,3"
+  toc_levels: "1,2,3,4"
 
 
 keep_files:

@@ -17,52 +17,64 @@ body {
   // position: fixed;
   // right: $menuPaddingLeft;
   top: 2%;
-  padding: 5%;
+  padding: 2.5% 0;
   width: 100%;
-  line-height: 2;
+  line-height: 1em;
 
-  &>ol>li {
-    margin-left:15px;
+  // Style top level
+  &>ol {
+    // padding:0;
+
+    // Extra offset makes all the numbers in sub-lists more spaced
+    &>li {
+      padding-left:0.5em;
+    }
   }
 
 
   ul,ol {
     list-style: none;
-    padding: 0;
+    padding: 0 0 0 1em;
     margin: 0;
     margin-bottom: 10px;
     counter-reset: toc-subcount;
   }
+
+  // Numbering
 
   ol>li {
     counter-increment: toc-subcount;
 
     &:hover::before,&.visible::before {
       content: counters(toc-subcount, '.');
-      // list-style: none;
+      color: #000;
     }
     &:before {
-      // content: counter(toc-subcount);
-      // list-style: none;
+      color: #888;
       padding-right: 10px;
+      line-height:1.2em;
       position:absolute;
-      left:20px;
+      left:10px;
     }
   }
 
-  ul ul, ol ol {
-    padding-left: 1em;
-  }
+  // ul ul, ol ol {
+  //   padding-left: 0.5em;
+  // }
 
-  li a {
-    display: inline-block;
-    color: #888;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
-  }
+  // Link styling
 
   li {
-    padding-left: 8px;
+    // padding-left: 8px;
+
+    & a {
+      display: inline-block;
+      color: #888;
+      line-height: 1em;
+      padding-bottom: 0.2em;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    }
   }
 
   li.visible>a, li:hover>a {
@@ -87,13 +99,6 @@ body {
     }
   }
 
-  // ol>li:hover {
-  //   &>ol {
-  //     max-height: 1000px;
-  //     margin: 0 0 10px 0;
-  //     transition-delay: 0.5s;
-  //   }
-  // }
 }
 
 .mobile-toc-drawer {

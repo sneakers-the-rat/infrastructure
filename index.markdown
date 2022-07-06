@@ -134,94 +134,28 @@ acknowledgements:
 
 # Introduction
 
-{% include_relative _sections/0_intro.md %}
+{% include_relative _sections/intro/intro_index.md %}
 
-# The State of Things
-
-## The Costs of Infrastructure Deficits
-
-{% include_relative _sections/1_0_costs.md %}
-
-
-## (Mis)incentives in Scientific Software
-
-<div class="trimlink">
-<a href="trims.html#systems-neuroscience-specifically">Systems Neuro</a> <span>specific problems for infrastructure</span>
-</div>
-
-{% include_relative _sections/1_1_state-general.md %}
-
-## The Ivies, Institutes, and "The Rest of Us"
-
-{% include_relative _sections/1_2_state-who.md %}
 
 # A Draft of Decentralized Scientific Infrastructure
 
-{% include_relative _sections/2_0_principles.md %}
+{% include_relative _sections/principles/index_principles.md %}
 
 ## Shared Data
 
-### Formats as Onramps
-
-{% include_relative _sections/2_1_p2p.md %}
-
-### Linked Data or Surveillance Capitalism?
-
-{% include_relative _sections/2_2_ld-or-surveillance.md %}
-
-### Folk Federation
-
-{% include_relative _sections/2_3_federation.md %}
+{% include_relative _sections/data/index_data.md %}
 
 ## Shared Tools
 
-{% include_relative _sections/2_4_tools-analysis.md %}
-
-
-### Experimental Frameworks
-
-{% include_relative _sections/2_5_tools-experiments.md %}
-
-### Abstraction & Interfaces
-
-{% include_relative _sections/2_6_collectivize-sota.md %}
+{% include_relative _sections/tools/index_tools.md %}
 
 ## Shared Knowledge
 
-{% include_relative _sections/2_7_knowledge.md %}
-
-### The Wiki Way 
-
-{% include_relative _sections/2_8_wikis.md %}
-
-
-### Rebuilding Scientific Communication
-
-{% include_relative _sections/2_9_communication.md %}
-
-### Credit Assignment
-
-{% include_relative _sections/2_10_credit-assignment.md %}
+{% include_relative _sections/knowledge/index_knowledge.md %}
 
 # Conclusion
 
-{% include_relative _sections/3_0_conclusion.md %}
-
-## Tactics & Strategy
-
-{% include_relative _sections/3_1_strategy.md %}
-
-## Limitations 
-
-{% include_relative _sections/3_2_limitations.md %}
-
-## In Closing
-
-{% include_relative _sections/3_3_closing.md %}
-
-## Contrasting Visions of Science
-
-{% include_relative _sections/3_3_contrasting_visions.md %}
+{% include_relative _sections/conclusion/index_conclusion.md %}
 
 # References
 
