@@ -1,5 +1,27 @@
+> Don't scab for the bosses / don't listen to their lies / us poor folks haven't got a chance / unless we organize
+>
+> Which side are you on?
+>
+> Florence Reece (1931) *Which Side Are You On?*
+
+> **Oh but they will mock us and they will mistreat us til they can replace us all with an app or a kiosk,** And apathy is the natural byproduct of being exhausted and sick all the time. So don't tell me that working like this is the meaning of life [...]
+>
+> Cuz it's just a means to an ending, and all of the energy that I end up expending, I will get it back in spades when the systems that necessitate all of this work fall apart... **And we can work for ourselves for a change!**
+> 
+> So we gotta work! Cuz none of our visions of a better tomorrow will come to fruition without a whole lot of work! And that's all there is to it, so, God Dammit **I guess that we gotta do it!**
+>
+> RENT STRIKE (2021) [Work! (Future Perfect)](https://rentstrike.bandcamp.com/track/work-future-perfect-2) {% cite rentstrikeWorkFuturePerfect2021 %}
+
+
+
+<div class="draft-text">
+	Emphasize that we need a plan and a strategy, but we also need the will. We need to organize against tech companies and the rapidly corporatizing university. We are part of the labor struggle even if we don't acknowledge knowledge work as labor.
+</div>
+
 
 ### (Gestural) Roadmap
+
+
 
 Some of the tactical vision for this piece is embedded in its structure and has been discussed throughout, but to again reaffirm the strictly *non-utopian* nature of this argument it's worth revisiting the practical means by which we might build it. I have tried to take care to hew as close to existing technologies and practices as possible, and so the amount of new development that is needed is relatively light. As is true in the rest of the piece, the recommendations here are just for the purpose of illustration, and here more than anywhere else every step of this is subject to negotiation and the contingency of future work.
 

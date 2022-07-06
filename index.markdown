@@ -215,6 +215,10 @@ acknowledgements:
 
 {% include_relative _sections/3_2_limitations.md %}
 
+## In Closing
+
+{% include_relative _sections/3_3_closing.md %}
+
 ## Contrasting Visions of Science
 
 {% include_relative _sections/3_3_contrasting_visions.md %}

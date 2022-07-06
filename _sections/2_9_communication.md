@@ -1,5 +1,13 @@
-<div class="draft-text">
-  * {% cite berners-leeSociallyAwareCloud2009 %} - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.
+<div class="draft-text" markdown="1">
+* {% cite berners-leeSociallyAwareCloud2009 %} - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.
+
+todo: 
+
+- mention the idea behind the threadodobot app, maybe in additional 'adversarial interoperability' section? put in context with the agora
+- bump up sections of rebuilding communication by 1 heading level.
+- Also need to talk about the client
+- The only thing special about a feed is that it is linked to a preceding post.
+
 </div>
 
 It's time to start thinking about interfaces. We have sketched our system in turtle-like pseudocode, but directly interacting with our linking syntax would be labor intensive and technically challenging. Instead we can start thinking about tools for interacting with it in an abstract way. Beneath every good interface we're familiar with, a data model lies in wait. A .docx file is just a zipped archive full of xml, so a blank word document that contains the single word "melon" is actually represented (after some preamble) like:
@@ -48,7 +56,7 @@ is represented as JSON (simplified for brevity):
 
 So we are already used to working with interfaces to data models, we just need to think about what kind of interfaces we need for a scientific communication system. 
 
-Let's pick up where we left off with our linked data and tools. Recall that we had a `project` named `#my-project` that made reference to our experiment, a few datasets that it produced, and an analysis pipeline that we ran on it. We *could* just ship the raw numbers from the analysis, wash our hands of it, and walk straight into the ocean without looking back, but usually scientists like to take a few additional steps to visualize the data and write about what it means. 
+Let's pick up where we left off with our linked data and tools. Recall that we had a `project` named `#my-project` that linked an [experiment](#myproject-experiment), a few datasets that it produced, and an [analysis pipeline](#myproject-analysis) that we ran on it. We *could* just ship the raw numbers from the analysis, wash our hands of it, and walk straight into the ocean without looking back, but usually scientists like to take a few additional steps to visualize the data and write about what it means. 
 
 #### Notebooks (JSON-LD)
 
@@ -196,7 +204,7 @@ Social tools like these are in the hypothes.is team's [development roadmap](http
 [^genius]: cf. the [genius.com](https://genius.com) overlay.
 
 
-#### Trackers & Wikis
+#### Trackers, Clients, & Wikis
 
 The final set of social interfaces is effectively the "body" of social technology. So far our infrastructural systems have an unsatisfyingly hollow center: there's a lot of talk about tool frameworks and protocols for linked data, but *where is it? what does it look like?* We can pick up the threads left hanging from our description of [bittorrent trackers](#archives-need-communities) and knit them in with those from [the wiki way](#the-wiki-way) and describe how systems for surfacing procedural and technical knowledge work can also serve as a basis of searching, indexing, and governing the rest of the system. 
 

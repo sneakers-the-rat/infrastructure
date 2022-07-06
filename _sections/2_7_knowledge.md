@@ -1,12 +1,3 @@
-<div class="draft-text" markdown="1">
-
-todo: 
-
-- mention the idea behind the threadodobot app, maybe in additional 'adversarial interoperability' section? put in context with the agora
-- bump up sections of rebuilding communication by 1 heading level.
-
-</div>
-
 The remaining set of problems implied by the infrastructural system sketched so far are the *communication* and *organization* systems that make up the interfaces to maintain and use it. We can finally return to some of the breadcrumbs laid before: the need for negotiating over distributed and conflicting data schema, for incentivizing and organizing collective labor, and for communicating information within and without academia. 
 
 The communication systems that are needed double as *knowledge organization* systems. Knowledge organization has the rosy hue of something that might be uncontroversial and apolitical --- surely everyone involved in scientific communication wants knowledge to be organized, right? The reality of scientific practice might give a hint at our naivete. Despite being, in some sense, itself an effort to organize knowledge, *scientific results effectively have no system of explicit organization.* There is no means of, say, "finding all the papers about a research question."[^marderjoyof] The problem is so fundamental it seems natural: the usual methods of using search engines, asking around on Twitter, and chasing citation trees are flex tape slapped over the central absence of a system for formally relating our work as a shared body of knowledge. 
