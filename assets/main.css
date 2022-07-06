@@ -15,13 +15,13 @@ h1, h2, h3, h4, h5, h6 { color: #353535; font-family: "Helvetica Neue", "Segoe U
 
 a { color: #4a9ae1; text-decoration: none; }
 
-blockquote { border-left: 0.25rem solid #e5e5e5; color: #979797; margin: .8rem 0; padding: .5rem 1rem; }
+blockquote { border-left: 0.25rem solid #e5e5e5; color: #666666; margin: .8rem 0; padding: .5rem 1rem; }
 
 blockquote p { margin: 0 0 0.5rem; }
 
 blockquote p:last-child { margin-bottom: 0; }
 
-@media (min-width: 600px) { blockquote { padding: 0 5rem 0 1.25rem; } }
+@media (min-width: 600px) { blockquote { padding: 0 0rem 0 1.25rem; } }
 
 img { display: block; margin: 0 0 1rem; max-width: 100%; }
 
@@ -369,23 +369,19 @@ body { padding: 0 30% 0 0; }
 
 @media (max-width: 839px) { body { padding: 0; } }
 
-.toc { top: 2%; padding: 5%; width: 100%; line-height: 2; }
+.toc { top: 2%; padding: 2.5% 0; width: 100%; line-height: 1em; }
 
-.toc > ol > li { margin-left: 15px; }
+.toc > ol > li { padding-left: 0.5em; }
 
-.toc ul, .toc ol { list-style: none; padding: 0; margin: 0; margin-bottom: 10px; counter-reset: toc-subcount; }
+.toc ul, .toc ol { list-style: none; padding: 0 0 0 1em; margin: 0; margin-bottom: 10px; counter-reset: toc-subcount; }
 
 .toc ol > li { counter-increment: toc-subcount; }
 
-.toc ol > li:hover::before, .toc ol > li.visible::before { content: counters(toc-subcount, "."); }
+.toc ol > li:hover::before, .toc ol > li.visible::before { content: counters(toc-subcount, "."); color: #000; }
 
-.toc ol > li:before { padding-right: 10px; position: absolute; left: 20px; }
+.toc ol > li:before { color: #888; padding-right: 10px; line-height: 1.2em; position: absolute; left: 10px; }
 
-.toc ul ul, .toc ol ol { padding-left: 1em; }
-
-.toc li a { display: inline-block; color: #888; text-decoration: none; transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-
-.toc li { padding-left: 8px; }
+.toc li a { display: inline-block; color: #888; line-height: 1em; padding-bottom: 0.2em; text-decoration: none; transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
 
 .toc li.visible > a, .toc li:hover > a { color: #000; }
 
