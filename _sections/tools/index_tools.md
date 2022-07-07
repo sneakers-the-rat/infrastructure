@@ -6,6 +6,5 @@
 
 {% include_relative _sections/tools/2_5_tools-experiments.md %}
 
-### Abstraction & Interfaces
 
-{% include_relative _sections/tools/2_6_collectivize-sota.md %}
+{% include_relative _sections/tools/2_6_interlude.md %}

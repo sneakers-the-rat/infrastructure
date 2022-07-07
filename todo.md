@@ -11,10 +11,8 @@ Use this!!!!!! for LD overlay!!!! https://refer.cx/
 
 # Writing
 
-- Integrate {% cite larsenPoliticalNatureTCP2012 %} in [design principles?](/infrastructure#design-principles)
+- Write about how what we really are talking about are "quartet" links: author, subject, predicate, object.
 - Write about DDoSecrets in [p2p benefits?](/infrastructure/#the-network-is-extremely-resilient-since-the-data-is-shared-acro)
-- Write a triplet links description [here?](/infrastructure/#here-would-be-a-good-time-to-describe-triplet-links-as-the-basic)
-- Resolve [Abstraction & Protocol Design](/infrastructure/#abstraction--interfaces)
 - Summaries at the end of every section that needs them - [full system](/infrastructure/#what-we’ve-described-is-a-nonutopian-fully-realizable-path-to-ma)
 
 ## Introduction

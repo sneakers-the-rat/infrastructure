@@ -57,3 +57,5 @@ is represented as JSON (simplified for brevity):
 So we are already used to working with interfaces to data models, we just need to think about what kind of interfaces we need for a scientific communication system. 
 
 Let's pick up where we left off with our linked data and tools. Recall that we had a `project` named `#my-project` that linked an [experiment](#myproject-experiment), a few datasets that it produced, and an [analysis pipeline](#myproject-analysis) that we ran on it. We *could* just ship the raw numbers from the analysis, wash our hands of it, and walk straight into the ocean without looking back, but usually scientists like to take a few additional steps to visualize the data and write about what it means. 
+
+To explore the communicative tools that might be useful, we can start by considering traditional documents, and attempt to generalize them by separating their form as "units" or "cells" of information with accompanying metadata from their representation in interfaces for interacting and communicating about them.
