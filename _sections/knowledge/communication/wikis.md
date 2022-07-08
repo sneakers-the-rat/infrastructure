@@ -1,5 +1,16 @@
 #### Trackers, Clients, & Wikis
 
+<div class="draft-text">
+One of the basic weaknesses is the document-only model, but recursive cells fix that. 
+
+Having a wiki page like [[topic]] in the context of a federated wiki looks different, like the agora, where we can combine multiple people's representation of the topic and pull them. Since we can split documents into subcells, we can then also transclude them in a wiki bidirectionally: in the document metadata, but also from the wiki side.
+
+This is how the fedwiki works! http://marc.tries.fed.wiki/view/c2-for-me/ward.eu.wiki.org/c2-for-me/wellspring.fed.wiki/welcome-visitors
+
+!! in a linear system this gets us transclusion. one of the major flaws of the mediawiki ecosystem is the adherence to the page-only document model. If instead a page was an arbitrary structuring unit of any number of other containers, then it would be possible to do things like subdocument transclusion, building complex and recursive concepts that consist of many layers of meaning (eg. all the times you're forced to use subobjects which are awkward and unnecessary).
+
+</div>
+
 The final set of social interfaces is effectively the "body" of social technology. So far our infrastructural systems have an unsatisfyingly hollow center: there's a lot of talk about tool frameworks and protocols for linked data, but *where is it? what does it look like?* We can pick up the threads left hanging from our description of [bittorrent trackers](#archives-need-communities) and knit them in with those from [the wiki way](#the-wiki-way) and describe how systems for surfacing procedural and technical knowledge work can also serve as a basis of searching, indexing, and governing the rest of the system. 
 
 Bittorrent trackers serve to index data and organize a curation community --- we need that too, let's start there. Say we have a tracker that indexes a particular format of data, as [`@dandihub`](https://hub.dandiarchive.org) does with `@nwb`. We can search for data using all the fields of NWB, but don't want to rely just on the peers that are active, so the role of the tracker is to maintain a searchable index of metadata that refers to the datasets shared by peers. We want to be interoperable with other trackers that index compatible data, so let's say that's implemented as a database that supports [SPARQL federated queries](https://www.w3.org/TR/sparql11-federated-query/)[^sparqldb] where requests can be spread across many databases. For concreteness, let's assume that the results of our search are some content-addressed reference to a resource on a p2p network like a [magnet link](https://en.wikipedia.org/wiki/Magnet_URI_scheme).
