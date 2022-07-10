@@ -41,7 +41,7 @@ social:
 plugins:
   - jekyll/scholar
   - jekyll-seo-tag
-  - jekyll-jupyter-notebook
+  # - jekyll-jupyter-notebook
 
 scholar:
   source: assets
