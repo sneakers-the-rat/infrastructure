@@ -11,7 +11,7 @@ Howison & Herbsleb described this dynamic in the context of BLAST[^whatisblast]
 
 For an example in Neuroscience, one can browse the papers that cite the DeepLabCut paper {% cite mathisDeepLabCutMarkerlessPose2018 %} to find hundreds of downstream projects that make various extensions and improvements that are not integrated into the main library. While the alternative extreme of a single monolithic ur-library is also undesirable, working in fragmented islands makes infrastructure a random walk instead of a cumulative effort.
 
-After publication, scientists have little incentive to **maintain** software outside of the domains in which the primary contributors use it, so outside of the most-used libraries most scientific software is brittle and difficult to use {% cite mangulImprovingUsabilityArchival2019 kumarBioinformaticsSoftwareBiologists2007 %}. 
+After publication, scientists have little incentive to **maintain** software outside of the domains in which the primary contributors use it, so outside of the most-used libraries most scientific software is brittle and difficult to use {% cite carverSurveyStatePractice2022 mangulImprovingUsabilityArchival2019 kumarBioinformaticsSoftwareBiologists2007 %}. 
 
 Since the reputational value of a publication depends on its placement within a journal and number of citations (among other metrics), citation practices for scientific software are far from uniform and universal, and relatively few "prestige" journals publish software papers at all, the incentive to write scientific software in the first place is low compared to its near-universal use {% cite howisonSoftwareScientificLiterature2016 %}.
 

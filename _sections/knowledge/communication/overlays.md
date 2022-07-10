@@ -2,6 +2,8 @@
 
 <div class="draft-text">
 	Talk about the agora and transclusion!
+	- cite Andrew's twitter zenodo document!
+	- talk about threadodo!
 </div>
 
 We can't expect the entire practice of academic publishing to transition to cell-based text editors anytime soon. In the same way that we discussed frameworks for integrating heterogeneous analytical and experimental tools, we need some means of **bridging** communication tools and **overlays** for interacting with communication formats. Bridging communication protocols is a relatively well-defined project, eg. the [many ways to use Matrix](https://matrix.org/bridges/) with [Slack](https://matrix.org/bridges/#slack), [email](https://matrix.org/bridges/#email), [Signal](https://matrix.org/bridges/#signal), etc. The overlays for websites, pdfs, and other more static media that we'll discuss are means for annotation and bidirectional transclusion: including pieces of the work elsewhere, and representing inclusions elsewhere on the work. In representing the intrinsically interactive and social nature of reading (eg. see {% cite jacksonMarginaliaReadersWriting2001 %}), overlays naturally lend themselves to imagining new systems to replace traditional mechanisms for peer-review and criticism. We don't need to look far to find a well-trod interface for annotation overlays: we shouldn't underrate the humble highlighter.

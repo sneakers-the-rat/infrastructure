@@ -1,13 +1,6 @@
 
 #### Documents & Notebooks
 
-<div class="draft-text" markdown="1">
-todo:
-
-- Extend the notion of markdown basically being a very simple type system, and we can extend the notion of a general document preparation system to use ideas from cells as well: eg. we have a citation block, you can put in some bibtex or whatever, and it'll generate the relevant semantic information. 
-- The generalization of that is having some notion of slots and appearance for different block elements. Note the "cell-type" field in the notebook JSON
-</div>
-
 Say we have reached the stage where we are writing a brief summary of our experiment and analysis, but not yet at the stage of writing a "formal" scientific paper. We might do so in a notebook-like {% cite kluyverJupyterNotebooksPublishing2016 %} environment with different kinds of "cells," specifically cells that execute *code* and cells that render *markdown.* We want to plot some of the results of our analysis, so to do that we might load the data and use [matplotlib](https://matplotlib.org/) {% cite hunterMatplotlib2DGraphics2007 %} to make our point:
 
 {% include notebook.html html="/infrastructure/assets/notebooks/smile.html" %}
