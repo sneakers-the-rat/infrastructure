@@ -319,6 +319,8 @@ footer span { color: #111; font-size: .8rem; }
 
 .acknowledgements h3 { margin-bottom: 0px; margin-top: 0px; }
 
+.jupyter-notebook { border: 1px solid black; border-radius: 10px; filter: drop-shadow(2px 2px 1px); background: white; margin: 0 0 1rem; position: relative; width: 100%; }
+
 blockquote strong { color: #4A4A4A; }
 
 pre { font-size: 16px; }
