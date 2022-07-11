@@ -40,26 +40,32 @@
 
 [^anchorapi]: Reproduced here:
     ```json
-    {"selector":
-    [{
-        "type": "RangeSelector",
-        "endOffset": 178,
-        "startOffset": 171,
-        "endContainer": "/main[1]/div[1]/p[368]",
-        "startContainer": "/main[1]/div[1]/p[368]"
-    },
     {
-        "end": 254006,
-        "type": "TextPositionSelector",
-        "start": 253999
-    },
-    {
-        "type": "TextQuoteSelector",
-        "exact": "anchors",
-        "prefix": "ts heart is a system for making ",
-        "suffix": ", references to specific places "
+      "id": "oLw4uk7_Eeyt5N-FVlE3fw",
+      "user": "acct:sneakers.the.rat@hypothes.is",
+      "uri": "https://jon-e.net/infrastructure",
+      "text": "like this one",
+      "tags": [ "overlays", "anchoring" ],
+      "selector": [
+        {
+          "type": "RangeSelector",
+          "endOffset": 178,
+          "startOffset": 171,
+          "endContainer": "/main[1]/div[1]/p[368]",
+          "startContainer": "/main[1]/div[1]/p[368]"
+        },
+        {
+          "end": 254006,
+          "type": "TextPositionSelector",
+          "start": 253999
+        },
+        {
+          "type": "TextQuoteSelector",
+          "exact": "anchors",
+          "prefix": "ts heart is a system for making ",
+          "suffix": ", references to specific places "
+        }]
     }
-    ]}
     ```
 
 
