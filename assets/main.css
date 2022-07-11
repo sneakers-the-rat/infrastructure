@@ -325,6 +325,8 @@ blockquote strong { color: #4A4A4A; }
 
 pre { font-size: 16px; }
 
+a > code { text-decoration: underline #bf616a; }
+
 hypothesis-sidebar /deep/ .Buckets__list { background-color: 0; }
 
 #draftmarker { padding: 20px; background-color: #005500; color: #ff5555; font-style: italic; font-size: 3rem; border: 20px yellow dashed; }
