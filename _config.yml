@@ -46,7 +46,8 @@ plugins:
 scholar:
   source: assets
   bibliography: infrastructure.bib
-  style: national-science-foundation-grant-proposals
+  style: ./citations.csl
+  bibliography_template: bib
 
 # Exclude from processing.
 # The following items will not be processed, by default.
