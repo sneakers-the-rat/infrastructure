@@ -313,6 +313,10 @@ footer span { color: #111; font-size: .8rem; }
 
 .bibliography { overflow-x: scroll; }
 
+.bibliography li { padding-bottom: 10px; }
+
+.bibliography li span { line-height: 1em; }
+
 .acknowledgements { display: grid; grid-row-gap: 10px; grid-template-columns: auto; border: 1px #ccc solid; padding: 2em; border-radius: 10px; filter: drop-shadow(2px 2px 1px); background: white; margin: 1em 0; }
 
 .acknowledgements .name { font-style: italic; color: #979797; }
@@ -326,6 +330,8 @@ blockquote strong { color: #4A4A4A; }
 pre { font-size: 16px; }
 
 a > code { text-decoration: underline #bf616a; }
+
+.archive-link { background-color: #f9f9f9; border-radius: 3px; color: #bf616a; font-size: 85%; padding: .25em .5em; }
 
 hypothesis-sidebar /deep/ .Buckets__list { background-color: 0; }
 
