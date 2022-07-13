@@ -327,6 +327,10 @@ footer span { color: #111; font-size: .8rem; }
 
 blockquote strong { color: #4A4A4A; }
 
+blockquote + blockquote { margin-top: 3rem; }
+
+blockquote + blockquote::before { content: ' '; display: block; border-top: 1px solid #e5e5e5; position: relative; top: -1.5rem; width: 60%; margin: auto; }
+
 pre { font-size: 16px; }
 
 a > code { text-decoration: underline #bf616a; }
