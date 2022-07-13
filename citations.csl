@@ -26,7 +26,7 @@
   <bibliography>
     <layout>
       <names variable="author" suffix=" ">
-        <name delimiter=", " name-as-sort-order="all" sort-separator=" " form="long" initialize="false" initialize-with="" font-weight="bold"/>
+        <name delimiter=". " name-as-sort-order="all" sort-separator=", " form="long" initialize="false" initialize-with="" font-weight="bold"/>
       </names>
       <date variable="issued" prefix="(" suffix=") ">
         <date-part name="year" form="long"/>

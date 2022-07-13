@@ -1,3 +1,5 @@
 ---
 ---
-{{ reference }} {% if entry.doi %} <a href="https://doi.org/{{ entry.doi }}">doi:{{ entry.doi }}</a> {% else %} {% if entry.url %}<a href="{{ entry.url }}">{{ entry.url }}</a>{% endif %}{% endif %}{% if entry.archive %} <a class="archive-link" href="{{ entry.archive }}">(archive)</a>{% endif %}
+{{ reference }} {% if entry.doi %} <a href="https://doi.org/{{ entry.doi }}">doi:{{ entry.doi }}</a> {% else %} {% if entry.url %}<a href="{{ entry.url }}">{{ entry.url }}</a>{% endif %}{% endif %}{% if entry.archive %} <a class="archive-link" href="{{ entry.archive }}">(archive)</a>{% endif %} 
+
+{% include bibtex.html bibtex=entry.bibtex %}

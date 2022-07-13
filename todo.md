@@ -12,6 +12,11 @@ Use this!!!!!! for LD overlay!!!! https://refer.cx/
 # Final checks
 - search for any (missing reference)s
 - check all links
+- accessibility ARIA tags in web version
+
+## words to use less of
+
+- notion
 
 # Writing
 

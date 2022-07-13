@@ -14,10 +14,41 @@ a > code {
 	text-decoration: underline #bf616a;
 }
 
-.archive-link {
+.archive-link, .bibtex-button {
 	background-color: #f9f9f9;
 	border-radius: 3px;
 	color: #bf616a;
 	font-size: 85%;
 	padding: .25em .5em;
+}
+
+.bibtex-button {
+	text-decoration: underline;
+	cursor: pointer;
+	padding: 0;
+}
+
+.bibtex {
+	transition: max-height 0.25s ease-in;
+	// overflow-y: scroll;
+	max-height: 1000px;
+	overflow-y: auto;
+	background-color: #f9f9f9;
+	border-radius: 10px;
+	border: 1px black solid;
+
+	&.collapsed {
+		max-height: 0px;
+		overflow-y: hidden;
+		transition: max-height 0.25s ease-out;
+		border: none;
+	}
+
+	& pre {
+		overflow-wrap: break-word;
+		overflow-x: auto;
+		white-space: pre-wrap;
+		// color: #bf616a;
+		margin: 0;
+	}
 }
