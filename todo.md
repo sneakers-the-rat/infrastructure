@@ -13,6 +13,11 @@ Use this!!!!!! for LD overlay!!!! https://refer.cx/
 - search for any (missing reference)s
 - check all links
 - accessibility ARIA tags in web version
+- same format for blockquotes
+
+# add to acknowledgements
+- andrew
+- tim dobbs
 
 ## words to use less of
 

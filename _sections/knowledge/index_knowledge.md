@@ -10,6 +10,10 @@
 
 {% include_relative _sections/knowledge/communication/index_communication.md %}
 
+### Applications
+
+{% include_relative _sections/knowledge/2_9_1_applications.md %}
+
 ### Credit Assignment
 
 {% include_relative _sections/knowledge/2_10_credit-assignment.md %}
