@@ -14,8 +14,15 @@
 
 
 
-<div class="draft-text">
-	Emphasize that we need a plan and a strategy, but we also need the will. We need to organize against tech companies and the rapidly corporatizing university. We are part of the labor struggle even if we don't acknowledge knowledge work as labor.
+<div class="draft-text" markdown="1">
+Emphasize that we need a plan and a strategy, but we also need the will. We need to organize against tech companies and the rapidly corporatizing university. We are part of the labor struggle even if we don't acknowledge knowledge work as labor.
+
+Scraps:
+
+Contextual technical knowledge is an example that warrants special consideration. Why would anyone spend the time to describe the fine technical details of how to use a type of motor, or which solenoids last the longest, or how to solder this particular type of circuit board? 
+
+First (and hopefully familiarly), by making it practically useful for the researchers involved: say in this example we're using a lab wiki to coordinate work locally, using tools that can use the wiki information to automatically configure [solenoid](https://wiki.auto-pi-lot.com/index.php/Lee_LHDA0531115H) or [sensor](https://wiki.auto-pi-lot.com/index.php/TT_Electronics_OPB903L55) polarity, or the [dependencies for a sound card](https://wiki.auto-pi-lot.com/index.php/HiFiBerry_Amp2). 
+
 </div>
 
 

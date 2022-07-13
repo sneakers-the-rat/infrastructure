@@ -6,6 +6,23 @@ blockquote strong {
 	color: #4A4A4A;
 }
 
+// Two blockquotes in a row (the second one)
+blockquote + blockquote {
+	margin-top: 3rem;
+
+	// Border between them.
+	
+	&::before {
+		content: ' ';
+		display: block;
+		border-top: 1px solid $grey-2;
+		position:relative;
+		top: -1.5rem;
+		width: 60%;
+		margin:auto;
+	}
+}
+
 pre {
 	font-size: 16px;
 }
