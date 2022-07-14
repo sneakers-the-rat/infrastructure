@@ -14,6 +14,7 @@ Use this!!!!!! for LD overlay!!!! https://refer.cx/
 - check all links
 - accessibility ARIA tags in web version
 - same format for blockquotes
+- check that we got ribes & finholt's conception of 'the long now' right
 
 # add to acknowledgements
 - andrew

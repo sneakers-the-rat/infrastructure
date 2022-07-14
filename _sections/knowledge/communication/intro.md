@@ -1,15 +1,3 @@
-<div class="draft-text" markdown="1">
-* {% cite berners-leeSociallyAwareCloud2009 %} - separate app from storage, or much like our tracker/protocol model from bittorrent, the same data can have many potential interfaces that interpret and use different parts of its graph.
-
-todo: 
-
-- mention the idea behind the threadodobot app, maybe in additional 'adversarial interoperability' section? put in context with the agora
-- bump up sections of rebuilding communication by 1 heading level.
-- Also need to talk about the client
-- The only thing special about a feed is that it is linked to a preceding post.
-
-</div>
-
 It's time to start thinking about interfaces. We have sketched our system in turtle-like pseudocode, but directly interacting with our linking syntax would be labor intensive and technically challenging. Instead we can start thinking about tools for interacting with it in an abstract way. Beneath every good interface we're familiar with, a data model lies in wait. A .docx file is just a zipped archive full of xml, so a blank word document that contains the single word "melon" is actually represented (after some preamble) like:
 
 ```xml
