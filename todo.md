@@ -15,6 +15,7 @@ Use this!!!!!! for LD overlay!!!! https://refer.cx/
 - accessibility ARIA tags in web version
 - same format for blockquotes
 - check that we got ribes & finholt's conception of 'the long now' right
+- fix mentions of SPARQL because basically everyone seems to hate it: #indexing-and-querying-metadata-across-federated-peers-could-make
 
 # add to acknowledgements
 - andrew

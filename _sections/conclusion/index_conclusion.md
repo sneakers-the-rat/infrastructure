@@ -5,6 +5,11 @@
 
 {% include_relative _sections/conclusion/3_1_strategy.md %}
 
+
+### To Whom It May Concern...
+
+{% include_relative _sections/conclusion/3_1_2_towhom.md %}
+
 ## Limitations 
 
 {% include_relative _sections/conclusion/3_2_limitations.md %}

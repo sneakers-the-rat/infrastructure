@@ -42,6 +42,7 @@ plugins:
   - jekyll/scholar
   - jekyll-seo-tag
   # - jekyll-jupyter-notebook
+  - liquid_reading_time
 
 scholar:
   source: assets

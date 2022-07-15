@@ -20,6 +20,7 @@ group :jekyll_plugins do
   gem "jekyll-scholar", :git => "https://github.com/sneakers-the-rat/jekyll-scholar", :branch => "cache"
   gem "jekyll-seo-tag"
   # gem "jekyll-jupyter-notebook"
+  gem "liquid_reading_time" 
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

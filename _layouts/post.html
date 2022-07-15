@@ -35,10 +35,21 @@ layout: default
         </div>
         {% endif %}
 
+        {% capture time %}{{ content | reading_time }}{% endcapture %}
+        {% capture words %}{{ content | count_words }}{% endcapture %}
+
         <div class="post-date">
             <span>Rendered: </span>
             <time datetime="{{ site.time | date: "%Y-%M-%d"}}"> {{ site.time | date: "%Y-%m-%d" }}</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/{{ site.data['hash'] }}"><code>{{ site.data['hash'] }}</code></a> {% if page.pdf_link %} - <a href="{{ page.pdf_link }}"><code>PDF VERSION</code></a> {% endif %}
+
         </div>
+
+        <div class="wordcount">
+            <p>Estimated Reading Time: {{ time }} minutes ({{ words }} words)</p>
+        </div>
+
+        
+
 
         <div class="acknowledgements">
             <h3>With gratitude to...</h3>
