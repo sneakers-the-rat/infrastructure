@@ -1,16 +1,5 @@
 #### Trackers, Clients, & Wikis
 
-<div class="draft-text" markdown="1">
-One of the basic weaknesses is the document-only model, but recursive cells fix that. 
-
-Having a wiki page like [[topic]] in the context of a federated wiki looks different, like the agora, where we can combine multiple people's representation of the topic and pull them. Since we can split documents into subcells, we can then also transclude them in a wiki bidirectionally: in the document metadata, but also from the wiki side.
-
-This is how the fedwiki works! http://marc.tries.fed.wiki/view/c2-for-me/ward.eu.wiki.org/c2-for-me/wellspring.fed.wiki/welcome-visitors
-
-!! in a linear system this gets us transclusion. one of the major flaws of the mediawiki ecosystem is the adherence to the page-only document model. If instead a page was an arbitrary structuring unit of any number of other containers, then it would be possible to do things like subdocument transclusion, building complex and recursive concepts that consist of many layers of meaning (eg. all the times you're forced to use subobjects which are awkward and unnecessary).
-
-</div>
-
 The final set of social interfaces are those for collective governance of the system. So far we have generalized documents "vertically" into recursive typed cells, "horizontally" into linked cells for communication, and then blurred their independence by and extended them into incompatible media with overlays. The remaining piece we need are multi-authored documents: **wikis**. We'll pick up the threads left hanging from our description of [bittorrent trackers](#archives-need-communities) and knit them in with those from [the wiki way](#the-wiki-way) to describe how systems for surfacing procedural and technical knowledge work can also serve as a basis of searching, indexing, and governing the rest of the system. Where the rest of our interfaces were means of creating particular kinds of structured links, we'll also describe wikis as a means of interacting directly with links to negotiate the relationships between the multiplicity of our folksonomic schema. In the process we'll give some structure to the **clients** and **trackers** that serve and organize them.
 
 Our notion of recursive cell-like documents is already a good basis for wiki pages. **Multi-author** documents should already be possible with a permission system that we have invoked previously to limit read access, and so the most radically open, publicly editable wikis would just have edit permissions open to anyone. The **version history** that makes the notion of [SoftSecurity](http://meatballwiki.org/wiki/SoftSecurity) possible should also be a general property of links in our system. The other concept we'll borrow from traditional wikis is the model where **pages represent topics.** Practically, let's suppose this means that within documents beneath some namespace like `@jonny:wiki`, we can make wikilinks to [[New Pages]] that imply links to `@jonny:wiki:New_Pages` --- though for the sake of simplicity in this section we will assume that our wiki starts at the root of the `@jonny` namespace.
@@ -22,8 +11,6 @@ Wikis that represent multiple instances of a given page are already a subject of
 [^e2history]: everything2 (or e2) users tend to be, uh, [floridly sarcastic](https://everything2.com/title/Everything%253A+In+the+Beginning), and so its history is not as clearly laid out as the other old wikilike sites.
 
 Federated wikis already have some broader purchase as "personal knowledge graphs," {% cite balogPersonalKnowledgeGraphs2019 %} where people use tools like [Notion](https://www.notion.so/) or [Obsidian](https://obsidian.md/) to keep a set of linked, semistructured personal notes. Rather than thinking of a wiki as wikipedia, with pages that aspire to be uniformly named and written, personal knowledge graphs take whatever form is useful to the person maintaining them. This maps neatly onto our namespaces and recursive documents as a means of *organizing our system of links.* 
-
-<div class="draft-text">Put some demo cells here!</div>
 
 Say we have a very simple project structure that consists of a dataset with two tables and a document with the date of the experiment and some short description of the data. In our pseudocode:
 
