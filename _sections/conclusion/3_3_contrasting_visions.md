@@ -1,4 +1,4 @@
-Through this text I have tried to sketch in parallel a potentially liberatory infrastructural future with the many offramps and alternatives that could lead us astray, but haven't given a picture of what *actually doing research* might be like were this project to come anywhere close to succeeding. Through the hints at what could be our current and future information capitalism dystopia the alternative is too a little foggy: what happens if we do nothing? Let me make the point with a bit of speculative fiction. 
+Through this text I have tried to sketch in parallel a potentially liberatory infrastructural future with the many offramps and alternatives that could lead us astray, but to make two of those futures clearer, it's worth imagining them outright.
 
 ### What if we do nothing?
 
