@@ -1,18 +1,19 @@
-\{\% include status.html \%\}
+%!TEX root = ../../_preamble.tex
 
-\{\% include toc\_start.html \%\} 1. table of contents \{:toc\} \{\%
-include toc\_end.html \%\}
 
-\begin{quote}
+\hypertarget{introduction}{%
+\chapter{Decentralized Infrastructure for (Neuro)science}\label{introduction}}
+
+\begin{leftbar}
 If we can make something decentralised, out of control, and of great
 simplicity, we must be prepared to be astonished at whatever might grow
 out of that new medium.
 
 \href{https://www.w3.org/1998/02/Potential.html}{Tim Berners-Lee (1998):
 Realising the Full Potential of the Web}
-\end{quote}
+\end{leftbar}
 
-\begin{quote}
+\begin{leftbar}
 A good analogy for the development of the Internet is that of constantly
 renewing the individual streets and buildings of a city, rather than
 razing the city and rebuilding it. The architectural principles
@@ -22,9 +23,9 @@ varied and evolving space of technology.
 
 \href{https://datatracker.ietf.org/doc/html/rfc1958}{RFC 1958:
 Architectural Principles of the Internet}
-\end{quote}
+\end{leftbar}
 
-\begin{quote}
+\begin{leftbar}
 In building cyberinfrastructure, the key question is not whether a
 problem is a ``social'' problem or a ``technical'' one. That is putting
 it the wrong way around. The question is whether we choose, for any
@@ -33,9 +34,9 @@ given problem, a primarily social or a technical solution
 \href{https://doi.org/10.1007/978-1-4020-9789-8_5}{Bowker, Baker,
 Millerand, and Ribes (2010): Toward Information Infrastructure Studies}
 \citep{bowkerInformationInfrastructureStudies2010} 
-\end{quote}
+\end{leftbar}
 
-\begin{quote}
+\begin{leftbar}
 Billionaires have squatted on the Magna Cum Lauded / {[}\ldots{]}
 Methodically they plotted against those who fought it / {[}\ldots{]} /
 Now the scientific process got hijacked for profits / It flows in the
@@ -43,19 +44,16 @@ direction that a silver spoon prodded / We'll get science for the people
 when we run the economics.
 
 The Coup (2012) \href{https://youtu.be/lW59xoilGnw}{The Gods of Science}
-\end{quote}
+\end{leftbar}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
 
 We work in an archipelago of technical islands: researchers, labs,
 consortia, and a few well-funded institutions reinventing the wheel in
 parallel. Our knowledge dissemination systems are as nimble as static
-pdfs\sidenote{(save some
-  \protect\hyperlink{forums-are-just-one-point-in-a-continuous-feature-space-of-commu}{complicated
-  half-in flirtation} with social media).} served by an extractive
+pdfs\sidenote{(save some complicated
+  half-in flirtation with social media).} served by an extractive
 publishing turned surveillance industry we can't seem to quit.
 Experimental instrumentation except for that at the polar extremes of
 technological complexity or simplicity is designed and built custom,
@@ -170,7 +168,7 @@ computation, and communication.} The systems we will describe are in
 conversation with and a continuation of a long history of reimagining
 the relationship between these domains for a healthier web (see eg. \citep{berners-leeSociallyAwareCloud2009, berners-leeWebServicesOverview2009} ). We depart from it to describe
 a system of fluid, peer-to-peer social affiliation and
-\protect\hyperlink{federated-systems-of-language}{folksonomic} linked
+\protect\hyperlink{folk-federation}{folksonomic} linked
 data with lessons primarily from \protect\hyperlink{the-wiki-way}{early
 wikis and Wikipedia}, the fissures of the
 \protect\hyperlink{neatness-vs-scruffiness}{semantic web and linked
@@ -473,14 +471,14 @@ Howison \& Herbsleb described this dynamic in the context of
 BLAST\sidenote{``Basic Local Alignment Search Tool'' - a tool to compare
   genetic or protein sequences to find potential matches or analogues.}
 
-\begin{quote}
+\begin{leftbar}
 In essence we found that BLAST innovations from those motivated to
 improve BLAST by academic reputation are motivated to develop and to
 reveal, but not to integrate their contributions. Either integration is
 actively avoided to maintain a separate academic reputation or it is
 highly conditioned on whether or not publications on which they are
 authors will receive visibility and citation. \citep{howisonIncentivesIntegrationScientific2013} 
-\end{quote}
+\end{leftbar}
 
 For an example in Neuroscience, one can browse the papers that cite the
 DeepLabCut paper \citep{mathisDeepLabCutMarkerlessPose2018}  to
@@ -510,7 +508,7 @@ typically comes in the form of side effects from, or administrative
 supplements to research grants. The NIH describes as much in their
 Strategic Plan for Data Science \citep{NIHStrategicPlan2018} :
 
-\begin{quote}
+\begin{leftbar}
 from 2007 to 2016, NIH ICs used dozens of different funding strategies
 to support data resources, most of them linked to research-grant
 mechanisms that prioritized innovation and hypothesis testing over user
@@ -522,7 +520,7 @@ is critical that the data-resource ecosystem become seamlessly
 integrated such that different data types and information about
 different organisms or diseases can be used easily together rather than
 existing in separate data ``silos'' with only local utility.
-\end{quote}
+\end{leftbar}
 
 The National Library of Medicine within the NIH currently lists 122
 separate databases in its
@@ -580,7 +578,7 @@ with an eye to the indefinite future, but the raw idealism and neglect
 of the pragmatic reality of the need for software to \emph{do something}
 drove many to abandon the effort (bold is mine, italics in original):
 
-\begin{quote}
+\begin{leftbar}
 \textbf{But there was no \emph{use} of it.} I wasn't using any of the
 technologies for anything, except for things related to the technology
 itself. The Semantic Web is utterly inbred in that respect. The problem
@@ -600,7 +598,7 @@ except in as much as they are entirely broken: because \textbf{it's the
 turned out, make a metalanguage like RDF and then go looking for use
 cases. We thought you could, but you can't. It's taken eight years to
 realise. \citep{palmerDitchingSemanticWeb2008} 
-\end{quote}
+\end{leftbar}
 
 Developing digital infrastructure must be both bound to fulfilling
 immediate, incremental needs as well as guided by a long-range vision.
@@ -616,7 +614,7 @@ In short, to develop digital infrastructure we need to be
 we need to value planning as \emph{work.} On the valuation of this kind
 of work, Ribes and Finholt are instructive:
 
-\begin{quote}
+\begin{leftbar}
 ``On the one hand, I know we have to keep it all running, but on the
 other, LTER is about long-term data archiving. If we want to do that, we
 have to have the time to test and enact new approaches. But if we're
@@ -636,7 +634,7 @@ developers for successfully implementing a novel technology, but the
 work of maintenance (while crucial) is often thankless, of low status,
 and difficult to track. \emph{How can projects support the distribution
 of work across research, development, and maintenance?} \citep{ribesLongNowTechnology2009} 
-\end{quote}
+\end{leftbar}
 
 \hypertarget{neatness-vs-scruffiness}{%
 \subsection{``Neatness'' vs
@@ -668,18 +666,22 @@ Clearly, the difference in thought styles has an unsubtle relationship
 with beliefs about who should be able to exercise power and what ends a
 system should serve \citep{larsenPoliticalNatureTCP2012} .
 
-\includegraphics[width=\linewidth]{./infrastructure/assets/images/clark-slide.png} \emph{A
+\begin{figure}
+\includegraphics[width=\linewidth]{./infrastructure/assets/images/clark-slide.png}
+\label{fig:davidclark}
+\caption{A
 slide from David Clark's 1992 ``Views of the Future''\citep{clarkCloudyCrystalBall1992}  that contrasts differing visions for the
 development process of the future of the internet. The struggle between
 engineered order and wild untamedness is summarized forcefully as ``We
 reject: kings, presidents and voting. We believe in: rough consensus and
 running code''}
+\end{figure}
 
 Practically, the differences between these thought communities impact
 the tools they build. Aaron Swartz put the approach of the ``neat''
 semantic web architects the way he did:
 
-\begin{quote}
+\begin{leftbar}
 Instead of the ``let's just build something that works'' attitude that
 made the Web (and the Internet) such a roaring success, they brought the
 formalizing mindset of mathematicians and the institutional structures
@@ -697,7 +699,7 @@ convinced people interested in these ideas that the first thing we need
 to do is write standards. (To engineers, this is absurd from the
 start---standards are things you write after you've got something
 working, not before!) \citep{swartzAaronSwartzProgrammable2013} 
-\end{quote}
+\end{leftbar}
 
 The outcomes of this cultural rift are subtle, but the broad strokes are
 clear: the ``scruffies'' largely diverged into the linked data
@@ -720,12 +722,12 @@ semantic web technologies (who requested not be named), captured the
 present situation in their description of a still-active developer
 mailing list:
 
-\begin{quote}
+\begin{leftbar}
 I think that some people are completely detached from practical
 applications of what they propose. {[}\ldots{]} I could not follow half
 of the messages. these guys seem completely removed from our plane of
 existence and I have no clue what they are trying to solve.
-\end{quote}
+\end{leftbar}
 
 This division in thought styles generalizes across domains of
 infrastructure, though outside of the linked data and similar worlds the
@@ -899,7 +901,7 @@ Distressingly, rather than supporting infrastructural development that
 would avoid obligate payments to platform-holders, funding agencies seem
 all too happy to lean into them (emphases mine):
 
-\begin{quote}
+\begin{leftbar}
 NIH will \textbf{leverage what is available in the private sector,}
 either through strategic partnerships or procurement, to create a
 workable \textbf{Platform as a Service (PaaS)} environment. {[}\ldots{]}
@@ -911,7 +913,7 @@ the deposit, storage, and access to large, high-value NIH datasets.
 NIH's cloud-marketplace initiative will be the first step in a phased
 operational framework that \textbf{establishes a SaaS paradigm for NIH
 and its stakeholders.} (-NIH Strategic Plan for Data Science, 2018 \citep{NIHStrategicPlan2018} )
-\end{quote}
+\end{leftbar}
 
 The articulated plan being to pay platform holders to house data while
 also paying for the labor to maintain those databases veers into parody,
@@ -1025,12 +1027,11 @@ A
 within a
 \href{https://projectreporter.nih.gov/project_info_details.cfm?aid=9444124}{PNI
 Systems Core} grant echoes a lot of the thoughts here, particularly
-regarding effort duplication\sidenote{Thanks a lot to the one-and-only
-  stunning and brilliant Dr.~Eartha Mae Guthman for suggesting looking
+regarding effort duplication\sidenote{Thanks a lot to the one-and-only brilliant Dr.~Eartha Mae Guthman for suggesting looking
   at the BRAIN initiative grants as a way of getting insight on core
   facilities.}:
 
-\begin{quote}
+\begin{leftbar}
 Creating an Optical Instrumentation Core will address the problem that
 much of the technical work required to innovate and maintain these
 instruments has shifted to students and postdocs, because it has
@@ -1046,7 +1047,7 @@ Centralizing the design, construction, maintenance, and support of these
 instruments will increase the efficiency and rigor of our microscopy
 experiments, while freeing lab personnel to focus on designing
 experiments and collecting data.
-\end{quote}
+\end{leftbar}
 
 While core facilities are an excellent way of expanding access, reducing
 redundancy, and standardizing tools \emph{within} an instutition, as
@@ -1057,16 +1058,14 @@ instrumentation of the core and infrastructure for maintaining it, but
 this development is only occasionally made usable by the broader public.
 The Princeton data science core is an excellent example of a core
 facility that does makes its software infrastructure development
-\href{https://github.com/BrainCOGS}{public}\sidenote{\begin{quote}
-  Project Summary: Core 2, Data Science {[}\ldots{]} In addition, the
+\href{https://github.com/BrainCOGS}{public}\sidenote{Project Summary: Core 2, Data Science {[}\ldots{]} In addition, the
   Core will build a data science platform that stores behavior, neural
   activity, and neural connectivity in a relational database that is
   queried by the DataJoint language. {[}\ldots{]} This data-science
   platform will facilitate collaborative analysis of datasets by
   multiple researchers within the project, and make the analyses
   reproducible and extensible by other researchers. {[}\ldots{]}
-  https://projectreporter.nih.gov/project\_info\_description.cfm?aid=9444126\&icde=0
-  \end{quote}}, which they should be applauded for, but also
+  \href{https://projectreporter.nih.gov/project\_info\_description.cfm?aid=9444126\&icde=0}{NIH RePORTER}}, which they should be applauded for, but also
 illustrative of the problems with a core-focused infrastructure project.
 For an external user, the documentation and tutorials are incomplete --
 it's not clear to me how one would set this up for my institute, lab, or
@@ -1123,7 +1122,7 @@ present in the broader neuroscientific community.
 Christof Koch, its director, describes the challenge of centrally
 organizing a large number of researchers:
 
-\begin{quote}
+\begin{leftbar}
 Our biggest institutional challenge is organizational: assembling,
 managing, enabling and motivating large teams of diverse scientists,
 engineers and technicians to operate in a highly synergistic manner in
@@ -1135,7 +1134,7 @@ to become weaker with the appearance of semi-autonomous cliques and
 sub-groups. This may relate to the postulated limit on the number of
 meaningful social interactions humans can sustain given the size of
 their brain \citep{kochBigScienceTeam2016} 
-\end{quote}
+\end{leftbar}
 
 These institutes too are certainly helpful in building core technologies
 for the field, but they aren't necessarily organized for developing
@@ -1166,7 +1165,7 @@ Critical to the IBL's success was its adoption of a flat,
 non-hierarchical organizational structure, as described by Lauren E.
 Wool:
 
-\begin{quote}
+\begin{leftbar}
 IBL's virtual environment has grown to accommodate a diversity of
 scientific activity, and is supported by a flexible, `flattened'
 hierarchy that emphasizes horizontal relationships over vertical
@@ -1177,7 +1176,7 @@ associate chair (typically a PI and researcher, respectively). All WG
 chairs sit on the Executive Board to propagate decisions across WGs,
 facilitate operational and financial support, and prepare proposals for
 voting by the General Assembly, which represents all PIs. \citep{woolKnowledgeNetworksHow2020} 
-\end{quote}
+\end{leftbar}
 
 They should also be credited with their adoption of a form of consensus
 decision-making, \href{https://sociocracy.info}{sociocracy}, rather than
@@ -1396,14 +1395,13 @@ Seemingly prosocial protocols can be used by industries to pre-empt an
 alternative that would undermine their profit model --- a notable
 example for academics being the DOI system, created in order for
 publishers to preserve control over their intellectual property \citep{rosenblattDigitalObjectIdentifier1997} . The STM
-association\sidenote{The global trade association of publishers that
-  serves as its lobbying and propaganda arm.} hastily\sidenote{The
+association\sidenote[][-6cm]{The global trade association of publishers that
+  serves as its lobbying and propaganda arm.} hastily\sidenote[][-5cm]{The
   description provided by the ``official'' CrossRef 10 year
   retrospective paints a picture of panicked executives making an
   announcement for something they weren't quite sure what it would be,
   but it would be \emph{something} to compete with pubmed:
 
-  \begin{quote}
   We decided to issue an announcement of a broad STM reference linking
   initiative. It was, of course, a strategic move only, since we had
   neither plan nor prototype.''
@@ -1430,8 +1428,7 @@ association\sidenote{The global trade association of publishers that
   Physics) had begun to link to each other's publications, and the
   impossibility of replicating such one-off arrangements across the
   industry was obvious. As Tim Ingoldsby later put it, ``All those
-  linking agreements were going to kill us.'' \citep{crossrefFormationCrossRefShort2009} 
-  \end{quote}} threw its weight behind the DOI-X initiative at its 1999
+  linking agreements were going to kill us.'' \citep{crossrefFormationCrossRefShort2009}} threw its weight behind the DOI-X initiative at its 1999
 meeting. The impending creation of PubMed Central by the National
 Library of Medicine (and see then-NIH Director Harold Varmus' and others
 self-described ``radical'' departure from publishers with what became
@@ -2099,13 +2096,16 @@ to find and digitize extremely rare recordings, many of which were
 unavailable anywhere else and are now unavailable anywhere, period. One
 former user describes one example:
 
-\begin{quote}
+\begin{leftbar}
 ``I did sound design for a show about Ceaușescu's Romania, and was able
 to pull together all of this 70s dissident prog-rock and stuff that has
 never been released on CD, let alone outside of Romania'' \citep{sonnadEulogyWhatCd2016} 
-\end{quote}
+\end{leftbar}
 
-\includegraphics[width=\linewidth]{./infrastructure/assets/images/kanye-what.png} \emph{The
+\begin{figure*}
+\includegraphics[width=\linewidth]{./infrastructure/assets/images/kanye-what.png}
+\label{fig:whatcd} 
+\caption{The
 what.cd artist page for Kanye West (taken from
 \href{https://qz.com/840661/what-cd-is-gone-a-eulogy-for-the-greatest-music-collection-in-the-world/}{here}
 in the style of pirates, without permission). For the album ``Yeezus,''
@@ -2114,6 +2114,7 @@ CD and Web, and in multiple different qualities and formats (.flac,
 .mp3). Along the top is a list of the macro-level groups, where what is
 in view is the ``albums'' section, there are also sections for bootleg
 recordings, remixes, live albums, etc.}
+\end{figure*}
 
 What.cd was a ``private'' bittorrent tracker, where unlike public
 trackers that anyone can access, membership was strictly limited to
@@ -2247,7 +2248,7 @@ can take inspiration from \emph{federated systems.}
 \subsection{Linked Data or Surveillance
 Capitalism?}\label{linked-data-or-surveillance-capitalism}}
 
-\begin{quote}
+\begin{leftbar}
 Having become a dense and consistent historical reality, language forms
 the locus of tradition, of the unspoken habits of thought, of what lies
 hidden in a people's mind; it accumulates an ineluctable memory which
@@ -2258,7 +2259,7 @@ is their servant and do not realize that they are submitting themselves
 to its demands.
 
 Michel Foucault --- \emph{The Order of Things} \citep{foucaultOrderThings2001} 
-\end{quote}
+\end{leftbar}
 
 There is no shortage of databases for scientific data, but their
 traditional structure chokes on the complexity of representing
@@ -2295,12 +2296,15 @@ While some of these databases allow open data submission, they often
 require explicit moderation and approval to maintain the guaranteed
 consistency of the database, which can hamper mass use.
 
+\begin{figure*}
 \includegraphics[width=\linewidth]{./infrastructure/assets/images/nih_gene_cdh1.png}
-\emph{NIH's Gene tool included many specific tools for visualizing,
+\label{fig:genetool}
+\caption{NIH's Gene tool includes many specific tools for visualizing,
 cross-referencing, and aggregating genetic data. Shown is the ``genomic
 regions, transcripts, and product'' plot for Mouse Cdh1, which gives
 useful, common summary descriptions of the gene, but is not useful for,
-say, visualizing reading proficiency data.}
+say, visualizing reading proficiency data from educational research.}
+\end{figure*}
 
 General-purpose databases like \href{https://figshare.com/}{figshare}
 and \href{https://zenodo.org/}{zenodo}\sidenote{No shade to Figshare,
@@ -2351,7 +2355,7 @@ historians?
 Matthew J Bietz and Charlotte P Lee articulate this tension in their
 ethnography of metagenomics databases:
 
-\begin{quote}
+\begin{leftbar}
 ``Participants describe the individual sequence database systems as if
 they were shadows, poor representations of a widely-agreed-upon ideal.
 We find, however, that by looking across the landscape of databases, a
@@ -2372,7 +2376,7 @@ together, in the end they were unable to collaborate. \textbf{The system
 that was supposed to tie these groups together could not be shielded
 from the controversies that formed the boundaries between the
 communities of practice.}'' \citep{bietzCollaborationMetagenomicsSequence2009} 
-\end{quote}
+\end{leftbar}
 
 The pursuit of unified representation is an intimate part of the history
 of linked data, which relies on ``ontologies'' or controlled
@@ -2387,7 +2391,7 @@ in the world, in particular the unfamiliar world in which a
 ontology builders, the ideological nature of demarcating what is allowed
 to exist is as clear as a klaxon (emphasis in original):
 
-\begin{quote}
+\begin{leftbar}
 An exception is the Open Biomedical Ontologies (OBO) Foundry initiative,
 which accepts under its label only those ontologies that adhere to the
 principles of ontological realism. {[}\ldots{]} Ontologies, from this
@@ -2404,7 +2408,7 @@ that representations faithful to BFO can acknowledge only those entities
 which exist in (for example, biological) reality; thus they must reject
 all those types of putative negative entities - lacks, absences,
 non-existents, possibilia, and the like \citep{ceustersFoundationsRealistOntology2010} 
-\end{quote}
+\end{leftbar}
 
 In practice, because of the difficulty of changing the representation
 and encompassing database systems on a dime, using these ontologies to
@@ -2422,12 +2426,12 @@ Translator project was initially described in the 2016 Strategic Plan
 for Data Science as a means of translating between biomedical data
 formats:
 
-\begin{quote}
+\begin{leftbar}
 Through its Biomedical Data Translator program, the National Center for
 Advancing Translational Sciences (NCATS) is supporting research to
 develop ways to connect conventionally separated data types to one
 another to make them more useful for researchers and the public. \citep{NIHStrategicPlan2018} 
-\end{quote}
+\end{leftbar}
 
 The original
 \href{https://web.archive.org/web/20210709100523/https://ncats.nih.gov/news/releases/2016/feasibility-assessment-translator}{funding
@@ -2439,35 +2443,7 @@ veered sharply away from anything a basic researcher might recognize as
 a means of translating between data types. In their piece ``Toward a
 Universal Biomedical Translator,'' then in a feasibility assessment
 phase, the members of the Translator Consortium assert that universal
-translation between biomedical data is impossible\sidenote{\begin{quote}
-  First, we assert that a single monolithic data set that directly
-  connects the complete set of clinical characteristics to the complete
-  set of biomolecular features, including ``-omics'' data, will never
-  exist because the number of characteristics and features is constantly
-  shifting and exponentially growing. Second, even if such a single
-  monolithic data set existed, all-vs.-all associations will inevitably
-  succumb to problems with statistical power (i.e., the curse of
-  dimensionality).9 Such problems will get worse, not better, as more
-  and more clinical and biomolecular data are collected and become
-  available. We also assert that there is no single language, software
-  or natural, with which to express clinical and biomolecular
-  observations---these observations are necessarily and appropriately
-  linked to the measurement technologies that produce them, as well as
-  the nuances of language. The lack of a universal language for
-  expressing clinical and biomolecular observations presents a risk of
-  isolation or marginalization of data that are relevant for answering a
-  particular inquiry, but are never accessed because of a failure in
-  translation.
-
-  Based on these observations, our final assertion is that automating
-  the ability to reason across integrated data sources and providing
-  users who pose inquiries with a dossier of translated answers coupled
-  with full provenance and confidence in the results is critical if we
-  wish to accelerate clinical and translational insights, drive new
-  discoveries, facilitate serendipity, improve clinical-trial design,
-  and ultimately improve clinical care. This final assertion represents
-  the driving motivation for the Translator system. \citep{consortiumUniversalBiomedicalData2019} 
-  \end{quote}}\citep{consortiumUniversalBiomedicalData2019} . The
+translation between biomedical data is impossible \citep{consortiumUniversalBiomedicalData2019} . The
 impossibility they saw was not that of conflicting political demands on
 the structure of organization (as per \citep{bowkerSortingThingsOut1999} ), but of the sheer numeracy of the data
 and vocabularies needed to describe them. The risk posed by a lack of a
@@ -2619,7 +2595,7 @@ ranks the standard therapeutics \citep{deutschOverviewFeminizingHormone2016, deu
 6th and 10th of 11, respectively --- behind a recommendation for Lithium
 (4th) and Pimozide (5th) due to an automated text scrape of
 \href{https://pubmed.ncbi.nlm.nih.gov/2114800/}{two} conversion therapy
-\href{https://pubmed.ncbi.nlm.nih.gov/8839957/}{papers}\sidenote{as well
+\href{https://pubmed.ncbi.nlm.nih.gov/8839957/}{papers}. \sidenote{as well
   as a recommendation for ``date allergenic extract'' from a
   misinterpretation of ``to date'' in the abstract of
   \href{https://pubmed.ncbi.nlm.nih.gov/24330520/}{a paper} that reads
@@ -2627,8 +2603,8 @@ ranks the standard therapeutics \citep{deutschOverviewFeminizingHormone2016, deu
   could by itself affect well-being without the use of genital surgery;
   however, \textbf{to date,} there is a paucity of studies investigating
   the effects of CHT alone''}. Queries to ARAX for
-\href{https://arax.ncats.io/?r=52703}{treatments for gender identity
-disorder} helpfullly yielded ``zinc'' and ``water,'' offering a paper
+treatments for \href{https://arax.ncats.io/?r=52703}{gender identity
+disorder} helpfully yielded ``zinc'' and ``water,'' offering a paper
 from the translator group that describes automated drug recommendation
 as the only provenance \citep{womackLeveragingDistributedBiomedical2019} . A query for treatments
 for \texttt{DOID:1233}
@@ -2708,7 +2684,7 @@ For-profit platform providers as a rule depend on developing elaborate
 personal profiles for targeted advertising algorithmically inferred from
 available data\sidenote{A patent from Google is telling about how they
   view privacy concerns: whatever we can't get explicitly, we'll infer
-  to sell better ads! \textgreater{} One possible method to improve ad
+  to sell better ads! \\ "One possible method to improve ad
   targeting is for ad targeting systems to obtain and use user profiles.
   For example, user profiles may be determined using information
   voluntarily given by users (e.g., when they subscribe to a service).
@@ -2723,7 +2699,7 @@ available data\sidenote{A patent from Google is telling about how they
   Furthermore, advertisers may need to manually define user profile
   targeting information. In addition, even if user profile information
   is available, advertisers may not be able to use this information to
-  target ads effectively. \citep{bharatGeneratingUserInformation2005} }, that naturally includes diagnosed or inferred disease --- a
+  target ads effectively." \citep{bharatGeneratingUserInformation2005} }, that naturally includes diagnosed or inferred disease --- a
 practice they explicitly describe in the patents for the targeting
 technology\citep{bharatGeneratingUserInformation2005} , have gone
 to court to defend \citep{SmithFacebookInc2018, krashinskyGoogleBrokeCanada2014} , and formed secretive joint
@@ -2901,13 +2877,13 @@ perfection.
 \hypertarget{folk-federation}{%
 \subsection{Folk Federation}\label{folk-federation}}
 
-\begin{quote}
+\begin{leftbar}
 Human language thrives when using the same term to mean somewhat
 different things, but automation does not. \emph{Tim Berners-Lee (1999)
 The Semantic Web} \citep{berners-leeSemanticWeb2001} 
-\end{quote}
+\end{leftbar}
 
-\begin{quote}
+\begin{leftbar}
 Wittgenstein's contribution to communism was his robust proof of the
 proposition that there is no private language, but in our time,
 privatized languages are everywhere. And not just languages: Images,
@@ -2915,7 +2891,7 @@ codes, algorithms, even genes can become private property, and in turn
 private property shapes what we imagine the limits and possibilities of
 this information to be. \emph{McKenzie Wark (2021) Capital Is Dead: Is
 This Something Worse?} \citep{warkCapitalDeadThis2021} 
-\end{quote}
+\end{leftbar}
 
 To structure our p2p data sharing system, we should use \emph{Linked
 Data.} Linked data is at once exceptionally simple and deceptively
@@ -2979,13 +2955,13 @@ the link, object, and predicate can all be stored in separate places by
 different people \citep{berners-leeWhatSemanticWeb1998} . For
 example:
 
-\begin{quote}
+\begin{leftbar}
 One person may define a \texttt{vehicle} as having a
 \texttt{number\ of\ wheels} and a \texttt{weight} and a \texttt{length},
 but not foresee a \texttt{color}. This will not stop another person
 making the assertion that a given car is red, using the color vocabulary
 from elsewhere. \citep{berners-leeWhatSemanticWeb1998} 
-\end{quote}
+\end{leftbar}
 
 Linked data has an ambivalent history of thought regarding the location
 and distribution of ontology building. Its initial formulation came
@@ -3066,7 +3042,7 @@ Amit Sheth and James Larson, in their reference description of federated
 database systems, describe \textbf{design autonomy} as one critical
 dimension that characterizes them:
 
-\begin{quote}
+\begin{leftbar}
 Design autonomy refers to the ability of a component DBS to choose its
 own design with respect to any matter, including
 
@@ -3133,7 +3109,7 @@ own design with respect to any matter, including
     concurrency control algorithms).
   \end{enumerate}
 \end{itemize}
-\end{quote}
+\end{leftbar}
 
 Susanne Busse and colleagues add an additional dimension of
 \textbf{evolvability,} or the ability of a particular system to adapt to
@@ -3689,7 +3665,7 @@ before, typically in the context of the ``open science'' movement. One
 of the founders of the Center for Open Science, Jeffrey Spies, described
 a similar ethic of toolbuilding as I have in a 2017 presentation:
 
-\begin{quote}
+\begin{leftbar}
 Open Workflow: 1. Meet users where they are 2. Respect current
 incentives 3. Respect current workflow
 
@@ -3706,7 +3682,7 @@ incentives 3. Respect current workflow
 \item
   Best, we could\ldots{} make it automatic \citep{spiesWorkflowCentricApproachIncreasing2017} 
 \end{itemize}
-\end{quote}
+\end{leftbar}
 
 Similar to the impossibility of a single unified data format, it is
 unlikely that we will develop one tool to rule them all. We will take
@@ -4201,7 +4177,7 @@ usages of scientific software. There is no reason to believe that this
 system is intrinsically more dangerous than running uninspected packages
 from PyPI, which, for example, have been known to
 \href{https://blog.sonatype.com/python-packages-upload-your-aws-keys-env-vars-secrets-to-web}{steal
-AWS keys and environment variables} \citep{sharmaPythonPackagesUpload2022} . Having analysis code and its
+AWS keys and environment variables} \citep{sharmaPythonPackagesUpload2022} \sidenote{They took advantage of being able to run arbitrary code in legacy \texttt{setup.py} scripts to run a separate shell command, an illustration of the urgency with which we need to deprecate that horrible system.}. Having analysis code and its
 dependency graph specified publicly presents opportunities for being
 able to check for identified vulnerabilities at the time of execution
 --- a role currently filled by platform tools like GitHub's
@@ -4403,11 +4379,14 @@ following example of a statechart for controlling a light, described in
 the \href{https://statecharts.dev/on-off-statechart.html}{introductory
 documentation} and summarized in the figure caption:
 
+\begin{figure}
 \includegraphics[width=\linewidth]{./infrastructure/assets/images/on-off-delayed-exit-1.png}
-\emph{``When you flick a lightswitch, wait 0.5 seconds before turning
+\label{fig:statechart}
+\caption{``When you flick a lightswitch, wait 0.5 seconds before turning
 the light on, then once it's on wait 0.5 seconds before being able to
 turn it back off again. When you flick it off, wait 2 seconds before you
 can turn it on again.}
+\end{figure}
 
 They have an extensive set of documents that defend the consistency and
 readability of statecharts on their
@@ -4967,7 +4946,7 @@ language processing {[}NLP{]} based functionality.''
 What ML and NLP systems are they referring to? The 2019 report is a bit
 more revealing (emphases mine):
 
-\begin{quote}
+\begin{leftbar}
 Elsevier looks to enhance quality by building on its premium brands and
 \textbf{grow article volume} through \textbf{new journal launches,} the
 expansion of open access journals and growth from emerging markets; and
@@ -4990,7 +4969,7 @@ informed decisions about their research. \textbf{Coupled with the
 automated profiling and extraction of funding body information from
 scientific articles,} this process supports the whole researcher
 journey; from planning, to execution and funding. \citep{RELXAnnualReport2019} 
-\end{quote}
+\end{leftbar}
 
 Reading between the lines, it's clear that the difficulty of finding
 research is a feature, not a bug of their system. Their explicit
@@ -5209,8 +5188,7 @@ journal-led peer review is one of the first strawmen that stops
 consideration of radically reorganizing scientific
 communication\sidenote{For a recent example, see the responses to Dan
   Goodman's argument why he has stopped doing pre-publication peer
-  review altogether \citep{dangoodman{[}neuralreckoning{]}CurrentSystemJournals2022
-  goodmanEndingSupportLegacy2022 } }. The belief that peer review as
+  review altogether \citep{goodmanCurrentSystemJournals2022, goodmanEndingSupportLegacy2022 } }. The belief that peer review as
 we know it is an intrinsic part of science is ahistorical (eg. \citep{baldwinScientificAutonomyPublic2018} ), and the belief that
 journal-led peer review is somehow a unique venue for evaluating
 scientific work ignores the immense quantity of criticism and discussion
@@ -5244,34 +5222,25 @@ systems that misstructure the practice of science.
 \hypertarget{the-wiki-way}{%
 \subsection{The Wiki Way}\label{the-wiki-way}}
 
-\begin{quote}
+\begin{leftbar}
 If we take radical collaboration as our core, then it becomes clear that
 extending Wikipedia's success doesn't simply mean installing more copies
 of wiki software for different tasks. It means figuring out the key
 principles that make radical collaboration work. What kinds of projects
 is it good for? How do you get them started? How do you keep them
 growing? What rules do you put in place? What software do you use? \citep{swartzMakingMoreWikipedias2006} 
-\end{quote}
+\end{leftbar}
 
-\begin{quote}
+\begin{leftbar}
 So that's it --- insecure but reliable, indiscriminate and subtle, user
 hostile yet easy to use, slow but up to date, and full of difficult,
 nit-picking people who exhibit a remarkable community camaraderie.
 Confused? Any other online community would count each of these
 ``negatives'' as a terrible flaw, and the contradictions as impossible
 to reconcile. Perhaps wiki works because the other online communities
-don't. \citep{leufWikiWayQuick2001a, -l, 329}  and in
-\href{http://wiki.c2.com/?WhyWikiWorks}{WhyWikiWorks}\sidenote{Interestingly,
-  this quote is almost, but not exactly the same as that on
-  \href{http://wiki.c2.com/?WhyWikiWorks}{Ward's wiki}: \textgreater{}
-  So that's it - insecure, indiscriminate, user-hostile, slow, full of
-  difficult, nit-picking people, and frivolous. Any other online
-  community would count each of these strengths as a terrible flaw.
-  Perhaps wiki works because the other online communities do not.
+don't. \citep{leufWikiWayQuick2001a}  and in
+\href{http://wiki.c2.com/?WhyWikiWorks}{WhyWikiWorks}\end{leftbar} \sidenote[][-3.2cm]{Interestingly, this quote is almost, but not exactly the same as that on \href{http://wiki.c2.com/?WhyWikiWorks}{Ward's wiki}: "So that's it - insecure, indiscriminate, user-hostile, slow, full of difficult, nit-picking people, and frivolous. Any other online community would count each of these strengths as a terrible flaw. Perhaps wiki works because the other online communities do not." I can't tell if Ward Cunningham wrote the original entry in the wiki, but in any case seems to have found a bit of optimism in the book.}
 
-  I can't tell if Ward Cunningham wrote the original entry in the wiki,
-  but in any case seems to have found a bit of optimism in the book.}
-\end{quote}
 
 Aside from maybe the internet itself, there is no larger public digital
 knowledge organization effort than Wikipedia. While there are many
@@ -5288,16 +5257,16 @@ of early wikis.
 
 Aaron Swartz recounts a quote from Jimmy Wales, co-founder of Wikipedia:
 
-\begin{quote}
+\begin{leftbar}
 ``I'm not a wiki person who happened to go into encyclopedias,'' Wales
 told the crowd at Oxford. ``I'm an encyclopedia person who happened to
 use a wiki.'' \citep{swartzWhoWritesWikipedia2006} 
-\end{quote}
+\end{leftbar}
 
 And further describes how this origin and mission differentiates it from
 other internet communities:
 
-\begin{quote}
+\begin{leftbar}
 But Wikipedia isn't even a typical community. Usually Internet
 communities are groups of people who come together to discuss something,
 like cryptography or the writing of a technical specification. Perhaps
@@ -5309,7 +5278,7 @@ But \textbf{with Wikipedia, the goal is building Wikipedia.} It's not a
 community set up to make some other thing, it's a community set up to
 make itself. And since Wikipedia was one of the first sites to do it, we
 know hardly anything about building communities like that. \citep{swartzMakingMoreWikipedias2006} 
-\end{quote}
+\end{leftbar}
 
 We know a lot more now than in 2006, of course, but Wikipedia still has
 outsized structuring influence on our beliefs about what Wikis can be.
@@ -5336,7 +5305,7 @@ similar lessons from across the divides of their very different
 structure.
 
 The first wiki was launched in 1995\sidenote{it's complicated:
-  http://wiki.c2.com/?WardsWikiTenthAnniversary}
+  \href{http://wiki.c2.com/?WardsWikiTenthAnniversary}{WardsWikiTenthAnniversary}}
 (\href{http://wiki.c2.com/}{it's still up}) and came to be known as
 Ward's wiki after its author
 \href{http://wiki.c2.com/?WardCunningham}{WardCunningham}. Technically,
@@ -5385,7 +5354,7 @@ for a number of reasons, largely due to the
 \href{http://wiki.c2.com/?WikiChaos}{WikiChaos} it had the potential of
 creating.
 
-\begin{quote}
+\begin{leftbar}
 I occasionally suggest how this site should be used. My
 \href{http://wiki.c2.com/?GoodStyle}{GoodStyle} suggestions have been
 here since the beginning and are linked from the edit page should anyone
@@ -5394,7 +5363,7 @@ forget. I have done my best to discourage dialog
 which offers a better fit to this medium. I've been overruled. I will
 continue to make small edits to pages for the sake of brevity. --
 \href{http://wiki.c2.com/?WardCunningham}{WardCunningham} \citep{C2wikiWikiHistory} 
-\end{quote}
+\end{leftbar}
 
 Most pages are thus a combination of both, usually with some
 DocumentMode text at the top with ThreadMode conversations interspersed
@@ -5405,12 +5374,12 @@ library of concepts \emph{as well as} a history of discussion that made
 the contingency of that reference material plain. Beka Valentine put it
 well:
 
-\begin{quote}
+\begin{leftbar}
 c2wiki is an exercise in dialogical methods. of laying bare the fact
 that knowledge and ideas are not some truth delivered from On High, but
 rather a social process, a conversation, a dialectic, between various
 views and interests \citep{valentineC2wikiExerciseDialogical2021} 
-\end{quote}
+\end{leftbar}
 
 This tension and its surrounding discussions point to the need for
 multiple representations of a single idea: that both the social and
@@ -5504,7 +5473,7 @@ strain of lessons. Ward's Wiki started as a means of organizing
 knowledge for the Portland Pattern Repository\sidenote{The initial
   motivations are actually stunningly close to the kinds of
   communication and knowledge organization problems we are still solving
-  today (even in this piece) \textgreater{} Cunningham had developed a
+  today (even in this piece) \\ "Cunningham had developed a
   database to collect the contributions of the listserv members. He had
   noticed that the content of the listserv tended to get buried, and
   therefore the most recent post might be under-informed about posts
@@ -5518,7 +5487,7 @@ knowledge for the Portland Pattern Repository\sidenote{The initial
   but doesn't have to be so repetitive since the things being discussed
   don't disappear. Think of it as a moderated list where anyone can be
   moderator and everything is archived. It's not quite a chat, still,
-  conversation is possible.'' - \citep{cummingsWhatWasWikiWhy2009} }, a programming community (referred to as
+  conversation is possible." - \citep{cummingsWhatWasWikiWhy2009} }, a programming community (referred to as
 \href{http://wiki.c2.com/?DesignPatterns}{DesignPatterns} below), and in
 1998 they were overwhelmed with proponents of
 \href{http://wiki.c2.com/?ExtremeProgramming}{ExtremeProgramming} (or
@@ -5551,14 +5520,14 @@ referring to this site as
 One of the first and most influential Sister Sites was
 \href{http://meatballwiki.org/}{Meatball Wiki}, described on Wards Wiki:
 
-\begin{quote}
+\begin{leftbar}
 SunirShah founded MeatballWiki to absorb and enlarge the discussion of
 what wiki and wiki like sites might be. That discussion still simmers
 here. But here it can take on a negative tone sounding more like
 complaining. On meatball, under Sunir's careful leadership, the ideas,
 wild or not, stay amazingly upbeat. -
 \href{http://wiki.c2.com/?SisterSites}{SisterSites}
-\end{quote}
+\end{leftbar}
 
 MeatballWiki became the spiritual successor to Ward's Wiki, which at
 that point had its own momentum of culture less interested in being the
@@ -5613,21 +5582,21 @@ radical \emph{political} action rather than a strictly social action.
 Writing about the fork of OpenOffice to LibreOffice, Terry Hancock
 writes:
 
-\begin{quote}
+\begin{leftbar}
 {[}In{]} proprietary software {[}a{]} political executive decision can
 kill a project, regardless of developer or user interest. But with free
 software, the power lies with the people who make it and use it, and the
 freedom to fork is the guarantee of that power. {[}\ldots{]} The freedom
 to fork a free software project is {[}a{]} ``tool of revolution''
 intended to safeguard the real freedoms in free software. \citep{hancockOpenOfficeOrgDead2010} 
-\end{quote}
+\end{leftbar}
 
 Forking digital communities can be much less acrimonious than
 physically-based communities because of the ability to
 \href{http://meatballwiki.org/wiki/EnlargeSpace}{EnlargeSpace} given by
 the medium:
 
-\begin{quote}
+\begin{leftbar}
 In order to preserve
 \href{http://meatballwiki.org/wiki/GlobalResource}{GlobalResources},
 create more public space. This reduces limited resource tension. Unlike
@@ -5636,7 +5605,7 @@ cheap online. In effect, this nullifies the
 \href{http://meatballwiki.org/wiki/GlobalResource}{TragedyOfTheCommons}
 by removing the resource pressure that created the ``tragedy'' in the
 first place. \textbf{You can't overgraze the infinity.} - \citep{MeatballWikiEnlargeSpace} 
-\end{quote}
+\end{leftbar}
 
 Enlarging space has the natural potential to make the broader social
 scene bewildering with a geyser of pages and communities, but can be
@@ -5729,7 +5698,7 @@ resembles radical organizing tactics like affinity groups where many
 autonomous groups fluidly work together or separately on an array of
 shared projects without aspiring to create ``one big movement'' \citep{kleinWereDCSeattle2001} . Murray Bookchin describes:
 
-\begin{quote}
+\begin{leftbar}
 The groups proliferate on a molecular level and they have their own
 ``Brownian movement.'' Whether they link together or separate is
 determined by living situations, not by bureaucratic fiat from a distant
@@ -5744,7 +5713,7 @@ the French students and workers in 1968) to coordinate specific tasks.
 retain a sensitive appreciation of new possibilities. Intensely
 experimental and variegated in lifestyles, they act as a stimulus on
 each other as well as on the popular movement. \citep{bookchinNoteAffinityGroups1969} 
-\end{quote}
+\end{leftbar}
 
 To cherrypick a few lessons from more than 25 years of thought from tens
 of thousands of people: The differing models of document vs.~thread
@@ -5768,7 +5737,7 @@ the namespaces have \textbf{functional differentiation}\sidenote{Tim
   There are ways to describe in a machine or human readable way exactly
   what sort of repeatability you would expect from a URI, but the
   architecture of the Web is that that is for something for the owner of
-  the URI to determine. https://www.w3.org/DesignIssues/Axioms.html}
+  the URI to determine. \url{https://www.w3.org/DesignIssues/Axioms.html}}
 like the tools for threading conversations on Wikipedia Talk pages and
 the parsing and code generation tools of Templates. These namespaces
 need to be \textbf{visibly crosslinked} both to preserve the social
@@ -5884,10 +5853,13 @@ our experiment and analysis, but not yet at the stage of writing a
 kinds of ``cells,'' specifically cells that execute \emph{code} and
 cells that render \emph{markdown.} We want to plot some of the results
 of our analysis, so to do that we might load the data and use
-\href{https://matplotlib.org/}{matplotlib} \citep{hunterMatplotlib2DGraphics2007}  to make our point:
+\href{https://matplotlib.org/}{matplotlib} \citep{hunterMatplotlib2DGraphics2007}  to make our point (Fig. \ref{fig:smilenotebook})
 
-\{\% include notebook.html
-html=``/infrastructure/assets/notebooks/smile.html'' \%\}
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{infrastructure/assets/notebooks/smile.png}
+\label{fig:smilenotebook}
+\caption{An example notebook where we use some data loading framework that embeds the linked dataset in the loading cell's metadata field and then plot it!}
+\end{figure}
 
 Our notebook file would then include an array of JSON objects that
 describe the contents of its cells. For example, our data loading cell
@@ -6988,7 +6960,7 @@ organization, tracking projects, and setting policies. The durable but
 plastic nature of wikis is exceptionally well suited for this. From
 Butler, Joyce, and Pike (emphasis mine):
 
-\begin{quote}
+\begin{leftbar}
 Providing tools and infrastructure mechanisms that support the
 development and management of policies is an important part of creating
 social computing systems that work. {[}\ldots{]}
@@ -7012,7 +6984,7 @@ procedures that serve a wide variety of functions
 
 \emph{Don't Look Now, But We've Created a Bureaucracy: The Nature and
 Roles of Policies and Rules in Wikipedia} (2008) \citep{butlerDonLookNow2008} 
-\end{quote}
+\end{leftbar}
 
 So we might have a set of policies that encourages a reporting system to
 notify other peers if their data is misformatted. Or we might reward
@@ -7149,7 +7121,7 @@ path away from structuring influence of for-profit publishers, the rest
 of us should be prepared to learn from those that have already been
 doing the work of curating our archives:
 
-\begin{quote}
+\begin{leftbar}
 {[}M{]}ake it easy to rely on linked data, easier than it is to rely on
 MARC, and the library world will shift, from the smallest and poorest
 libraries upward\ldots{} and David will at last stone Goliath to death
@@ -7157,7 +7129,7 @@ with his linked-data slingshot.
 
 \href{https://gavialib.com/2022/06/stoning-goliath/}{\emph{Stoning
 Goliath}} (2022) The Library Loon \citep{librariaStoningGoliath2022} 
-\end{quote}
+\end{leftbar}
 
 Finally, \textbf{theory wikis} could ``close the
 theoretical-experimental loop'' to turn the buckshot of results into
@@ -7179,7 +7151,7 @@ long lives as ``zombie theories.'' van Rooij and Baggio describe the
 ``collecting seashells'' approach of gathering many results and leaving
 the theory for later with an analogy:
 
-\begin{quote}
+\begin{leftbar}
 ``In a sense, trying to build theories on collections of effects is much
 like trying to write novels by collecting sentences from randomly
 generated letter strings. Indeed, each novel ultimately consists of
@@ -7188,7 +7160,7 @@ effects. Still, the majority of the (infinitely possible) effects are
 irrelevant for the aims of theory building, just as the majority of
 (infinitely possible) sentences are irrelevant for writing a novel.''
 \citep{vanrooijTheoryTestHow2021} 
-\end{quote}
+\end{leftbar}
 
 They and others (eg. \citep{guestHowComputationalModeling2021} )
 have argued for an iterative process of experiments informed by theory
@@ -7196,7 +7168,7 @@ and modeling that confirm or constrain future models. Their articulation
 of the need for multiple registers of formality and rigidity is
 particularly resonant here. van Rooij and Baggio again, emphasis mine:
 
-\begin{quote}
+\begin{leftbar}
 \textbf{We should interpret any data in the context of our larger ``web
 of beliefs,''} which may contain anything we know or believe about the
 world, including scientific or commonsense knowledge. One does not posit
@@ -7209,7 +7181,7 @@ one; what matters is how the initial \emph{f} is constrained and refined
 and how the rectification process can actually drive the theory forward.
 \textbf{Theory building is a creative process involving a dialectic of
 divergent and convergent thinking, informal and formal thinking.} \citep{vanrooijTheoryTestHow2021} 
-\end{quote}
+\end{leftbar}
 
 Durable but plastic, referential and dialogic, structured and free
 mediums like our wiki-trackers could be a practical means of integrating
@@ -7277,7 +7249,7 @@ sounds like industry capture.
 \hypertarget{credit-assignment}{%
 \subsection{Credit Assignment}\label{credit-assignment}}
 
-\begin{quote}
+\begin{leftbar}
 I also think one of the big obstacles to freeing up scientific
 information remains the way in which we continue to pay allegiance to
 the idea that the most important work is published in so-called
@@ -7298,9 +7270,9 @@ a lot longer than I thought.
 
 Harold Varmus, former director of the NIH (2019) \emph{Of Oncogenes and
 Open Science} \citep{varmusOncogenesOpenScience2019} 
-\end{quote}
+\end{leftbar}
 
-\begin{quote}
+\begin{leftbar}
 The reason we are (once again) having a fight about whether the
 producers of publicly available/published data should be authors on any
 work using said data is that we have a completely dysfunctional system
@@ -7311,7 +7283,7 @@ long as people treat authorship as the most/only valuable currency, this
 debate will fester. But it's in our power to change it.} \citep{eisenEverythingRealAnswer2021} 
 
 Michael Eisen, EIC eLife (2021)
-\end{quote}
+\end{leftbar}
 
 The critical anchor for changes to the scientific infrastructure is the
 system of professional incentives that structure it. As long as the only
@@ -7570,16 +7542,16 @@ So how do we build it?
 \hypertarget{tactics-strategy}{%
 \section{Tactics \& Strategy}\label{tactics-strategy}}
 
-\begin{quote}
+\begin{leftbar}
 Don't scab for the bosses / don't listen to their lies / us poor folks
 haven't got a chance / unless we organize
 
 Which side are you on?
 
 Florence Reece (1931) \emph{Which Side Are You On?}
-\end{quote}
+\end{leftbar}
 
-\begin{quote}
+\begin{leftbar}
 \textbf{Oh but they will mock us and they will mistreat us til they can
 replace us all with an app or a kiosk,} {[}\ldots{]}
 
@@ -7593,7 +7565,7 @@ to fruition without \textbf{a whole lot of work!}
 RENT STRIKE (2021)
 \href{https://rentstrike.bandcamp.com/track/work-future-perfect-2}{Work!
 (Future Perfect)} \citep{rentstrikeWorkFuturePerfect2021} 
-\end{quote}
+\end{leftbar}
 
 The primary ingredient needed to build decentralized infrastructure is
 \textbf{will.} The incentive and professional systems of science are
