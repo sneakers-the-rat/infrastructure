@@ -2,17 +2,6 @@
 >
 > Michel Foucault --- *The Order of Things* {% cite foucaultOrderThings2001 %}
 
-<div class="draft-text" markdown="1">
-
-ARAX is up:
-
-- https://arax.rtx.ai/?r=e891e6e6-44fd-4684-9d36-f94e3e81b554
-- https://arax.rtx.ai/?r=81249a42-b300-4dcf-94c9-7a9fe2f78237
-- https://arax.rtx.ai/?r=6d23dcbe-7924-49f0-9f25-1d52dee6712b
-- https://arax.ncats.io/?r=51780
-- https://arax.ncats.io/?r=51779
-</div>
-
 There is no shortage of databases for scientific data, but their traditional structure chokes on the complexity of representing multi-domain data. Typical relational databases require some formal schema to structure the data they contain, which have varying reflections in the APIs used to access them and interfaces built atop them. This broadly polarizes database design into domain-specific and domain-general[^trackeranalogy]. This design pattern results in a fragmented landscape of databases with limited interoperability. How shall we link the databases? In this section we'll consider the Icarian promise of creating the great unified database of everything as a way of motivating an alternative that blends *linked data* {% cite berners-leeLinkedData2006 %} with *federated systems* against our peer to peer backbone in the next section.
 
 [^trackeranalogy]: To continue the analogy to bittorrent trackers, an example domain-specific vs. domain-general dichotomy might be What.cd (with its specific formatting and aggregation tools for representing artists, albums, collections, genres, and so on) vs. ThePirateBay (with its general categories of content and otherwise search-based aggregation interface)
