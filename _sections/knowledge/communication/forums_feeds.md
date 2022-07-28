@@ -1,9 +1,5 @@
 #### Forums & Feeds
 
-<div class="draft-text">
-add example of cc'ing the activitystreams#Public term to indicate message permissions. 
-</div>
-
 What if we think of our documents as "threads" and their cells as "posts?" What makes a cellular document a document is some (relatively arbitrary) notion of a 'root' cell that contains the others --- ie. for notebooks a JSON array of cells. That could be trivially reformulated as cells with metadata indicating that they are [`PartOf`](https://schema.org/isPartOf) a document, each indicating their [`position`](https://schema.org/position) or linked to the cells they are before and after. If we also allow cells to be [`inReplyTo`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-inreplyto) each other, we have the basis of a threaded communication system continuous with documents. Where cells in a linear document have at most one preceeding and succeeding cell, multiple replies allow a tree structure that maps onto the patterns of most contemporary social media. Metadata that describes category and content extends this to include the structure of forums, and could be the basis of a rich continuum of media spanning order and chaos, permanence and ephemerality, between the *magnum opus* and the shitpost: media absent but sorely needed in academic communication. 
 
 Traditional forums like [phpBB](https://www.phpbb.com/) and contemporary social media operate from a single host with a fixed interface and representation of posts. What would a communication system that decouples hosting, identity, interface, and format look like? We can draw inspiration from the "[fediverse](https://en.wikipedia.org/wiki/Fediverse)," a collection of interoperable software platforms and protocols. The fediverse makes it possible to communicate across radically different interfaces: someone using [Funkwhale](https://funkwhale.audio/), which resembles music software like spotify, can communicate with people on [PeerTube](https://joinpeertube.org/), a p2p video streaming program like YouTube, and [Mastodon](https://joinmastodon.org/), a microblogging medium like Twitter. Rather than a single host, instances of each of these programs are hosted independently and can choose to federate with other instances to enable communication between them. Most of these programs use the [ActivityPub](https://www.w3.org/TR/2018/REC-activitypub-20180123/) {% cite Webber:18:A %} protocol, which defines a standard set of capabilities for client-server and server-server communication. 
@@ -11,24 +7,31 @@ Traditional forums like [phpBB](https://www.phpbb.com/) and contemporary social 
 Mastodon posts (or "toots") already resemble the kind of document-interoperable medium hinted at above. For example [this post](https://web.archive.org/web/20220708215201/https://social.coop/@jonny/107328829457619549) is represented in (abbreviated) JSON:
 
 ```json
+
 {
-    "id": "107328829457619549",
-    "created_at": "2021-11-23T22:52:49.044Z",
-    "in_reply_to_id": "107328825611826508",
-    "in_reply_to_account_id": "274647",
-    "visibility": "public",
-    "url": "https://social.coop/@jonny/107328829457619549",
-    "content": "<p>and making a reply to the post to show the in_reply_to and context fields</p>",
-    "account":
-    {
-        "id": "274647",
-        "username": "jonny",
-        "fields":
-        [ ... ]
-    },
-    "media_attachments": [],
-    "mentions": [],
-    "tags": [],
+  "to":[
+    "https://www.w3.org/ns/activitystreams#Public"
+  ],
+  "cc":[
+    "https://social.coop/users/jonny/followers"
+  ],
+  "id": "107328829457619549",
+  "created_at": "2021-11-23T22:52:49.044Z",
+  "in_reply_to_id": "107328825611826508",
+  "in_reply_to_account_id": "274647",
+  "visibility": "public",
+  "url": "https://social.coop/@jonny/107328829457619549",
+  "content": "<p>and making a reply to the post to show the in_reply_to and context fields</p>",
+  "account":
+  {
+      "id": "274647",
+      "username": "jonny",
+      "fields":
+      [ ... ]
+  },
+  "media_attachments": [],
+  "mentions": [],
+  "tags": [],
 }
 ```
 
@@ -114,7 +117,7 @@ This example is a relatively trivial instance of scientific communication: shari
 
 Forums are just one point in a continuous space of threaded media. If we were to take forum threads out of their categories, pour them into our water supply, and drink whatever came our way like a dog drinking out of an algorithmic fire hydrant, we would have Twitter. Remove the algorithm and arrange them strictly chronologically and we have Mastodon. In both, the "category" that organizes threads is the author of the initial post. Algorithmic, rather than purposefully organized threaded systems have their own sort of tachycardic charm. They are effective at what they aim to do, presenting us whatever maximizes the amount of time we spend looking at them in a sort of hallucinatory timeless now of infinite disorganization --- at the expense of desirable features of a communication system like a sense of stable, autonomously chosen community, perspective on broader conversation, and cumulative collective memory. 
 
-Nevertheless the emergence of a recognizable "Science Twitter" points towards a need for relatively informal all-to-all communication. Serendipitously being able to discover unlikely collaborators or ideas is a beautiful dream, if one ill-served by the for-profit attention economy. Our formulation of the `@neurochat` forum was as an equal peer that mirrored, collected, and organized posts that otherwise are issued from other peers such as ourselves. In the same way that we might use the ActivityStreams `Join` action to have our posts mirrored by it, we might also use [`@as:Follow`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow) to receive posts from any peer, and in the case of a federation that might include posts from its members sent to the federation. 
+Nevertheless the emergence of a recognizable "Science Twitter" points towards a need for relatively informal all-to-all communication. Serendipitously being able to discover unlikely collaborators or ideas is a beautiful dream, if one ill-served by the for-profit attention economy. Our formulation of the `@neurochat` forum was as an equal peer that mirrored, collected, and organized posts that otherwise are issued from other peers such as ourselves. In the same way that we might use the ActivityStreams `Join` action to have our posts mirrored by it, we might also use [`@as:Follow`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow) to receive posts from any peer, and in the case of a federation that might include posts from its members sent to the federation. Notice in the example mastodon post above how it uses JSON-LD and the activitystreams ontology: a "me to the world" tweetlike message is addressed to `activitystreams#Public` and cc'd to the URL that corresponds symbolically to the list of `@jonny`'s followers.
 
 We can take advantage of the graph structure and rich metadata of our social network in ways that are impossible in corporate social media networks that require the expectation of disorder to be able to sell "native" ad placement. The instance-to-instance federation model of the fediverse, and the accompanying absence of any "global" scope of all posts, results in the need for multiple views on the network: in Mastodon, a "local" timeline that shows only posts from within the host instance, and a "federated" timeline that shows posts from all instances that the host instance has federated with. Since our network allows peer-to-peer, federation-to-federation, and peer-to-federation interaction, we can extend that further. We can construct views of the network based on granular control over graph depth: instead of seeing just the posts from the peers that we follow, we can request to see n-depth posts, from the peers that our peers follow, and so on. This could be done at the level of a "view" or at the level of the follow link itself --- since I know this person well, I want to see a graph depth of 2 from them, and a depth of 1 from others. At the federation level, we might imagine that `@neurochat` is federated with another `@linguisticsChat` group and the two mirror and rehost each other's posts. We could then make use of our extended social graph and prioritize posts from people who are part of overlapping subsets of the federations we are a part of. The peer-based nature of our social network serves as the basis for a system of fluid scoping and filtering of the kind of communication we are looking for at any given time. So rather than a disorganized public melee or the empty rooms and new logins from yet another closed Slack, our communication could be part of a coherent scientific conversation.
 

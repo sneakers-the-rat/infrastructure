@@ -10,10 +10,6 @@ The core format of linked data is the Resource Document Format (RDF) {% cite kly
 
 [^dlg]: Or, precisely, a "directed labeled graph" (DLG).
 
-<div class='draft-text'>
-  Put a little vocab box here.
-</div>
-
 Linked data representations are very general and encompass many others like relational {% cite berners-leeRelationalDatabasesSemantic2009 %} and object-oriented models, but have a few properties that might be less familiar. The first is that triplet links have the status of an utterance or a proposition: much like typical duplet hyperlinks, anyone can make whatever links they want to a particular object to say what they'd like about it. As opposed to object-oriented models where a class is defined beforehand and its attributes or data are stored "within" the object, RDF schemas are composed of links just like any other, and the link, object, and predicate can all be stored in separate places by different people {% cite berners-leeWhatSemanticWeb1998 %}. For example:
 
 > One person may define a `vehicle` as having a `number of wheels` and a `weight` and a `length`, but not foresee a `color`. This will not stop another person making the assertion that a given car is red, using the color vocabulary from elsewhere. {% cite berners-leeWhatSemanticWeb1998 %}

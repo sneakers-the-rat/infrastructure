@@ -112,7 +112,7 @@ def build_frontmatter(document_class: str = "article",
 
 
 def include(match):
-    path = Path('../').absolute() / match.groups()[0]
+    path = (Path(__file__) / '../').absolute() / match.groups()[0]
     with open(path, 'r') as includef:
         include_text = includef.read()
     if 'footnotes' in str(path) or 'bib.md' in str(path):
@@ -149,24 +149,40 @@ def fix_relative_links(text, href=None, includegraphics=None):
 
 
 if __name__ == "__main__":
-    in_fn = Path('../index.markdown').absolute()
-    out_fn = Path('../tex/decentralized_infrastructure_render.tex').absolute()
+    in_fn = (Path(__file__) / '../index.markdown').absolute()
+    out_fn = (Path(__file__) / '../tex/decentralized_infrastructure_render.tex').absolute()
 
     print(f'Converting {in_fn} to .tex...')
-    document_class = 'article'
+    document_class = 'dissertation'
 
-    if document_class == "tufte-book-jls":
+    if document_class == 'dissertation':
         text = jekyll_to_tex(
             in_fn,
-            document_class= document_class,
+            document_class=document_class,
             document_class_options=['nohyper'],
-            title = "Decentralized Infrastructure for Neuro(science)",
-            author = "Jonny L. Saunders",
-            date = "\\today",
-            load_packages = [],
-            additional_calls= [('addbibresource', '../assets/infrastructure.bib')],
-            toc = True,
-            domain = 'https://jon-e.net',
+            title="Decentralized Infrastructure for Neuro(science)",
+            author="Jonny L. Saunders",
+            date="\\today",
+            load_packages=[],
+            additional_calls=[('addbibresource', '../assets/infrastructure.bib')],
+            toc=True,
+            domain='https://jon-e.net',
+            strip=(
+                r'\\tightlist',
+                r'(?s)\\footnote\{\\begin\{quote\}\n\s*\\ldots.*neuroscientists\}',
+                r'(?s)\\footnote\{\\begin\{quote\}\n\s*"Among the.*\\end\{quote\}\}'))
+    elif document_class == "tufte-book-jls":
+        text = jekyll_to_tex(
+            in_fn,
+            document_class=document_class,
+            document_class_options=['nohyper'],
+            title="Decentralized Infrastructure for Neuro(science)",
+            author="Jonny L. Saunders",
+            date="\\today",
+            load_packages=[],
+            additional_calls=[('addbibresource', '../assets/infrastructure.bib')],
+            toc=True,
+            domain='https://jon-e.net',
             strip=(
                 r'\\tightlist',
                 r'(?s)\\footnote\{\\begin\{quote\}\n\s*\\ldots.*neuroscientists\}',

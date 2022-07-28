@@ -26,8 +26,10 @@ acknowledgements:
   - name: committee
     prefix: Committee
     members:
-      - Matt Smear
+      - Melissa Baese-Berk
       - Santiago Jaramillo
+      - Matt Smear
+      - Mike Wehr
   - name: ld
     prefix: linked data
     members:
@@ -47,6 +49,7 @@ acknowledgements:
       - Avery Everhart
       - Eartha Mae Guthman
       - Olivia Guest
+      - Andrew Hoffman
   - name: neuroscience
     prefix: Neuroscientists
     members:
@@ -60,6 +63,7 @@ acknowledgements:
       - Andrey Andreev
       - Ralph Emilio Peterson
       - Manuel Schottdorf
+      - Dan Goodman
   - name: hardware
     prefix: Open Source Ppl
     members:
@@ -87,13 +91,6 @@ acknowledgements:
 
 
 {% include status.html %}
-<div class="trimlink">
-<a href="trims">Trimmings</a> <span>from the main document for future pieces</span>
-</div>
-<div class="trimlink">
-<a href="todo">Todo</a> <span>what's left to be done?</span>
-</div>
-
 
 
 {% include toc_start.html %}
@@ -119,8 +116,6 @@ acknowledgements:
 > In building cyberinfrastructure, the key question is not whether a problem is a “social” problem or a “technical” one. That is putting it the wrong way around. The question is whether we choose, for any given problem, a primarily social or a technical solution
 >
 > [Bowker, Baker, Millerand, and Ribes (2010): Toward Information Infrastructure Studies](https://doi.org/10.1007/978-1-4020-9789-8_5) {% cite bowkerInformationInfrastructureStudies2010 %}
-
-> The critical issue is, how do actors establish generative platforms by instituting a set of control points acceptable to others in a nascent ecosystem? {% cite tilsonDigitalInfrastructuresMissing2010 %}
 
 > Billionaires have squatted on the Magna Cum Lauded / [...]
 > Methodically they plotted against those who fought it / [...] / 

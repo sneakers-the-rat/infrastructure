@@ -4,10 +4,5 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
-\begin{document}
-\maketitle
-\tableofcontents
-\pagebreak
-
 $body$
 
