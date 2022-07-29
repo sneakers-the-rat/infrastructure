@@ -9,13 +9,13 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-npmv2-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-npmv3-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-npmv2-
+            ${{ runner.os }}-npmv3-
       - name: Install Node
         uses: actions/setup-node@v2
         with:
@@ -30,9 +30,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-gemsv2-${{ hashFiles('**/Gemfile') }}-${{ hashFiles('_config.yml') }}
+          key: ${{ runner.os }}-gemsv3-${{ hashFiles('**/Gemfile') }}-${{ hashFiles('_config.yml') }}
           restore-keys: |
-            ${{ runner.os }}-gemsv2-
+            ${{ runner.os }}-gemsv3-
       - name: Main Jekyll Build
         uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
         with:
