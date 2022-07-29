@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-gemsv3-
       - name: Trust github workspace
         run:
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory /github/workspace
       - name: Main Jekyll Build
         uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
         with:
