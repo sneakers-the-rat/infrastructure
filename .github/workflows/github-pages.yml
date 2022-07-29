@@ -42,8 +42,7 @@ jobs:
           token: ${{ secrets.GH_PAGES }}
           keep_history: true
           target_path: /
-          pre_build_commands: 
-            - git config --global --add safe.directory /github/workspace
+          pre_build_commands: git config --global --add safe.directory /github/workspace
       - name: Get Short Hash
         id: vars
         shell: bash
@@ -54,5 +53,4 @@ jobs:
           token: ${{ secrets.GH_PAGES }}
           keep_history: true
           target_path: versions/${{ steps.vars.outputs.sha_short }}
-          pre_build_commands: 
-            - git config --global --add safe.directory /github/workspace
+          pre_build_commands: git config --global --add safe.directory /github/workspace
