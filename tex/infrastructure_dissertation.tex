@@ -2556,8 +2556,7 @@ The arrival at a biomedical question answering platform built atop an
 algorithmic ranking system for a knowledge graph that queries 200+
 aggregated data sources has several qualities that should give us pause.
 
-First, as with any machine-learning based system, the algorithm can only
-reflect the structure of its input data, including its bias. The ``mass
+First, as with any machine-learning based system, the algorithm can only reflect the implicit structure of its creation, including the beliefs and values of its architects \citep{ birhaneValuesEncodedMachine2022, birhaneAlgorithmicInjusticeRelational2021}, its training data and accompanying bias \citep{birhaneMultimodalDatasetsMisogyny2021}, and so on. The ``mass
 of data'' approach ML tools lend themselves to, in this case, querying
 hundreds of independently operated databases, makes dissecting the
 provenance of every entry from every data provider effectively
@@ -2861,7 +2860,7 @@ system, unknowable beneath the shrouding weights of its ranking model.
 Instead can we imagine a properly \emph{human} data infrastructure? One
 that preserves the seams and imperfections in our representational
 systems, that is designed to represent precisely the contingency of
-representation itself? We might start with the propositional nature of
+representation itself? (eg. see \citep{birhaneImpossibilityAutomatingAmbiguity2021, fletcher-watsonDiversityComputing2018}). We might start with the propositional nature of
 links and mappings between formats --- that rather than a divine
 received truth, the relationships between things are contextual and
 created. We could find grounding in \emph{use,} that the schemas and
@@ -3002,7 +3001,7 @@ abstractions that let people create websites without directly writing
 HTML, the same never materialized for RDF. While linked data entities
 are intended to be designated by the very general notion of a URI, in
 practice URIs are near-synonymous with URLs, and maintaining a set of
-URLs is hard. In the absence of interfaces for manipulating linked data
+URLs is hard. The initial vision for URI/URL-based linked data identifiers seems to have been, in part, based on a miscalculation of the centralizing effect of the DNS system, which makes them expensive and rarer than they need to be for each person to have their own\sidenote{Tim Berners-Lee, in his 1999 "Weaving the Web," was already describing how the centralization of the DNS system compromised some of his loftier ambitions for the web: "It is essential that domain names be primarily owned by the people as a whole, and that they be governed in a fair and reasonable way by the people, for the people." and "[DNS Centralization] also shows how a technical decision to make a single point of reliance can be exploited politically for power and commercially for profit, breaking the technology's independence from these things, and weakening the Web as a universal space." \citep{berners-leeWeavingWebOriginal1999} The Solid project instead uses OpenID for identification, rather than, eg. a FOAF record located at a URL.}. In the absence of interfaces for manipulating linked data
 and the pain of hosting them, the dream of a distributed negotiation
 over language-like ontologies was largely confined to information
 scientists and what became corporate knowledge graphs. For those
@@ -4899,6 +4898,12 @@ themselves.
 
 \hypertarget{shared-knowledge}{%
 \section{Shared Knowledge}\label{shared-knowledge}}
+
+\begin{leftbar}
+The Web is more a social creation than a technical one. I designed it for a social effect --- to help people work together --- and not as a technical toy. [...] We clump into families, associations, and companies. We develop trust across the miles and distrust around the corner. What we believe, endorse, agree with, and depend on is representable and, increasingly, represented on the Web. We all have to ensure that the society we build with the Web is of the sort we intend.
+
+Tim Berners-Lee (1999) \textit{Weaving the Web} \citep{berners-leeWeavingWebOriginal1999}
+\end{leftbar}
 
 The remaining set of problems implied by the infrastructural system
 sketched so far are the \emph{communication} and \emph{organization}
