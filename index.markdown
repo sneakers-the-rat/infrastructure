@@ -12,7 +12,7 @@ navigation: false
 bibtex: false # render bibtex for each reference
 canonical_url: "https://jon-e.net/infrastructure"
 toc_levels: "1..3"
-pdf_link: /infrastructure/tex/decentralized_infrastructure_render.pdf
+# pdf_link: /infrastructure/tex/decentralized_infrastructure_render.pdf
 acknowledgements:
   - name: lab
     prefix: Labmates
