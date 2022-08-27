@@ -1395,8 +1395,8 @@ Seemingly prosocial protocols can be used by industries to preempt an
 alternative that would undermine their profit model --- a notable
 example for academics being the DOI system, created in order for
 publishers to preserve control over their intellectual property \citep{rosenblattDigitalObjectIdentifier1997} . The STM
-association\sidenote[][-6cm]{The global trade association of publishers that
-  serves as its lobbying and propaganda arm.} hastily\sidenote[][-5cm]{The
+association\sidenote{The global trade association of publishers that
+  serves as its lobbying and propaganda arm.} hastily\sidenote{The
   description provided by the ``official'' CrossRef 10 year
   retrospective paints a picture of panicked executives making an
   announcement for something they weren't quite sure what it would be,
@@ -3655,7 +3655,7 @@ dominant form is much closer to the system articulated below than
 centralized servers are to federated semantic p2p systems. I also have
 written extensively about
 \protect\hyperlink{experimental-frameworks}{experimental frameworks}
-before \citep{saundersAutopilotAutomatingBehavioral2019} , and
+before \citep{saundersAUTOPILOTAutomatingExperiments2022} , and
 develop \href{https://docs.auto-pi-lot.com/en/latest/}{one of them} so I
 will be brief at risk of repeating myself or appearing self-serving.
 
@@ -4287,7 +4287,7 @@ building a body of cumulative contextual knowledge in a creditable
 system.
 
 I have previously written about the design of a generalizable,
-distributed experimental framework \citep{saundersAutopilotAutomatingBehavioral2019} , so to avoid repeating
+distributed experimental framework \citep{saundersAUTOPILOTAutomatingExperiments2022} , so to avoid repeating
 myself, and since many of the ideas from the section on analysis tools
 apply here as well, I will be relatively brief.
 
@@ -4438,7 +4438,7 @@ metadata-rich data. Rather than linked data indicating code as in our
 analysis frameworks, we might invert our strategy and think about code
 that draws from linked data.
 
-As an example, \href{https://docs.auto-pi-lot.com}{Autopilot} \citep{saundersAutopilotAutomatingBehavioral2019}  approaches the problem by
+As an example, \href{https://docs.auto-pi-lot.com}{Autopilot} \citep{saundersAUTOPILOTAutomatingExperiments2022}  approaches the problem by
 avoiding standardizing \emph{experiments} themselves, instead providing
 smaller building blocks of experimental tools like hardware drivers,
 data transformations, etc. and emphasizing understanding their use in
@@ -5244,7 +5244,7 @@ Confused? Any other online community would count each of these
 ``negatives'' as a terrible flaw, and the contradictions as impossible
 to reconcile. Perhaps wiki works because the other online communities
 don't. \citep{leufWikiWayQuick2001a}  and in
-\href{http://wiki.c2.com/?WhyWikiWorks}{WhyWikiWorks}\end{leftbar} \sidenote[][-3.2cm]{Interestingly, this quote is almost, but not exactly the same as that on \href{http://wiki.c2.com/?WhyWikiWorks}{Ward's wiki}: "So that's it - insecure, indiscriminate, user-hostile, slow, full of difficult, nit-picking people, and frivolous. Any other online community would count each of these strengths as a terrible flaw. Perhaps wiki works because the other online communities do not." I can't tell if Ward Cunningham wrote the original entry in the wiki, but in any case seems to have found a bit of optimism in the book.}
+\href{http://wiki.c2.com/?WhyWikiWorks}{WhyWikiWorks}\end{leftbar} \sidenote{Interestingly, this quote is almost, but not exactly the same as that on \href{http://wiki.c2.com/?WhyWikiWorks}{Ward's wiki}: "So that's it - insecure, indiscriminate, user-hostile, slow, full of difficult, nit-picking people, and frivolous. Any other online community would count each of these strengths as a terrible flaw. Perhaps wiki works because the other online communities do not." I can't tell if Ward Cunningham wrote the original entry in the wiki, but in any case seems to have found a bit of optimism in the book.}
 
 
 Aside from maybe the internet itself, there is no larger public digital
@@ -5418,11 +5418,11 @@ encoded in the WikiCase link system by giving different pages different
 roles. In addition to having parallel conversations on articles and talk
 pages, it is possible to have template pages that can be included on
 wiki pages with
-\texttt{\{\%\ raw\ \%\}\{\{double\ curly\ bracket\}\}\{\%\ endraw\ \%\}}
+\texttt{\{\{double\ curly\ bracket\}\}}
 syntax -- eg.
 \href{https://en.wikipedia.org/wiki/Template:Citation_needed}{Template:Citation\_Needed}
 renders
-\texttt{\{\%\ raw\ \%\}\{\{Citation\ needed\}\}\{\%\ endraw\ \%\}} as
+\texttt{\{\{Citation\ needed\}\}} as
 {[}citation needed{]}. Talk pages have their own \textbf{functional
 differentiation,} with features for threading and annotating discussions
 that aren't present on the main article pages (see
@@ -5860,10 +5860,10 @@ cells that render \emph{markdown.} We want to plot some of the results
 of our analysis, so to do that we might load the data and use
 \href{https://matplotlib.org/}{matplotlib} \citep{hunterMatplotlib2DGraphics2007}  to make our point (Fig. \ref{fig:smilenotebook})
 
-\begin{figure}[h]
-\includegraphics[width=\linewidth]{infrastructure/assets/notebooks/smile.png}
-\label{fig:smilenotebook}
+\begin{figure}[h!]
+\includegraphics[width=4in]{infrastructure/assets/notebooks/smile.png}
 \caption{An example notebook where we use some data loading framework that embeds the linked dataset in the loading cell's metadata field and then plot it!}
+\label{fig:smilenotebook}
 \end{figure}
 
 Our notebook file would then include an array of JSON objects that
@@ -8485,5 +8485,3 @@ hiccups and errors and dead links as the work of the world we built
 together.
 
 Everything is a little rough, a little gestural, and all very human.
-
-\citep{d} 
