@@ -21,7 +21,7 @@ acknowledgements:
       - Tillie Morris
       - Nick Sattler
       - Sam Mehan
-      - Molly Shallow
+      - Molly Shallows
       - Mike and as always ty for letting me always go rogue
   - name: committee
     prefix: Committee
@@ -57,7 +57,7 @@ acknowledgements:
       - Kris Chauvin
       - Phil Parker
       - Ceci Herbert
-      - Chris Rogers
+      - Chris Rodgers
       - Petar Todorov
       - Jeremy Delahanty
       - Andrey Andreev
@@ -71,6 +71,7 @@ acknowledgements:
       - Gonçalo Lopes
       - Mackenzie Mathis
       - Mark Laubach & Open Behavior Team
+      - Rich Trott
   - name: freeinternet
     prefix: Free Internet and Information Liberationists
     members:
