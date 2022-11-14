@@ -1,0 +1,9 @@
+[doc]
+name = 'Decentralized Infrastructure for (Neuro)science'
+bundle = 'https://data1.fullyjustified.net/tlextras-2021.3r1.tar'
+
+[[output]]
+name = 'jls_infrastructure-arxiv'
+index = 'infrastructure.tex'
+shell_escape = true
+type = 'pdf'
