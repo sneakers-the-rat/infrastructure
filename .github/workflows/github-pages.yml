@@ -37,9 +37,9 @@ jobs:
         run:
           git config --global --add safe.directory /github/workspace
       - name: Main Jekyll Build
-        uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
+        uses: helaili/jekyll-action@master
         with:
-          token: ${{ secrets.GH_PAGES }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           keep_history: true
           target_path: /
           pre_build_commands: git config --global --add safe.directory /github/workspace
@@ -48,9 +48,9 @@ jobs:
         shell: bash
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Versioned Jekyll Build
-        uses: helaili/jekyll-action@64b759fc0e18682ff47a0522072df02762a76af2
+        uses: helaili/jekyll-action@master
         with:
-          token: ${{ secrets.GH_PAGES }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           keep_history: true
           target_path: versions/${{ steps.vars.outputs.sha_short }}
           pre_build_commands: git config --global --add safe.directory /github/workspace
