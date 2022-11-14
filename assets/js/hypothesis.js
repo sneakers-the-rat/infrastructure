@@ -9,7 +9,7 @@ window.hypothesisConfig = function() {
 window.onload = function() {
     let style = document.createElement('style');
     style.textContent = `
-        .Buckets__list {
+        .bg-grey-2 {
           background-color: transparent !important;
         }
     `
