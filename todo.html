@@ -22,9 +22,19 @@
 <!-- End Jekyll SEO tag -->
 
 
+  <meta name="citation_title" content="TODO">
+<meta name="citation_date" content="">
+<meta name="citation_journal_title" content="arXiv">
+<meta name="citation_doi" content="">
+<meta name="citation_url" content="https://jon-e.net/infrastructure/todo">
+
+<meta name="citation_author" content="">
+
+<meta name="citation_pdf_url" content="">
+
   <!-- CSS -->
   <link rel="stylesheet" href="/infrastructure/assets/main.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <script src="/infrastructure/assets/js/hypothesis.js"></script>
 
   <!-- Favicon -->
 <!--   <link rel="icon" type="image/png" sizes="32x32" href="/infrastructure/assets/favicon-32x32.png">
@@ -37,7 +47,7 @@
 </head>
 
 
-  <body vocab="https://schema.org/" typeof="ScholarlyArticle">
+  <body vocab="https://schema.org/" typeof="ScholarlyArticle" resource="https://jon-e.net/infrastructure/#article" id="article">
 
     
 
@@ -60,6 +70,7 @@
             <a href="mailto:">
                 <i class="far fa-envelope"></i>
             </a>
+            <a property="sameAs" href="" >foaf</a>
             </span>
           </span>
           
@@ -68,19 +79,50 @@
         <br>
 
         
-
-        
         
 
         <div class="post-date">
+            <span>Published: </span>
+            <time datetime="" property="datePublished"></time> - 
+            <a property="sameAs" href="https://doi.org/">doi:</a>
+        </div>
+
+        <div class="post-date">
             <span>Rendered: </span>
-            <time datetime="2022-14-14"> 2022-11-14</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/ca68540"><code>ca68540</code></a> 
+            <time datetime="2023-48-10"> 2023-03-10</time> - <span style="color:#444; font-style:none">permalink:</span> <a href="/infrastructure/versions/2c2baf3"><code>2c2baf3</code></a> 
 
         </div>
 
         <div class="wordcount">
             <p>Estimated Reading Time: 1 minutes (200 words)</p>
         </div>
+
+        <div class="citelink">
+            <span>Please cite the <a href="https://doi.org/">arXiv</a> version ❤️: </span>
+            <span type="button" class="bibtex-button">
+                (bibtex)
+            </span>
+            <div 
+  class="bibtex collapsed"   
+  xmlns:BibTeX="http://purl.oclc.org/NET/nknouf/ns/BibTeX" 
+  typeof="BibTeX:article"
+>
+
+<figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">doi/10.48550/ARXIV.2209.07493</span><span class="p">,</span>
+  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.48550/ARXIV.2209.07493}</span><span class="p">,</span>
+  <span class="na">url</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/2209.07493}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Saunders, Jonny L.}</span><span class="p">,</span>
+  <span class="na">keywords</span> <span class="p">=</span> <span class="s">{General Literature (cs.GL), FOS: Computer and information sciences, FOS: Computer and information sciences, K.2; K.4.1; K.4.3; E.2; H.5.3; H.4.3; K.6.4}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Decentralized Infrastructure for (Neuro)science}</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{arXiv}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span><span class="p">,</span>
+  <span class="na">copyright</span> <span class="p">=</span> <span class="s">{Creative Commons Attribution Non Commercial Share Alike 4.0 International}</span>
+<span class="p">}</span>	</code></pre></figure>
+
+</div>
+
+        </div>
+
 
         
 
@@ -167,15 +209,14 @@
 
     </main>
 
-    <footer>
+    <footer id="footer">
 <script src="/infrastructure/assets/js/react.js"></script>
 <script src="/infrastructure/assets/js/toc.js"></script>
 <script src="/infrastructure/assets/js/bibtex.js"></script>
 
 
 <!--  -->
-<script async src="https://hypothes.is/embed.js"></script>
-<script src="/infrastructure/assets/js/hypothesis.js"></script>
+<!-- <script async src="https://hypothes.is/embed.js"></script> -->
 <!--  -->
 </footer>
 
