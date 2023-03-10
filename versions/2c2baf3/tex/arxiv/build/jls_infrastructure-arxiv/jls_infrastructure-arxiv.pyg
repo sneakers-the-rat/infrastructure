@@ -1,0 +1,5 @@
+<@nwb:NWBFile>
+  a @hdf:HDF5
+    .isVersion "x.y.z"
+    .hasDependency "libhdf5"=="x.y.z"
+  usesContainer @nwb:NWBContainer
