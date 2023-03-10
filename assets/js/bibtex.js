@@ -5,3 +5,4 @@ bibtex.forEach( item => {
 		this.nextElementSibling.classList.toggle('collapsed');
 	})
 })
+

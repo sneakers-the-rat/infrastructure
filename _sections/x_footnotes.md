@@ -86,7 +86,7 @@
 
 [^whatisblast]: "Basic Local Alignment Search Tool" - a tool to compare genetic or protein sequences to find potential matches or analogues.
 
-[^andgoogle]: This isn't a story of "good people" and "bad people," as a lot of the linked data technology also serves as the backbone for abusive technology monopolies like google's acquisition of Freebase {% cite iainFreebaseDeadLong2019 %} and the profusion of knowledge graph-based medical platforms.
+[^andgoogle]: This isn't a story of "good people" and "bad people," as a lot of the linked data technology also serves as the backbone for abusive technology monopolies like google's acquisition of Freebase {% cite iainFreebaseDeadLong2016 %} and the profusion of knowledge graph-based medical platforms.
 
 [^uxloop]: Incentivized to develop new packages -> need to reinvent interfaces -> hard to develop and extend -> incentivized to develop new packages
 

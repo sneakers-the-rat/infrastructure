@@ -1,0 +1,9 @@
+<meta name="citation_title" content="{{ page.title }}">
+<meta name="citation_date" content="{{ page.date_published }}">
+<meta name="citation_journal_title" content="arXiv">
+<meta name="citation_doi" content="{{ page.doi }}">
+<meta name="citation_url" content="{{ page.canonical_url }}">
+{% for author in page.author %}
+<meta name="citation_author" content="{{ author.name }}">
+{% endfor %}
+<meta name="citation_pdf_url" content="{{ arxiv_pdf }}">

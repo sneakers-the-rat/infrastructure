@@ -3,16 +3,27 @@ layout: post
 title:  "Decentralized Infrastructure for (Neuro)science"
 subtitle: "Or, Kill the Cloud in Your Mind"
 author: 
-  - name: Jonny Saunders
+  - name: Jonny L. Saunders
     affiliation: 
       - University of Oregon
       - Institute of Neuroscience
     email: jsaunder@uoregon.edu
+    foaf: https://jon-e.net/#i
 navigation: false
 bibtex: false # render bibtex for each reference
 canonical_url: "https://jon-e.net/infrastructure"
 toc_levels: "1..3"
+repository: "https://github.com/sneakers-the-rat/infrastructure"
+doi: "10.48550/arXiv.2209.07493"
+date_published: "2022-09-01"
+arxiv_pdf: "https://arxiv.org/ftp/arxiv/papers/2209/2209.07493.pdf"
 # pdf_link: /infrastructure/tex/decentralized_infrastructure_render.pdf
+seo:
+  links: 
+    - https://doi.org/10.48550/arXiv.2209.07493
+    - https://arxiv.org/abs/2209.07493
+    - https://jon-e.net/infrastructure/#article
+  type: ScholarlyArticle
 acknowledgements:
   - name: lab
     prefix: Labmates
@@ -89,17 +100,10 @@ acknowledgements:
       - Rumbly Tumbly Lawnmower
 ---
 
-
-
-{% include status.html %}
-
-
 {% include toc_start.html %}
 1. table of contents
 {:toc}
 {% include toc_end.html %}
-
-
 
 > If we can make something decentralised, out of control, and of great simplicity, we must be prepared to be astonished at whatever might grow out of that new medium. 
 > 

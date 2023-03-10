@@ -19,6 +19,7 @@ layout: default
             <a href="mailto:{{ author.email }}">
                 <i class="far fa-envelope"></i>
             </a>
+            <a property="sameAs" href="{{ author.foaf }}" >foaf</a>
             </span>
           </span>
           {% endfor %}
@@ -28,15 +29,14 @@ layout: default
 
         <br>
 
-        {% if page.date %}
-        <div class="post-date">
-            <span>First Published &nbsp;</span>
-            <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-        </div>
-        {% endif %}
-
         {% capture time %}{{ content | reading_time }}{% endcapture %}
         {% capture words %}{{ content | count_words }}{% endcapture %}
+
+        <div class="post-date">
+            <span>Published: </span>
+            <time datetime="{{ page.date_published }}" property="datePublished">{{ page.date_published }}</time> - 
+            <a property="sameAs" href="https://doi.org/{{ page.doi }}">doi:{{ page.doi}}</a>
+        </div>
 
         <div class="post-date">
             <span>Rendered: </span>
@@ -47,6 +47,15 @@ layout: default
         <div class="wordcount">
             <p>Estimated Reading Time: {{ time }} minutes ({{ words }} words)</p>
         </div>
+
+        <div class="citelink">
+            <span>Please cite the <a href="https://doi.org/{{ page.doi }}">arXiv</a> version ❤️: </span>
+            <span type="button" class="bibtex-button">
+                (bibtex)
+            </span>
+            {% include citation.html %}
+        </div>
+
 
         
 

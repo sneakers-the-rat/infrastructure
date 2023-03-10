@@ -19,7 +19,7 @@ export default function RDFA(props){
   const [highlighted, setHighlighted] = useState();
 
   const bodyClicked = function(el){
-    console.log('body clicked', el);
+    // console.log('body clicked', el);
   }
 
   const elementClicked = function(el){
@@ -50,7 +50,7 @@ export default function RDFA(props){
   const links = useMemo(() => {
 
     let link_els = document.querySelectorAll('.rdfa');
-    console.log(link_els);
+    // console.log(link_els);
     link_els.forEach(el => {
       el.onclick = elementClicked
     })
@@ -63,7 +63,7 @@ export default function RDFA(props){
         'element': el
       })
     })
-    console.log(link_arr)
+    // console.log(link_arr)
     return(link_arr)
   })
 
@@ -83,7 +83,7 @@ export default function RDFA(props){
 
   // highlight 
   useEffect(() => {
-    console.log('highlight', links, highlighted)
+    // console.log('highlight', links, highlighted)
     links.forEach(link => {
       if (highlighted === undefined || link.resource !== highlighted.resource){
         link.element.classList.remove('highlighted')
@@ -95,14 +95,14 @@ export default function RDFA(props){
     if (highlighted !== undefined){
       highlighted.element.classList.add('highlighted');
       highlighted.element.classList.add('primary');
-      console.log('scrollto', highlighted.element);
+      // console.log('scrollto', highlighted.element);
       highlighted.element.scrollIntoView({behavior: 'smooth', block: 'center'});
     }
   }, [highlighted])
 
   const itemView = function(highlighted){
     let res_links = links.filter(link => link.resource == highlighted.resource)
-    console.log('highlighted', highlighted);
+    // console.log('highlighted', highlighted);
     let objects = Object.keys(groupBy(res_links, 'property')).map(property => (property));
     return(
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
